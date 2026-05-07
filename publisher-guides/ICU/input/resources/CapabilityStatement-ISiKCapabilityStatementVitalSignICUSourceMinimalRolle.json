@@ -456,7 +456,8 @@
               ],
               "name": "category",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-category",
-              "type": "token"
+              "type": "token",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?category=vital-signs`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
             },
             {
               "extension": [
@@ -467,7 +468,8 @@
               ],
               "name": "status",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-status",
-              "type": "token"
+              "type": "token",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?status=final`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
             },
             {
               "extension": [
@@ -478,7 +480,8 @@
               ],
               "name": "date",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-date",
-              "type": "date"
+              "type": "date",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?date=ge2020-01-14&date=le2020-12-31`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).\n    Bei der Formulierung der Suche sollten die Vorgaben aus der Definition der\n    [Such-Prefixe](https://hl7.org/fhir/R4/search.html#prefix)\n    - und hier insbesondere die Unterschiede zwischen `lt` und `eb` bzw. `gt` und `sa` - beachtet werden."
             },
             {
               "extension": [
@@ -489,7 +492,8 @@
               ],
               "name": "code",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-code",
-              "type": "token"
+              "type": "token",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?code=http://loinc.org|85354-9`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
             },
             {
               "extension": [
@@ -500,7 +504,8 @@
               ],
               "name": "patient",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
-              "type": "reference"
+              "type": "reference",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?patient=Patient/123`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
             },
             {
               "extension": [
@@ -511,7 +516,8 @@
               ],
               "name": "subject",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-subject",
-              "type": "reference"
+              "type": "reference",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?subject=Patient/123`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).\n    Für die Suche nach Patienten SOLL der Parameter `patient` bevorzugt werden."
             },
             {
               "extension": [
@@ -522,7 +528,8 @@
               ],
               "name": "encounter",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-encounter",
-              "type": "reference"
+              "type": "reference",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?encounter=Encounter/456`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
             },
             {
               "extension": [
@@ -533,7 +540,8 @@
               ],
               "name": "code-value-quantity",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-code-value-quantity",
-              "type": "composite"
+              "type": "composite",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?code-value-quantity=http://loinc.org|29463-7$gt50`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).\n    Kombinierter Suchparameter für Code und Messwert einer einfachen Observation."
             },
             {
               "extension": [
@@ -544,7 +552,8 @@
               ],
               "name": "combo-code",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-combo-code",
-              "type": "token"
+              "type": "token",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?combo-code=http://loinc.org|85354-9`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).\n    Durchsucht sowohl `Observation.code` als auch `Observation.component.code`."
             },
             {
               "extension": [
@@ -555,7 +564,8 @@
               ],
               "name": "combo-code-value-quantity",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-combo-code-value-quantity",
-              "type": "composite"
+              "type": "composite",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?combo-code-value-quantity=http://loinc.org|8480-6$gt100`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).\n    Kombinierter Suchparameter für Code und Messwert, der sowohl Haupt-Observation als auch Komponenten einschließt."
             },
             {
               "extension": [
@@ -566,7 +576,8 @@
               ],
               "name": "component-code",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-component-code",
-              "type": "token"
+              "type": "token",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?component-code=http://loinc.org|8480-6`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).\n    Durchsucht ausschließlich `Observation.component.code`."
             }
           ]
         }
