@@ -1,7 +1,7 @@
 Profile: ISiKLaboruntersuchungHb
 Parent: ISiKLaboruntersuchung
 Id: ISiKLaboruntersuchungHb
-Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Hb eines Patienten in ISiK Szenarien."
+Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Hämoglobin-Wertes (Hb) eines Patienten in ISiK Szenarien."
 * insert Meta
 * insert CommonElements
 * code.coding[loinc] from ObservationCodesHb
