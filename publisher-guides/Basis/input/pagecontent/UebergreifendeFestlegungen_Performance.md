@@ -44,7 +44,9 @@ Für diese Performance-Kategorien gilt:
   - Kontext: Listen- und Übersichtsabfragen (z.B. Patientenlisten, Falllisten)
   - Anforderung: **"unter 5 Sekunden"**
     - Beispielanfrage - alle Patienten mit dem Namen Müller: `baseURL/Patient?name=Müller`
-    - Beispielanfrage - alle Patienten auf der Station "123": `baseURL/_has:Encounter:patient:location=Location/ward123`
+    - Beispielanfrage - alle Patienten auf der Station "123": - Patienten und Kontakte auf einer bestimmten Station mit einem aktiven Kontakt auf dieser Station
+    - Beispielabruf: `GET baseURL/Encounter?location=Location/loc-hospital&status=in-progress&_include=Encounter:subject`
+    - Hinweis: Diese Abfrage kann ebenfalls in zwei Schritte unterteilt werden
 
 Als vorwiegend unkritisch gelten Abfragen (PK5 bis PK6), die z. B.
 - im Rahmen der Planungs- und Organisationsinformationen mit Bezug zu Patienten (z.B. Terminpläne, Belegungspläne), 
