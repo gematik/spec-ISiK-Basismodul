@@ -13,7 +13,7 @@ Neben Patienten- und Encounter- zentrierten abfragen, SOLLEN bzw. (MÜSSEN in be
     - Beispielabruf: `GET baseURL/MedicationAdministration`
     - Beispielabruf: `GET baseURL/MedicationRequest`
 
-Auf der Seite (Artefakte)[artifacts.md] werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt, welche im Rahmen des Bestätigungsverfahrens von ISiK unterstützt werden MÜSSEN.
+Auf der Seite (Artefakte)[artifacts.html] werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt, welche im Rahmen des Bestätigungsverfahrens von ISiK unterstützt werden MÜSSEN.
 
 Ein Server MUSS sicherstellen, dass nicht unterstützte oder leere Suchparameter ignoriert werden und **nicht** zu einem Fehler führen. Siehe [FHIR RESTful Search - Handling Errors](https://www.hl7.org/fhir/R4/search.html#errors).
 Alle vom Server für eine konkrete Suche verwendeten Parameter MÜSSEN im Self-Link des Searchset-Bundles angegeben sein, siehe [Self-Link](https://hl7.org/fhir/R4/search.html#selflink).
