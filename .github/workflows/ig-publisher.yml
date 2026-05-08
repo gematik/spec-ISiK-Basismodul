@@ -234,6 +234,13 @@ jobs:
           name: fsh-generated
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
 
+      # Install Python for the CapabilityStatement expander script
+      - name: Setup Python
+        if: ${{ toJSON(matrix.capability_statement_urls) != 'null' && toJSON(matrix.capability_statement_urls) != '[]' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
       # Expand capability statements into concrete resources for the IG
       - name: Expand CapabilityStatement
         if: ${{ toJSON(matrix.capability_statement_urls) != 'null' && toJSON(matrix.capability_statement_urls) != '[]' }}
