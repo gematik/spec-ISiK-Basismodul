@@ -1,7 +1,7 @@
 
 ### Einführung
 
-Die automatisierte Medikamentenvergabe im Krankenhaus stellt einen komplexen, sicherheitskritischen Prozess dar, an dem mehrere Berufsgruppen und Systeme beteiligt sind. Medikationsfehler zählen weltweit zu den häufigsten vermeidbaren unerwünschten Ereignissen im stationären Bereich und können schwerwiegende Folgen für Patientinnen und Patienten haben. Die Digitalisierung und Automatisierung dieses Prozesses bietet das größte Potenzial, solche Fehler systematisch zu verhindern.
+Die automatisierte Medikamentenvergabe im Krankenhaus stellt einen komplexen, sicherheitskritischen Prozess dar, an dem mehrere Berufsgruppen und Systeme beteiligt sind. Medikationsfehler zählen weltweit zu den häufigsten vermeidbaren unerwünschten Ereignissen im stationären Bereich und können schwerwiegende Folgen für Patientinnen und Patienten haben [[WHO, 2017](https://www.who.int/initiatives/medication-without-harm); [Tariq et al., 2024](https://www.ncbi.nlm.nih.gov/books/NBK519065/)]. Die Digitalisierung und Automatisierung dieses Prozesses bietet das größte Potenzial, solche Fehler systematisch zu verhindern [[Tariq et al., 2024](https://www.ncbi.nlm.nih.gov/books/NBK519065/)].
 
 Dieser Abschnitt beschreibt zunächst das übergeordnete Konzept des **Closed-Loop-Medikationsmanagements** als Rahmenmodell für einen lückenlosen, digital gestützten Medikationskreislauf. Anschließend wird das **Unit-Dose-System** als eine der zentralen technischen und organisatorischen Säulen dieses Konzepts vertiefend erläutert. Das Verständnis beider Konzepte bildet die Grundlage für die in diesem Modul definierten FHIR-Ressourcen und Interaktionen.
 
@@ -114,5 +114,4 @@ Die oben beschriebenen Prozesse legen die Grundlage für die in diesem Modul def
 
 - Die **Medikationsverordnung** (`MedicationRequest`) repräsentiert die ärztliche Verordnung im digitalen Prozess.
 - Die **Medikationsverabreichung** (`MedicationAdministration`) dokumentiert die erfolgte Gabe am Patienten und schließt damit den Kreislauf. Eine abgebrochene Verabreichung infolge einer nicht bestandenen 5R-Prüfung wird ebenfalls als `MedicationAdministration` mit `status: stopped` und entsprechendem `statusReason` abgebildet.
-- Die **Medikationsabgabe** (`MedicationDispense`) bildet den Schritt der apothekerischen Freigabe und Bereitstellung ab.
 
