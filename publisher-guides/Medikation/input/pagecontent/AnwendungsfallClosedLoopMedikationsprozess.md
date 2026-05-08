@@ -35,11 +35,18 @@ Unmittelbar vor der Verabreichung am Patientenbett scannt die Pflegefachkraft:
 - das Patientenarmband (Identifikation des Patienten), und
 - den Barcode der Arzneimitteldosis (Identifikation des Medikaments).
 
-Das System prüft in Echtzeit, ob das richtige Medikament in der richtigen Dosis zum richtigen Zeitpunkt für den richtigen Patienten verabreicht wird (Abgleich mit den sogenannten „5 Rs": **R**ichtiger Patient, **R**ichtiges Medikament, **R**ichtige Dosis, **R**ichtiger Applikationsweg, **R**ichtiger Zeitpunkt). Bei Abweichungen wird die Pflegefachkraft gewarnt.
+Das System prüft in Echtzeit, ob das richtige Medikament in der richtigen Dosis zum richtigen Zeitpunkt für den richtigen Patienten verabreicht wird (Abgleich mit den sogenannten „5 Rs": **R**ichtiger Patient, **R**ichtiges Medikament, **R**ichtige Dosis, **R**ichtiger Applikationsweg, **R**ichtiger Zeitpunkt).
+
+Bei einer **Abweichung** – d. h. wenn die 5R-Prüfung nicht bestanden wird – wird die Verabreichung vom BCMA-System sofort gestoppt. Die Pflegefachkraft identifiziert anschließend, welches der 5 R versagt hat, und erstellt unabhängig vom weiteren Verlauf eine **CIRS-Meldung** (Critical Incident Reporting System), da auch behobene Abweichungen als Beinahe-Fehler meldepflichtig sind. Je nach Art der Abweichung erfolgt eine Eskalation:
+
+- **Medikationsproblem** (falsches Medikament, falsche Dosis, falscher Applikationsweg): Die Pflegefachkraft kontaktiert die Apotheke und gibt das Medikament zurück.
+- **Verordnungsproblem** (Patientenmismatch, Zeitpunktabweichung): Die Pflegefachkraft kontaktiert den zuständigen Arzt, damit die Verordnung im CPOE geprüft und ggf. angepasst wird.
+
+Nach der Eskalation wird der Abbruch im eMAR dokumentiert. Ist der Fehler behebbar (z. B. beschädigtes Barcode-Etikett, korrigierte Verordnung), startet die Pflegefachkraft den Scan-Vorgang vollständig neu – beginnend mit dem Patientenarmband. Ist der Fehler nicht behebbar, wird die Verabreichung endgültig gestoppt.
 
 **5. Elektronische Verabreichungsdokumentation (eMAR – electronic Medication Administration Record)**
 
-Nach erfolgreicher Verifikation wird die Verabreichung automatisch im elektronischen Medikationsverabreichungsprotokoll dokumentiert. Damit ist der Kreislauf „geschlossen". Die dokumentierte Verabreichung ist direkt mit der ursprünglichen ärztlichen Verordnung verknüpft und für alle beteiligten Berufsgruppen transparent einsehbar.
+Nach erfolgreicher Verifikation wird die Verabreichung automatisch im elektronischen Medikationsverabreichungsprotokoll dokumentiert. Damit ist der Kreislauf „geschlossen". Die dokumentierte Verabreichung ist direkt mit der ursprünglichen ärztlichen Verordnung verknüpft und für alle beteiligten Berufsgruppen transparent einsehbar. Das eMAR dokumentiert dabei nicht nur erfolgreiche Verabreichungen, sondern auch abgebrochene – inklusive Abbruchgrund – wenn die 5R-Prüfung nicht bestanden wurde.
 
 #### Beteiligte Akteure
 
@@ -52,7 +59,8 @@ Im Closed-Loop-Medikationsprozess sind typischerweise folgende Akteure beteiligt
 | Krankenhausapotheke / Apotheker | Pharmazeutische Prüfung und Freigabe der Verordnung |
 | Kommissionierroboter / ADC | Automatisierte, patientenindividuelle Bereitstellung der Arzneimitteldosen |
 | Pflegefachkraft / BCMA-System | Verifikation am Patientenbett, Verabreichung und Dokumentation |
-| eMAR / KIS | Lückenlose elektronische Dokumentation aller Verabreichungsschritte |
+| eMAR / KIS | Lückenlose elektronische Dokumentation aller Verabreichungsschritte, inkl. Abbrüchen |
+| CIRS / Fehlermeldesystem | Anonymisierte Erfassung von Beinahe-Fehlern und Medikationsabweichungen zur Qualitätssicherung |
 
 #### Patientensicherheitspotenzial
 
@@ -105,6 +113,6 @@ Das Unit-Dose-System bietet gegenüber traditionellen Verfahren wesentliche Vort
 Die oben beschriebenen Prozesse legen die Grundlage für die in diesem Modul definierten FHIR-Ressourcen und Interaktionen. Im Kontext des Unit-Dose-Systems sowie des Closed-Loop-Prozesses ergeben sich konkrete Anforderungen an den digitalen Datenaustausch zwischen den beteiligten Systemen (KIS, Apothekensystem, Pflegedokumentationssystem):
 
 - Die **Medikationsverordnung** (`MedicationRequest`) repräsentiert die ärztliche Verordnung im digitalen Prozess.
-- Die **Medikationsverabreichung** (`MedicationAdministration`) dokumentiert die erfolgte Gabe am Patienten und schließt damit den Kreislauf.
+- Die **Medikationsverabreichung** (`MedicationAdministration`) dokumentiert die erfolgte Gabe am Patienten und schließt damit den Kreislauf. Eine abgebrochene Verabreichung infolge einer nicht bestandenen 5R-Prüfung wird ebenfalls als `MedicationAdministration` mit `status: stopped` und entsprechendem `statusReason` abgebildet.
 - Die **Medikationsabgabe** (`MedicationDispense`) bildet den Schritt der apothekerischen Freigabe und Bereitstellung ab.
 
