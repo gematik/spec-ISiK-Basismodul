@@ -38,13 +38,15 @@ Usage: #definition
 
 Wir definieren einen neuen SearchParameter `combo-status-location`, der die Kriterien `status` und `location` kombiniert. Dadurch können wir direkt die Patienten anfragen, die einen Encounter mit den gewünschten Kriterien haben. Eine Verknüpfung mittels zwei _has Parametern ist nicht möglich, da die Kriterien in diesem Fall nicht in einem Encounter UND verknüpft abgefragt werden können.
 
-#### Option 2 Alternative composite Suchparameter auf location.status und location.location
+#### Option 2b Alternative composite Suchparameter auf location.status und location.location
 
 Alternativ könnte der Suchparameter auch auf `location.status = active` und `location.location = Location/loc-hospital` definiert werden. Beide sind in ISiK mit MS belegt, es kann aber gut sein, dass Systeme den Status der Location nicht sauber mit pflegen und daher ist diese Alternative nicht empfohlen.
 
 ### Option 3: Kombination von Option 1 und 2
 
 Beide Optionen könnten parallel bereitgestellt werden. Option 1 ist auch in vorherigen ISiK Stufen bereits verpflichtend drin und erfordert keine Anpassung auf Seiten von Servern. Option 2 bietet aber eine deutlich effizientere Möglichkeit, die Patienten direkt abzufragen, ohne die Encounter mit zurückzugeben. Es könnte also sinnvoll sein, beide Optionen anzubieten, um die Kompatibilität zu bestehenden Implementierungen zu gewährleisten und gleichzeitig eine effizientere Abfrage zu ermöglichen.
+
+Es müsste Teil der Entscheidung sein, welche Variante von Option 2 implementiert würde.
 
 ## Entscheidung
 [//]: # (
