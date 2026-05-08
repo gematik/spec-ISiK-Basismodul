@@ -6,6 +6,7 @@ Description: "Template für Template-based Extraction auf Basis des (ISiKPatient
 * id
   * insert tbeValue([["item.where(linkId = 'resourceId').answer.value"]])
 * identifier[VersichertenId]
+  * type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
   * value
     * insert tbeValue([["item.where(linkId = 'versichertenId').answer.value"]])
 * identifier[Patientennummer]
