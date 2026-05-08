@@ -40,7 +40,6 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
     Versichertennummer_PKV 0..1
 * identifier[VersichertenId] only IdentifierKvid10
   * ^patternIdentifier.system = "http://fhir.de/sid/gkv/kvid-10" 
-  * ^patternIdentifier.type = $identifier-type-de-basis#KVZ10  
   * ^short = "Lebenslange Krankenversichertennummer"
   * ^comment = "Die als 'KVZ10' kodierte Versichertennummer ist der 10-stellige, 
     unveränderbare Teil der Versichertennummer, 
