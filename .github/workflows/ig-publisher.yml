@@ -237,12 +237,16 @@ jobs:
       # Expand capability statements into concrete resources for the IG
       - name: Expand CapabilityStatement
         if: ${{ toJSON(matrix.capability_statement_urls) != 'null' && toJSON(matrix.capability_statement_urls) != '[]' }}
-        uses: Gefyra/capabilityStatement-expander@v0
-        with:
-          input_directory: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
-          output_directory: ${{ env.EXPANDED_RESOURCES_DIR }}
-          capability_statement_url: ${{ toJSON(matrix.capability_statement_urls) }}
-          expectation_filter: ${{ matrix.import_cps_filter }}
+        shell: bash
+        env:
+          CS_URLS: ${{ toJSON(matrix.capability_statement_urls) }}
+          CS_EXPECTATION_FILTER: ${{ matrix.import_cps_filter }}
+        run: |
+          bash scripts/capabilitystatement-expander/expand.sh \
+            --input-dir "${SUSHI_INPUT_DIR}/fsh-generated" \
+            --output-dir "${EXPANDED_RESOURCES_DIR}" \
+            --urls "${CS_URLS}" \
+            ${CS_EXPECTATION_FILTER:+--expectation-filter "${CS_EXPECTATION_FILTER}"}
 
       # Copy expanded resources into the IG input tree used by igpublisher
       - name: Apply expanded resources to IG input
