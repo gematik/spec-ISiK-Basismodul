@@ -6,6 +6,7 @@ Usage: #example
 * identifier[VersichertenId].type = "KVZ10"
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "654321"
+* identifier[Patientennummer].type = $v2-0203#MR
 * active = false
 * name[Name]
   * family = "Duplikat"
@@ -21,6 +22,7 @@ Usage: #example
 * identifier[VersichertenId].type = "KVZ10"
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "123456"
+* identifier[Patientennummer].type = $v2-0203#MR
 * active = true
 * name[Name]
   * family = "Duplikat"
@@ -36,9 +38,10 @@ InstanceOf: ISiKPatient
 Usage: #example
 * identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
 * identifier[VersichertenId].value = "A123456789"
-* identifier[VersichertenId].type = "KVZ10"
+* identifier[VersichertenId].type = $identifier-type-de-basis#KVZ10
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "123456"
+* identifier[Patientennummer].type = $v2-0203#MR
 * active = true
 * name[Name]
   * family = "Duplikat"
