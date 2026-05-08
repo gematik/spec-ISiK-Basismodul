@@ -11,15 +11,21 @@
         <flowNodeRef>Task_CDSS</flowNodeRef>
         <flowNodeRef>Gateway_CDSS</flowNodeRef>
         <flowNodeRef>Task_Anpassen</flowNodeRef>
+        <flowNodeRef>Gateway_Bereitstellung</flowNodeRef>
       </lane>
       <lane id="Lane_Apotheke" name="Krankenhausapotheke">
-        <flowNodeRef>Task_Pharma</flowNodeRef>
         <flowNodeRef>Gateway_Freigabe</flowNodeRef>
+        <flowNodeRef>Task_Pharma</flowNodeRef>
       </lane>
       <lane id="Lane_Kommission" name="Kommissionierung / Unit Dose">
         <flowNodeRef>Task_Kommission</flowNodeRef>
         <flowNodeRef>Task_Verpackung</flowNodeRef>
         <flowNodeRef>Task_Transport</flowNodeRef>
+      </lane>
+      <lane id="Lane_ADC" name="Stationsversorgung / ADC">
+        <flowNodeRef>Task_ADC_Anforderung</flowNodeRef>
+        <flowNodeRef>Task_ADC_Anzeige</flowNodeRef>
+        <flowNodeRef>Task_ADC_Entnahme</flowNodeRef>
       </lane>
       <lane id="Lane_Pflege" name="Pflege / BCMA / eMAR">
         <flowNodeRef>Task_ScanMed</flowNodeRef>
@@ -27,13 +33,13 @@
         <flowNodeRef>Task_Verabreichen</flowNodeRef>
         <flowNodeRef>Task_Doku</flowNodeRef>
         <flowNodeRef>EndEvent_1</flowNodeRef>
-        <flowNodeRef>EndEvent_Abbruch</flowNodeRef>
         <flowNodeRef>Task_ScanPatient</flowNodeRef>
-        <flowNodeRef>Task_FehlerUrsache</flowNodeRef>
         <flowNodeRef>Task_CIRS</flowNodeRef>
         <flowNodeRef>Gateway_Eskalation</flowNodeRef>
-        <flowNodeRef>Task_ApothekeKontakt</flowNodeRef>
+        <flowNodeRef>Task_FehlerUrsache</flowNodeRef>
+        <flowNodeRef>EndEvent_Abbruch</flowNodeRef>
         <flowNodeRef>Task_ArztKontakt</flowNodeRef>
+        <flowNodeRef>Task_ApothekeKontakt</flowNodeRef>
         <flowNodeRef>Gateway_EskalationJoin</flowNodeRef>
         <flowNodeRef>Task_FehlerDoku</flowNodeRef>
         <flowNodeRef>Gateway_Behebbar</flowNodeRef>
@@ -60,10 +66,6 @@
     <task id="Task_Anpassen" name="Verordnung anpassen">
       <incoming>Flow_4</incoming>
       <outgoing>Flow_5</outgoing>
-    </task>
-    <task id="Task_Pharma" name="Pharmazeutische Prüfung und Freigabe">
-      <incoming>Flow_6</incoming>
-      <outgoing>Flow_7</outgoing>
     </task>
     <exclusiveGateway id="Gateway_Freigabe" name="Freigabe erteilt?">
       <incoming>Flow_7</incoming>
@@ -93,6 +95,7 @@
     </exclusiveGateway>
     <task id="Task_Verabreichen" name="Medikament verabreichen">
       <incoming>Flow_16</incoming>
+      <incoming>Flow_ADC3</incoming>
       <outgoing>Flow_17</outgoing>
     </task>
     <task id="Task_Doku" name="Verabreichung im eMAR dokumentieren">
@@ -102,15 +105,12 @@
     <endEvent id="EndEvent_1" name="Kreislauf geschlossen">
       <incoming>Flow_18</incoming>
     </endEvent>
-    <endEvent id="EndEvent_Abbruch" name="Verabreichung gestoppt">
-      <incoming>Flow_27</incoming>
-    </endEvent>
     <sequenceFlow id="Flow_1" sourceRef="StartEvent_1" targetRef="Task_CPOE" />
     <sequenceFlow id="Flow_2" sourceRef="Task_CPOE" targetRef="Task_CDSS" />
     <sequenceFlow id="Flow_3" sourceRef="Task_CDSS" targetRef="Gateway_CDSS" />
     <sequenceFlow id="Flow_4" name="Warnung" sourceRef="Gateway_CDSS" targetRef="Task_Anpassen" />
     <sequenceFlow id="Flow_5" sourceRef="Task_Anpassen" targetRef="Task_CPOE" />
-    <sequenceFlow id="Flow_6" name="Keine Warnung" sourceRef="Gateway_CDSS" targetRef="Task_Pharma" />
+    <sequenceFlow id="Flow_6" name="Keine Warnung" sourceRef="Gateway_CDSS" targetRef="Gateway_Bereitstellung" />
     <sequenceFlow id="Flow_7" sourceRef="Task_Pharma" targetRef="Gateway_Freigabe" />
     <sequenceFlow id="Flow_8" name="Rückfrage" sourceRef="Gateway_Freigabe" targetRef="Task_CPOE" />
     <sequenceFlow id="Flow_9" name="Freigabe" sourceRef="Gateway_Freigabe" targetRef="Task_Kommission" />
@@ -123,14 +123,14 @@
     <sequenceFlow id="Flow_16" name="Bestanden" sourceRef="Gateway_5R" targetRef="Task_Verabreichen" />
     <sequenceFlow id="Flow_17" sourceRef="Task_Verabreichen" targetRef="Task_Doku" />
     <sequenceFlow id="Flow_18" sourceRef="Task_Doku" targetRef="EndEvent_1" />
+    <task id="Task_ADC_Anforderung" name="Anforderung an Arzneischrank (ADC) übermitteln">
+      <incoming>Flow_6b</incoming>
+      <outgoing>Flow_ADC1</outgoing>
+    </task>
     <task id="Task_ScanPatient" name="Patienten- armband scannen">
       <incoming>Flow_12</incoming>
       <incoming>Flow_28</incoming>
       <outgoing>Flow_13</outgoing>
-    </task>
-    <task id="Task_FehlerUrsache" name="Abweichungs-ursache identifizieren">
-      <incoming>Flow_15</incoming>
-      <outgoing>Flow_19</outgoing>
     </task>
     <task id="Task_CIRS" name="CIRS-Meldung erstellen">
       <incoming>Flow_19</incoming>
@@ -141,13 +141,52 @@
       <outgoing>Flow_21</outgoing>
       <outgoing>Flow_22</outgoing>
     </exclusiveGateway>
-    <task id="Task_ApothekeKontakt" name="Apotheke kontaktieren, Medikament zurückgeben">
-      <incoming>Flow_21</incoming>
-      <outgoing>Flow_23</outgoing>
+    <sequenceFlow id="Flow_19" sourceRef="Task_FehlerUrsache" targetRef="Task_CIRS" />
+    <sequenceFlow id="Flow_20" sourceRef="Task_CIRS" targetRef="Gateway_Eskalation" />
+    <sequenceFlow id="Flow_21" name="Medikationsproblem" sourceRef="Gateway_Eskalation" targetRef="Task_ApothekeKontakt" />
+    <sequenceFlow id="Flow_22" name="Verordnungsproblem" sourceRef="Gateway_Eskalation" targetRef="Task_ArztKontakt" />
+    <sequenceFlow id="Flow_23" sourceRef="Task_ApothekeKontakt" targetRef="Gateway_EskalationJoin" />
+    <sequenceFlow id="Flow_24" sourceRef="Task_ArztKontakt" targetRef="Gateway_EskalationJoin" />
+    <sequenceFlow id="Flow_25" sourceRef="Gateway_EskalationJoin" targetRef="Task_FehlerDoku" />
+    <sequenceFlow id="Flow_26" sourceRef="Task_FehlerDoku" targetRef="Gateway_Behebbar" />
+    <sequenceFlow id="Flow_27" name="Nein" sourceRef="Gateway_Behebbar" targetRef="EndEvent_Abbruch" />
+    <sequenceFlow id="Flow_28" name="Neustart" sourceRef="Gateway_Behebbar" targetRef="Task_ScanPatient" />
+    <sequenceFlow id="Flow_6a" name="Unit Dose" sourceRef="Gateway_Bereitstellung" targetRef="Task_Pharma" />
+    <sequenceFlow id="Flow_6b" name="Arzneischrank" sourceRef="Gateway_Bereitstellung" targetRef="Task_ADC_Anforderung" />
+    <sequenceFlow id="Flow_ADC1" sourceRef="Task_ADC_Anforderung" targetRef="Task_ADC_Anzeige" />
+    <sequenceFlow id="Flow_ADC2" sourceRef="Task_ADC_Anzeige" targetRef="Task_ADC_Entnahme" />
+    <sequenceFlow id="Flow_ADC3" sourceRef="Task_ADC_Entnahme" targetRef="Task_Verabreichen" />
+    <task id="Task_ADC_Anzeige" name="ADC zeigt Entnahmeliste an">
+      <incoming>Flow_ADC1</incoming>
+      <outgoing>Flow_ADC2</outgoing>
     </task>
+    <task id="Task_FehlerUrsache" name="Abweichungs-ursache identifizieren">
+      <incoming>Flow_15</incoming>
+      <outgoing>Flow_19</outgoing>
+    </task>
+    <task id="Task_Pharma" name="Pharmazeutische Prüfung und Freigabe">
+      <incoming>Flow_6a</incoming>
+      <outgoing>Flow_7</outgoing>
+    </task>
+    <exclusiveGateway id="Gateway_Bereitstellung" name="Bereitstellungs-weg?">
+      <incoming>Flow_6</incoming>
+      <outgoing>Flow_6a</outgoing>
+      <outgoing>Flow_6b</outgoing>
+    </exclusiveGateway>
+    <task id="Task_ADC_Entnahme" name="Medikament aus ADC entnehmen">
+      <incoming>Flow_ADC2</incoming>
+      <outgoing>Flow_ADC3</outgoing>
+    </task>
+    <endEvent id="EndEvent_Abbruch" name="Verabreichung gestoppt">
+      <incoming>Flow_27</incoming>
+    </endEvent>
     <task id="Task_ArztKontakt" name="Arzt kontaktieren, Verordnung im CPOE prüfen">
       <incoming>Flow_22</incoming>
       <outgoing>Flow_24</outgoing>
+    </task>
+    <task id="Task_ApothekeKontakt" name="Apotheke kontaktieren, Medikament zurückgeben">
+      <incoming>Flow_21</incoming>
+      <outgoing>Flow_23</outgoing>
     </task>
     <exclusiveGateway id="Gateway_EskalationJoin">
       <incoming>Flow_23</incoming>
@@ -163,37 +202,31 @@
       <outgoing>Flow_27</outgoing>
       <outgoing>Flow_28</outgoing>
     </exclusiveGateway>
-    <sequenceFlow id="Flow_19" sourceRef="Task_FehlerUrsache" targetRef="Task_CIRS" />
-    <sequenceFlow id="Flow_20" sourceRef="Task_CIRS" targetRef="Gateway_Eskalation" />
-    <sequenceFlow id="Flow_21" name="Medikationsproblem" sourceRef="Gateway_Eskalation" targetRef="Task_ApothekeKontakt" />
-    <sequenceFlow id="Flow_22" name="Verordnungsproblem" sourceRef="Gateway_Eskalation" targetRef="Task_ArztKontakt" />
-    <sequenceFlow id="Flow_23" sourceRef="Task_ApothekeKontakt" targetRef="Gateway_EskalationJoin" />
-    <sequenceFlow id="Flow_24" sourceRef="Task_ArztKontakt" targetRef="Gateway_EskalationJoin" />
-    <sequenceFlow id="Flow_25" sourceRef="Gateway_EskalationJoin" targetRef="Task_FehlerDoku" />
-    <sequenceFlow id="Flow_26" sourceRef="Task_FehlerDoku" targetRef="Gateway_Behebbar" />
-    <sequenceFlow id="Flow_27" name="Nein" sourceRef="Gateway_Behebbar" targetRef="EndEvent_Abbruch" />
-    <sequenceFlow id="Flow_28" name="Neustart" sourceRef="Gateway_Behebbar" targetRef="Task_ScanPatient" />
   </process>
   <bpmndi:BPMNDiagram id="BpmnDiagram_1">
     <bpmndi:BPMNPlane id="BpmnPlane_1" bpmnElement="Collaboration_CLMP">
       <bpmndi:BPMNShape id="Participant_CLMP_di" bpmnElement="Participant_CLMP" isHorizontal="true">
-        <omgdc:Bounds x="160" y="60" width="2300" height="1250" />
+        <omgdc:Bounds x="160" y="60" width="2410" height="1450" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_Pflege_di" bpmnElement="Lane_Pflege" isHorizontal="true">
-        <omgdc:Bounds x="190" y="710" width="2270" height="600" />
+        <omgdc:Bounds x="190" y="910" width="2380" height="600" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_ADC_di" bpmnElement="Lane_ADC" isHorizontal="true">
+        <omgdc:Bounds x="190" y="710" width="2380" height="200" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_Kommission_di" bpmnElement="Lane_Kommission" isHorizontal="true">
-        <omgdc:Bounds x="190" y="510" width="2270" height="200" />
+        <omgdc:Bounds x="190" y="510" width="2380" height="200" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_Apotheke_di" bpmnElement="Lane_Apotheke" isHorizontal="true">
-        <omgdc:Bounds x="190" y="310" width="2270" height="200" />
+        <omgdc:Bounds x="190" y="310" width="2380" height="200" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_Arzt_di" bpmnElement="Lane_Arzt" isHorizontal="true">
-        <omgdc:Bounds x="190" y="60" width="2270" height="250" />
+        <omgdc:Bounds x="190" y="60" width="2380" height="250" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
@@ -213,15 +246,11 @@
       <bpmndi:BPMNShape id="Gateway_CDSS_di" bpmnElement="Gateway_CDSS" isMarkerVisible="true">
         <omgdc:Bounds x="700" y="155" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="758" y="170" width="85" height="14" />
+          <omgdc:Bounds x="682" y="131" width="85" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_Anpassen_di" bpmnElement="Task_Anpassen">
         <omgdc:Bounds x="530" y="225" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_Pharma_di" bpmnElement="Task_Pharma">
-        <omgdc:Bounds x="810" y="370" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_Freigabe_di" bpmnElement="Gateway_Freigabe" isMarkerVisible="true">
@@ -242,38 +271,96 @@
         <omgdc:Bounds x="1410" y="570" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_ScanPatient_di" bpmnElement="Task_ScanPatient">
-        <omgdc:Bounds x="1070" y="810" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_ScanMed_di" bpmnElement="Task_ScanMed">
-        <omgdc:Bounds x="1240" y="810" width="100" height="80" />
+        <omgdc:Bounds x="1240" y="1010" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_5R_di" bpmnElement="Gateway_5R" isMarkerVisible="true">
-        <omgdc:Bounds x="1410" y="825" width="50" height="50" />
+        <omgdc:Bounds x="1410" y="1025" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="1405" y="882" width="60" height="27" />
+          <omgdc:Bounds x="1405" y="987.5" width="60" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_Verabreichen_di" bpmnElement="Task_Verabreichen">
-        <omgdc:Bounds x="1530" y="810" width="100" height="80" />
+        <omgdc:Bounds x="1530" y="1010" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_Doku_di" bpmnElement="Task_Doku">
-        <omgdc:Bounds x="1700" y="810" width="100" height="80" />
+        <omgdc:Bounds x="1700" y="1010" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_1_di" bpmnElement="EndEvent_1">
-        <omgdc:Bounds x="1870" y="832" width="36" height="36" />
+        <omgdc:Bounds x="1870" y="1032" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="1848" y="875" width="80" height="27" />
+          <omgdc:Bounds x="1848" y="1075" width="80" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="EndEvent_Abbruch_di" bpmnElement="EndEvent_Abbruch">
-        <omgdc:Bounds x="2387" y="1090" width="36" height="36" />
+      <bpmndi:BPMNShape id="Task_ADC_Anforderung_di" bpmnElement="Task_ADC_Anforderung">
+        <omgdc:Bounds x="850" y="750" width="160" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_ScanPatient_di" bpmnElement="Task_ScanPatient">
+        <omgdc:Bounds x="1070" y="1010" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_CIRS_di" bpmnElement="Task_CIRS">
+        <omgdc:Bounds x="1560" y="1160" width="120" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_Eskalation_di" bpmnElement="Gateway_Eskalation" isMarkerVisible="true">
+        <omgdc:Bounds x="1740" y="1175" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="2367" y="1133" width="76" height="27" />
+          <omgdc:Bounds x="1728" y="1232" width="76" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_ADC_Anzeige_di" bpmnElement="Task_ADC_Anzeige">
+        <omgdc:Bounds x="1170" y="750" width="160" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_FehlerUrsache_di" bpmnElement="Task_FehlerUrsache">
+        <omgdc:Bounds x="1370" y="1160" width="130" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Pharma_di" bpmnElement="Task_Pharma">
+        <omgdc:Bounds x="810" y="370" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_Bereitstellung_di" bpmnElement="Gateway_Bereitstellung" isMarkerVisible="true">
+        <omgdc:Bounds x="835" y="155" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="822" y="118" width="76" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_ADC_Entnahme_di" bpmnElement="Task_ADC_Entnahme">
+        <omgdc:Bounds x="1500" y="750" width="160" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_Abbruch_di" bpmnElement="EndEvent_Abbruch">
+        <omgdc:Bounds x="2442" y="1290" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="2423" y="1333" width="74" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_ArztKontakt_di" bpmnElement="Task_ArztKontakt">
+        <omgdc:Bounds x="1925" y="1250" width="150" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_ApothekeKontakt_di" bpmnElement="Task_ApothekeKontakt">
+        <omgdc:Bounds x="1930" y="1130" width="160" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_EskalationJoin_di" bpmnElement="Gateway_EskalationJoin" isMarkerVisible="true">
+        <omgdc:Bounds x="2135" y="1195" width="50" height="50" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_FehlerDoku_di" bpmnElement="Task_FehlerDoku">
+        <omgdc:Bounds x="2210" y="1180" width="140" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_Behebbar_di" bpmnElement="Gateway_Behebbar" isMarkerVisible="true">
+        <omgdc:Bounds x="2435" y="1195" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="2356" y="1183" width="87" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
@@ -303,11 +390,9 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_6_di" bpmnElement="Flow_6">
         <omgdi:waypoint x="750" y="180" />
-        <omgdi:waypoint x="780" y="180" />
-        <omgdi:waypoint x="780" y="410" />
-        <omgdi:waypoint x="810" y="410" />
+        <omgdi:waypoint x="835" y="180" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="785" y="290" width="80" height="14" />
+          <omgdc:Bounds x="752" y="162" width="76" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_7_di" bpmnElement="Flow_7">
@@ -341,136 +426,126 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_12_di" bpmnElement="Flow_12">
         <omgdi:waypoint x="1460" y="650" />
-        <omgdi:waypoint x="1460" y="780" />
-        <omgdi:waypoint x="1120" y="780" />
-        <omgdi:waypoint x="1120" y="810" />
+        <omgdi:waypoint x="1460" y="940" />
+        <omgdi:waypoint x="1120" y="940" />
+        <omgdi:waypoint x="1120" y="1010" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_13_di" bpmnElement="Flow_13">
-        <omgdi:waypoint x="1170" y="850" />
-        <omgdi:waypoint x="1240" y="850" />
+        <omgdi:waypoint x="1170" y="1050" />
+        <omgdi:waypoint x="1240" y="1050" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_14_di" bpmnElement="Flow_14">
-        <omgdi:waypoint x="1340" y="850" />
-        <omgdi:waypoint x="1410" y="850" />
+        <omgdi:waypoint x="1340" y="1050" />
+        <omgdi:waypoint x="1410" y="1050" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_15_di" bpmnElement="Flow_15">
-        <omgdi:waypoint x="1435" y="875" />
-        <omgdi:waypoint x="1440" y="960" />
+        <omgdi:waypoint x="1434" y="1074" />
+        <omgdi:waypoint x="1434" y="1160" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="1448" y="905" width="65" height="14" />
+          <omgdc:Bounds x="1448" y="1108" width="60" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_16_di" bpmnElement="Flow_16">
-        <omgdi:waypoint x="1460" y="850" />
-        <omgdi:waypoint x="1530" y="850" />
+        <omgdi:waypoint x="1460" y="1050" />
+        <omgdi:waypoint x="1530" y="1050" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="1470" y="832" width="55" height="14" />
+          <omgdc:Bounds x="1470" y="1032" width="55" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_17_di" bpmnElement="Flow_17">
-        <omgdi:waypoint x="1630" y="850" />
-        <omgdi:waypoint x="1700" y="850" />
+        <omgdi:waypoint x="1630" y="1050" />
+        <omgdi:waypoint x="1700" y="1050" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_18_di" bpmnElement="Flow_18">
-        <omgdi:waypoint x="1800" y="850" />
-        <omgdi:waypoint x="1870" y="850" />
+        <omgdi:waypoint x="1800" y="1050" />
+        <omgdi:waypoint x="1870" y="1050" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="Task_FehlerUrsache_di" bpmnElement="Task_FehlerUrsache">
-        <omgdc:Bounds x="1375" y="960" width="130" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_CIRS_di" bpmnElement="Task_CIRS">
-        <omgdc:Bounds x="1560" y="960" width="120" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Gateway_Eskalation_di" bpmnElement="Gateway_Eskalation" isMarkerVisible="true">
-        <omgdc:Bounds x="1740" y="975" width="50" height="50" />
-        <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="1728" y="1032" width="76" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_ApothekeKontakt_di" bpmnElement="Task_ApothekeKontakt">
-        <omgdc:Bounds x="1850" y="930" width="160" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_ArztKontakt_di" bpmnElement="Task_ArztKontakt">
-        <omgdc:Bounds x="1850" y="1050" width="150" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Gateway_EskalationJoin_di" bpmnElement="Gateway_EskalationJoin" isMarkerVisible="true">
-        <omgdc:Bounds x="2070" y="975" width="50" height="50" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_FehlerDoku_di" bpmnElement="Task_FehlerDoku">
-        <omgdc:Bounds x="2180" y="960" width="140" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Gateway_Behebbar_di" bpmnElement="Gateway_Behebbar" isMarkerVisible="true">
-        <omgdc:Bounds x="2380" y="975" width="50" height="50" />
-        <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="2368" y="1032" width="74" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_19_di" bpmnElement="Flow_19">
-        <omgdi:waypoint x="1505" y="1000" />
-        <omgdi:waypoint x="1560" y="1000" />
+        <omgdi:waypoint x="1500" y="1200" />
+        <omgdi:waypoint x="1560" y="1200" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_20_di" bpmnElement="Flow_20">
-        <omgdi:waypoint x="1680" y="1000" />
-        <omgdi:waypoint x="1740" y="1000" />
+        <omgdi:waypoint x="1680" y="1200" />
+        <omgdi:waypoint x="1740" y="1200" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_21_di" bpmnElement="Flow_21">
-        <omgdi:waypoint x="1790" y="1000" />
-        <omgdi:waypoint x="1820" y="1000" />
-        <omgdi:waypoint x="1820" y="970" />
-        <omgdi:waypoint x="1850" y="970" />
+        <omgdi:waypoint x="1790" y="1200" />
+        <omgdi:waypoint x="1820" y="1200" />
+        <omgdi:waypoint x="1820" y="1170" />
+        <omgdi:waypoint x="1930" y="1170" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="1800" y="978" width="95" height="14" />
+          <omgdc:Bounds x="1881" y="1178" width="81" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_22_di" bpmnElement="Flow_22">
-        <omgdi:waypoint x="1790" y="1000" />
-        <omgdi:waypoint x="1820" y="1000" />
-        <omgdi:waypoint x="1820" y="1090" />
-        <omgdi:waypoint x="1850" y="1090" />
+        <omgdi:waypoint x="1790" y="1200" />
+        <omgdi:waypoint x="1820" y="1200" />
+        <omgdi:waypoint x="1820" y="1290" />
+        <omgdi:waypoint x="1925" y="1290" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="1800" y="1044" width="98" height="14" />
+          <omgdc:Bounds x="1807" y="1244" width="85" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_23_di" bpmnElement="Flow_23">
-        <omgdi:waypoint x="2010" y="970" />
-        <omgdi:waypoint x="2040" y="970" />
-        <omgdi:waypoint x="2040" y="1000" />
-        <omgdi:waypoint x="2070" y="1000" />
+        <omgdi:waypoint x="2090" y="1170" />
+        <omgdi:waypoint x="2160" y="1170" />
+        <omgdi:waypoint x="2160" y="1195" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_24_di" bpmnElement="Flow_24">
-        <omgdi:waypoint x="2000" y="1090" />
-        <omgdi:waypoint x="2095" y="1090" />
-        <omgdi:waypoint x="2095" y="1025" />
+        <omgdi:waypoint x="2075" y="1290" />
+        <omgdi:waypoint x="2160" y="1290" />
+        <omgdi:waypoint x="2160" y="1245" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_25_di" bpmnElement="Flow_25">
-        <omgdi:waypoint x="2120" y="1000" />
-        <omgdi:waypoint x="2180" y="1000" />
+        <omgdi:waypoint x="2185" y="1220" />
+        <omgdi:waypoint x="2210" y="1220" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_26_di" bpmnElement="Flow_26">
-        <omgdi:waypoint x="2320" y="1000" />
-        <omgdi:waypoint x="2380" y="1000" />
+        <omgdi:waypoint x="2350" y="1220" />
+        <omgdi:waypoint x="2435" y="1220" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_27_di" bpmnElement="Flow_27">
-        <omgdi:waypoint x="2405" y="1025" />
-        <omgdi:waypoint x="2405" y="1090" />
+        <omgdi:waypoint x="2460" y="1245" />
+        <omgdi:waypoint x="2460" y="1290" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="2412" y="1050" width="25" height="14" />
+          <omgdc:Bounds x="2503" y="1260" width="23" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_28_di" bpmnElement="Flow_28">
-        <omgdi:waypoint x="2405" y="975" />
-        <omgdi:waypoint x="2405" y="750" />
-        <omgdi:waypoint x="1120" y="750" />
-        <omgdi:waypoint x="1120" y="810" />
+        <omgdi:waypoint x="2460" y="1195" />
+        <omgdi:waypoint x="2460" y="680" />
+        <omgdi:waypoint x="1120" y="680" />
+        <omgdi:waypoint x="1120" y="1010" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="1730" y="732" width="45" height="14" />
+          <omgdc:Bounds x="1759" y="660" width="42" height="14" />
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_6a_di" bpmnElement="Flow_6a">
+        <omgdi:waypoint x="860" y="205" />
+        <omgdi:waypoint x="860" y="370" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="868" y="281" width="49" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_6b_di" bpmnElement="Flow_6b">
+        <omgdi:waypoint x="885" y="180" />
+        <omgdi:waypoint x="930" y="180" />
+        <omgdi:waypoint x="930" y="750" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="895" y="162" width="70" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ADC1_di" bpmnElement="Flow_ADC1">
+        <omgdi:waypoint x="1010" y="790" />
+        <omgdi:waypoint x="1170" y="790" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ADC2_di" bpmnElement="Flow_ADC2">
+        <omgdi:waypoint x="1330" y="790" />
+        <omgdi:waypoint x="1500" y="790" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ADC3_di" bpmnElement="Flow_ADC3">
+        <omgdi:waypoint x="1580" y="830" />
+        <omgdi:waypoint x="1580" y="1010" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

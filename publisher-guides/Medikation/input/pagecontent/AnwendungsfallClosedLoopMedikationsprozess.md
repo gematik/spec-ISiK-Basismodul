@@ -3,7 +3,7 @@
 
 Die automatisierte Medikamentenvergabe im Krankenhaus stellt einen komplexen, sicherheitskritischen Prozess dar, an dem mehrere Berufsgruppen und Systeme beteiligt sind. Medikationsfehler zählen weltweit zu den häufigsten vermeidbaren unerwünschten Ereignissen im stationären Bereich und können schwerwiegende Folgen für Patientinnen und Patienten haben [[WHO, 2017](https://www.who.int/initiatives/medication-without-harm); [Tariq et al., 2024](https://www.ncbi.nlm.nih.gov/books/NBK519065/)]. Die Digitalisierung und Automatisierung dieses Prozesses bietet das größte Potenzial, solche Fehler systematisch zu verhindern [[Tariq et al., 2024](https://www.ncbi.nlm.nih.gov/books/NBK519065/)].
 
-Dieser Abschnitt beschreibt zunächst das übergeordnete Konzept des **Closed-Loop-Medikationsmanagements** als Rahmenmodell für einen lückenlosen, digital gestützten Medikationskreislauf. Anschließend wird das **Unit-Dose-System** als eine der zentralen technischen und organisatorischen Säulen dieses Konzepts vertiefend erläutert. Das Verständnis beider Konzepte bildet die Grundlage für die in diesem Modul definierten FHIR-Ressourcen und Interaktionen.
+Dieser Abschnitt beschreibt zunächst das übergeordnete Konzept des **Closed-Loop-Medikationsmanagements** als Rahmenmodell für einen lückenlosen, digital gestützten Medikationskreislauf. Anschließend wird das **Unit-Dose-System** als eine der zentralen technischen und organisatorischen Säulen dieses Konzepts vertiefend erläutert. Da jedoch nicht alle Arzneimittelformen über das Unit-Dose-Verfahren bereitgestellt werden können – es eignet sich primär für feste Darreichungsformen wie Tabletten –, wird ergänzend der Bereitstellungsweg über einen stationsgebundenen **Arzneischrank (Automated Dispensing Cabinet, ADC)** beschrieben, der beispielsweise für Salben oder Cremes zum Einsatz kommt. Das Verständnis beider Bereitstellungswege bildet die Grundlage für die in diesem Modul definierten FHIR-Ressourcen und Interaktionen.
 
 ### Closed-Loop-Medikationsverordnungsprozess
 
@@ -21,15 +21,25 @@ Der Closed-Loop-Medikationsprozess lässt sich in folgende Kernprozesse untertei
 
 Der Arzt erfasst die Medikamentenverordnung direkt in einem digitalen System (z. B. KIS, PDMS). Dabei wird die Verordnung unmittelbar durch klinische Entscheidungsunterstützungssysteme (CDSS) auf Dosierung, Kontraindikationen, Allergiepotenzial und Arzneimittelinteraktionen geprüft. Fehlerhafte oder riskante Verordnungen werden dem Arzt sofort gemeldet.
 
-**2. Apothekerische Prüfung und Freigabe**
+Auf Basis der CDSS-geprüften Verordnung bestimmt das System den **Bereitstellungsweg**: Für feste Darreichungsformen (insbesondere Tabletten) wird der Prozess über den Unit-Dose-Pfad (Schritte 2 und 3a) fortgeführt; für nicht-feste Darreichungsformen (z. B. Salben) über den ADC-Pfad (Schritt 3b), der die apothekerliche Freigabe und zentrale Kommissionierung umgeht.
+
+**2. Apothekerische Prüfung und Freigabe** *(Unit-Dose-Pfad)*
 
 Die elektronisch übermittelte Verordnung wird in der Krankenhausapotheke pharmazeutisch geprüft. Nach Freigabe durch den Apotheker wird die Verordnung an das Kommissioniersystem weitergeleitet.
 
-**3. Automatisierte Arzneimittelbereitstellung (Unit Dose)**
+**3. Arzneimittelbereitstellung**
 
-Auf Basis der freigegebenen Verordnung werden die Medikamente automatisiert kommissioniert. Das hierfür eingesetzte Verfahren wird als **Unit-Dose-System** bezeichnet: Jede Einzel-Dosis wird patientenindividuell verpackt und mit einem maschinenlesbaren Barcode versehen, der die eindeutige Verknüpfung zur zugehörigen Verordnung sicherstellt. Das Unit-Dose-System ist damit eine Schlüsselkomponente des Closed Loop und wird im folgenden Abschnitt vertiefend beschrieben.
+Je nach Darreichungsform des verordneten Medikaments erfolgt die Bereitstellung über einen von zwei Pfaden:
 
-**4. Barcode-gestützte Verifikation bei der Verabreichung (BCMA – Barcode Medication Administration)**
+**3a. Unit-Dose-Bereitstellung** *(für feste Darreichungsformen, insbesondere Tabletten)*
+
+Auf Basis der apothekerlich geprüften und freigegebenen Verordnung werden die Medikamente automatisiert kommissioniert. Das hierfür eingesetzte Verfahren wird als **Unit-Dose-System** bezeichnet: Jede Einzel-Dosis wird patientenindividuell verpackt und mit einem maschinenlesbaren Barcode versehen, der die eindeutige Verknüpfung zur zugehörigen Verordnung sicherstellt. Das Unit-Dose-System ist damit eine Schlüsselkomponente des Closed Loop und wird im folgenden Abschnitt vertiefend beschrieben.
+
+**3b. Entnahme aus dem Arzneischrank (ADC)** *(für nicht-feste Darreichungsformen, z. B. Salben, Cremes)*
+
+Arzneimittel, die nicht im Unit-Dose-Verfahren bereitgestellt werden können, werden stationär in einem **automatisierten Arzneischrank (ADC – Automated Dispensing Cabinet)** vorgehalten. Nach der Verordnung zeigt das ADC-System der Pflegefachkraft automatisch an, welche Medikamente für den jeweiligen Patienten zu entnehmen sind. Die Pflegefachkraft entnimmt das Medikament auf Basis dieser Anzeige direkt aus dem Schrank. Da für diese Darreichungsformen keine maschinenlesbare Einzel-Dosis-Verpackung vorliegt, entfällt der BCMA-Verifikationsschritt; die Verabreichung erfolgt direkt im Anschluss an die Entnahme.
+
+**4. Barcode-gestützte Verifikation bei der Verabreichung (BCMA – Barcode Medication Administration)** *(Unit-Dose-Pfad)*
 
 Unmittelbar vor der Verabreichung am Patientenbett scannt die Pflegefachkraft:
 - das Patientenarmband (Identifikation des Patienten), und
@@ -44,9 +54,9 @@ Bei einer **Abweichung** – d. h. wenn die 5R-Prüfung nicht bestanden wird –
 
 Nach der Eskalation wird der Abbruch im eMAR dokumentiert. Ist der Fehler behebbar (z. B. beschädigtes Barcode-Etikett, korrigierte Verordnung), startet die Pflegefachkraft den Scan-Vorgang vollständig neu – beginnend mit dem Patientenarmband. Ist der Fehler nicht behebbar, wird die Verabreichung endgültig gestoppt.
 
-**5. Elektronische Verabreichungsdokumentation (eMAR – electronic Medication Administration Record)**
+**5. Elektronische Verabreichungsdokumentation (eMAR – electronic Medication Administration Record)** *(beide Pfade)*
 
-Nach erfolgreicher Verifikation wird die Verabreichung automatisch im elektronischen Medikationsverabreichungsprotokoll dokumentiert. Damit ist der Kreislauf „geschlossen". Die dokumentierte Verabreichung ist direkt mit der ursprünglichen ärztlichen Verordnung verknüpft und für alle beteiligten Berufsgruppen transparent einsehbar. Das eMAR dokumentiert dabei nicht nur erfolgreiche Verabreichungen, sondern auch abgebrochene – inklusive Abbruchgrund – wenn die 5R-Prüfung nicht bestanden wurde.
+Nach der Verabreichung wird diese automatisch im elektronischen Medikationsverabreichungsprotokoll dokumentiert. Damit ist der Kreislauf „geschlossen". Die dokumentierte Verabreichung ist direkt mit der ursprünglichen ärztlichen Verordnung verknüpft und für alle beteiligten Berufsgruppen transparent einsehbar. Dieser Schritt gilt unabhängig vom gewählten Bereitstellungsweg – sowohl für den Unit-Dose-Pfad als auch für den ADC-Pfad. Das eMAR dokumentiert dabei nicht nur erfolgreiche Verabreichungen, sondern auch abgebrochene – inklusive Abbruchgrund – wenn im Unit-Dose-Pfad die 5R-Prüfung nicht bestanden wurde.
 
 #### Beteiligte Akteure
 
@@ -57,7 +67,8 @@ Im Closed-Loop-Medikationsprozess sind typischerweise folgende Akteure beteiligt
 | Arzt / CPOE-System | Erfassung und elektronische Übermittlung der Medikamentenverordnung |
 | Klinisches Entscheidungsunterstützungssystem (CDSS) | Automatisierte Prüfung auf Interaktionen, Kontraindikationen und Dosierungsfehler |
 | Krankenhausapotheke / Apotheker | Pharmazeutische Prüfung und Freigabe der Verordnung |
-| Kommissionierroboter / ADC | Automatisierte, patientenindividuelle Bereitstellung der Arzneimitteldosen |
+| Kommissionierroboter (Unit Dose) | Automatisierte, patientenindividuelle Bereitstellung von Arzneimitteln in fester Darreichungsform durch die Krankenhausapotheke *(Unit-Dose-Pfad)* |
+| Arzneischrank / ADC | Automatisierter Ausgabeschrank auf der Station; zeigt der Pflegefachkraft die patientenindividuelle Entnahmeliste für nicht-Unit-Dose-fähige Medikamente an *(ADC-Pfad)* |
 | Pflegefachkraft / BCMA-System | Verifikation am Patientenbett, Verabreichung und Dokumentation |
 | eMAR / KIS | Lückenlose elektronische Dokumentation aller Verabreichungsschritte, inkl. Abbrüchen |
 | CIRS / Fehlermeldesystem | Anonymisierte Erfassung von Beinahe-Fehlern und Medikationsabweichungen zur Qualitätssicherung |
@@ -68,7 +79,7 @@ Studien belegen, dass der vollständig implementierte Closed Loop die Rate klini
 
 #### Prozessdarstellung
 
-Das nachfolgende BPMN-Diagramm stellt den oben beschriebenen Prozess in einer möglichen Form dar. In der Praxis können institutionsspezifische Abweichungen auftreten – beispielsweise erfolgt die Kommissionierung der Medikamente in einigen Krankenhäusern nicht zentral über die Apotheke, sondern dezentral auf Stationsebene mittels automatisierter Ausgabegeräte (Automated Dispensing Cabinets).
+Das nachfolgende BPMN-Diagramm stellt eine Variante des oben beschriebenen Prozesses dar. Es zeigt die zwei parallelen Bereitstellungspfade: den **Unit-Dose-Pfad** (über apothekerliche Prüfung, Kommissionierung und BCMA-Verifikation am Patientenbett) sowie den **ADC-Pfad** (direkt über den Arzneischrank auf der Station, ohne BCMA-Scan). In der Praxis können institutionsspezifische Abweichungen auftreten.
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
@@ -81,7 +92,9 @@ Das nachfolgende BPMN-Diagramm stellt den oben beschriebenen Prozess in einer m�
 
 #### Was ist das Unit-Dose-System?
 
-Das Unit-Dose-System (auch: Unit-Dose-Versorgung) ist das im Closed-Loop-Prozess eingesetzte Verfahren zur automatisierten, patientenindividuellen Arzneimittelbereitstellung durch die Krankenhausapotheke (Prozessschritt 3). Es beschreibt ein organisatorisches und technisches Konzept, bei dem jede einzelne Medikamentengabe (eine sogenannte Einzeldosis oder „Unit Dose") für jeden Patienten individuell zusammengestellt, verpackt und beschriftet bereitgestellt wird – in der Regel für einen definierten Versorgungszeitraum (typischerweise 24 Stunden).
+Das Unit-Dose-System (auch: Unit-Dose-Versorgung) ist das im Closed-Loop-Prozess eingesetzte Verfahren zur automatisierten, patientenindividuellen Arzneimittelbereitstellung durch die Krankenhausapotheke (Prozessschritt 3a). Es beschreibt ein organisatorisches und technisches Konzept, bei dem jede einzelne Medikamentengabe (eine sogenannte Einzeldosis oder „Unit Dose") für jeden Patienten individuell zusammengestellt, verpackt und beschriftet bereitgestellt wird – in der Regel für einen definierten Versorgungszeitraum (typischerweise 24 Stunden).
+
+Das Unit-Dose-System eignet sich primär für **feste Darreichungsformen** wie Tabletten, Kapseln oder Dragees. Arzneimittel in nicht-fester Form (z. B. Salben, Cremes, Tropfen, Injektionslösungen) können in der Regel nicht über Unit-Dose-Automaten bereitgestellt werden und werden stattdessen über den **Arzneischrank (ADC)** auf der Station bereitgestellt (Prozessschritt 3b).
 
 Im Gegensatz zur klassischen Stationsbevorratung, bei der Medikamente in größeren Mengen auf der Station gelagert und von Pflegefachkräften dosiert abgeteilt werden, erfolgt beim Unit-Dose-System die Verpackung und Etikettierung einzelner Dosen durch die Krankenhausapotheke. Mit zunehmender Verbreitung automatisierter Kommissionierroboter (sog. Blister-Maschinen bzw. Unit-Dose-Roboter) wird dieser Prozess in modernen Apotheken vollständig maschinell unterstützt.
 
@@ -97,7 +110,7 @@ Der apothekenseitige Prozess innerhalb des Unit-Dose-Systems gliedert sich typis
 
 4. **Übergabe an die Verifikation:** Die bereitgestellten Unit-Dose-Päckchen werden von der Pflegefachkraft am Patientenbett per Barcode-Scan verifiziert (BCMA, Prozessschritt 4 des Closed Loop) und verabreicht.
 
-Die Erzeugung der Einzel-Dosen ist ein gesonderter Prozess der zuvor ablaufen muss. Er wird in diesem IG nicht näher behandelt, da es sich hierbei eher um logistischen Prozess handelt, der nicht dem Scope von ISiK zugeordnet wird.
+Die Erzeugung der Einzel-Dosen ist ein gesonderter Prozess der zuvor ablaufen muss. Er wird in diesem IG nicht näher behandelt, da es sich hierbei eher um einen logistischen Prozess handelt, der nicht dem Scope von ISiK zugeordnet wird.
 
 #### Vorteile des Unit-Dose-Systems
 
@@ -110,8 +123,8 @@ Das Unit-Dose-System bietet gegenüber traditionellen Verfahren wesentliche Vort
 
 ### Einordnung in die FHIR-Spezifikation
 
-Die oben beschriebenen Prozesse legen die Grundlage für die in diesem Modul definierten FHIR-Ressourcen und Interaktionen. Im Kontext des Unit-Dose-Systems sowie des Closed-Loop-Prozesses ergeben sich konkrete Anforderungen an den digitalen Datenaustausch zwischen den beteiligten Systemen (KIS, Apothekensystem, Pflegedokumentationssystem):
+Im Kontext beider Bereitstellungspfade (Unit Dose und ADC) sowie des Closed-Loop-Prozesses ergeben sich konkrete Anforderungen an den digitalen Datenaustausch zwischen den beteiligten Systemen (KIS, Apothekensystem, ADC-System, Pflegedokumentationssystem):
 
-- Die **Medikationsverordnung** (`MedicationRequest`) repräsentiert die ärztliche Verordnung im digitalen Prozess.
-- Die **Medikationsverabreichung** (`MedicationAdministration`) dokumentiert die erfolgte Gabe am Patienten und schließt damit den Kreislauf. Eine abgebrochene Verabreichung infolge einer nicht bestandenen 5R-Prüfung wird ebenfalls als `MedicationAdministration` mit `status: stopped` und entsprechendem `statusReason` abgebildet.
+- Die **Medikationsverordnung** (`MedicationRequest`) repräsentiert die ärztliche Verordnung im digitalen Prozess – unabhängig davon, über welchen Bereitstellungsweg das Medikament bereitgestellt wird.
+- Die **Medikationsverabreichung** (`MedicationAdministration`) dokumentiert die erfolgte Gabe am Patienten und schließt damit den Kreislauf. Beide Bereitstellungspfade (Unit Dose und ADC) führen zu einer `MedicationAdministration`-Ressource; inhaltlich werden sie nicht unterschieden. Eine abgebrochene Verabreichung infolge einer nicht bestandenen 5R-Prüfung (Unit-Dose-Pfad) wird als `MedicationAdministration` mit `status: stopped` und entsprechendem `statusReason` abgebildet.
 
