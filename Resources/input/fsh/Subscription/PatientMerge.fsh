@@ -3,6 +3,7 @@ InstanceOf: ISiKPatient
 Usage: #example
 * identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
 * identifier[VersichertenId].value = "A123456789"
+* identifier[VersichertenId].type = "KVID10"
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "654321"
 * active = false
@@ -17,6 +18,7 @@ InstanceOf: ISiKPatient
 Usage: #example
 * identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
 * identifier[VersichertenId].value = "A123456789"
+* identifier[VersichertenId].type = "KVID10"
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "123456"
 * active = true
@@ -34,6 +36,7 @@ InstanceOf: ISiKPatient
 Usage: #example
 * identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
 * identifier[VersichertenId].value = "A123456789"
+* identifier[VersichertenId].type = "KVID10"
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "123456"
 * active = true
