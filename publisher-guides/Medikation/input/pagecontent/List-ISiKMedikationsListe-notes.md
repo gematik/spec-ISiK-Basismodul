@@ -5,17 +5,7 @@ Für die Ressource `ISiKMedikationsListe` wird `List.mode` zur fachlichen Einord
 * `snapshot`: abgeschlossene, zu einem bestimmten Zeitpunkt gültige Momentaufnahme der Medikation
 * `working`: aktiv gepflegte oder fortlaufend weiterbearbeitete Medikationsliste
 
-Die Wahl von `List.mode` richtet sich danach, ob die Liste als dokumentierter Zustand oder als Arbeitsgrundlage verwendet wird.
-
-Pro Patient und fachlichem Kontext (z. B. Behandlungskontext) sollte in der Regel nur eine aktiv gepflegte Medikationsliste (`List.mode = working` und `List.status = current`) geführt werden.
-
-Dies dient der Vermeidung konkurrierender Listen und stellt eine eindeutige fachliche Referenz sicher.
-
-Mehrere parallele Listen können in unterschiedlichen Kontexten oder für unterschiedliche Zwecke existieren, sollten jedoch klar voneinander abgegrenzt sein.
-
 ### Typische Anwendungsszenarien
-
-Die `ISiKMedikationsListe` stellt eine fachliche Zusammenführung von Medikationsinformationen dar. Die Wahl von `List.mode` hängt davon ab, ob ein definierter Zustand dokumentiert oder eine fortschreibbare Liste geführt wird.
 
 **Aufnahmemedikation**
 
