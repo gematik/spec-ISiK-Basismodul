@@ -140,7 +140,39 @@ Enable detailed logging to troubleshoot expansion issues:
 
 ## 💻 Local Execution (for Development)
 
-### Via `expand.sh` (recommended)
+### Via Workflow YAML (empfohlen für lokale Entwicklung)
+
+Wenn das Repository bereits eine GitHub Actions Workflow-Datei mit der IG-Matrix enthält (wie `.github/workflows/ig-publisher.yml`), können `input-dir`, `output-dir`, `urls` und `expectation-filter` automatisch daraus abgeleitet werden — einfach IG-Namen angeben:
+
+**Linux / macOS / WSL:**
+```bash
+bash scripts/capabilitystatement-expander/expand.sh \
+  --workflow-file .github/workflows/ig-publisher.yml \
+  --ig-name ISiK-Basis
+```
+
+**Windows PowerShell:**
+```powershell
+.\scripts\capabilitystatement-expander\expand.ps1 `
+  -WorkflowFile .\.github\workflows\ig-publisher.yml `
+  -IGName ISiK-Basis
+```
+
+Einzelne Parameter können nach wie vor explizit überschrieben werden, z. B. um ein anderes Output-Verzeichnis zu nutzen:
+
+```bash
+bash scripts/capabilitystatement-expander/expand.sh \
+  --workflow-file .github/workflows/ig-publisher.yml \
+  --ig-name       ISiK-Basis \
+  --output-dir    /tmp/my-output \
+  --verbose
+```
+
+> **Hinweis:** Der Workflow-Modus benötigt PyYAML (`pip install pyyaml`).
+
+---
+
+### Via `expand.sh` (Linux / macOS / WSL)
 
 ```bash
 bash scripts/capabilitystatement-expander/expand.sh \
@@ -159,18 +191,41 @@ bash scripts/capabilitystatement-expander/expand.sh \
   --verbose
 ```
 
-All options can also be set via environment variables: `CS_INPUT_DIR`, `CS_OUTPUT_DIR`, `CS_URLS`, `CS_EXPECTATION_FILTER`, `CS_VERBOSE`, `CS_NO_CLEAN`.
+### Via `expand.ps1` (Windows PowerShell)
+
+```powershell
+.\scripts\capabilitystatement-expander\expand.ps1 `
+  -InputDir  .\fhir-resources `
+  -OutputDir .\output `
+  -Urls      "http://example.org/CapabilityStatement/MyCapabilityStatement" `
+  -Verbose
+```
+
+**Multiple CapabilityStatements:**
+```powershell
+.\scripts\capabilitystatement-expander\expand.ps1 `
+  -InputDir  .\fhir-resources `
+  -OutputDir .\output `
+  -Urls      '["http://example.org/CapabilityStatement/CS1","http://example.org/CapabilityStatement/CS2"]'
+```
+
+> **Execution policy:** If PowerShell blocks the script, run once with:
+> `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned`
+
+All options can also be set via environment variables: `CS_INPUT_DIR`, `CS_OUTPUT_DIR`, `CS_URLS`, `CS_WORKFLOW_FILE`, `CS_IG_NAME`, `CS_EXPECTATION_FILTER`, `CS_VERBOSE`, `CS_NO_CLEAN`.
 
 ### Options
 
-| Option | Description | Required |
-|--------|-------------|----------|
-| `--input-dir <path>` | Directory with FHIR JSON files | ✅ |
-| `--output-dir <path>` | Target directory for expanded resources | ✅ |
-| `--urls <urls>` | Canonical URL(s) to expand: single URL or JSON array | ✅ |
-| `--expectation-filter <lvl>` | `SHALL` / `SHOULD` / `MAY` — imports all entries at that level and above. Default: all (except SHOULD-NOT) | ❌ |
-| `--verbose` | Enable verbose/debug logging | ❌ |
-| `--no-clean` | Keep existing files in output directory | ❌ |
+| Option (`expand.sh` / `expand.ps1`) | Description | Required |
+|---|---|---|
+| `--input-dir` / `-InputDir` | Directory with FHIR JSON files | ✅ (or via `--workflow-file`) |
+| `--output-dir` / `-OutputDir` | Target directory for expanded resources | ✅ (or via `--workflow-file`) |
+| `--urls` / `-Urls` | Canonical URL(s) to expand: single URL or JSON array | ✅ (or via `--workflow-file`) |
+| `--workflow-file` / `-WorkflowFile` | GitHub Actions workflow YAML to read IG config from | ❌ |
+| `--ig-name` / `-IGName` | IG name in the workflow matrix (requires `--workflow-file`) | ❌ |
+| `--expectation-filter` / `-ExpectationFilter` | `SHALL` / `SHOULD` / `MAY` — imports all entries at that level and above | ❌ |
+| `--verbose` / `-Verbose` | Enable verbose/debug logging | ❌ |
+| `--no-clean` / `-NoClean` | Keep existing files in output directory | ❌ |
 
 ### Via Python directly
 
