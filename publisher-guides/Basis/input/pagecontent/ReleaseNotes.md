@@ -18,6 +18,8 @@ Datum: tbd
 * `fix` Suchparameter `clinicalStatus` für das Profil `ISiKDiagnose` wurde von `SHALL` zu `MAY` geändert https://github.com/gematik/spec-ISiK-Basismodul/pull/1180
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
 * `fix` Fehlerhafte Links in der Dokumentation korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/1190   
+* `documentation` Ergänzung einer Tabelle für [Search-Modifier](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Suchparameter.html) https://github.com/gematik/spec-ISiK-Basismodul/pull/1196
+* `documentation` Entfernung von redundantem Text in Performance Anforderungen https://github.com/gematik/spec-ISiK-Basismodul/pull/1198
  
 ### Version 6.0.0-rc
 
