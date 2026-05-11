@@ -22,8 +22,7 @@ Diese Seite bezieht sich ausschließlich auf Encounter (Kontakt/Fall) im ISiK-Ko
 - Es **SOLL** eine Encounter Merge Notification bereitgestellt werden, wenn zwei oder mehr Encounter zu einem gemeinsamen Encounter zusammengeführt wurden.
 - Die Notification **SOLL** das [ISiK Subscription Profil](https://simplifier.net/isik-stufe-6/isiksubscription) nutzen.
 - Als `.criteria` **SOLL** folgender Wert genutzt werden:  
-  `https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge`  
-  mit dem Display: `encounter-merge`
+  `https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge`
 - Die Notification **SOLL** mindestens folgende Informationen enthalten:
   - Die Referenz auf den „überlebenden“ (Master-)Encounter.
   - Die Referenzen auf die „zusammengeführten“ (Source-)Encounters, die nicht mehr eigenständig fortgeführt werden.
@@ -36,6 +35,32 @@ Diese Seite bezieht sich ausschließlich auf Encounter (Kontakt/Fall) im ISiK-Ko
 - Nach erfolgtem Merge **SOLLEN** alle Referenzen, die auf einen der zusammengeführten Encounter zeigen, auf den verbliebenen Encounter aktualisiert werden. Dies ist jedoch außerhalb des Schnittstellenumfangs und in der Verantwortung der implementierenden Systeme.
 - Da für Encounter keine FHIR-Standardoperation wie `$merge` existiert, ist die Benachrichtigung über einen erfolgten Merge ein konzeptuelles Konstrukt (sie ist nicht Teil der offiziellen FHIR-Spezifikation)
 
+#### Obsolete Encounter-Ressource
+
+Es gelten keine gesonderten Anforderungen an eine obsolete Encounter-Ressource über die ISiKKontaktGesundheitseinrichtung-Profilanforderungen hinaus.
+
+Allerdings KANN das encounter-führende System die obsolete Encounter-Ressource nach einem Merge weiter vorhalten. Ein Entfernen der obsoleten Ressource ist ebenfalls erlaubt.
+
+Falls die obsolete Ressource nach einem Merge weiter vorgehalten wird, SOLL die Ersetzungsbeziehung für Clients nachvollziehbar dokumentiert werden.
+
+Die Verwendung der Extension `http://hl7.org/fhir/StructureDefinition/encounter-recordLinkage` ist hierfür eine **optionale** Modellierungsvariante, da diese Extension derzeit noch nicht final veröffentlicht ist.
+
+Bei Nutzung dieser optionalen Variante KÖNNEN die Elemente der obsoleten Ressource wie folgt befüllt werden:
+- `.status = entered-in-error` (sofern fachlich zutreffend)
+- `extension.url = "http://hl7.org/fhir/StructureDefinition/encounter-recordLinkage"`
+- `extension[encounter-recordLinkage].extension[other] = Reference(auf resultierenden Encounter)`
+- `extension[encounter-recordLinkage].extension[type] = "replaced-by"`
+
+#### Resultierende Encounter-Ressource
+
+Es gelten keine gesonderten Anforderungen an eine resultierende Encounter-Ressource über die ISiKKontaktGesundheitseinrichtung-Profilanforderungen hinaus.
+
+Allerdings SOLL das encounter-führende System nach einem Merge die Ersetzungsbeziehung auf der resultierenden Ressource kenntlich machen.
+
+Bei Nutzung der optionalen `encounter-recordLinkage`-Variante KÖNNEN die Elemente der resultierenden Ressource wie folgt befüllt werden:
+- `extension.url = "http://hl7.org/fhir/StructureDefinition/encounter-recordLinkage"`
+- `extension[encounter-recordLinkage].extension[other] = Reference(auf obsolete Encounter-Ressource)`
+- `extension[encounter-recordLinkage].extension[type] = "replaces"`
 
 ### Profilreferenz
 
@@ -43,7 +68,7 @@ Weitere Details zur technischen Abbildung von Encounter-Ressourcen im ISiK-Konte
 
 ---
 
-### Beispiel für eine Encounter Merge Notification (Pseudo-JSON)
+### Beispiel für eine Encounter Merge Subscription
 
 ```json
 {
@@ -53,9 +78,6 @@ Weitere Details zur technischen Abbildung von Encounter-Ressourcen im ISiK-Konte
       "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscription"
     ]
   },
-  "status": "requested",
-  "reason": "Benachrichtigung bei Encounter-Merge",
-  "criteria": "https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge",
   "channel": {
     "type": "rest-hook",
     "endpoint": "https://example.org/fhir/notification",
@@ -67,7 +89,254 @@ Weitere Details zur technischen Abbildung von Encounter-Ressourcen im ISiK-Konte
           "valueCode": "id-only"
         }
       ]
+    },
+    "header": [
+      "Authorization: Bearer xxxxxxxxxx"
+    ]
+  },
+  "status": "requested",
+  "reason": "Encounter merge subscription",
+  "criteria": "https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge"
+}
+```
+
+Nach erfolgreicher Fallzusammenführung würde ein abonnierter Client eine Notification als Bundle mit `SubscriptionStatus` erhalten, z.B.:
+
+```json
+{
+  "resourceType": "Bundle",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscriptionNotification"
+    ]
+  },
+  "type": "history",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:9bb6fcbd-8391-4e35-bd4c-620a2db47af0",
+      "resource": {
+        "resourceType": "Parameters",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscriptionStatus"
+          ]
+        },
+        "parameter": [
+          {
+            "name": "subscription",
+            "valueReference": {
+              "reference": "Subscription/EncounterMergeSubscriptionExample"
+            }
+          },
+          {
+            "name": "topic",
+            "valueCanonical": "https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge"
+          },
+          {
+            "name": "status",
+            "valueCode": "active"
+          },
+          {
+            "name": "type",
+            "valueCode": "event-notification"
+          },
+          {
+            "name": "events-since-subscription-start",
+            "valueString": "1"
+          },
+          {
+            "name": "notification-event",
+            "part": [
+              {
+                "name": "event-number",
+                "valueString": "1"
+              },
+              {
+                "name": "timestamp",
+                "valueInstant": "2026-03-12T17:05:00+01:00"
+              },
+              {
+                "name": "focus",
+                "valueReference": {
+                  "reference": "Encounter/EncounterZiel-1234"
+                }
+              },
+              {
+                "name": "additional-context",
+                "valueReference": {
+                  "reference": "Encounter/EncounterQuelle-4711"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge/$status"
+      },
+      "response": {
+        "status": "200"
+      }
     }
-  }
+  ]
+}
+```
+
+### Beispiele zur Fallzusammenführung
+
+Die Fallzusammenführung kann analog zur Patientenzusammenführung über Quell-, Ziel- und resultierende Encounter-Ressourcen illustriert werden:
+
+"Quell" Encounter-Ressource:
+
+```json
+{
+  "resourceType": "Encounter",
+  "id": "EncounterQuelle-4711",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://fhir.krankenhaus.example/sid/Fallnummer",
+      "value": "F-2026-004711"
+    }
+  ],
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "IMP"
+  },
+  "subject": {
+    "reference": "Patient/DorisZiel"
+  },
+  "period": {
+    "start": "2026-03-10T08:10:00+01:00",
+    "end": "2026-03-12T16:30:00+01:00"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/encounter-recordLinkage",
+      "extension": [
+        {
+          "url": "other",
+          "valueReference": {
+            "reference": "Encounter/EncounterZiel-1234"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "replaced-by"
+        }
+      ]
+    }
+  ]
+}
+```
+
+und
+
+"Ziel" Encounter-Ressource:
+
+```json
+{
+  "resourceType": "Encounter",
+  "id": "EncounterZiel-1234",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://fhir.krankenhaus.example/sid/Fallnummer",
+      "value": "F-2026-001234"
+    }
+  ],
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "IMP"
+  },
+  "subject": {
+    "reference": "Patient/DorisZiel"
+  },
+  "period": {
+    "start": "2026-03-10T08:00:00+01:00",
+    "end": "2026-03-12T17:00:00+01:00"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/encounter-recordLinkage",
+      "extension": [
+        {
+          "url": "other",
+          "valueReference": {
+            "reference": "Encounter/EncounterQuelle-4711"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "replaces"
+        }
+      ]
+    }
+  ]
+}
+```
+
+Mittels eines *Encounter merge* wird die "Ziel"-Encounter-Ressource ausgewählt und weitergeführt. Daraus entsteht die resultierende Encounter-Instanz:
+
+```json
+{
+  "resourceType": "Encounter",
+  "id": "EncounterZiel-1234",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://fhir.krankenhaus.example/sid/Fallnummer",
+      "value": "F-2026-001234"
+    },
+    {
+      "use": "old",
+      "system": "https://fhir.krankenhaus.example/sid/Fallnummer",
+      "value": "F-2026-004711"
+    }
+  ],
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "IMP"
+  },
+  "subject": {
+    "reference": "Patient/DorisZiel"
+  },
+  "period": {
+    "start": "2026-03-10T08:00:00+01:00",
+    "end": "2026-03-12T17:00:00+01:00"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/encounter-recordLinkage",
+      "extension": [
+        {
+          "url": "other",
+          "valueReference": {
+            "reference": "Encounter/EncounterQuelle-4711"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "replaces"
+        }
+      ]
+    }
+  ]
 }
 ```
