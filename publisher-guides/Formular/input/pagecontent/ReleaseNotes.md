@@ -1,8 +1,3 @@
----
-topic: ReleaseNotes
-
----
-
 ### Version 6.0.0-rc
 
 Datum: 02.04.2026
