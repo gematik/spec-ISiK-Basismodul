@@ -168,7 +168,7 @@ Datum: 04.04.2024
 Datum: 08.01.2024
 
 * workflow improvement regarding image rendering and display
-* `improve` Update dependency with Basis:  https://github.com/gematik/spec-ISiK-Medikation/pull/102/commits/039654b03d5b159ed258c35b48c37cd2db3e4a81
+* `improve` Update dependency with Basis: https://github.com/gematik/spec-ISiK-Medikation/pull/102/commits/039654b03d5b159ed258c35b48c37cd2db3e4a81
 * `improve` sentence on ISIKBasis Ressource usage by @f-peverali in https://github.com/gematik/spec-ISiK-Medikation/pull/103
 ----
 ### Version: 3.0.0
