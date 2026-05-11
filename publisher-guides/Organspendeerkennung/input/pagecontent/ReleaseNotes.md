@@ -1,5 +1,6 @@
 ---
 topic: ImplementationGuide-markdown-ReleaseNotes
+
 ---
 ### Release Notes
 
@@ -11,12 +12,12 @@ Im Fall von prozessorientierten Implementierungsleitfäden beginnt die Versionie
 
 Datum: 02.04.2026
 
-* `improve` Einführung zahlreicher Profile zur Abdeckung des geschilderten Use Cases: Neben den Verpflichtenden Profilen (GCS, RASS, Pupillenlichtreaktion - direkt und indirekt, und Pupillengroesse) weitere optional umzusetzende Profile. https://github.com/gematik/spec-ISiK-Basismodul/pull/1048 
+* `improve` Einführung zahlreicher Profile zur Abdeckung des geschilderten Use Cases: Neben den Verpflichtenden Profilen (GCS, RASS, Pupillenlichtreaktion - direkt und indirekt, und Pupillengroesse) weitere optional umzusetzende Profile. <https://github.com/gematik/spec-ISiK-Basismodul/pull/1048> 
     * vgl. auch Vorgaben und Release Notes zum IG "ICU"
-    * Einführung von Suchparametern zur Abfrage einer Stationsliste für Vitalparameter-Server https://github.com/gematik/spec-ISiK-Basismodul/pull/1094
-* `improve` Optionales Profil zur Abbildung von Serumnatrium hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/1047
-* `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
-* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068
+    * Einführung von Suchparametern zur Abfrage einer Stationsliste für Vitalparameter-Server <https://github.com/gematik/spec-ISiK-Basismodul/pull/1094>
+* `improve` Optionales Profil zur Abbildung von Serumnatrium hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1047>
+* `improve` Implicit Rules auf 0..0 beschränkt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1075>
+* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1068>
 
 
 ### Version 0.0.1-rc
