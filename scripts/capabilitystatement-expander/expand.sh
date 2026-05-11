@@ -65,6 +65,7 @@ EXTRACT_SCRIPT=""
 cleanup() {
   [[ -n "${CS_URLS_FILE:-}"   ]] && rm -f "$CS_URLS_FILE"
   [[ -n "${EXTRACT_SCRIPT:-}" ]] && rm -f "$EXTRACT_SCRIPT"
+  return 0
 }
 trap cleanup EXIT
 
