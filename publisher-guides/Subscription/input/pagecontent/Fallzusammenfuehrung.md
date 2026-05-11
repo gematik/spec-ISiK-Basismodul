@@ -66,8 +66,6 @@ Bei Nutzung der optionalen `encounter-recordLinkage`-Variante KÖNNEN die Elemen
 
 Weitere Details zur technischen Abbildung von Encounter-Ressourcen im ISiK-Kontext finden sich im [ISiK-Basis Encounter-Profil](https://gematik.github.io/spec-ISiK-Basismodul/stufe-5/basis/migrate-ig-to-ig-publisher-ptdata-1885/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html).
 
----
-
 ### Beispiel für eine Encounter Merge Subscription
 
 ```json
