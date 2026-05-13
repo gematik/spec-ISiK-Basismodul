@@ -7,6 +7,12 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Im Fall von prozessorientierten Implementierungsleitfäden beginnt die Versionierung nach Semver des Implementierungsleitfadens gemäß des Major Releases im Zuge dessen der Implementierungsleitfaden entstanden ist (X.0.0)
 
+### Version 6.0.0-rc1
+
+Datum: tbd
+
+* `improve` Einführung des Suchparameters `category` für die Procedure Profil zur Vereinfachung der Abfrage dieser Profile
+
 ### Version 6.0.0-rc
 
 Datum: 02.04.2026
