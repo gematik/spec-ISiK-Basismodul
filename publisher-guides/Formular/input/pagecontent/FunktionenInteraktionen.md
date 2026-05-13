@@ -40,7 +40,7 @@ Ist die FormularDatenVorbelegung ausgelagert, so sollte beim FormularRendering e
 
 ### Interaktion: FormularDefinitionsVerwaltung
 Die Interaktion FormularDefinitionsVerwaltung dient der Bereitstellung von FormularDefinitionen.
-In der ersten Ausbaustufe dieses Moduls wird diese Funktionalität als integraler Bestandteil von FormularRenderern angenommen. Perspektivisch sollten [FormularRenderer](Akteure.html#FormularRenderer) jedoch in der Lage sein, auch auf externe Quellen, die als FormularDefinitionBereitsteller agieren, zugreifen zu können, beispielsweise auf nationale Formular-Verzeichnisse oder Formulardefintionen, die vom aufrufenden System (FormularLauncher) bereitgestellt werden.
+In der ersten Ausbaustufe dieses Moduls wird diese Funktionalität als integraler Bestandteil von FormularRenderern angenommen. Perspektivisch sollten [FormularRenderer](Akteure.html#formularrenderer) jedoch in der Lage sein, auch auf externe Quellen, die als FormularDefinitionBereitsteller agieren, zugreifen zu können, beispielsweise auf nationale Formular-Verzeichnisse oder Formulardefintionen, die vom aufrufenden System (FormularLauncher) bereitgestellt werden.
 
 <div>
 {% include formDefVerwaltung.svg %}
@@ -65,13 +65,13 @@ Die folgenden Core und SDC Extensions sind für die Vorbelegung in dieser Stufe 
 ### Funktion: FormularDatenValidierung
 
 Bei der Formulardatenvalidierung handelt es sich formal nicht um eine *Inter*aktion, da
-diese derzeit als eine Aktion angenommen wird, die vom [FormularRenderer](Akteure.html#FormularRenderer) eigenständig ausgeführt wird.
+diese derzeit als eine Aktion angenommen wird, die vom [FormularRenderer](Akteure.html#formularrenderer) eigenständig ausgeführt wird.
 Gemäß FHIR-Spezifikation ist die Validierung jedoch auch als ein Service mittels der $validate-Operation implementierbar.
 
 In künftigen Ausbaustufen des ISiK-Formular-Moduls ist auch eine Einbindung [externer Validierungs-Services](https://hl7.org/fhir/R4/validation.html#op) denkbar. 
 Daher wird diese Funktion bereits in dieser Stufe als *potentielle* Interaktion betrachtet. 
 
-Die Datenextraktion wird in dieser Stufe zunächst ausschließlich von [FormularRenderer](Akteure.html#FormularRenderer) implementiert.
+Die Datenextraktion wird in dieser Stufe zunächst ausschließlich von [FormularRenderer](Akteure.html#formularrenderer) implementiert.
 Hierbei ist zu beachten, dass [FormularDaten](StructureDefinition-ISiKFormularDaten.html) *nicht* gegen ein QuestionnaireResponse-Profil zu validieren sind, 
 sondern gegen die zugrundeliegende [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html).
 
@@ -90,13 +90,13 @@ Die folgenden Core und SDC Extensions sind für die Validierung in dieser Stufe 
 
 ### Interaktion: FormularDatenExtraktion
 
-Bei der Formulardatenextraktion handelt es sich formal nicht um eine *Inter*aktion, da diese derzeit als eine Aktion angenommen wird, die vom [FormularRenderer](Akteure.html#FormularRenderer) eigenständig ausgeführt wird.
+Bei der Formulardatenextraktion handelt es sich formal nicht um eine *Inter*aktion, da diese derzeit als eine Aktion angenommen wird, die vom [FormularRenderer](Akteure.html#formularrenderer) eigenständig ausgeführt wird.
 Gemäß SDC-Spezifikation ist die FormularDaten-Extraktion jedoch auch als ein Service mittels der $extract-Operation implementierbar.
 
 In künftigen Ausbaustufen des ISiK-Formular-Moduls ist auch eine Einbindung [externer Extractions-Services](https://build.fhir.org/ig/HL7/sdc/extraction.html#extraction-service) denkbar. 
 Daher wird diese Funktion bereits in dieser Stufe als *potentielle* Interaktion betrachtet.
 
-Die Datenextraktion wird in dieser Stufe zunächst ausschließlich von [FormularRenderer](Akteure.html#FormularRenderer) implementiert und beschränkt sich auf die Methoden
+Die Datenextraktion wird in dieser Stufe zunächst ausschließlich von [FormularRenderer](Akteure.html#formularrenderer) implementiert und beschränkt sich auf die Methoden
 - [Observation based extraction](https://build.fhir.org/ig/HL7/sdc/extraction.html#observation-based-extraction)
 - [Template based extraction](https://build.fhir.org/ig/HL7/sdc/en/extraction.html#template-based-extraction)
 
