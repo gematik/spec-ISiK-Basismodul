@@ -59,18 +59,6 @@ Description: "Das Datenobjekt ISiKKalender bietet die Möglichkeit Kalender für
   * ^comment = "Begründung Must-Support-Flag (MS): Die KalenderName-Extension ermöglicht es einen menschenlesbaren Namen zu definieren, welcher zur Wiedererkennbarkeit des Kalenders im Rahmen der Terminplanung dient."
   * valueString 1..1
 
-// This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
-//WIP
-Extension: ScheduleName
-Id: ScheduleName
-Context: Schedule
-Description: "Diese Erweiterung ermöglicht es, einem FHIR Schedule (Kalender) einen menschenlesbaren Namen zuzuweisen, der eine schnelle Identifikation und Unterscheidung mehrerer Kalender in Terminplanungsanwendungen erlaubt. Der Name dient zur besseren Übersichtlichkeit, z. B. bei der Auswahl eines Kalenders durch Nutzer oder in Verwaltungsoberflächen für Terminressourcen."
-* insert Meta
-* ^publisher = "HL7 (Backport bereitgestellt durch gematik GmbH)"
-* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Schedule.name"
-* value[x] only string
-* valueString 0..1
-
 Instance: ISiKKalenderExample
 InstanceOf: ISiKKalender
 Usage: #example
