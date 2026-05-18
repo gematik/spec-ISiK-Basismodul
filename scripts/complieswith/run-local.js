@@ -207,6 +207,7 @@ function main() {
       ADVISOR_FILE: 'validator/advisor.json',
       RAW_LOG_PATH: 'validation-raw.log',
       DETAILS_JSON_PATH: 'validation-details.json',
+      HTML_OUTPUT_PATH: 'validation-complieswith.html',
     });
 
     if (step5 === 0) {
@@ -230,7 +231,7 @@ function main() {
   }
 
   // Ergebnis
-  const outputFiles = ['validation-details.json', 'validation-raw.log']
+  const outputFiles = ['validation-details.json', 'validation-raw.log', 'validation-complieswith.html']
     .map((f) => path.resolve(ROOT, f))
     .filter((f) => fs.existsSync(f));
 
