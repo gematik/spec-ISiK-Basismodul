@@ -2,9 +2,7 @@
 
 Im Rahmen interoperabler Krankenhausinformationssysteme (KIS) und anderer Encounter-führender Systeme (z.B. PDMS) kann es vorkommen, dass mehrere Encounter (Abteilungskontakte) desselben Patienten nachträglich als zusammengehörig erkannt und zu einem gemeinsamen Encounter zusammengeführt werden. Ziel dieser Seite ist es, die **technische Abbildung einer solchen Encounter Merge Notification** zu beschreiben und damit eine einheitliche Kommunikation über erfolgte Fallzusammenführungen zu ermöglichen.
 
-Hintergrund für solche Zusammenführungen können unterschiedliche Situationen im klinischen Alltag sein:  
-- **Doppelte Anlage bei Notfallaufnahme:** In Notfallsituationen wird ein Patient häufig schnell aufgenommen, teils ohne vollständige Identitätsprüfung. Wird der Patient später erneut – etwa nach Verlegung oder durch eine andere Abteilung – als neuer Encounter angelegt, können für denselben klinischen Aufenthalt mehrere Encounter entstehen. Nach Klärung der Identität werden diese Encounter zusammengeführt.
-- **Abteilungsübergreifende Behandlung:** Patienten, die während eines Aufenthalts in mehrere Abteilungen verlegt werden (z.B. von der Notaufnahme auf die Intensivstation und dann auf eine Normalstation), werden in manchen Systemen zunächst als eigenständige Encounter geführt. Nach Abschluss des Aufenthalts können diese Encounter zu einem Gesamt-Encounter konsolidiert werden, um den klinischen Verlauf vollständig abzubilden.
+Hintergrund für solche Zusammenführungen können unterschiedliche Situationen im klinischen Alltag sein:
 - **Fehlerhafte oder parallele Dokumentation:** Es kann vorkommen, dass versehentlich für denselben Patienten und denselben Behandlungsanlass mehrere Encounter angelegt werden (z.B. durch parallele Arbeit verschiedener Teams oder Subsysteme). Nach Entdeckung des Fehlers werden die Encounter zusammengeführt, um die medizinische Dokumentation zu vereinheitlichen.
 - **Nachträgliche Datenbereinigung:** Im Rahmen von Qualitätsmanagement, Datenmigration oder Systemumstellungen werden Dubletten entdeckt. Um die medizinische Historie korrekt und konsistent zu halten, werden die betreffenden Encounter zusammengeführt.
 
