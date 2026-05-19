@@ -3,6 +3,13 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 * Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
+### Version 6.0.0-rc1 (Benehmensherstellung)
+
+Datum: tbd
+
+* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
+* `fix` Monitoring-und-Vitaldaten Profil korrigiert, Invarianten-Level behoben https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
+
 ### Version 6.0.0-rc
 
 Datum: 02.04.2026
