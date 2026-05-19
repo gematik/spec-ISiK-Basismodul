@@ -1,6 +1,6 @@
 ### Kontext und Zielsetzung
 
-Im Rahmen interoperabler Krankenhausinformationssysteme (KIS) und anderer Encounter-führender Systeme (z.B. PDMS) kann es vorkommen, dass mehrere Encounter (Fälle) desselben Patienten nachträglich als zusammengehörig erkannt und zu einem gemeinsamen Encounter zusammengeführt werden. Ziel dieser Seite ist es, die **technische Abbildung einer solchen Encounter Merge Notification** zu beschreiben und damit eine einheitliche Kommunikation über erfolgte Fallzusammenführungen zu ermöglichen.
+Im Rahmen interoperabler Krankenhausinformationssysteme (KIS) und anderer Encounter-führender Systeme (z.B. PDMS) kann es vorkommen, dass mehrere Encounter (Abteilungskontakte) desselben Patienten nachträglich als zusammengehörig erkannt und zu einem gemeinsamen Encounter zusammengeführt werden. Ziel dieser Seite ist es, die **technische Abbildung einer solchen Encounter Merge Notification** zu beschreiben und damit eine einheitliche Kommunikation über erfolgte Fallzusammenführungen zu ermöglichen.
 
 Hintergrund für solche Zusammenführungen können unterschiedliche Situationen im klinischen Alltag sein:  
 - **Doppelte Anlage bei Notfallaufnahme:** In Notfallsituationen wird ein Patient häufig schnell aufgenommen, teils ohne vollständige Identitätsprüfung. Wird der Patient später erneut – etwa nach Verlegung oder durch eine andere Abteilung – als neuer Encounter angelegt, können für denselben klinischen Aufenthalt mehrere Encounter entstehen. Nach Klärung der Identität werden diese Encounter zusammengeführt.
