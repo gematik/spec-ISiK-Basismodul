@@ -1,7 +1,3 @@
----
-topic: ImplementationGuide-markdown-ReleaseNotes
----
-
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
@@ -16,11 +12,11 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: 02.04.2026
 
-* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068
-* `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
-* `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
-* `improve` Hinzufügen von zwei weiteren Subscription Topics zur Abbildung von aktualisierten bzw. abgesagten Terminen https://github.com/gematik/spec-ISiK-Basismodul/pull/1087
-* `improve` Subscription-Modul für Stufe 6 normativ erweitert https://github.com/gematik/spec-ISiK-Basismodul/pull/1114/
+* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1068>
+* `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  <https://github.com/gematik/spec-ISiK-Basismodul/pull/1053>
+* `improve` Implicit Rules auf 0..0 beschränkt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1075>
+* `improve` Hinzufügen von zwei weiteren Subscription Topics zur Abbildung von aktualisierten bzw. abgesagten Terminen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1087>
+* `improve` Subscription-Modul für Stufe 6 normativ erweitert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1114/>
   * Verpflichtende Unterstützung von ISiK-konformen FHIR Subscriptions für den Subscription Server-Akteur (normativer Status von KANN auf MUSS angehoben)
   * Payload in Notifications auf `id-only` beschränkt — Ressourcendaten werden nicht übertragen (Pull-Prinzip)
   * Vollständiger Subscription-Workflow dokumentiert: Topic Discovery, Subscription-Anlage, Handshake/Aktivierung, Notifications, Heartbeat, `$status`, `$events`, Recovery und Fehlerhandling
@@ -42,9 +38,9 @@ Im Rahmen dieser Technical Correction wurden keine Änderungen an diesem Impleme
 
 Datum: 23.10.2025
 
-* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
-* `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
-* `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
+* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. <https://github.com/gematik/spec-ISiK-Basismodul/pull/799>
+* `documentation` Rendering der im Modul verwendeten ValueSets <https://github.com/gematik/spec-ISiK-Basismodul/pull/802>
+* `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen <https://github.com/gematik/spec-ISiK-Basismodul/pull/809>
 
 ----
 
@@ -66,7 +62,8 @@ Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
 Datum: 09.04.2025
 
-* `improve` Nachbau der Profile `BackportSubscriptionNotificationR4` & `BackportSubscriptionStatusR4`, Hinzufügen der R4B CS & VS `SubscriptionNotificationType` https://github.com/gematik/spec-ISiK-Basismodul/pull/645
+* `improve` Nachbau der Profile `BackportSubscriptionNotificationR4` & `BackportSubscriptionStatusR4`, Hinzufügen der R4B CS & VS `SubscriptionNotificationType` <https://github.com/gematik/spec-ISiK-Basismodul/pull/645>
 * Erweiterung der PatientMerge Subscription um den R5 Topic Subscription Mechanismus, um weitere Subscription UseCases zu supporten.
 * Überführung der Subscription Profile in ein eigenes Modul "Subscription".
+
 ----
