@@ -9,7 +9,7 @@ Hintergrund für solche Zusammenführungen können unterschiedliche Situationen 
 Die konkrete Umsetzung des Merge-Prozesses sowie die Logik zur Zusammenführung und zur Auflösung von Konflikten liegt vollständig in der Verantwortung der jeweiligen Systeme und ist nicht Bestandteil dieser Spezifikation.
 
 **Hinweis:**  
-Diese Seite bezieht sich ausschließlich auf Encounter (Kontakt/Fall) im ISiK-Kontext. Zur begrifflichen Abgrenzung von Fall, Encounter, Account und EpisodeOfCare siehe die [ISiK-Basis-Seite zur Fallabbildung](https://gematik.github.io/spec-ISiK-Basismodul/stufe-5/basis/migrate-ig-to-ig-publisher-ptdata-1885/Abbildung-des-Konstrukts-Fall.html).
+Diese Seite bezieht sich ausschließlich auf Encounter (Kontakt/Fall) im ISiK-Kontext. Zur begrifflichen Abgrenzung von Fall, Encounter, Account und EpisodeOfCare siehe die [ISiK-Basis-Seite zur Fallabbildung](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html).
 
 ### User Story
 
