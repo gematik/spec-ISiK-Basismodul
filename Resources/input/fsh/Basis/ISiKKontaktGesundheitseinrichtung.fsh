@@ -396,24 +396,6 @@ Hieraus folgt, dass das Element nur relevant ist, falls das bestätigungsrelevan
 
 **Hinweis:**  Zur Umsetzung der Funktionalität zum Dokumentenaustausch gemäß ISiK ist der entsprechende [Implementation Guide zum Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/index.html) zu beachten."
 
-// This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
-Extension: PlannedStartDate
-Id: PlannedStartDate
-Context: Encounter
-Description: "Diese Extension dient der Erfassung des geplanten Startzeitpunkts (dateTime) eines Encounters, z. B. einer stationären Aufnahme, Operation oder eines Termins. Sie ermöglicht eine strukturierte Terminplanung, erleichtert die Koordination verschiedener Versorgungsprozesse und verbessert die Kommunikation zwischen Systemen und Leistungserbringern."
-* insert Meta
-* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
-* value[x] only dateTime
-
-// This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
-Extension: PlannedEndDate
-Id: PlannedEndDate
-Context: Encounter
-Description: "Diese Erweiterung dokumentiert das geplante Enddatum bzw. den geplanten Endzeitpunkt eines Encounters. Sie unterstützt die Vorausplanung von Aufenthalten oder Behandlungen, beispielsweise für die Ressourcenplanung, Terminverwaltung und für die Kommunikation mit nachfolgenden Einrichtungen."
-* insert Meta
-* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
-* value[x] only dateTime
-
 Extension: ExtensionISiKRehaEntlassung
 Id: ExtensionISiKRehaEntlassung
 Description: "Extension zur Dokumentation von Informationen nach §301 (4 und 4a) SGB V, entsprechend dem ärztliche Reha-Entlassungsbericht. Mit dieser Extension können spezifische Entlassungsinformationen im Kontext einer Rehabilitationsmaßnahme angegeben werden. Dies ist besonders relevant für Einrichtungen, die Leistungen im Bereich Rehabilitation erbringen, und unterstützt die strukturierte Kommunikation im Entlassmanagement."
