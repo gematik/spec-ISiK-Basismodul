@@ -9,6 +9,7 @@ Datum: tbd
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 * `fix` CapabilityStatement FormDefinitionsVerwalter und ISiKMedikationsInformation Beispiel korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 * `improve` Entfernen der `replaces`-Extension (`extension.medicationRequestReplaces`) in Medikation-Verordnung und Medikation-Statement; in der Medikation-Verordnung wird stattdessen `MedicationRequest.priorPrescription` verwendet. ([chat.fhir.org](https://chat.fhir.org/#narrow/channel/179166-implementers/topic/Definition.20of.20MedicationRequest.2EpriorPrescription/with/542711071)) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1192>
+* `documentation` Neue Use-Case-Seiten `Bedarfsmedikation` und `Infusionen` im Menü ergänzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1204>
 
 ### Version 6.0.0-rc
 
