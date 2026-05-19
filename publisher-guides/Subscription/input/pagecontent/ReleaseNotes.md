@@ -28,6 +28,7 @@ Datum: 02.04.2026
   * Heartbeat-Pflicht normativ dokumentiert (`heartbeatPeriod`)
   * CapabilityStatement-Extension `capabilitystatement-subscriptiontopic-canonical` verpflichtend mit allen ISiK-Topics (inkl. generischem Topic)
   * Topic-Definitionen für alle SubscriptionTopics präzisiert (Trigger-Semantik je Code)
+* `improve` Guidance und Examples für Encounter-Merge- und Patient-Merge-Topic ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1203
 
 ----
 
