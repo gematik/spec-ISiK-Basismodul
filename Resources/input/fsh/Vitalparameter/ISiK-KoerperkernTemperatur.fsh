@@ -62,7 +62,7 @@ Usage: #example
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 42.5 'Cel' "°C"
 * method = $sct#448169003 "Digital thermometry"
-* bodySite = $sct#245544008 "Entire esophagus"
+* bodySite = $sct#181245004 "Entire esophagus"
 * interpretation = $v3-ObservationInterpretation#H "High"
 * note.text = "Hyperthermie - Ösophageale Kerntemperaturmessung bei maligner Hyperthermie"
 * device = Reference(ExampleDevice)
