@@ -1,7 +1,3 @@
----
-topic: BestPractice
----
-
 ### Funktionsumfang
 
 FormularDefinitionen sollten sich auf den Umfang der in diesem Modul festgelegten Funktionalitäten und Extensions beschränken.
