@@ -173,13 +173,6 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-      * name = "onset"
-      * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-onset"
-      * type = #date
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
       * name = "date"
       * definition = "http://hl7.org/fhir/SearchParameter/conformance-date"
       * type = #date
