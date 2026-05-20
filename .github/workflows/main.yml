@@ -97,23 +97,21 @@ jobs:
             Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|Validation_VAL_Profile_NotSlice||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.gender.extension[0]
             Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|Validation_VAL_Profile_NotSlice||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.birthDate.extension[0]
             # Allowlisted known validation findings, should validate, but doesn't follow up after release
-            |Terminology_TX_NoValid_16|*Encounter Status ValueSet*|*
-            ||*Error from https://tx.fhir.de/fhir: Error: Invalid request:*|
-            CapabilityStatement-ISiKCapabilityStatementSubscriptionRolle.json|Extension_EXT_Unknown_NotHere|*capabilitystatement-subscriptiontopic-canonical could not be found*|CapabilityStatement.rest[0].resource[0].extension[1]
-            Observation-ExampleISiKLaboruntersuchungMaximal.json||*Unknown code '726446007'*|Observation.method.coding[0].code
-            Observation-ExampleOrganRASS20200311.json|Terminology_TX_NoValid_1_CC|*MII VS ICU Score RASS*|Observation.value.ofType(CodeableConcept)
-            Observation-ISiKKoerperkerntemperaturMaxExample.json||*Unknown code '245544008'*|Observation.bodySite.coding[0].code
-            ValueSet-ISiKKernTempSctVS.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Wrong Display Name 'Körperkerntemperatur'*|ValueSet.compose.include[0].concept[0]
-            ValueSet-mii-vs-icu-category-procedure-beatmung-snomed.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Wrong Display Name 'Künstliche Beatmung'*|ValueSet.compose.include[0].concept[0]
-            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33959-0'*|ValueSet.compose.include[0].concept[1]
-            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33960-8'*|ValueSet.compose.include[0].concept[2]
-            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33962-4'*|ValueSet.compose.include[0].concept[4]
-            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33963-2'*|ValueSet.compose.include[0].concept[5]
-            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33964-0'*|ValueSet.compose.include[0].concept[6]
-            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33965-7'*|ValueSet.compose.include[0].concept[7]
-            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33966-5'*|ValueSet.compose.include[0].concept[8]
-            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33967-3'*|ValueSet.compose.include[0].concept[9]
-            ValueSet-vs-mii-icu-code-monitoring-und-vitaldaten-snomed.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Wrong Display Name 'Herzfrequenz'*|ValueSet.compose.include[0].concept[0]
+            #|Terminology_TX_NoValid_16|*Encounter Status ValueSet*|*
+            #||*Error from https://tx.fhir.de/fhir: Error: Invalid request:*|
+            #CapabilityStatement-ISiKCapabilityStatementSubscriptionRolle.json|Extension_EXT_Unknown_NotHere|*capabilitystatement-subscriptiontopic-canonical could not be found*|CapabilityStatement.rest[0].resource[0].extension[1]
+            #Observation-ExampleOrganRASS20200311.json|Terminology_TX_NoValid_1_CC|*MII VS ICU Score RASS*|Observation.value.ofType(CodeableConcept)
+            #ValueSet-ISiKKernTempSctVS.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Wrong Display Name 'Körperkerntemperatur'*|ValueSet.compose.include[0].concept[0]
+            #ValueSet-mii-vs-icu-category-procedure-beatmung-snomed.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Wrong Display Name 'Künstliche Beatmung'*|ValueSet.compose.include[0].concept[0]
+            #ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33959-0'*|ValueSet.compose.include[0].concept[1]
+            #ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33960-8'*|ValueSet.compose.include[0].concept[2]
+            #ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33962-4'*|ValueSet.compose.include[0].concept[4]
+            #ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33963-2'*|ValueSet.compose.include[0].concept[5]
+            #ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33964-0'*|ValueSet.compose.include[0].concept[6]
+            #ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33965-7'*|ValueSet.compose.include[0].concept[7]
+            #ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33966-5'*|ValueSet.compose.include[0].concept[8]
+            #ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33967-3'*|ValueSet.compose.include[0].concept[9]
+            #ValueSet-vs-mii-icu-code-monitoring-und-vitaldaten-snomed.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Wrong Display Name 'Herzfrequenz'*|ValueSet.compose.include[0].concept[0]
 
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.1
