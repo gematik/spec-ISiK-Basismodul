@@ -13,7 +13,7 @@ Datum: tbd
 Datum: 02.04.2026
 
 * `documentation` Initialisierung einer IG Publisher Guide Struktur für ISiK Connect
-* `documentation` Informativer Abschnitt zur Implementierung eines Auto-Provisioning von Benutzeraccounts im Kontext der Verwendung von externen Identity Providern hinzugefügt. https://github.com/gematik/spec-ISiK-Basismodul/pull/888 - Umgesetzt bereits in TC zu Stufe 5
+* `documentation` Informativer Abschnitt zur Implementierung eines Auto-Provisioning von Benutzeraccounts im Kontext der Verwendung von externen Identity Providern hinzugefügt. <https://github.com/gematik/spec-ISiK-Basismodul/pull/888> - Umgesetzt bereits in TC zu Stufe 5
 
 
 ### Version 5.1.0
@@ -33,22 +33,22 @@ Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten �
 
 Datum: 5.6.2025
 
-* `improve` Implementierungshinweise für ISiK-Ressourcenserver hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/697
-* `improve` SMART 2.0 Versionsupdate auf 2.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/754/files
+* `improve` Implementierungshinweise für ISiK-Ressourcenserver hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/697>
+* `improve` SMART 2.0 Versionsupdate auf 2.2 <https://github.com/gematik/spec-ISiK-Basismodul/pull/754/files>
 
 
 ### Version 5.0.0-rc1
 
 Datum: 13.05.2025
 
-* `improve` Kennzeichnung der normativen Passagen wurde ergänzt und informative Passagen wurden ersetzt https://github.com/gematik/spec-ISiK-Basismodul/pull/696
+* `improve` Kennzeichnung der normativen Passagen wurde ergänzt und informative Passagen wurden ersetzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/696>
 
 ### Version 5.0.0-rc (Kommentierung)
 
 Datum: 09.04.2025
 
-* `improve` Motivation wurde auf aktualisierten Anwendungsfall hin angepasst. https://github.com/gematik/spec-ISiK-Basismodul/pull/565
-* `improve` Abschnitt zu Backend-Services hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/commit/a87b0f8c4a042f4893ea1621675c7b852491f459
+* `improve` Motivation wurde auf aktualisierten Anwendungsfall hin angepasst. <https://github.com/gematik/spec-ISiK-Basismodul/pull/565>
+* `improve` Abschnitt zu Backend-Services hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/commit/a87b0f8c4a042f4893ea1621675c7b852491f459>
 
 
 ### Version: 3.0.0
@@ -86,7 +86,7 @@ Datum: 25.04.2023
 Datum: 24.04.2023
 
 Wesentliche Änderungen gegenüber der Version 2.0.1 sind in folgendem Pull-Request erfolgt:
-* Jca_smart_light by @jcaumann in https://github.com/gematik/spec-ISiK-Sicherheit/pull/46
+* Jca_smart_light by @jcaumann in <https://github.com/gematik/spec-ISiK-Sicherheit/pull/46>
 
 Die Änderungen sind folgende:
 * Für ISIK Stufe 2 waren insbesondere EHR/KIS als bestätigungsrelevante Systeme definiert; in ISiK Stufe 3 sind nur noch Ressourcen-Server für ISiK-Security bestätigungsrelevant. Die Motivationen für diese stärkere Fokussierung sind die dadurch konsistentere Fortschreibung von ISiK-Basis sowie die fehlenden Rückmeldungen aus dem ISiK-2-Kommentierungsverfahren zu dem ISiK Stufe 2 zugrunde liegenden Plattformkonzept von _SMART on FHIR_. 

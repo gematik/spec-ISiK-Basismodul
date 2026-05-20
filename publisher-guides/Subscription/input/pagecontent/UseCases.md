@@ -1,7 +1,3 @@
----
-topic: ImplementationGuide-markdown-UseCasesAnwendung-UseCases
----
-
 Die folgenden Anwendungsfälle stellen eine Auswahl möglicher Einsatzszenarien dar und sind nicht
 abschließend. Je nach Bedarf und Systemlandschaft können weitere Subscriptions für spezifische
 Anforderungen definiert werden.

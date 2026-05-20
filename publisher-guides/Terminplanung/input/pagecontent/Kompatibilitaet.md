@@ -1,7 +1,3 @@
----
-topic: Kompatibilitaet
----
-
 Die vorliegende Spezifikation orientiert sich teilweise an bereits vorhandenen (internationalen) FHIR-Projekten zum Thema Terminvergabe. Hier sei vorallem das [Argonaut Scheduling Project](https://fhir.org/guides/argonaut/scheduling/) hervorgehoben.
 
 ### Kompatibilität zum KBV eTerminService

@@ -1,7 +1,3 @@
----
-topic: ImplementationGuide-markdown-UseCasesAnwendung
----
-
 ### Use Cases und Anwendungsszenarien Organspendeerkennung
 
 #### Use Case 
