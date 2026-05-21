@@ -22,7 +22,20 @@ Für die zulässigen Abfragezeiträume – gemessen ab dem Zeitpunkt der Anfrage
 
 > **Hinweis:** Die Anforderungen beziehen sich jeweils auf Abfragen mit einem einzelnen Kalender als Bezugskontext (und i.d.R. ohne gleichzeitige Nutzung von `_include`, `_revinclude` oder Chaining).
 
-#### Begründung der Zeitraum-Grenzen
+#### Begründung der Antwortzeit-Anforderungen
+
+**Warum überhaupt klare Zeitvorgaben?**
+Ohne definierte Antwortzeiten müssen Client-Plattformen konservativ lange Timeouts konfigurieren (in der Praxis heute 10–30 Sekunden). Das führt zu vielen parallel offenen Requests auf Server-Seite – insbesondere zu Spitzenzeiten, wenn mehrere Patienten gleichzeitig einen Termin suchen (z. B. Montagmorgen nach Wochenende). Bei Spitzenlast können daraus Cascading Failures entstehen, bei denen einzelne langsame Anfragen das gesamte System zunehmend verlangsamen.
+
+**Warum speziell unter 15 Sekunden für den erweiterten Bereich?**
+Untersuchungen zur Nutzerwahrnehmung zeigen konsistent, dass ab ca. 10 Sekunden Wartezeit Konzentration und Compliance deutlich nachlassen und Frustration stark ansteigt. Dies führt zu einer Reihe unerwünschter Verhaltensweisen:
+- Nutzende laden die Seite neu, weil sie einen Fehler vermuten
+- Nutzende öffnen parallel neue Tabs oder wechseln das Gerät, weil sie sich von einem anderen Weg eine schnellere Antwort erhoffen – und lösen damit weitere Last aus
+- Nutzende brechen den Vorgang ab und kontaktieren die Einrichtung auf anderem Weg (erhöhte Administrationslast) oder wandern ganz ab (Patientenverlust)
+
+Teile dieses Verhaltens lassen sich durch geeignete UI-Rückmeldungen (z. B. Ladeanimation, Zwischenstatusanzeige) abfedern, aber nicht vollständig vermeiden. Die Grenze von 15 Sekunden für den erweiterten Bereich (4–12 Wochen) setzt daher einen Rahmen, der technisch realisierbar ist und gleichzeitig die nutzerseitige Toleranzschwelle nicht überschreitet.
+
+**Begründung der Zeitraum-Grenzen**
 
 Die Grenze von **4 Wochen** ergibt sich aus dem typischen Buchungshorizont in der ambulanten Versorgung (Praxen, MVZ, Ambulanzen). Bei üblichen Slot-Dauern von 15–30 Minuten entstehen in einem 4-Wochen-Fenster (20 Werktage × 8 Stunden) etwa 320–640 Terminblöcke pro Kalender – eine Ergebnismenge, die serverseitig ohne Pagination in kurzer Antwortzeit beherrschbar ist.
 
