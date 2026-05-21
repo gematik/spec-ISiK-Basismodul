@@ -39,6 +39,18 @@ Client-Implementierungen **SOLLEN**:
 - den Abfragezeitraum so klein wie fachlich notwendig wählen (initial z. B. 2 Wochen, bei Bedarf erweiterbar),
 - Slot-Ergebnisse für denselben Kalender und Zeitraum lokal zwischenspeichern und nicht bei jeder Nutzerinteraktion neu laden.
 
+### Buchungsstatus-Rückmeldung (confirmed / pending)
+
+Die Rückmeldung des Buchungsstatus – d. h. ob ein Termin direkt bestätigt (`confirmed`) oder zunächst als Anfrage vorgemerkt (`pending`) wurde – ist mindestens genauso zeitkritisch wie die vorgelagerte Slot-Abfrage.
+
+**Antwortzeit-Anforderung:** Die durchschnittliche Antwortzeit (ggf. unter Anwendung der Perzentil-Metrik gemäß ISiK Basis Performance-Festlegungen) **MUSS** unter 2 Sekunden (analog PK3 Basis) liegen.
+
+Diese Anforderung gilt für die Antwort auf die `$book`-Operation sowie für eine nachgelagerte Statusabfrage (`GET Appointment/<id>`), mit der der Termin-Requestor den aktuellen Buchungsstatus abruft.
+
+#### Begründung
+
+Das Risiko einer Doppelbuchung steigt überproportional mit der Antwortzeit: Wird dem Nutzenden keine zügige Rückmeldung gegeben, ob die Buchung erfolgreich war oder nicht, können parallele Buchungsversuche desselben Slots entstehen. Zudem nimmt mit zunehmender Wartezeit die Verunsicherung der Patienten zu – mehr noch als bei der Slot-Abfrage –, was zu unerwünschtem Verhalten (z. B. Mehrfachbuchungen, Abbruch und erneuter Buchungsversuch) führen kann.
+
 ### Gültigkeit Vorgaben Basis
 
 Über die hier getroffenen Festlegungen hinaus gelten die Festlegungen zur Performance des ISiK Moduls [Basis](https://gemspec.gematik.de/ig/fhir/isik/basis/latest).
