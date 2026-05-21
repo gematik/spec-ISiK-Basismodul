@@ -6,6 +6,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd
 
+* `improve`Seite zu Performance-Festlegungen hinzugefügt
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
 * `improve` ISiKKalender und ISiKTermin Profile überarbeitet https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
 * `fix` Backport Extensions durch externes Package ersetzt (AppointmentReplaces, PlannedStartDate, PlannedEndDate, ScheduleName) https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
