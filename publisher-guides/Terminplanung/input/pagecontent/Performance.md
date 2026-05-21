@@ -56,9 +56,11 @@ Client-Implementierungen **SOLLEN**:
 
 Die Rückmeldung des Buchungsstatus – d. h. ob ein Termin direkt bestätigt (`confirmed`) oder zunächst als Anfrage vorgemerkt (`pending`) wurde – ist mindestens genauso zeitkritisch wie die vorgelagerte Slot-Abfrage.
 
-**Antwortzeit-Anforderung:** Die durchschnittliche Antwortzeit (ggf. unter Anwendung der Perzentil-Metrik gemäß ISiK Basis Performance-Festlegungen) **MUSS** unter 2 Sekunden (analog PK3 Basis) liegen.
+**Antwortzeit-Anforderungen:**
+- `$book`-Operation: Unter 2 Sekunden (Antwortzeit als Baseline; Zielwert analog PK3 Basis)
+- `GET Appointment/<id>` (Statusabfrage): Unter 1 Sekunde (Antwortzeit als Baseline; analog PK1 Basis)
 
-Diese Anforderung gilt für die Antwort auf die `$book`-Operation sowie für eine nachgelagerte Statusabfrage (`GET Appointment/<id>`), mit der der Termin-Requestor den aktuellen Buchungsstatus abruft.
+Zusammen decken diese beiden Anforderungen den vollständigen Buchungs-Roundtrip ab: die schreibende Buchungsoperation sowie die nachgelagerte Abfrage, mit der der Termin-Requestor den aktuellen Buchungsstatus abruft.
 
 #### Begründung
 
