@@ -11,6 +11,7 @@ Tags werden folgendermaßen verwendet:
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
 Datum: tbd
+* `improve` Überarbeitung des Kapitels "Motivation" <https://github.com/gematik/spec-ISiK-Basismodul/pull/1216>
 <<<<<<< stufe-6/basis/remove-searchparam-allergyintolerance-onset/issue-5
 * `fix` Suchparameter AllergyIntolerance.onset entfernt, aufgrund fehlerhafter Spezifikation <https://github.com/gematik/spec-ISiK-Basismodul/pull/1211>
 =======
