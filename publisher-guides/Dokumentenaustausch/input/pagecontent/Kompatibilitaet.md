@@ -1,7 +1,3 @@
----
-topic: Kompatibilitaet
----
-
 Die Festlegungen in diesem ISiK-Modul wurden auf Grundlage des [IHE-MHD-Profils](https://build.fhir.org/ig/IHE/ITI.MHD/) getroffen.
 Wo die Festlegungen seitens IHE zu eng gefasst waren, um die Kompatibilität wahren zu können, ohne die Umsetzung der ISiK Use Cases einzuschränken, wurden [entsprechende Change-Requests bei IHE Int.](https://github.com/IHE/ITI.MHD/issues?q=is%3Aissue+author%3AsimoneOnFhir+) eingereicht, mit dem Ziel, die Kompatibilität in künftigen Releases von IHE-MHD wieder herzustellen.
 

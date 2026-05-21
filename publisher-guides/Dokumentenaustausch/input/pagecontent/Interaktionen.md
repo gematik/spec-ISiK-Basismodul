@@ -1,8 +1,4 @@
-﻿---
-topic: AkteureUndInteraktionen-AkteureUndInteraktionen-Interaktionen
----
-
-### Dokumentenabfrage und -Zugriff (bestätigungsrelevant)
+﻿### Dokumentenabfrage und -Zugriff (bestätigungsrelevant)
 **Use Case:** Ein (webbasierter/mobiler) Client möchte Dokumente anhand definierter Kriterien abfragen.
 Zur Dokumenten(-Metadaten)abfrage nutzt diese Spezifikation die SEARCH-Interaktionen auf der DocumentReference-Ressource gemäß der FHIR-Spezifikation.
 Dabei MÜSSEN ausgewählte Suchparameter von Dokumentenservern verpflichtend unterstützt werden. Die Selektion erfolgt anhand der Relevanz der Parameter für die identifizierten Use Cases.
