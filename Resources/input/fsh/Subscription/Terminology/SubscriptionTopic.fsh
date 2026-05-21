@@ -3,7 +3,7 @@ Id: ISiKSubscriptionTopic
 Title: "ISiK-SubscriptionTopic"
 Description: "Liste der aller SubscriptionTopics, die in ISiK verwendet werden können. Neben den merge-SubscriptionTopics sind auch die SubscriptionTopics für Updates der Ressourcen enthalten, die in ISiK verwendet werden können."
 * insert Meta
-* ^language = "de-DE"
+* ^language = #de-DE
 * #https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge "patient-merge" "Wird ausgelöst, wenn zwei Patient-Ressourcen zusammengeführt werden (Patient merge)."
 * #https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge "encounter-merge" "Wird ausgelöst, wenn zwei Encounter-Ressourcen zusammengeführt werden (Encounter merge)."
 * #https://gematik.de/fhir/isik/SubscriptionTopic/account-merge "account-merge" "Wird ausgelöst, wenn zwei Account-Ressourcen zusammengeführt werden (Account merge)."
