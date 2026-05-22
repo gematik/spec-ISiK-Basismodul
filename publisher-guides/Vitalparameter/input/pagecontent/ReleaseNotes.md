@@ -10,6 +10,7 @@ Datum: tbd
 * `documentation` Ergänzung von Beispielen und Dokumentation an Observation Suchparametern im CapabilityStatement <https://github.com/gematik/spec-ISiK-Basismodul/pull/1197>
 
 
+
 ### Version 6.0.0-rc
 
 Datum: 02.04.2026
