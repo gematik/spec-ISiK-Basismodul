@@ -4,7 +4,7 @@ Realm: Deutschland
 
 Historische oder abgekündigte Versionen sowie Zwischenveröffentlichungen der Implementierungsleitfäden zur Basis finden Sie [hier](https://gematik.github.io/spec-ISiK-Basismodul/index.html).
 
-Eine Übersicht zu den FHIR-Spezifikationen der gematik  können Sie [in gemSpec erhalten](https://gemspec.gematik.de/fhir/ig/).
+Unterschiedliche [Versionen zur Stufe 6 können Sie hier abrufen](https://simplifier.net/isik-stufe-6).
 
 
 ----
