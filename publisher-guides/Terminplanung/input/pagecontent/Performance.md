@@ -11,8 +11,8 @@ Slot-Abfragen (Terminblock-Abfragen) bilden den performanzkritischen Kern des Bu
 #### Zulässige Abfragezeiträume und Antwortzeit-Anforderungen
 
 **Annahme:** Eine Slot-Abfrage enthält in der Regel den Suchparameter `schedule` , um die Ergebnismenge auf einen einzelnen Kalender einzuschränken.
-
-Für die zulässigen Abfragezeiträume – gemessen ab dem Zeitpunkt der Anfrage – gelten folgende Festlegungen:
+Client-Implementierungen können nicht davon ausgehen, dass `schedule`-unabhängige Anfragen innerhalb der unten definierten Zeiträume beantwortet werden können.
+Für die zulässigen Abfragezeiträume – gemessen ab dem Zeitpunkt der Anfrage – MÜSSEN Termin Repositories für `schedule` bezogene Abfragen folgende Antwortzeiten einhalten:
 
 | Abfragezeitraum | Beschreibung | Typischer Anwendungsfall | Antwortzeit-Anforderung |
 |---|---|---|---|
