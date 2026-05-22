@@ -58,7 +58,7 @@ Die Rückmeldung des Buchungsstatus – d. h. ob ein Termin direkt bestätigt (`
 
 **Antwortzeit-Anforderungen:**
 - `$book`-Operation: Unter 2 Sekunden (Antwortzeit als Baseline; Zielwert analog PK3 Basis)
-- `GET Appointment/<id>` (Statusabfrage): Unter 1 Sekunde (Antwortzeit als Baseline; analog PK1 Basis)
+- `GET Appointment/<id>` (Statusabfrage): Unter 1 Sekunde (Antwortzeit als Baseline; siehe Festlegung PK1 Basis)
 
 Zusammen decken diese beiden Anforderungen den vollständigen Buchungs-Roundtrip ab: die schreibende Buchungsoperation sowie die nachgelagerte Abfrage, mit der der Termin-Requestor den aktuellen Buchungsstatus abruft.
 
