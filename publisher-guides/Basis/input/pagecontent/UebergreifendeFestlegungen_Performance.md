@@ -17,7 +17,6 @@ Die Antwortzeit bezeichnet dabei einen Request/Reply-Zyklus zwischen einem Clien
 
 Für die Überprüfung der Performance-Anforderungen im Zertifizierungsverfahren gelten folgende Metriken:
 
-- **Mittlere Antwortzeit (Durchschnitt):** Das arithmetische Mittel der Antwortzeiten aller gleichartigen Anfragen innerhalb eines definierten Messlaufs. Sie dient als Orientierungsgröße für die typische Server-Reaktionszeit und ist die Basismetrik zur Diagnose von Performance-Problemen.
 
 - **P95 (95. Perzentile):** 95 % aller gemessenen Anfragen eines Messlaufs werden innerhalb dieses Zeitwerts vollständig beantwortet; die verbleibenden 5 % dürfen ihn überschreiten. P95 ist die **maßgebliche Konformitätsmetrik**: Die in den Performance-Kategorien (PK1–PK5) genannten Zeitschwellen (z. B. „unter einer Sekunde") müssen als **P95-Wert** eingehalten werden.
 
