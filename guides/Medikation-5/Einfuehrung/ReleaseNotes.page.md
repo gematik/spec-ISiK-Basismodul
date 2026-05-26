@@ -9,6 +9,12 @@ Datum: tbd
 
 * `improve` Guidance zur Verwendung von List.mode (snapshot vs. working) in ISiKMedikationsListe anhand von Use-Cases ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1195
 
+## Version 
+
+Datum: tbd
+
+* `fix` REQUIRED Suchparameter AllergyIntolerance.onset aus AMTS-Rolle entfernt aufgrund fehlerhafter Spezifikation https://github.com/gematik/spec-ISiK-Basismodul/pull/1212
+
 ## Version 5.1.2
 
 Datum: 30.04.2026
