@@ -29,7 +29,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     Arztnummer 0..* MS and
     EFN 0..1 MS and
     TelematikId 0..1 MS and
-    Mitarbeiterkennzeichen 0..*
+    Mitarbeiterkennzeichen 0..1
 * identifier[Arztnummer] only IdentifierLanr
   * ^short = "Lebenslange Arztnummer"
   * ^comment = " Im Krankenhaus ist die lebenslange Arztnummer der Ärzte bekannt und MUSS zur eindeutigen Identifikation eines Arztes bereitgestellt werden.
