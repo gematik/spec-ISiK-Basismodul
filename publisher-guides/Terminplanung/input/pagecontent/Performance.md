@@ -68,4 +68,4 @@ Das Risiko einer Doppelbuchung steigt überproportional mit der Antwortzeit: Wir
 
 ### Gültigkeit Vorgaben Basis
 
-Über die hier getroffenen Festlegungen hinaus gelten die Festlegungen zur Performance des ISiK Moduls [Basis](https://gemspec.gematik.de/ig/fhir/isik/basis/latest).
+Über die hier getroffenen Festlegungen hinaus gelten die [Festlegungen zur Performance des ISiK Moduls Basis](https://gemspec.gematik.de/ig/fhir/isik/basis/latest/UebergreifendeFestlegungen_Performance.html).
