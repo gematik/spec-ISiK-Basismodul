@@ -105,7 +105,7 @@ Description: "Beatmungsmodus St-Mod am 2020-03-11T20:17:06+01:00"
 * status = #in-progress
 * category.coding[SNOMED-CT] = $sct#40617009 "Künstliche Beatmung"
 * code.coding[SNOMED-CT] = $sct#1186618000 "Bilevel artificial ventilation"
-* code.coding[+] = "http://hauseigenecodesysteme.info/beatmungsmodus"#StMod "St-Mod"
+* code.coding[+] = http://hauseigenecodesysteme.info/beatmungsmodus#StMod "St-Mod"
 * code.text = "BiLevel spontaneous timed"
 * subject = Reference(ExampleOrganPatientSternenfall)
 * performedDateTime = "2020-03-11T20:17:06+01:00"
