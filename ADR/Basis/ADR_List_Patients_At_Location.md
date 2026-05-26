@@ -15,7 +15,7 @@ publisher-guides\Basis\input\pagecontent\UebergreifendeFestlegungen_Suchparamete
 
 ### Option 1: Alle passenden Encounter anfragen und dann Patienten includieren
 
-Request: `GET baseURL/Encounter?location=Location/loc-hospital&status=in-progress&_include=Encounter:subject`
+Request: `GET baseURL/Encounter?location=Location/loc-hospital&status=in-progress&_include=Encounter:patient`
 
 Die Verkettung der Suchparameter `location` und `status` ist eine UND Verknüpfung, d.h. es werden nur Encounter zurückgegeben, die beide Kriterien erfüllen. Anschließend werden die Patienten über den Include-Parameter inkludiert.
 
@@ -23,7 +23,7 @@ Hier ist der Nachteil, dass die Anzahl der zurückgegebenen Ressourcen sehr gro�
 
 ### Option 2: Alle Patienten mit _has-Parameter anfragen
 
-Request: `GET baseURL/Patient?_has:Encounter:subject:combo-status-location=in-progress$Location/loc-hospital`
+Request: `GET baseURL/Patient?_has:Encounter:patient:combo-status-location=in-progress$Location/loc-hospital`
 
 Instance: ISiKEncounterComboStatusLocation
 InstanceOf: SearchParameter
@@ -49,13 +49,18 @@ Beide Optionen könnten parallel bereitgestellt werden. Option 1 ist auch in vor
 Es müsste Teil der Entscheidung sein, welche Variante von Option 2 implementiert würde.
 
 ## Entscheidung
-[//]: # (
-<Konzise Beschreibung der getroffenen Entscheidung.  
-Was wird getan / wie wird es gelöst?>
-)
+In der Diskussion haben wir uns für Option 1 entschieden. Es soll dazu aber nochmal textuell verdeutlicht werden, dass eine Nutzung von Chaining, einen Combo Suchparameter erfordert, wenn die Kombination von Station und status im selben Encounter vorliegen soll. 
+Auch soll ein Hinweis ergänzt werden, dass ein Client am Ende nochmal prüfen muss, ob die gesuchte location auch tatsächlich den status active hat, da es Systeme geben kann, die eine historie von Location Ressourcen pflegen.
 
 ## Konsequenzen
-[//]: # (
-<Positive und negative Auswirkungen der Entscheidung.  
-Auswirkungen auf Qualitätseigenschaften, Kosten, Risiken, Betrieb, Wartung.>
-)
+
+### Positiv
+
+- **Keine Breaking Changes für Server**: Option 1 (`Encounter?location=...&status=...&_include=Encounter:patient`) ist bereits in früheren ISiK-Stufen verpflichtend und erfordert keine neuen Implementierungsaufwände auf Serverseite.
+- **Keine neuen Suchparameter notwendig**: Durch den Verzicht auf Option 2 muss kein neuer CompositeSearchParameter (`combo-status-location`) spezifiziert, getestet und von Servern implementiert werden. Das reduziert den Spezifikations- und Implementierungsaufwand.
+- **Breite Kompatibilität**: Clients, die bereits mit früheren ISiK-Stufen arbeiten, können die bestehende Anfrage unverändert weiter nutzen.
+
+### Negativ
+
+- **Größere Antwort-Payloads**: Die Antwort enthält immer auch die Encounter-Ressourcen, auch wenn der Client nur die Patienten benötigt. Bei Stationen mit vielen Patienten kann dies zu erheblichem Datenvolumen führen.
+- **Chaining erfordert Combo-Suchparameter**: Wer `_has` mit UND-Verknüpfung auf `location` und `status` nutzen möchte (also sicherstellen will, dass beide Kriterien im selben Encounter gelten), benötigt einen CompositeSearchParameter. Dieser ist in der Spezifikation textuell zu erläutern, auch wenn er nicht verpflichtend eingeführt wird, um Fehlanwendungen zu vermeiden.

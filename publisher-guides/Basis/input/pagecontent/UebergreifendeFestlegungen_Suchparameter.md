@@ -6,8 +6,9 @@ Neben Patienten- und Encounter- zentrierten abfragen, SOLLEN bzw. (MÜSSEN in be
 - Stationslisten 
     - Beispielabruf: `GET baseURL/Location?characteristic=wa`
 - Patienten und Kontakte auf einer bestimmten Station mit einem aktiven Kontakt auf dieser Station
-    - Beispielabruf: `GET baseURL/Encounter?location=Location/loc-hospital&status=in-progress&_include=Encounter:subject`
-    - Hinweis: Diese Abfrage kann ebenfalls in zwei Schritte unterteilt werden
+    - Beispielabruf: `GET baseURL/Encounter?location=Location/loc-hospital&status=in-progress&_include=Encounter:patient`
+    - Hinweis: Die Suchparameter `location` und `status` werden in dieser Anfrage UND-verknüpft, d.h. es werden nur Encounter zurückgegeben, bei denen beide Kriterien im selben Encounter erfüllt sind. Soll dieselbe UND-Verknüpfung über `_has` (Reverse Chaining) auf der Patient-Ressource erfolgen, ist ein Composite-Suchparameter erforderlich, der beide Kriterien in einem einzigen `_has`-Parameter kombiniert – andernfalls können die beiden `_has`-Parameter nicht garantieren, dass `location` und `status` aus demselben Encounter stammen. Dies gilt auch für ein vorwärts Chaining.
+    - Hinweis: Clients SOLLTEN nach dem Abruf prüfen, ob die im Encounter referenzierte und gesuchte Location tatsächlich `status = active` aufweist. Manche Systeme pflegen eine Historie von Location-Ressourcen und können daher auch inaktive Locations referenzieren, die zum Abfragezeitpunkt nicht mehr belegt sind.
 - Alle zur Verfügung stehenden Medikamente
     - Beispielabruf: `GET baseURL/Medication`
 - Alle verschriebenen bzw. verabreichten Medikamente (u. a. relevantbei auffälligen Medikationschargen)
