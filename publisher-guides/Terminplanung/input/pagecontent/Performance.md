@@ -1,4 +1,4 @@
-Da es sich im ISiK-Kontext bei dem Terminplanungs-Modul um ein dediziertes Modul zur Abbildung eines Workflows handelt, sind hier gesonderte Betrachtungen und Festlegungen zur Performance-Aspekten notwendig, um einen robusten und für Nutzende akzeptablen Einsatz der Schnittstelle zu ermöglichen.
+Da es sich im ISiK-Kontext bei dem Terminplanungs-Modul um ein dediziertes Modul zur Abbildung eines Workflows handelt, sind hier gesonderte Betrachtungen und Festlegungen zu Performance-Aspekten notwendig, um einen robusten und für Nutzende akzeptablen Einsatz der Schnittstelle zu ermöglichen.
 
 ### Performance-Anforderungen an ein Termin-Repository
 
