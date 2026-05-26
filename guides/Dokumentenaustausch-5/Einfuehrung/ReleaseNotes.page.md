@@ -9,6 +9,12 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
+## Version 5.1.3
+
+Datum: tbd
+* `fix`: Fehlende Deklaration der StammdatenRolle im Capabilitystatement des Akteurs ISiKCapabilityStatementDokumentenServerAkteur hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/1225
+
+
 ## Version 5.1.2
 
 Datum: 30.04.2026
