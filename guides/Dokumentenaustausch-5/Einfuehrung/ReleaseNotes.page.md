@@ -14,6 +14,9 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 Datum: tbd
 * `fix`: Fehlende Deklaration der StammdatenRolle im Capabilitystatement des Akteurs ISiKCapabilityStatementDokumentenServerAkteur hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/1225
 
+
+## Version 5.1.2
+
 Datum: 30.04.2026
 
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` https://github.com/gematik/spec-ISiK-Basismodul/pull/1034
