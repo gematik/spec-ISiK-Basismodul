@@ -12,6 +12,8 @@ Dieser Akteur aggregiert die Rollen zur Erzeugung und dem Abruf von Metadaten f√
 "
 * imports[+] = Canonical(ISiKCapabilityStatementDokumentenverwaltungRolle)
   * insert ExpectationImports(#SHALL)
+* imports[+] = Canonical(ISiKCapabilityStatementStammdatenRolle)
+  * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementMetadatenErzeugenRolle)
   * insert ExpectationImports(#MAY)
 * imports[+] = Canonical(ISiKCapabilityStatementMetadatenUpdateRolle)
