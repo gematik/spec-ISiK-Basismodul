@@ -48,6 +48,7 @@ Alias: $Abrechnungsart = http://fhir.de/CodeSystem/dkgev/Abrechnungsart
 Alias: $condition-related = http://hl7.org/fhir/StructureDefinition/condition-related
 Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $data-absent-reason-cs = http://terminology.hl7.org/CodeSystem/data-absent-reason
+Alias: $mii-pupil-reaction-additional = https://gematik.de/fhir/isik/CodeSystem/pupil-reaction-additional
 Alias: $diagnosesSCT = https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT
 Alias: $ProzedurenKategorieSCT = https://gematik.de/fhir/isik/ValueSet/ProzedurenKategorieSCT
 Alias: $KBV_VS_Base_Practitioner_Speciality = https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality
