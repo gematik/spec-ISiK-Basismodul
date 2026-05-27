@@ -13,11 +13,11 @@ RuleSet: ISiKDosageDE(path)
     * ^short = "besondere Anweisungen für den Patienten"
   * asNeeded[x] only boolean
     * ^short = "Bedarfsmedikation"
-    * ^comment = "Begründung Einschränkung auf boolean: Für die Angabe der Bedingung wird die R5 Backport-Extension genutzt, um mehrere Bedarfsbedingungen angeben zu können."
+    * ^comment = "Begründung Einschränkung auf boolean: Für die Angabe der Bedingung wird die R5 Backport-Extension genutzt, um mehrere ODER verknüpfte Bedarfsbedingungen angeben zu können."
   * asNeededBoolean MS
     * ^short = "Bedarfsmedikation (ja/nein)"
     * ^comment = "Begründung des Must-Support: Abbildung einer Bedarfsmedikation."
-  * asNeeded[x].extension contains $ext-dosage-as-needed-for named asNeededFor 0..* MS
+  * extension contains $ext-dosage-as-needed-for named asNeededFor 0..* MS
     * ^short = "Indikation für die Bedarfsmedikation"
     * ^comment = "Begründung des Must-Support: Ermöglicht die Angabe mehrerer Indikationen für die Bedarfsmedikation, z.B. 'Schmerzen', 'Fieber', 'Hustenreiz' etc. Diese Bedingungen sind ODER verknüpft, d.h. die Bedarfsmedikation soll bei Vorliegen einer ODER mehrerer dieser Bedingungen angewendet werden."
   * timing
@@ -155,6 +155,6 @@ RuleSet: ISiKDosageDE(path)
     * ^short = "Maximaldosis pro Verabreichung"
 
 Invariant: isik-dosage-as-needed-for
-Description: "Wenn Indikationen für eine Bedarfsmedikation angegeben sind und asNeededBoolean vorhanden ist, MUSS asNeededBoolean true sein."
+Description: "Wenn Indikationen für eine Bedarfsmedikation angegeben sind, MUSS asNeededBoolean vorhanden und true sein."
 Severity: #error
-Expression: "asNeeded.extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor').empty() or asNeeded.empty() or asNeeded.hasValue().not() or (asNeeded = true)"
+Expression: "extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor').empty() or asNeededBoolean = true"

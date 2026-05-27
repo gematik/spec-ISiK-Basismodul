@@ -202,14 +202,13 @@ Usage: #example
 * requester.reference = "Practitioner/PractitionerWalterArzt"
 * dosageInstruction
   * asNeededBoolean = true
-  * asNeededBoolean.extension[asNeededFor]
+  * extension[asNeededFor][+]
     * valueCodeableConcept.coding[0]
       * system = $cs-sct
       * version = "http://snomed.info/sct/11000274103/version/20251115"
       * code = #76948002
       * display = "Starke Schmerzen"
-  * asNeededBoolean.extension[1]
-    * url = $ext-dosage-as-needed-for
+  * extension[asNeededFor][+]
     * valueCodeableConcept.coding[0]
       * system = $cs-sct
       * version = "http://snomed.info/sct/11000274103/version/20251115"
