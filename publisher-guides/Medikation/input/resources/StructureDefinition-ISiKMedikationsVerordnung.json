@@ -429,9 +429,31 @@
           {
             "key": "isik-dosage-as-needed-for",
             "severity": "error",
-            "human": "Wenn Indikationen für eine Bedarfsmedikation angegeben sind und asNeededBoolean vorhanden ist, MUSS asNeededBoolean true sein.",
-            "expression": "asNeeded.extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor').empty() or asNeeded.empty() or asNeeded.hasValue().not() or (asNeeded = true)",
+            "human": "Wenn Indikationen für eine Bedarfsmedikation angegeben sind, MUSS asNeededBoolean vorhanden und true sein.",
+            "expression": "extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor').empty() or asNeededBoolean = true",
             "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension",
+        "path": "MedicationRequest.dosageInstruction.extension",
+        "short": "Indikation für die Bedarfsmedikation",
+        "comment": "Begründung des Must-Support: Ermöglicht die Angabe mehrerer Indikationen für die Bedarfsmedikation, z.B. 'Schmerzen', 'Fieber', 'Hustenreiz' etc. Diese Bedingungen sind ODER verknüpft, d.h. die Bedarfsmedikation soll bei Vorliegen einer ODER mehrerer dieser Bedingungen angewendet werden."
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension:asNeededFor",
+        "path": "MedicationRequest.dosageInstruction.extension",
+        "sliceName": "asNeededFor",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor"
+            ]
           }
         ],
         "mustSupport": true
@@ -673,38 +695,6 @@
         "type": [
           {
             "code": "boolean"
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction.asNeeded[x].extension",
-        "path": "MedicationRequest.dosageInstruction.asNeeded[x].extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        },
-        "short": "Indikation für die Bedarfsmedikation",
-        "comment": "Begründung des Must-Support: Ermöglicht die Angabe mehrerer Indikationen für die Bedarfsmedikation, z.B. 'Schmerzen', 'Fieber', 'Hustenreiz' etc. Diese Bedingungen sind ODER verknüpft, d.h. die Bedarfsmedikation soll bei Vorliegen einer ODER mehrerer dieser Bedingungen angewendet werden."
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction.asNeeded[x].extension:asNeededFor",
-        "path": "MedicationRequest.dosageInstruction.asNeeded[x].extension",
-        "sliceName": "asNeededFor",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor"
-            ]
           }
         ],
         "mustSupport": true
