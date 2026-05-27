@@ -1,10 +1,16 @@
 {
   "resourceType": "StructureDefinition",
   "id": "extension-Dosage.asNeededFor",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fhir"
+    }
+  ],
   "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor",
   "version": "6.0.0-rc",
-  "name": "ExtensionDosageAsNeededFor",
-  "title": "Dosage As Needed For",
+  "name": "DosageAsNeededFor",
+  "title": "Dosage AsNeededFor",
   "status": "active",
   "experimental": false,
   "date": "2026-04-02",
@@ -16,7 +22,7 @@
   "context": [
     {
       "type": "element",
-      "expression": "Dosage.asNeeded[x]"
+      "expression": "Dosage"
     }
   ],
   "type": "Extension",
@@ -37,12 +43,15 @@
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
-        "min": 1,
         "type": [
           {
             "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medication-as-needed-reason"
+        }
       }
     ]
   }

@@ -20,6 +20,9 @@ RuleSet: ISiKDosageDE(path)
   * extension contains $ext-dosage-as-needed-for named asNeededFor 0..* MS
     * ^short = "Indikation für die Bedarfsmedikation"
     * ^comment = "Begründung des Must-Support: Ermöglicht die Angabe mehrerer Indikationen für die Bedarfsmedikation, z.B. 'Schmerzen', 'Fieber', 'Hustenreiz' etc. Diese Bedingungen sind ODER verknüpft, d.h. die Bedarfsmedikation soll bei Vorliegen einer ODER mehrerer dieser Bedingungen angewendet werden."
+    * valueCodeableConcept.text MS
+      * ^short = "Indikation für die Bedarfsmedikation (Freitext)"
+      * ^comment = "Begründung des Must-Support: Ermöglicht die Angabe einer Indikation für die Bedarfsmedikation in Freitextform, eine Kodierung ist nicht verpflichtend. Es wird jedoch empfohlen, die Indikation zusätzlich in kodierter Form anzugeben, um die Interoperabilität zu erhöhen."
   * timing
     * event MS
       * ^short = "fester Zeitpunkt"

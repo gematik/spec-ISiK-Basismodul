@@ -443,6 +443,44 @@
         "comment": "Begründung des Must-Support: Ermöglicht die Angabe mehrerer Indikationen für die Bedarfsmedikation, z.B. 'Schmerzen', 'Fieber', 'Hustenreiz' etc. Diese Bedingungen sind ODER verknüpft, d.h. die Bedarfsmedikation soll bei Vorliegen einer ODER mehrerer dieser Bedingungen angewendet werden."
       },
       {
+        "id": "MedicationRequest.dosageInstruction.extension.extension",
+        "path": "MedicationRequest.dosageInstruction.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension.value[x]",
+        "path": "MedicationRequest.dosageInstruction.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension.value[x]:valueCodeableConcept",
+        "path": "MedicationRequest.dosageInstruction.extension.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension.value[x]:valueCodeableConcept.text",
+        "path": "MedicationRequest.dosageInstruction.extension.value[x].text",
+        "short": "Indikation für die Bedarfsmedikation (Freitext)",
+        "comment": "Begründung des Must-Support: Ermöglicht die Angabe einer Indikation für die Bedarfsmedikation in Freitextform, eine Kodierung ist nicht verpflichtend. Es wird jedoch empfohlen, die Indikation zusätzlich in kodierter Form anzugeben, um die Interoperabilität zu erhöhen.",
+        "mustSupport": true
+      },
+      {
         "id": "MedicationRequest.dosageInstruction.extension:asNeededFor",
         "path": "MedicationRequest.dosageInstruction.extension",
         "sliceName": "asNeededFor",
