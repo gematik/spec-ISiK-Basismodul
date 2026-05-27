@@ -3,9 +3,9 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
 Datum: tbd
-
-* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
-* `fix` ISiKDokumentenMetadaten Profil korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
+* `fix`: Fehlende Deklaration der StammdatenRolle im Capabilitystatement des Akteurs ISiKCapabilityStatementDokumentenServerAkteur hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1224>
+* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
+* `fix` ISiKDokumentenMetadaten Profil korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 
 
 ### Version 6.0.0-rc

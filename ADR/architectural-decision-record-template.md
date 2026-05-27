@@ -16,8 +16,8 @@ Relevante Anforderungen, Randbedingungen, Annahmen.>
 ) 
 
 ## Optionen
-- <Alternative 1 – kurz + warum verworfen>
-- <Alternative 2 – kurz + warum verworfen>
+- <Alternative 1 – kurz + PROs/CONs oder warum getroffen>
+- <Alternative 2 – kurz + PROs/CONs oder warum verworfen>
 
 ## Entscheidung
 [//]: # (
