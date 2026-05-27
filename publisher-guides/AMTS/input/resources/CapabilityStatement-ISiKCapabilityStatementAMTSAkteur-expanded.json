@@ -384,17 +384,6 @@
                   "valueCode": "SHALL"
                 }
               ],
-              "name": "onset",
-              "definition": "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-onset",
-              "type": "date"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ],
               "name": "date",
               "definition": "http://hl7.org/fhir/SearchParameter/conformance-date",
               "type": "date"
@@ -727,7 +716,8 @@
               ],
               "name": "category",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-category",
-              "type": "token"
+              "type": "token",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?category=vital-signs`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
             },
             {
               "extension": [
@@ -738,7 +728,8 @@
               ],
               "name": "subject",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-subject",
-              "type": "reference"
+              "type": "reference",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?subject=Patient/123`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).\n    Für die Suche nach Patienten SOLL der Parameter `patient` bevorzugt werden."
             },
             {
               "extension": [
@@ -749,7 +740,8 @@
               ],
               "name": "code-value-quantity",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-code-value-quantity",
-              "type": "composite"
+              "type": "composite",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?code-value-quantity=http://loinc.org|29463-7$gt50`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).\n    Kombinierter Suchparameter für Code und Messwert einer einfachen Observation."
             },
             {
               "extension": [
@@ -760,7 +752,8 @@
               ],
               "name": "combo-code",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-combo-code",
-              "type": "token"
+              "type": "token",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?combo-code=http://loinc.org|85354-9`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).\n    Durchsucht sowohl `Observation.code` als auch `Observation.component.code`."
             },
             {
               "extension": [
@@ -771,7 +764,8 @@
               ],
               "name": "combo-code-value-quantity",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-combo-code-value-quantity",
-              "type": "composite"
+              "type": "composite",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?combo-code-value-quantity=http://loinc.org|8480-6$gt100`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).\n    Kombinierter Suchparameter für Code und Messwert, der sowohl Haupt-Observation als auch Komponenten einschließt."
             },
             {
               "extension": [
@@ -782,7 +776,8 @@
               ],
               "name": "component-code",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-component-code",
-              "type": "token"
+              "type": "token",
+              "documentation": "**Beispiel:**\n    `GET [base]/Observation?component-code=http://loinc.org|8480-6`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).\n    Durchsucht ausschließlich `Observation.component.code`."
             },
             {
               "extension": [
@@ -2000,7 +1995,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
+                  "valueCode": "MAY"
                 }
               ],
               "name": "clinical-status",

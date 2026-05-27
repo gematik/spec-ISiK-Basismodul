@@ -1,6 +1,9 @@
----
-topic: ReleaseNotes
----
+### Version 6.0.0-rc1 (Benehmensherstellung)
+
+Datum: tbd
+
+* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
+* `fix` CapabilityStatement FormDefinitionsVerwalter korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 
 ### Version 6.0.0-rc
 
@@ -22,40 +25,40 @@ Datum: 02.04.2026
 
 * `improve` Neue Seite mit expliziten Implementierungsanforderungen (SHALL/SHOULD/MAY) für Akteure, die nicht über CapabilityStatements abgebildet werden: FormularLauncher (Fremdaufruf-Parameter), FormularDefinitionsErsteller (Gültigkeitsprüfung generierter Questionnaires) und FormularRenderer (Stand-Alone-Launch, Rendering, Vorbelegung).
 
-* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068
+* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1068>
 
-* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - analog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
+* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - analog zu TC 5.1.2 <https://github.com/gematik/spec-ISiK-Basismodul/pull/1040>
 
-* `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
+* `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  <https://github.com/gematik/spec-ISiK-Basismodul/pull/1053>
 
-* `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
+* `improve` Implicit Rules auf 0..0 beschränkt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1075>
 
 
 ### Version 5.1.1
 
 Datum: 17.12.2025
 
-* `documentation` Fehlende Comments und shorts für Must-Support Elemente hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/918
+* `documentation` Fehlende Comments und shorts für Must-Support Elemente hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/918>
 
 ### Version 5.1.0
 
 Datum: 23.10.2025
 
-* `improve` enableWhen-Element mit MS versehen, wurde initial vergessen aber in Beispielen und Beschreibungen genannt https://github.com/gematik/spec-ISiK-Basismodul/pull/896
+* `improve` enableWhen-Element mit MS versehen, wurde initial vergessen aber in Beispielen und Beschreibungen genannt <https://github.com/gematik/spec-ISiK-Basismodul/pull/896>
 
-* `documentation` Satz zur Nutzung der Labor-Profile verschoben in den korrekten IG (ICU) - https://github.com/gematik/spec-ISiK-Basismodul/pull/867
+* `documentation` Satz zur Nutzung der Labor-Profile verschoben in den korrekten IG (ICU) - <https://github.com/gematik/spec-ISiK-Basismodul/pull/867>
 * `improve` Separierung, Vervollständigung und Dokumentation von Beispiel-Questionnaires
-* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
-* `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
+* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. <https://github.com/gematik/spec-ISiK-Basismodul/pull/799>
+* `documentation` Rendering der im Modul verwendeten ValueSets <https://github.com/gematik/spec-ISiK-Basismodul/pull/802>
 
 
 ### Version 5.0.0
 
 Datum: 26.06.2025
 
-- `improve` Fehlende Begründungen und Kommentare zu Pflichtfeldern hinzugefügt  https://github.com/gematik/spec-ISiK-Basismodul/pull/746
-- `improve` Beschreibung der MDR-Relevant Extension wurde hinzugefügt und ausführlicher gestaltet https://github.com/gematik/spec-ISiK-Basismodul/pull/744
-- `improve` Hinweis auf Umgang mit verschiedenen Sprachversionen https://github.com/gematik/spec-ISiK-Basismodul/pull/747/
+- `improve` Fehlende Begründungen und Kommentare zu Pflichtfeldern hinzugefügt  <https://github.com/gematik/spec-ISiK-Basismodul/pull/746>
+- `improve` Beschreibung der MDR-Relevant Extension wurde hinzugefügt und ausführlicher gestaltet <https://github.com/gematik/spec-ISiK-Basismodul/pull/744>
+- `improve` Hinweis auf Umgang mit verschiedenen Sprachversionen <https://github.com/gematik/spec-ISiK-Basismodul/pull/747/>
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
@@ -63,9 +66,9 @@ Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten �
 
 Datum: 5.6.2025
 
-- `improve` Anpassung des Satzes zur Verwendung von Observation Profilen in item.definition https://github.com/gematik/spec-ISiK-Basismodul/pull/740
-- `improve` MS-Flag auf Questionnaire.item.code hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/740
-- `improve` Questionnaire.version wird 1..1 und Angabe der Version des Questionnaires ist bei Referenzierung verpflichtend anzugeben. Zusätzlich wird der Umgang mit Versionen im SemVer Format textuell erläutert. https://github.com/gematik/spec-ISiK-Basismodul/pull/74
+- `improve` Anpassung des Satzes zur Verwendung von Observation Profilen in item.definition <https://github.com/gematik/spec-ISiK-Basismodul/pull/740>
+- `improve` MS-Flag auf Questionnaire.item.code hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/740>
+- `improve` Questionnaire.version wird 1..1 und Angabe der Version des Questionnaires ist bei Referenzierung verpflichtend anzugeben. Zusätzlich wird der Umgang mit Versionen im SemVer Format textuell erläutert. <https://github.com/gematik/spec-ISiK-Basismodul/pull/74>
 
 ### Version 5.0.0-rc
 

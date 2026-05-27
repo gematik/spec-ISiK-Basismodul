@@ -1,8 +1,3 @@
----
-topic: AkteureUndInteraktionen-AkteureUndInteraktionen-Update
-canonical: https://gematik.de/fhir/isik/OperationDefinition/UpdateMetadata
----
-
 Zur entsprechenden Operation siehe [$update-metadata](OperationDefinition-UpdateMetadata.html). 
 
 | Hinweis | Experimentelle Funktion |
