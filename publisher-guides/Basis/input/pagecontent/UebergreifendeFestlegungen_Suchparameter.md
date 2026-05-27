@@ -13,10 +13,12 @@ Neben Patienten- und Encounter- zentrierten abfragen, SOLLEN bzw. (MÜSSEN in be
     - Beispielabruf: `GET baseURL/MedicationAdministration`
     - Beispielabruf: `GET baseURL/MedicationRequest`
 
-Auf der Seite (Artefakte)[artifacts.md] werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt, welche im Rahmen des Bestätigungsverfahrens von ISiK unterstützt werden MÜSSEN.
+Auf der Seite (Artefakte)[artifacts.html] werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt, welche im Rahmen des Bestätigungsverfahrens von ISiK unterstützt werden MÜSSEN.
 
 Ein Server MUSS sicherstellen, dass nicht unterstützte oder leere Suchparameter ignoriert werden und **nicht** zu einem Fehler führen. Siehe [FHIR RESTful Search - Handling Errors](https://www.hl7.org/fhir/R4/search.html#errors).
 Alle vom Server für eine konkrete Suche verwendeten Parameter MÜSSEN im Self-Link des Searchset-Bundles angegeben sein, siehe [Self-Link](https://hl7.org/fhir/R4/search.html#selflink).
+
+Ein Server MUSS die für eine Ressource definierten Suchparameter auch in Kombination unterstützen.
 
 Alle Suchparameter in FHIR entsprechen einem von neun definierten [Such-Parameter-Typen](https://hl7.org/fhir/R4/search.html):
 
@@ -124,7 +126,7 @@ Der Suchparameter ``_include`` MUSS verpflichtend für Suchparameter implementie
 
     - Beispiele: ``GET [base]/Encounter?_include=Encounter:patient``
     - Anwendungshinweise: Weitere Informationen zur Suche nach "_include" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/R4/search.html#revinclude).
-    - Für alle Referenzen, für die ein Chaining unterstützt wird, MUSS auch der _include-Parameter implementiert werden. Alle unterstützten Include-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchInclude``` angegeben werden. Siehe [ISiK CapabilityStatements Basis](artifacts.md#capabilitystatements).
+    - Für alle Referenzen, für die ein Chaining unterstützt wird, MUSS auch der _include-Parameter implementiert werden. Alle unterstützten Include-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchInclude``` angegeben werden. Siehe [ISiK CapabilityStatements Basis](artifacts.html#capabilitystatements).
 
 
 Für Suchparameter KÖNNEN die Festlegungen für `_revinclude` implementiert werden.
@@ -133,7 +135,7 @@ Für Suchparameter KÖNNEN die Festlegungen für `_revinclude` implementiert wer
 
     - Beispiele: ``GET [base]/Patient?_revinclude=Encounter:subject``
     - Anwendungshinweise: Weitere Informationen zur Suche nach "_revinclude" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/R4/search.html#revinclude).
-    - Alle unterstützten Revinclude-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchRevInclude``` angegeben werden. Siehe {{pagelink:ISiK CapabilityStatements Basis}}.
+    - Alle unterstützten Revinclude-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchRevInclude``` angegeben werden. Siehe [ISiK CapabilityStatements Basis](artifacts.html#capabilitystatements).
 
 Im Kontext dieser Spezifikation (einschließlich weitere ISIK Module) werden - wo notwendig - weitere Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) getroffen.
 
@@ -153,3 +155,12 @@ Diese grundlegenden Best-Practice-Empfehlungen beziehen sich auf die korrekte Ve
 - Wenn der Server geeignete Standardfilter bei der Suche auf der Grundlage des Patientenkontextes (z.B. das Herausfiltern von fehlerhaften Datensätzen oder inaktiven und verstorbenen Patienten) enthält, SOLLTEN diese angemessen und eindeutig dokumentiert sein (vorzugsweise durch Aufnahme in den 'self link' für eine Suche).
 
 - Weitere Hinweise können in der [FHIR Spezifikation im Abschnitt `Search`](https://www.hl7.org/fhir/R4/search.html#errors) eingesehen werden.
+
+### Zusammenfassung der Search-Modifier
+
+| Modifier | Suchparameter-Typ | Beschreibung | Festlegung |
+| --- | --- | --- | --- |
+| `:contains` | String | Partielles Matching – findet den Suchbegriff an beliebiger Stelle im String, unabhängig von Groß-/Kleinschreibung | MUSS für alle spezifizierten Suchparameter vom Typ 'String' |
+| `:text` | Token | Suche auf dem `.text`- bzw. `.display`-Element eines Coding oder CodeableConcept (implizites partielles Matching) | MUSS für alle spezifizierten Suchparameter vom Typ 'Token', sofern diese auf die Datentypen "Coding" oder "CodeableConcept" angewendet werden |
+| `:not` | Token | Schließt Ressourcen mit dem angegebenen Code aus; Ressourcen ohne Wert für das Element MÜSSEN im Ergebnis enthalten sein | MUSS für alle spezifizierten Suchparameter vom Typ 'Token', sofern diese auf die Datentypen "code", "Coding" oder "CodeableConcept" angewendet werden |
+| `:identifier` | Reference | Suche anhand des Identifiers der referenzierten Ressource statt per Ressourcen-ID (logische Referenz) | KANN für alle spezifizierten Suchparameter vom Typ 'Reference'; MUSS wenn die Reference eine 1..1-Kardinalität hat oder ein MS-Flag auf Reference.identifier gesetzt ist |

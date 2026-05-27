@@ -213,9 +213,10 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * ^comment = "Hier ist stets das *tatsächliche* Entlassdatum anzugeben.
     *Geplante* Entlassdaten müssen über die Extension `plannedEndDate` erfasst werden."
   
-* reasonCode MS
+* reasonCode 
   * ^short = "Grund des Aufenthalts"
-  * ^comment = "**Begründung MS:** Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR)."
+  * ^comment = "**Historie:** Aufgrund von Harmonisierungsbestrebungen mit dem HL7 Europe Hospital Discharge Report (HDR) in der Ballot-Version von Stufe 6 als MS deklariert. 
+Wegen der unzureichenden Spezifikation und Abgrenzung zur Aufnahmediagnose in Encounter.diagnosis wieder entfernt, bis zur Herbeiführung einer Klärung mit HL7 Europe."
 * diagnosis 
   * ^short = "Falldiagnosen/-prozeduren"
   * ^comment = "Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters einnehmen, z.B. 'Aufnahmediagnose'   
@@ -395,24 +396,6 @@ Die Anforderung einer Verknüpfung mit einem Appointment stammt aus dem Szenario
 Hieraus folgt, dass das Element nur relevant ist, falls das bestätigungsrelevante System zusätzlich zum vorliegenden Profil (Encounter) das Profil ISiKTermin (Appointment) implementiert.
 
 **Hinweis:**  Zur Umsetzung der Funktionalität zum Dokumentenaustausch gemäß ISiK ist der entsprechende [Implementation Guide zum Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/index.html) zu beachten."
-
-// This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
-Extension: PlannedStartDate
-Id: PlannedStartDate
-Context: Encounter
-Description: "Diese Extension dient der Erfassung des geplanten Startzeitpunkts (dateTime) eines Encounters, z. B. einer stationären Aufnahme, Operation oder eines Termins. Sie ermöglicht eine strukturierte Terminplanung, erleichtert die Koordination verschiedener Versorgungsprozesse und verbessert die Kommunikation zwischen Systemen und Leistungserbringern."
-* insert Meta
-* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
-* value[x] only dateTime
-
-// This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
-Extension: PlannedEndDate
-Id: PlannedEndDate
-Context: Encounter
-Description: "Diese Erweiterung dokumentiert das geplante Enddatum bzw. den geplanten Endzeitpunkt eines Encounters. Sie unterstützt die Vorausplanung von Aufenthalten oder Behandlungen, beispielsweise für die Ressourcenplanung, Terminverwaltung und für die Kommunikation mit nachfolgenden Einrichtungen."
-* insert Meta
-* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
-* value[x] only dateTime
 
 Extension: ExtensionISiKRehaEntlassung
 Id: ExtensionISiKRehaEntlassung

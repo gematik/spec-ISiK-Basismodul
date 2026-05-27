@@ -30,8 +30,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
     ExtensionISiKAcceptedRisk named acceptedRisk 0..1 MS and
     ExtensionISiKMedikationsart named medikationsart 0..1 MS and
     ExtensionISiKSelbstmedikation named selbstmedikation 0..1 MS and
-    ExtensionISiKBehandlungsziel named behandlungsziel 0..1 MS and
-    ExtensionISiKMedicationStatementReplaces named medicationStatementReplaces 0..1 MS
+    ExtensionISiKBehandlungsziel named behandlungsziel 0..1 MS
 * extension[acceptedRisk]
   * ^short = "akzeptiertes (in Kauf genommenes) Risiko"
   * ^comment = "Begründung des Must-Support: Folgeinformation der AMTS-Bewertung, sollte auch an nachfolgende Behandelnde übermittelbar sein
@@ -59,13 +58,6 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
 
   Hinweis: Freitext-Beschreibung des Behandlungsziels."
   * valueString MS
-* extension[medicationStatementReplaces]
-  * ^short = "Welche Medikationsinformation wird ersetzt?"
-  * ^comment = "Begründung des Must-Support: historische Nachvollziehbarkeit
-
-  Hinweis: Welche Medikationsinformation wird ersetzt?"
-  * valueReference MS
-    * reference MS
 * partOf
   * ^short = "Referenz auf andere Objekte, deren Bestandteil diese MedikationsInformation ist"
   * ^comment = "Begründung des Must-Support: Abbildung der Zusammenhänge"
@@ -196,7 +188,6 @@ Usage: #example
 Instance: ExampleISiKMedikationsInformation2
 InstanceOf: ISiKMedikationsInformation
 Usage: #example
-* extension[medicationStatementReplaces].valueReference = Reference(ExampleISiKMedikationsInformation1)
 * status = #active
 * medicationReference.reference = "Medication/ExampleISiKMedikament2"
 * subject = Reference(PatientinMusterfrau)
@@ -309,11 +300,7 @@ Usage: #example
 * reasonReference.reference = "Condition/DiagnoseDiabetesMellitus"
 * dosage
   * patientInstruction = "Dosierung nach BZ, gemäß Informationsblatt vom 20.02.2024"
-  * timing
-    * repeat
-      * timeOfDay = 07:00:00
-      * timeOfDay = 13:00:00
-      * timeOfDay = 19:00:00
+
 
 // Beispiel Parkinson-Medikation: Medikament 1
 Instance: ExampleISiKMedikationsInformationParkinson1

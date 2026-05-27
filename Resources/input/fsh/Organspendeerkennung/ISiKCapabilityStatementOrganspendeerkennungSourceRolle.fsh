@@ -120,6 +120,16 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für eine
       * insert Expectation (#MAY)
       * code = #search-type
     * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "category"
+      * definition = "http://hl7.org/fhir/SearchParameter/Procedure-category"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Procedure?category=http://snomed.info/sct|373110003`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "  
+    * searchParam[+]
       * insert Expectation(#MAY)
       * name = "code"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-code"

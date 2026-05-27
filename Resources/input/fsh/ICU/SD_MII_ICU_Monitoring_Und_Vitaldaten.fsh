@@ -58,7 +58,7 @@ Description: "Dieses Profil dient als Abstraktionsprofil für verschiedene spezi
   * system 1.. MS
   * code 1.. MS
 * dataAbsentReason MS
-  * obeys mii-icu-1
+* obeys mii-icu-1
 * interpretation MS
 * bodySite MS
 * bodySite from VS_MII_ICU_BodySite_Observation_Monitoring_und_Vitaldaten (extensible)
