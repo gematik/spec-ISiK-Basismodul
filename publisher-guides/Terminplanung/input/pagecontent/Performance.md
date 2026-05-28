@@ -43,7 +43,7 @@ Die Grenze von **12 Wochen** trägt dem Planungshorizont von Kliniken und spezia
 
 Für Abfragen **über 12 Wochen** ist keine normierte Antwortzeit vorgesehen, da die Ergebnismenge unkalkulierbar wird und Terminblöcke für weit in der Zukunft liegende Zeiträume häufig noch nicht angelegt sind.
 
-#### Client-Pflichten bei Slot-Abfragen
+#### Client-Anforderungen bei Slot-Abfragen
 
 Client-Implementierungen **SOLLEN**:
 - den Suchparameter `schedule` angeben,
