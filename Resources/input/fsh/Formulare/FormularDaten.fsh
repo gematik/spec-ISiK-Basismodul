@@ -17,6 +17,11 @@ Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezi
   * ^comment = "**Begründung MS:**
   In dieser Extension wird die Zweckbestimmung angegeben, welche die FormularDefinition, auf der diese FormularDaten basieren, für die Verwendung innerhalb eines Medizinproduktes identifiziert hat. Sobald diese Extension vorhanden ist, sollten die Konsequenzen für die Anzeige und Verarbeitung der FormularDaten geprüft werden. Ein Formularrenderer, der sich nicht mit dem Thema MDR und Medizinprodukte auseinandergesetzt hat, sollte hier auf das im FHIR-Standard festgelegte Verhalten bei [modifierExtension](http://hl7.org/fhir/extensibility.html#modifierExtension) zurückgreifen."  
 * modifierExtension[MpFormular].valueString MS
+* language 1..1 MS
+  * ^short = "Sprache der Formulardaten"
+  * ^comment = "Im ISiK Kontext ist hier die Sprache meist mit de-DE (deutsch-Deutschland) anzugeben.
+  
+  **Begründung Pflichtfeld:** Die Angabe der Sprache ist für die Interpretation und Darstellung der Formulardaten relevant."
 * text MS
   * ^short = "Menschlich lesbare Zusammenfassung der FormularDaten"
   * ^comment = "**Begründung MS:**
