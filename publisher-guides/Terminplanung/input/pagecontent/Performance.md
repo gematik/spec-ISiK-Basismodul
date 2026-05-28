@@ -52,6 +52,12 @@ Client-Implementierungen **SOLLEN**:
 - den Abfragezeitraum so klein wie fachlich notwendig wählen (initial z. B. 2 Wochen, bei Bedarf erweiterbar),
 - Slot-Ergebnisse für denselben Kalender und Zeitraum lokal zwischenspeichern und nicht bei jeder Nutzerinteraktion neu laden.
 
+#### Mehrfache Abfragen
+
+Während der Terminbuchungs-Journey sind unter Umständen wiederholte, identische Abfragen auf eine Slot-Ressource nötig, um z. B. den Buchungsprozess auf einen Slot, der in der zwischenzeit von einem anderen Buchenden belegt wurde, nicht unnötig fortzuführen.
+
+In einem solchen Kontext sei aber auch auf die [Funktion von Subscription verwiesen, die auch das Topic "Slot" vorsieht](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/latest/CodeSystem-ISiKSubscriptionTopic.html) und damit einen Mechanismus nach Push-Prinzip vorsieht.
+
 ### Buchungsstatus-Rückmeldung (confirmed / pending)
 
 Die Rückmeldung des Buchungsstatus – d. h. ob ein Termin direkt bestätigt (`confirmed`) oder zunächst als Anfrage vorgemerkt (`pending`) wurde – ist mindestens genauso zeitkritisch wie die vorgelagerte Slot-Abfrage.
