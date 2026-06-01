@@ -23,6 +23,7 @@ Datum: tbd
 * `fix` Fehlerhafte Links in der Dokumentation korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>   
 * `documentation` Ergänzung einer Tabelle für [Search-Modifier](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Suchparameter.html) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1196>
 * `documentation` Entfernung von redundantem Text in Performance Anforderungen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1198>
+* `documentation` Ergänzung von Erläuterungen bei der Nutzung von `too-costly` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1208> 
  
 ### Version 6.0.0-rc
 
