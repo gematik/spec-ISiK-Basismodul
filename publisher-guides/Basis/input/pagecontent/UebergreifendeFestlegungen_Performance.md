@@ -13,6 +13,13 @@ Die Performance-Kategorien und entsprechende Anforderungen beziehen sich zum jet
 
 Die Antwortzeit bezeichnet dabei einen Request/Reply-Zyklus zwischen einem Client und einem Server, der die Zeitspanne von der Absendung einer Anfrage durch den Client bis zum vollständigen Empfang der Antwort durch den Client in der Test-Umgebung umfasst und deckt sich damit weitgehend mit dem Konzept der Bearbeitungszeit wie [hier](https://gemspec.gematik.de/docs/gemSpec/gemSpec_Perf/latest/#2.1) definiert. Dabei wird hier zusätzlich eine Antwortzeit ohne signifikante Lasteinwirkung angenommen.
 
+**Messmetriken für Antwortzeit**
+
+Für die Überprüfung der Performance-Anforderungen im Zertifizierungsverfahren gelten folgende Metriken:
+
+
+- **P95 (95. Perzentil):** 95 % aller gemessenen Anfragen eines Messlaufs werden innerhalb dieses Zeitwerts vollständig beantwortet; die verbleibenden 5 % dürfen ihn überschreiten. P95 ist die **maßgebliche Konformitätsmetrik**: Die in den Performance-Kategorien (PK1–PK5) genannten Zeitschwellen (z. B. „unter einer Sekunde") müssen als **P95-Wert** eingehalten werden.
+
 Als kritisch (PK1 bis PK4) gelten REST-Abfragen, die von klinischen Nutzern in unmittelbar behandlungsrelevanten, zeitkritischen Situationen genutzt werden und deren Bereitstellung für den anfragenden Client nahezu zur Laufzeit stattfinden sollten.
 Daher sind hierfür sehr kurze Antwortzeiten ohne wahrnehmbare Verzögerung anzustreben.
 
@@ -44,7 +51,9 @@ Für diese Performance-Kategorien gilt:
   - Kontext: Listen- und Übersichtsabfragen (z.B. Patientenlisten, Falllisten)
   - Anforderung: **"unter 5 Sekunden"**
     - Beispielanfrage - alle Patienten mit dem Namen Müller: `baseURL/Patient?name=Müller`
-    - Beispielanfrage - alle Patienten auf der Station "123": `baseURL/_has:Encounter:patient:location=Location/ward123`
+    - Beispielanfrage - alle Patienten auf der Station "123": - Patienten und Kontakte auf einer bestimmten Station mit einem aktiven Kontakt auf dieser Station
+    - Beispielabruf: `GET baseURL/Encounter?location=Location/loc-hospital&status=in-progress&_include=Encounter:subject`
+    - Hinweis: Diese Abfrage kann ebenfalls in zwei Schritte unterteilt werden
 
 Als vorwiegend unkritisch gelten Abfragen (PK5 bis PK6), die z. B.
 - im Rahmen der Planungs- und Organisationsinformationen mit Bezug zu Patienten (z.B. Terminpläne, Belegungspläne), 
