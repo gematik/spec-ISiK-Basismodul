@@ -12,18 +12,20 @@ Tags werden folgendermaßen verwendet:
 
 Datum: tbd
 
-* `fix` Ableitung des Profils `ISiKOrganisationFachabteilung` vom Profil `ISiKOrganisation` wurde integriert https://github.com/gematik/spec-ISiK-Basismodul/pull/1166
-* `fix` Anpassung des Pattern/ ValueSet-Bindings auf Observation.code in den Profilen `ISiKSchwangerschaftErwarteterEntbindungstermin` und `ISiKSchwangerschaftsstatus` https://github.com/gematik/spec-ISiK-Basismodul/pull/1149
-* `fix` Bei Test-Terminologien wurde das experimental Flag ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1163
-* `fix` Suchparameter `clinicalStatus` für das Profil `ISiKDiagnose` wurde von `SHALL` zu `MAY` geändert https://github.com/gematik/spec-ISiK-Basismodul/pull/1180
-* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
-* `fix` Fehlerhafte Links in der Dokumentation korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/1190   
-* `documentation` Ergänzung einer Tabelle für [Search-Modifier](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Suchparameter.html) https://github.com/gematik/spec-ISiK-Basismodul/pull/1196
-* `documentation` Fix der Beispielsuchanfrage zu allen Patienten, die auf einer Station liegen https://github.com/gematik/spec-ISiK-Basismodul/pull/1201
-* `documentation` Entfernung von redundantem Text in Performance Anforderungen https://github.com/gematik/spec-ISiK-Basismodul/pull/1198
+* `improve` Hinzufügen einer Definition von Perzentil-Metriken für die Performance <https://github.com/gematik/spec-ISiK-Basismodul/pull/1219>
 * `fix` Suchparameter AllergyIntolerance.onset entfernt, aufgrund fehlerhafter Spezifikation <https://github.com/gematik/spec-ISiK-Basismodul/pull/1211>
 * `fix` Entfernung des MS-Flags bei Encounter.reason aufgrund unzureichender Spezifikation und Abgrenzung zur Aufnahmediagnose in Encounter.diagnosis <https://github.com/gematik/spec-ISiK-Basismodul/pull/1213>
-
+* `fix` Ableitung des Profils `ISiKOrganisationFachabteilung` vom Profil `ISiKOrganisation` wurde integriert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1166>
+* `fix` Anpassung des Pattern/ ValueSet-Bindings auf Observation.code in den Profilen `ISiKSchwangerschaftErwarteterEntbindungstermin` und `ISiKSchwangerschaftsstatus` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1149>
+* `fix` Bei Test-Terminologien wurde das experimental Flag ergänzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1163>
+* `fix` Suchparameter `clinicalStatus` für das Profil `ISiKDiagnose` wurde von `SHALL` zu `MAY` geändert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1180>
+* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
+* `fix` Fehlerhafte Links in der Dokumentation korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>   
+* `documentation` Ergänzung einer Tabelle für [Search-Modifier](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Suchparameter.html) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1196>
+* `documentation` Entfernung von redundantem Text in Performance Anforderungen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1198>
+* `fix` Erweiterung der ISiK eigenen Codesysteme und ValueSets um die Information zur Sprache <https://github.com/gematik/spec-ISiK-Basismodul/pull/1214>
+* `documentation` Fix der Beispielsuchanfrage zu allen Patienten, die auf einer Station liegen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1201>
+ 
 ### Version 6.0.0-rc
 
 Datum: 02.04.2026
