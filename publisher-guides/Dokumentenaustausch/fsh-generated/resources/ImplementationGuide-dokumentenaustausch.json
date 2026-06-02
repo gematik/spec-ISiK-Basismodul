@@ -90,6 +90,22 @@
     "resource": [
       {
         "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementStammdatenRolle"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+        "exampleBoolean": false,
+        "name": "CapabilityStatement für Rolle StammdatenRolle"
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/Encounter-date-start"
+        },
+        "description": "The actual start date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values.",
+        "exampleBoolean": false,
+        "name": "DateStart"
+      },
+      {
+        "reference": {
           "reference": "DocumentReference/dok-beispiel-client-with-binary-jpeg-example"
         },
         "exampleBoolean": false,
@@ -125,6 +141,28 @@
       },
       {
         "reference": {
+          "reference": "Patient/DorisQuelle"
+        },
+        "exampleBoolean": false,
+        "name": "DorisQuelle"
+      },
+      {
+        "reference": {
+          "reference": "Patient/DorisZiel"
+        },
+        "exampleBoolean": false,
+        "name": "DorisZiel"
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/Encounter-end-date"
+        },
+        "description": "The actual end date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values.",
+        "exampleBoolean": false,
+        "name": "EndDate"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ISiKDokumentenMetadaten"
         },
         "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Dokumentenmetadaten im Rahmen des Bestätigungsverfahrens der gematik.  \n\n  **Motivation**\n\nDie Ressource DocumentReference enthält die Metadaten, die für die Verwaltung von und die Suche nach Dokumenten benötigt werden. Der Inhalt des Dokumentes wird über DocumentReference.content beschrieben und über DocumentReference.content.attachment referenziert. Die Trennung von Dokument und Metadaten ermöglicht Clients die effiziente Suche und Auflistung von verfügbaren Dokumenten, ohne dass diese vollständig vom Server geladen werden müssen. Servern ermöglicht dieser Ansatz die Trennung zwischen den Metadaten in einer Datenbank und der Dokumentenablage in z.B. einem Dateisystem.\n\n  **Kompatibilität**\n\nDieses Profil basiert auf dem Profil [MHD DocumentReference Comprehensive UnContained References Option](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html) (Version 4.2.0) von IHE International.\n\n  #**Abweichungen vom IHE-Profil**\n\n- Die Verwendung von `DocumentReference.docStatus` ist im ISiK-Kontext gestattet.\n- `DocumentReference.category` muss vom Client bei Vorhandensein eines KDL-Codes in `DocumentReference.type` nicht gefüllt werden. Bei der Verarbeitung auf dem Server im Rahmen der Interaktion [Dokumentenbereitstellung](Interaktion-Dokumentenbereitstellung.md.html) wird `DocumentReference.category` anhand der [KDL-Mappings](https://simplifier.net/kdl/%7Eresources?category=ConceptMap&sortBy=RankScore_desc) ergänzt und damit die IHE-Kompatibilität hergestellt.\n- `DocumentReference.sourcePatientInfo` muss im Rahmen von ISiK nicht gefüllt werden\n\n#**Einschränkungen des IHE-Profils**\n\nElemente mit ValueSet-Bindings ohne verbindliche Vorgabe seitens IHE wurden auf die in Deutschland gebräuchlichen Terminologien (gemäß der Festlegungen von IHE Deutschland e.V.) eingeschränkt.",
@@ -133,10 +171,96 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/ISiKEncounterTypeErweiterungCS"
+        },
+        "description": "ISiK definiert an dieser Stelle eigene Encounter Typen. Dieses CodeSystem ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+        "exampleBoolean": false,
+        "name": "Erweiterung von Encounter.type in ISiK"
+      },
+      {
+        "reference": {
           "reference": "Parameters/exp-params"
         },
         "exampleBoolean": false,
         "name": "exp-params"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ExtensionISiKRehaEntlassung"
+        },
+        "description": "Extension zur Dokumentation von Informationen nach §301 (4 und 4a) SGB V, entsprechend dem ärztliche Reha-Entlassungsbericht. Mit dieser Extension können spezifische Entlassungsinformationen im Kontext einer Rehabilitationsmaßnahme angegeben werden. Dies ist besonders relevant für Einrichtungen, die Leistungen im Bereich Rehabilitation erbringen, und unterstützt die strukturierte Kommunikation im Entlassmanagement.",
+        "exampleBoolean": false,
+        "name": "ExtensionISiKRehaEntlassung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Fachabteilungskontakt"
+        },
+        "exampleBoolean": false,
+        "name": "Fachabteilungskontakt"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktBettenverlegung"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktBettenverlegung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktEntlassung"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktEntlassung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktFachbereichswechsel1"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktFachbereichswechsel1"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktFachbereichswechsel2"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktFachbereichswechsel2"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktMinimal2"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktMinimal2"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktNormal"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktNormal"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktStationaereAufnahme"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktStationaereAufnahme"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktStationswechsel1"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktStationswechsel1"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktStationswechsel2"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktStationswechsel2"
       },
       {
         "reference": {
@@ -188,6 +312,52 @@
       },
       {
         "reference": {
+          "reference": "Encounter/isik-encounter-Sternenfall"
+        },
+        "exampleBoolean": false,
+        "name": "isik-encounter-Sternenfall"
+      },
+      {
+        "reference": {
+          "reference": "Patient/isik-patient-156722"
+        },
+        "exampleBoolean": false,
+        "name": "isik-patient-156722"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKBehandlungsergebnisRehaCS"
+        },
+        "description": "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis.",
+        "exampleBoolean": false,
+        "name": "ISiKBehandlungsergebnisReha"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKBehandlungsergebnisReha"
+        },
+        "description": "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis.",
+        "exampleBoolean": false,
+        "name": "ISiKBehandlungsergebnisRehaVS"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKBesondereBehandlungsformRehaCS"
+        },
+        "description": "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. Vgl. Schlüsseltabelle 2.51 Besondere Behandlungsformen.",
+        "exampleBoolean": false,
+        "name": "ISiKBesondereBehandlungsformReha"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKBesondereBehandlungsformReha"
+        },
+        "description": "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. Vgl. Schlüsseltabelle 2.51 Besondere Behandlungsformen.",
+        "exampleBoolean": false,
+        "name": "ISiKBesondereBehandlungsformRehaVS"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ISiKBinary"
         },
         "description": "Dieses Profil ermöglicht die Darstellung von FHIR-fremden Formaten (z.B. PDFs, Bilder, CDA) in ISiK Szenarien. \n\n**Motivation**\n\nFür FHIR-fremde Formate werden die Daten base64-codiert in der Binary-Ressource (in XML oder JSON) transportiert oder \nüber die REST-API am Binary-Endpunkt in ihrem nativen Format bereitgestellt. \nBinary-Ressourcen werden von Attachment-Elementen in DocumentReference-Ressourcen verlinkt und damit in den Kontext anderer FHIR-Ressourcen (z.B. Patient und Encounter) gestellt. \n\n**Kompatibilität**\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n\n### Hinweis\n\nDas ISIK-Binary-Profil ist *nicht* Bestandteil der Implementierung und des Bestätigungsverfahrens zum ISIK Basismodul.\nDas Profil ist Teil des ISIK Basismoduls, da es im [Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/StructureDefinition-ISiKBinary.html) implementiert werden muss und ein hohes Potential für die Wiederverwednung in anderen Modulen naheliegt.  ",
@@ -201,6 +371,140 @@
         "description": "Vertraulichkeitsstufen",
         "exampleBoolean": false,
         "name": "ISiKConfidentialityCodes"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKEncounterClassDE"
+        },
+        "description": "Erweitert das ValueSet EncounterClassDE der Deutschen Basisprofile um die Codes ACUTE, NONAC und OBSENC aus dem HL7 v3 ActCode System zur Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR). Ein Issue zur Aufnahme dieser Codes in EncounterClassDE wurde bei den Deutschen Basisprofilen eingereicht.",
+        "exampleBoolean": false,
+        "name": "ISiKEncounterClassDE"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKEncounterTypeErweiterungVS"
+        },
+        "description": "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+        "exampleBoolean": false,
+        "name": "ISiKEncounterTypeErweiterungVS"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKEntlassformRehaCS"
+        },
+        "description": "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform.",
+        "exampleBoolean": false,
+        "name": "ISiKEntlassformReha"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKEntlassformReha"
+        },
+        "description": "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform.",
+        "exampleBoolean": false,
+        "name": "ISiKEntlassformRehaVS"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+        },
+        "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n\n**Motivation**\n\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Abbildung-des-Konstrukts-Fall.html).\n\n**Kompatibilität**\n\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "exampleBoolean": false,
+        "name": "ISiKKontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKPatient"
+        },
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von administrativen Patientendaten im Rahmen des Bestätigungsverfahrens der gematik.\n**Motivation**: Der Austausch administrativer Patientendaten ist eine der grundlegenden Funktionalitäten beim Datenaustausch in der klinischen Versorgung.  \nIn FHIR werden sämtliche klinischen Ressourcen durch Verlinkung auf die Ressource 'Patient' in einen Patientenkontext gestellt.  \nDie Herstellung des korrekten Patientenkontextes durch Suchen der Patientenressource anhand von Eigenschaften wie Aufnahmenummer, Name oder Geburtsdatum, \ndie Anzeige der zutreffenden Suchergebnisse und der Auswahl bzw. Bestätigung des richtigen Datensatzes durch den Anwender steht am Beginn der meisten klinischen Workflows.  \n\n**Kompatibilität**: Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n\n* [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient)\n* [Profil Patient im International Patient Summary (IPS)](https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)\n* [Profil Patient der MI-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)\n\nGegen folgende Profile ist das Profil ISiKPatient unmittelbar kompatibel:\n\n* [Profil TIPatient der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-patient)\n\nEs ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit folgenden Profilen ist:\n\n* [Profil EPAPatient der gematik](https://gematik.de/fhir/epa/StructureDefinition/epa-patient): In ISiK ist die Angabe einer KVNR nicht verpflichtend, da in vielen Use Cases bereits eine PID ausreichend ist. Außerdem ist in ISiK keine verpflichtende Versionierung über meta.versionId vorgesehen.",
+        "exampleBoolean": false,
+        "name": "ISiKPatient"
+      },
+      {
+        "reference": {
+          "reference": "Patient/IsikPatientTemplate"
+        },
+        "exampleBoolean": false,
+        "name": "IsikPatientTemplate"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKUnterbrechungRehaCS"
+        },
+        "description": "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung.",
+        "exampleBoolean": false,
+        "name": "ISiKUnterbrechungReha"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKUnterbrechungReha"
+        },
+        "description": "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung.",
+        "exampleBoolean": false,
+        "name": "ISiKUnterbrechungRehaVS"
+      },
+      {
+        "reference": {
+          "reference": "Patient/PatientinMinimal"
+        },
+        "exampleBoolean": false,
+        "name": "PatientinMinimal"
+      },
+      {
+        "reference": {
+          "reference": "Patient/PatientinMusterfrau"
+        },
+        "exampleBoolean": false,
+        "name": "PatientinMusterfrau"
+      },
+      {
+        "reference": {
+          "reference": "Patient/PatientinNormal"
+        },
+        "exampleBoolean": false,
+        "name": "PatientinNormal"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/SZ1Nachstationaer"
+        },
+        "exampleBoolean": false,
+        "name": "SZ1Nachstationaer"
+      },
+      {
+        "reference": {
+          "reference": "Patient/SZ1Patient"
+        },
+        "exampleBoolean": false,
+        "name": "SZ1Patient"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/SZ1Stationaer"
+        },
+        "exampleBoolean": false,
+        "name": "SZ1Stationaer"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/SZ1Vorstationaer"
+        },
+        "exampleBoolean": false,
+        "name": "SZ1Vorstationaer"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/SZ2Encounter"
+        },
+        "exampleBoolean": false,
+        "name": "SZ2Encounter"
+      },
+      {
+        "reference": {
+          "reference": "Patient/SZ2Patient"
+        },
+        "exampleBoolean": false,
+        "name": "SZ2Patient"
       },
       {
         "reference": {
