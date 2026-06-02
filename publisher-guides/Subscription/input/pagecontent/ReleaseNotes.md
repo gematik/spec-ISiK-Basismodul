@@ -4,7 +4,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd
 
-* `improve` Hinweis zu bekanntem Dependency-Problem im Subscription-Backport-Package inklusive Workaround ergänzt auf Startseite ergänzt.
+* `improve` Hinweis zu bekanntem Dependency-Problem im Subscription-Backport-Package inklusive Workaround ergänzt auf Startseite ergänzt. <https://github.com/gematik/spec-ISiK-Basismodul/pull/1237>
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 * `fix` Erweiterung der ISiK eigenen Codesysteme um die Information zur Sprache <https://github.com/gematik/spec-ISiK-Basismodul/pull/1214>
 
