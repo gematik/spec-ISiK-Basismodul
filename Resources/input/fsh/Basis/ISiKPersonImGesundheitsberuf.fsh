@@ -28,7 +28,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * identifier contains
     Arztnummer 0..* MS and
     EFN 0..1 MS and
-    TelematikId 0..1 MS
+    TelematikId 0..1 MS and
+    Mitarbeiterkennzeichen 0..1
 * identifier[Arztnummer] only IdentifierLanr
   * ^short = "Lebenslange Arztnummer"
   * ^comment = " Im Krankenhaus ist die lebenslange Arztnummer der Ärzte bekannt und MUSS zur eindeutigen Identifikation eines Arztes bereitgestellt werden.
@@ -46,6 +47,11 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * ^short = "Telematik-ID"
   * ^patternIdentifier.type = $v2-0203#PRN
   * ^comment = "**Begründung MS:** Zur Verknüpfung der Patient Instanz mit Diensten der Telematik Infrastruktur SOLL die ID mit angegeben sein."
+  * type 1..
+* identifier[Mitarbeiterkennzeichen]
+  * ^short = "Mitarbeiterkennzeichen"
+  * ^comment = "Für interne Kennzeichnung von Personen KANN ein institutionsbezogenes Mitarbeiterkennzeichen angegeben werden."
+  * ^patternIdentifier.type = $v2-0203#EN
   * type 1..
 * name MS
   * ^comment = "Namen der Person"
