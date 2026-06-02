@@ -54,7 +54,7 @@ Client-Implementierungen **SOLLEN**:
 
 #### Mehrfache Abfragen
 
-Während der Terminbuchungs-Journey sind unter Umständen wiederholte, identische Abfragen auf eine Slot-Ressource nötig, um z. B. den Buchungsprozess auf einen Slot, der in der zwischenzeit von einem anderen Buchenden belegt wurde, nicht unnötig fortzuführen.
+Während der Terminbuchungs-Journey sind unter Umständen wiederholte, identische Abfragen auf eine Slot-Ressource nötig, um z. B. den Buchungsprozess auf einen Slot, der in der Zwischenzeit von einem anderen Buchenden belegt wurde, nicht unnötig fortzuführen.
 
 In einem solchen Kontext sei aber auch auf die [Funktion von Subscription verwiesen, die auch das Topic "Slot" vorsieht](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/latest/CodeSystem-ISiKSubscriptionTopic.html) und damit einen Mechanismus nach Push-Prinzip vorsieht.
 
