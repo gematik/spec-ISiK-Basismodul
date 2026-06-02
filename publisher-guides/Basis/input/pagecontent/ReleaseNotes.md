@@ -11,7 +11,7 @@ Tags werden folgendermaßen verwendet:
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
 Datum: tbd
-
+* `improve` Verbesserung der Dokumentation des Suchparameters "characteristic" der Location-Ressource <https://github.com/gematik/spec-ISiK-Basismodul/pull/1233>
 * `improve` Hinzufügen einer Definition von Perzentil-Metriken für die Performance <https://github.com/gematik/spec-ISiK-Basismodul/pull/1219>
 * `fix` Suchparameter AllergyIntolerance.onset entfernt, aufgrund fehlerhafter Spezifikation <https://github.com/gematik/spec-ISiK-Basismodul/pull/1211>
 * `fix` Entfernung des MS-Flags bei Encounter.reason aufgrund unzureichender Spezifikation und Abgrenzung zur Aufnahmediagnose in Encounter.diagnosis <https://github.com/gematik/spec-ISiK-Basismodul/pull/1213>
