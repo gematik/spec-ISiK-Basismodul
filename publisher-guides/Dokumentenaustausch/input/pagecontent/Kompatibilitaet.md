@@ -21,6 +21,6 @@ Um die technische Kompatibilität mit dem DocumentReference-Profil von IHE-MHD z
 Im Kontext von ISiK muss es auch möglich sein, den Status eines Dokumentes ändern zu können, ohne dabei das Dokument vollständig ersetzen zu müssen, wie es im IHE-MHD-Kontext der Fall ist. In ISiK wurde hierfür die Interaktion "Update von Dokumentenmetadaten" definiert.
 
 #### Patientenübergreifende Suche
-Im Kontext von IHE-MHD sind Clients verpflichtet, bei allen Suchen mindestens die Parameter `patient` oder `patient.identifier` sowie `status` zu verwenden. Typische UsesCases für die Dokumentensuche in einem Krankenhaus beinhalten jedoch auch die patientenübergreifende Suche, z.B. nach allen nicht abgeschlossenen Arztbriefen einer Station oder allen Spirometrie-Befunden der letzten Woche.
-Diese Einschränkung wurde im ISiK-Profil daher aufgehoben.
+Im Kontext von IHE-MHD sind Clients verpflichtet, bei allen Suchen mindestens die Parameter `patient` oder `patient.identifier` sowie `status` zu verwenden. In ISiK sollen perspektivisch jedoch auch patientenübergreifende Suchen, wie z.B. nach allen nicht abgeschlossenen Arztbriefen einer Station oder allen Spirometrie-Befunden der letzten Woche unterstützt werden. Da diese UseCases und die dafür benötigten Suchparameter (bzw. deren Kombinationen) jedoch zum aktuellen Zeitpunkt nicht klar definiert sind, bleibt die Implementierung einer patientenübergreifenden Suche eine freiwillige Option für ISiK-konforme Systeme. 
+Diese Einschränkung im MHD-Kontext, dass *nur* patientenbezogene Suchen erlaubt seien, gilt im ISiK-Kontext nicht.
 
