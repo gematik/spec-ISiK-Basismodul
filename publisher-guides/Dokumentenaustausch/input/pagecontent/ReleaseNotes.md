@@ -4,6 +4,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd
 
+* `improve` Verpflichtung zur patientenübergreifenden Suche entfernt, aufgrund unklarer UseCases und fehlender Suchparameter für geeignete Abfragen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1215>
 * `improve` Hinweise auf historische Inkompatibilitäten zwischen IHE MHD unde ISiK entfernt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1215>
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 * `fix` ISiKDokumentenMetadaten Profil korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
