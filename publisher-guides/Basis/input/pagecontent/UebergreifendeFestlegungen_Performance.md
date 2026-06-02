@@ -77,7 +77,7 @@ Für diese Performance-Kategorien gilt:
 Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfahrens die entsprechenden Performance-Anforderungen (z.B. Antwortzeiten - ggf. unter Berücksichtigung der Perzentile -; aber vorerst keine Lasten, Durchsatz etc.)implementiert.
 
 
-#### Umgang mit kostspielige Suchanfragen (`too-costly`)
+#### Umgang mit kostspieligen Suchanfragen (`too-costly`)
 
 Bei patientenunabhängigen oder breit gefächerten Suchanfragen können potenziell sehr große Ergebnismengen entstehen, die Server erheblich belasten. Pagination SOLL als primäres Mittel eingesetzt werden, bevor ein Server eine Anfrage ablehnt. Reicht Pagination nicht aus, DARF ein Server eine `too-costly`-Antwort zurückgeben – jedoch nur im Rahmen der nachfolgend definierten Regeln.
 
