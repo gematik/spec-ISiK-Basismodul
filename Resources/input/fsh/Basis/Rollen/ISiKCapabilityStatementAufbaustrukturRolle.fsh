@@ -200,16 +200,24 @@ Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuord
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#special).  "
 
-//Folgender Suchparameter ist in ISiK als Custom-Suchparameter vorgesehen, da er für die Anforderungen der Stationsabfrage relevant ist; zugleich wird er in FHIR R6 als Standard-Parameter für Location eingeführt.
+//Folgender Suchparameter ist in ISiK als Custom-Suchparameter vorgesehen, da er für die Anforderungen der Stationsabfrage relevant ist; 
+//zugleich wird er in FHIR R6 als Standard-Parameter für Location eingeführt.
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "characteristic"
       * definition = "https://gematik.de/fhir/isik/SearchParameter/Location-characteristic"
       * type = #token
       * documentation = 
-        "Begründung: Die Suche nach Stationen ist notwendig und wird über diesen Suchparameter ermöglicht.    
-        
-        **Beispiel:**    
+        "Begründung: Die Location-Ressource kann für ein breites Spektrum an UseCases verwendet werden.
+        Im Kontext von ISiK ist speziell die Suche nach Stationen, Zimmern und Bettplätzen relevant, 
+        es ist jedoch nicht auszuschließen, dass Systeme die Location-Ressource auch für die Abbildung von Örtlichkeiten 
+        außerhalb des ISiK-Scopes verwenden, z.B. Gebäude, Standorte, Etagen, Lagerorte. 
+        Der Suchparameter `characteristic` ist notwendig um die Suche auf relevante Locations eingrenzen zu können.    
+        **Beispiel:**  
+        Suche nach Stationen:  
         `GET [base]/Location?characteristic=http://terminology.hl7.org/CodeSystem/location-physical-type|wa` 
         **Anwendungshinweis:**   
+        In FHIR R4 ist kein Standard-Suchparameter für das Element `physicalType` definiert. 
+        In FHIR R5 wurde das Element umbenannt in `characteristic` und mit einem gleichnamigen Suchparameter ausgestattet.
+        Diese Änderung wird in ISiK mit der Einführung eines [Custom-Suchparameters](https://gematik.de/fhir/isik/SearchParameter/Location-characteristic) vorweggenommen.
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " 
