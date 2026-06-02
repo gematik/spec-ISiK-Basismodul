@@ -53,9 +53,9 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * type 1..
 * identifier[Mitarbeiterkennzeichen] MS
   * ^short = "Mitarbeiterkennzeichen"
-  * ^comment = "Für nicht-ärztliche Personen SOLL ein institutionsbezogenes Mitarbeiterkennzeichen angegeben werden.
+  * ^comment = "Für interne Kennzeichnung von Personen KANN ein institutionsbezogenes Mitarbeiterkennzeichen angegeben werden.
   
-  Begründung MS: Falls eine nicht-ärztliche Person im Gesundheitsberuf in einem Krankenhaus tätig ist, ist es mit diesem Slice möglich, eine institutionenbezogene ID anzugeben, um die Person innerhalb der Institution eindeutig zu identifizieren."
+  Begründung MS: Nicht immer gibt es eine offizielle Kennzeichnung, von Personen. Damit eine interne Kennzeichnung möglich ist, bietet dieser Slice die Möglichkeit, ein internes Mitarbeiterkennzeichen anzugeben."
   * ^patternIdentifier.type = $v2-0203#EN
   * type 1.. MS
   * system MS
