@@ -5,7 +5,7 @@ Für die Ressource `ISiKMedikationsListe` wird `List.mode` zur fachlichen Einord
 * `snapshot`: abgeschlossene, zu einem bestimmten Zeitpunkt gültige Momentaufnahme der Medikation
 * `working`: aktiv gepflegte oder fortlaufend weiterbearbeitete Medikationsliste
 
-### Typische Anwendungsszenarien
+#### Typische Anwendungsszenarien
 
 **Aufnahmemedikation**
 
