@@ -238,7 +238,7 @@ Usage: #definition
 * insert MetaInstance
 * name = "form"
 * status = #active
-* code = #physical-type
+* code = #form
 * base = #Location
 * type = #token
 * expression = "Location.physicalType"
