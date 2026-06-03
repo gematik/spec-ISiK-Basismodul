@@ -37,7 +37,7 @@ Teile dieses Verhaltens lassen sich durch geeignete UI-Rückmeldungen (z. B. Lad
 
 **Begründung der Zeitraum-Grenzen**
 
-Die Grenze von **4 Wochen** ergibt sich aus dem typischen Buchungshorizont in der ambulanten Versorgung (Praxen, MVZ, Ambulanzen). Bei üblichen Slot-Dauern von 15–30 Minuten entstehen in einem 4-Wochen-Fenster (20 Werktage × 8 Stunden) etwa 320–640 Terminblöcke pro Kalender – eine Ergebnismenge, die serverseitig ohne Pagination in kurzer Antwortzeit beherrschbar ist.
+Als User des Systems erwarte ich bei Terminbuchung eine Übersicht freier Termine auf Monatsebene,
 
 Die Grenze von **12 Wochen** trägt dem Planungshorizont von Kliniken und spezialisierten Einrichtungen Rechnung, in denen Termine mehrere Monate im Voraus gebucht werden. Für diesen Bereich sind längere Antwortzeiten akzeptabel.
 
