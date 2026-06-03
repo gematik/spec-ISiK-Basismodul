@@ -18,7 +18,7 @@ Für die zulässigen Abfragezeiträume – gemessen ab dem Zeitpunkt der Anfrage
 |---|---|---|---|
 | **Bis 31 Tage bzw. ein ganzer Monat** (Standardbereich) | Kurzfristige Verfügbarkeitsabfrage | Nächster freier Termin für Patientenbuchung | Unter 2 Sekunden (analog PK3 Basis) |
 | **1 bis 3 Monate** (erweiterter Bereich) | Mittelfristige Planung | Wiedervorstellungstermine, Vorausplanung | Unter 15 Sekunden (spezifisch Terminplanung, zwischen PK4 und PK5 Basis) |
-| **Über 12 Wochen** | Langfristige Planung | Jahresplanung, Kapazitätsmanagement | Nicht normiert – Server **DARF** bei hohen Slot-Zahlen `OperationOutcome` mit Code `too-costly` zurückgeben oder Pagination erzwingen |
+| **Über 3 Monate** | Langfristige Planung | Jahresplanung, Kapazitätsmanagement | Nicht normiert |
 
 > **Hinweis:** Die Anforderungen beziehen sich jeweils auf Abfragen mit einem einzelnen Kalender als Bezugskontext (und i.d.R. ohne gleichzeitige Nutzung von `_include`, `_revinclude` oder Chaining).
 
