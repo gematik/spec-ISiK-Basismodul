@@ -16,7 +16,7 @@ Für die zulässigen Abfragezeiträume – gemessen ab dem Zeitpunkt der Anfrage
 
 | Abfragezeitraum | Beschreibung | Typischer Anwendungsfall | Antwortzeit-Anforderung |
 |---|---|---|---|
-| **Bis 4 Wochen** (Standardbereich) | Kurzfristige Verfügbarkeitsabfrage | Nächster freier Termin für Patientenbuchung | Unter 2 Sekunden (analog PK3 Basis) |
+| **Bis 31 Tage bzw. ein ganzer Monat** (Standardbereich) | Kurzfristige Verfügbarkeitsabfrage | Nächster freier Termin für Patientenbuchung | Unter 2 Sekunden (analog PK3 Basis) |
 | **4 bis 12 Wochen** (erweiterter Bereich) | Mittelfristige Planung | Wiedervorstellungstermine, Vorausplanung | Unter 15 Sekunden (spezifisch Terminplanung, zwischen PK4 und PK5 Basis) |
 | **Über 12 Wochen** | Langfristige Planung | Jahresplanung, Kapazitätsmanagement | Nicht normiert – Server **DARF** bei hohen Slot-Zahlen `OperationOutcome` mit Code `too-costly` zurückgeben oder Pagination erzwingen |
 
