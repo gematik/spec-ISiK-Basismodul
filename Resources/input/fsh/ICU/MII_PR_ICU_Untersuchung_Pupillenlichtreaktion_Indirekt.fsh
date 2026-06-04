@@ -34,8 +34,8 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 * valueCodeableConcept.coding ^slicing.discriminator.path = "$this"
 * valueCodeableConcept.coding ^slicing.ordered = false
 * valueCodeableConcept.coding ^slicing.rules = #closed
-* valueCodeableConcept.coding contains PupillenlichtreaktionCode 1..1 MS
-* valueCodeableConcept.coding[PupillenlichtreaktionCode] from MII_VS_ICU_Code_Observation_Pupillenlichtreaktion (required)
+* valueCodeableConcept.coding contains Loinc 1..1 MS
+* valueCodeableConcept.coding[Loinc] from MII_VS_ICU_Code_Observation_Pupillenlichtreaktion (required)
 
 * dataAbsentReason 0..1 MS
 
