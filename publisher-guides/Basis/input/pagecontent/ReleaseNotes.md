@@ -11,79 +11,86 @@ Tags werden folgendermaßen verwendet:
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
 Datum: tbd
-
+* `fix` Umbenennung des Suchparameters `characteristic` zu `form` und Verbesserung der Dokumentation des Suchparameters der Location-Ressource <https://github.com/gematik/spec-ISiK-Basismodul/pull/1233>
+* `improve` Hinzufügen einer Definition von Perzentil-Metriken für die Performance <https://github.com/gematik/spec-ISiK-Basismodul/pull/1219>
+* `fix` Suchparameter AllergyIntolerance.onset entfernt, aufgrund fehlerhafter Spezifikation <https://github.com/gematik/spec-ISiK-Basismodul/pull/1211>
+* `fix` Entfernung des MS-Flags bei Encounter.reason aufgrund unzureichender Spezifikation und Abgrenzung zur Aufnahmediagnose in Encounter.diagnosis <https://github.com/gematik/spec-ISiK-Basismodul/pull/1213>
 * `fix` Anpassung des VersichertenId-Slice-Discriminators u. A. zwecks Compliance des ISiKPatient zum Patient von TI-Commons hergestellt
-* `fix` Ableitung des Profils `ISiKOrganisationFachabteilung` vom Profil `ISiKOrganisation` wurde integriert https://github.com/gematik/spec-ISiK-Basismodul/pull/1166
-* `fix` Anpassung des Pattern/ ValueSet-Bindings auf Observation.code in den Profilen `ISiKSchwangerschaftErwarteterEntbindungstermin` und `ISiKSchwangerschaftsstatus` https://github.com/gematik/spec-ISiK-Basismodul/pull/1149
-* `fix` Bei Test-Terminologien wurde das experimental Flag ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1163
-* `fix` Suchparameter `clinicalStatus` für das Profil `ISiKDiagnose` wurde von `SHALL` zu `MAY` geändert https://github.com/gematik/spec-ISiK-Basismodul/pull/1180
-* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
-* `fix` Fehlerhafte Links in der Dokumentation korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/1190   
-* `documentation` Ergänzung einer Tabelle für [Search-Modifier](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Suchparameter.html) https://github.com/gematik/spec-ISiK-Basismodul/pull/1196
-* `documentation` Entfernung von redundantem Text in Performance Anforderungen https://github.com/gematik/spec-ISiK-Basismodul/pull/1198
+* `fix` Ableitung des Profils `ISiKOrganisationFachabteilung` vom Profil `ISiKOrganisation` wurde integriert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1166>
+* `fix` Anpassung des Pattern/ ValueSet-Bindings auf Observation.code in den Profilen `ISiKSchwangerschaftErwarteterEntbindungstermin` und `ISiKSchwangerschaftsstatus` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1149>
+* `fix` Bei Test-Terminologien wurde das experimental Flag ergänzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1163>
+* `fix` Suchparameter `clinicalStatus` für das Profil `ISiKDiagnose` wurde von `SHALL` zu `MAY` geändert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1180>
+* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
+* `fix` Fehlerhafte Links in der Dokumentation korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>   
+* `documentation` Ergänzung einer Tabelle für [Search-Modifier](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Suchparameter.html) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1196>
+* `documentation` Entfernung von redundantem Text in Performance Anforderungen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1198>
+* `improve` Neuer Identifier-Slice `Mitarbeiterkennzeichen` (type code `EN`) mit MustSupport im Profil `ISiKPersonImGesundheitsberuf` für nicht-ärztliche Personen eingeführt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1223>
+* `fix` Erweiterung der ISiK eigenen Codesysteme und ValueSets um die Information zur Sprache <https://github.com/gematik/spec-ISiK-Basismodul/pull/1214>
+* `improve` Ergänzung der Extension `abatement` (klinisch relevantes Enddatum) im Profil `ISiKAllergieUnvertraeglichkeit` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1231>
+* `documentation` Fix der Beispielsuchanfrage zu allen Patienten, die auf einer Station liegen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1201>
  
 ### Version 6.0.0-rc
 
 Datum: 02.04.2026
 
-* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068 - siehe auch [ADR im commit](https://github.com/gematik/spec-ISiK-Basismodul/commit/574c026e118c429f046a05f18ef83dfe0aa7d620)
-* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - analog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
-* `documentation` Beschreibung des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` wurde korrigiert (analog zu TC 5.1.2) https://github.com/gematik/spec-ISiK-Basismodul/pull/1029
-* `improve` Kompatibilität des Profils ISiKStandort zum EHDS Profil Location (EU Core) wurde mittels complies-with Extension sichergestellt https://github.com/gematik/spec-ISiK-Basismodul/pull/1046
-* `improve` EHDS-Alignment für ISiKDiagnose und ISiKProzedur: Hinweise zu HL7 Europe Spezifikationen (EPS/HDR) und optionale BodyStructure-Extension für Lateralität hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/1057
-* `improve` Kompatibilität des Profils ISiKPatient zum EHDS EU Base Patienten Profil wurde mittels `compliesWith`-Extension sichergestellt https://github.com/gematik/spec-ISiK-Basismodul/pull/1050
-* `improve` Lockerung der Name-Kardinalität von 1..1 auf ..1 im Profil ISiKAngehoeriger; Ergänzung fehlender Kommentare im Profil ISiKPersonImGesundheitsberuf https://github.com/gematik/spec-ISiK-Basismodul/pull/1058
-* `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
-* `documentation` Dokumentation zur Abfrage von Fall-Daten über FHIR-Search hinzugefügt, inklusive Hinweisen zur Abfrage von Allergien und zum optionalen Einsatz von Encounter.partOf bei Einrichtungskontakten https://github.com/gematik/spec-ISiK-Basismodul/pull/1069
-* `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
-* `improve` Anpassung des verwendeten ValueSets auf Location.physicalType und Encounter.location.physicalType hin zum FHIR Core ValueSet mit extensible binding-strength https://github.com/gematik/spec-ISiK-Basismodul/pull/1074
-* `improve` Anpassung des Profils `ISiKVersicherungsverhaeltnisGesetzlich`, so dass es zum entsprechenden Profil der VSDM2 Spezifikation kompatibel ist. Zusätzlich Integration einer Erläuterung in Bezug auf Verhätnis des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` zum VSDM2 `VSDMCoveragePKV` Profil https://github.com/gematik/spec-ISiK-Basismodul/pull/1070
-* `improve` Einführung des Profils `ISiKLeistungserbringerrolle`, basierend auf dem PracitionerRole Profil aus dem EHDS https://github.com/gematik/spec-ISiK-Basismodul/pull/1062 
+* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1068> - siehe auch [ADR im commit](https://github.com/gematik/spec-ISiK-Basismodul/commit/574c026e118c429f046a05f18ef83dfe0aa7d620)
+* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - analog zu TC 5.1.2 <https://github.com/gematik/spec-ISiK-Basismodul/pull/1040>
+* `documentation` Beschreibung des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` wurde korrigiert (analog zu TC 5.1.2) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1029>
+* `improve` Kompatibilität des Profils ISiKStandort zum EHDS Profil Location (EU Core) wurde mittels complies-with Extension sichergestellt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1046>
+* `improve` EHDS-Alignment für ISiKDiagnose und ISiKProzedur: Hinweise zu HL7 Europe Spezifikationen (EPS/HDR) und optionale BodyStructure-Extension für Lateralität hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1057>
+* `improve` Kompatibilität des Profils ISiKPatient zum EHDS EU Base Patienten Profil wurde mittels `compliesWith`-Extension sichergestellt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1050>
+* `improve` Lockerung der Name-Kardinalität von 1..1 auf ..1 im Profil ISiKAngehoeriger; Ergänzung fehlender Kommentare im Profil ISiKPersonImGesundheitsberuf <https://github.com/gematik/spec-ISiK-Basismodul/pull/1058>
+* `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  <https://github.com/gematik/spec-ISiK-Basismodul/pull/1053>
+* `documentation` Dokumentation zur Abfrage von Fall-Daten über FHIR-Search hinzugefügt, inklusive Hinweisen zur Abfrage von Allergien und zum optionalen Einsatz von Encounter.partOf bei Einrichtungskontakten <https://github.com/gematik/spec-ISiK-Basismodul/pull/1069>
+* `improve` Implicit Rules auf 0..0 beschränkt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1075>
+* `improve` Anpassung des verwendeten ValueSets auf Location.physicalType und Encounter.location.physicalType hin zum FHIR Core ValueSet mit extensible binding-strength <https://github.com/gematik/spec-ISiK-Basismodul/pull/1074>
+* `improve` Anpassung des Profils `ISiKVersicherungsverhaeltnisGesetzlich`, so dass es zum entsprechenden Profil der VSDM2 Spezifikation kompatibel ist. Zusätzlich Integration einer Erläuterung in Bezug auf Verhätnis des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` zum VSDM2 `VSDMCoveragePKV` Profil <https://github.com/gematik/spec-ISiK-Basismodul/pull/1070>
+* `improve` Einführung des Profils `ISiKLeistungserbringerrolle`, basierend auf dem PracitionerRole Profil aus dem EHDS <https://github.com/gematik/spec-ISiK-Basismodul/pull/1062> 
 * `documentation` Klarstellung zu Abfragen jenseits des Patienten- und Encounter-Kontextes
-* `improve` Ergänzung der Operationen Patient-everything und Encounter-everything im ISiK CpS der Rolle Stammdaten https://github.com/gematik/spec-ISiK-Basismodul/pull/1096
-* `improve` Änderungen der Profil- und Suchparameter-Vorgaben zu Organization und Location - auch aus dem Kontext des Use Cases Organspendeerkennung - https://github.com/gematik/spec-ISiK-Basismodul/pull/1094 
+* `improve` Ergänzung der Operationen Patient-everything und Encounter-everything im ISiK CpS der Rolle Stammdaten <https://github.com/gematik/spec-ISiK-Basismodul/pull/1096>
+* `improve` Änderungen der Profil- und Suchparameter-Vorgaben zu Organization und Location - auch aus dem Kontext des Use Cases Organspendeerkennung - <https://github.com/gematik/spec-ISiK-Basismodul/pull/1094> 
   - Profile Station und Organization und spezielle Suchparameter verpflichtend
   - Kardinalitäts-Vorgaben auf Station.managingOrganization entfernt
-* `improve` Hinzufügen eines EHDS kompatiblen Device Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/1090
-* `improve` Anpassung des Encounters im Sinne der Kompatibilität zum EHDS Profil aus Hospital Discharge Report (HDR) https://github.com/gematik/spec-ISiK-Basismodul/pull/1107
-* `improve` Entfernung des deprecated Identifier-Slice VersichertenId-GKV aus dem Profil `ISiKPatient` https://github.com/gematik/spec-ISiK-Basismodul/pull/1120
-* `improve` Anpassung der Kardinalität von Organization.name zu 1..1, um eine Kompatibilität zum EHDS und der ePA herzustellen https://github.com/gematik/spec-ISiK-Basismodul/pull/1119
+* `improve` Hinzufügen eines EHDS kompatiblen Device Profils <https://github.com/gematik/spec-ISiK-Basismodul/pull/1090>
+* `improve` Anpassung des Encounters im Sinne der Kompatibilität zum EHDS Profil aus Hospital Discharge Report (HDR) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1107>
+* `improve` Entfernung des deprecated Identifier-Slice VersichertenId-GKV aus dem Profil `ISiKPatient` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1120>
+* `improve` Anpassung der Kardinalität von Organization.name zu 1..1, um eine Kompatibilität zum EHDS und der ePA herzustellen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1119>
 * `fix`: ValueSet-Binding in Procedure.code[Ops] auf OpsVS entfernt, da dieses ValueSet in ValueSet.compose.include.version ein "*" verwendet. Dieses Feature wird von gängigen Terminologieservern nicht unterstützt und führt zu Validierungsfehlern. Durch die weiterhin bestehende Verwendung des OpsCoding-Profils ergibt sich jedoch keine inhaltliche Änderung - Analog zu einer Änderung aus noch nicht veröffentlichter Technical Correction der Stufe 5
 
 ### Version 5.1.1
 
 Datum: 17.12.2025
 
-* `improve` Die SnomedCT-Version muss sich auf eine konkrete deutsche Edition beziehen https://github.com/gematik/spec-ISiK-Basismodul/pull/911
-* `documentation` Dokumentation hinzugefügt für die Nutzung von Encounter.location.identifier; zusätzlich Refactoring von Encounter.location-Slices https://github.com/gematik/spec-ISiK-Basismodul/pull/917
-* `improve` Patient.telecom wurde auf MS gesetzt, da diese Information für die Kontaktaufnahme in verschiedenen Kontexten der Terminvereinbarung unerlässlich ist https://github.com/gematik/spec-ISiK-Basismodul/pull/915
-* `improve` Für die Profile `ISiKPatient`, `ISiKAngehoeriger`, sowie `ISiKDiagnose` wurden für die jeweiligen Modifier-Elemente ein bedingtes Must-Support hinzugefügt, um die korrekte Verarbeitung der Ressourcen gewährleisten zu können https://github.com/gematik/spec-ISiK-Basismodul/pull/904
-* `fix` Anpassung der package.json um nicht notwendige Dependency "dvmd.kdl.r4" zu entfernen https://github.com/gematik/spec-ISiK-Basismodul/pull/925
-* `documentation` Korrektur des Satzes zur Verwendung von ISiKBinary https://github.com/gematik/spec-ISiK-Basismodul/pull/930
+* `improve` Die SnomedCT-Version muss sich auf eine konkrete deutsche Edition beziehen <https://github.com/gematik/spec-ISiK-Basismodul/pull/911>
+* `documentation` Dokumentation hinzugefügt für die Nutzung von Encounter.location.identifier; zusätzlich Refactoring von Encounter.location-Slices <https://github.com/gematik/spec-ISiK-Basismodul/pull/917>
+* `improve` Patient.telecom wurde auf MS gesetzt, da diese Information für die Kontaktaufnahme in verschiedenen Kontexten der Terminvereinbarung unerlässlich ist <https://github.com/gematik/spec-ISiK-Basismodul/pull/915>
+* `improve` Für die Profile `ISiKPatient`, `ISiKAngehoeriger`, sowie `ISiKDiagnose` wurden für die jeweiligen Modifier-Elemente ein bedingtes Must-Support hinzugefügt, um die korrekte Verarbeitung der Ressourcen gewährleisten zu können <https://github.com/gematik/spec-ISiK-Basismodul/pull/904>
+* `fix` Anpassung der package.json um nicht notwendige Dependency "dvmd.kdl.r4" zu entfernen <https://github.com/gematik/spec-ISiK-Basismodul/pull/925>
+* `documentation` Korrektur des Satzes zur Verwendung von ISiKBinary <https://github.com/gematik/spec-ISiK-Basismodul/pull/930>
 * `documentation` Beispiel für ein Dokument-Bundle zur Rückübermittelung aus Subsystemen mit ISiK-konformen Ressourcen und weiteren Ressourcen ohne ISiK-Entsprechung hinzugefügt
-* `improve` Verbesserung der MS-Flags auf dem value[x]-Element für ISiKLebenszustandOberservation und setzen auf abstract des Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/945
+* `improve` Verbesserung der MS-Flags auf dem value[x]-Element für ISiKLebenszustandOberservation und setzen auf abstract des Profils <https://github.com/gematik/spec-ISiK-Basismodul/pull/945>
 
 ### Version 5.1.0
 
 
 Datum: 23.10.2025
 
-* `documentation` Beschreibungen für die Extensions in ISiK (auch Backports) hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/877
-* `improve` Festlegungen für Verwendung von `Encounter.location.location.identifier` konkretisiert. https://github.com/gematik/spec-ISiK-Basismodul/pull/827
+* `documentation` Beschreibungen für die Extensions in ISiK (auch Backports) hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/877>
+* `improve` Festlegungen für Verwendung von `Encounter.location.location.identifier` konkretisiert. <https://github.com/gematik/spec-ISiK-Basismodul/pull/827>
 * `improve` Allgemeine Hinweise zum Umgang mit fehlenden Daten und Austausch von Informationen im ISiK-Kontext ohne Patienten-Informationen hinzugefügt
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet.
-* `improve` Klarstellung, dass eine Versichertennummer_PKV neben einem KVNR-Identifier existieren kann. https://github.com/gematik/spec-ISiK-Basismodul/pull/814
-* `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
-* `improve` Klarstellung für Einschränkung des Patterns auf Encounter.location.status https://github.com/gematik/spec-ISiK-Basismodul/pull/826 
-* `fix` Anpassung der Canonical des Valuesets *CurrentSmokingStatusUvIPS* auf der Seite des IGs https://github.com/gematik/spec-ISiK-Basismodul/pull/830
-* `improve` Hinweis zum Umgang mit in ISiK nicht spezifizierten Ressourcentypen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/817/files
-* `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
+* `improve` Klarstellung, dass eine Versichertennummer_PKV neben einem KVNR-Identifier existieren kann. <https://github.com/gematik/spec-ISiK-Basismodul/pull/814>
+* `documentation` Rendering der im Modul verwendeten ValueSets <https://github.com/gematik/spec-ISiK-Basismodul/pull/802>
+* `improve` Klarstellung für Einschränkung des Patterns auf Encounter.location.status <https://github.com/gematik/spec-ISiK-Basismodul/pull/826> 
+* `fix` Anpassung der Canonical des Valuesets *CurrentSmokingStatusUvIPS* auf der Seite des IGs <https://github.com/gematik/spec-ISiK-Basismodul/pull/830>
+* `improve` Hinweis zum Umgang mit in ISiK nicht spezifizierten Ressourcentypen hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/817/files>
+* `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen <https://github.com/gematik/spec-ISiK-Basismodul/pull/809>
 * `documentation` Umgang zum Scoping auf einen Patienten in Allgemeine Hinweise zu Suchparametern erweitert #878
-* `documentation` Beispiele für Encounter-Ressourcen zur Abbildung einer Verlegungskette hinzugefügt.  https://github.com/gematik/spec-ISiK-Basismodul/pull/881
-* `improve` Hinweis zur Handhabung von Encounter.location.status bei Verlegungen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/881
+* `documentation` Beispiele für Encounter-Ressourcen zur Abbildung einer Verlegungskette hinzugefügt.  <https://github.com/gematik/spec-ISiK-Basismodul/pull/881>
+* `improve` Hinweis zur Handhabung von Encounter.location.status bei Verlegungen hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/881>
 * `improve` Die Profile ``ISiKPatient``, ``ÌSiKOrganization``, sowie ``ISiKPersonImGesundheitsberuf`` enthalten nun eine "impose-Profile"-Extension um die Kompatibilität mit den entsprechenden [TI-Commons-Profile](https://gemspec.gematik.de/ig/fhir/ti/1.1.1/index.html) zu dokumentieren.
-* `documentation` Hinweise zur Kompatibilität des ISiKPatient-Profils zum EPAPatient-Profil der gematik hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/898
-* `fix` Änderung an Coverage.subscriber.identifier wurde zurückgenommen https://github.com/gematik/spec-ISiK-Basismodul/pull/912
+* `documentation` Hinweise zur Kompatibilität des ISiKPatient-Profils zum EPAPatient-Profil der gematik hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/898>
+* `fix` Änderung an Coverage.subscriber.identifier wurde zurückgenommen <https://github.com/gematik/spec-ISiK-Basismodul/pull/912>
 
 
 
@@ -91,9 +98,9 @@ Datum: 23.10.2025
 ### Version 5.0.0
 
 Datum: 26.06.2025
-* `improve` Update Deutsche Basisprofile auf Version v1.5.4. Siehe Release Notes dort für weitere Details: https://simplifier.net/packages/de.basisprofil.r4/1.5.4 - https://github.com/gematik/spec-ISiK-Basismodul/pull/780
-* `improve` Hinzufügen der Definition von DKG und KIG der 'Bestätigungsrelevanten Systeme' für ISiK Stufe 5 https://github.com/gematik/spec-ISiK-Basismodul/pull/784
-* `documentation` Darstellung des Bundle-Profils im IG https://github.com/gematik/spec-ISiK-Basismodul/pull/768
+* `improve` Update Deutsche Basisprofile auf Version v1.5.4. Siehe Release Notes dort für weitere Details: <https://simplifier.net/packages/de.basisprofil.r4/1.5.4> - <https://github.com/gematik/spec-ISiK-Basismodul/pull/780>
+* `improve` Hinzufügen der Definition von DKG und KIG der 'Bestätigungsrelevanten Systeme' für ISiK Stufe 5 <https://github.com/gematik/spec-ISiK-Basismodul/pull/784>
+* `documentation` Darstellung des Bundle-Profils im IG <https://github.com/gematik/spec-ISiK-Basismodul/pull/768>
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
@@ -101,24 +108,24 @@ Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten �
 
 Datum: 5.6.2025
 
-* `improve` Anpassung der Anforderungen zum Serververhalten bei CREATE-Interaktionen: Nicht ISiK-konforme Ressourcen müssen nicht länger pauschal abgelehnt werden. https://github.com/gematik/spec-ISiK-Basismodul/pull/748
-* `improve` Anpassung der Anforderungen zum Servererhalten bei READ-Interaktionen: Bereitgestellte Instanzen müssen nicht länger pauschal ISiK-konform sein. https://github.com/gematik/spec-ISiK-Basismodul/pull/748
-* `improve` Schwächung der Anforderung zur Rückgabe von HTTPS-Status-Codes https://github.com/gematik/spec-ISiK-Basismodul/pull/748
+* `improve` Anpassung der Anforderungen zum Serververhalten bei CREATE-Interaktionen: Nicht ISiK-konforme Ressourcen müssen nicht länger pauschal abgelehnt werden. <https://github.com/gematik/spec-ISiK-Basismodul/pull/748>
+* `improve` Anpassung der Anforderungen zum Servererhalten bei READ-Interaktionen: Bereitgestellte Instanzen müssen nicht länger pauschal ISiK-konform sein. <https://github.com/gematik/spec-ISiK-Basismodul/pull/748>
+* `improve` Schwächung der Anforderung zur Rückgabe von HTTPS-Status-Codes <https://github.com/gematik/spec-ISiK-Basismodul/pull/748>
 * `fix` affectsState-Attribut der $update-Operation auf `true` gesetzt, in Folge dessen das Beispiel für den Aufruf auf die Verwendung von HTTP POST statt HTTP GET korrigiert. 
-* `fix` Typo in Canonical des Codesystems und Valuesets UnterbrechungReha korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/726 
-* `improve` Dem ISiK Bericht Bundle wurden zwei neue Slices hinzugefügt, welche Patient (verpflichtend) und Encounter (optional) hinzufügen, um die Nutzung des Bundle besser darzustellen https://github.com/gematik/spec-ISiK-Basismodul/pull/738 
-* `improve` Entfernen des LOINC-Patterns für genauere Kodierung im Profil ISiKBerichtSubSystem (Composition) und Update der Slices einschließlich detaillierte Beschreibung für .type https://github.com/gematik/spec-ISiK-Basismodul/pull/749
-* `improve` Update UebergreifendeFestlegungen Methodik https://github.com/gematik/spec-ISiK-Basismodul/pull/708
+* `fix` Typo in Canonical des Codesystems und Valuesets UnterbrechungReha korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/726> 
+* `improve` Dem ISiK Bericht Bundle wurden zwei neue Slices hinzugefügt, welche Patient (verpflichtend) und Encounter (optional) hinzufügen, um die Nutzung des Bundle besser darzustellen <https://github.com/gematik/spec-ISiK-Basismodul/pull/738> 
+* `improve` Entfernen des LOINC-Patterns für genauere Kodierung im Profil ISiKBerichtSubSystem (Composition) und Update der Slices einschließlich detaillierte Beschreibung für .type <https://github.com/gematik/spec-ISiK-Basismodul/pull/749>
+* `improve` Update UebergreifendeFestlegungen Methodik <https://github.com/gematik/spec-ISiK-Basismodul/pull/708>
 
 
 ### Version 5.0.0-rc1
 
 Datum: 13.05.2025
 
-* `fix` Fix Pattern auf Composition.category https://github.com/gematik/spec-ISiK-Basismodul/pull/693
-* `documentation` Erläuternde Seite für das neue Akteur und Rollen Konzept https://github.com/gematik/spec-ISiK-Basismodul/pull/701
-* `documentation` Entfernen des Abschnitts "Verpflichtende Suchparameter", da diese Information bereits im CapabilityStatement enthalten ist https://github.com/gematik/spec-ISiK-Basismodul/pull/709
-* `fix` Fix fehlender Deklaration der Encounter-Ressource in CapabilityStatement LeistungserbringerRolle https://github.com/gematik/spec-ISiK-Basismodul/pull/713
+* `fix` Fix Pattern auf Composition.category <https://github.com/gematik/spec-ISiK-Basismodul/pull/693>
+* `documentation` Erläuternde Seite für das neue Akteur und Rollen Konzept <https://github.com/gematik/spec-ISiK-Basismodul/pull/701>
+* `documentation` Entfernen des Abschnitts "Verpflichtende Suchparameter", da diese Information bereits im CapabilityStatement enthalten ist <https://github.com/gematik/spec-ISiK-Basismodul/pull/709>
+* `fix` Fix fehlender Deklaration der Encounter-Ressource in CapabilityStatement LeistungserbringerRolle <https://github.com/gematik/spec-ISiK-Basismodul/pull/713>
 
 ### Version 5.0.0-rc (Kommentierung)
 
@@ -127,14 +134,14 @@ Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 Datum: 09.04.2025
 
 * `improve` Auslagern der Subscription Profile und UseCases in ein eigenes Modul
-  Subscription https://github.com/gematik/spec-ISiK-Basismodul/pull/645
-* `improve` Klarstellung zum Zweck des Account Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/632
-* `improve` Coverage-Profil zur Abbildung sonstiger Kostenträger hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/602
-* `improve` Hinweise zur Abbildung des Aufnahmegrunds im Encounter hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/647
-* `improve` Encounter aus dem Modul Terminplanung als Profil entfernt und in das Basismodul übertragen, dafür Capability Statement erweitert um entsprechende Rolle https://github.com/gematik/spec-ISiK-Basismodul/pull/604
-* `fix` Fix Pattern auf Composition.type https://github.com/gematik/spec-ISiK-Basismodul/pull/598
-* `fix` Fix Pattern auf patternCoding.system für AlphaID + Beispiel AlphaID hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/556
-* `improve` Hinweis zur Repräsentation einer PKV-VersichertenId hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/587
+  Subscription <https://github.com/gematik/spec-ISiK-Basismodul/pull/645>
+* `improve` Klarstellung zum Zweck des Account Profils <https://github.com/gematik/spec-ISiK-Basismodul/pull/632>
+* `improve` Coverage-Profil zur Abbildung sonstiger Kostenträger hinzugefügt: <https://github.com/gematik/spec-ISiK-Basismodul/pull/602>
+* `improve` Hinweise zur Abbildung des Aufnahmegrunds im Encounter hinzugefügt: <https://github.com/gematik/spec-ISiK-Basismodul/pull/647>
+* `improve` Encounter aus dem Modul Terminplanung als Profil entfernt und in das Basismodul übertragen, dafür Capability Statement erweitert um entsprechende Rolle <https://github.com/gematik/spec-ISiK-Basismodul/pull/604>
+* `fix` Fix Pattern auf Composition.type <https://github.com/gematik/spec-ISiK-Basismodul/pull/598>
+* `fix` Fix Pattern auf patternCoding.system für AlphaID + Beispiel AlphaID hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/556>
+* `improve` Hinweis zur Repräsentation einer PKV-VersichertenId hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/587>
 
 ----
 
@@ -144,19 +151,19 @@ Datum: 09.04.2025
 ----
 
 ### Version 4.0.2
-* `fix` Anpassung Kardinalität von "ExtensionAbrechnungsart" unter Account.coverage https://github.com/gematik/spec-ISiK-Basismodul/pull/526
-* `fix` SearchParameter “contains” existiert nicht in FHIR R4, Suchparameter wird entfernt  https://github.com/gematik/spec-ISiK-Basismodul/pull/529
-* `fix` Korrektur eines Beispiels für eine GET-Abfrage zum Suchparameter 'near' https://github.com/gematik/spec-ISiK-Basismodul/pull/533
-* `improve` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist. https://github.com/gematik/spec-ISiK-Basismodul/pull/515
-* `fix` Der Name, Id und Canonical des ISiKPatientMergeSubscription Profils wurde an das ISiK Namingschema angepasst.  https://github.com/gematik/spec-ISiK-Basismodul/pull/539
-* `improve` Schärfung von Kommentaren von MS-Feldern für das Datenobjekt ‘Practitioner’ https://github.com/gematik/spec-ISiK-Basismodul/pull/541
-* `fix` Der Name, Id und Canonical des ISiKPatientMergeSubscription Profils wurde an das ISiK Namingschema angepasst. https://github.com/gematik/spec-ISiK-Basismodul/pull/539
-* `improve` Generalisierter Abschnitt zur Herstellung des Patienten- und Encounter-Kontextes hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/542
-* `improve` Beispiele hinzugefügt für Patient, Condition, Encounter https://github.com/gematik/spec-ISiK-Basismodul/pull/520 
-* `improve` Groß- und kleinschreibung bei ISiK-eigenen CodeSystemen deaktiviert https://github.com/gematik/spec-ISiK-Basismodul/pull/532/files
-* `fix` Korrektur eines Beispiels für eine GET-Abfrage zum Suchparameter 'near' https://github.com/gematik/spec-ISiK-Basismodul/pull/533
-* `fix` Procedure-code existiert nicht, verwende clinical-code https://github.com/gematik/spec-ISiK-Basismodul/pull/531
-* `improve` Update Basisprofile-De Version auf 1.5.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/549
+* `fix` Anpassung Kardinalität von "ExtensionAbrechnungsart" unter Account.coverage <https://github.com/gematik/spec-ISiK-Basismodul/pull/526>
+* `fix` SearchParameter “contains” existiert nicht in FHIR R4, Suchparameter wird entfernt  <https://github.com/gematik/spec-ISiK-Basismodul/pull/529>
+* `fix` Korrektur eines Beispiels für eine GET-Abfrage zum Suchparameter 'near' <https://github.com/gematik/spec-ISiK-Basismodul/pull/533>
+* `improve` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist. <https://github.com/gematik/spec-ISiK-Basismodul/pull/515>
+* `fix` Der Name, Id und Canonical des ISiKPatientMergeSubscription Profils wurde an das ISiK Namingschema angepasst.  <https://github.com/gematik/spec-ISiK-Basismodul/pull/539>
+* `improve` Schärfung von Kommentaren von MS-Feldern für das Datenobjekt ‘Practitioner’ <https://github.com/gematik/spec-ISiK-Basismodul/pull/541>
+* `fix` Der Name, Id und Canonical des ISiKPatientMergeSubscription Profils wurde an das ISiK Namingschema angepasst. <https://github.com/gematik/spec-ISiK-Basismodul/pull/539>
+* `improve` Generalisierter Abschnitt zur Herstellung des Patienten- und Encounter-Kontextes hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/542>
+* `improve` Beispiele hinzugefügt für Patient, Condition, Encounter <https://github.com/gematik/spec-ISiK-Basismodul/pull/520> 
+* `improve` Groß- und kleinschreibung bei ISiK-eigenen CodeSystemen deaktiviert <https://github.com/gematik/spec-ISiK-Basismodul/pull/532/files>
+* `fix` Korrektur eines Beispiels für eine GET-Abfrage zum Suchparameter 'near' <https://github.com/gematik/spec-ISiK-Basismodul/pull/533>
+* `fix` Procedure-code existiert nicht, verwende clinical-code <https://github.com/gematik/spec-ISiK-Basismodul/pull/531>
+* `improve` Update Basisprofile-De Version auf 1.5.2 <https://github.com/gematik/spec-ISiK-Basismodul/pull/549>
 
 
 ----
@@ -166,47 +173,47 @@ Datum: 09.04.2025
 Datum: 25.11.2024
 
 * `improve` Refactoring des ImplementationGuides
-* `fix` Procedure.code zu Pflichfeld gemacht https://github.com/gematik/spec-ISiK-Basismodul/issues/454
-* `fix` Condition.onset harmonisiert mit KBV-Profil und mit Condition.abatement https://github.com/gematik/spec-ISiK-Basismodul/issues/454
+* `fix` Procedure.code zu Pflichfeld gemacht <https://github.com/gematik/spec-ISiK-Basismodul/issues/454>
+* `fix` Condition.onset harmonisiert mit KBV-Profil und mit Condition.abatement <https://github.com/gematik/spec-ISiK-Basismodul/issues/454>
 * `improve` Vereinheitlichung des Umgangs mit ressourcenübergreifenden Suchparametern 
-https://github.com/gematik/spec-ISiK-Basismodul/issues/438
+<https://github.com/gematik/spec-ISiK-Basismodul/issues/438>
 * `fix` Anpassung der include/revinclude Anforderungen in den übergreifenden Festelegungen und dem CapabilityStatement
 * `fix` CodeSystem-Ressource wird im CapabilityStatement nun korrekt angezeigt
-https://github.com/gematik/spec-ISiK-Basismodul/issues/436
-* `fix` CapabilityStatement *near* SearchParameter type & ResourceType Organization spelling, removed custom backport Extension - switched to the official backport mechanism, fixed Bindings to CodeSystems    https://github.com/gematik/spec-ISiK-Basismodul/commit/ae706142832e2059046ce978c4b0dc472c2375e6
-* `improve` Hinweis zur Handhabung von leeren Elementen und einem :not-Modifier hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/473 obsoleter PR, dafür umgesetzt hier: https://github.com/gematik/spec-ISiK-Basismodul/commit/e63cc68d311057f7b30b5b405c5533bef41e9d68
-* `fix` Dependency zum R5 backporting IG auf das R4 only  package angepasst https://github.com/gematik/spec-ISiK-Basismodul/pull/479
-* `improve` Formulierung zur Verwendung des Versorgungsstellenkontaktes https://github.com/gematik/spec-ISiK-Basismodul/pull/488
-* `improve` Beispiel Station hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/546/files
-* `improve` Harmonisierung von Encounter.type und Account.type https://github.com/gematik/spec-ISiK-Basismodul/pull/441
-* `improve` Änderung der Kardinalität von Composition.type.text auf 1..1 https://github.com/gematik/spec-ISiK-Basismodul/pull/441
+<https://github.com/gematik/spec-ISiK-Basismodul/issues/436>
+* `fix` CapabilityStatement *near* SearchParameter type & ResourceType Organization spelling, removed custom backport Extension - switched to the official backport mechanism, fixed Bindings to CodeSystems    <https://github.com/gematik/spec-ISiK-Basismodul/commit/ae706142832e2059046ce978c4b0dc472c2375e6>
+* `improve` Hinweis zur Handhabung von leeren Elementen und einem :not-Modifier hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/473> obsoleter PR, dafür umgesetzt hier: <https://github.com/gematik/spec-ISiK-Basismodul/commit/e63cc68d311057f7b30b5b405c5533bef41e9d68>
+* `fix` Dependency zum R5 backporting IG auf das R4 only  package angepasst <https://github.com/gematik/spec-ISiK-Basismodul/pull/479>
+* `improve` Formulierung zur Verwendung des Versorgungsstellenkontaktes <https://github.com/gematik/spec-ISiK-Basismodul/pull/488>
+* `improve` Beispiel Station hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/546/files>
+* `improve` Harmonisierung von Encounter.type und Account.type <https://github.com/gematik/spec-ISiK-Basismodul/pull/441>
+* `improve` Änderung der Kardinalität von Composition.type.text auf 1..1 <https://github.com/gematik/spec-ISiK-Basismodul/pull/441>
 
 ### Version: 4.0.0
 
 Datum: 30.8.2024
 
-* `improve` Neudefinition der bestätigungsrelevanten Systeme https://github.com/gematik/spec-ISiK-Basismodul/pull/426
-* `improve` Überarbeitung des Abschnitts zu Suchparametern mit Änderung der Anforderungen https://github.com/gematik/spec-ISiK-Basismodul/pull/411
-* `improve` Überarbeitung der Must Support Definition: https://github.com/gematik/spec-ISiK-Basismodul/pull/412
-* `improve` Hinzufügen von MS und weitere Anpassung von Encounter.location, um Abbildung von Standort-Historie zu ermöglichen: https://github.com/gematik/spec-ISiK-Basismodul/pull/407
-* `improve` Added MS for Account.coverage.priority https://github.com/gematik/spec-ISiK-Basismodul/pull/405 and https://github.com/gematik/spec-ISiK-Basismodul/pull/406 
-* `documentation` Erläuterung zur Handhabung von Mime-Types im Fall der Rückgabe von Binaries in ihrer nativen Form hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/380
-* `improve` Hinzufügen von MS für Coverage.subscriber.reference für Gesetzlich- und Privatversicherte https://github.com/gematik/spec-ISiK-Basismodul/pull/408
-* `improve` Hinzufügen von Use Case Beschreibungen (nicht normativ) https://github.com/gematik/spec-ISiK-Basismodul/pull/399
+* `improve` Neudefinition der bestätigungsrelevanten Systeme <https://github.com/gematik/spec-ISiK-Basismodul/pull/426>
+* `improve` Überarbeitung des Abschnitts zu Suchparametern mit Änderung der Anforderungen <https://github.com/gematik/spec-ISiK-Basismodul/pull/411>
+* `improve` Überarbeitung der Must Support Definition: <https://github.com/gematik/spec-ISiK-Basismodul/pull/412>
+* `improve` Hinzufügen von MS und weitere Anpassung von Encounter.location, um Abbildung von Standort-Historie zu ermöglichen: <https://github.com/gematik/spec-ISiK-Basismodul/pull/407>
+* `improve` Added MS for Account.coverage.priority <https://github.com/gematik/spec-ISiK-Basismodul/pull/405> and <https://github.com/gematik/spec-ISiK-Basismodul/pull/406> 
+* `documentation` Erläuterung zur Handhabung von Mime-Types im Fall der Rückgabe von Binaries in ihrer nativen Form hinzugefügt: <https://github.com/gematik/spec-ISiK-Basismodul/pull/380>
+* `improve` Hinzufügen von MS für Coverage.subscriber.reference für Gesetzlich- und Privatversicherte <https://github.com/gematik/spec-ISiK-Basismodul/pull/408>
+* `improve` Hinzufügen von Use Case Beschreibungen (nicht normativ) <https://github.com/gematik/spec-ISiK-Basismodul/pull/399>
 * `improve` Hinzufügen einer Referenz zwischen Observation-Seiten und Profildarstellung
-* `improve` Entfernen der MS-Flag für .id, da irreführend https://github.com/gematik/spec-ISiK-Basismodul/pull/414
-* `fix` Fix Beispiel DorisResultat für patient-merge https://github.com/gematik/spec-ISiK-Basismodul/pull/415
-* `improve` Anforderung zu Procedure.Encounter hinzu https://github.com/gematik/spec-ISiK-Basismodul/pull/419
-* `improve` Änderung der MS-Definition für Patient.active https://github.com/gematik/spec-ISiK-Basismodul/pull/421
-* `improve` Definition für MS bei Condition.clinicalStatus geschwächt https://github.com/gematik/spec-ISiK-Basismodul/pull/422
-* `improve` SnomedCT Coding.version muss auf die German Edition zeigen https://github.com/gematik/spec-ISiK-Basismodul/pull/417
-* `improve` ISiKAngehoeriger hinzufügen von MS auf .relation & .telecom, entfernen der gender extension https://github.com/gematik/spec-ISiK-Basismodul/pull/417
-* `improve` ISiKDiagnose hinzufügen von MS auf .bodySite incl. SnomedCT Slice zur Kodierung https://github.com/gematik/spec-ISiK-Basismodul/pull/417
-* `improve` ISiKOrganisation identifier:TelematikId hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/417
-* `improve` Harmonisierung mit Anforderung mit Kontakt/Fall-Seite https://github.com/gematik/spec-ISiK-Basismodul/pull/424
-* `improve` Definition für MS bei Condition.clinicalStatus geschwächt https://github.com/gematik/spec-ISiK-Basismodul/pull/422 und https://github.com/gematik/spec-ISiK-Basismodul/pull/423
-* `improve` Hinzufügen von ValueSets zur Harmonisierung der Organisation mit den Anpassungen im Modul Terminplanung https://github.com/gematik/spec-ISiK-Basismodul/pull/418
-* `fix` Fix des ValueSets für SNOMED-CT-Diagnosen (entspricht TC 3.0.5) https://github.com/gematik/spec-ISiK-Basismodul/pull/398 
+* `improve` Entfernen der MS-Flag für .id, da irreführend <https://github.com/gematik/spec-ISiK-Basismodul/pull/414>
+* `fix` Fix Beispiel DorisResultat für patient-merge <https://github.com/gematik/spec-ISiK-Basismodul/pull/415>
+* `improve` Anforderung zu Procedure.Encounter hinzu <https://github.com/gematik/spec-ISiK-Basismodul/pull/419>
+* `improve` Änderung der MS-Definition für Patient.active <https://github.com/gematik/spec-ISiK-Basismodul/pull/421>
+* `improve` Definition für MS bei Condition.clinicalStatus geschwächt <https://github.com/gematik/spec-ISiK-Basismodul/pull/422>
+* `improve` SnomedCT Coding.version muss auf die German Edition zeigen <https://github.com/gematik/spec-ISiK-Basismodul/pull/417>
+* `improve` ISiKAngehoeriger hinzufügen von MS auf .relation & .telecom, entfernen der gender extension <https://github.com/gematik/spec-ISiK-Basismodul/pull/417>
+* `improve` ISiKDiagnose hinzufügen von MS auf .bodySite incl. SnomedCT Slice zur Kodierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/417>
+* `improve` ISiKOrganisation identifier:TelematikId hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/417>
+* `improve` Harmonisierung mit Anforderung mit Kontakt/Fall-Seite <https://github.com/gematik/spec-ISiK-Basismodul/pull/424>
+* `improve` Definition für MS bei Condition.clinicalStatus geschwächt <https://github.com/gematik/spec-ISiK-Basismodul/pull/422> und <https://github.com/gematik/spec-ISiK-Basismodul/pull/423>
+* `improve` Hinzufügen von ValueSets zur Harmonisierung der Organisation mit den Anpassungen im Modul Terminplanung <https://github.com/gematik/spec-ISiK-Basismodul/pull/418>
+* `fix` Fix des ValueSets für SNOMED-CT-Diagnosen (entspricht TC 3.0.5) <https://github.com/gematik/spec-ISiK-Basismodul/pull/398> 
 
 
 ----
@@ -215,19 +222,19 @@ Datum: 30.8.2024
 
 Datum: 4.4.2024
 
-* `improve` Neues Feature: Patient merge Notification; Hinzufügen MustSupport für Patient.link & patient-merge Subscription(Topic) https://github.com/gematik/spec-ISiK-Basismodul/pull/359
-* `improve` Neue Profile für Standort und Organisation https://github.com/gematik/spec-ISiK-Basismodul/pull/358 
-* `improve` Neue Profile für Allergien https://github.com/gematik/spec-ISiK-Basismodul/pull/369
-* `improve` Neue Profile für Lebenszustände - Schwangerschaftsstatus , SS-ET, Raucher & Alkoholabususstatus by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/378
-  * Hinzugefügt Lebenszustand markdown descriptions  by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/379
-* `improve` Feature Ptdata 827 reha entlassung by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/393
-* `improve` Update Deutsche Basisprofile v1.5.0 by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/372
-* `improve` Verwende IdentifierAbrechnungsnummer aus den Deutschen Basisprofilen by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/381
-* `improve` Abkündigen der Slices zu VersichertenId-GKV und ersetzen mit generischer Versicherten-ID : https://github.com/gematik/spec-ISiK-Basismodul/pull/382/files
-* `fix` Fix /canonical to new format by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/383
-* `improve` Feature /ptdata 821 account abrechnungsart by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/386
-* `improve` Feature /ptdata 671 // MS für coding.version  by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/390
-* `improve` Feature added Allergyintollerance to CapStatement by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/385
+* `improve` Neues Feature: Patient merge Notification; Hinzufügen MustSupport für Patient.link & patient-merge Subscription(Topic) <https://github.com/gematik/spec-ISiK-Basismodul/pull/359>
+* `improve` Neue Profile für Standort und Organisation <https://github.com/gematik/spec-ISiK-Basismodul/pull/358> 
+* `improve` Neue Profile für Allergien <https://github.com/gematik/spec-ISiK-Basismodul/pull/369>
+* `improve` Neue Profile für Lebenszustände - Schwangerschaftsstatus , SS-ET, Raucher & Alkoholabususstatus by @patrick-werner in <https://github.com/gematik/spec-ISiK-Basismodul/pull/378>
+  * Hinzugefügt Lebenszustand markdown descriptions  by @patrick-werner in <https://github.com/gematik/spec-ISiK-Basismodul/pull/379>
+* `improve` Feature Ptdata 827 reha entlassung by @alexzautke in <https://github.com/gematik/spec-ISiK-Basismodul/pull/393>
+* `improve` Update Deutsche Basisprofile v1.5.0 by @alexzautke in <https://github.com/gematik/spec-ISiK-Basismodul/pull/372>
+* `improve` Verwende IdentifierAbrechnungsnummer aus den Deutschen Basisprofilen by @alexzautke in <https://github.com/gematik/spec-ISiK-Basismodul/pull/381>
+* `improve` Abkündigen der Slices zu VersichertenId-GKV und ersetzen mit generischer Versicherten-ID : <https://github.com/gematik/spec-ISiK-Basismodul/pull/382/files>
+* `fix` Fix /canonical to new format by @patrick-werner in <https://github.com/gematik/spec-ISiK-Basismodul/pull/383>
+* `improve` Feature /ptdata 821 account abrechnungsart by @alexzautke in <https://github.com/gematik/spec-ISiK-Basismodul/pull/386>
+* `improve` Feature /ptdata 671 // MS für coding.version  by @patrick-werner in <https://github.com/gematik/spec-ISiK-Basismodul/pull/390>
+* `improve` Feature added Allergyintollerance to CapStatement by @patrick-werner in <https://github.com/gematik/spec-ISiK-Basismodul/pull/385>
 * `improve` Lockerung der Anforderung für den Suchparameter "context-type-value" definiert für ISiKValueSet zu "KANN"
 
 ----
@@ -242,11 +249,11 @@ Diese Technical Correction entfällt für Stufe 4, da die Änderungen direkt in 
 
 Datum: 1.3.2024
 
-* `improve` Entfernen der Festlegungen zum .identifier in ISiKVersicherungsverhaeltnisGesetzlich: https://github.com/gematik/spec-ISiK-Basismodul/pull/362
-* `fix` Korrektur der Anforderung zur Encounter-Kontaktebene: https://github.com/gematik/spec-ISiK-Basismodul/pull/363
-* `improve` Hinweis zur Nutzung des Suchparameter "context-type-value" hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/367
-* `improve` Änderung der Anforderung zu KANN für Profil ISIKKatalog: https://github.com/gematik/spec-ISiK-Basismodul/pull/367
-* `improve` Lockerung für Extension Kardinalität in Account zu ..* und hinzufügen einer Beschreibung: https://github.com/gematik/spec-ISiK-Basismodul/pull/366
+* `improve` Entfernen der Festlegungen zum .identifier in ISiKVersicherungsverhaeltnisGesetzlich: <https://github.com/gematik/spec-ISiK-Basismodul/pull/362>
+* `fix` Korrektur der Anforderung zur Encounter-Kontaktebene: <https://github.com/gematik/spec-ISiK-Basismodul/pull/363>
+* `improve` Hinweis zur Nutzung des Suchparameter "context-type-value" hinzugefügt: <https://github.com/gematik/spec-ISiK-Basismodul/pull/367>
+* `improve` Änderung der Anforderung zu KANN für Profil ISIKKatalog: <https://github.com/gematik/spec-ISiK-Basismodul/pull/367>
+* `improve` Lockerung für Extension Kardinalität in Account zu ..* und hinzufügen einer Beschreibung: <https://github.com/gematik/spec-ISiK-Basismodul/pull/366>
 
 
 ----
@@ -254,35 +261,35 @@ Datum: 1.3.2024
 
 Datum: 15.01.2024
 
-* `improve` Anpassung und Harmonisierung der Anforderungen zu HTTP-Responses: update HTTP response requirement #308 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/354
+* `improve` Anpassung und Harmonisierung der Anforderungen zu HTTP-Responses: update HTTP response requirement #308 by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/354>
 
-**Full Changelog**: https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.2...v.3.0.3
+**Full Changelog**: <https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.2...v.3.0.3>
 
 ----
 ### Version: 3.0.2
 
 Datum: 09.01.2024
 
-* `improve` Hinzufügen optionaler Suchparameter für RelatedPerson: Add new optional SearchParameter for RelatedPerson.address - Feature /anfisk 146 search related person by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/346
+* `improve` Hinzufügen optionaler Suchparameter für RelatedPerson: Add new optional SearchParameter for RelatedPerson.address - Feature /anfisk 146 search related person by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/346>
 
-**Full Changelog**: https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.1...v.3.0.2
+**Full Changelog**: <https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.1...v.3.0.2>
 
 ----
 ### Version: 3.0.1
 
 Datum: 05.12.2023
 
-* `improve` Obsoleter SNOMED Code ersetzt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/d72f3a08a41b999074b4f33db299d5d71cd04be9
-* `improve` Hinweis zur Nutzung der ISIKBinary-Ressource hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/7dc3026686856efd3e61660a37f1e15955d45a11
-* `fix` Invariante zur Strassenanschrift modifiziert - `fix` invariant context #330: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/345d776f3b75442e391d8787c71a051628050b9e
+* `improve` Obsoleter SNOMED Code ersetzt: <https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/d72f3a08a41b999074b4f33db299d5d71cd04be9>
+* `improve` Hinweis zur Nutzung der ISIKBinary-Ressource hinzugefügt: <https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/7dc3026686856efd3e61660a37f1e15955d45a11>
+* `fix` Invariante zur Strassenanschrift modifiziert - `fix` invariant context #330: <https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/345d776f3b75442e391d8787c71a051628050b9e>
   * hier auch Constraint bezüglich ISiKAngehoeriger aus Strassenanschrift entfernt
-* `improve` Anforderungen im CapabilityStatement zum Account entsprechend der textuellen Anforderungen angepasst: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/ac4d2c730bb94dd50cc4f5deea8c2b1344329d2c
-* `improve` Neue (klärende) Anforderung zum Versorgungsstellenkontakt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/d7005923c4596f8a646468f20e1f9975f2489bef 
-* `improve` Öffnung der Festlegung einer Coverage-ID - `fix` identifier slices + add MS beneficiary + rm MS kvid: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/bd66cca38397b987581bece3d2e9f508813ff765
-* `improve` Zielstellung zur Interoperabilität der Profile angepasst: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/3130973de182a078208f181a64ff1cfd8783493a
+* `improve` Anforderungen im CapabilityStatement zum Account entsprechend der textuellen Anforderungen angepasst: <https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/ac4d2c730bb94dd50cc4f5deea8c2b1344329d2c>
+* `improve` Neue (klärende) Anforderung zum Versorgungsstellenkontakt: <https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/d7005923c4596f8a646468f20e1f9975f2489bef> 
+* `improve` Öffnung der Festlegung einer Coverage-ID - `fix` identifier slices + add MS beneficiary + rm MS kvid: <https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/bd66cca38397b987581bece3d2e9f508813ff765>
+* `improve` Zielstellung zur Interoperabilität der Profile angepasst: <https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/3130973de182a078208f181a64ff1cfd8783493a>
 
 
-**Full Changelog**: https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.0...v.3.0.1
+**Full Changelog**: <https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.0...v.3.0.1>
 
 ----
 ### Version: 3.0.0
@@ -297,24 +304,24 @@ Datum: 01.07.2023
 Datum: 30.05.2023
 
 * `improve` Allgemein Vorgaben zur Herkunftsausweisung/Provenance (meta.tag) gelockert
-  * provenance constraints by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/263
+  * provenance constraints by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/263>
 * `improve` ISiKCapabilityStatementBasisServer Read Shall für Composition entfernt
-  * capability for Composition #259 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/260
+  * capability for Composition #259 by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/260>
 * `improve` ISiKAbrechnungsfall   * Änderung des Kodierungs-Pattern, Value Set hinzugefügt und Beispiel angepasst
-    * Enhancement /account identifier by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/238
-    * Update /identifier Abrechnungsnummer vs by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/269
+    * Enhancement /account identifier by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/238>
+    * Update /identifier Abrechnungsnummer vs by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/269>
   * Änderung der falschen Kardinalität
-    * cardinality #258 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/262
+    * cardinality #258 by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/262>
   * Nur der Patient als Subject zugelassen
-    * Update /account.subject only patient #251 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/265
+    * Update /account.subject only patient #251 by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/265>
 * `improve` ISiK Prozedur: MS für SNOMED-Codierung
-  * MS for SNOMED by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/239
+  * MS for SNOMED by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/239>
 * `improve` ISiKVersicherungsverhaeltnisSelbstzahler Organisation als zahlende Instanz hinzugefügt
-  * organization as payor by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/236
+  * organization as payor by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/236>
 * `improve` ISiK KontaktGesundheitseinrichtung: Suchparameter für Encounter.date start/end aus R5 übernommen
-  * feat Encounter.date start/end SearchParameters backported from R5, e… by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/242
+  * feat Encounter.date start/end SearchParameters backported from R5, e… by @patrick-werner in <https://github.com/gematik/spec-ISiK-Basismodul/pull/242>
 * `improve` ISiKBerichtSubSysteme References generisch statt ISiK-spezifisch
-  * Reference - Kommentierung Stufe 3 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/256
+  * Reference - Kommentierung Stufe 3 by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/256>
 
 ----
 ### Version: 3.0.0-rc2
@@ -394,8 +401,8 @@ Datum: 30.09.2022
 * ISiKPatient   * .address.Strassenanschrift.extension:Stadtteil, .type, .status nun Must Support
 * ISiKPersonImGesundheitsberuf   * .address.Strassenanschrift.extension:Stadtteil, nun Must Support
 * ISiKAngehöriger   * .address.Strassenanschrift.extension:Stadtteil, nun Must Support
-* ISiKAbrechnungsfall   * .identifier.system im Example nun https://test.krankenhaus.de/fhir/sid/besuchsnummer
-* ISiKKontaktGesundheitseinrichtung   * .identifier.system im Example nun https://test.krankenhaus.de/fhir/sid/besuchsnummer
+* ISiKAbrechnungsfall   * .identifier.system im Example nun <https://test.krankenhaus.de/fhir/sid/besuchsnummer>
+* ISiKKontaktGesundheitseinrichtung   * .identifier.system im Example nun <https://test.krankenhaus.de/fhir/sid/besuchsnummer>
 * ISiKVersicherungsverhaeltnisGesetzlich   * .type ist nun Must Support
 * ISiKVersicherungsverhaeltnisSelbstzahler   * .type und .status ist nun Must Support
 
@@ -404,7 +411,7 @@ Datum: 30.09.2022
 
 Datum: 30.06.2022
 
-* `fix` Allgemein     * Alle Conformance Ressourcen enthalten den Prefix "https://gematik.de/fhir/isik/v2/Basismodul/" in ihrer Canonical URL
+* `fix` Allgemein     * Alle Conformance Ressourcen enthalten den Prefix "<https://gematik.de/fhir/isik/v2/Basismodul/"> in ihrer Canonical URL
     * Erweiterung des Abschnittes "Verpflichtende Suchparameter (Alle Datenobjekte)" durch _tag, , _count, _include, _revinclude
     * Best Practice Empfehlungen für Standard-Suchfilter hinzugefügt
     * Verpflichtung type-Modifier auf Referenzen hinzugefügt
@@ -437,8 +444,8 @@ Datum: 30.06.2022
 Datum: 08.04.2022
 
 * Initiale Ballotierungsversion für ISiK Stufe 2
-----
 
+----
 
 
 

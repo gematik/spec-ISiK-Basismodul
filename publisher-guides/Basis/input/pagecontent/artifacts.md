@@ -20,6 +20,11 @@ Das CapabilityStatement mit der Kennzeichnung "Expanded" dient der direkten Übe
 
 ### Profile
 
+#### Ressourcen-Profile
+
+{% include artifacts-table-generator-isik.html resourceType="StructureDefinition" filterKind="resource" showType=true sortByType=true %}
+<div><figcaption><strong>Tabelle:</strong> Ressourcen-Profile</figcaption></div>
+
 #### Datentyp-Profile
 
 {% include artifacts-table-generator-isik.html resourceType="StructureDefinition" filterKind="complex-type" filterTypeNotEquals="Extension" showType=true %}
@@ -30,10 +35,10 @@ Das CapabilityStatement mit der Kennzeichnung "Expanded" dient der direkten Übe
 {% include artifacts-table-generator-isik.html resourceType="StructureDefinition" filterKind="complex-type" filterTypeEquals="Extension" %}
 <div><figcaption><strong>Tabelle:</strong> Extensions</figcaption></div>
 
-#### Ressourcen-Profile
+#### Suchparameter
 
-{% include artifacts-table-generator-isik.html resourceType="StructureDefinition" filterKind="resource" showType=true sortByType=true %}
-<div><figcaption><strong>Tabelle:</strong> Ressourcen-Profile</figcaption></div>
+{% include artifacts-table-generator-isik.html resourceType="SearchParameter" %}
+<div><figcaption><strong>Tabelle:</strong> Suchparameter</figcaption></div>
 
 ### Terminologien
 

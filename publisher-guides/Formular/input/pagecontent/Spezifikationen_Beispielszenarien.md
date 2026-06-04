@@ -102,12 +102,29 @@ Die Kombination aus dem ISiK-Terminmodul (`$book`-Operation) und dem ISiK Formul
 
 ### Szenario: TI-Messenger (TI-M)
 
-Das ISiK Formularmodul bietet neben der Integration in Krankenhausinfrastrukturen auch die Möglichkeit, Formulare über den TI-Messenger (TI-M) bereitzustellen. Das folgende Diagramm zeigt eine beispielhafte Nutzung der im Modul beschriebenen Funktionen und Interaktionen im Kontext des TI-Messengers.
+Das ISiK Formularmodul bietet neben der Integration in Krankenhausinfrastrukturen auch die Möglichkeit, Formulare über den TI-Messenger (TI-M) bereitzustellen. Das folgende Sequenzdiagramm zeigt den End-to-End-Ablauf der beteiligten Akteure und Interaktionen im Kontext des TI-Messengers.
 
 <div style="width: 700px;">
 {% include akteure_tim.svg %}
 </div>
 
-Im Diagramm nicht abgebildet ist der Akteur des FormularLaunchers, welcher in diesem Kontext als Standalone anzunehmen ist und durch das interne Protokoll des TI-M getriggert wird. Wichtig ist, dass trotzdem der Patient-Kontext vorhanden ist, der in den [FormularDaten](StructureDefinition-ISiKFormularDaten.html) genutzt werden kann.
+#### Ablaufbeschreibung
 
-Die FormularDatenVorbelegung und -Extraktion sind in diesem Use Case nicht im FormularRenderer verortet, sondern werden durch den "TI-M Pro Client" durchgeführt bei potenzieller Integration in die Leistungserbringer-Infrastruktur.
+1. **Workflow-Start** – Der TI-M Pro Client (in den Rollen FormularDefinitionsVerwalter, FormularDatenVorbeleger und FormularDatenExtraktor) initiiert den Prozess.
+2. **Vorbelegung** *(optional, nur bei Integration in Leistungserbringer-Infrastruktur)* – Der TI-M Pro Client ruft vorhandene Daten zur Vorbelegung des Formulars aus der FormularDatenQuelle (z. B. dem KIS) ab.
+3. **Launch und Übermittlung** – Der TI-M Pro Client sendet FormularDefinition (Questionnaire) und optional vorbefüllte FormularDaten über das TI-M-spezifische Protokoll an den FormularRenderer (TI-M ePA Client).
+4. **FormularRendering** – Der FormularRenderer stellt das Formular mit optionaler Vorbelegung dar.
+5. **Dateneingabe** – Der Nutzer gibt die erforderlichen Daten im Formular ein.
+6. **Validierung** – Die Eingaben werden anhand der im Questionnaire definierten Regeln geprüft.
+7. **Rückübermittlung** – Der FormularRenderer sendet die ausgefüllten FormularDaten (QuestionnaireResponse) über das TI-M-spezifische Protokoll an den TI-M Pro Client zurück.
+8. **Extraktion und Rückschreiben** *(optional, nur bei Integration in Leistungserbringer-Infrastruktur)* – Der TI-M Pro Client extrahiert die relevanten Daten aus der QuestionnaireResponse und schreibt sie in die FormularDatenQuelle zurück.
+
+#### Abgrenzung der ISiK-Akteure im TI-M-Kontext
+
+| ISiK-Akteur | Entsprechung im TI-M-Kontext |
+|---|---|
+| FormularLauncher | Standalone-Komponente; wird durch das TI-M-interne Protokoll getriggert; der Patienten-Kontext wird dabei übergeben und kann in den [FormularDaten](StructureDefinition-ISiKFormularDaten.html) genutzt werden |
+| FormularDefinitionsVerwalter, FormularDatenVorbeleger, FormularDatenExtraktor | TI-M Pro Client |
+| FormularRenderer | TI-M ePA Client |
+
+Verantwortlichkeiten und Datenflüsse im TI-M-Kontext sind in der Vorabveröffentlichung [gemF_TI-M_Strukturierte_Daten](https://gemspec.gematik.de/prereleases/Draft_gemF_TI-M_Strukturierte_Daten/gemF_TI-M_Strukturierte_Daten_V1.0.0_CC/) (Abschnitt 3.3) beschrieben. Stand 28.05.2026. In einer späteren TC wird der Link durch die finale Spezifikation ersetzt.
