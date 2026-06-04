@@ -15,11 +15,10 @@ Dies dient der Vermeidung konkurrierender Listen und stellt eine eindeutige fach
 Im Unterschied zum eMP der ePA ist die ISiK-MedikationsListe dynamisch generierbar und systemseitig aktualisierbar. Sie kann auch Informationen enthalten, die außerhalb des eigenen Hauses erfasst wurden - sofern diese dem System strukturiert vorliegen (z.B. durch eMP-Import).
 Ein Import aus dem eMP ist möglich, aber nicht verpflichtend.
 
-### Fachliche Guidance zu `List.mode` in `ISiKMedikationsListe`Expand commentComment on line R1Resolved
+### Fachliche Guidance zu `List.mode` in `ISiKMedikationsListe`
 
-Für die Ressource `ISiKMedikationsListe` wird `List.mode` zur fachlichen Einordnung des Charakters der Medikationsliste verwendet.Expand commentComment on line R3Resolved
-Expand commentComment on lines R1 to R4Resolved
-* `snapshot`: abgeschlossene, zu einem bestimmten Zeitpunkt gültige Momentaufnahme der MedikationExpand commentComment on line R5Resolved
+Für die Ressource `ISiKMedikationsListe` wird `List.mode` zur fachlichen Einordnung des Charakters der Medikationsliste verwendet.
+* `snapshot`: abgeschlossene, zu einem bestimmten Zeitpunkt gültige Momentaufnahme der Medikation
 * `working`: aktiv gepflegte oder fortlaufend weiterbearbeitete Medikationsliste
 
 #### Typische Anwendungsszenarien
