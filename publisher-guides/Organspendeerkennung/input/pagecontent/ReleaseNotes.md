@@ -6,8 +6,11 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd
 
+
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
-* `fix` Pupillen-Beispiele (Pupillenlichtreaktion) korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
+* `documentation` Pupillen-Beispiele (Pupillenlichtreaktion) korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
+* `improve` Einführung des Suchparameters `category` für die Procedure Profil zur Vereinfachung der Abfrage dieser Profile
+* `documentation` Beispiel für Beatmungsmodus St-Mod korrigiert 
 
 Im Fall von prozessorientierten Implementierungsleitfäden beginnt die Versionierung nach Semver des Implementierungsleitfadens gemäß des Major Releases im Zuge dessen der Implementierungsleitfaden entstanden ist (X.0.0)
 
