@@ -24,15 +24,13 @@ Für die zulässigen Abfragezeiträume – gemessen ab dem Zeitpunkt der Anfrage
 
 > **Hinweis:** Die Anforderungen beziehen sich jeweils auf Abfragen mit einem einzelnen Kalender als Bezugskontext (und i.d.R. ohne gleichzeitige Nutzung von `_include`, `_revinclude` oder Chaining).
 
-### Sonderfall: Leere Trefferlisten bei Slot-Abfragen
-Für Slot-Abfragen auf definierte Ressourcen (insbesondere mit angegebenem schedule) gilt zusätzlich:
+#### Sonderfall: Leere Trefferlisten bei Slot-Abfragen
+Für Slot-Abfragen auf einen einzelnen Kalender mit angegebenem `schedule` gilt zusätzlich:
 
-- Leere Request-Responses auf definierte Ressourcen
-Anforderung: unter 500 Millisekunden
-- Beispielabfrage: Slot?schedule=Schedule/ISiKKalenderExample&status=free&start=ge2026-06-01&start=le2026-07-02
-- Beispielkontext: Abfragedatum 01.06.2026, kein freier Slot im laufenden Monat, somit kein Treffer im Response-Bundle
-
-Begründung: Leere Response-Bundles dürfen sequentielle Abfragen nur minimal verzögern.
+- Leere Response-Bundles bei Slot-Abfragen ohne Treffer **MÜSSEN** in unter 500 Millisekunden beantwortet werden.
+- Beispielabfrage: `baseUrl/Slot?schedule=Schedule/ISiKKalenderExample&status=free&start=ge2026-06-01&start=le2026-07-02`
+- Beispielkontext: Abfrage am 01.06.2026, im laufenden Monat kein freier Slot, daher kein Treffer im Response-Bundle
+- Begründung: Leere Response-Bundles dürfen sequentielle Abfragen nur minimal verzögern.
 
 #### Begründung der Antwortzeit-Anforderungen
 
