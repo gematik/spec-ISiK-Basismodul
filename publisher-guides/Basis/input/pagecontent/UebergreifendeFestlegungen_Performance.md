@@ -18,12 +18,6 @@ Daher sind hierfür sehr kurze Antwortzeiten ohne wahrnehmbare Verzögerung anzu
 
 Für diese Performance-Kategorien gilt:
 
-- **PK0:** Leere Request-Responses auf definierte Ressourcen
--  Anforderung: **"unter 100 Millisekunden"**
-- Beispiel: `Slot?schedule=<Schedule/ISiKKalenderExample>&status=free&start=ge2026-06-01&start=le2026-07-02`; mit 1.6.2026 als dem Abfragedatum und keinem freien Slot im laufenden Monat, d.h. mit keinem Treffer im Response-Bundle
-- Begründung: Leere Response-Bundles dürfen sequentielle Abfragen nur minimal verzögern.
-
-
 - **PK1:** Request-Anfrage von Ressourcen unter bekannter ID
   - Anforderung: **"unter einer Sekunde"**
     - Beispiel: `GET baseURL/Patient/89186842`

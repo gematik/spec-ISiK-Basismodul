@@ -8,6 +8,8 @@ tbd. (anderer PR/Ticket)
 
 Slot-Abfragen (Terminblock-Abfragen) bilden den performanzkritischen Kern des Buchungsworkflows: Nutzende erwarten beim Suchen nach freien Terminen eine unmittelbare Rückmeldung. Gleichzeitig können Slot-Ergebnismengen – abhängig von Slot-Dauer und Abfragezeitraum – sehr groß werden, weshalb klare Grenzen für zulässige Abfragezeiträume und die daran geknüpften Anforderungen notwendig sind.
 
+
+
 #### Zulässige Abfragezeiträume und Antwortzeit-Anforderungen
 
 **Annahme:** Eine Slot-Abfrage enthält in der Regel den Suchparameter `schedule` , um die Ergebnismenge auf einen einzelnen Kalender einzuschränken.
@@ -21,6 +23,16 @@ Für die zulässigen Abfragezeiträume – gemessen ab dem Zeitpunkt der Anfrage
 | **Über 3 Monate** | Langfristige Planung | Jahresplanung, Kapazitätsmanagement | Nicht normiert |
 
 > **Hinweis:** Die Anforderungen beziehen sich jeweils auf Abfragen mit einem einzelnen Kalender als Bezugskontext (und i.d.R. ohne gleichzeitige Nutzung von `_include`, `_revinclude` oder Chaining).
+
+### Sonderfall: Leere Trefferlisten bei Slot-Abfragen
+Für Slot-Abfragen auf definierte Ressourcen (insbesondere mit angegebenem schedule) gilt zusätzlich:
+
+- Leere Request-Responses auf definierte Ressourcen
+Anforderung: unter 500 Millisekunden
+- Beispielabfrage: Slot?schedule=Schedule/ISiKKalenderExample&status=free&start=ge2026-06-01&start=le2026-07-02
+- Beispielkontext: Abfragedatum 01.06.2026, kein freier Slot im laufenden Monat, somit kein Treffer im Response-Bundle
+
+Begründung: Leere Response-Bundles dürfen sequentielle Abfragen nur minimal verzögern.
 
 #### Begründung der Antwortzeit-Anforderungen
 
