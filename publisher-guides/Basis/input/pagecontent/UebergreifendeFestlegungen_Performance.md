@@ -89,7 +89,7 @@ Ressourcentypen werden nach erwartetem Datenaufkommen klassifiziert. Daraus ergi
 
 | Klasse | Ressourcen | Mindest-Suchumfang (Floor) |
 | --- | --- | --- |
-| **Hochvolumig** | `Observation`, `DeviceMetric` | `_lastUpdated`/Datums-Fenster **≤ 7 Tage** ODER Pflicht-Begleitparameter (`patient`, `encounter` oder `category` mit Fenster) |
+| **Hochvolumig** | `Observation`, `DeviceMetric`, `MedicationAdministration` | `_lastUpdated`/Datums-Fenster **≤ 7 Tage** ODER Pflicht-Begleitparameter (`patient`, `encounter` oder `category` mit Fenster) |
 | **Mittelvolumig** | `AllergyIntolerance`, `Appointment`, `Composition`, `Condition`, `DiagnosticReport`, `DocumentReference`, `Encounter`, `List`, `MedicationAdministration`, `MedicationRequest`, `MedicationStatement`, `Procedure`, `QuestionnaireResponse`, `RiskAssessment`, `Schedule`, `Slot` | Fenster **≤ 3 Monate** ODER Pflicht-Begleitparameter (`patient` oder `encounter`) |
 | **Niedrigvolumig / Stammdaten** | `Account`, `Binary`, `Device`, `HealthcareService`, `Location`, `Medication`, `Organization`, `Patient`, `Practitioner`, `PractitionerRole`, `Questionnaire`, `RelatedPerson` | kein Fenster nötig (begrenzter Bestand; breite Patient-/Encounter-Suchen sind gemäß PK4 in ≤ 5 s zu beantworten) |
 | **Infrastruktur** | `Bundle`, `CapabilityStatement`, `CodeSystem`, `OperationDefinition`, `Parameters`, `SearchParameter`, `ValueSet` | nicht betroffen, `too-costly` nicht anwendbar |
