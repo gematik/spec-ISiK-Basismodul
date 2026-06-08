@@ -2,7 +2,7 @@ Originäre ISiK Use Cases sind versorgungsorientiert und patientenorientiert. Di
 
 Auf Basis dieser grundsätzlichen Design-Entscheidung können Clients davon ausgehen, dass alle vorliegenden referenzierten bzw. referenzierenden Ressourcen aus dem Kontext der genannten Ressourcen-Typen abrufbar sind. Durch das Vorliegen der Referenzen erfolgt die Dokumentation aller Datenobjekte stets im korrekten Patientenkontext. Zudem liegen für den jeweiligen Kontext relevante Informationen zur Interpretation der Dokumentation und Sicherstellung der Datenintegrität vor. 
 
-Neben Patienten- und Encounter- zentrierten abfragen, SOLLEN bzw. (MÜSSEN in bestimmten Kontexten) bereitstellende Systeme auch generische Abfragen wie folgende unterstützen:
+Neben Patienten- und Encounter- zentrierten Abfragen, SOLLEN bzw. (MÜSSEN in bestimmten Kontexten) bereitstellende Systeme auch generische Abfragen wie folgende unterstützen:
 - Stationslisten 
     - Beispielabruf: `GET baseURL/Location?characteristic=wa`
 - Patienten und Kontakte auf einer bestimmten Station mit einem aktiven Kontakt auf dieser Station
@@ -11,7 +11,7 @@ Neben Patienten- und Encounter- zentrierten abfragen, SOLLEN bzw. (MÜSSEN in be
     - Hinweis: Clients SOLLTEN nach dem Abruf prüfen, ob die im Encounter referenzierte und gesuchte Location tatsächlich `status = active` aufweist. Manche Systeme pflegen eine Historie von Location-Ressourcen und können daher auch inaktive Locations referenzieren, die zum Abfragezeitpunkt nicht mehr belegt sind.
 - Alle zur Verfügung stehenden Medikamente
     - Beispielabruf: `GET baseURL/Medication`
-- Alle verschriebenen bzw. verabreichten Medikamente (u. a. relevantbei auffälligen Medikationschargen)
+- Alle verschriebenen bzw. verabreichten Medikamente (u. a. relevant bei auffälligen Medikationschargen)
     - Beispielabruf: `GET baseURL/MedicationAdministration`
     - Beispielabruf: `GET baseURL/MedicationRequest`
 

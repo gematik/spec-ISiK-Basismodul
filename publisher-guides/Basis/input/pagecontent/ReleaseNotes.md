@@ -11,7 +11,7 @@ Tags werden folgendermaßen verwendet:
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
 Datum: tbd
-
+* `fix` Umbenennung des Suchparameters `characteristic` zu `form` und Verbesserung der Dokumentation des Suchparameters der Location-Ressource <https://github.com/gematik/spec-ISiK-Basismodul/pull/1233>
 * `improve` Hinzufügen einer Definition von Perzentil-Metriken für die Performance <https://github.com/gematik/spec-ISiK-Basismodul/pull/1219>
 * `fix` Suchparameter AllergyIntolerance.onset entfernt, aufgrund fehlerhafter Spezifikation <https://github.com/gematik/spec-ISiK-Basismodul/pull/1211>
 * `fix` Entfernung des MS-Flags bei Encounter.reason aufgrund unzureichender Spezifikation und Abgrenzung zur Aufnahmediagnose in Encounter.diagnosis <https://github.com/gematik/spec-ISiK-Basismodul/pull/1213>
@@ -23,6 +23,7 @@ Datum: tbd
 * `fix` Fehlerhafte Links in der Dokumentation korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>   
 * `documentation` Ergänzung einer Tabelle für [Search-Modifier](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Suchparameter.html) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1196>
 * `documentation` Entfernung von redundantem Text in Performance Anforderungen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1198>
+* `documentation` Ergänzung von Erläuterungen bei der Nutzung von `too-costly` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1208> 
 * `improve` Neuer Identifier-Slice `Mitarbeiterkennzeichen` (type code `EN`) mit MustSupport im Profil `ISiKPersonImGesundheitsberuf` für nicht-ärztliche Personen eingeführt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1223>
 * `fix` Erweiterung der ISiK eigenen Codesysteme und ValueSets um die Information zur Sprache <https://github.com/gematik/spec-ISiK-Basismodul/pull/1214>
 * `improve` Ergänzung der Extension `abatement` (klinisch relevantes Enddatum) im Profil `ISiKAllergieUnvertraeglichkeit` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1231>
