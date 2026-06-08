@@ -37,6 +37,41 @@ hier sollte genauer spezifiziert werden, welche Statuswerte  für clincial- und 
 Alternativ: hier einen Sermon analog zu Condition.clincalStatus einfügen.
 Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag hat!
 */
+* extension contains
+  http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement named abatement 0..1 MS
+* extension[abatement] 
+  * ^short = "Klinisch relevantes Enddatum"
+  * ^comment = "Hier wird angegeben, bis wann der/die Patient:in die Allergie/Unverträglichkeit hatte. Bei einer fortbestehenden Diagnose/Erkrankung ist diese Angabe nicht zu übermitteln.
+  
+  **Begründung MS:** Das Enddatum der Allergie/Unverträglichkeit ist für die klinische Bewertung der aktuellen Relevanz und die Priorisierung von Warnhinweisen essenziell. Es ermöglicht die Unterscheidung zwischen aktiven und zurückliegenden Allergien, was insbesondere in Medikations- und Entscheidungsunterstützungsprozessen von großer Bedeutung ist."
+  * value[x] ^slicing.discriminator.type = #type
+  * value[x] ^slicing.discriminator.path = "$this"
+  * value[x] ^slicing.rules = #open
+  * valueDateTime 0..1 MS
+  * valueDateTime only dateTime
+    * ^sliceName = "valueDateTime"
+    * ^short = "Datum, bis wann der/die Patient:in die Allergie/Unverträglichkeit hatte"
+    * ^comment = "**Begründung MS:** Diese Variante erlaubt es, das klinisch relevante Enddatum als exakten Zeitstempel zu übertragen, wie er in Primärsystemen üblich dokumentiert wird. Ein präzises Datum ist die belastbarste Grundlage für die Bewertung, ob eine Allergie/Unverträglichkeit noch aktuell relevant ist."
+  * valueAge 0..1 MS
+  * valueAge only Age
+    * ^sliceName = "valueAge"
+    * ^short = "Alter, bis zu dem der/die Patient:in die Allergie/Unverträglichkeit hatte"
+    * ^comment = "**Begründung MS:** Für lang zurückliegende oder anamnestisch erhobene Allergien/Unverträglichkeiten ist das Ende häufig nur als Lebensalter der/des Patient:in dokumentiert. Diese Variante verhindert Informationsverlust, wenn kein exaktes Enddatum vorliegt."
+  * valueRange 0..1 MS
+  * valueRange only Range
+    * ^sliceName = "valueRange"
+    * ^short = "Altersspanne, bis zu der der/die Patient:in die Allergie/Unverträglichkeit hatte"
+    * ^comment = "**Begründung MS:** Ist das Ende zeitlich nicht exakt eingrenzbar, ermöglicht die Angabe einer Altersspanne dennoch eine medizinisch verwertbare zeitliche Einordnung der zurückliegenden Allergie/Unverträglichkeit."
+    * extension contains http://fhir.de/StructureDefinition/lebensphase named lebensphase-bis 0..1 MS
+    * extension[lebensphase-bis] ^short = "Lebensphase"
+    * extension[lebensphase-bis] ^definition = "Lebensphase als kodierte Information angegeben, bis zu der der/die Patient:in die Allergie/Unverträglichkeit hatte."
+    * extension[lebensphase-bis] ^comment = "**Begründung MS:** Ist auch eine Altersspanne nicht bezifferbar, erlaubt die kodierte Lebensphase (z. B. Kindheit, Erwachsenenalter) eine grobe, aber klinisch nachvollziehbare Einordnung des Endes der Allergie/Unverträglichkeit."
+    * low MS
+      * ^short = "Beginn der Altersspanne für die Schätzung des Alters"
+      * ^comment = "**Begründung MS:** Die Untergrenze grenzt den frühesten Zeitpunkt ein, ab dem die Allergie/Unverträglichkeit nicht mehr bestand, und ist für die Interpretation der Altersspanne unverzichtbar."
+    * high MS
+      * ^short = "Ende der Altersspanne für die Schätzung des Alters"
+      * ^comment = "**Begründung MS:** Die Obergrenze grenzt den spätesten Zeitpunkt ein, bis zu dem die Allergie/Unverträglichkeit noch relevant gewesen sein kann, und ist für die Interpretation der Altersspanne unverzichtbar."
 * clinicalStatus MS
   * ^short = "klinischer Status"
   * ^comment = "**Begründung MS:** Der klinische Status ist notwendig, um aktive gegenüber zurückliegenden Allergien unterscheiden und in Medikations- sowie Entscheidungsunterstützungsprozessen korrekt berücksichtigen zu können."

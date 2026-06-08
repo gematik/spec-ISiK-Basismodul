@@ -12,7 +12,7 @@ Description: "Pupillenreaktion links nicht messbar am 2020-03-11T20:17:06+01:00"
 * subject = Reference(ExampleOrganPatientSternenfall)
 * effectiveDateTime = "2020-03-11T20:17:06+01:00"
 * bodySite = $sct#16089004 "Structure of pupil of left eye"
-* dataAbsentReason = $data-absent-reason#unknown "Unknown"
+* dataAbsentReason = $data-absent-reason-cs#not-applicable "Not Applicable"
 * note.text = "Quelle: left pupil reaction = nicht messbar"
 
 // keine
