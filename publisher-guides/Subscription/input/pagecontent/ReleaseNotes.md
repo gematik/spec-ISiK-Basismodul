@@ -4,7 +4,9 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd
 
-* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
+* `improve` Hinweis zu bekanntem Dependency-Problem im Subscription-Backport-Package inklusive Workaround ergänzt auf Startseite ergänzt. <https://github.com/gematik/spec-ISiK-Basismodul/pull/1237>
+* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
+* `fix` Erweiterung der ISiK eigenen Codesysteme um die Information zur Sprache <https://github.com/gematik/spec-ISiK-Basismodul/pull/1214>
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
