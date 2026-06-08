@@ -1,13 +1,7 @@
-﻿<div style="width: 68%;">
-
-| Hinweis | Breaking Change! |
-|---------|---------------------|
-| <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Ampel%20auf%20Rot_Blau_gematik.svg" width="40"/> | Die in der Stufe 3 erfolgte Umstellung der Definition von $generate-metadata von der in ISiK Stufe 2 spezifizierten OperationDefinition auf die in [IHE MHD ITI-106](https://profiles.ihe.net/ITI/MHD/ITI-106.html) spezifizierte Fassung ist nicht kompatibel zu den Festlegungen dieses Moduls in Stufe 2! Die Änderung dient dem Zweck der Harmonisierung mit der IHE-MHD-Interaktion ITI-106 (Generate Metadata), die zum Zeitpunkt des Releases von Stufe 2 noch nicht zur Verfügung stand. |
-
-</div>
 
 ### Hinweise und Anmerkungen zur Implementierung von IHE MHD ITI-106 (Generate Metadata)
 Für die Implementierung der Interaktion "Erzeugen von Dokumentenmetadaten" gelten die in IHE MHD festgelegten Vereinbarungen zu [ITI-106](https://profiles.ihe.net/ITI/MHD/ITI-106.html) (Generate Metadata) gemäß der unten aufgelisteten Kapitel. Abweichungen bzw. zusätzliche Festlegungen im Kontext von ISiK sind im Folgenden zu den einzelnen Kapiteln vermerkt. Die verlinkte Webseite bietet weiterführende Informationen zur "Generate Metadata" Interaktion, einschließlich grafischer Darstellungen der Interaktionen.
+Für Informationen zu einem historischen Breaking Change zwischen ISiK Stufe 2 und 3, siehe [Hinweis] (https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Festlegungen/ErzeugenVonMetadaten?version=5.1.2).
 
 #### [2:3.106.4.1 Generate Metadata Request Message](https://profiles.ihe.net/ITI/MHD/ITI-106.html#2310641-generate-metadata-request-message)
 

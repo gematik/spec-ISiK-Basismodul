@@ -957,10 +957,10 @@
                   "valueCode": "SHALL"
                 }
               ],
-              "name": "characteristic",
-              "definition": "https://gematik.de/fhir/isik/SearchParameter/Location-characteristic",
+              "name": "form",
+              "definition": "https://gematik.de/fhir/isik/SearchParameter/Location-form",
               "type": "token",
-              "documentation": "Begründung: Die Suche nach Stationen ist notwendig und wird über diesen Suchparameter ermöglicht.    \n        \n        **Beispiel:**    \n        `GET [base]/Location?characteristic=http://terminology.hl7.org/CodeSystem/location-physical-type|wa` \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+              "documentation": "Begründung: Die Location-Ressource kann für ein breites Spektrum an UseCases verwendet werden.\n        Im Kontext von ISiK ist speziell die Suche nach Stationen, Zimmern und Bettplätzen relevant, \n        es ist jedoch nicht auszuschließen, dass Systeme die Location-Ressource auch für die Abbildung von Örtlichkeiten \n        außerhalb des ISiK-Scopes verwenden, z.B. Gebäude, Standorte, Etagen, Lagerorte. \n        Der Suchparameter `form` ist notwendig um die Suche auf relevante Locations eingrenzen zu können.    \n        **Beispiel:**  \n        Suche nach Stationen:  \n        `GET [base]/Location?form=http://terminology.hl7.org/CodeSystem/location-physical-type|wa` \n        **Anwendungshinweis:**   \n        Bitte die Hinweise in der Beschreibung des [Custom-Suchparameters](https://gematik.de/fhir/isik/SearchParameter/Location-form) beachten!\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
             }
           ]
         },
@@ -1709,18 +1709,6 @@
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
               "type": "reference",
               "documentation": "**Beispiel:**    \n          `GET [base]/AllergyIntolerance?patient=Patient/123`    \n          **Anwendungshinweis:**   \n          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ],
-              "name": "onset",
-              "definition": "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-onset",
-              "type": "date",
-              "documentation": "**Beispiel:**    \n          `GET [base]/AllergyIntolerance?onset=2015-01-01T12:00:23+02:00`    \n          **Anwendungshinweis:**   \n          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  "
             },
             {
               "extension": [

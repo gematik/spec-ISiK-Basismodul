@@ -213,9 +213,10 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * ^comment = "Hier ist stets das *tatsächliche* Entlassdatum anzugeben.
     *Geplante* Entlassdaten müssen über die Extension `plannedEndDate` erfasst werden."
   
-* reasonCode MS
+* reasonCode 
   * ^short = "Grund des Aufenthalts"
-  * ^comment = "**Begründung MS:** Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR)."
+  * ^comment = "**Historie:** Aufgrund von Harmonisierungsbestrebungen mit dem HL7 Europe Hospital Discharge Report (HDR) in der Ballot-Version von Stufe 6 als MS deklariert. 
+Wegen der unzureichenden Spezifikation und Abgrenzung zur Aufnahmediagnose in Encounter.diagnosis wieder entfernt, bis zur Herbeiführung einer Klärung mit HL7 Europe."
 * diagnosis 
   * ^short = "Falldiagnosen/-prozeduren"
   * ^comment = "Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters einnehmen, z.B. 'Aufnahmediagnose'   

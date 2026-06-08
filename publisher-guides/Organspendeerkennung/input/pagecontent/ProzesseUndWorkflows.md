@@ -14,5 +14,5 @@ Folgendes Diagramm stellt den Workflow zur Abfrage der Parameter für die Organs
 
 Das Diagramm zeigt die Interaktionen zwischen den verschiedenen Akteuren und Systemen, die an der Abfrage der Parameter für die Organspendeerkennung beteiligt sind. Es verdeutlicht die Schritte, die unternommen werden, um die relevanten Daten zu sammeln und auszuwerten.
 
-
+**Hinweis:** Das Diagramm ist eine vereinfachte Darstellung, da bspw. keine numerischen Codes aufgeführt sind. Diese Entscheidung dient der Lesbarkeit des Diagrams.
 

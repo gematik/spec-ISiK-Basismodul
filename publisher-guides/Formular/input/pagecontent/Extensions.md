@@ -1,7 +1,3 @@
----
-topic: Extensions
----
-
 Für die verschiedenen [Interaktionen](FunktionenInteraktionen.html) werden verschiedene Extensions unterstützt. Im Folgenden sind pro Interaktion  alle Extensions aufgelistet, die in der aktuellen Ausbaustufen des ISiK-Formular-Moduls zum Einsatz kommen.
 
 ### Core Extensions (Questionnaire)
