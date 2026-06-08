@@ -18,6 +18,7 @@ function main() {
   const advisorFile = path.resolve(root, process.env.ADVISOR_FILE || 'validator/advisor.json');
   const rawLogPath = path.resolve(root, process.env.RAW_LOG_PATH || 'validation-raw.log');
   const detailsPath = path.resolve(root, process.env.DETAILS_JSON_PATH || 'validation-details.json');
+  const htmlOutputPath = process.env.HTML_OUTPUT_PATH ? path.resolve(root, process.env.HTML_OUTPUT_PATH) : null;
 
   const packageJson = JSON.parse(fs.readFileSync(path.resolve(root, 'package.json'), 'utf8'));
   const fhirVersion = getFhirVersion(packageJson);
@@ -40,6 +41,7 @@ function main() {
     advisorFile,
     '-resolution-context',
     `file:${resolutionContextDir}/`,
+    ...(htmlOutputPath ? ['-html-output', htmlOutputPath] : []),
     ...dependencies,
     ...localIgArgs,
   ];
@@ -196,7 +198,7 @@ function extractCompliesWithEntries({ content, claimIndex }) {
       continue;
     }
 
-    const match = line.match(/Error @ StructureDefinition: This profile does not comply with claimed profile '([^']+)' \{(SD_EXTENSION_COMPLIES_WITH_ERROR)\}/);
+    const match = line.match(/Error @ StructureDefinition: This profile does not comply with claimed profile '([^']+)'(?:\s+because:.+?)?\s*\{(SD_EXTENSION_COMPLIES_WITH_ERROR)\}/);
     if (!match) {
       continue;
     }
@@ -247,7 +249,7 @@ function extractCompliesWithEntriesFromSections({ content, claimIndex }) {
   for (const section of sections) {
     const headerMatch = section.match(/--\s+.*\/([^/\s]+\.json)\s+-+\s*$/m);
     const currentFile = headerMatch ? headerMatch[1].trim() : '';
-    const regex = /Error @ StructureDefinition: This profile does not comply with claimed profile '([^']+)' \{(SD_EXTENSION_COMPLIES_WITH_ERROR)\}([\s\S]*?)(?=\n\s{2}(?:Error|Warning|Information) @ |\n--\s+.*\/[^/\s]+\.json\s+-+|\s*$)/g;
+    const regex = /Error @ StructureDefinition: This profile does not comply with claimed profile '([^']+)'(?:\s+because:.+?)?\s*\{(SD_EXTENSION_COMPLIES_WITH_ERROR)\}([\s\S]*?)(?=\n\s{2}(?:Error|Warning|Information) @ |\n--\s+.*\/[^/\s]+\.json\s+-+|\s*$)/g;
     let match;
 
     while ((match = regex.exec(section)) !== null) {

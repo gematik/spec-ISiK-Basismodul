@@ -63,6 +63,7 @@ Description: "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
 * SNOMED_CT#387713003 "Surgical procedure"
 * SNOMED_CT#18629005 "Administration of medicine"
 * SNOMED_CT#277132007 "Therapeutic procedure"
+* SNOMED_CT#439569004 "Resuscitation (procedure)"
 * SNOMED_CT#394841004 "Other category"
 
 ValueSet: ISiKAccountType
