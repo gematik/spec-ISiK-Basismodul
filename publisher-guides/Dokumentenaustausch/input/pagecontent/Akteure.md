@@ -1,8 +1,4 @@
-﻿---
-topic: AkteureUndInteraktionen-AkteureUndInteraktionen-Akteure
----
-
-### Dokumentenserver
+﻿### Dokumentenserver
 Das bestätigungsrelevante System nimmt die Rolle des Dokumentenservers ein. Ein Dokumentenserver nimmt Dokumente von Clients zur Speicherung/Archivierung/Verwaltung entgegen und erlaubt Clients die Suche nach und den Abruf von Dokumenten.
 
 Dieses ISiK-Modul legt fest, welche Suchkriterien mindestens implementiert werden müssen und welche Kriterien darüber hinaus optional bereitgestellt werden können.

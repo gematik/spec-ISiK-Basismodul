@@ -15,13 +15,16 @@ publisher:
 
 applyExtensionMetadataToRoot: false
 dependencies:
-   hl7.fhir.extensions.r5: 4.0.1
-   hl7.fhir.uv.ips: 1.1.0
-   hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
-   de.basisprofil.r4: 1.5.4
-   de.ihe-d.terminology: 3.0.1
-   dvmd.kdl.r4: 2025.0.1
-   ihe.formatcode.fhir: 1.4.0
+  hl7.fhir.uv.xver-r5.r4: 0.1.0
+  hl7.fhir.uv.ips: 2.0.0
+  hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
+  de.basisprofil.r4: 1.6.0-ballot2
+  de.ihe-d.terminology: 3.0.1
+  ihe.formatcode.fhir: 1.4.0
+  hl7.fhir.uv.sdc: 4.0.0
+  de.gematik.terminology: 1.0.6
+  de.fhir.medication: 1.0.4
+  de.gematik.ti: 1.1.1
 
   
 pages:
@@ -43,32 +46,34 @@ pages:
     title: "Szenario 1: DRG-Fall, Kind mit Wahlleistung"
   Szenario-2-Kreuz-Stern-Diagnose.md:
     title: "Szenario 2: Kreuz-Stern-Diagnose"
-  UebergreifendeFestlegungen_Methodik.md:
-    title: Methodik
-  UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.md:
-    title: Bestätigungsrelevante Systeme
-  KompatibilitaetDerGematikSpezifikation_Andere.md:
-    title: Kompatibilität der gematik-Spezifikation
-  KompatibilitaetDerGematikSpezifikation_IHE.md:
-    title: Kompatibilität der gematik-Spezifikation IHE
-  KompatibilitaetDerGematikSpezifikation_HL7Europe.md:
-    title: Kompatibilität der gematik-Spezifikation HL7 Europe
-  UebergreifendeFestlegungen_Must-Support-Flags.md:
-    title: Must-Support-Flags
-  UebergreifendeFestlegungen_Repraesentationsformate.md:
-    title: Repräsentationsformate
-  UebergreifendeFestlegungen_Suchparameter.md:
-    title: Allgemeine Hinweise zu Suchparametern
-  UebergreifendeFestlegungen_Rest.md:
-    title: REST-API
-  UebergreifendeFestlegungen_Performance.md:
-    title: Performance
-  Patient-Besuch-Kontext.md:
-    title: Herstellung von Patienten- und Besuchskontext
-  UebergreifendeFestlegungen_UmgangFehlendeDaten.md:
-    title: Umgang mit fehlenden Daten
-  UebergreifendeFestlegungen_FHIR_Artefakte.md:
-    title: Umgang mit FHIR-Artefakten
+  Index_Festlegungen.md:
+    title: Festlegungen
+    UebergreifendeFestlegungen_Methodik.md:
+      title: Methodik
+    UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.md:
+      title: Bestätigungsrelevante Systeme
+    KompatibilitaetDerGematikSpezifikation_Andere.md:
+      title: Kompatibilität der gematik-Spezifikation
+    KompatibilitaetDerGematikSpezifikation_IHE.md:
+      title: Kompatibilität der gematik-Spezifikation IHE
+    KompatibilitaetDerGematikSpezifikation_HL7Europe.md:
+      title: Kompatibilität der gematik-Spezifikation HL7 Europe
+    UebergreifendeFestlegungen_Must-Support-Flags.md:
+      title: Must-Support-Flags
+    UebergreifendeFestlegungen_Repraesentationsformate.md:
+      title: Repräsentationsformate
+    UebergreifendeFestlegungen_Suchparameter.md:
+      title: Allgemeine Hinweise zu Suchparametern
+    UebergreifendeFestlegungen_Rest.md:
+      title: REST-API
+    UebergreifendeFestlegungen_Performance.md:
+      title: Performance
+    Patient-Besuch-Kontext.md:
+      title: Herstellung von Patienten- und Besuchskontext
+    UebergreifendeFestlegungen_UmgangFehlendeDaten.md:
+      title: Umgang mit fehlenden Daten
+    UebergreifendeFestlegungen_FHIR_Artefakte.md:
+      title: Umgang mit FHIR-Artefakten
   artifacts.md:  
     title: FHIR-Artefakte
 
@@ -99,7 +104,12 @@ menu:
  
 
 parameters:
-  no-validate: true
+  display-warnings: true
+  path-expansion-params: ../../input/resources/Parameters-exp-params.json
+  special-url:
+    - http://example.org/fhir/CodeSystem/TestKatalog
+    - http://example.org/fhir/ValueSet/TestValueSet
+
 
 #und ggfs noch:
 #  no-narrative: true

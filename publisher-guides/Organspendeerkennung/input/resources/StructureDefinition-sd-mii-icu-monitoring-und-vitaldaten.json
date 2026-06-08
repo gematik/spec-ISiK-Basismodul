@@ -23,11 +23,18 @@
         "path": "Observation",
         "constraint": [
           {
-            "key": "vs-de-2",
+            "key": "isik-obs-4",
             "human": "If there is no component or hasMember element then either a value[x] or a data absent reason must be present",
             "source": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-monitoring-und-vitaldaten",
             "severity": "error",
             "expression": "(component.empty() and hasMember.empty()) implies (dataAbsentReason.exists() or value.exists())"
+          },
+          {
+            "key": "mii-icu-1",
+            "human": "If there is no Observation.value, a dataAbsentReason must be given.",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-monitoring-und-vitaldaten",
+            "severity": "error",
+            "expression": "value.exists().not() implies dataAbsentReason.exists()"
           }
         ]
       },
@@ -320,15 +327,6 @@
       {
         "id": "Observation.dataAbsentReason",
         "path": "Observation.dataAbsentReason",
-        "constraint": [
-          {
-            "key": "mii-icu-1",
-            "human": "If there is no Observation.value, a dataAbsentReason must be given.",
-            "source": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-monitoring-und-vitaldaten",
-            "severity": "error",
-            "expression": "value.exists().not() implies dataAbsentReason.exists()"
-          }
-        ],
         "mustSupport": true
       },
       {

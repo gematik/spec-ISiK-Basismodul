@@ -1,23 +1,35 @@
 
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+### Version 6.0.0-rc1 (Benehmensherstellung)
+
+Datum: tbd
+
+* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
+
 Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähig ist (eigene Use Cases bedient) oder bestätigtigungsrelevant ist.
+
+### Version 6.0.0-rc1
+
+Datum: tbd
+
+* `documentation` Ausschreiben der Abkürzungen der Laboruntersuchungen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1182>
 
 
 ### Version 6.0.0-rc
 
 Datum: 02.04.2026
 
-* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068
-* `improve` Hinzufügen eines Profils zur Abbildung von Serumnatrium aus dem Kontext der Organspendeerkennung auf Intensivstationen https://github.com/gematik/spec-ISiK-Basismodul/pull/1047
+* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1068>
+* `improve` Hinzufügen eines Profils zur Abbildung von Serumnatrium aus dem Kontext der Organspendeerkennung auf Intensivstationen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1047>
 * Initiales Draft für die Stufe 6
-* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - analog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
-* `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
-* `improve` Einführung des Suchparameters `code-value-quantity` https://github.com/gematik/spec-ISiK-Basismodul/pull/1064
-* `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
-* `improve` Zweiter optionaler `category`-Slice (`loinc-observation-class`) in `ISiKLaboruntersuchung` zur Einordnung in einen LOINC-Fachbereich (z. B. Hematology, Chemistry) ergänzt; neues ValueSet `ISiKLaborbereichVS` https://github.com/gematik/spec-ISiK-Basismodul/pull/1112
-* `improve` `valueCodeableConcept` mit `preferred`-Binding auf das IPS-ValueSet `results-coded-values-laboratory` in `ISiKLaboruntersuchung` ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1112
-* `improve` `method` erhält ein `extensible`-Binding auf SNOMED-CT-Konzepte unterhalb von `#272394005` (Technique); neues ValueSet `ISiKLaborMethodeVS` https://github.com/gematik/spec-ISiK-Basismodul/pull/1112
+* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - analog zu TC 5.1.2 <https://github.com/gematik/spec-ISiK-Basismodul/pull/1040>
+* `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  <https://github.com/gematik/spec-ISiK-Basismodul/pull/1053>
+* `improve` Einführung des Suchparameters `code-value-quantity` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1064>
+* `improve` Implicit Rules auf 0..0 beschränkt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1075>
+* `improve` Zweiter optionaler `category`-Slice (`loinc-observation-class`) in `ISiKLaboruntersuchung` zur Einordnung in einen LOINC-Fachbereich (z. B. Hematology, Chemistry) ergänzt; neues ValueSet `ISiKLaborbereichVS` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1112>
+* `improve` `valueCodeableConcept` mit `preferred`-Binding auf das IPS-ValueSet `results-coded-values-laboratory` in `ISiKLaboruntersuchung` ergänzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1112>
+* `improve` `method` erhält ein `extensible`-Binding auf SNOMED-CT-Konzepte unterhalb von `#272394005` (Technique); neues ValueSet `ISiKLaborMethodeVS` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1112>
 
 Mit der Stufe 6 werden alle Technical Corrections der Stufe 5 bindend.
 
@@ -27,7 +39,7 @@ Datum: 17.12.2025
 
 * `improve` Ressourcen Referenzen in den FSH Dateien wurden auf das Format
   `Reference(RessourcenNamen)` vereinheitlicht. Hierdurch wurden teilweise das Referenzziel
-  angepasst (falls es keine Instanz der Zielinstanz gab). https://github.com/gematik/spec-ISiK-Basismodul/pull/929
+  angepasst (falls es keine Instanz der Zielinstanz gab). <https://github.com/gematik/spec-ISiK-Basismodul/pull/929>
 
 ----
 
@@ -35,9 +47,9 @@ Datum: 17.12.2025
 
 Datum: 23.10.2025
 
-* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
-* `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
-* `fix` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
+* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. <https://github.com/gematik/spec-ISiK-Basismodul/pull/799>
+* `documentation` Rendering der im Modul verwendeten ValueSets <https://github.com/gematik/spec-ISiK-Basismodul/pull/802>
+* `fix` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen <https://github.com/gematik/spec-ISiK-Basismodul/pull/809>
 
 ### Version 5.0.0
 
@@ -49,12 +61,12 @@ Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten �
 
 Datum: 5.6.2025
 
-- `improve` Erlaubte referenzierbare Profile von Element Subject auf Patient reduziert https://github.com/gematik/spec-ISiK-Basismodul/pull/727
+- `improve` Erlaubte referenzierbare Profile von Element Subject auf Patient reduziert <https://github.com/gematik/spec-ISiK-Basismodul/pull/727>
 - `improve` Die Mindestkardinalität für den SCT-Slice in ISiKLaboruntersuchung wurde von 1 auf 0
   reduziert. Das Pattern auf code.coding[snomed].system wurde entfernt um Mehrfachkodierungen in
-  SnomedCT nicht zu verhindern. https://github.com/gematik/spec-ISiK-Basismodul/pull/730
-- `improve` Einschränkung des MS-Flag auf .specimen und .method für alle Profile aus dem Labormodul https://github.com/gematik/spec-ISiK-Basismodul/pull/735 
-- `improve` Neue Anforderungen zur Implementierung von .status im ISiK Profil Laboruntersuchung und Erweiterung der Dokumentation zum Profil https://github.com/gematik/spec-ISiK-Basismodul/pull/698/files
+  SnomedCT nicht zu verhindern. <https://github.com/gematik/spec-ISiK-Basismodul/pull/730>
+- `improve` Einschränkung des MS-Flag auf .specimen und .method für alle Profile aus dem Labormodul <https://github.com/gematik/spec-ISiK-Basismodul/pull/735> 
+- `improve` Neue Anforderungen zur Implementierung von .status im ISiK Profil Laboruntersuchung und Erweiterung der Dokumentation zum Profil <https://github.com/gematik/spec-ISiK-Basismodul/pull/698/files>
 
 
 ---
@@ -69,10 +81,10 @@ Datum: 09.04.2025
 ### Version: 4.0.0-rc
 
 
-- Entfernen von MS von .id der Ressourcen https://github.com/gematik/spec-ISiK-Labor/pull/6
-- `fix` "C-reaktives Protein [Mol/Volumen] in Serum oder Plasma mittels Hochsensitivitätsmethode" loinc code war falsch. War: 78486-0 , wurde korrigiert auf: 76486-0 https://github.com/gematik/spec-ISiK-Labor/pull/8
-- `fix` ISiKLaboruntersuchungGFR enthielt ein falsches VS binding auf .referenceRange https://github.com/gematik/spec-ISiK-Labor/pull/8
-- allen Untersuchungsbeispielen wurden effective & performer hinzugefügt https://github.com/gematik/spec-ISiK-Labor/pull/8
+- Entfernen von MS von .id der Ressourcen <https://github.com/gematik/spec-ISiK-Labor/pull/6>
+- `fix` "C-reaktives Protein [Mol/Volumen] in Serum oder Plasma mittels Hochsensitivitätsmethode" loinc code war falsch. War: 78486-0 , wurde korrigiert auf: 76486-0 <https://github.com/gematik/spec-ISiK-Labor/pull/8>
+- `fix` ISiKLaboruntersuchungGFR enthielt ein falsches VS binding auf .referenceRange <https://github.com/gematik/spec-ISiK-Labor/pull/8>
+- allen Untersuchungsbeispielen wurden effective & performer hinzugefügt <https://github.com/gematik/spec-ISiK-Labor/pull/8>
 
 ----
 

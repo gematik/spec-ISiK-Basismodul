@@ -1,11 +1,7 @@
----
-topic: BestPractice
----
-
 ### Funktionsumfang
 
 FormularDefinitionen sollten sich auf den Umfang der in diesem Modul festgelegten Funktionalitäten und Extensions beschränken.
-Alle weiteren Funtionalitäten und Extensions müssen so verwendet werden, dass diese von einem [FormularRenderer](Akteure.html#FormularRenderer) gefahrlos ignoriert werden können, 
+Alle weiteren Funtionalitäten und Extensions müssen so verwendet werden, dass diese von einem [FormularRenderer](Akteure.html#formularrenderer) gefahrlos ignoriert werden können, 
 ohne dass dies die Nutzbarkeit des Formulars einschränkt.
 
 ### Annotation für die Vorbelegung

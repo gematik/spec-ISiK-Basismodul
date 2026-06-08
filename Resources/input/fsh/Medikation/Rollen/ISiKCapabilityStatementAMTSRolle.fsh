@@ -50,20 +50,9 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**  
-        `GET [base]/RiskAssessment?_id=103270`
-
-        **Anwendungshinweise:** Weitere Informationen zur Suche nach '_id' finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Parameters for all resources'](https://hl7.org/fhir/R4/search.html#all).
-
-        "
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter    
+ 
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -140,13 +129,8 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter    
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -161,13 +145,6 @@ Usage: #definition
       * name = "patient"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
       * type = #reference
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "onset"
-      * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-onset"
-      * type = #date
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -221,13 +198,8 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter    
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
