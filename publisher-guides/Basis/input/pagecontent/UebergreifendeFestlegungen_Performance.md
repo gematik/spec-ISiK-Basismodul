@@ -73,8 +73,10 @@ Für diese Performance-Kategorien gilt:
 
 - **PK6:** weitere Suchanfragen und Custom-Operation
   - Anforderung: **nicht geprüft**
-    - Beispiel - Operation zur Terminbuchung in ISiK : `baseURL/$book` 
     - Beispielanfrage - Alle verschriebenen bzw. verabreichten Medikamente (relevant bei auffälligen Medikationschargen): `baseURL/MedicationRequest`
+
+- **Custom-Operationen mit modulspezifisch konkretisierten Anforderungen** – Fachmodule KÖNNEN für einzelne Custom-Operationen engere Antwortzeit-Anforderungen festlegen, die die PK6-Einordnung im jeweiligen Kontext konkretisieren.
+  - Beispiel - Operation zur Terminbuchung in ISiK Terminplanung: `baseURL/$book`
 
 Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfahrens die entsprechenden Performance-Anforderungen (z.B. Antwortzeiten - ggf. unter Berücksichtigung der Perzentile -; aber vorerst keine Lasten, Durchsatz etc.)implementiert.
 
