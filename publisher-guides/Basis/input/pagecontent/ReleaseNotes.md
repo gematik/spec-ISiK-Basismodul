@@ -16,6 +16,7 @@ Datum: tbd
 * `improve` Hinzufügen einer Definition von Perzentil-Metriken für die Performance <https://github.com/gematik/spec-ISiK-Basismodul/pull/1219>
 * `fix` Suchparameter AllergyIntolerance.onset entfernt, aufgrund fehlerhafter Spezifikation <https://github.com/gematik/spec-ISiK-Basismodul/pull/1211>
 * `fix` Entfernung des MS-Flags bei Encounter.reason aufgrund unzureichender Spezifikation und Abgrenzung zur Aufnahmediagnose in Encounter.diagnosis <https://github.com/gematik/spec-ISiK-Basismodul/pull/1213>
+* `fix` Anpassung des VersichertenId-Slice-Discriminators u. A. zwecks Compliance des ISiKPatient zum Patient von TI-Commons hergestellt
 * `fix` Ableitung des Profils `ISiKOrganisationFachabteilung` vom Profil `ISiKOrganisation` wurde integriert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1166>
 * `fix` Anpassung des Pattern/ ValueSet-Bindings auf Observation.code in den Profilen `ISiKSchwangerschaftErwarteterEntbindungstermin` und `ISiKSchwangerschaftsstatus` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1149>
 * `fix` Bei Test-Terminologien wurde das experimental Flag ergänzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1163>
@@ -448,7 +449,6 @@ Datum: 08.04.2022
 * Initiale Ballotierungsversion für ISiK Stufe 2
 
 ----
-
 
 
 
