@@ -11,6 +11,7 @@ Tags werden folgendermaßen verwendet:
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
 Datum: tbd
+
 * `improve` Überarbeitung des Kapitels "Motivation" <https://github.com/gematik/spec-ISiK-Basismodul/pull/1216>
 * `fix` Umbenennung des Suchparameters `characteristic` zu `form` und Verbesserung der Dokumentation des Suchparameters der Location-Ressource <https://github.com/gematik/spec-ISiK-Basismodul/pull/1233>
 * `improve` Hinzufügen einer Definition von Perzentil-Metriken für die Performance <https://github.com/gematik/spec-ISiK-Basismodul/pull/1219>
@@ -21,6 +22,10 @@ Datum: tbd
 * `fix` Anpassung des Pattern/ ValueSet-Bindings auf Observation.code in den Profilen `ISiKSchwangerschaftErwarteterEntbindungstermin` und `ISiKSchwangerschaftsstatus` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1149>
 * `fix` Bei Test-Terminologien wurde das experimental Flag ergänzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1163>
 * `fix` Suchparameter `clinicalStatus` für das Profil `ISiKDiagnose` wurde von `SHALL` zu `MAY` geändert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1180>
+* `documentation` Anpassung des Must-Support Kommentars bei `ISiKAllergieUnvertraeglichkeit.encounter` und `ISiKDiagnose.encounter` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1170>
+* `documentation` Hinzufügen einer Erläuterung zur Klarstellung der Priorisierung bei `Account.coverage.priority` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1170>
+* `documentation` Entfernung des Abschnitts `generische Ressourcentypen` von der Seite zur Rest-API <https://github.com/gematik/spec-ISiK-Basismodul/pull/1170>
+* `documentation` Anpassung der Beispiele zu den Standort Profilen. Entfernen des Codes Occupied an einer Station und Ergänzung an Beispielen zu Raum und Bettenstellplatz <https://github.com/gematik/spec-ISiK-Basismodul/pull/1170>
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 * `fix` Fehlerhafte Links in der Dokumentation korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>   
 * `documentation` Ergänzung einer Tabelle für [Search-Modifier](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Suchparameter.html) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1196>
