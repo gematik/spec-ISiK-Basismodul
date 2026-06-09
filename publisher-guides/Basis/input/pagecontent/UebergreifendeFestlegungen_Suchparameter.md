@@ -9,11 +9,8 @@ Neben Patienten- und Encounter- zentrierten Abfragen, SOLLEN bzw. (MÜSSEN in be
     - Beispielabruf: `GET baseURL/Encounter?location=Location/loc-hospital&status=in-progress&_include=Encounter:patient`
     - Hinweis: Die Suchparameter `location` und `status` werden in dieser Anfrage UND-verknüpft, d.h. es werden nur Encounter zurückgegeben, bei denen beide Kriterien im selben Encounter erfüllt sind. Soll dieselbe UND-Verknüpfung über `_has` (Reverse Chaining) auf der Patient-Ressource erfolgen, ist ein Composite-Suchparameter erforderlich, der beide Kriterien in einem einzigen `_has`-Parameter kombiniert – andernfalls können die beiden `_has`-Parameter nicht garantieren, dass `location` und `status` aus demselben Encounter stammen. Dies gilt auch für ein vorwärts Chaining.
     - Hinweis: Clients SOLLTEN nach dem Abruf prüfen, ob die im Encounter referenzierte und gesuchte Location tatsächlich `status = active` aufweist. Manche Systeme pflegen eine Historie von Location-Ressourcen und können daher auch inaktive Locations referenzieren, die zum Abfragezeitpunkt nicht mehr belegt sind.
-- Alle zur Verfügung stehenden Medikamente
-    - Beispielabruf: `GET baseURL/Medication`
-- Alle verschriebenen bzw. verabreichten Medikamente (u. a. relevant bei auffälligen Medikationschargen)
-    - Beispielabruf: `GET baseURL/MedicationAdministration`
-    - Beispielabruf: `GET baseURL/MedicationRequest`
+- Alle Medikamente mit einer ATC Kodierung "Ibuprofen" (Hinweis: terminologische Unschärfe: Es gibt verschiedene ATC-Codes für Ibuprofen, z.B. abhängig von der Darreichungsform oder der Wirkstärke)
+    - Beispielabruf: `GET baseURL/Medication?code=http://fhir.de/CodeSystem/bfarm/atc|C01EB16`
 
 Auf der Seite (Artefakte)[artifacts.html] werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt, welche im Rahmen des Bestätigungsverfahrens von ISiK unterstützt werden MÜSSEN.
 
