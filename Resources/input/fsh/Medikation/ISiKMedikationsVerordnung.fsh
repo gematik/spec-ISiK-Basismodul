@@ -202,6 +202,7 @@ Usage: #example
 * requester.reference = "Practitioner/PractitionerWalterArzt"
 * dosageInstruction
   * asNeededBoolean = true
+  // TODO: nach Release MedicationIG weiteres Beispiel ohne timing adden. Aktuell verhindert durch zu strenge constraints. 
   * timing.repeat
     * frequency = 1
     * period = 6
