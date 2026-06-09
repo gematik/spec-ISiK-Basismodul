@@ -107,18 +107,14 @@ function Get-WorkingPythonLauncher {
         [bool] $IsWindowsHost
     )
 
-    $candidates = @()
+    $py      = [pscustomobject]@{ Exe = 'py';      Prefix = @('-3') }
+    $python  = @(
+        [pscustomobject]@{ Exe = 'python3'; Prefix = @() }
+        [pscustomobject]@{ Exe = 'python';  Prefix = @() }
+    )
 
-    if ($IsWindowsHost) {
-        $candidates += [pscustomobject]@{ Exe = 'py';      Prefix = @('-3') }
-    }
-
-    $candidates += [pscustomobject]@{ Exe = 'python3'; Prefix = @() }
-    $candidates += [pscustomobject]@{ Exe = 'python';  Prefix = @() }
-
-    if (-not $IsWindowsHost) {
-        $candidates += [pscustomobject]@{ Exe = 'py'; Prefix = @('-3') }
-    }
+    # Windows: py-Launcher zuerst (umgeht Store-Aliase), sonst zuletzt
+    $candidates = if ($IsWindowsHost) { @($py) + $python } else { $python + @($py) }
 
     foreach ($candidate in $candidates) {
         if (-not (Get-Command $candidate.Exe -ErrorAction SilentlyContinue)) {
