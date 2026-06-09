@@ -5,6 +5,7 @@ Datum: tbd
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 * `fix` CapabilityStatement FormDefinitionsVerwalter korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 * `improve` TI-M Beispielszenario ausführlicher beschrieben und aktuelle Vorabveröffentlichung verlinkt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1230>
+* `documentation` Aktualisierung der In-Scope/Out-of-Scope Tabelle in den übergreifenden Festlegungen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1207>
 
 
 ### Version 6.0.0-rc

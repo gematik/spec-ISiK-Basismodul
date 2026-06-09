@@ -4,6 +4,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd
 
+* `improve` Guidance für ISiKMedikament.amount verbessert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1243>
 * `fix` Hinzufügen der Rulesets `CommonSearchParameters` und `OptionalTagSearchParameter` zu den Rollen CapabilityStatements <https://github.com/gematik/spec-ISiK-Basismodul/pull/1161> - analog zu TC 5.1.2 siehe <https://github.com/gematik/spec-ISiK-Basismodul/pull/1158>
 * `fix` Fehlendes MS zum ISiKATCCoding hinzugefügt, die Version war bisher schon 1..1, aber es fehlte die MS-Definition <https://github.com/gematik/spec-ISiK-Basismodul/pull/1155>
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
@@ -12,6 +13,7 @@ Datum: tbd
 * `documentation` Neue Use-Case-Seiten `Bedarfsmedikation` und `Infusionen` im Menü ergänzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1204>
 * `documentation` Guidance zur Verwendung von List.mode (snapshot vs. working) in ISiKMedikationsListe anhand von Use-Cases ergänzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1194>
 * `fix` Erweiterung der ISiK eigenen Codesysteme um die Information zur Sprache <https://github.com/gematik/spec-ISiK-Basismodul/pull/1214>
+* `documentation` Aktualisierung der Seite zur Kompatibilität des Medikationsmoduls <https://github.com/gematik/spec-ISiK-Basismodul/pull/1241> 
 
 ### Version 6.0.0-rc
 

@@ -1,0 +1,33 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "PatientProfile",
+  "url": "http://example.org/fhir/StructureDefinition/PatientProfile",
+  "name": "PatientProfile",
+  "title": "Patient Profile Example",
+  "status": "active",
+  "date": "2025-09-24",
+  "publisher": "Example Organization",
+  "description": "Ein Beispiel-Patient-Profile",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient.identifier",
+        "path": "Patient.identifier",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.name",
+        "path": "Patient.name", 
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}
