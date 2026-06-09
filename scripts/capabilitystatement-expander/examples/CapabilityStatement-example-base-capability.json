@@ -1,0 +1,69 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "example-base-capability",
+  "url": "http://example.org/CapabilityStatement/example-base-capability",
+  "name": "ExampleBaseCapability",
+  "title": "Example Base CapabilityStatement",
+  "status": "active",
+  "date": "2025-09-24",
+  "publisher": "Example Organization",
+  "description": "Ein Basis-CapabilityStatement mit Imports",
+  "kind": "requirements",
+  "fhirVersion": "4.0.1",
+  "format": ["json"],
+  "imports": [
+    "http://example.org/CapabilityStatement/imported-capability"
+  ],
+  "_imports": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode": "SHALL"
+        }
+      ]
+    }
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "Patient",
+          "supportedProfile": [
+            "http://example.org/StructureDefinition/PatientProfile"
+          ],
+          "interaction": [
+            {"code": "read"},
+            {"code": "search-type"}
+          ],
+          "searchParam": [
+            {
+              "name": "identifier",
+              "type": "token",
+              "definition": "http://example.org/SearchParameter/Patient-identifier"
+            },
+            {
+              "name": "status",
+              "type": "token",
+              "binding": {
+                "strength": "required",
+                "valueSet": "http://example.org/ValueSet/PatientStatus"
+              }
+            }
+          ]
+        },
+        {
+          "type": "Observation", 
+          "supportedProfile": [
+            "http://example.org/StructureDefinition/ObservationProfile"
+          ],
+          "interaction": [
+            {"code": "read"},
+            {"code": "create"}
+          ]
+        }
+      ]
+    }
+  ]
+}
