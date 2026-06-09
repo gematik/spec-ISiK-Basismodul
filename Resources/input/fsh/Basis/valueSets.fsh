@@ -49,6 +49,7 @@ ValueSet: ProzedurenReanimationCodesOPS
 Id: ProzedurenReanimationCodesOPS
 Description: "Enthaelt alle OPS Procedure Codes für Reanimationsmaßnahmen"
 * insert Meta
+* ^language = #de-DE
 * $ops#8-771 "Kardiale oder kardiopulmonale Reanimation"
 * $ops#8-772 "Operative Reanimation"
 * $ops#8-779 "Andere Reanimationsmaßnahmen"
@@ -62,6 +63,7 @@ Description: "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
 * SNOMED_CT#387713003 "Surgical procedure"
 * SNOMED_CT#18629005 "Administration of medicine"
 * SNOMED_CT#277132007 "Therapeutic procedure"
+* SNOMED_CT#439569004 "Resuscitation (procedure)"
 * SNOMED_CT#394841004 "Other category"
 
 ValueSet: ISiKAccountType
@@ -107,24 +109,28 @@ ValueSet: ISiKBesondereBehandlungsformRehaVS
 Id: ISiKBesondereBehandlungsformReha
 Description: "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. Vgl. Schlüsseltabelle 2.51 Besondere Behandlungsformen."
 * insert Meta
+* ^language = #de-DE
 * include codes from system ISiKBesondereBehandlungsformRehaCS
 
 ValueSet: ISiKBehandlungsergebnisRehaVS
 Id: ISiKBehandlungsergebnisReha
 Description: "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis."
 * insert Meta
+* ^language = #de-DE
 * include codes from system ISiKBehandlungsergebnisRehaCS
 
 ValueSet: ISiKEntlassformRehaVS
 Id: ISiKEntlassformReha
 Description: "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform."
 * insert Meta
+* ^language = #de-DE
 * include codes from system ISiKEntlassformRehaCS
 
 ValueSet: ISiKUnterbrechungRehaVS
 Id: ISiKUnterbrechungReha
 Description: "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung."
 * insert Meta
+* ^language = #de-DE
 * include codes from system ISiKUnterbrechungRehaCS
 
 Alias: $m49.htm = http://unstats.un.org/unsd/methods/m49/m49.htm
@@ -186,5 +192,6 @@ Id: ISiKEncounterTypeErweiterungVS
 Title: "ISiKEncounterTypeErweiterungVS"
 Description: "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen."
 * insert Meta
+* ^language = #de-DE
 * include codes from system http://fhir.de/CodeSystem/kontaktart-de
 * include codes from system ISiKEncounterTypeErweiterung

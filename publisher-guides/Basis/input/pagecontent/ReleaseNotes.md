@@ -12,14 +12,30 @@ Tags werden folgendermaßen verwendet:
 
 Datum: tbd
 
+* `improve` Überarbeitung des Kapitels "Motivation" <https://github.com/gematik/spec-ISiK-Basismodul/pull/1216>
+* `fix` Umbenennung des Suchparameters `characteristic` zu `form` und Verbesserung der Dokumentation des Suchparameters der Location-Ressource <https://github.com/gematik/spec-ISiK-Basismodul/pull/1233>
+* `improve` Hinzufügen einer Definition von Perzentil-Metriken für die Performance <https://github.com/gematik/spec-ISiK-Basismodul/pull/1219>
+* `fix` Suchparameter AllergyIntolerance.onset entfernt, aufgrund fehlerhafter Spezifikation <https://github.com/gematik/spec-ISiK-Basismodul/pull/1211>
+* `fix` Entfernung des MS-Flags bei Encounter.reason aufgrund unzureichender Spezifikation und Abgrenzung zur Aufnahmediagnose in Encounter.diagnosis <https://github.com/gematik/spec-ISiK-Basismodul/pull/1213>
+* `fix` Anpassung des VersichertenId-Slice-Discriminators u. A. zwecks Compliance des ISiKPatient zum Patient von TI-Commons hergestellt
 * `fix` Ableitung des Profils `ISiKOrganisationFachabteilung` vom Profil `ISiKOrganisation` wurde integriert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1166>
 * `fix` Anpassung des Pattern/ ValueSet-Bindings auf Observation.code in den Profilen `ISiKSchwangerschaftErwarteterEntbindungstermin` und `ISiKSchwangerschaftsstatus` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1149>
 * `fix` Bei Test-Terminologien wurde das experimental Flag ergänzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1163>
 * `fix` Suchparameter `clinicalStatus` für das Profil `ISiKDiagnose` wurde von `SHALL` zu `MAY` geändert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1180>
+* `documentation` Anpassung des Must-Support Kommentars bei `ISiKAllergieUnvertraeglichkeit.encounter` und `ISiKDiagnose.encounter` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1170>
+* `documentation` Hinzufügen einer Erläuterung zur Klarstellung der Priorisierung bei `Account.coverage.priority` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1170>
+* `documentation` Entfernung des Abschnitts `generische Ressourcentypen` von der Seite zur Rest-API <https://github.com/gematik/spec-ISiK-Basismodul/pull/1170>
+* `documentation` Anpassung der Beispiele zu den Standort Profilen. Entfernen des Codes Occupied an einer Station und Ergänzung an Beispielen zu Raum und Bettenstellplatz <https://github.com/gematik/spec-ISiK-Basismodul/pull/1170>
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 * `fix` Fehlerhafte Links in der Dokumentation korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>   
 * `documentation` Ergänzung einer Tabelle für [Search-Modifier](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Suchparameter.html) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1196>
 * `documentation` Entfernung von redundantem Text in Performance Anforderungen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1198>
+* `documentation` Ergänzung von Erläuterungen bei der Nutzung von `too-costly` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1208> 
+* `improve` Neuer Identifier-Slice `Mitarbeiterkennzeichen` (type code `EN`) mit MustSupport im Profil `ISiKPersonImGesundheitsberuf` für nicht-ärztliche Personen eingeführt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1223>
+* `fix` Erweiterung der ISiK eigenen Codesysteme und ValueSets um die Information zur Sprache <https://github.com/gematik/spec-ISiK-Basismodul/pull/1214>
+* `improve` Ergänzung der Extension `abatement` (klinisch relevantes Enddatum) im Profil `ISiKAllergieUnvertraeglichkeit` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1231>
+* `documentation` Fix der Beispielsuchanfrage zu allen Patienten, die auf einer Station liegen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1201>
+* `fix` Hinzufügen eines weiteren Codes zum ValueSet `ProzedurenKategorieSCT`, zur Abbildung von Reanimationsmaßnahmen 
  
 ### Version 6.0.0-rc
 
@@ -438,7 +454,6 @@ Datum: 08.04.2022
 * Initiale Ballotierungsversion für ISiK Stufe 2
 
 ----
-
 
 
 

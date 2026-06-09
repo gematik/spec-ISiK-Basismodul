@@ -44,6 +44,129 @@
         "max": "0"
       },
       {
+        "id": "AllergyIntolerance.extension",
+        "path": "AllergyIntolerance.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement",
+        "path": "AllergyIntolerance.extension",
+        "sliceName": "abatement",
+        "short": "Klinisch relevantes Enddatum",
+        "comment": "Hier wird angegeben, bis wann der/die Patient:in die Allergie/Unverträglichkeit hatte. Bei einer fortbestehenden Diagnose/Erkrankung ist diese Angabe nicht zu übermitteln.\n  \n  **Begründung MS:** Das Enddatum der Allergie/Unverträglichkeit ist für die klinische Bewertung der aktuellen Relevanz und die Priorisierung von Warnhinweisen essenziell. Es ermöglicht die Unterscheidung zwischen aktiven und zurückliegenden Allergien, was insbesondere in Medikations- und Entscheidungsunterstützungsprozessen von großer Bedeutung ist.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement.value[x]",
+        "path": "AllergyIntolerance.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement.value[x]:valueDateTime",
+        "path": "AllergyIntolerance.extension.value[x]",
+        "sliceName": "valueDateTime",
+        "short": "Datum, bis wann der/die Patient:in die Allergie/Unverträglichkeit hatte",
+        "comment": "**Begründung MS:** Diese Variante erlaubt es, das klinisch relevante Enddatum als exakten Zeitstempel zu übertragen, wie er in Primärsystemen üblich dokumentiert wird. Ein präzises Datum ist die belastbarste Grundlage für die Bewertung, ob eine Allergie/Unverträglichkeit noch aktuell relevant ist.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement.value[x]:valueAge",
+        "path": "AllergyIntolerance.extension.value[x]",
+        "sliceName": "valueAge",
+        "short": "Alter, bis zu dem der/die Patient:in die Allergie/Unverträglichkeit hatte",
+        "comment": "**Begründung MS:** Für lang zurückliegende oder anamnestisch erhobene Allergien/Unverträglichkeiten ist das Ende häufig nur als Lebensalter der/des Patient:in dokumentiert. Diese Variante verhindert Informationsverlust, wenn kein exaktes Enddatum vorliegt.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Age"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement.value[x]:valueRange",
+        "path": "AllergyIntolerance.extension.value[x]",
+        "sliceName": "valueRange",
+        "short": "Altersspanne, bis zu der der/die Patient:in die Allergie/Unverträglichkeit hatte",
+        "comment": "**Begründung MS:** Ist das Ende zeitlich nicht exakt eingrenzbar, ermöglicht die Angabe einer Altersspanne dennoch eine medizinisch verwertbare zeitliche Einordnung der zurückliegenden Allergie/Unverträglichkeit.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Range"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement.value[x]:valueRange.extension:lebensphase-bis",
+        "path": "AllergyIntolerance.extension.value[x].extension",
+        "sliceName": "lebensphase-bis",
+        "short": "Lebensphase",
+        "definition": "Lebensphase als kodierte Information angegeben, bis zu der der/die Patient:in die Allergie/Unverträglichkeit hatte.",
+        "comment": "**Begründung MS:** Ist auch eine Altersspanne nicht bezifferbar, erlaubt die kodierte Lebensphase (z. B. Kindheit, Erwachsenenalter) eine grobe, aber klinisch nachvollziehbare Einordnung des Endes der Allergie/Unverträglichkeit.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/lebensphase"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement.value[x]:valueRange.low",
+        "path": "AllergyIntolerance.extension.value[x].low",
+        "short": "Beginn der Altersspanne für die Schätzung des Alters",
+        "comment": "**Begründung MS:** Die Untergrenze grenzt den frühesten Zeitpunkt ein, ab dem die Allergie/Unverträglichkeit nicht mehr bestand, und ist für die Interpretation der Altersspanne unverzichtbar.",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement.value[x]:valueRange.high",
+        "path": "AllergyIntolerance.extension.value[x].high",
+        "short": "Ende der Altersspanne für die Schätzung des Alters",
+        "comment": "**Begründung MS:** Die Obergrenze grenzt den spätesten Zeitpunkt ein, bis zu dem die Allergie/Unverträglichkeit noch relevant gewesen sein kann, und ist für die Interpretation der Altersspanne unverzichtbar.",
+        "mustSupport": true
+      },
+      {
         "id": "AllergyIntolerance.clinicalStatus",
         "path": "AllergyIntolerance.clinicalStatus",
         "short": "klinischer Status",
@@ -211,7 +334,7 @@
         "id": "AllergyIntolerance.encounter",
         "path": "AllergyIntolerance.encounter",
         "short": "Aufenthaltsbezug",
-        "comment": "**Begründung Must-Support:** Ein Aufenthaltsbezug der AllergieUnverträglichkeit MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.",
+        "comment": "**Begründung Must-Support:** Ein Aufenthaltsbezug der Allergie MUSS zum Zwecke der Nachvollziehbarkeit und Datenintegrität exponiert und empfangen werden können.",
         "mustSupport": true
       },
       {

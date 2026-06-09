@@ -7,8 +7,10 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd
 
-* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
-* `fix` Monitoring-und-Vitaldaten Profil korrigiert, Invarianten-Level behoben https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
+* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
+* `fix` Monitoring-und-Vitaldaten Profil korrigiert, Invarianten-Level behoben <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
+* `fix` Entfernung des ISiKBasisServerAkteur aus diesem Implementation Guide <https://github.com/gematik/spec-ISiK-Basismodul/pull/1217>
+* `fix` Optimierung des Category-Codes im Profil `ISiKProzedurReanimation` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1206>
 
 ### Version 6.0.0-rc
 
