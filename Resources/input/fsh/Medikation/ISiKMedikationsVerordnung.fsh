@@ -202,6 +202,10 @@ Usage: #example
 * requester.reference = "Practitioner/PractitionerWalterArzt"
 * dosageInstruction
   * asNeededBoolean = true
+  * timing.repeat
+    * frequency = 1
+    * period = 6
+    * periodUnit = #h
   * extension[asNeededFor][+]
     * valueCodeableConcept.coding[0]
       * system = $cs-sct
