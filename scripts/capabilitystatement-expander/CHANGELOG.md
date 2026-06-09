@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.17] - 2026-06-09
+
 ### Fixed
 - **Windows launcher selection now prefers `py -3`**
   - The PowerShell wrapper now probes `py -3`, `python3`, and `python` and uses the first launcher that starts successfully
