@@ -197,6 +197,7 @@ RuleSet: qritem (id, text)
 * text = {text}
 
 RuleSet: QuestionnaireExamplesMetadata(name)
+* language = #de-DE
 * name = "{name}"
 * version = "0.1.0"
 * url = "https://gematik.de/fhir/isik/Questionnaire/{name}"
@@ -206,6 +207,7 @@ RuleSet: QuestionnaireExamplesMetadata(name)
 * subjectType = #Patient
 
 RuleSet: QuestionnaireResponseCommons(questionnaire, patient)
+* language = #de-DE
 * questionnaire = Canonical({questionnaire})
 * status = #completed
 * subject = Reference({patient})

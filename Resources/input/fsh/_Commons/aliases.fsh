@@ -110,7 +110,6 @@ Alias: $cs-observation-category = http://terminology.hl7.org/CodeSystem/observat
 Alias: $cs-pzn = http://fhir.de/CodeSystem/ifa/pzn
 Alias: $cs-sct = http://snomed.info/sct
 Alias: $cs-ucum = http://unitsofmeasure.org
-Alias: $cs-wg14 = http://fhir.de/CodeSystem/abdata/wg14
 Alias: $vs-edqm-doseform = http://hl7.org/fhir/uv/ips/ValueSet/medicine-doseform
 Alias: $vs-edqm-route = http://hl7.org/fhir/uv/ips/ValueSet/medicine-route-of-administration
 Alias: $vs-results-laboratory-pathology-observations = http://hl7.org/fhir/uv/ips/ValueSet/results-laboratory-pathology-observations-uv-ips

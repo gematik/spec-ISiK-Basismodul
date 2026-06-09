@@ -17,6 +17,11 @@ Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezi
   * ^short = "Formular wird in einem Medizinprodukt eingesetzt"
   * ^comment = "**Begründung MS:**
   In dieser Extension wird die Zweckbestimmung angegeben, mit der dieses Formular im Kontext eines Medizinproduktes verwendet wird. Sobald diese Extension vorhanden ist, sollten die Konsequenzen für die Anzeige und Verarbeitung des Formulars geprüft werden. Ein Formularrenderer, der sich nicht mit dem Thema MDR und Medizinprodukte auseinandergesetzt hat, sollte hier auf das im FHIR-Standard festgelegte Verhalten bei [modifierExtension](http://hl7.org/fhir/extensibility.html#modifierExtension) zurückgreifen."  
+* language 1..1 MS
+  * ^short = "Sprache der Formulardefinition"
+  * ^comment = "Im ISiK Kontext ist hier die Sprache meist mit de-DE (deutsch-Deutschland) anzugeben. Weicht die Sprache ab, bitte die BestPractice zu mehrsprachigen Formularen beachten.
+  
+  **Begründung Pflichtfeld:** Die Angabe der Sprache ist für die Interpretation und Darstellung der Formulardefinition relevant."
 * url 1.. MS
   * ^short = "CanoncialURL des Formulars" 
   * ^comment = "Weltweit eindeutiger Name des Formulars.

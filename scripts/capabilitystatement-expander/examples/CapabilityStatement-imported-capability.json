@@ -1,0 +1,50 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "imported-capability",
+  "url": "http://example.org/CapabilityStatement/imported-capability",
+  "name": "ImportedCapability", 
+  "title": "Imported CapabilityStatement",
+  "status": "active",
+  "date": "2025-09-24",
+  "publisher": "Example Organization",
+  "description": "Ein importiertes CapabilityStatement",
+  "kind": "requirements",
+  "fhirVersion": "4.0.1",
+  "format": ["json"],
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "Patient",
+          "supportedProfile": [
+            "http://example.org/StructureDefinition/ExtendedPatientProfile"
+          ],
+          "interaction": [
+            {"code": "update"},
+            {"code": "delete"}
+          ]
+        },
+        {
+          "type": "DiagnosticReport",
+          "supportedProfile": [
+            "http://example.org/StructureDefinition/DiagnosticReportProfile"
+          ],
+          "interaction": [
+            {"code": "read"},
+            {"code": "search-type"}
+          ],
+          "searchParam": [
+            {
+              "name": "status",
+              "type": "token",
+              "binding": {
+                "valueSet": "http://example.org/ValueSet/DiagnosticReportStatus"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
