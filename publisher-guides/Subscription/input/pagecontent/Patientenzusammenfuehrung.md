@@ -1,7 +1,3 @@
----
-topic: Patient-merge
----
-
 ### Motivation
 Im Rahmen von Krankenhausbesuchen umfassen u.a. die Aufnahme-Workflows regelmäßig die manuelle Bearbeitung von Patientenstammdaten. Daher ist hier das Risiko redundant persistierter Patientendaten stets vorhanden. Dies hat auch zur Folge, dass Zusammenführungen von Patientendaten in Krankenhäusern an der Tagesordnung stehen. 
 
@@ -90,8 +86,124 @@ werden. Dieses Feld MUSS vom Server bei READ-Interaktionen maskiert werden.
 
 Siehe auch: [Safety and Security, Subscription Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/safety_security.html)
 
-### Beispiele
-Die *Patient merge Notification* kann folgendermaßen illustriert werden: 
+### Beispiel für eine Patient Merge Subscription
+
+```json
+{
+  "resourceType": "Subscription",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscription"
+    ]
+  },
+  "channel": {
+    "type": "rest-hook",
+    "endpoint": "https://example.org/fhir/notification",
+    "payload": "application/fhir+json",
+    "_payload": {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content",
+          "valueCode": "id-only"
+        }
+      ]
+    },
+    "header": [
+      "Authorization: Bearer xxxxxxxxxx"
+    ]
+  },
+  "status": "requested",
+  "reason": "Patient merge subscription",
+  "criteria": "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge"
+}
+```
+
+Nach erfolgreicher Patientenzusammenführung würde ein abonnierter Client eine Notification als Bundle mit `SubscriptionStatus` erhalten, z.B.:
+
+```json
+{
+  "resourceType": "Bundle",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscriptionNotification"
+    ]
+  },
+  "type": "history",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:9bb6fcbd-8391-4e35-bd4c-620a2db47af0",
+      "resource": {
+        "resourceType": "Parameters",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscriptionStatus"
+          ]
+        },
+        "parameter": [
+          {
+            "name": "subscription",
+            "valueReference": {
+              "reference": "Subscription/PatientMergeSubscriptionExample"
+            }
+          },
+          {
+            "name": "topic",
+            "valueCanonical": "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge"
+          },
+          {
+            "name": "status",
+            "valueCode": "active"
+          },
+          {
+            "name": "type",
+            "valueCode": "event-notification"
+          },
+          {
+            "name": "events-since-subscription-start",
+            "valueString": "1"
+          },
+          {
+            "name": "notification-event",
+            "part": [
+              {
+                "name": "event-number",
+                "valueString": "1"
+              },
+              {
+                "name": "timestamp",
+                "valueInstant": "2026-03-12T17:05:00+01:00"
+              },
+              {
+                "name": "focus",
+                "valueReference": {
+                  "reference": "Patient/DorisZiel"
+                }
+              },
+              {
+                "name": "additional-context",
+                "valueReference": {
+                  "reference": "Patient/DorisQuelle"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge/$status"
+      },
+      "response": {
+        "status": "200"
+      }
+    }
+  ]
+}
+```
+
+### Beispiele zur Patientenzusammenführung
+
+Die Patientenzusammenführung kann über Quell-, Ziel- und resultierende Patienten-Ressourcen illustriert werden.
 
 Es existieren fälschlicherweise zwei Instanzen im patientenführenden System, die sich lediglich hinsichtlich der organisationsspezifischen Patienten-ID unterscheiden.
 Diese sind:
@@ -267,6 +379,3 @@ Mittels eines *Patient merge* wird die "Ziel" Patienten-Ressource ausgewählt un
 }
 
 ```
-
-Da sich ein Client am patientenführenden System für das dedizierte SubscriptionTopic (http://hl7.org/SubscriptionTopic/patient-merge) registriert hat, erhält der Client eine Benachrichtigung in Form eines Bundles mit Verweis auf die resultierende Ressource.
-

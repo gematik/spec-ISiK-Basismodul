@@ -47,6 +47,7 @@ Alias: $Abrechnungsart = http://fhir.de/CodeSystem/dkgev/Abrechnungsart
 
 Alias: $condition-related = http://hl7.org/fhir/StructureDefinition/condition-related
 Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
+Alias: $data-absent-reason-cs = http://terminology.hl7.org/CodeSystem/data-absent-reason
 Alias: $diagnosesSCT = https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT
 Alias: $ProzedurenKategorieSCT = https://gematik.de/fhir/isik/ValueSet/ProzedurenKategorieSCT
 Alias: $KBV_VS_Base_Practitioner_Speciality = https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality
@@ -109,13 +110,11 @@ Alias: $cs-observation-category = http://terminology.hl7.org/CodeSystem/observat
 Alias: $cs-pzn = http://fhir.de/CodeSystem/ifa/pzn
 Alias: $cs-sct = http://snomed.info/sct
 Alias: $cs-ucum = http://unitsofmeasure.org
-Alias: $cs-wg14 = http://fhir.de/CodeSystem/abdata/wg14
 Alias: $vs-edqm-doseform = http://hl7.org/fhir/uv/ips/ValueSet/medicine-doseform
 Alias: $vs-edqm-route = http://hl7.org/fhir/uv/ips/ValueSet/medicine-route-of-administration
 Alias: $vs-results-laboratory-pathology-observations = http://hl7.org/fhir/uv/ips/ValueSet/results-laboratory-pathology-observations-uv-ips
 Alias: $vs-results-coded-values-laboratory = http://hl7.org/fhir/uv/ips/ValueSet/results-coded-values-laboratory-uv-ips
 Alias: $vs-observation-codes = http://hl7.org/fhir/ValueSet/observation-codes
-Alias: $ext-data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $ext-mii-wirkstofftyp = https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/wirkstofftyp
 
 
@@ -123,7 +122,6 @@ Alias: $cs-pzn = http://fhir.de/CodeSystem/ifa/pzn
 Alias: $cs-risk-probability = http://terminology.hl7.org/CodeSystem/risk-probability
 Alias: $cs-v3-event-timing = http://terminology.hl7.org/CodeSystem/v3-TimingEvent
 Alias: $vs-risk-probability = http://hl7.org/fhir/ValueSet/risk-probability
-Alias: $ext-data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $ext-wirkstofftyp = http://fhir.de/StructureDefinition/WirkstofftypEX
 
 Alias: $appointmentStatus = http://hl7.org/fhir/appointmentstatus

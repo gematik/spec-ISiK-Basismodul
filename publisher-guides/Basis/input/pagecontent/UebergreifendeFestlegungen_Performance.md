@@ -13,6 +13,13 @@ Die Performance-Kategorien und entsprechende Anforderungen beziehen sich zum jet
 
 Die Antwortzeit bezeichnet dabei einen Request/Reply-Zyklus zwischen einem Client und einem Server, der die Zeitspanne von der Absendung einer Anfrage durch den Client bis zum vollständigen Empfang der Antwort durch den Client in der Test-Umgebung umfasst und deckt sich damit weitgehend mit dem Konzept der Bearbeitungszeit wie [hier](https://gemspec.gematik.de/docs/gemSpec/gemSpec_Perf/latest/#2.1) definiert. Dabei wird hier zusätzlich eine Antwortzeit ohne signifikante Lasteinwirkung angenommen.
 
+**Messmetriken für Antwortzeit**
+
+Für die Überprüfung der Performance-Anforderungen im Zertifizierungsverfahren gelten folgende Metriken:
+
+
+- **P95 (95. Perzentil):** 95 % aller gemessenen Anfragen eines Messlaufs werden innerhalb dieses Zeitwerts vollständig beantwortet; die verbleibenden 5 % dürfen ihn überschreiten. P95 ist die **maßgebliche Konformitätsmetrik**: Die in den Performance-Kategorien (PK1–PK5) genannten Zeitschwellen (z. B. „unter einer Sekunde") müssen als **P95-Wert** eingehalten werden.
+
 Als kritisch (PK1 bis PK4) gelten REST-Abfragen, die von klinischen Nutzern in unmittelbar behandlungsrelevanten, zeitkritischen Situationen genutzt werden und deren Bereitstellung für den anfragenden Client nahezu zur Laufzeit stattfinden sollten.
 Daher sind hierfür sehr kurze Antwortzeiten ohne wahrnehmbare Verzögerung anzustreben.
 
@@ -44,7 +51,9 @@ Für diese Performance-Kategorien gilt:
   - Kontext: Listen- und Übersichtsabfragen (z.B. Patientenlisten, Falllisten)
   - Anforderung: **"unter 5 Sekunden"**
     - Beispielanfrage - alle Patienten mit dem Namen Müller: `baseURL/Patient?name=Müller`
-    - Beispielanfrage - alle Patienten auf der Station "123": `baseURL/_has:Encounter:patient:location=Location/ward123`
+    - Beispielanfrage - alle Patienten auf der Station "123": - Patienten und Kontakte auf einer bestimmten Station mit einem aktiven Kontakt auf dieser Station
+    - Beispielabruf: `GET baseURL/Encounter?location=Location/loc-hospital&status=in-progress&_include=Encounter:subject`
+    - Hinweis: Diese Abfrage kann ebenfalls in zwei Schritte unterteilt werden
 
 Als vorwiegend unkritisch gelten Abfragen (PK5 bis PK6), die z. B.
 - im Rahmen der Planungs- und Organisationsinformationen mit Bezug zu Patienten (z.B. Terminpläne, Belegungspläne), 
@@ -64,18 +73,59 @@ Für diese Performance-Kategorien gilt:
 
 - **PK6:** weitere Suchanfragen und Custom-Operation
   - Anforderung: **nicht geprüft**
-    - Beispiel - Operation zur Terminbuchung in ISiK : `baseURL/$book` 
     - Beispielanfrage - Alle verschriebenen bzw. verabreichten Medikamente (relevant bei auffälligen Medikationschargen): `baseURL/MedicationRequest`
+
+- **Custom-Operationen mit modulspezifisch konkretisierten Anforderungen** – Fachmodule KÖNNEN für einzelne Custom-Operationen engere Antwortzeit-Anforderungen festlegen, die die PK6-Einordnung im jeweiligen Kontext konkretisieren.
+  - Beispiel - Operation zur Terminbuchung in ISiK Terminplanung: `baseURL/$book`
 
 Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfahrens die entsprechenden Performance-Anforderungen (z.B. Antwortzeiten - ggf. unter Berücksichtigung der Perzentile -; aber vorerst keine Lasten, Durchsatz etc.)implementiert.
 
 
-**Hinweis zur Server-Implementierung bei Patienten- und Encounter-unabhängigen Suchen:**
+#### Umgang mit kostspieligen Suchanfragen (`too-costly`)
 
-Bei den Patienten- und Encounter-unabhängigen Suchen DARF ab einer bestimmten Komplexität der Suchanfrage ein Server OperationOutcomes mit Codes wie z.B. `too-costly` zurückgeben (es liegt also im Ermessen des Herstellers).
-Vor einer solchen Lösung SOLLEN aber geeignete Mechanismen - wie Pagination - in Betracht gezogen werden.
+Bei patientenunabhängigen oder breit gefächerten Suchanfragen können potenziell sehr große Ergebnismengen entstehen, die Server erheblich belasten. Pagination SOLL als primäres Mittel eingesetzt werden, bevor ein Server eine Anfrage ablehnt. Reicht Pagination nicht aus, DARF ein Server eine `too-costly`-Antwort zurückgeben – jedoch nur im Rahmen der nachfolgend definierten Regeln.
 
-Ein Beispiel für too-costly - alle Observations der letzten Jahre : baseURL/Observation?_lastUpdated=ge2020
+**Ressourcen-Volumenklassen**
+
+Ressourcentypen werden nach erwartetem Datenaufkommen klassifiziert. Daraus ergibt sich der garantiert zu beantwortende Suchumfang (Floor): Innerhalb dieses Suchumfangs MUSS ein Server ohne `too-costly` antworten.
+
+| Klasse | Ressourcen | Mindest-Suchumfang (Floor) |
+| --- | --- | --- |
+| **Hochvolumig** | `Observation`, `DeviceMetric`, `MedicationAdministration` | `_lastUpdated`/Datums-Fenster **≤ 7 Tage** ODER Pflicht-Begleitparameter (`patient`, `encounter` oder `category` mit Fenster) |
+| **Mittelvolumig** | `AllergyIntolerance`, `Appointment`, `Composition`, `Condition`, `DiagnosticReport`, `DocumentReference`, `Encounter`, `List`, `MedicationRequest`, `MedicationStatement`, `Procedure`, `QuestionnaireResponse`, `RiskAssessment`, `Schedule`, `Slot` | Fenster **≤ 3 Monate** ODER Pflicht-Begleitparameter (`patient` oder `encounter`) |
+| **Niedrigvolumig / Stammdaten** | `Account`, `Binary`, `Device`, `HealthcareService`, `Location`, `Medication`, `Organization`, `Patient`, `Practitioner`, `PractitionerRole`, `Questionnaire`, `RelatedPerson` | kein Fenster nötig (begrenzter Bestand; breite Patient-/Encounter-Suchen sind gemäß PK4 in ≤ 5 s zu beantworten) |
+| **Infrastruktur** | `Bundle`, `CapabilityStatement`, `CodeSystem`, `OperationDefinition`, `Parameters`, `SearchParameter`, `ValueSet` | nicht betroffen, `too-costly` nicht anwendbar |
+
+Zusätzlich gilt unabhängig von Volumenklasse und Zeitfenster ein **mengenbasiertes Fallback**: Ein Server DARF `too-costly` zurückgeben, wenn eine Anfrage eine Ergebnismenge von mehr als **10.000 Ressourcen** erzeugen würde. Umgekehrt MUSS ein Server Anfragen bis einschließlich 10.000 Ressourcen beantworten und DARF unterhalb dieser Schwelle kein `too-costly` zurückgeben.
+
+**Zwei-Stufen-Modell (Floor/Ceiling)**
+
+- **Mindest-Suchumfang (Floor)**: normativ durch ISiK festgelegt (Tabelle oben). Jeder Server MUSS innerhalb dieses Suchumfangs ohne `too-costly` antworten.
+- **Server-Ceiling**: Server, die mehr leisten, DÜRFEN einen erweiterten Suchumfang unterstützen und SOLLEN ihre tatsächliche Grenze im CapabilityStatement deklarieren. `too-costly` ist nur für Anfragen außerhalb des vom Server deklarierten Suchumfangs zulässig.
+
+**Auslösekriterien**
+
+Ein Server DARF `too-costly` zurückgeben, wenn eine Anfrage den unterstützten Suchumfang überschreitet, insbesondere:
+
+- `_lastUpdated` oder Datumsparameter ohne Patient-/Encounter-Bezug und mit einem Fenster oberhalb des Klassen-Floors (z. B. `baseURL/Observation?_lastUpdated=ge2020`)
+- `Patient?address-country`, `Patient?gender`, `Patient?status` ohne identifizierenden Begleitparameter (`identifier`, `birthdate`, `name`)
+- Ressourcentyp-weite Abfragen hochvolumiger Ressourcen ohne jeglichen Filter
+
+**HTTP-Antwortformat**
+
+Rückgabe eines HTTP `400 Bad Request` mit einem `OperationOutcome`:
+
+- `issue.severity` = `error`
+- `issue.code` = `too-costly`
+- `issue.diagnostics` SOLL einen menschenlesbaren Hinweis auf den überschrittenen Suchumfang enthalten (z. B. „Zeitfenster auf ≤ 7 Tage einschränken oder `patient` angeben").
+
+**CapabilityStatement-Deklaration**
+
+Server MÜSSEN für jeden Suchparameter, für den `too-costly` möglich ist, dies im CapabilityStatement dokumentieren. Server SOLLEN dabei den unterstützten Suchumfang angeben (`CapabilityStatement.rest.resource.searchParam.documentation`).
+
+**Client-Verhalten**
+
+Clients SOLLEN bei Empfang von `too-costly` die Anfrage mit engeren Filtern wiederholen, z. B. durch ein engeres Zeitfenster, einen zusätzlichen `patient`- oder `encounter`-Parameter oder den Einsatz von Pagination.
 
 #### Client-Implementierung
 

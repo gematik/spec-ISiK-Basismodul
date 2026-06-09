@@ -68,7 +68,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Motivation: Ein System muss die Geodaten eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 * managingOrganization MS 
   * ^short = "Verwaltende Organisation des Standorts"
-  * ^comment = """Begründung Must-Support: Vergleiche MII Profilierung eines Standortes (s.u.). Dennoch ist im Kontext von ISiK die Angabe der verwaltenden Organisation eines Standorts nicht zwingend erforderlich, um nicht notwendige Komplexität in der Abbildung von Standorten zu vermeiden. Daher wird die Angabe der verwaltenden Organisation als MS definiert."
+  * ^comment = """Begründung Must-Support: Vergleiche MII Profilierung eines Standortes (s.u.). Dennoch ist im Kontext von ISiK die Angabe der verwaltenden Organisation eines Standorts nicht zwingend erforderlich, um nicht notwendige Komplexität in der Abbildung von Standorten zu vermeiden. Daher wird die Angabe der verwaltenden Organisation als MS definiert.
   
   Hintergrund: Vergleiche https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location"""
 * partOf MS
@@ -86,7 +86,7 @@ Description: "Dieses Profil dient der strukturierten Erfassung von Räumen (als 
 * physicalType = $LocationPhysicalType#ro "Room"
 * operationalStatus MS  
 * operationalStatus from $v2-0116-BedStatus
-  * ^comment = "Belegungsstatus eines Raums"
+  * ^short = "Belegungsstatus eines Raums"
   * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Raums zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'."
 
 Profile: ISiKStandortBettenstellplatz
@@ -219,18 +219,26 @@ Usage: #example
 * hoursOfOperation[1].daysOfWeek = #sat
 * hoursOfOperation[1].daysOfWeek = #sun
 
-Instance: Location-characteristic
+Instance: Location-form
 InstanceOf: SearchParameter
+Description: "Die Location-Ressource kann für ein breites Spektrum an UseCases verwendet werden.
+        Im Kontext von ISiK ist speziell die Suche nach Stationen, Zimmern und Bettplätzen relevant, 
+        es ist jedoch nicht auszuschließen, dass Systeme die Location-Ressource auch für die Abbildung von Örtlichkeiten 
+        außerhalb des ISiK-Scopes verwenden, z.B. Gebäude, Standorte, Etagen, Lagerorte. 
+        Der Suchparameter `form` ist notwendig um die Suche auf relevante Locations eingrenzen zu können. 
+        Bei der Namensgebung des Suchparameters wurde bereits berücksichtigt, 
+        dass das durchsuchte Element `physicalType` in FHIR R6 zu `form` umbenannt wurde. 
+        Durch die Prä-Adoption der Namensänderung im Suchparameter soll vorausschauend die Migration auf FHIR R6 erleichtert werden
+        und einen Breaking Change in der API verhindern.  
+        Zum Zeitpunkt der Publikation dieses Suchparameters ist für das Element `form` in R6 zwar bereits ein Suchparameter 
+        namens `characteristic` definiert. Hier scheint es sich jedoch um eine Verwechslung mit dem gleichnamigen Element zu handeln, 
+        weshalb auf die Prä-Adoption dieses Parameters verzichtet wurde. 
+        Ein entsprechender Change Request liegt vor: https://jira.hl7.org/browse/FHIR-57431"
 Usage: #definition
-
 * insert MetaInstance
-* name = "characteristic"
+* name = "form"
 * status = #active
-* description = "Search by physicalType of a Location (e.g. wa = ward). 
-
-This SearchParameter is defined based on the R6 (build) equivalent (https://build.fhir.org/location-search.html#Location-characteristic).
-"
-* code = #physical-type
+* code = #form
 * base = #Location
 * type = #token
 * expression = "Location.physicalType"

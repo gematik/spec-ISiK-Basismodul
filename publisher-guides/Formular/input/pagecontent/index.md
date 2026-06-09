@@ -1,7 +1,3 @@
----
-topic: Einfuehrung
----
-
 Realm: Deutschland
 
 ### Hinweis zum Status
