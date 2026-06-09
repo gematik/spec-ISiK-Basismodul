@@ -12,6 +12,7 @@ Datum: tbd
 * `documentation` Neue Use-Case-Seiten `Bedarfsmedikation` und `Infusionen` im Menü ergänzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1204>
 * `documentation` Guidance zur Verwendung von List.mode (snapshot vs. working) in ISiKMedikationsListe anhand von Use-Cases ergänzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1194>
 * `fix` Erweiterung der ISiK eigenen Codesysteme um die Information zur Sprache <https://github.com/gematik/spec-ISiK-Basismodul/pull/1214>
+* `documentation` Aktualisierung der Seite zur Kompatibilität des Medikationsmoduls <https://github.com/gematik/spec-ISiK-Basismodul/pull/1241> 
 
 ### Version 6.0.0-rc
 
