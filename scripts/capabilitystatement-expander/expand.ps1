@@ -85,6 +85,7 @@ $ErrorActionPreference = 'Stop'
 
 $ScriptDir    = $PSScriptRoot
 $PythonScript = Join-Path $ScriptDir 'capability_statement_expander.py'
+$IsWindowsHost = ($env:OS -eq 'Windows_NT')
 
 # ── Defaults from environment variables ──────────────────────────────────────
 if (-not $InputDir)          { $InputDir          = $env:CS_INPUT_DIR }
@@ -101,17 +102,52 @@ $isVerbose = ($VerbosePreference -ne [System.Management.Automation.ActionPrefere
           -or ($env:ACTIONS_STEP_DEBUG -eq 'true')
 
 # ── Detect Python executable ─────────────────────────────────────────────────
-$pythonExe = $null
-foreach ($candidate in @('python', 'python3', 'py')) {
-    if (Get-Command $candidate -ErrorAction SilentlyContinue) {
-        $pythonExe = $candidate
-        break
+function Get-WorkingPythonLauncher {
+    param(
+        [bool] $IsWindowsHost
+    )
+
+    $py      = [pscustomobject]@{ Exe = 'py';      Prefix = @('-3') }
+    $python  = @(
+        [pscustomobject]@{ Exe = 'python3'; Prefix = @() }
+        [pscustomobject]@{ Exe = 'python';  Prefix = @() }
+    )
+
+    # Windows: py-Launcher zuerst (umgeht Store-Aliase), sonst zuletzt
+    $candidates = if ($IsWindowsHost) { @($py) + $python } else { $python + @($py) }
+
+    foreach ($candidate in $candidates) {
+        if (-not (Get-Command $candidate.Exe -ErrorAction SilentlyContinue)) {
+            continue
+        }
+
+        $probeArgs = @()
+        $probeArgs += $candidate.Prefix
+        $probeArgs += '--version'
+
+        try {
+            & $candidate.Exe @probeArgs *> $null
+        } catch {
+            continue
+        }
+
+        if ($LASTEXITCODE -eq 0) {
+            return $candidate
+        }
     }
+
+    return $null
 }
-if (-not $pythonExe) {
-    Write-Host 'Error: Python not found. Install Python 3 and ensure it is on PATH.' -ForegroundColor Red
+
+$pythonLauncher = Get-WorkingPythonLauncher -IsWindowsHost:$IsWindowsHost
+
+if (-not $pythonLauncher) {
+    Write-Host 'Error: Python 3 not found. Install Python 3 or use the py launcher and ensure it is available on PATH.' -ForegroundColor Red
     exit 1
 }
+
+$pythonExe = $pythonLauncher.Exe
+$pythonArgsPrefix = $pythonLauncher.Prefix
 
 # ── Temp file tracking ───────────────────────────────────────────────────────
 $extractTempFile = $null
@@ -168,7 +204,7 @@ print(json.dumps({
         $extractTempFile = [System.IO.Path]::GetTempFileName()
         [System.IO.File]::WriteAllText($extractTempFile, $extractPyCode, [System.Text.UTF8Encoding]::new($false))
 
-        $wfJson = & $pythonExe $extractTempFile $WorkflowFile $IGName
+        $wfJson = & $pythonExe @pythonArgsPrefix $extractTempFile $WorkflowFile $IGName
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
         $wfConfig = $wfJson | ConvertFrom-Json
@@ -226,7 +262,7 @@ print(json.dumps({
     Write-Host "  Output: $OutputDir"
     if ($ExpectationFilter) { Write-Host "  Filter: $ExpectationFilter" }
 
-    & $pythonExe $PythonScript @pythonArgs
+    & $pythonExe @pythonArgsPrefix $PythonScript @pythonArgs
     exit $LASTEXITCODE
 
 } finally {
