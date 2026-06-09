@@ -135,3 +135,5 @@ Alias: $vs-dosage-dose-quantity-de = http://ig.fhir.de/igs/medication/ValueSet/D
 
 Alias: $ISiKSubscriptionTopicCS = https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic
 Alias: $capabilitystatement-subscriptiontopic-canonical = http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical
+
+Alias: $ext-dosage-as-needed-for = http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor
