@@ -158,6 +158,9 @@ bash scripts/capabilitystatement-expander/expand.sh \
   -IGName ISiK-Basis
 ```
 
+On Windows, the wrapper prefers the `py -3` launcher so it does not accidentally hit the Microsoft Store `python` / `python3` app aliases.
+It now probes `py -3`, `python3`, and `python` in that order and uses the first one that actually starts successfully.
+
 Einzelne Parameter können nach wie vor explizit überschrieben werden, z. B. um ein anderes Output-Verzeichnis zu nutzen:
 
 ```bash
