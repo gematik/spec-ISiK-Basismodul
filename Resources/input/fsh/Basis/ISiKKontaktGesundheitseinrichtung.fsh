@@ -27,7 +27,7 @@ und der gewünschte Besuch ausgewählt.
 
 In FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.
 
-Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Abbildung-des-Konstrukts-Fall.html).
+Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Abbildung-des-Konstrukts-Fall.html).
 
 **Kompatibilität**
 
@@ -395,7 +395,7 @@ Die Anforderung einer Verknüpfung mit einem Appointment stammt aus dem Szenario
 
 Hieraus folgt, dass das Element nur relevant ist, falls das bestätigungsrelevante System zusätzlich zum vorliegenden Profil (Encounter) das Profil ISiKTermin (Appointment) implementiert.
 
-**Hinweis:**  Zur Umsetzung der Funktionalität zum Dokumentenaustausch gemäß ISiK ist der entsprechende [Implementation Guide zum Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/index.html) zu beachten."
+**Hinweis:**  Zur Umsetzung der Funktionalität zum Dokumentenaustausch gemäß ISiK ist der entsprechende [Implementation Guide zum Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc1/index.html) zu beachten."
 
 Extension: ExtensionISiKRehaEntlassung
 Id: ExtensionISiKRehaEntlassung
