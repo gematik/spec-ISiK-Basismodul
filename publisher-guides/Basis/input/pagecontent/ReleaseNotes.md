@@ -12,7 +12,7 @@ Tags werden folgendermaßen verwendet:
 
 Datum: 10.06.2026
 
-* `improve` Überarbeitung des Kapitels "Motivation" <https://github.com/gematik/spec-ISiK-Basismodul/pull/1216>
+* `improve` Überarbeitung des Kapitels "Motivation" <https://github.com/gematik/spec-ISiK-Basismodul/pull/1216> 
 * `fix` Umbenennung des Suchparameters `characteristic` zu `form` und Verbesserung der Dokumentation des Suchparameters der Location-Ressource <https://github.com/gematik/spec-ISiK-Basismodul/pull/1233>
 * `improve` Hinzufügen einer Definition von Perzentil-Metriken für die Performance <https://github.com/gematik/spec-ISiK-Basismodul/pull/1219>
 * `fix` Suchparameter AllergyIntolerance.onset entfernt, aufgrund fehlerhafter Spezifikation <https://github.com/gematik/spec-ISiK-Basismodul/pull/1211>
