@@ -1,9 +1,5 @@
 Da es sich im ISiK-Kontext bei dem Terminplanungs-Modul um ein dediziertes Modul zur Abbildung eines Workflows handelt, sind hier gesonderte Betrachtungen und Festlegungen zu Performance-Aspekten notwendig, um einen robusten und für Nutzende akzeptablen Einsatz der Schnittstelle zu ermöglichen.
 
-### Performance-Anforderungen an ein Termin-Repository
-
-tbd. (anderer PR/Ticket)
-
 ### Erwartbare Zeiträume bei Slot-Abfragen auf einzelne Kalender
 
 Slot-Abfragen (Terminblock-Abfragen) bilden den performanzkritischen Kern des Buchungsworkflows: Nutzende erwarten beim Suchen nach freien Terminen eine unmittelbare Rückmeldung. Gleichzeitig können Slot-Ergebnismengen – abhängig von Slot-Dauer und Abfragezeitraum – sehr groß werden, weshalb klare Grenzen für zulässige Abfragezeiträume und die daran geknüpften Anforderungen notwendig sind.

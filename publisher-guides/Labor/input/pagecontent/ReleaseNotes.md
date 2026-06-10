@@ -3,7 +3,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
-Datum: tbd
+Datum: 10.06.2026
 
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
 
@@ -11,7 +11,7 @@ Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähi
 
 ### Version 6.0.0-rc1
 
-Datum: tbd
+Datum: 10.06.2026
 
 * `documentation` Ausschreiben der Abkürzungen der Laboruntersuchungen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1182>
 

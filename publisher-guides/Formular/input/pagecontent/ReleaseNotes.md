@@ -1,6 +1,6 @@
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
-Datum: tbd
+Datum: 10.06.2026
 
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 * `fix` CapabilityStatement FormDefinitionsVerwalter korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
