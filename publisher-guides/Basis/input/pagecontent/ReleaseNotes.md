@@ -37,6 +37,7 @@ Datum: tbd
 * `documentation` Fix der Beispielsuchanfrage zu allen Patienten, die auf einer Station liegen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1201>
 * `documentation` Fix der Beispielsuchanfrage zu allen Medikamente <https://github.com/gematik/spec-ISiK-Basismodul/pull/1246>
 * `fix` Hinzufügen eines weiteren Codes zum ValueSet `ProzedurenKategorieSCT`, zur Abbildung von Reanimationsmaßnahmen 
+* `fix` Korrekturen am Profil `ISiKOrganisationFachabteilung` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1248>
  
 ### Version 6.0.0-rc
 
