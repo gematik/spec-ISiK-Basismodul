@@ -10,7 +10,7 @@ Tags werden folgendermaßen verwendet:
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
-Datum: tbd
+Datum: 10.06.2026
 
 * `improve` Überarbeitung des Kapitels "Motivation" <https://github.com/gematik/spec-ISiK-Basismodul/pull/1216>
 * `fix` Umbenennung des Suchparameters `characteristic` zu `form` und Verbesserung der Dokumentation des Suchparameters der Location-Ressource <https://github.com/gematik/spec-ISiK-Basismodul/pull/1233>
