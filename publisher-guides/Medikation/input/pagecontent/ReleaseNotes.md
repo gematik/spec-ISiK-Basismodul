@@ -2,7 +2,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
-Datum: tbd
+Datum: 10.06.2026
 
 * `improve` Guidance für ISiKMedikament.amount verbessert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1243>
 * `fix` Hinzufügen der Rulesets `CommonSearchParameters` und `OptionalTagSearchParameter` zu den Rollen CapabilityStatements <https://github.com/gematik/spec-ISiK-Basismodul/pull/1161> - analog zu TC 5.1.2 siehe <https://github.com/gematik/spec-ISiK-Basismodul/pull/1158>

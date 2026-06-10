@@ -163,6 +163,6 @@ Konkrete Umsetzung der Performance-Aspekte:
 - Vorteil: weniger Netzlast bei häufigem Öffnen derselben Patientenkurve, UI bleibt schnell.
 
 6. Aktualisierungsstrategie für Live-Betrieb
-- Nicht dauerhaft neu laden, sondern über [Subscriptions](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc) intervallbasiert (z. B. alle 60 Sekunden) oder bei explizitem Nutzer-Refresh.
+- Nicht dauerhaft neu laden, sondern über [Subscriptions](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/latest) intervallbasiert (z. B. alle 60 Sekunden) oder bei explizitem Nutzer-Refresh.
 - Nur den neuen Zeitraum nachladen, z. B. ab letztem bekannten Messzeitpunkt.
 - Vorteil: aktuelle Anzeige ohne unnötige Dauerlast.
