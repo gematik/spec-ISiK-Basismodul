@@ -35,7 +35,9 @@ Datum: 10.06.2026
 * `fix` Erweiterung der ISiK eigenen Codesysteme und ValueSets um die Information zur Sprache <https://github.com/gematik/spec-ISiK-Basismodul/pull/1214>
 * `improve` Ergänzung der Extension `abatement` (klinisch relevantes Enddatum) im Profil `ISiKAllergieUnvertraeglichkeit` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1231>
 * `documentation` Fix der Beispielsuchanfrage zu allen Patienten, die auf einer Station liegen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1201>
+* `documentation` Fix der Beispielsuchanfrage zu allen Medikamente <https://github.com/gematik/spec-ISiK-Basismodul/pull/1246>
 * `fix` Hinzufügen eines weiteren Codes zum ValueSet `ProzedurenKategorieSCT`, zur Abbildung von Reanimationsmaßnahmen 
+* `fix` Korrekturen am Profil `ISiKOrganisationFachabteilung` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1248>
  
 ### Version 6.0.0-rc
 
