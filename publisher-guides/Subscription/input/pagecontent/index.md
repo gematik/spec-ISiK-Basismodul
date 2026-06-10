@@ -12,7 +12,7 @@ Dadurch kommt es bei einigen Validator-/Package-Resolver-Konfigurationen zu Fehl
 
 Das Problem ist im Kontext des Subscription Backport IG bereits bekannt und wird mit dem kommenden Release: `1.2.0` behoben.
 
-<h3>Empfohlener Workaround:</h3>    
+<b>Empfohlener Workaround:</b>    
 Dependency Override / manuelles Patchen der Package-Dependency:
 hl7.fhir.r4.core#4.0.0 → hl7.fhir.r4.core#4.0.1
 </div>
