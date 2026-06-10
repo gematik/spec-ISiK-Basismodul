@@ -39,8 +39,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * value 1.. MS
   * ^patternIdentifier.type = $sct#225746001 // Ward
   * ^comment = "Motivation: Für IDs, die Krankhausintern spezifischen Fachabteilungen vergeben werden, ist diese Identifier zu nutzen - analog zu Slice Abteilungsidentifikator in https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/mii_pr_struktur_abteilung."
+* type ^slicing.discriminator.type = #pattern
+* type ^slicing.discriminator.path = "$this"
+* type ^slicing.rules = #open
 * type contains
-  Fachbereich 0..1 MS
+  Fachbereich 0..1 MS 
 
 * type[Fachbereich] from $IHEpracticeSettingVS (required)
   * ^short = "Angabe des IHE-PracticeSetting Code"
