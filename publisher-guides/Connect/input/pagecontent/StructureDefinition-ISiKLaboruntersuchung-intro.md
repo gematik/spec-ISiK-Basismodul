@@ -1,3 +1,5 @@
+### Ableitungsregel für Observation.effective[x]
+
 Für die klinische zeitliche Einordnung einer Laboruntersuchung ist Observation.effective[x] maßgeblich.
 
 Der Wert von Observation.effective[x] ist aus den verfügbaren Zeitangaben zum Probenmaterial nach folgender Priorität abzuleiten:
