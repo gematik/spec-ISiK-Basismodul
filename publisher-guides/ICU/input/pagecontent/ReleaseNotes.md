@@ -3,6 +3,12 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 * Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
+### Version 6.0.0
+
+Datum: tbd
+
+* `fix` Hinzufügen eines Codes zum ValueSet `VS_MII_ICU_Code_Monitoring_und_Vitaldaten_SNOMED` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1253>
+
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
 Datum: 10.06.2026
