@@ -38,6 +38,9 @@ Datum: 10.06.2026
 * `documentation` Fix der Beispielsuchanfrage zu allen Medikamente <https://github.com/gematik/spec-ISiK-Basismodul/pull/1246>
 * `fix` Hinzufügen eines weiteren Codes zum ValueSet `ProzedurenKategorieSCT`, zur Abbildung von Reanimationsmaßnahmen 
 * `fix` Korrekturen am Profil `ISiKOrganisationFachabteilung` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1248>
+
+Die Änderungen zu dieser Version sind im Wesentlichen auf Grundlage der eingegangenen [Kommentare im Zuge der Kommentierung Stufe 6](https://github.com/gematik/spec-ISiK-Basismodul/blob/main-stufe-6/Material/_commons/texts/260611_Kommentarauflo%CC%88sung_ISiK_Stufe%206.pdf) vorgenommen worden.
+
  
 ### Version 6.0.0-rc
 
