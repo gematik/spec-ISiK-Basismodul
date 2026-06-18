@@ -738,12 +738,12 @@ Usage: #example
 Invariant: ISiK-enc-1
 Description: "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben"
 Severity: #error
-Expression: "status = 'finished' and class = 'AMB' implies period.start.exists()"
+Expression: "status = 'finished' and class.code = 'AMB' implies period.start.exists()"
 
 Invariant: ISiK-enc-2
 Description: "Abgeschlossene, stationäre Kontakte sollten einen Start- und End-Zeitpunkt angeben"
 Severity: #error
-Expression: "status = 'finished' and class = 'IMP' implies period.start.exists() and period.end.exists()"
+Expression: "status = 'finished' and class.code = 'IMP' implies period.start.exists() and period.end.exists()"
 
 Invariant: ISiK-enc-3
 Description: "Geplante Kontakte sollten keinen Start- oder End-Zeitpunkt angeben"
