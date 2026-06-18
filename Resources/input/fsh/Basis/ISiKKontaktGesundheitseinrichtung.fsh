@@ -471,6 +471,8 @@ Usage: #example
 * class = $v3-ActCode#IMP
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * subject = Reference(PatientinNormal)
+* period.start = "2025-01-15T14:00:00+01:00"
+* period.end = "2025-01-20T10:00:00+01:00"
 
 Instance: FachabteilungskontaktNormal
 InstanceOf: ISiKKontaktGesundheitseinrichtung
@@ -716,7 +718,7 @@ Usage: #example
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * subject = Reference(PatientinNormal)
 * period.start = "2025-01-15T14:00:00+01:00"
-* period.start = "2025-01-20T10:00:00+01:00"
+* period.end = "2025-01-20T10:00:00+01:00"
 * serviceType = $FachabteilungsschluesselCS#0100 "Innere Medizin"
 * location[+].physicalType = $LocationPhysicalType#wa "Ward"
 * location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
