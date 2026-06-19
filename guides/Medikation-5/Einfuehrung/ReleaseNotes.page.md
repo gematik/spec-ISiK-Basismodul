@@ -7,6 +7,8 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 ## Version 
 
 Datum: tbd
+
+* `feature` Bedarfsmedikation mit mehreren Indikationen: R5-Backport-Extension `Dosage.asNeededFor` in `ISiKMedikationsVerordnung.dosageInstruction` ergänzt (ohne Must-Support; ab Stufe 6 mit Must-Support) und `asNeeded[x]` auf `boolean` eingeschränkt. Neue Use-Case-Seite `Bedarfsmedikation` mit Verweis auf den [FHIR Medication IG Deutschland](https://ig.fhir.de/igs/medication/) ergänzt
 * `documentation` Guidance zur Verwendung von List.mode (snapshot vs. working) in ISiKMedikationsListe anhand von Use-Cases ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1236
 * `fix` REQUIRED Suchparameter AllergyIntolerance.onset aus AMTS-Rolle entfernt aufgrund fehlerhafter Spezifikation https://github.com/gematik/spec-ISiK-Basismodul/pull/1212
 
