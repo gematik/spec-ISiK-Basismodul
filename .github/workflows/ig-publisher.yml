@@ -423,10 +423,20 @@ jobs:
 
   # Commit generated source artifacts for all IGs in one go.
   # IG Publisher output/ is published separately and is not committed.
+  # Runs on PR builds (commits to the PR head branch), on manual
+  # workflow_dispatch runs (commits to whichever branch was dispatched on,
+  # including main-stufe-* for manual production builds), and on pushes to
+  # main-stufe-* (commits straight to the main branch). The push case closes
+  # the race window where a PR is merged before this job's PR-branch commit
+  # lands: the post-merge run on main-stufe-* regenerates and commits the
+  # artifacts there instead.
   commit:
     needs: [build, publish_gate]
     runs-on: ubuntu-latest
-    if: needs.publish_gate.outputs.should_publish == 'true' && !startsWith(github.ref_name, 'main-stufe-')
+    if: >-
+      needs.publish_gate.outputs.should_publish == 'true' &&
+      (github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch' ||
+      startsWith(github.ref_name, 'main-stufe-'))
 
     steps:
       # Check out the source branch so commits land in the right place
