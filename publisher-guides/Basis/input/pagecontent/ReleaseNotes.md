@@ -8,6 +8,12 @@ Tags werden folgendermaßen verwendet:
 
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
+### Version 6.0.0
+
+Datum: tbd
+
+* `fix` Fix der Invarianten `ISiK-enc-1` und `ISiK-enc-2` des Profils `ISiKKontaktGesundheitseinrichtung` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1260>
+
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
 Datum: 10.06.2026

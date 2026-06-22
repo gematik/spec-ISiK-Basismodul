@@ -25,14 +25,14 @@
             "key": "ISiK-enc-1",
             "severity": "error",
             "human": "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben",
-            "expression": "status = 'finished' and class = 'AMB' implies period.start.exists()",
+            "expression": "status = 'finished' and class.code = 'AMB' implies period.start.exists()",
             "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-2",
             "severity": "error",
             "human": "Abgeschlossene, stationäre Kontakte sollten einen Start- und End-Zeitpunkt angeben",
-            "expression": "status = 'finished' and class = 'IMP' implies period.start.exists() and period.end.exists()",
+            "expression": "status = 'finished' and class.code = 'IMP' implies period.start.exists() and period.end.exists()",
             "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
