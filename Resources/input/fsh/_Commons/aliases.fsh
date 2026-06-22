@@ -117,6 +117,7 @@ Alias: $cs-v3-event-timing = http://terminology.hl7.org/CodeSystem/v3-TimingEven
 Alias: $vs-risk-probability = http://hl7.org/fhir/ValueSet/risk-probability
 Alias: $ext-data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $ext-wirkstofftyp = http://fhir.de/StructureDefinition/WirkstofftypEX
+Alias: $ext-dosage-as-needed-for = http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor
 
 Alias: $appointmentStatus = http://hl7.org/fhir/appointmentstatus
 Alias: $cancelationReason = http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason

@@ -445,7 +445,73 @@
             ]
           }
         ],
+        "constraint": [
+          {
+            "key": "isik-dosage-as-needed-for",
+            "severity": "error",
+            "human": "Wenn Indikationen für eine Bedarfsmedikation (asNeededFor) angegeben sind, MUSS asNeededBoolean vorhanden und 'true' sein.",
+            "expression": "extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor').empty() or asNeededBoolean = true",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung"
+          }
+        ],
         "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension",
+        "path": "MedicationRequest.dosageInstruction.extension",
+        "short": "Indikation(en) für die Bedarfsmedikation",
+        "comment": "Ermöglicht die Angabe mehrerer Indikationen für die Bedarfsmedikation, z. B. 'Schmerzen', 'Fieber', 'Hustenreiz' etc. Diese Bedingungen sind ODER-verknüpft, d. h. die Bedarfsmedikation soll bei Vorliegen einer ODER mehrerer dieser Bedingungen angewendet werden.\n\n  **Hinweis:** Dieses Element ist in diesem Modul (ISiK-Stufe 5) bewusst NICHT als Must-Support gekennzeichnet. Ab ISiK-Stufe 6 ist dieses Element mit Must-Support versehen."
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension.extension",
+        "path": "MedicationRequest.dosageInstruction.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension.value[x]",
+        "path": "MedicationRequest.dosageInstruction.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension.value[x]:valueCodeableConcept",
+        "path": "MedicationRequest.dosageInstruction.extension.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension.value[x]:valueCodeableConcept.text",
+        "path": "MedicationRequest.dosageInstruction.extension.value[x].text",
+        "short": "Indikation für die Bedarfsmedikation (Freitext)"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension:asNeededFor",
+        "path": "MedicationRequest.dosageInstruction.extension",
+        "sliceName": "asNeededFor",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor"
+            ]
+          }
+        ]
       },
       {
         "id": "MedicationRequest.dosageInstruction.text",
@@ -603,24 +669,8 @@
       {
         "id": "MedicationRequest.dosageInstruction.asNeeded[x]",
         "path": "MedicationRequest.dosageInstruction.asNeeded[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction.asNeeded[x]:asNeededBoolean",
-        "path": "MedicationRequest.dosageInstruction.asNeeded[x]",
-        "sliceName": "asNeededBoolean",
-        "short": "Bedarfsmedikation",
-        "min": 0,
-        "max": "1",
+        "short": "Bedarfsmedikation (ja/nein)",
+        "comment": "Begründung des Must-Support: Abbildung einer Bedarfsmedikation.",
         "type": [
           {
             "code": "boolean"

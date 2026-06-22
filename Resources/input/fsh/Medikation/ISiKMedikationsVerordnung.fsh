@@ -131,7 +131,8 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   **Hinweis:** Zahlreiche [Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland](https://ig.fhir.de/igs/medication/dosierung-beispiele.html) dokumentiert.
   "
 * dosageInstruction only DosageDE
-  * text 
+* dosageInstruction obeys isik-dosage-as-needed-for
+  * text
     * ^comment = "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.
         
     Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.
@@ -185,8 +186,19 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
         * ^short = "Tageszeitpunkt codiert"
       * offset MS
         * ^short = "zeitlicher Abstand der Gabe zum beschriebenen Zeitpunkt"
-  * asNeededBoolean MS
+  * asNeeded[x] only boolean
     * ^short = "Bedarfsmedikation"
+    * ^comment = "Begründung der Einschränkung auf boolean: Für die Angabe der Bedingung(en) wird die R5-Backport-Extension 'asNeededFor' genutzt, um mehrere ODER-verknüpfte Bedarfsbedingungen angeben zu können. Im Unterschied zu 'asNeededCodeableConcept' (Kardinalität 0..1) lassen sich damit mehrere bedingte Bedarfe (z. B. mittlere UND schwere Schmerzen) kodieren."
+  * asNeededBoolean MS
+    * ^short = "Bedarfsmedikation (ja/nein)"
+    * ^comment = "Begründung des Must-Support: Abbildung einer Bedarfsmedikation."
+  * extension contains $ext-dosage-as-needed-for named asNeededFor 0..*
+    * ^short = "Indikation(en) für die Bedarfsmedikation"
+    * ^comment = "Ermöglicht die Angabe mehrerer Indikationen für die Bedarfsmedikation, z. B. 'Schmerzen', 'Fieber', 'Hustenreiz' etc. Diese Bedingungen sind ODER-verknüpft, d. h. die Bedarfsmedikation soll bei Vorliegen einer ODER mehrerer dieser Bedingungen angewendet werden.
+
+  **Hinweis:** Dieses Element ist in diesem Modul (ISiK-Stufe 5) bewusst NICHT als Must-Support gekennzeichnet. Ab ISiK-Stufe 6 ist dieses Element mit Must-Support versehen."
+    * valueCodeableConcept.text
+      * ^short = "Indikation für die Bedarfsmedikation (Freitext)"
   * site MS
     * ^short = "Körperstelle der Verabreichung"
     * coding MS
@@ -266,6 +278,11 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
 
   Abgrenzung: Im Gegensatz zur Extension 'medicationRequestReplaces', die das Ersetzen einer Verordnung (z.B. bei Unverträglichkeit) abbildet, beschreibt 'priorPrescription' eine Fortführung einer bestehenden Medikation."
 
+Invariant: isik-dosage-as-needed-for
+Description: "Wenn Indikationen für eine Bedarfsmedikation (asNeededFor) angegeben sind, MUSS asNeededBoolean vorhanden und 'true' sein."
+Severity: #error
+Expression: "extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor').empty() or asNeededBoolean = true"
+
 Instance: ExampleISiKMedikationsVerordnung
 InstanceOf: ISiKMedikationsVerordnung
 Usage: #example
@@ -315,3 +332,38 @@ Usage: #example
     * unit = "ml Infusionslösung"
     * system = $cs-ucum
     * code = #mL
+
+Instance: ExampleISiKMedikationsVerordnungBedarfsmedikation
+InstanceOf: ISiKMedikationsVerordnung
+Usage: #example
+* extension[medikationsart].valueCoding = ISiKMedikationsartCS#akut
+* status = #active
+* intent = #order
+* medicationReference.reference = "Medication/ExampleISiKMedikament1"
+* subject = Reference(PatientinMusterfrau)
+* encounter.reference = "Encounter/Fachabteilungskontakt"
+* authoredOn = 2026-04-24
+* requester.reference = "Practitioner/PractitionerWalterArzt"
+* dosageInstruction
+  * asNeededBoolean = true
+  * timing.repeat
+    * frequency = 1
+    * period = 6
+    * periodUnit = #h
+  * extension[asNeededFor][+]
+    * valueCodeableConcept.coding[0]
+      * system = $cs-sct
+      * version = "http://snomed.info/sct/11000274103/version/20251115"
+      * code = #76948002
+      * display = "Starke Schmerzen"
+  * extension[asNeededFor][+]
+    * valueCodeableConcept.coding[0]
+      * system = $cs-sct
+      * version = "http://snomed.info/sct/11000274103/version/20251115"
+      * code = #50415004
+      * display = "Moderate Schmerzen"
+  * doseAndRate.doseQuantity
+    * value = 1
+    * unit = "Tablette"
+    * system = $cs-ucum
+    * code = #1
