@@ -72,7 +72,9 @@
     "Validation_VAL_Profile_NotAllowed@Bundle.entry[0].resource/*MedicationStatement/ExampleISiKMedikationsInformation1*/.dosage[0].doseAndRate[0].dose.ofType(Quantity).system",
     "Validation_VAL_Profile_NotAllowed@Bundle.entry[0].resource/*MedicationStatement/ExampleISiKMedikationsInformation1*/.dosage[0].doseAndRate[0].dose.ofType(Quantity).code",
     // KBV_VS_Base_Role_Care is currently not loadable through devDependencies, filtering the resulting error for now
-    "Validation_VAL_Profile_NotSlice@PractitionerRole.code[0].coding[0]"
+    "Validation_VAL_Profile_NotSlice@PractitionerRole.code[0].coding[0]",
+    // filters expected Encounter.location slicing errors caused by the temporary closed slicing
+    "Validation_VAL_Profile_NotSlice@Encounter.​location*"
   ],
   "suppress-complies-with": [
     "https://gematik.de/fhir/ti/StructureDefinition/ti-patient@Patient.name",
