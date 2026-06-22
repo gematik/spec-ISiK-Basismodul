@@ -471,6 +471,8 @@ Usage: #example
 * class = $v3-ActCode#IMP
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * subject = Reference(PatientinNormal)
+* period.start = "2025-01-15T14:00:00+01:00"
+* period.end = "2025-01-20T10:00:00+01:00"
 
 Instance: FachabteilungskontaktNormal
 InstanceOf: ISiKKontaktGesundheitseinrichtung
@@ -716,7 +718,7 @@ Usage: #example
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * subject = Reference(PatientinNormal)
 * period.start = "2025-01-15T14:00:00+01:00"
-* period.start = "2025-01-20T10:00:00+01:00"
+* period.end = "2025-01-20T10:00:00+01:00"
 * serviceType = $FachabteilungsschluesselCS#0100 "Innere Medizin"
 * location[+].physicalType = $LocationPhysicalType#wa "Ward"
 * location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
@@ -738,12 +740,12 @@ Usage: #example
 Invariant: ISiK-enc-1
 Description: "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben"
 Severity: #error
-Expression: "status = 'finished' and class = 'AMB' implies period.start.exists()"
+Expression: "status = 'finished' and class.code = 'AMB' implies period.start.exists()"
 
 Invariant: ISiK-enc-2
 Description: "Abgeschlossene, stationäre Kontakte sollten einen Start- und End-Zeitpunkt angeben"
 Severity: #error
-Expression: "status = 'finished' and class = 'IMP' implies period.start.exists() and period.end.exists()"
+Expression: "status = 'finished' and class.code = 'IMP' implies period.start.exists() and period.end.exists()"
 
 Invariant: ISiK-enc-3
 Description: "Geplante Kontakte sollten keinen Start- oder End-Zeitpunkt angeben"
