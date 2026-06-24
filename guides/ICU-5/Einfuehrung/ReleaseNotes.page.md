@@ -10,6 +10,12 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 Im Fall von prozessorientierten Implementierungsleitfäden beginnt die Versionierung gemäß Semver des Implementierungsleitfadens gemäß des Major Releases im Zuge dessen der Implementierungsleitfaden entstanden ist (X.0.0).
 Darüber hinaus wird die Versionierung unabhängig von allen anderen Modulen und Packages gehandhabt. Für den Implementierungsleitfaden "ISiK ICU-Normalstation Workflow" wird zum Beispiel die initiale Version 4.0.0 gewählt, da der IG im Zuge der Stufe 4 entwickelt wurde.
 
+## Version 5.1.3
+
+Datum: tbd
+
+* `fix` Verschieben des Profils `SD_MII_ICU_Intrakranieller_Druck_Icp` aus der ICUSourceMinimalRolle in die `ICUSourceExtendedRolle` 
+
 ## Version 5.1.2
 
 Datum: 30.04.2026
