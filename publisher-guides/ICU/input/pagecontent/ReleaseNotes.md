@@ -7,7 +7,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd
 
-* `fix` Verschieben des Profils `SD_MII_ICU_Intrakranieller_Druck_Icp` aus der ICUSourceMinimalRolle in die `ICUSourceExtendedRolle` 
+* `fix` Verschieben des Profils `SD_MII_ICU_Intrakranieller_Druck_Icp` aus der ICUSourceMinimalRolle in die `ICUSourceExtendedRolle` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1269>
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
