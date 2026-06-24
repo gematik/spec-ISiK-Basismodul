@@ -3,6 +3,12 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 * Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
+### Version 6.0.0
+
+Datum: tbd
+
+* `fix` Verschieben des Profils `SD_MII_ICU_Intrakranieller_Druck_Icp` aus der ICUSourceMinimalRolle in die `ICUSourceExtendedRolle` 
+
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
 Datum: 10.06.2026
