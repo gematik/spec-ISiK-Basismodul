@@ -14,6 +14,8 @@ Datum: tbd
 
 * `fix` Fix der Invarianten `ISiK-enc-1` und `ISiK-enc-2` des Profils `ISiKKontaktGesundheitseinrichtung` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1260>
 
+Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
 Datum: 10.06.2026
