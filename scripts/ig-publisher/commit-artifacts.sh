@@ -24,6 +24,9 @@ git add publisher-guides/*/fsh-generated/resources || true
 echo "=== Staging publisher-guides/*/fsh-generated/includes/menu.xml ==="
 git add publisher-guides/*/fsh-generated/includes/menu.xml || true
 
+echo "=== Staging publisher-guides/*/sushi-config.yaml ==="
+git add publisher-guides/*/sushi-config.yaml || true
+
 echo "=== Staging publisher-guides/*/input ==="
 git add publisher-guides/*/input || true
 
@@ -37,6 +40,6 @@ fi
 
 echo "=== Committing changes ==="
 branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
-git commit -m "chore: update SUSHI-generated artifacts and expanded resources for all IGs"
+git commit -m "chore: update SUSHI-generated artifacts [ig-publisher]"
 git push origin "HEAD:${branch_name}"
 echo "=== Commit and push completed ==="
