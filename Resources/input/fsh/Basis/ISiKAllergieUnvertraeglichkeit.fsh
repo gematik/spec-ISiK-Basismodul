@@ -96,6 +96,7 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
 * code 1.. MS
   * ^short = "Benennung der Allergie/Unverträglichkeit"
   * ^comment = "**Begründung Pflichtfeld:** Nur mit einer codierten oder textuell benannten Auslösersubstanz lässt sich die Allergie klinisch interpretieren und für Interaktionsprüfungen nutzen.
+
   **Hinweis:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `auslösende Substanz` im deutschen Gesundheitswesen erarbeitet. Dieses ValueSet steht zum Zeitpunkt der Veröffentlichung noch nicht bereit und wird daher zu einem späteren Zeitpunkt ergänzt. Weitere Informationen finden Sie hier: https://mio.kbv.de/spaces/ALDOK1X0X0/overview."
   * coding MS
     * ^slicing.discriminator.type = #pattern
