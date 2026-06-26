@@ -34,7 +34,7 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für die 
     * insert CapabilityStatementExpectationExt(SHALL)
 
     // MII-ICU backport profiles for kis
-    * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Intrakranieller_Druck_Icp, SHALL)
+
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerpergewicht_Percentil_Altersabhaengig, SHALL)
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerpergroesse_Percentil_Altersabhaengig, SHALL)
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Ideales_Koerpergewicht, SHALL)

@@ -29,6 +29,7 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für die 
     * insert CapabilityStatementExpectationExt(SHALL)
 
     // MII-ICU backport profiles extended (e.g for PDMS)
+    
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Pulmonalarterieller_Wedge_Druck, SHALL)
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Preduktal_Durch_Pulsoxymetrie, SHALL)
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Postduktal_Durch_Pulsoxymetrie, SHALL)
@@ -62,7 +63,7 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für die 
 
     // Paraemter aus dem Use Case Organspendeerkennung, die auch für den ICU-Normalstation-Workflow relevant sind
     // MII
-    * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Intrakranieller_Druck_Icp, SHALL)
+    * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Intrakranieller_Druck_Icp, SHALL) 
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_MUV_zerebraler_Perfusionsdruck, SHALL)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Indirekt, SHALL)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenform, SHALL)
