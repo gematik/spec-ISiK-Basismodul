@@ -1,12 +1,12 @@
 
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
-### Version t.b.d
+### Version 6.0.0
 
 Datum: t.b.d
 
 * Ungenutztes Profil `ISiKTerminKontaktMitGesundheitseinrichtung` entfernt in https://github.com/gematik/spec-ISiK-Basismodul/pull/1262
-* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module <https://github.com/gematik/spec-ISiK-Basismodul/pull/1272>
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 

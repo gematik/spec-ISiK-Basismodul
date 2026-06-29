@@ -14,7 +14,7 @@ Datum: tbd
 
 * `fix` Fix der Invarianten `ISiK-enc-1` und `ISiK-enc-2` des Profils `ISiKKontaktGesundheitseinrichtung` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1260>
 * `improve` Hinzufügen von Anforderung zu den von mio42 GmbH und BfArM definierten Allergie ValueSets <https://github.com/gematik/spec-ISiK-Basismodul/pull/1268>
-* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module <https://github.com/gematik/spec-ISiK-Basismodul/pull/1272>
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 

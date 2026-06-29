@@ -1,5 +1,10 @@
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
-* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module
+
+### Version 6.0.0
+
+Datum: 1.7.2026
+
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module <https://github.com/gematik/spec-ISiK-Basismodul/pull/1272>
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
