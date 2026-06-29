@@ -5,6 +5,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 Datum: tbd
 
 Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+**Hinweis:** Dies ändert nichts daran, dass das Subscription-Moul in Stufe 6 als Ganzes nicht normativ bindend ist.
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 

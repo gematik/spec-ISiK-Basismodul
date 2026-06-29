@@ -3,6 +3,7 @@
 Datum: tbd
 
 Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+**Hinweis:** Dies ändert nichts daran, dass das Formularmodul in Stufe 6 als Ganzes nicht normativ bindend ist.
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
