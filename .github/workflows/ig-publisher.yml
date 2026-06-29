@@ -344,6 +344,16 @@ jobs:
         run: |
           OUTPUT_DIR="${IG_PUBLISHER_DIR}/output" bash scripts/ig-publisher/remove-full-ig-zip.sh
 
+      # Generate the HL7 publication-request.json into the IG output directory.
+      # The IG Publisher never produces this file itself; it is derived per IG
+      # from the SUSHI-generated ImplementationGuide resource. Running it here
+      # (before the output upload) lets the file ride along into gh-pages.
+      - name: Generate publication-request.json
+        if: steps.check_changes.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          node scripts/publication-request/generate.js --ig-dir "${IG_PUBLISHER_DIR}"
+
       # Upload build markers for the publish gate decision
       - name: Upload Build Marker
         if: steps.check_changes.outputs.has_changes == 'true'
