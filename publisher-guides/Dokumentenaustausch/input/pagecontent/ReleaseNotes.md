@@ -1,4 +1,5 @@
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 

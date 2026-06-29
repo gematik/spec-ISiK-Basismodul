@@ -6,6 +6,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 Datum: tbd.
 
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
