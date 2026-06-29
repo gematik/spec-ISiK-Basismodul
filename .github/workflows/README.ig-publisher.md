@@ -64,7 +64,7 @@ Pro Matrix-Eintrag:
 - **Build IG** (nur bei Änderungen): ruft `igpublisher` auf.
 - Diverse **Upload-Schritte** für spätere Commit-/Publish-Jobs (SUSHI-Output, `input/resources`,
   `input/includes`, `input/pagecontent`, Build-Marker, Build-Ergebnis `output`).
-- **Remove oversized files:** entfernt Dateien über 50 MiB vor dem Upload und loggt die entfernten Pfade.
+- **Remove oversized files:** entfernt Dateien über 50 MiB vor dem Upload und loggt die entfernten Dateipfade.
 
 ### 3. `publish_gate` — Veröffentlichungs-Entscheidung
 Sammelt die Build-Marker (`build-ran-*`). Wenn mindestens ein IG neu gebaut wurde →
