@@ -10,6 +10,8 @@ Datum: tbd
 * `fix` Profil `SD_MII_ICU_Intrakranieller_Druck_Icp` ist nicht mehr Bestandteil der `ICUSourceMinimalRolle` und bleibt nur noch in der `ICUSourceExtendedRolle` verpflichtend (Lockerung der Anforderungen an Systeme) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1269>
 * `fix` Hinzufügen eines Codes zu den ValueSets `VS_MII_ICU_Code_Monitoring_und_Vitaldaten_SNOMED` und `VS_MII_ICU_Code_Monitoring_und_Vitaldaten_LOINC` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1253>
 
+Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
 Datum: 10.06.2026
