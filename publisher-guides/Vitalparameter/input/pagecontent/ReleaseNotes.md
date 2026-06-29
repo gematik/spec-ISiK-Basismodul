@@ -1,5 +1,11 @@
 ﻿Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+### Version 6.0.0
+
+Datum: tbd
+
+Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
 Datum: 10.06.2026
