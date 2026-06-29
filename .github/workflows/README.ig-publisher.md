@@ -64,7 +64,7 @@ Pro Matrix-Eintrag:
 - **Build IG** (nur bei Änderungen): ruft `igpublisher` auf.
 - Diverse **Upload-Schritte** für spätere Commit-/Publish-Jobs (SUSHI-Output, `input/resources`,
   `input/includes`, `input/pagecontent`, Build-Marker, Build-Ergebnis `output`).
-- **Remove full-ig.zip:** entfernt das übergroße Gesamt-ZIP vor dem Upload.
+- **Remove oversized files:** entfernt Dateien über 50 MiB vor dem Upload und loggt die entfernten Pfade.
 
 ### 3. `publish_gate` — Veröffentlichungs-Entscheidung
 Sammelt die Build-Marker (`build-ran-*`). Wenn mindestens ein IG neu gebaut wurde →
@@ -145,8 +145,9 @@ Bewusst getrennt nach **echter technischer Schuld** (suboptimal, sollte behoben 
 - **Change-Detection-Heuristik** (`resolve-last-success-sha.js`, `check-changes.sh`): mächtig, hängt
   aber am letzten erfolgreichen Lauf/SHA. Edge Cases bei force-push, Rebase oder erstem Lauf auf
   neuem Branch im Hinterkopf behalten (kein Defekt, nur Vorsicht).
-- **`full-ig.zip` wird aktiv entfernt** (`remove-full-ig-zip.sh`), weil es zu groß für den Upload ist
-  — Workaround gegen eine IG-Publisher-Eigenheit. Funktioniert; nur zur Kenntnis.
+- **Übergroße IG-Output-Dateien werden aktiv entfernt** (`remove-oversized-output-files.sh`),
+  weil GitHub Dateien über 100 MB beim Push nach `gh-pages` ablehnt. Das Limit im Workflow liegt
+  bewusst bei 50 MiB und die entfernten Pfade werden geloggt.
 - **Datei-basierte Job-zu-Job-Kommunikation** über Marker-Dateien (`ig-dir.txt`, `.branch-name`,
   Build-Marker). Funktioniert, ist aber implizit und reagiert empfindlich auf Pfadänderungen.
 
