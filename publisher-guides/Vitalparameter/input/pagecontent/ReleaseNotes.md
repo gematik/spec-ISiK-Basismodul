@@ -6,6 +6,8 @@ Datum: 1.7.2026
 
 * `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module <https://github.com/gematik/spec-ISiK-Basismodul/pull/1272>
 
+Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
 Datum: 10.06.2026
