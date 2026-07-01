@@ -30,13 +30,14 @@ Publishes the IG output to the `gh-pages` branch under a branch-specific path.
 - `REPO`, `GITHUB_TOKEN`, `GIT_AUTHOR_NAME`, `GIT_AUTHOR_EMAIL`
 - `PUBLISH_OUTPUT_DIR` (optional): Defaults to `publish-output`
 
-### remove-full-ig-zip.sh
+### remove-oversized-output-files.sh
 
-Removes generated `full-ig.zip` files from an IG output directory before
-artifact upload/publish to avoid oversized files in `gh-pages`.
+Removes files larger than the configured size limit from an IG output directory
+before artifact upload/publish to avoid oversized files in `gh-pages`.
 
 **Inputs**
 - `OUTPUT_DIR`: Required path to the IG output directory to clean
+- `MAX_FILE_SIZE_BYTES` (optional): Defaults to `52428800` (50 MiB)
 
 ### copy-artifacts.sh
 
