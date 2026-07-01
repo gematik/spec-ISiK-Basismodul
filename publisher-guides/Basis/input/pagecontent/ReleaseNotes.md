@@ -2,11 +2,11 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Tags werden folgendermaßen verwendet:
 
-- 'documentation': um zu Kennzeichnen, dass hier nur etwas an der Dokumentation geändert oder hinzugefügt wurde, das sich nicht auf normative Aspekte auswirkt.
+- 'documentation': um zu Kennzeichnen, dass hier nur etwas an der Dokumentation geändert oder hinzugefügt wurde, das sich nicht auf normative Aspekte auswirkt. 
 
-- 'improve'  um Änderungen und neue Aspekte hinsichtlich normativer Inhalte (u. a. per Technical Correction (TC)) umzusetzen, die aber keine Fehler beheben.
+- 'improve'  um Änderungen und neue Aspekte hinsichtlich normativer Inhalte (u. a. per Technical Correction (TC)) umzusetzen, die aber keine Fehler beheben. Hier sollen stets die ggf. betroffenen Ressourcen (bzw. CapabilityStatements, Rollen und Akteure) angegeben werden.
 
-- 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
+- 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CapabilityStatements); Typo fixes werden nicht in die Releasenotes aufgenommen. Hier sollen stets die ggf. betroffenen Ressourcen (bzw. CapabilityStatements, Rollen und Akteure) angegeben werden.
 
 ### Version 6.0.0
 
