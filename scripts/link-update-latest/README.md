@@ -6,7 +6,7 @@ module so that they point to the highest semver-versioned folder currently publi
 ## Prerequisites
 
 - [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) (`gcloud`, `gsutil`)
-- Bash (Linux, macOS, or WSL on Windows)
+- Bash (Linux or WSL on Windows)
 - Authenticated session: `gcloud auth login`
 
 ## Usage
