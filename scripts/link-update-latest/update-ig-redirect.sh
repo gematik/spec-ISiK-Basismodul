@@ -125,6 +125,34 @@ fi
 MODULE_COUNT=$(echo "$MODULE_LIST" | grep -c .)
 log_ok "Found ${MODULE_COUNT} module folder(s): $(echo "$MODULE_LIST" | tr '\n' ' ')"
 
+# ---------------------------------------------------------------------------
+# Determine target version ONCE using 'basis' as the reference module.
+# All ISiK modules are versioned in lock-step, so one lookup is sufficient.
+# ---------------------------------------------------------------------------
+REF_MODULE="basis"
+if [[ "$VERSION" == "latest" ]]; then
+  log_info "Detecting latest version from reference module: ${REF_MODULE} …"
+  REF_PATH="${BASE_PATH}/${REF_MODULE}"
+  VERSIONED=$(gsutil ls "${REF_PATH}/" 2>/dev/null \
+    | sed "s|${REF_PATH}/||g" \
+    | tr -d '/' \
+    | grep -v '^$') || true
+
+  VERSION_FOLDERS=$(echo "$VERSIONED" | while IFS= read -r F; do is_version_folder "$F" && echo "$F" || true; done || true)
+
+  if [[ -z "$VERSION_FOLDERS" ]]; then
+    log_warn "No versioned folders found in ${REF_MODULE}. Cannot determine latest version." >&2
+    exit 1
+  fi
+
+  log_step "Versioned folders in ${REF_MODULE}: $(echo "$VERSION_FOLDERS" | tr '\n' ' ')"
+  TARGET_VERSION=$(echo "$VERSION_FOLDERS" | pick_latest_version)
+  log_ok "Latest version detected: ${TARGET_VERSION}"
+else
+  TARGET_VERSION="$VERSION"
+  log_ok "Using explicit version: ${TARGET_VERSION}"
+fi
+
 TMPDIR_WORK=$(mktemp -d)
 trap 'rm -rf "$TMPDIR_WORK"' EXIT
 
@@ -139,35 +167,8 @@ while IFS= read -r MODULE; do
   echo ""
   log_info "── Processing module: ${MODULE} ──"
 
-  # ---- Determine target version ----
-  if [[ "$VERSION" == "latest" ]]; then
-    log_step "Listing versioned folders in ${MODULE_PATH}/ …"
-    # List sub-folders, keep only semver-looking ones, sort with version sort, take last
-    VERSIONED=$(gsutil ls "${MODULE_PATH}/" 2>/dev/null \
-      | sed "s|${MODULE_PATH}/||g" \
-      | tr -d '/' \
-      | grep -v '^$') || true
-
-    VERSION_FOLDERS=$(echo "$VERSIONED" | while IFS= read -r F; do is_version_folder "$F" && echo "$F" || true; done || true)
-
-    if [[ -z "$VERSION_FOLDERS" ]]; then
-      log_warn "${MODULE}: no versioned folder found, skipping."
-      continue
-    fi
-
-    log_step "Versioned folders found: $(echo "$VERSION_FOLDERS" | tr '\n' ' ')"
-
-    TARGET_VERSION=$(echo "$VERSION_FOLDERS" | pick_latest_version)
-
-    log_step "Latest version (semver): ${TARGET_VERSION}"
-  else
-    TARGET_VERSION="$VERSION"
-    log_step "Using explicit version: ${TARGET_VERSION}"
-  fi
-
   # ---- Check for latest/ subfolder ----
   LATEST_PATH="${MODULE_PATH}/latest"
-  log_step "Checking for latest/ folder: ${LATEST_PATH}/ …"
   HTML_LIST=$(gsutil ls "${LATEST_PATH}/*.html" 2>/dev/null) || true
 
   if [[ -z "$HTML_LIST" ]]; then
@@ -186,20 +187,26 @@ while IFS= read -r MODULE; do
     FILENAME=$(basename "$GCS_FILE")
     TMP_FILE="${TMPDIR_WORK}/${MODULE}_${FILENAME}"
 
-    # Download
-    log_step "Downloading ${FILENAME} …"
-    gsutil -q cp "$GCS_FILE" "$TMP_FILE"
+    if $DRY_RUN; then
+      # In dry-run: skip download, just show what would change
+      log_step "${FILENAME}: <current-version> → ${TARGET_VERSION}  [skipped download]"
+      echo "[DRY-RUN] gsutil cp ${GCS_FILE} ${GCS_FILE}  (with version → ${TARGET_VERSION})"
+    else
+      # Download
+      log_step "Downloading ${FILENAME} …"
+      gsutil -q cp "$GCS_FILE" "$TMP_FILE"
 
-    # Capture old version string for logging
-    OLD_VERSION=$(grep -oE '\.\./[0-9][^/]*/' "$TMP_FILE" | head -1 | tr -d '../' | tr -d '/' || echo "unknown")
+      # Capture old version string for logging
+      OLD_VERSION=$(grep -oE '\.\./[0-9][^/]*/' "$TMP_FILE" | head -1 | sed 's|^\.\./||; s|/$||' || echo "unknown")
 
-    # Replace version string: matches ../<anything-starting-with-digit>/ in href/url values
-    sed -i -E 's|\.\./[0-9][^/]*/|../'"${TARGET_VERSION}"'/|g' "$TMP_FILE"
+      # Replace version string: matches ../<anything-starting-with-digit>/ in href/url values
+      sed -i -E 's|\.\./[0-9][^/]*/|../'"${TARGET_VERSION}"'/|g' "$TMP_FILE"
 
-    log_step "${FILENAME}: ${OLD_VERSION} → ${TARGET_VERSION}"
+      log_step "${FILENAME}: ${OLD_VERSION} → ${TARGET_VERSION}"
 
-    # Upload (or echo in dry-run)
-    gsutil_write cp "$TMP_FILE" "$GCS_FILE"
+      # Upload
+      gsutil -q cp "$TMP_FILE" "$GCS_FILE"
+    fi
 
     FILE_COUNT=$((FILE_COUNT + 1))
     TOTAL_FILES=$((TOTAL_FILES + 1))
