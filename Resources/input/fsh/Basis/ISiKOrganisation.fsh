@@ -204,7 +204,7 @@ InstanceOf: ISiKOrganisation
 Usage: #example
 * identifier[IKNR].value = "260120196"
 * identifier[BSNR].value = "345678975"
-* identifier[TelematikID].value = "1234567890"
+* identifier[TelematikID].value = "15-Hello-World"
 * name = "Uniklinik Entenhausen"
 
 
@@ -215,7 +215,7 @@ Usage: #example
   * system = "https://fhir.krankenhaus.example/sid/OrgaID"
   * value = "FA-CHIR-01"
   * type = $sct#225746001
-* identifier[TelematikID].value = "1234567890"
+* identifier[TelematikID].value = "15-Hello-World-CHIR"
 * name = "Allgemeinchirurgie"
 * type[organisationstyp] = $organization_type#dept
 * type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1500	"Allgemeine Chirurgie"
