@@ -73,6 +73,7 @@ is_version_folder() {
   [[ "$1" =~ ^[0-9]+\.[0-9]+ ]]
 }
 
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -129,10 +130,7 @@ while IFS= read -r MODULE; do
 
     log_step "Versioned folders found: $(echo "$VERSION_FOLDERS" | tr '\n' ' ')"
 
-    TARGET_VERSION=""
-    while IFS= read -r FOLDER; do
-      TARGET_VERSION="$FOLDER"
-    done < <(echo "$VERSION_FOLDERS" | sort -V)
+    TARGET_VERSION=$(echo "$VERSION_FOLDERS" | sort -V | tail -1)
 
     log_step "Latest version (semver): ${TARGET_VERSION}"
   else
