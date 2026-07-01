@@ -26,7 +26,7 @@ module so that they point to the highest semver-versioned folder currently publi
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `--version` | `latest` | Target version string (e.g. `6.0.0`, `6.0.0-rc1`). When `latest`, the script auto-detects the highest semver folder in each module. |
+| `--version` | `latest` | Target version string (e.g. `6.0.0`, `6.0.0-rc1`). When `latest`, the script auto-detects the highest semver folder from the `basis` reference module (all ISiK modules are versioned in lock-step). |
 | `--realm` | `dev` | Target environment. One of `dev`, `qs`, `prod`. |
 | `--dry-run` | *(flag)* | Print gsutil write commands without executing them. GCS reads still run (for version detection). |
 
@@ -51,11 +51,13 @@ corresponding page in the current versioned folder.
 
 ## How it works
 
-1. Lists all module folders under `gs://<bucket>/ig/fhir/isik/`.
-2. For each module, identifies all versioned sub-folders (e.g. `6.0.0`, `5.2.1-rc2`) and
-   picks the highest one using semver ordering (`sort -V`).
-3. Lists all `*.html` files under `<module>/latest/`.
-   - If no `latest/` folder exists for a module, a notice is logged and the module is skipped.
+1. Detects the target version **once** from the `basis` reference module (all ISiK modules
+   are versioned in lock-step). Picks the highest semver folder: pure releases are preferred
+   over pre-releases at the same base version (e.g. `6.0.0` beats `6.0.0-rc1`; but
+   `6.0.0-rc1` beats `5.2.1`).
+2. Lists all module folders under `gs://<bucket>/ig/fhir/isik/`.
+3. For each module, lists all `*.html` files under `<module>/latest/`.
+   - If no `latest/` folder exists, a notice is logged and the module is skipped.
 4. Downloads each HTML file, replaces the old version string in the `<meta refresh>` and
    `<link rel="canonical">` tags, and uploads the file back to GCS.
 

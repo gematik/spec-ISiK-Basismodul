@@ -59,14 +59,6 @@ log_warn()  { echo "[WARN]  $*" >&2; }
 log_ok()    { echo "[OK]    $*"; }
 log_step()  { echo "        → $*"; }
 
-# Wraps a gsutil write command: executes it or echoes it when --dry-run.
-gsutil_write() {
-  if $DRY_RUN; then
-    echo "[DRY-RUN] gsutil $*"
-  else
-    gsutil "$@"
-  fi
-}
 
 # Semver-like filter: folder names starting with a digit (e.g. 6.0.0, 6.0.0-rc1)
 is_version_folder() {
@@ -110,21 +102,6 @@ fi
 log_info "Realm:  $REALM  →  bucket: $BUCKET"
 log_info "Base path: $BASE_PATH/"
 
-# Discover module folders (e.g. basis/, dokumentenaustausch/, …)
-log_info "Discovering ISiK modules under ${BASE_PATH}/ …"
-MODULE_LIST=$(gsutil ls "${BASE_PATH}/" 2>/dev/null \
-  | sed "s|${BASE_PATH}/||g" \
-  | tr -d '/' \
-  | grep -v '^$') || true
-
-if [[ -z "$MODULE_LIST" ]]; then
-  log_warn "No module folders found under ${BASE_PATH}/. Nothing to do."
-  exit 0
-fi
-
-MODULE_COUNT=$(echo "$MODULE_LIST" | grep -c .)
-log_ok "Found ${MODULE_COUNT} module folder(s): $(echo "$MODULE_LIST" | tr '\n' ' ')"
-
 # ---------------------------------------------------------------------------
 # Determine target version ONCE using 'basis' as the reference module.
 # All ISiK modules are versioned in lock-step, so one lookup is sufficient.
@@ -155,6 +132,25 @@ fi
 
 TMPDIR_WORK=$(mktemp -d)
 trap 'rm -rf "$TMPDIR_WORK"' EXIT
+
+# ---------------------------------------------------------------------------
+# Discover module folders (non-versioned subfolders under base path)
+# ---------------------------------------------------------------------------
+log_info "Listing module folders under ${BASE_PATH}/ …"
+MODULE_LIST=$(gsutil ls "${BASE_PATH}/" 2>/dev/null \
+  | sed "s|${BASE_PATH}/||g" \
+  | tr -d '/' \
+  | grep -v '^$') || true
+
+# Keep only non-versioned names (module names start with a letter)
+MODULE_LIST=$(echo "$MODULE_LIST" | grep -v '^[0-9]' || true)
+
+if [[ -z "$MODULE_LIST" ]]; then
+  log_warn "No module folders found under ${BASE_PATH}/. Nothing to do."
+  exit 0
+fi
+
+log_ok "Found modules: $(echo "$MODULE_LIST" | tr '\n' ' ')"
 
 TOTAL_MODULES=0
 TOTAL_FILES=0
@@ -188,23 +184,16 @@ while IFS= read -r MODULE; do
     TMP_FILE="${TMPDIR_WORK}/${MODULE}_${FILENAME}"
 
     if $DRY_RUN; then
-      # In dry-run: skip download, just show what would change
       log_step "${FILENAME}: <current-version> → ${TARGET_VERSION}  [skipped download]"
-      echo "[DRY-RUN] gsutil cp ${GCS_FILE} ${GCS_FILE}  (with version → ${TARGET_VERSION})"
+      echo "[DRY-RUN] gsutil cp ${GCS_FILE}  (with version → ${TARGET_VERSION})"
     else
-      # Download
       log_step "Downloading ${FILENAME} …"
       gsutil -q cp "$GCS_FILE" "$TMP_FILE"
 
-      # Capture old version string for logging
       OLD_VERSION=$(grep -oE '\.\./[0-9][^/]*/' "$TMP_FILE" | head -1 | sed 's|^\.\./||; s|/$||' || echo "unknown")
-
-      # Replace version string: matches ../<anything-starting-with-digit>/ in href/url values
       sed -i -E 's|\.\./[0-9][^/]*/|../'"${TARGET_VERSION}"'/|g' "$TMP_FILE"
-
       log_step "${FILENAME}: ${OLD_VERSION} → ${TARGET_VERSION}"
 
-      # Upload
       gsutil -q cp "$TMP_FILE" "$GCS_FILE"
     fi
 
