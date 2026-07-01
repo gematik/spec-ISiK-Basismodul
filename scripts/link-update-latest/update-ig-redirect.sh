@@ -73,6 +73,33 @@ is_version_folder() {
   [[ "$1" =~ ^[0-9]+\.[0-9]+ ]]
 }
 
+# Given a newline-separated list of semver-like strings on stdin, prints the highest one.
+# Implements proper semver pre-release ordering:
+#   - Compare base versions (X.Y.Z) first using sort -V
+#   - Among candidates sharing the highest base, prefer the pure release (no suffix)
+#   - Fall back to the highest pre-release if no pure release exists for that base
+# Examples: 5.2.1 + 6.0.0-rc1 → 6.0.0-rc1  |  6.0.0-rc1 + 6.0.0 → 6.0.0
+pick_latest_version() {
+  local versions
+  versions=$(cat)
+
+  # Strip pre-release suffix to get the base version for each entry
+  local highest_base
+  highest_base=$(echo "$versions" | sed 's/-[^[:space:]]*//' | sort -V | tail -1)
+
+  # Collect all versions whose base equals the highest base
+  local candidates
+  candidates=$(echo "$versions" | grep -E "^${highest_base}(-|$)")
+
+  # If a pure release (exact base, no suffix) exists, use it
+  if echo "$candidates" | grep -qx "${highest_base}"; then
+    echo "${highest_base}"
+  else
+    # Otherwise pick the highest pre-release for this base
+    echo "$candidates" | sort -V | tail -1
+  fi
+}
+
 
 # ---------------------------------------------------------------------------
 # Main
@@ -130,7 +157,7 @@ while IFS= read -r MODULE; do
 
     log_step "Versioned folders found: $(echo "$VERSION_FOLDERS" | tr '\n' ' ')"
 
-    TARGET_VERSION=$(echo "$VERSION_FOLDERS" | sort -V | tail -1)
+    TARGET_VERSION=$(echo "$VERSION_FOLDERS" | pick_latest_version)
 
     log_step "Latest version (semver): ${TARGET_VERSION}"
   else
@@ -161,7 +188,7 @@ while IFS= read -r MODULE; do
 
     # Download
     log_step "Downloading ${FILENAME} …"
-    gsutil cp "$GCS_FILE" "$TMP_FILE" -q
+    gsutil -q cp "$GCS_FILE" "$TMP_FILE"
 
     # Capture old version string for logging
     OLD_VERSION=$(grep -oE '\.\./[0-9][^/]*/' "$TMP_FILE" | head -1 | tr -d '../' | tr -d '/' || echo "unknown")
