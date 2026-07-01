@@ -57,3 +57,4 @@ Description: "Dieses ValueSet enthält Codes für Vitaldaten sowie Daten aus dem
 * $loinc#8310-5 "Körpertemperatur"
 * $loinc#60838-0 "Nasopharyngeal temperature"
 * $loinc#104063-3 "Body temperature - Groin"
+* $loinc#61017-0 "Cerebral perfusion pressure"
