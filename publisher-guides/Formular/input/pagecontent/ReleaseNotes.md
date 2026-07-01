@@ -1,6 +1,6 @@
 ### Version 6.0.0
 
-Datum: tbd
+Datum: 01.07.2026
 
 Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 **Hinweis:** Dies ändert nichts daran, dass das Formularmodul in Stufe 6 als Ganzes nicht normativ bindend ist.
