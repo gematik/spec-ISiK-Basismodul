@@ -125,6 +125,14 @@ jobs:
             ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33966-5'*|ValueSet.compose.include[0].concept[8]
             ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33967-3'*|ValueSet.compose.include[0].concept[9]
             Observation-ExampleOrganRASS20200311.json|Terminology_TX_NoValid_1_CC|*MII VS ICU Score RASS*|Observation.value.ofType(CodeableConcept)
+            # Validation for https://hl7.org/fhir/uv/ips/STU2/ValueSet-medicine-route-of-administration.html currently fails because the .ch tx server fails during validation.
+            # zulip thread: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/https.3A.2F.2Ftx.2Efhir.2Ech.2Fr4.20responsible.20IPS.20VS.3F/with/607452517
+            Medication-ExampleISiKMedikament2.json|Validation_VAL_Profile_NotSlice||Medication.form.coding[0]
+            Medication-ExampleISiKMedikament8.json|Validation_VAL_Profile_NotSlice||Medication.form.coding[0]
+            Medication-ExampleISiKMedikament9.json|Validation_VAL_Profile_NotSlice||Medication.form.coding[0]
+            Medication-ParacetamolInfusion.json|Validation_VAL_Profile_NotSlice||Medication.form.coding[0]
+            MedicationAdministration-ExampleISiKMedikationsVerabreichung3.json|Terminology_TX_NoValid_12||MedicationAdministration.dosage.route.coding[0]
+            MedicationAdministration-ExampleISiKMedikationsVerabreichung4.json|Terminology_TX_NoValid_12||MedicationAdministration.dosage.route.coding[0]
 
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.1
