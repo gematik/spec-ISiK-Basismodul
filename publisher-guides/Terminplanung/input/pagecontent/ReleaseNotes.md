@@ -1,6 +1,13 @@
 
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+
+### 6.0.1
+
+Datum: t.b.d.
+
+* `fix` Parameter-Typ für RelatedPerson entsprechend korrigiert - entspricht <https://github.com/gematik/spec-ISiK-Basismodul/pull/1284/changes>
+
 ### Version 6.0.0
 
 Datum: 01.07.2026
