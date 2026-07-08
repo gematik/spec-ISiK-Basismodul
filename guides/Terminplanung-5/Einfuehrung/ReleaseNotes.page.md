@@ -8,6 +8,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: t.b.d
 
+* `fix` Parameter-Typ für RelatedPerson entsprechend korrigiert 
 * `improve` Ungenutztes Profil `ISiKTerminKontaktMitGesundheitseinrichtung` entfernt https://github.com/gematik/spec-ISiK-Basismodul/pull/1263
 
 ## Version 5.1.2
