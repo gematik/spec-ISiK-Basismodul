@@ -123,6 +123,12 @@ jobs:
             Medication-ParacetamolInfusion.json|Validation_VAL_Profile_NotSlice||Medication.form.coding[0]
             MedicationAdministration-ExampleISiKMedikationsVerabreichung3.json|Terminology_TX_NoValid_12||MedicationAdministration.dosage.route.coding[0]
             MedicationAdministration-ExampleISiKMedikationsVerabreichung4.json|Terminology_TX_NoValid_12||MedicationAdministration.dosage.route.coding[0]
+            # Following errors are known and (partially) solved in ISiK Stufe 6, but filtered out due to obsolete IGs (non-normative)
+            Patient-IsikPatientTemplate.json|FHIR_RESOURCE_ID_CANT_BE_EXTENDED||Patient.id
+            Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|FHIR_RESOURCE_ID_CANT_BE_EXTENDED||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.id
+            Subscription-PatientMergeSubscriptionExample.json|Extension_EXT_Unknown_NotHere||Subscription.channel.payload.extension[0]
+            Subscription-PatientMergeSubscriptionExample.json|Type_Specific_Checks_DT_URL_Resolve||Subscription.channel.payload.extension[0].url
+            Subscription-PatientMergeSubscriptionExample.json|Validation_VAL_Profile_NoSnapshot||Subscription
 
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.1
