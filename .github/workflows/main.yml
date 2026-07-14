@@ -100,6 +100,31 @@ jobs:
           include: errors
           filters: |
             # Struktur: fileName|messageId|detailsWildcard|location
+            # examples contain sdc extensions which creates an error as this extension is not defined in ISiK
+            Patient-IsikPatientTemplate.json|Validation_VAL_Profile_NotSlice||Patient.gender.extension[0]
+            Patient-IsikPatientTemplate.json|Validation_VAL_Profile_NotSlice||Patient.birthDate.extension[0]
+            Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|Validation_VAL_Profile_NotSlice||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.gender.extension[0]
+            Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|Validation_VAL_Profile_NotSlice||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.birthDate.extension[0]
+            # LL codes aren't tied to a LOINC on Questionnaire, it isn't included in the current release, will be included in the future.
+            # Zulip thread: https://chat.fhir.org/#narrow/channel/179202-terminology/topic/LOINC.3A.20Unknown.20code.20in.20the.20Codesystem/near/577684036
+            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33959-0'*|ValueSet.compose.include[0].concept[1]
+            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33960-8'*|ValueSet.compose.include[0].concept[2]
+            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33962-4'*|ValueSet.compose.include[0].concept[4]
+            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33963-2'*|ValueSet.compose.include[0].concept[5]
+            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33964-0'*|ValueSet.compose.include[0].concept[6]
+            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33965-7'*|ValueSet.compose.include[0].concept[7]
+            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33966-5'*|ValueSet.compose.include[0].concept[8]
+            ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33967-3'*|ValueSet.compose.include[0].concept[9]
+            Observation-ExampleOrganRASS20200311.json|Terminology_TX_NoValid_1_CC|*MII VS ICU Score RASS*|Observation.value.ofType(CodeableConcept)
+            # Validation for https://hl7.org/fhir/uv/ips/STU2/ValueSet-medicine-route-of-administration.html currently fails because the .ch tx server fails during validation.
+            # zulip thread: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/https.3A.2F.2Ftx.2Efhir.2Ech.2Fr4.20responsible.20IPS.20VS.3F/with/607452517
+            Medication-ExampleISiKMedikament2.json|Validation_VAL_Profile_NotSlice||Medication.form.coding[0]
+            Medication-ExampleISiKMedikament8.json|Validation_VAL_Profile_NotSlice||Medication.form.coding[0]
+            Medication-ExampleISiKMedikament9.json|Validation_VAL_Profile_NotSlice||Medication.form.coding[0]
+            Medication-ParacetamolInfusion.json|Validation_VAL_Profile_NotSlice||Medication.form.coding[0]
+            MedicationAdministration-ExampleISiKMedikationsVerabreichung3.json|Terminology_TX_NoValid_12||MedicationAdministration.dosage.route.coding[0]
+            MedicationAdministration-ExampleISiKMedikationsVerabreichung4.json|Terminology_TX_NoValid_12||MedicationAdministration.dosage.route.coding[0]
+
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.1
         with:
