@@ -1,14 +1,14 @@
 Profile: ISiKKoerpertemperatur
 Parent: VitalSignDE_Koerpertemperatur
 Id: ISiKKoerpertemperatur
-Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körpertemperatur eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körpertemperatur eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
 ### Motivation
 Die Erfassung und Überwachung der Körpertemperatur ist essenziell für die frühzeitige Erkennung von Infektionen, die Beurteilung des Gesundheitszustands sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.
 
 In FHIR wird die Körpertemperatur mit der Observation-Ressource repräsentiert.
 
 ### Kompatibilität
-Das Profil ISiKKoerpertemperatur ist vom Profil [VitalSignDE_Koerpertemperatur](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpertemperatur) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [OObservation Body Temperature Profile](http://hl7.org/fhir/StructureDefinition/bodytemp) aus der FHIR R4 Spezifikation."
+Das Profil ISiKKoerpertemperatur ist vom Profil [VitalSignDE_Koerpertemperatur](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpertemperatur) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Temperature Profile](http://hl7.org/fhir/StructureDefinition/bodytemp) aus der FHIR R4 Spezifikation."
 * insert Meta
 * insert CommonElements
 * insert ISiKVitalsignCommons
@@ -26,11 +26,12 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs
 * code = $loinc#8310-5 "Körpertemperatur"
 * code.coding[snomed] = $sct#386725007 "Body temperature"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#150364 "MDC_TEMP_BODY"
 * code.text = "Körpertemperatur"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2020-10-11"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 36.8 'Cel' "°C"
 
 Instance: ISiKKoerpertemperaturMinExample
@@ -50,6 +51,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#8310-5 "Körpertemperatur"
 * code.coding[snomed] = $sct#386725007 "Body temperature"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#150364 "MDC_TEMP_BODY"
 * code.text = "Körpertemperatur - Fiebermessung"
 * subject = Reference(PatientinNormal)

@@ -22,7 +22,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
     * interaction[+]
       * code = #search-type
       * insert Expectation(#MAY)
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#MAY)
       * name = "url"
@@ -43,7 +44,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #search-type   
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "url"

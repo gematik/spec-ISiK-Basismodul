@@ -10,10 +10,31 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 Im Fall von prozessorientierten Implementierungsleitfäden beginnt die Versionierung gemäß Semver des Implementierungsleitfadens gemäß des Major Releases im Zuge dessen der Implementierungsleitfaden entstanden ist (X.0.0).
 Darüber hinaus wird die Versionierung unabhängig von allen anderen Modulen und Packages gehandhabt. Für den Implementierungsleitfaden "ISiK ICU-Normalstation Workflow" wird zum Beispiel die initiale Version 4.0.0 gewählt, da der IG im Zuge der Stufe 4 entwickelt wurde.
 
-## Version 5.0.1
+## Version 5.1.3
 
 Datum: tbd
 
+* `fix` Verschieben des Profils `SD_MII_ICU_Intrakranieller_Druck_Icp` aus der `ICUSourceMinimalRolle` in die `ICUSourceExtendedRolle` und damit Lockerung der Anforderungen an Systeme https://github.com/gematik/spec-ISiK-Basismodul/pull/1270
+
+## Version 5.1.2
+
+Datum: 30.04.2026
+
+* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` https://github.com/gematik/spec-ISiK-Basismodul/pull/1034
+
+
+## Version 5.1.1
+
+Datum: 17.12.2025
+
+
+Im Rahmen dieser Technical Correction wurden keine Änderungen an diesem Implementation Guide vorgenommen. Daher sind keine Anpassungen durch Implementierende erforderlich, und die Rückwärtskompatibilität zum zuletzt veröffentlichten Package bleibt uneingeschränkt erhalten.
+
+## Version 5.1.0
+
+Datum: 23.10.2025
+
+* `documentation` Dokumentation Profilen zwecks Kennzeichnung der Ableitung der Profile hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/870
 * `documentation` Refactoring und Vervollständigung zur Dokumentation der Herstellung eines Patienten- und Ecounter-Kontextes
 * `documentation` Satz zur Nutzung der Labor-Profile verschoben in den korrekten IG (ICU) - https://github.com/gematik/spec-ISiK-Basismodul/pull/867
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799

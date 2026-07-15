@@ -16,7 +16,7 @@ Instance: ExampleISiKLaboruntersuchungThrombozyten1
 InstanceOf: ISiKLaboruntersuchungThrombozyten
 Usage: #example
 * status = #final
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#26515-7
 * code.coding[snomed] = $sct#365632008 "Platelet count - finding"

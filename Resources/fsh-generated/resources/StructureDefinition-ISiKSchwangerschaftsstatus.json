@@ -2,12 +2,12 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKSchwangerschaftsstatus",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus",
-  "version": "5.0.0",
+  "version": "5.1.2",
   "name": "ISiKSchwangerschaftsstatus",
   "title": "ISiK Schwangerschaftsstatus",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-26",
+  "date": "2026-04-30",
   "publisher": "gematik GmbH",
   "description": "Schwangerschaftsstatus einer Patientin",
   "fhirVersion": "4.0.1",
@@ -19,29 +19,12 @@
   "differential": {
     "element": [
       {
-        "id": "Observation.code",
-        "path": "Observation.code",
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "code": "82810-3",
-              "system": "http://loinc.org"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Observation.value[x]",
-        "path": "Observation.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
+        "id": "Observation.code.coding:loinc",
+        "path": "Observation.code.coding",
+        "sliceName": "loinc",
+        "patternCoding": {
+          "code": "82810-3",
+          "system": "http://loinc.org"
         }
       },
       {
@@ -50,13 +33,11 @@
         "sliceName": "valueCodeableConcept",
         "comment": "Motivation: Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)",
         "min": 1,
-        "max": "1",
         "type": [
           {
             "code": "CodeableConcept"
           }
         ],
-        "mustSupport": true,
         "binding": {
           "strength": "required",
           "valueSet": "https://gematik.de/fhir/isik/ValueSet/SchwangerschaftsstatusVS"
@@ -66,7 +47,7 @@
         "id": "Observation.hasMember",
         "path": "Observation.hasMember",
         "short": "Erwartetes Geburtsdatum",
-        "definition": "Eine Referenz auf die ErwartetesGeburtsdatum Observation",
+        "comment": "Eine Referenz auf die ErwartetesGeburtsdatum Observation",
         "max": "1",
         "type": [
           {

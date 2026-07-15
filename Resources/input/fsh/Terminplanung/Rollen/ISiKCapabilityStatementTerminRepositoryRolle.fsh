@@ -28,7 +28,8 @@ Usage: #definition
     * interaction[+]
       * insert Expectation (#SHALL)
       * code = #search-type
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation (#SHALL)
       * name = "active"
@@ -56,7 +57,7 @@ Usage: #definition
       * type = #token
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Schedule?specialty=urn:oid:1.2.276.0.76.5.114|535`    
+        `GET [base]/Schedule?specialty=http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen|ALLG`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " 
     * searchParam[+]
@@ -85,7 +86,8 @@ Usage: #definition
     * interaction[+]
       * insert Expectation (#SHALL)
       * code = #search-type
-    * insert CommonSearchParameters    
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter    
     * searchParam[+]
       * insert Expectation (#SHALL) 
       * name = "schedule"
@@ -153,8 +155,18 @@ Usage: #definition
     * interaction[+]
       * insert Expectation (#SHALL)
       * code = #patch
-    * insert CommonSearchParameters    
+    * insert CommonSearchParameters 
     * searchParam[+]
+      * insert Expectation (#SHALL)
+      * name = "_tag"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Appointment?_tag=https://example.org/codes|needs-review`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all) sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags)."
+    * searchParam[+]  
       * insert Expectation (#SHALL) 
       * name = "status"
       * definition = "http://hl7.org/fhir/SearchParameter/Appointment-status"
@@ -183,7 +195,7 @@ Usage: #definition
       * type = #token
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Appointment?specialty=urn:oid:1.2.276.0.76.5.114|535`    
+        `GET [base]/Appointment?specialty=http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen|ALLG`    
         **Anwendungshinweis:** 
         Anwendungshinweise: Bei einer Suche mit dem `:not`-Modifier MÜSSEN Ressourcen, die keinen Wert für `Appointment.specialty` enthalten, 
         im Suchergebnis enthalten sein. 
@@ -241,7 +253,8 @@ Usage: #definition
     * interaction[+]
       * insert Expectation (#SHALL)
       * code = #search-type
-    * insert CommonSearchParameters  
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter  
     * searchParam[+]
       * insert Expectation (#SHALL) 
       * name = "active"
@@ -269,7 +282,7 @@ Usage: #definition
       * type = #token
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/HealthcareService?specialty=urn:oid:1.2.276.0.76.5.114|535`    
+        `GET [base]/HealthcareService?specialty=http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen|ALLG`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " 
     * searchParam[+]

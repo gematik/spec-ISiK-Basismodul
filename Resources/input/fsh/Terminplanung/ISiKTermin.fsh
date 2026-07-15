@@ -17,18 +17,24 @@ Description: "Das Datenobjekte ISiKTermin repräsentiert einen gebuchten Termin,
 * extension contains AppointmentReplaces named replaces 0..1 MS
   * ^comment = "Begründung zum Must Support: Termineabsagen sollten verkettbar sein, da am originalen Termin noch weitere Informationen hängen können."
 * status MS
+  * ^short = "Der Status des Termins"
   * ^comment = "Begründung zu Must Support : Im ISiK Kontext ist der Status eines Termins von entscheidender Bedeutung, um den aktuellen Stand und die Verfügbarkeit des Termins zu kommunizieren."
 * cancelationReason MS
+  * ^short = "Der Grund für die Absage des Termins"
   * ^comment = "Begründung zu Must Support: Dieses Feld ist optional (0..1), muss jedoch implementiert werden (MS), um die Möglichkeit zu bieten, einen Grund für die Absage eines Termins zu hinterlegen."
 * cancelationReason from ISiKTerminCancelationReason (required)
 * start MS
+  * ^short = "Der Startzeitpunkt des Termins"
   * ^comment = "Begründung zu Kardinalität und Must Support: Der Startzeitpunkt eines Termins ist von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS). Das Feld ist in den meisten Fällen verpflichtend, nur für die Status 'proposed', 'cancelled', 'waitlist' existiert kein Wert."
 * end MS
+  * ^short = "Der Endzeitpunkt des Termins"
   * ^comment = "Begründung zu Kardinalität und Must Support: Der Endzeitpunkt eines Termins ist von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS). Das Feld ist in den meisten Fällen verpflichtend, nur für die Status 'proposed', 'cancelled', 'waitlist' existiert kein Wert."
 * slot MS
   * reference 1.. MS
-* slot ^comment = "Begründung zu Kardinalität und Must Support: Die Kardinalität der slot-Eigenschaft bleibt 0..*, sodass ein Termin-Requestor bei der Terminbuchung nur einen Termin und ein Verweis auf ein ISiKKalender übergeben kann. Es ist dann die Aufgabe des Termin-Repositories in Abhängigkeit der gebuchten Dienstleistung freie Terminblöcke zu finden. Diese sind im Appointment zu referenzieren."
+  * ^short = "Verweise auf die gebuchten Terminblöcke"
+  * ^comment = "Begründung zu Kardinalität und Must Support: Die Kardinalität der slot-Eigenschaft bleibt 0..*, sodass ein Termin-Requestor bei der Terminbuchung nur einen Termin und ein Verweis auf ein ISiKKalender übergeben kann. Es ist dann die Aufgabe des Termin-Repositories in Abhängigkeit der gebuchten Dienstleistung freie Terminblöcke zu finden. Diese sind im Appointment zu referenzieren."
 * comment MS
+  * ^short = "Zusätzliche Kommentare zum Termin zwischen Leistungserbringern"
   * ^comment = "Hinweis: Im ISiK Kontext sollte dieses Feld zur internen Kommunikation zwischen Leistungserbringern verwendet werden, z.B. für interne Notizen rund um den Termin.
 
 Begründung zum Must Support: Dieses Feld ist optional (0..1), muss jedoch implementiert werden (MS), um die Möglichkeit zu bieten, zusätzliche Informationen zum Termin zu hinterlegen und abrufen zu können. 
@@ -39,6 +45,7 @@ Es gilt weiterhin die Semantik des Elements nach FHIR-Kernspezifikation:
 
 Where this is a planned appointment and the start/end dates are not set then this field can be used to provide additional guidance on the details of the appointment request, including any restrictions on when to book it.'"
 * patientInstruction MS
+  * ^short = "Anweisungen für den Patienten zum Termin"
   * ^comment = "Hinweis: Dieses Feld sollte im Kontext von ISIK verwendet werden für die Kommunikation im Sinne der Definition der FHIR-Kernspezifikation - sowohl von Systemseite (administrativ) als auch von Seiten des medizinischen Fachpersonals.
 
 Beispiel für eine Nachricht: 'Bitte nüchtern erscheinen' etc.
@@ -55,6 +62,7 @@ Es gilt weiterhin der Hinweis der FHIR Kernspezifikation:
   * ^slicing.discriminator.type = #type
   * ^slicing.discriminator.path = "actor.resolve()"
   * ^slicing.rules = #open
+* participant ^short = "Teilnehmer des Termins"  
 * participant ^comment = "Hinweis: Die Kardinalität von actor.display und das MS-Flag von .status wird an die Slices vererbt und diese sind entsprechend zu implementieren.
 
 Begründung zu Kardinalität und Must Support: Die Teilnehmer eines Termins sind von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS)."

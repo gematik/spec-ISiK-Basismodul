@@ -101,7 +101,7 @@ RuleSet: minMaxOccurs(min, max)
 
 //name = patient | encounter | location | user | study
 RuleSet: launchContext(name, type, description)
-* extension
+* extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
   * extension[+]
     * url = "name"
@@ -114,7 +114,7 @@ RuleSet: launchContext(name, type, description)
     * valueString = {description}
 
 RuleSet: initialExpression(expression, description)
-* extension
+* extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
   * valueExpression
     * language = #text/fhirpath
@@ -212,3 +212,27 @@ RuleSet: QuestionnaireResponseCommons(questionnaire, patient)
 * author = Reference({patient})
 * authored = "2025-01-01"
 
+RuleSet: tbeContext(expression)
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
+  * valueString = {expression}
+
+RuleSet: tbeValue(expression)
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+  * valueString = {expression}
+
+RuleSet: tbeExtract(resourceId, fullUrl)
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+  * extension[+]
+    * url = "template"
+    * valueReference = Reference({resourceId})
+  * extension[+]
+    * url = "fullUrl"
+    * valueString = {fullUrl}
+
+RuleSet: hiddenItem
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+  * valueBoolean = true

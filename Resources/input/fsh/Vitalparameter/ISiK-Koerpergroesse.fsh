@@ -1,7 +1,7 @@
 Profile: ISiKKoerpergroesse
 Parent: VitalSignDE_Koerpergroesse
 Id: ISiKKoerpergroesse
-Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körpergröße eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körpergröße eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
 ### Motivation
 Die Erfassung und Überwachung der Körpergröße ist essenziell für die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.
 
@@ -26,10 +26,11 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs
 * code = $loinc#8302-2 "Körpergröße"
 * code.coding[snomed] = $sct#1153637007 "Body height"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.text = "Körpergröße"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2020-10-11"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 174 'cm' "centimeter"
 
 Instance: ISiKKoerpergroesseMinExample
@@ -49,6 +50,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#8302-2 "Körpergröße"
 * code.coding[snomed] = $sct#1153637007 "Body height"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#188740 "MDC_LEN_BODY_ACTUAL"
 * code.text = "Körpergröße - Klinische Messung"
 * subject = Reference(PatientinNormal)

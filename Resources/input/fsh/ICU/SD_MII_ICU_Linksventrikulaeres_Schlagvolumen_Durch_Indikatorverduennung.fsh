@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Linksventrikulaeres_Schlagvolumen_Durch_Indikatorverduennung
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-linksventri-schlagvolumen-durch-indikatorverduennung
 Title: "SD MII ICU Linksventrikulaeres Schlagvolumen Durch Indikatorverduennung"
+Description: "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Schlagvolumens durch Indikatorverdünnung in der Akutmedizin."
 * insert Meta
 * insert CommonElements
 * code

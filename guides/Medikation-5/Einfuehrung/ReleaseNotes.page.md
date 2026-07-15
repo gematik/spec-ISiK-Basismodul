@@ -4,9 +4,39 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-## Version 5.0.1
+## Version 
 
 Datum: tbd
+
+* `feature` Bedarfsmedikation mit mehreren Indikationen: R5-Backport-Extension `Dosage.asNeededFor` in `ISiKMedikationsVerordnung.dosageInstruction` ergänzt (ohne Must-Support; ab Stufe 6 mit Must-Support) und `asNeeded[x]` auf `boolean` eingeschränkt. Neue Use-Case-Seite `Bedarfsmedikation` mit Verweis auf den [FHIR Medication IG Deutschland](https://ig.fhir.de/igs/medication/) ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1264
+* `documentation` Neue Use-Case-Seite `Infusionen` mit Verweis auf den [FHIR Medication IG Deutschland](https://ig.fhir.de/igs/medication/) ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1264
+* `documentation` Guidance zur Verwendung von List.mode (snapshot vs. working) in ISiKMedikationsListe anhand von Use-Cases ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1236
+* `fix` REQUIRED Suchparameter AllergyIntolerance.onset aus AMTS-Rolle entfernt aufgrund fehlerhafter Spezifikation https://github.com/gematik/spec-ISiK-Basismodul/pull/1212
+
+## Version 5.1.2
+
+Datum: 30.04.2026
+
+* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` https://github.com/gematik/spec-ISiK-Basismodul/pull/1034
+* `fix` Hinzufügen der Rulesets `CommonSearchParameters` und `OptionalTagSearchParameter` zu den Rollen CapabilityStatements https://github.com/gematik/spec-ISiK-Basismodul/pull/1158
+* `fix` Fehlendes MS zum ISiKATCCoding hinzugefügt, die Version war bisher schon 1..1, aber es fehlte die MS-Definition https://github.com/gematik/spec-ISiK-Basismodul/pull/1154
+* `fix` `doseQuantity` wurde mit feinerem Must-Support versehen. `doseQuantity` ist im Medication-IG bereits als MS definiert; die erneute MS-Setzung erfolgt hier zur Behebung eines Validierungsfehlers des FHIR Validators. https://github.com/gematik/spec-ISiK-Basismodul/pull/1185
+* `fix` Aktualisierung von Dependencies in `sushi-config.yaml`: `de.fhir.medication` auf `1.0.4` (Korrektur fehlerhafter Invarianten in `1.0.3`), Umstellung von `hl7.fhir.extensions.r5` auf `hl7.fhir.uv.xver-r5.r4` (Nutzung des offiziellen backport Extension package), `hl7.fhir.uv.sdc` von `4.0.0-ballot` auf `4.0.0`. https://github.com/gematik/spec-ISiK-Basismodul/pull/1185
+
+
+## Version 5.1.1
+
+Datum: 17.12.2025
+
+* `improve` Ressourcen Referenzen in den FSH Dateien wurden auf das Format
+  `Reference(RessourcenNamen)` vereinheitlicht. Hierdurch wurden teilweise das Referenzziel
+  angepasst (falls es keine Instanz der Zielinstanz gab). https://github.com/gematik/spec-ISiK-Basismodul/pull/929
+
+----
+
+## Version 5.1.0
+
+Datum: 23.10.2025
 
 * `documentation` Link zu Dosierungsbeispielen im IG
   Medikation https://github.com/gematik/spec-ISiK-Basismodul/pull/882
@@ -16,6 +46,8 @@ Datum: tbd
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
 * `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 * `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
+
+
 
 
 ## Version 5.0.0

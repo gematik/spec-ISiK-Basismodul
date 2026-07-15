@@ -4,10 +4,31 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
+## Version t.b.d
 
-## Version 5.0.1
+Datum: t.b.d
 
-Datum: tbd.
+* `fix` Parameter-Typ für RelatedPerson entsprechend korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/1284
+* `improve` Ungenutztes Profil `ISiKTerminKontaktMitGesundheitseinrichtung` entfernt https://github.com/gematik/spec-ISiK-Basismodul/pull/1263
+
+## Version 5.1.2
+
+Datum: 30.04.2026
+
+* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` in allen Profilen außer dem ISiKTermin Profil https://github.com/gematik/spec-ISiK-Basismodul/pull/1034
+* `fix` Added missing "PATCH" interaction in FQL rendering of the ISiKCapabilityStatementTerminRepositoryRolle https://github.com/gematik/spec-ISiK-Basismodul/pull/1176
+
+
+## Version 5.1.1
+
+Datum: 17.12.2025
+
+* `improve` alle Elemente sind mit short-description versehen https://github.com/gematik/spec-ISiK-Basismodul/pull/928
+* `documentation` Korrektur IHE Canonical in Beispielen https://github.com/gematik/spec-ISiK-Basismodul/pull/948
+
+## Version 5.1.0
+
+Datum: 23.10.2025
 
 * `improve` Hinweis zur Handhabung von Create-Interaktionen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/792
 * `improve` Klarstellung zur Fallunterscheidung bei der Patienteninstanz-Übergabe und Begründung sowie Hinweis hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/793

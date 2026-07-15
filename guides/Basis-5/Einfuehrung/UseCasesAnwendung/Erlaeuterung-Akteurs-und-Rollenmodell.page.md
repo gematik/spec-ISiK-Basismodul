@@ -8,7 +8,7 @@ Das hier dargestellte Modell unterscheidet zwischen **Rollen** und **Akteuren** 
 
 ## Rollen: Wiederverwendbare Funktionseinheiten
 
-**Rollen** repräsentieren in ISiK **abgrenzbare Funktionalitäten**, die als eigenständige, gekapselte Bausteine verstanden werden. Ein Beispiel ist die **Stammdatenrolle**, welche normativen Anforderungen zur Abfrage der grundlegenden Stammdateninformationen bündelt.
+**Rollen** repräsentieren in ISiK **abgrenzbare Funktionalitäten**, die als eigenständige, gekapselte Bausteine verstanden werden. Ein Beispiel ist die **Stammdatenrolle**, welche normative Anforderungen zur Abfrage der grundlegenden Stammdateninformationen bündelt.
 
 Diese Rollen sind so konzipiert, dass sie **wiederverwendbar** sind und eine klare, normative Beschreibung ihrer Funktionalität enthalten. Dadurch lassen sich **Redundanzen vermeiden**: Anstatt dass jeder Akteur sämtliche Anforderungen selbst im eigenen **FHIR CapabilityStatement (CpS)** aufführt, kann er **bestehende Rollen importieren**.
 

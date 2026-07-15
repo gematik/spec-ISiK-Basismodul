@@ -24,6 +24,7 @@ ohne dass dies die Nutzbarkeit des Formulars einschränkt.
 
 * Formularfelder, die Daten erheben, die durch eine Observation-Ressource repräsentiert werden können, sollten für die Extraktion annotiert werden.
 * Formularfelder, die Daten erheben, die durch eine Observation-Ressource repräsentiert werden können, sollten in item.definition auf ein geeignetes nationales oder internationales Observation-Profil für die Extraktion verweisen.
+* Formulare, die sich im Bereich von ISiK-definierten Ressourcen (außer Observation) bewegen, sollten mit Template-based Extraction Annotationen versehen werden. Entsprechende Template Profile für die Basis sind vorhanden.   
 
 ### Vorbereitung für Definition-Based Extraction und Prepopulation
 

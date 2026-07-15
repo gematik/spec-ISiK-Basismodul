@@ -13,10 +13,6 @@ Instanzen, die von einem ISiK-konformen Server über READ-Interaktionen bereitge
 ### Nicht profilierte Ressourcentypen
 Weiterhin steht es Servern frei, neben den in ISIK profilierten auch weitere Ressourcentypen über die REST-API bereitzustellen, sofern dies im CapabilityStatement des Servers entsprechend spezifiziert ist. Server SOLLEN dabei auf ein öffentlich verfügbares Profil des jeweiligen Ressourcentyps referenzieren, das die vom Server implementierten Constraints abbildet. Es KANN sich dabei um ein Profil aus einem anderen (z.B. IHE-/KBV-/MII-)Implementierungsleitfaden oder ein vom Hersteller selbst publiziertes Profil handeln.
 
-### generische Ressourcentypen
-Darüber hinaus ist es Servern gestattet, in ISiK profilierte generische Ressourcentypen, wie z.B. Organization oder Observation in Kontexten außerhalb der in ISiK spezifizierten UseCases zu verwenden.
-
-
 
 ## Search-Interaktionen
 Die Suche MUSS sowohl mittels HTTP GET als auch HTTP POST (vgl. [FHIR RESTful Search - Introduction](https://www.hl7.org/fhir/R4/search.html#Introduction)) unterstützt werden. Die URL-Parameter komplexer Suchanfragen können personenbezogene Merkmale enthalten, daher ist im Echtbetrieb die Suche mittels HTTP POST in Verbindung mit TLS-Verschlüsselung vorzuziehen. 
@@ -26,7 +22,7 @@ Ein System KANN das Erstellen einer Ressource mittels HTTP POST (vgl. [FHIR REST
 
 Es liegt im Ermessen des bestätigungsrelevanten Systems, ob eine externe Ressource durch das System direkt übernommen wird. Auch wie die Herkunft der übernommenen Ressource gekennzeichnet wird, liegt im Ermessen des bestätigungsrelevanten Systems.
 
-Eine Ressource welche nicht durch das bestätigungsrelevante System angelegt wird, KANN in ```Resource.meta.tag``` eine Angabe enthalten, welche indiziert, dass diese Ressource durch ein Fremdsystem erzeugt wurde. Dieser Tag KANN durch den Server hinzugefügt werden, sollte der Client diese Angabe nicht von sich aus übermitteln. Eine von einem System vorgenommene Auszeichnung von Fremdübernahmen SOLL über den Code ```external``` aus dem Kodiersystem ```https://fhir.de/CodeSystem/common-meta-tag-de``` erfolgen. Weitere Kodierungen KÖNNEN hinzugefügt werden. Ein Beispiel in ````json```:
+Eine Ressource welche nicht durch das bestätigungsrelevante System angelegt wird, KANN in ```Resource.meta.tag``` eine Angabe enthalten, welche indiziert, dass diese Ressource durch ein Fremdsystem erzeugt wurde. Dieser Tag KANN durch den Server hinzugefügt werden, sollte der Client diese Angabe nicht von sich aus übermitteln. Eine von einem System vorgenommene Auszeichnung von Fremdübernahmen SOLL über den Code ```external``` aus dem Kodiersystem ```https://fhir.de/CodeSystem/common-meta-tag-de``` erfolgen. Weitere Kodierungen KÖNNEN hinzugefügt werden. Ein Beispiel in ```json```:
 
 ```
 {
@@ -68,3 +64,7 @@ Alle REST-Interaktionen müssen sowohl mittels HTTP als auch HTTPS (TLS-Verschl�
 Im Echtbetrieb MUSS die Kommunikation ausschließlich per HTTPS erfolgen.
 Weiterhin sind geeignete Maßnahmen zur Risiko-Minimierung (z.B. Benutzerautorisierung / -authentifikation) zu treffen, siehe http://build.fhir.org/security.html#6.1.0. 
 Diese sind in der jetzigen Stufe des ISiK Basismoduls jedoch nicht bestätigungsrelevant.
+
+## Paging
+
+Suchergebnisse können auch bei Abfragen zu den Compartments einzelner Patient- und Encounter-Instanzen zahlreich sein. Server KÖNNEN daher [FHIR-konformes Paging](https://hl7.org/fhir/R4/http.html#paging) unterstützen. Server KÖNNEN im SearchSet-Bundle auch Ressourcen vom Typ [OperationOutcome](https://hl7.org/fhir/R4/operationoutcome.html) mit Informationen über die Suchergebnisse zurückgeben. Diese müssen in `Bundle.entry.search.mode` mit dem Wert `outcome` gekennzeichnet sein. Die Issues im OperationOutcome dürfen nur dem Schweregrad `information` oder `warning` entsprechen. Issues vom Schweregrad `error` oder `fatal` sind bei Paging unzulässig.

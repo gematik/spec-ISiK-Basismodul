@@ -22,7 +22,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf von ISiKVersicheru
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #search-type
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "status"
@@ -93,7 +94,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf von ISiKVersicheru
     * interaction[+]
       * code = #search-type
       * insert Expectation(#SHALL)
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "patient"
@@ -173,7 +175,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf von ISiKVersicheru
       * code = #search-type
       * insert Expectation(#SHALL)
 
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "identifier"

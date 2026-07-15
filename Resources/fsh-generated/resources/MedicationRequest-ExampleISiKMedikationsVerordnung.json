@@ -23,29 +23,6 @@
       "valueString": "Schmerztherapie postoperativ"
     }
   ],
-  "dosageInstruction": [
-    {
-      "doseAndRate": [
-        {
-          "doseQuantity": {
-            "system": "http://unitsofmeasure.org",
-            "value": 1,
-            "unit": "Brausetablette",
-            "code": "1"
-          }
-        }
-      ],
-      "timing": {
-        "repeat": {
-          "when": [
-            "MORN",
-            "NOON",
-            "EVE"
-          ]
-        }
-      }
-    }
-  ],
   "status": "active",
   "intent": "order",
   "medicationReference": {
@@ -64,6 +41,29 @@
   "reasonReference": [
     {
       "reference": "Condition/BehandlungsDiagnoseFreitext"
+    }
+  ],
+  "dosageInstruction": [
+    {
+      "timing": {
+        "repeat": {
+          "when": [
+            "MORN",
+            "NOON",
+            "EVE"
+          ]
+        }
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "Brausetablette",
+            "system": "http://unitsofmeasure.org",
+            "code": "1"
+          }
+        }
+      ]
     }
   ]
 }

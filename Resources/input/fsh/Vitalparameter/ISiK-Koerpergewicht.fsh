@@ -1,7 +1,7 @@
 Profile: ISiKKoerpergewicht
 Parent: VitalSignDE_Koerpergewicht
 Id: ISiKKoerpergewicht
-Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über das Körpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über das Körpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
 ### Motivation
 Die Erfassung und Überwachung des Körpergewichts ist essenziell für die Beurteilung des Ernährungszustands, die Überwachung von Veränderungen im Rahmen der Therapie sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.
 
@@ -26,11 +26,12 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs
 * code = $loinc#29463-7 "Körpergewicht"
 * code.coding[snomed] = $sct#27113001 "Body weight"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#188736 "MDC_MASS_BODY_ACTUAL"
 * code.text = "Körpergewicht"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2020-10-11"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 79 'kg' "kilogram"
 
 Instance: ISiKKoerpergewichtMinExample
@@ -50,6 +51,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#29463-7 "Körpergewicht"
 * code.coding[snomed] = $sct#27113001 "Body weight"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#188736 "MDC_MASS_BODY_ACTUAL"
 * code.text = "Körpergewicht - Bettwaage"
 * subject = Reference(PatientinNormal)

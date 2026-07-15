@@ -17,17 +17,6 @@ RuleSet: CommonSearchParameters
         Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
 * searchParam[+]
   * insert CapabilityStatementExpectationExt(SHALL)
-  * name = "_tag"
-  * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
-  * type = #token
-  * documentation =
-        "**Beispiel:**
-        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`
-        **Anwendungshinweis:**
-        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)
-        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "
-* searchParam[+]
-  * insert CapabilityStatementExpectationExt(SHALL)
   * name = "_count"
   * type = #number
   * documentation =
@@ -46,3 +35,16 @@ RuleSet: CommonSearchParameters
         `GET [base]/Encounter?_has:Condition:encounter:code=A12.3`
         **Anwendungshinweis:**
         Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has).  "
+
+RuleSet: OptionalTagSearchParameter
+* searchParam[+]
+  * insert CapabilityStatementExpectationExt(MAY)
+  * name = "_tag"
+  * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
+  * type = #token
+  * documentation =
+        "**Beispiel:**
+        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`
+        **Anwendungshinweis:**
+        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)
+        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "

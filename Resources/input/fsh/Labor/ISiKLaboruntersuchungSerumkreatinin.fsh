@@ -16,7 +16,7 @@ Instance: ExampleISiKLaboruntersuchungSerumkreatinin1
 InstanceOf: ISiKLaboruntersuchungSerumkreatinin
 Usage: #example
 * status = #final
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#2160-0
 * code.coding[snomed] = $sct#70901006 "Creatinine measurement"

@@ -2,12 +2,12 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKAlkoholAbusus",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus",
-  "version": "5.0.0",
+  "version": "5.1.2",
   "name": "ISiKAlkoholAbusus",
   "title": "ISiK Alkohol Abusus",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-26",
+  "date": "2026-04-30",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -48,15 +48,19 @@
         }
       },
       {
-        "id": "Observation.performer",
-        "path": "Observation.performer",
-        "patternReference": {
-          "reference": "Practitioner/PractitionerWalterArzt"
-        }
-      },
-      {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept",
+        "path": "Observation.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 1,
         "type": [
           {
             "code": "CodeableConcept"

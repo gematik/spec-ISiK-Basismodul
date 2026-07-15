@@ -65,7 +65,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       OPS 0..1 MS and
       SNOMED-CT 0..1 MS
   * coding[OPS] only CodingOPS
-  * coding[OPS] from OpsVS (required)
+  * coding[OPS]
     * ^short = "OPS-codierte Darstellung der Prozedur"
     * extension[Seitenlokalisation] MS
       * ^short = "Seitenlokalisation"
@@ -89,18 +89,16 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^comment = "Die freitextliche Beschreibung kann ergänzend oder anstelle einer codierten Angabe der Prozedur erfolgen."
 * subject MS
   * ^short = "Patientenbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Patientenbezug der Prozedur MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * ^comment = "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Prozedur MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt 
-    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.    
-    **WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf auf einen Encounter der Ebene &quot;Abteilungskontakt&quot; (siehe hierzu {{pagelink:Fall}}) erfolgen. 
-    Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)&quot;Fallnummer&quot; (hier: `Encounter.account`) 
-    unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)"
+    * insert Comment-Reference-Encounter(Begründung Pflichtfeld)
 * performed[x] 1.. MS
   * ^short = "Durchführungsdatum oder -Zeitraum"
   * ^comment = "Es muss mindestens entweder ein (partielles) Durchführungsdatum oder der Beginn des Durchführungszeitraumes angegeben werden.
@@ -118,9 +116,8 @@ Usage: #example
 * status = #completed
 * category = $sct#387713003 "Surgical procedure (procedure)"
 * code.coding[0] = $sct#80146002 "Excision of appendix (procedure)"
-* code.coding[+].version = "2020"
-* code.coding[=] = $ops#5-470 "Appendektomie"
 * code.coding[+].version = "2024"
+* code.coding[=] = $ops#5-470 "Appendektomie"
 * code.text = "Entfernung des Blinddarms"
 * subject = Reference(PatientinMusterfrau)
 * performedDateTime = "2020-04-23"

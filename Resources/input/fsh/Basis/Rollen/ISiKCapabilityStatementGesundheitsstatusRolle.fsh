@@ -36,7 +36,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
       * insert Expectation(#SHALL)
       * code = #search-type       
     
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "status"
@@ -155,7 +156,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #search-type
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "clinical-status"
@@ -199,16 +201,6 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
           `ToDo`    
           **Anwendungshinweis:**   
           Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  " */
-    * searchParam[+]
-      * insert Expectation(#SHALL)
-      * name = "onset"
-      * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-onset"
-      * type = #date
-      * documentation = 
-          "**Beispiel:**    
-          `GET [base]/AllergyIntolerance?onset=2015-01-01T12:00:23+02:00`    
-          **Anwendungshinweis:**   
-          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  "
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "date"

@@ -1,7 +1,7 @@
 Profile: ISiKKopfumfang
 Parent: VitalSignDE_Kopfumfang
 Id: ISiKKopfumfang
-Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Kopfumfang eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Kopfumfang eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
 ### Motivation
 Die Erfassung und Überwachung des Kopfumfangs ist essenziell für die Beurteilung von Wachstumsprozessen, insbesondere bei Säuglingen und Kleinkindern, sowie für die frühzeitige Erkennung von Entwicklungsauffälligkeiten oder neurologischen Erkrankungen.
 
@@ -28,11 +28,12 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#9843-4 "Kopfumfang okzipital-frontal"
 * code.coding[snomed] = $sct#363812007 "Head circumference"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#153856 "MDC_CIRCUM_HEAD"
 * code.text = "Kopfumfang"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2019-07-02"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 38 'cm' "Centimeter"
  
 Instance: ISiKKopfumfangMinExample
@@ -52,6 +53,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#9843-4 "Kopfumfang okzipital-frontal"
 * code.coding[snomed] = $sct#363812007 "Head circumference"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#153856 "MDC_CIRCUM_HEAD"
 * code.text = "Kopfumfang - Pädiatrische Verlaufskontrolle"
 * subject = Reference(PatientinNormal)

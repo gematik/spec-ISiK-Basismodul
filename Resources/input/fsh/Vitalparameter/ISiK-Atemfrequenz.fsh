@@ -1,7 +1,7 @@
 Profile: ISiKAtemfrequenz
 Parent: VitalSignDE_Atemfrequenz
 Id: ISiKAtemfrequenz
-Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Atemfrequenz eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Atemfrequenz eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
 ### Motivation
 Die Erfassung und Überwachung der Atemfrequenz ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.
 
@@ -30,7 +30,7 @@ Usage: #example
 * code.text = "Atemfrequenz"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2019-07-02"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 26 '/min' "Atemzüge pro Minute"
 
 Instance: ISiKAtemfrequenzMinExample
@@ -49,7 +49,8 @@ Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#9279-1 "Atemfrequenz"
-* code.coding[snomed] = $sct#86290005 "Respiratory rate"
+* code.coding[snomed] = $sct#86290005 "Atemfrequenz"
+// * code.coding[snomed].version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#151562 "MDC_RESP_RATE"
 * code.text = "Atemfrequenz - Intensivüberwachung"
 * subject = Reference(PatientinNormal)
@@ -57,6 +58,7 @@ Usage: #example
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 35 '/min' "Atemzüge pro Minute"
 * method = $sct#37931006 "Auscultation"
-* bodySite = $sct#181216001 "Entire lung"
+* bodySite.coding = $sct#181216001 "Entire chest"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * interpretation = $v3-ObservationInterpretation#H "High"
 * note.text = "Tachypnoe bei akuter respiratorischer Insuffizienz"

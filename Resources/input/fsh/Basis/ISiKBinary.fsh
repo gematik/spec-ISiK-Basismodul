@@ -16,7 +16,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 ### Hinweis
 
 Das ISIK-Binary-Profil ist *nicht* Bestandteil der Implementierung und des Bestätigungsverfahrens zum ISIK Basismodul.
-Das Profil ist Teil des ISIK Basismoduls, da es als übergreifend genutzte Ressource sowohl im [Modul Terminplanung](https://simplifier.net/guide/isik-terminplanung-v4/ImplementationGuide-markdown-Datenobjekte?version=current) als auch im [Modul Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-v4/ImplementationGuide-markdown-Datenobjekte?version=current) implementiert werden muss.  "
+Das Profil ist Teil des ISIK Basismoduls, da es im [Modul Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Artefakte/Datenobjekte_ISiKBinary) implementiert werden muss und ein hohes Potential für die Wiederverwednung in anderen Modulen naheliegt.  "
 
 * insert Meta
 * insert CommonElements

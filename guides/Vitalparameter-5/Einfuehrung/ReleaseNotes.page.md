@@ -4,9 +4,29 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-## Version 5.0.1
+## Version 5.1.2
 
-Datum: tbd
+Datum: 30.04.2026
+
+* `fix` Fehlender LOINC-Slice in .component für ISIKBlutdurck hinzugefügt. Keine inhaltiche Änderung, Änderung betrifft nur die Validierung von Instanzen.
+* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` https://github.com/gematik/spec-ISiK-Basismodul/pull/1034
+* `fix` Entfernung des Patterns auf Observation.performer in den Profilen: `ISiKStillstatus`, `ISiKAlkoholAbusus` und `ISiKRaucherstatus` https://github.com/gematik/spec-ISiK-Basismodul/pull/1169
+* `documentation` Hinzufügen der Snomed-Versionen zu den Beispielen https://github.com/gematik/spec-ISiK-Basismodul/pull/1169
+
+
+## Version 5.1.1
+
+Datum: 17.12.2025
+
+* `improve` Ressourcen Referenzen in den FSH Dateien wurden auf das Format
+  `Reference(RessourcenNamen)` vereinheitlicht. Hierdurch wurden teilweise das Referenzziel
+  angepasst (falls es keine Instanz der Zielinstanz gab). https://github.com/gematik/spec-ISiK-Basismodul/pull/929
+* `documentation` Fehlende Begründungen für MS-Elemente
+  nachgepflegt https://github.com/gematik/spec-ISiK-Basismodul/pull/919
+
+## Version 5.1.0
+
+Datum: 23.10.2025
 
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
 * `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802

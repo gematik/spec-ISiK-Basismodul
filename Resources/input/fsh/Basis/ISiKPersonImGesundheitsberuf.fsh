@@ -8,24 +8,28 @@ Das Profil ISIKPersonImGesundheitsberuf bildet alle denkbaren medizinischen Leis
 
 In FHIR werden PersonImGesundheitsberuf mit der [`Practitioner`](https://hl7.org/fhir/R4/practitioner.html)-Ressource
  repräsentiert.  
- Für das Profil ISIKPersonImGesundheitsberuf wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:
+ Für das Profil ISIKPersonImGesundheitsberuf wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPersonImGesundheitsberuf valide sind, auch valide sind gegen:
 * [Profil KBV_PR_Base_Practitioner der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner). 
 * [Profil HiGHmed_IC_Practitioner, MI Initiative - HiGHmed Use Case Infection Control der  Medizininformatik Initiative ](https://simplifier.net/medizininformatikinitiative-highmed-ic/highmed-ic-practitioner)
+* [Profil TIPractitioner der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-practitioner)  
 
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
 * insert CommonElements
+* ^extension[$imposeProfile][+].valueCanonical = Canonical(TIPractitioner|1.1.1)
 * obeys prac-de-1
 * . ^constraint[5].source = Canonical(ISiKPersonImGesundheitsberuf)
 * identifier 1.. MS
+  * ^comment = "Eindeutiger Identifier der Person"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * identifier contains
     Arztnummer 0..* MS and
     EFN 0..1 MS and
-    TelematikId 0..1 MS
+    TelematikId 0..1 MS and
+    Mitarbeiterkennzeichen 0..1
 * identifier[Arztnummer] only IdentifierLanr
   * ^short = "Lebenslange Arztnummer"
   * ^comment = " Im Krankenhaus ist die lebenslange Arztnummer der Ärzte bekannt und MUSS zur eindeutigen Identifikation eines Arztes bereitgestellt werden.
@@ -34,14 +38,23 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * ^patternIdentifier.type = $v2-0203#LANR
   * type 1..
 * identifier[EFN] only IdentifierEfn
+  * ^short = "Einheitliche Fortbildungsnummer für Ärzte in Deutschland"
   * ^patternIdentifier.type = $v2-0203#DN
   * type 1..
   * ^comment = "In bestimmten KIS wird keine EFN geführt, da diese aus Compliance-Gründen getrennt in HR-Systemen vorgehalten wird (Hinweis kam von Stakeholder), daher soll der entsprechende Test im Test-System mit \"warningOnly\" ausgegeben werden." 
   // Dennoch soll das MS im Profil enthalten sein: das war laut gefyra eine KBV-Anforderung [Stand 9.12.2022].
 * identifier[TelematikId] only IdentifierTelematikId
+  * ^short = "Telematik-ID"
   * ^patternIdentifier.type = $v2-0203#PRN
+  * ^comment = "**Begründung MS:** Zur Verknüpfung der Patient Instanz mit Diensten der Telematik Infrastruktur SOLL die ID mit angegeben sein."
+  * type 1..
+* identifier[Mitarbeiterkennzeichen]
+  * ^short = "Mitarbeiterkennzeichen"
+  * ^comment = "Für interne Kennzeichnung von Personen KANN ein institutionsbezogenes Mitarbeiterkennzeichen angegeben werden."
+  * ^patternIdentifier.type = $v2-0203#EN
   * type 1..
 * name MS
+  * ^comment = "Namen der Person"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -53,10 +66,21 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * ^comment = "Der Name des Arztes MUSS in konkreten Anwendungen angezeigt werden können. Es MUSS nach dem Namen des Arztes gesucht werden können."
   * ^patternHumanName.use = #official
   * use 1.. MS
+    * ^short = "Verwendungszweck"
+    * ^comment = "Hier ist stets der Wert `official` anzugeben.
+      **Begründung Pflichtfeld:** Dient als Unterscheidungs- und Auswahlkriterium"  
   * use = #official (exactly)
   * family 1.. MS
+    * ^short = "Nachname"
+    * ^comment = "Vollständiger Nachname bzw. Familienname der Person, einschließlich Vor- und Zusätze.  
+      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind."   
   * given 1.. MS
+    * ^short = "Vorname"
+    * ^comment = "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittel-Initialen abzubilden.
+      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind."   
   * prefix MS
+    * ^short = "Präfix"
+    * ^comment = "Präfix, z.B. akademischer Titel od. militärischer Rang"   
 * name[Geburtsname] only HumannameDeBasis
   * ^patternHumanName.use = #maiden
   * use 1.. MS
@@ -102,6 +126,7 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * postalCode 1.. MS
   * country 1.. MS
 * gender MS
+  * ^comment = "Geschlecht der Person"
   * ^short = "Administratives Geschlecht"
   * ^short = "Ist das Geschlecht des Arztes bekannt, MUSS es bereitgestellt werden. Eine korrekte Kodierung des Geschlechtseintrags 'divers' MUSS per GenderOtherDE-Extension unterstüzt werden."
   * extension contains GenderOtherDE named Geschlecht-Administrativ 0..1 MS

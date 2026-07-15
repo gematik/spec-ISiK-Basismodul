@@ -59,9 +59,10 @@ Alias: $patient-merge-topic = https://gematik.de/fhir/isik/SubscriptionTopic/pat
 Alias: $vsAllergyIntoleranceClinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
 Alias: $vsAllergyIntoleranceVerificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 
-
+Alias: $imposeProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile
 Alias: $GEM_PR_KIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-kim
 Alias: $GEM_PR_TIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-tim
+Alias: $vs-ti-medication-snomed-ct = https://gematik.de/fhir/terminology/ValueSet/ti-medication-snomed-ct-vs
 Alias: $identifier-type-de-basis = http://fhir.de/CodeSystem/identifier-type-de-basis
 Alias: $identifier-iknr = http://fhir.de/StructureDefinition/identifier-iknr
 Alias: $identifier-iknr-system = http://fhir.de/sid/arge-ik/iknr
@@ -113,13 +114,14 @@ Alias: $ext-mii-wirkstofftyp = https://www.medizininformatik-initiative.de/fhir/
 Alias: $cs-pzn = http://fhir.de/CodeSystem/ifa/pzn
 Alias: $cs-risk-probability = http://terminology.hl7.org/CodeSystem/risk-probability
 Alias: $cs-v3-event-timing = http://terminology.hl7.org/CodeSystem/v3-TimingEvent
-Alias: $vs-edqm-doseform = http://hl7.org/fhir/uv/ips/ValueSet/medicine-doseform
-Alias: $vs-edqm-route = http://hl7.org/fhir/uv/ips/ValueSet/medicine-route-of-administration
 Alias: $vs-risk-probability = http://hl7.org/fhir/ValueSet/risk-probability
 Alias: $ext-data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $ext-wirkstofftyp = http://fhir.de/StructureDefinition/WirkstofftypEX
+Alias: $ext-dosage-as-needed-for = http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor
 
 Alias: $appointmentStatus = http://hl7.org/fhir/appointmentstatus
 Alias: $cancelationReason = http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason
 
 Alias: $IEEE11073 = urn:iso:std:iso:11073:10101
+
+Alias: $vs-dosage-dose-quantity-de = http://ig.fhir.de/igs/medication/ValueSet/DosageDoseQuantityDE

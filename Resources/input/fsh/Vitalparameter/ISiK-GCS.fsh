@@ -1,7 +1,7 @@
 Profile: ISiKGCS
 Parent: ScoreDE_GCS
 Id: ISiKGCS
-Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Glasgow Coma Scale (GCS) Score eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Glasgow Coma Scale (GCS) Score eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
 
 ### Motivation
 Die Erfassung und Überwachung des Bewusstseinszustands anhand des GCS ist essenziell für die Beurteilung neurologischer Funktionen, die Überwachung von Patienten mit Schädel-Hirn-Trauma oder anderen neurologischen Erkrankungen sowie die Unterstützung klinischer Entscheidungen.
@@ -56,12 +56,13 @@ InstanceOf: ISiKGCS
 Usage: #example
 * code = $loinc#9269-2 "Glasgow coma score total"
 * code.coding[snomed] = $sct#248241002 "Glasgow coma score"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#153728 "MDC_SCORE_GLAS_COMA"
 * valueQuantity = 11 '1' "Punktwert"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2020-10-11"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * component[Verbal].code = $loinc#9270-0 "Glasgow coma score verbal"
 * component[Verbal].valueCodeableConcept = $loinc#LA6560-2 "Confused"
 * component[Motor].code = $loinc#9268-4 "Glasgow coma score motor"
@@ -89,6 +90,7 @@ InstanceOf: ISiKGCS
 Usage: #example
 * code = $loinc#9269-2 "Glasgow coma score total"
 * code.coding[snomed] = $sct#248241002 "Glasgow coma score"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#153728 "MDC_SCORE_GLAS_COMA"
 * valueQuantity = 15 '1' "Punktwert"
 * status = #final

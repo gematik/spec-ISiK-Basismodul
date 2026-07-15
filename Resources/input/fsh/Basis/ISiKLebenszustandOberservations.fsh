@@ -29,6 +29,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
+* ^abstract = true
 * status MS
   * ^short = "Status"
   * ^comment = "Bedeutung: Der Status MUSS insbesondere zur Differenzierung von abgeschlossenen, 
@@ -56,23 +57,27 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * coding[loinc] only ISiKLoincCoding
 * subject 1.. MS
   * ^short = "Patientenbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Patientenbezug der Beobachtung MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * ^comment = "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation 
-    zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Beobachtung MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * ^comment = "Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt 
-    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * insert Comment-Reference-Encounter(Begründung MS)
 * effective[x] 1..1 MS
   * ^short = "Zeitpunkt/-raum der Beobachtung"
   * ^comment = "Bedeutung: Klinisch relevanter Zeitpunkt/Zeitspanne für die Observation."
 * effective[x] only dateTime or Period
 * value[x] 1.. MS
   * ^short = "Wert der Beobachtung"
-  * ^comment = "Bedeutung: Erfasster Wert der Observation."
+  * ^comment = "**Begründung Must-Support:** Erfasster Wert der Observation."
+* valueDateTime MS
+  * ^comment = "**Begründung Must-Support:** Zeitpunktbezogene Lebenszustände (z. B. erwarteter Entbindungstermin) benötigen eine eindeutige Datumsangabe als Wert."
+* valueCodeableConcept MS
+  * ^comment = "**Begründung Must-Support:** Viele Lebenszustände (z. B. Schwangerschaftsstatus, Alkoholabusus, Raucherstatus) werden als kategorisierte Angaben kodiert und erfordern daher ein CodeableConcept."
 //folgende Elemente hatten bislang kein MS-Flag, aber  im IG gab es  Anmerkungen dazu:   
 * component
   * ^short = "Ergebnis-Komponenten"
@@ -89,14 +94,14 @@ Id: ISiKSchwangerschaftsstatus
 Title: "ISiK Schwangerschaftsstatus"
 Description: "Schwangerschaftsstatus einer Patientin"
 * insert Meta
-* code = $loinc#82810-3
+* code.coding[loinc] = $loinc#82810-3
 * valueCodeableConcept 1.. MS
   * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)"
 * valueCodeableConcept from SchwangerschaftsstatusVS
 * hasMember only Reference(ISiKSchwangerschaftErwarteterEntbindungstermin)
 * hasMember 0..1 MS
 * hasMember ^short = "Erwartetes Geburtsdatum"
-* hasMember ^definition = "Eine Referenz auf die ErwartetesGeburtsdatum Observation"
+* hasMember ^comment = "Eine Referenz auf die ErwartetesGeburtsdatum Observation"
 * hasMember.reference 1.. MS
 
 Instance: ISiKSchwangerschaftsstatusBeispiel
@@ -112,14 +117,14 @@ Title: "ISiKSchwangerschaftsstatusBeispiel"
   * coding.version = "2.77"
 * hasMember = Reference(ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel)
 * encounter = Reference(Fachabteilungskontakt)
-* performer = Reference(PractitionerWalterArzt)
+
 
 Profile: ISiKSchwangerschaftErwarteterEntbindungstermin
 Parent: ISiKLebensZustand
 Id: ISiKSchwangerschaftErwarteterEntbindungstermin
 Title: "ISiK Schwangerschaft - Erwarteter Entbindungstermin"
 * insert Meta
-* code from SchwangerschaftEtMethodeVS
+* code.coding[loinc] from SchwangerschaftEtMethodeVS
 * value[x] only dateTime
 * valueDateTime 1.. MS
   * ^comment = "Motivation: Eine Observation MUSS immer einen Wert enthalten"
@@ -135,7 +140,7 @@ Title: "ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"
 * effectiveDateTime = "2024-01-01"
 * valueDateTime = "2024-08-01"
 * encounter = Reference(Fachabteilungskontakt)
-* performer = Reference(PractitionerWalterArzt)
+
 
 Profile: ISiKAlkoholAbusus
 Parent: ISiKLebensZustand
@@ -148,7 +153,7 @@ Title: "ISiK Alkohol Abusus"
 * value[x] only CodeableConcept
 * valueCodeableConcept 1.. MS
 * valueCodeableConcept from YesNoUnknownNotAsked
-* performer = Reference(PractitionerWalterArzt)
+
 
 Instance: ISiKAlkoholAbususBeispiel
 InstanceOf: ISiKAlkoholAbusus
@@ -163,7 +168,7 @@ Title: "ISiKAlkoholAbususBeispiel"
 * effectiveDateTime = "2024-01-01"
 * valueCodeableConcept = ExpandedYesNoIndicator#Y "Yes"
 * encounter = Reference(Fachabteilungskontakt)
-* performer = Reference(PractitionerWalterArzt)
+
 
 Profile: ISiKRaucherStatus
 Parent: ISiKLebensZustand
@@ -176,7 +181,7 @@ Title: "ISiK Raucherstatus"
 * value[x] only CodeableConcept
 * valueCodeableConcept 1.. MS
 * valueCodeableConcept from CurrentSmokingStatusUvIps
-* performer = Reference(PractitionerWalterArzt)
+
 
 Instance: ISiKRaucherStatusBeispiel
 InstanceOf: ISiKRaucherStatus
@@ -189,10 +194,10 @@ Title: "ISiKRaucherStatusBeispiel"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
-* valueCodeableConcept = LOINC#LA15920-4 "Former smoker"
+* valueCodeableConcept = $loinc#LA15920-4 "Former smoker"
   * coding.version = "2.77"
 * encounter = Reference(Fachabteilungskontakt)
-* performer = Reference(PractitionerWalterArzt)
+
 
 Profile: ISiKStillstatus
 Parent: ISiKLebensZustand
@@ -205,7 +210,6 @@ Description: "Profil zur Abbildung ob gestillt/Muttermilch abgepumpt und gefütt
 * value[x] only CodeableConcept
 * valueCodeableConcept 1.. MS
 * valueCodeableConcept from StillstatusVS
-* performer = Reference(PractitionerWalterArzt)
 
 Instance: ISiKStillstatusBeispiel
 InstanceOf: ISiKStillstatus
@@ -221,4 +225,7 @@ Description: "ISiKStillstatusBeispiel"
 * effectiveDateTime = "2024-01-01"
 * valueCodeableConcept = $loinc#LA29252-6 "Currently breastfeeding"
 * encounter = Reference(Fachabteilungskontakt)
+<<<<<<< HEAD
 * performer = Reference(PractitionerWalterArzt)
+=======
+>>>>>>> main-stufe-5

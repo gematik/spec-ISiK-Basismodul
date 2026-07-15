@@ -4,6 +4,8 @@ Please go the the `Preview` tab and select the appropriate sub-template:
 
 [Version Upgrade **(for Admins)**](?expand=1&template=PR_Template_VersionUpgrade.md)
 
+[Version Upgrade **(for Admins)** Stufe 5 following ](?expand=1&template=PR_Template_VersionUpgrade.md)
+
 
 <!--- If you have no idea, time, what so ever, you can also continue here without using a pull request template-->
 <!--- Please keep in mind that if you use this short cut, your PR is lees likely to be merged, because of missing information.-->

@@ -10,29 +10,7 @@
     {
       "url": "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedicationStatementReplaces",
       "valueReference": {
-        "reference": "MedicationStatement/55555"
-      }
-    }
-  ],
-  "dosage": [
-    {
-      "doseAndRate": [
-        {
-          "doseQuantity": {
-            "system": "http://unitsofmeasure.org",
-            "value": 100,
-            "unit": "mg",
-            "code": "mg"
-          }
-        }
-      ],
-      "timing": {
-        "repeat": {
-          "count": 6,
-          "frequency": 1,
-          "period": 3,
-          "periodUnit": "wk"
-        }
+        "reference": "MedicationStatement/ExampleISiKMedikationsInformation1"
       }
     }
   ],
@@ -44,10 +22,32 @@
     "reference": "Patient/PatientinMusterfrau"
   },
   "context": {
-    "reference": "Encounter/Fachabteilungskontakt"
+    "reference": "Encounter/FachabteilungskontaktMinimal"
   },
   "effectivePeriod": {
     "start": "2021-07-04"
   },
-  "dateAsserted": "2021-07-03"
+  "dateAsserted": "2021-07-03",
+  "dosage": [
+    {
+      "timing": {
+        "repeat": {
+          "count": 6,
+          "frequency": 1,
+          "period": 3,
+          "periodUnit": "wk"
+        }
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 100,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          }
+        }
+      ]
+    }
+  ]
 }

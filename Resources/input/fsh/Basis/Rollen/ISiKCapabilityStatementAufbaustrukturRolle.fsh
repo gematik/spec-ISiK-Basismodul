@@ -31,7 +31,8 @@ Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuord
       * documentation = "Sofern die Ressource `Organization` unterstützt wird, SOLL die REST-Interaktion `search` implementiert werden."
     
 
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "identifier"
@@ -135,7 +136,8 @@ Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuord
       Ressourcen ISiKStandortRaum und ISiKStandortBettenstellplatz - u.a. zur Kennzeichnung als 
       'Frei', 'Besetzt', 'Kontaminiert', 'Isoliert', in 'Reinigung' etc."        
 
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#MAY)
       * name = "identifier"

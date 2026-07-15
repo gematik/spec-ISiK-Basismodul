@@ -8,7 +8,7 @@ Die Erfassung und Überwachung der Körpertemperatur ist essenziell für die fr�
 In FHIR wird die Körpertemperatur mit der Observation-Ressource repräsentiert.
 
 ### Kompatibilität
-Das Profil ISiKKoerperkerntemperatur ist vom Profil [VitalSignDE_Koerpertemperatur](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpertemperatur) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [OObservation Body Temperature Profile](http://hl7.org/fhir/StructureDefinition/bodytemp) aus der FHIR R4 Spezifikation."""
+Das Profil ISiKKoerperkerntemperatur ist vom Profil [VitalSignDE_Koerpertemperatur](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpertemperatur) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Temperature Profile](http://hl7.org/fhir/StructureDefinition/bodytemp) aus der FHIR R4 Spezifikation."""
 * insert Meta
 * insert CommonElements
 * insert Quantity-MS
@@ -29,11 +29,12 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs
 * code.coding[coretemp-loinc] = $loinc#8329-5 "Body temperature - Core"
 * code.coding[snomed] = $sct#276885007 "Core body temperature"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[coretemp-IEEE11073] = $IEEE11073#150368 "MDC_TEMP_CORE"
 * code.text = "Körpertemperatur"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2020-10-11"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 36.8 'Cel' "°C"
 
 Instance: ISiKKoerperkerntemperaturMinExample
@@ -53,6 +54,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code.coding[coretemp-loinc] = $loinc#8329-5 "Body temperature - Core"
 * code.coding[snomed] = $sct#276885007 "Core body temperature"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[coretemp-IEEE11073] = $IEEE11073#150368 "MDC_TEMP_CORE"
 * code.text = "Körperkerntemperatur - Intensivmonitoring"
 * subject = Reference(PatientinNormal)

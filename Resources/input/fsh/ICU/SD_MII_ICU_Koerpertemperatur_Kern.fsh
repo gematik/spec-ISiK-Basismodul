@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Koerpertemperatur_Kern
 Parent: ISiKKoerperkerntemperatur
 Id: sd-mii-icu-koerpertemperatur-kern
 Title: "SD MII ICU Koerpertemperatur Kern"
+Description: "Dieses Profil bietet eine generische Abbildung der geschätzten KörperKERNtemperatur in der Akutmedizin."
 * insert Meta
 * insert CommonElements
 * code

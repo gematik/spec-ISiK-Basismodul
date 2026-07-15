@@ -8,12 +8,16 @@ Description: "Die Slot-Ressource repräsentiert die Verbindung eines Termins (Ap
 * schedule MS
 * schedule only Reference(Schedule)
   * reference 1.. MS 
+* schedule ^short = "Der Kalender dem dieser Terminblock zugeordnet ist"  
 * schedule ^comment = "Begründung Kardinalität und MS: Die Kardinalität der reference-Eigenschaft wird auf 1..* festgelegt, um sicherzustellen, dass ein Kalender eindeutig referenziert und identifiziert werden kann."
 * status MS
+* status ^short = "Der Status des Terminblocks"
 * status ^comment = "Begründung Must Support: Dies ist wichtig, um die Verfügbarkeit von Terminen zu gewährleisten, eine Überbuchung zu verhindern und zudem einem Termin-Requestor die Möglichkeit zu bieten nur freie Termine bei der Terminbuchung anzuzeigen."
 * start MS
+* start ^short = "Der Startzeitpunkt des Terminblocks"
 * start ^comment = "Begründung Must Support: Dies ist wichtig, um den Zeitpunkt des Termins an einen Termin-Requestor / Termin-Consumer zu kommunizieren."
 * end MS
+* end ^short = "Der Endzeitpunkt des Terminblocks"
 * end ^comment = "Begründung Must Support: Dies ist wichtig, um die Länge des Termins an einen Termin-Requestor / Termin-Consumer zu kommunizieren."
 
 Invariant: ISiK-slot-1
