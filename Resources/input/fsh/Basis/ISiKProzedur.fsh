@@ -114,8 +114,8 @@ Usage: #example
 * extension.url = "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum"
 * extension.valueDateTime = "2020-04-23"
 * status = #completed
-* category = $sct#387713003 "Surgical procedure (procedure)"
-* code.coding[0] = $sct#80146002 "Excision of appendix (procedure)"
+* category = $sct#387713003 "Chirurgische Prozedur"
+* code.coding[0] = $sct#80146002 "Appendektomie"
 * code.coding[+].version = "2024"
 * code.coding[=] = $ops#5-470 "Appendektomie"
 * code.text = "Entfernung des Blinddarms"

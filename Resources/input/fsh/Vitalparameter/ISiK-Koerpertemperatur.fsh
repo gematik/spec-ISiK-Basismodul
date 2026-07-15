@@ -25,7 +25,7 @@ Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
 * code = $loinc#8310-5 "Körpertemperatur"
-* code.coding[snomed] = $sct#386725007 "Body temperature"
+* code.coding[snomed] = $sct#386725007 "Körpertemperatur"
 //  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#150364 "MDC_TEMP_BODY"
 * code.text = "Körpertemperatur"
@@ -50,7 +50,7 @@ Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#8310-5 "Körpertemperatur"
-* code.coding[snomed] = $sct#386725007 "Body temperature"
+* code.coding[snomed] = $sct#386725007 "Körpertemperatur"
 //  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#150364 "MDC_TEMP_BODY"
 * code.text = "Körpertemperatur - Fiebermessung"

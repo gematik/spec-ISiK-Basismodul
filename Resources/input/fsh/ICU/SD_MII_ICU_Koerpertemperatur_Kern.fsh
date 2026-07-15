@@ -20,7 +20,7 @@ Usage: #example
 * status = #final
 * code
   * coding[coretemp-loinc] = $loinc#8329-5 "Body temperature - Core"
-  * coding[snomed] = $sct#276885007 "Core body temperature"
+  * coding[snomed] = $sct#276885007 "Körperkerntemperatur"
   * coding[coretemp-IEEE11073] = $IEEE11073#150368 "Body temperature - Core"
   * coding[loinc] = $loinc#8310-5 "Körpertemperatur"
 * subject = Reference(PatientinMusterfrau)

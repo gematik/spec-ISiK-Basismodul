@@ -38,4 +38,4 @@ Usage: #example
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
 * valueQuantity = 98 '%' "percent"
-* bodySite = $sct#11527006 "Arterial system structure (body structure)"
+* bodySite = $sct#11527006 "Arterial system structure"

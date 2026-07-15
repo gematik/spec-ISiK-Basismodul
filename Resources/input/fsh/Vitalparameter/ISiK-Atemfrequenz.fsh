@@ -25,7 +25,7 @@ Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#9279-1 "Atemfrequenz"
-* code.coding[snomed] = $sct#86290005 "Respiratory rate"
+* code.coding[snomed] = $sct#86290005 "Atemfrequenz"
 * code.coding[IEEE11073] = $IEEE11073#151562 "MDC_RESP_RATE"
 * code.text = "Atemfrequenz"
 * subject = Reference(PatientinMusterfrau)
@@ -58,7 +58,7 @@ Usage: #example
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 35 '/min' "Atemzüge pro Minute"
 * method = $sct#37931006 "Auscultation"
-* bodySite.coding = $sct#181216001 "Entire chest"
+* bodySite.coding = $sct#181216001 "Entire lung"
   * version = "http://snomed.info/sct/11000274103/version/20251115"
 * interpretation = $v3-ObservationInterpretation#H "High"
 * note.text = "Tachypnoe bei akuter respiratorischer Insuffizienz"

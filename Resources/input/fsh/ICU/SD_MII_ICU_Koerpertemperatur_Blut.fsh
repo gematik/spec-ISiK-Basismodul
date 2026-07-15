@@ -21,7 +21,7 @@ Usage: #example
 * status = #final
 * code
   * coding[specific-loinc] = $loinc#60834-9 "Körpertemperatur - gemessen im Blut"
-  * coding[snomed] = $sct#1222808002 "Core body temperature measured in blood"
+  * coding[snomed] = $sct#1222808002 "Körperkerntemperatur im Blut gemessen"
   * coding[specific-IEEE-11073] = $IEEE11073#188436 "Blood temperature"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod

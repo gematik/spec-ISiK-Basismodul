@@ -21,11 +21,11 @@ Usage: #example
 * status = #final
 * code
   * coding[specific-loinc] = $loinc#60836-4 "Esophageal temperature"
-  * coding[snomed] = $sct#431598003 "Core body temperature measured in esophagus"
+  * coding[snomed] = $sct#431598003 "Körperkerntemperatur gemessen im Ösophagus"
   * coding[specific-IEEE-11073] = $IEEE11073#150372 "MDC_TEMP_ESOPH"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
 * valueQuantity = 37 'Cel' "degree Celsius"
-* bodySite = $sct#32849002 "Esophageal structure (body structure)"
+* bodySite = $sct#32849002 "Esophageal structure"

@@ -65,7 +65,7 @@ Usage: #example
 * effectiveDateTime = "2024-01-15T14:30:00+01:00"
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 100 '%' "%"
-* method = $sct#252465000 "Pulse oximetry"
+* method = $sct#252465000 "Pulsoxymetrie"
 * bodySite = $sct#7569003 "Finger structure"
 * interpretation = $v3-ObservationInterpretation#N "Normal"
 * note.text = "Kontinuierliches Monitoring unter Beatmung mit 100% Sauerstoff"

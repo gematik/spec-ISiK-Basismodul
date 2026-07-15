@@ -133,7 +133,7 @@ Instance: ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel
 InstanceOf: ISiKSchwangerschaftErwarteterEntbindungstermin
 Usage: #example
 Title: "ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"
-* code.coding[loinc] = $loinc#11779-6 "Entbindungstermin, geschätzt aus letzter Menstruationsperiode"
+* code.coding[loinc] = $loinc#11779-6 "Entbindungstermin, geschätzt aus der letzten Menstruationsperiode"
   * version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)

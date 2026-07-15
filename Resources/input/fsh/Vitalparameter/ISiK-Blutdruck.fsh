@@ -99,7 +99,7 @@ Usage: #example
 * performer.reference = "Practitioner/example"
 * interpretation = $v3-ObservationInterpretation#L "low"
 * interpretation.text = "Below low normal"
-* bodySite = $sct#368209003 "Right arm"
+* bodySite = $sct#368209003 "Right upper arm structure"
 * component[SystolicBP]
   * code.coding[IEEE11073] = $IEEE11073#150017 "MDC_PRESS_BLD_SYS"
   * code.coding[SCT] = $sct#271649006 "Systolischer Blutdruck"
