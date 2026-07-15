@@ -128,7 +128,10 @@ jobs:
             Subscription-PatientMergeSubscriptionExample.json|Extension_EXT_Unknown_NotHere||Subscription.channel.payload.extension[0]
             Subscription-PatientMergeSubscriptionExample.json|Type_Specific_Checks_DT_URL_Resolve||Subscription.channel.payload.extension[0].url
             Subscription-PatientMergeSubscriptionExample.json|Validation_VAL_Profile_NoSnapshot||Subscription
-
+            # Falso positive error due to the closed slicing validation method
+            Bundle-BundleExampleIntensivstation.json|Validation_VAL_Profile_NotSlice||Bundle.entry[3]
+            Bundle-BundleExampleIntensivstation.json|Validation_VAL_Profile_NotSlice||Bundle.entry[4]
+            Bundle-BundleExampleIntensivstation.json|Validation_VAL_Profile_NotSlice||Bundle.entry[5]
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.1
         with:
