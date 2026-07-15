@@ -225,7 +225,4 @@ Description: "ISiKStillstatusBeispiel"
 * effectiveDateTime = "2024-01-01"
 * valueCodeableConcept = $loinc#LA29252-6 "Currently breastfeeding"
 * encounter = Reference(Fachabteilungskontakt)
-<<<<<<< HEAD
 * performer = Reference(PractitionerWalterArzt)
-=======
->>>>>>> main-stufe-5
