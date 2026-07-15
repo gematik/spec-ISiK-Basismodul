@@ -9,6 +9,18 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
+
+## Erklärung zum Status
+
+Datum: 15.07.2026
+
+Dieser Implementierungsleitfaden ist obsolet, da er nicht normativ bindend ist und eine neue Version in der [Stufe 6](https://simplifier.net/isik-stufe-6) vorliegt.
+Implementierende sollen sich an dieser aktuellen Stufe ausrichten.
+
+
+Dies bedeutet, dass an diesem Implementierungsleitfaden ab heute keine Änderungen mehr vorgenommen werden.
+Die zugehörigen Ressourcen werden aus dem Package der Stufe 5 entfernt.
+
 ## Version 5.1.2
 
 Datum: 22.04.2026
