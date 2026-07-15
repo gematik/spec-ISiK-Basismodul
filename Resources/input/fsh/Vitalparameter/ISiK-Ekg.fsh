@@ -40,6 +40,10 @@ Usage: #example
 * code.coding[loinc] = $loinc#11524-6 "EKG study"
 * code.coding[snomed] = $sct#106073009 "EKG wave, interval AND/OR segment"
   * version = "http://snomed.info/sct/11000274103/version/20251115"
+* status = #final
+* category = $observation-category#procedure
+* device = Reference(ExampleDevice)
+* effectiveDateTime = "2019-07-02"
 * subject = Reference(PatientinMusterfrau)
 * performer = Reference(PractitionerWalterArzt)
 * component[+].code.coding = $sct#272729005 "Lead I"
