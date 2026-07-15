@@ -589,6 +589,7 @@ Usage: #example
 * location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
 * location[=].location.identifier.value = "B016"
 * location[=].location.display = "Bett B016"
+* location[=].status = #active
 * location[=].period.end = "2025-05-01T12:00:00+01:00"
 * location[=].status = #completed
 * location[+].physicalType = $LocationPhysicalType#bd "Bed"
