@@ -531,8 +531,7 @@ Usage: #example
 * location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationid"
 * location[=].location.identifier.value = "56789"
 * location[=].location.display = "Ward 56789"
-* location[=].status = #completed
-* location[=].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].status = #active
 * serviceProvider.identifier.system = "https://test.krankenhaus.de/fhir/sid/fachabteilungsid"
 * serviceProvider.identifier.value = "ORTHO-1234"
 * serviceProvider.display = "Fachabteilung für Orthopädie und Endoprothetik"
