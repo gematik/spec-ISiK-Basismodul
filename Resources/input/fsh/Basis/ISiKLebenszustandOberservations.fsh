@@ -108,8 +108,8 @@ Instance: ISiKSchwangerschaftsstatusBeispiel
 InstanceOf: ISiKSchwangerschaftsstatus
 Usage: #example
 Title: "ISiKSchwangerschaftsstatusBeispiel"
-* code = $loinc#82810-3 "Schwangerschaftsstatus"
-  * coding.version = "2.77"
+* code.coding[loinc] = $loinc#82810-3 "Schwangerschaftsstatus"
+* code.coding[loinc].version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
