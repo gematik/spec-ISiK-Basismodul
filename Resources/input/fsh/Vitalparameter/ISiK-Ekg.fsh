@@ -37,7 +37,7 @@ Das Profil ISiKEKG ist vom Profil [EkgDE](http://fhir.de/StructureDefinition/obs
 Instance: ISiKEKGExample
 InstanceOf: ISiKEKG
 Usage: #example
-* code.coding[loinc] = $loinc#11524-6 "EKG study"
+* code.coding[loinc] = $loinc#11524-6 "EKG-Bericht"
 * code.coding[snomed] = $sct#106073009 "EKG wave, interval AND/OR segment"
   * version = "http://snomed.info/sct/11000274103/version/20251115"
 * status = #final
