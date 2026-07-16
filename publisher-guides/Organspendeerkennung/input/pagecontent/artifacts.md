@@ -12,10 +12,22 @@ Auf dieser Seite befindet sich eine Liste der FHIR-Artefakte, welche im Rahmen d
 {% include artifacts-table-generator-isik.html resourceType="CapabilityStatement" nameContains="Rolle" withPurpose=true %}
 <div><figcaption><strong>Tabelle:</strong> Capability Statements - Rollen</figcaption></div>
 
-### Ressourcenprofile
+### Profile
 
-{% include artifacts-table-generator-isik.html resourceType="StructureDefinition" %}
-<div><figcaption><strong>Tabelle:</strong> Ressourcenprofile</figcaption></div>
+#### Datentyp-Profile
+
+{% include artifacts-table-generator-isik.html resourceType="StructureDefinition" filterKind="complex-type" filterTypeNotEquals="Extension" showType=true %}
+<div><figcaption><strong>Tabelle:</strong> Datentyp-Profile</figcaption></div>
+
+#### Extensions
+
+{% include artifacts-table-generator-isik.html resourceType="StructureDefinition" filterKind="complex-type" filterTypeEquals="Extension" %}
+<div><figcaption><strong>Tabelle:</strong> Extensions</figcaption></div>
+
+#### Ressourcen-Profile
+
+{% include artifacts-table-generator-isik.html resourceType="StructureDefinition" filterKind="resource" showType=true sortByType=true %}
+<div><figcaption><strong>Tabelle:</strong> Ressourcen-Profile</figcaption></div>
 
 ### Terminologien
 
@@ -33,6 +45,6 @@ Auf dieser Seite befindet sich eine Liste der FHIR-Artefakte, welche im Rahmen d
 
 ### Beispiele
 
-{% include example-list-generator.html %}
+{% include example-list-generator-isik.html %}
 <div><figcaption><strong>Tabelle:</strong> Beispiel-Instanzen</figcaption></div>
 

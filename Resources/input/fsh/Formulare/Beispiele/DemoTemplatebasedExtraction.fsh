@@ -8,7 +8,7 @@ Title: "DemoTemplatebasedExtractionQuestionnaire"
 * title = "DemoTemplatebasedExtractionQuestionnaire"
 * description = "### Beispiel-Questionnaire zur Demonstration der Template-basierten Extraktion von Patientendaten"
 * item[+] 
-  * insert tbeExtract(IsikPatientTemplate, [["('Patient/' + item.where(linkId = 'resourceId').answer.value)"]])
+  * insert tbeExtract(IsikPatientTemplate, [["item.where(linkId = 'resourceId').answer.value"]], [["('Patient/' + item.where(linkId = 'resourceId').answer.value)"]])
   * linkId = "patient"
   * text = "Patient Informationen"
   * type = #group
@@ -42,20 +42,20 @@ Title: "DemoTemplatebasedExtractionQuestionnaire"
       * valueCoding
         * system = "http://hl7.org/fhir/administrative-gender"
         * code = #unknown
-        * display = "Unbekannt"
+        * display = "Unknown"
       * initialSelected = true
     * answerOption[+].valueCoding
       * system = "http://hl7.org/fhir/administrative-gender"
       * code = #male
-      * display = "Männlich"
+      * display = "Male"
     * answerOption[+].valueCoding
       * system = "http://hl7.org/fhir/administrative-gender"
       * code = #female
-      * display = "Weiblich"
+      * display = "Female"
     * answerOption[+].valueCoding
       * system = "http://hl7.org/fhir/administrative-gender"
       * code = #other
-      * display = "Anderes"
+      * display = "Other"
   * item[+]
     * linkId = "birthDate"
     * text = "Geburtsdatum"

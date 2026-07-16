@@ -39,6 +39,21 @@ Description: "Enthaelt alle SNOMED Procedure Codes"
 * insert Meta
 * include codes from system SNOMED_CT where concept descendent-of #71388002
 
+ValueSet: ProzedurenReanimationCodesSCT
+Id: ProzedurenReanimationCodesSCT
+Description: "Enthaelt alle SNOMED Procedure Codes für Reanimationsmaßnahmen"
+* insert Meta
+* include codes from system SNOMED_CT where concept descendent-of #439569004
+
+ValueSet: ProzedurenReanimationCodesOPS
+Id: ProzedurenReanimationCodesOPS
+Description: "Enthaelt alle OPS Procedure Codes für Reanimationsmaßnahmen"
+* insert Meta
+* ^language = #de-DE
+* $ops#8-771 "Kardiale oder kardiopulmonale Reanimation"
+* $ops#8-772 "Operative Reanimation"
+* $ops#8-779 "Andere Reanimationsmaßnahmen"
+
 ValueSet: ProzedurenKategorieSCT
 Id: ProzedurenKategorieSCT
 Description: "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
@@ -48,6 +63,7 @@ Description: "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
 * SNOMED_CT#387713003 "Surgical procedure"
 * SNOMED_CT#18629005 "Administration of medicine"
 * SNOMED_CT#277132007 "Therapeutic procedure"
+* SNOMED_CT#439569004 "Resuscitation (procedure)"
 * SNOMED_CT#394841004 "Other category"
 
 ValueSet: ISiKAccountType
@@ -75,7 +91,7 @@ Title: "Schwangerschaft Erwarteter Entbindungstermin Methode"
 * $loinc#53692-0 "Delivery date Estimated from conception date"
 * $loinc#11780-4 "Delivery date Estimated from ovulation date"
 * $loinc#57063-0 "Delivery date Estimated from quickening date"
-* $loinc#11779-6 "Delivery date Estimated from last menstrual period"
+* $loinc#11779-6 "Entbindungstermin, geschätzt aus der letzten Menstruationsperiode"
 * $loinc#11781-2 "Delivery date US composite estimate"
 * $loinc#57064-8 "Delivery date Estimated from date fundal height reaches umb"
 * $loinc#90368-2 "Delivery date Estimated from physical exam"
@@ -93,24 +109,28 @@ ValueSet: ISiKBesondereBehandlungsformRehaVS
 Id: ISiKBesondereBehandlungsformReha
 Description: "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. Vgl. Schlüsseltabelle 2.51 Besondere Behandlungsformen."
 * insert Meta
+* ^language = #de-DE
 * include codes from system ISiKBesondereBehandlungsformRehaCS
 
 ValueSet: ISiKBehandlungsergebnisRehaVS
 Id: ISiKBehandlungsergebnisReha
 Description: "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis."
 * insert Meta
+* ^language = #de-DE
 * include codes from system ISiKBehandlungsergebnisRehaCS
 
 ValueSet: ISiKEntlassformRehaVS
 Id: ISiKEntlassformReha
 Description: "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform."
 * insert Meta
+* ^language = #de-DE
 * include codes from system ISiKEntlassformRehaCS
 
 ValueSet: ISiKUnterbrechungRehaVS
 Id: ISiKUnterbrechungReha
 Description: "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung."
 * insert Meta
+* ^language = #de-DE
 * include codes from system ISiKUnterbrechungRehaCS
 
 Alias: $m49.htm = http://unstats.un.org/unsd/methods/m49/m49.htm
@@ -156,3 +176,22 @@ Description: "HL7 LOINC value set for smoking status.  Based on the HL7 Vocab an
 * $loinc#LA18982-1 "Light tobacco smoker"
 * $loinc#LA18982-1 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
 * $loinc#LA18982-1 ^extension[=].valueDecimal = 8
+
+ValueSet: ISiKEncounterClassDE
+Id: ISiKEncounterClassDE
+Title: "ISiKEncounterClassDE"
+Description: "Erweitert das ValueSet EncounterClassDE der Deutschen Basisprofile um die Codes ACUTE, NONAC und OBSENC aus dem HL7 v3 ActCode System zur Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR). Ein Issue zur Aufnahme dieser Codes in EncounterClassDE wurde bei den Deutschen Basisprofilen eingereicht."
+* insert Meta
+* include codes from valueset EncounterClassDE
+* $v3-ActCode#ACUTE "inpatient acute"
+* $v3-ActCode#NONAC "inpatient non-acute"
+* $v3-ActCode#OBSENC "observation encounter"
+
+ValueSet: ISiKEncounterTypeErweiterungVS
+Id: ISiKEncounterTypeErweiterungVS
+Title: "ISiKEncounterTypeErweiterungVS"
+Description: "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen."
+* insert Meta
+* ^language = #de-DE
+* include codes from system http://fhir.de/CodeSystem/kontaktart-de
+* include codes from system ISiKEncounterTypeErweiterung

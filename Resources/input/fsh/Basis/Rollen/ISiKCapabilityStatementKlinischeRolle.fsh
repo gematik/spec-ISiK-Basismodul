@@ -115,7 +115,7 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
     * insert CommonSearchParameters 
     * insert OptionalTagSearchParameter
     * searchParam[+]
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
       * name = "clinical-status"
       * definition = "http://hl7.org/fhir/SearchParameter/Condition-clinical-status"
       * type = #token

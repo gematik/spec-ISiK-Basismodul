@@ -71,6 +71,8 @@ Description: "Data Type profile for ATC Codings in ISiK"
 * insert Meta
 * system 1.. MS
   * insert Coding-System-MS
+* version MS
+  * insert Coding-Version-MS
 * code 1.. MS
   * insert Coding-Code-MS
 * display MS

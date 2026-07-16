@@ -1,7 +1,3 @@
----
-topic: Architekturoptionen
----
-
 Im folgenden werden beispielhaft Architekturen dargestellt, die das Zusammenspiel von Systemen im Kontext der Terminplanung darstellen.
 
 ### KIS als terminführendes System

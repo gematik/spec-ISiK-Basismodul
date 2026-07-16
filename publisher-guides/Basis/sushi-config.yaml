@@ -3,11 +3,11 @@ canonical: https://gematik.de/fhir/isik
 name: ISiKBasisImplementationGuide
 title: ISiK Basis Implementierungsleitfaden
 description: Implementation guide for the Basis module based on ISiK specifications.
-status: draft
-version: 6.0.0-rc
+status: active
+version: 6.0.0
 fhirVersion: 4.0.1
 copyrightYear: 2026+
-releaseLabel: ci-build
+releaseLabel: active
 license: Apache-2.0
 publisher:
   name: gematik GmbH
@@ -15,15 +15,17 @@ publisher:
 
 applyExtensionMetadataToRoot: false
 dependencies:
-   hl7.fhir.extensions.r5: 4.0.1
-   hl7.fhir.uv.ips: 1.1.0
-   hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
-   de.basisprofil.r4: 1.5.4
-   de.ihe-d.terminology: 3.0.1
-   dvmd.kdl.r4: 2025.0.1
-   ihe.formatcode.fhir: 1.4.0
+  hl7.fhir.uv.xver-r5.r4: 0.1.0
+  hl7.fhir.uv.ips: 2.0.0
+  hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
+  de.basisprofil.r4: 1.6.0
+  de.ihe-d.terminology: 3.0.1
+  ihe.formatcode.fhir: 1.4.0
+  hl7.fhir.uv.sdc: 4.0.0
+  de.gematik.terminology: 1.0.6
+  de.gematik.ti: 1.3.1
+  de.fhir.medication: 1.0.7
 
-  
 pages:
   index.md:
     title: Einführung
@@ -45,30 +47,32 @@ pages:
     title: "Szenario 2: Kreuz-Stern-Diagnose"
   Index_Festlegungen.md:
     title: Festlegungen
-  UebergreifendeFestlegungen_Methodik.md:
-    title: Methodik
-  UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.md:
-    title: Bestätigungsrelevante Systeme
-  KompatibilitaetDerGematikSpezifikation_Andere.md:
-    title: Kompatibilität der gematik-Spezifikation
-  KompatibilitaetDerGematikSpezifikation_IHE.md:
-    title: Kompatibilität der gematik-Spezifikation IHE
-  UebergreifendeFestlegungen_Must-Support-Flags.md:
-    title: Must-Support-Flags
-  UebergreifendeFestlegungen_Repraesentationsformate.md:
-    title: Repräsentationsformate
-  UebergreifendeFestlegungen_Suchparameter.md:
-    title: Allgemeine Hinweise zu Suchparametern
-  UebergreifendeFestlegungen_Rest.md:
-    title: REST-API
-  UebergreifendeFestlegungen_Performance.md:
-    title: Performance
-  Patient-Besuch-Kontext.md:
-    title: Herstellung von Patienten- und Besuchskontext
-  UebergreifendeFestlegungen_UmgangFehlendeDaten.md:
-    title: Umgang mit fehlenden Daten
-  UebergreifendeFestlegungen_FHIR_Artefakte.md:
-    title: Umgang mit FHIR-Artefakten
+    UebergreifendeFestlegungen_Methodik.md:
+      title: Methodik
+    UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.md:
+      title: Bestätigungsrelevante Systeme
+    KompatibilitaetDerGematikSpezifikation_Andere.md:
+      title: Kompatibilität der gematik-Spezifikation
+    KompatibilitaetDerGematikSpezifikation_IHE.md:
+      title: Kompatibilität der gematik-Spezifikation IHE
+    KompatibilitaetDerGematikSpezifikation_HL7Europe.md:
+      title: Kompatibilität der gematik-Spezifikation HL7 Europe
+    UebergreifendeFestlegungen_Must-Support-Flags.md:
+      title: Must-Support-Flags
+    UebergreifendeFestlegungen_Repraesentationsformate.md:
+      title: Repräsentationsformate
+    UebergreifendeFestlegungen_Suchparameter.md:
+      title: Allgemeine Hinweise zu Suchparametern
+    UebergreifendeFestlegungen_Rest.md:
+      title: REST-API
+    UebergreifendeFestlegungen_Performance.md:
+      title: Performance
+    Patient-Besuch-Kontext.md:
+      title: Herstellung von Patienten- und Besuchskontext
+    UebergreifendeFestlegungen_UmgangFehlendeDaten.md:
+      title: Umgang mit fehlenden Daten
+    UebergreifendeFestlegungen_FHIR_Artefakte.md:
+      title: Umgang mit FHIR-Artefakten
   artifacts.md:  
     title: FHIR-Artefakte
 
@@ -82,11 +86,11 @@ menu:
     Akteurs- und Rollenmodell: Erlaeuterung-Akteurs-und-Rollenmodell.html
     Beispielszenarien: Index_Beispielszenarien.html
   Festlegungen:
-    Festlegungen: Index_Festlegungen.html
     Methodik: UebergreifendeFestlegungen_Methodik.html
     Bestätigungsrelevante Systeme: UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html
     Kompatibilität der gematik-Spezifikation Andere: KompatibilitaetDerGematikSpezifikation_Andere.html
     Kompatibilität der gematik-Spezifikation IHE: KompatibilitaetDerGematikSpezifikation_IHE.html
+    Kompatibilität der gematik-Spezifikation HL7 Europe: KompatibilitaetDerGematikSpezifikation_HL7Europe.html
     Must-Support-Flags: UebergreifendeFestlegungen_Must-Support-Flags.html
     Repräsentationsformate: UebergreifendeFestlegungen_Repraesentationsformate.html
     Suchparameter: UebergreifendeFestlegungen_Suchparameter.html
@@ -99,7 +103,12 @@ menu:
  
 
 parameters:
-  no-validate: true
+  display-warnings: true
+  path-expansion-params: ../../input/resources/Parameters-exp-params.json
+  special-url:
+    - http://example.org/fhir/CodeSystem/TestKatalog
+    - http://example.org/fhir/ValueSet/TestValueSet
+
 
 #und ggfs noch:
 #  no-narrative: true

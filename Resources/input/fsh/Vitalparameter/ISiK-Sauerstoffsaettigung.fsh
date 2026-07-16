@@ -2,12 +2,15 @@ Profile: ISiKSauerstoffsaettigungArteriell
 Parent: VitalSignDE_Arterielle_Sauerstoffsaettigung
 Id: ISiKSauerstoffsaettigungArteriell
 Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die arterielle Sauerstoffsättigung eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
-### Motivation
+
+**Motivation**
+
 Die Erfassung und Überwachung der arteriellen Sauerstoffsättigung ist essenziell für die Beurteilung der respiratorischen Funktion, die Überwachung von Patienten mit Atemwegserkrankungen sowie die Unterstützung klinischer Entscheidungen, insbesondere in kritischen Versorgungssituationen.
 
 In FHIR wird die arterielle Sauerstoffsättigung mit der Observation-Ressource repräsentiert.
 
-### Kompatibilität
+**Kompatibilität**
+
 Das Profil ISiKSauerstoffsaettigungArteriell ist vom Profil [VitalSignDE_Arterielle_Sauerstoffsaettigung_Pulsoximetrie](http://fhir.de/StructureDefinition/observation-de-vitalsign-sauerstoffsaettigung-pulsoximetrie) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Oxygen Saturation Profile](http://hl7.org/fhir/StructureDefinition/oxygensat) aus der FHIR R4 Spezifikation."
 * insert Meta
 * insert CommonElements
@@ -24,7 +27,7 @@ InstanceOf: ISiKSauerstoffsaettigungArteriell
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#2708-6 "Oxygen saturation in Arterial blood"
+* code = $loinc#2708-6 "Sauerstoffsättigung in arteriellem Blut"
 * code.coding[snomed] = $sct#442476006 "Arterial oxygen saturation"
 * code.coding[IEEE11073] = $IEEE11073#150324 "MDC_SAT_O2_ART"
 * code.text = "Pulsoximetrische Sauerstoffsättigung"
@@ -32,11 +35,11 @@ Usage: #example
 * effectiveDateTime = "2020-10-11"
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 98 '%' "%"
-* component[0].code.coding[0] = $loinc#3151-8 "Inhaled oxygen flow rate"
+* component[0].code.coding[0] = $loinc#3151-8 "Inhalierter Sauerstoff - Flussrate"
 * component[=].code.coding[+] = $sct#427081008 "Delivered oxygen flow rate"
 * component[=].code.text = "Sauerstoffflussrate"
 * component[=].valueQuantity = 2 'L/min' "Liter pro Minute"
-* component[+].code.coding[0] = $loinc#3150-0 "Inhaled oxygen concentration"
+* component[+].code.coding[0] = $loinc#3150-0 "Inhalierte Sauerstoffkonzentration"
 * component[=].code.coding[+] = $sct#250774007 "Inspired oxygen concentration"
 * component[=].code.text = "Inspiratorische Sauerstoffkonzentration"
 * component[=].valueQuantity = 50 '%' "%"
@@ -46,7 +49,7 @@ InstanceOf: ISiKSauerstoffsaettigungArteriell
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#2708-6 "Oxygen saturation in Arterial blood"
+* code = $loinc#2708-6 "Sauerstoffsättigung in arteriellem Blut"
 * subject = Reference(PatientinMinimal)
 * effectiveDateTime = "2024-01-15"
 * valueQuantity = 85 '%' "%"
@@ -56,7 +59,7 @@ InstanceOf: ISiKSauerstoffsaettigungArteriell
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#2708-6 "Oxygen saturation in Arterial blood"
+* code = $loinc#2708-6 "Sauerstoffsättigung in arteriellem Blut"
 * code.coding[snomed] = $sct#442476006 "Arterial oxygen saturation"
 * code.coding[IEEE11073] = $IEEE11073#150324 "MDC_SAT_O2_ART"
 * code.text = "Pulsoximetrische Sauerstoffsättigung - Intensivmonitoring"
@@ -64,16 +67,16 @@ Usage: #example
 * effectiveDateTime = "2024-01-15T14:30:00+01:00"
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 100 '%' "%"
-* method = $sct#252465000 "Pulse oximetry"
+* method = $sct#252465000 "Pulsoxymetrie"
 * bodySite = $sct#7569003 "Finger structure"
 * interpretation = $v3-ObservationInterpretation#N "Normal"
 * note.text = "Kontinuierliches Monitoring unter Beatmung mit 100% Sauerstoff"
 * device = Reference(ExampleDevice)
-* component[0].code.coding[0] = $loinc#3151-8 "Inhaled oxygen flow rate"
+* component[0].code.coding[0] = $loinc#3151-8 "Inhalierter Sauerstoff - Flussrate"
 * component[=].code.coding[+] = $sct#427081008 "Delivered oxygen flow rate"
 * component[=].code.text = "Sauerstoffflussrate"
 * component[=].valueQuantity = 15 'L/min' "Liter pro Minute"
-* component[+].code.coding[0] = $loinc#3150-0 "Inhaled oxygen concentration"
+* component[+].code.coding[0] = $loinc#3150-0 "Inhalierte Sauerstoffkonzentration"
 * component[=].code.coding[+] = $sct#250774007 "Inspired oxygen concentration"
 * component[=].code.text = "Inspiratorische Sauerstoffkonzentration - FiO2"
 * component[=].valueQuantity = 100 '%' "%"

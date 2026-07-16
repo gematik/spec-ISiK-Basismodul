@@ -1,7 +1,7 @@
 Profile: ISiKLaboruntersuchungHb
 Parent: ISiKLaboruntersuchung
 Id: ISiKLaboruntersuchungHb
-Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Hb eines Patienten in ISiK Szenarien."
+Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Hämoglobin-Wertes (Hb) eines Patienten in ISiK Szenarien."
 * insert Meta
 * insert CommonElements
 * code.coding[loinc] from ObservationCodesHb
@@ -17,12 +17,12 @@ InstanceOf: ISiKLaboruntersuchungHb
 Usage: #example
 * status = #final
 * subject = Reference(PatientinMusterfrau)
-* category.coding[0] = $cs-observation-category#laboratory
+* category[observation-category] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#718-7
 * code.coding[snomed] = $sct#416125006 "Concentration of hemoglobin in erythrocyte"
 * valueQuantity = 11.4 $cs-ucum#g/dL
 * referenceRange
   * low = 12 $cs-ucum#g/dL
   * high = 16 $cs-ucum#g/dL
-  * appliesTo = $sct#248152002 "female"
+  * appliesTo = $sct#248152002 "Weiblich"
 * insert EffectiveAndPerformer

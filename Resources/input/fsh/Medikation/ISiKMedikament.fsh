@@ -1,7 +1,34 @@
 Profile: ISiKMedikament
 Parent: Medication
 Id: ISiKMedikament
-Description: "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen Informationen zu Medikamenten in ISiK Szenarien."
+Description: """
+Dieses Profil ermöglicht die Abbildung von patientenunabhängigen Informationen zu Medikamenten in ISiK Szenarien.
+
+**Motivation**
+
+Die strukturierte Bereitstellung von Informationen zu Medikamenten ist eine zentrale Voraussetzung für eine interoperable Arzneimitteltherapie und unterstützt insbesondere Prozesse im Kontext der Arzneimitteltherapiesicherheit (AMTS) sowie der sektorenübergreifenden Versorgung.
+
+In FHIR werden Medikamente mit der [Medication](https://hl7.org/fhir/R4/medication.html)-Ressource repräsentiert.
+
+**Hinweise zur Verwendung von Medication.amount**
+
+`Medication.amount` beschreibt in FHIR R4 die Menge des Arzneimittels im verpackten Produkt bzw. Behältnis. Das Element ist nicht zur Abbildung der Wirkstoffstärke vorgesehen; diese wird über `Medication.ingredient.strength` dokumentiert.
+
+Beispiel: Enthält ein Infusionsbeutel 100 ml Paracetamol-Infusionslösung mit einer Wirkstoffkonzentration von 10 mg/ml, beschreibt `Medication.amount` die Füllmenge des Behältnisses, also `100 ml / 1 Beutel`. Die Wirkstoffkonzentration wird separat über `Medication.ingredient.strength` als `10 mg / 1 ml` angegeben.
+
+`Medication.amount` ist insbesondere dann relevant, wenn der Arzneimittelcode allein die konkrete Packungsgröße, Füllmenge oder Menge je Verpackungseinheit nicht eindeutig ausdrückt.
+
+**Kompatibilität**
+
+Für das Profil ISiKMedikament wird eine größtmögliche Kompatibilität mit dem Profil [epa-medication der gematik](https://gemspec.gematik.de/ig/fhir/epa-medication) angestrebt. Ziel ist insbesondere eine vergleichbare semantische Struktur zur Unterstützung interoperabler Nutzungsszenarien.
+
+Die spezifischen Extensions des epa-medication-Profils werden in diesem Profil jedoch nicht übernommen. Stattdessen erlaubt das Profil die Nutzung von Extensions, um projektspezifische Anforderungen abzubilden.
+
+Es kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKMedikament valide sind, auch valide gegen das epa-medication-Profil sind.
+
+Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.
+"""
+// * insert CompliesWith(http://hl7.eu/fhir/mpd/StructureDefinition/Medication-eu-mpd)
 * insert Meta
 * insert CommonElements
 * obeys isik-med-1
@@ -50,13 +77,13 @@ Description: "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen
   * coding[EDQM] from $vs-edqm-doseform (required)
   * coding[EDQM] only ISiKCoding
 * amount MS
-  * ^comment = "Begründung des Must-Support: Bei einer Medikation MUSS die Menge dokumentierbar sein"
-  * ^short = "Menge"
+  * ^comment = "Begründung des Must-Support: Die Packungsgröße bzw. Füllmenge kann erforderlich sein, um ein Arzneimittelprodukt eindeutig von anderen Produkten gleicher Wirkstoffstärke und Darreichungsform zu unterscheiden."
+  * ^short = "Menge des Arzneimittels im verpackten Produkt bzw. Behältnis"
   * numerator 1.. MS
-    * ^comment = "Begründung des Must-Support: Bei einer Medikation MUSS die Menge dokumentierbar sein"
+    * ^comment = "Begründung des Must-Support: Gibt die enthaltene Menge bzw. Füllmenge an, z.B. `100 ml`."
   * numerator only MedicationQuantity
   * denominator 1.. MS
-    * ^comment = "Begründung des Must-Support: Bei einer Medikation MUSS die Menge dokumentierbar sein"
+    * ^comment = "Begründung des Must-Support: Gibt die zugehörige Verpackungs- oder Bezugseinheit an, z.B. `1 Beutel`."
   * denominator only MedicationQuantity
 * ingredient MS
   * ^short = "Informationen zu Bestandteilen (Rezeptur)"
@@ -66,7 +93,7 @@ Description: "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen
     * ^short = "Wirkstofftyp"
     * ^comment = "Begründung des Must-Support: Alignment mit den MII-Profilen
 
-    Hinweis: Hiermit kann geklärt werden, ob es sich um eine Angabe zum Wirkstoff oder zum exakten Inhaltsstoff (z.B. Salze) handelt."
+  Hinweis: Hiermit kann geklärt werden, ob es sich um eine Angabe zum Wirkstoff oder zum exakten Inhaltsstoff (z.B. Salze) handelt."
   * itemCodeableConcept MS
     * ^short = "Bestandteil in codierter Form oder ggf. als Freitext"
     * ^comment = "Begründung des Must-Support: Der Bestandteil muss eindeutig benannt sein"
@@ -113,7 +140,7 @@ Description: "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen
     * ^short = "Chargennummer"
     * ^comment = "Begründung des Must-Support: Therapiesicherheit und Nachvollziehbarkeit
 
-    Hinweis: Gemäß Anlage 1 der TA7 kann hier übergangsweise bis zum 30. Juni 2025 eine Musterchargennummer (\"STELLEN\") eingetragen werden. Wenn die Übermittlung der Chargenbezeichnung beim Stellen von Arzneimitteln technisch nicht möglich ist, z.B. beim Verblistern, wird von der Verpflichtung zur Chargendokumentation abgesehen. Dementsprechend kann anstatt der tatsächlichen Chargenbezeichnungen \"STELLEN\" in das hierbeschirebene Datenfeld eingetragen werden."
+  Hinweis: Gemäß Anlage 1 der TA7 kann hier übergangsweise bis zum 30. Juni 2025 eine Musterchargennummer (\"STELLEN\") eingetragen werden. Wenn die Übermittlung der Chargenbezeichnung beim Stellen von Arzneimitteln technisch nicht möglich ist, z.B. beim Verblistern, wird von der Verpflichtung zur Chargendokumentation abgesehen. Dementsprechend kann anstatt der tatsächlichen Chargenbezeichnungen \"STELLEN\" in das hierbeschirebene Datenfeld eingetragen werden."
 
 Invariant: isik-med-1
 Description: "Medikamenten-Code, -Bezeichnung oder Inhaltsstoffe müssen angegeben werden."

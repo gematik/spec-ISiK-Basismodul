@@ -6,21 +6,10 @@
       "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"
     ]
   },
-  "subjectType": [
-    "Patient"
-  ],
   "contained": [
     {
       "resourceType": "Patient",
       "id": "IsikPatientTemplate",
-      "_id": {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-            "valueString": "item.where(linkId = 'resourceId').answer.value"
-          }
-        ]
-      },
       "meta": {
         "profile": [
           "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
@@ -60,6 +49,7 @@
           }
         },
         {
+          "system": "http://fhir.de/sid/gkv/kvid-10",
           "type": {
             "coding": [
               {
@@ -68,7 +58,6 @@
               }
             ]
           },
-          "system": "http://fhir.de/sid/gkv/kvid-10",
           "_value": {
             "extension": [
               {
@@ -209,12 +198,16 @@
       }
     }
   ],
+  "language": "de-DE",
   "name": "DemoTemplatebasedExtractionQuestionnaire",
   "version": "0.1.0",
   "url": "https://gematik.de/fhir/isik/Questionnaire/DemoTemplatebasedExtractionQuestionnaire",
   "status": "draft",
   "experimental": false,
   "publisher": "Gematik GmbH",
+  "subjectType": [
+    "Patient"
+  ],
   "extension": [
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
@@ -250,6 +243,10 @@
               "valueReference": {
                 "reference": "#IsikPatientTemplate"
               }
+            },
+            {
+              "url": "resourceId",
+              "valueString": "item.where(linkId = 'resourceId').answer.value"
             },
             {
               "url": "fullUrl",
@@ -338,7 +335,7 @@
               "valueCoding": {
                 "system": "http://hl7.org/fhir/administrative-gender",
                 "code": "unknown",
-                "display": "Unbekannt"
+                "display": "Unknown"
               },
               "initialSelected": true
             },
@@ -346,21 +343,21 @@
               "valueCoding": {
                 "system": "http://hl7.org/fhir/administrative-gender",
                 "code": "male",
-                "display": "Männlich"
+                "display": "Male"
               }
             },
             {
               "valueCoding": {
                 "system": "http://hl7.org/fhir/administrative-gender",
                 "code": "female",
-                "display": "Weiblich"
+                "display": "Female"
               }
             },
             {
               "valueCoding": {
                 "system": "http://hl7.org/fhir/administrative-gender",
                 "code": "other",
-                "display": "Anderes"
+                "display": "Other"
               }
             }
           ]

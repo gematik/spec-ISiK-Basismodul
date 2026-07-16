@@ -1,7 +1,3 @@
----
-topic: Patient-merge
----
-
 ### Motivation
 Im Rahmen von Krankenhausbesuchen umfassen u.a. die Aufnahme-Workflows regelmäßig die manuelle Bearbeitung von Patientenstammdaten. Daher ist hier das Risiko redundant persistierter Patientendaten stets vorhanden. Dies hat auch zur Folge, dass Zusammenführungen von Patientendaten in Krankenhäusern an der Tagesordnung stehen. 
 
@@ -15,7 +11,7 @@ Alle hier getroffenen Festlegungen haben den normativen Status einer KANN-Anford
 Eine Prüfung im Rahmen des Bestätigungsverfahrens zur *Patient merge Notification* ist in der jetzigen Entwicklungsstufe nicht vorgesehen.
 
 ### Zweck und Definition *Patient merge Notification*
-Zweck dieses Abschnitts ist eine Festlegung darüber zu treffen, wie externe Clients Patient-merge-Vorgänge nachvollziehen und entsprechend verarbeiten können.
+Zweck dieses Abschnitts ist es, eine Festlegung zu treffen, wie externe Clients Patient-merge-Vorgänge nachvollziehen und entsprechend verarbeiten können.
 Entsprechend wird hier eine Festlegung zur Kommunikation eines stattgefundenen *Patient merges* gegenüber einem Subsystem oder einem externen Service - u.a. mittels FHIR Subscriptions - festgelegt.
 
 **Definition**: Der Workflow 'Patient merge Notification' entspricht der Benachrichtigung angeschlossener Systeme  über den erfolgreichen *Patient merge*. Die Benachrichtigung unterstützt das Kernziel einer reibungslosen Kommunikation zwischen zwei Systemen, nachdem ein *Patient merge* stattgefunden hat. Durch die Benachrichtigung wird ein fehlerhafter Abruf oder falsche Referenzierung einer alten Patientenressource von Seiten des Clients verhindert oder diesem zumindest vorgebeugt und damit eine Verbesserung der Qualität hinsichtlich Robustheit und damit auch eine Stärkung der Praxistauglichkeit von ISiK als Schnittstellen-Lösung erreicht.
@@ -80,18 +76,134 @@ Sollte die Patienten-Ressource nicht mehr bereitstehen, oder die Ressource den s
 
 #### Datensicherheit Client
 
-**Hinweis**: Die "patient-merge Subscription-Notification" kann personenbezogene Daten versenden, falls man "full-resource" als Content-Code gewählt hat. Für den REST-Hook sollte daher stets ein HTTPS-Endpunkt genutzt werden. Zusätzlich kann Subscription.channel.header genutzt werden, um einen Autorisierungs-Header an den Endpunkt zu übertragen.   
+ISiK-konforme Subscription-Notifications MÜSSEN mit `payload=id-only` versendet werden.
+Die Notification enthält die ID der geänderten Ressource, jedoch keine vollständigen Ressourcendaten.
+Clients rufen die aktuelle Ressource nach Erhalt der Notification gezielt per ID über die reguläre
+FHIR-REST-API mit gültigem Autorisierungstoken ab (Pull-Prinzip).
+
+Optional KANN über `Subscription.channel.header` eine HTTP Basic Authentication mit statischem Secret konfiguriert
+werden. Dieses Feld MUSS vom Server bei READ-Interaktionen maskiert werden.
+
 Siehe auch: [Safety and Security, Subscription Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/safety_security.html)
 
-In jedem Fall sind auch Client-seitig die notwendigen Maßnahmen zu ergreifen, um eine sichere Kommunikation personenbezogener Daten zu gewährleisten.
+### Beispiel für eine Patient Merge Subscription
 
-#### Websocket
+```json
+{
+  "resourceType": "Subscription",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscription"
+    ]
+  },
+  "channel": {
+    "type": "rest-hook",
+    "endpoint": "https://example.org/fhir/notification",
+    "payload": "application/fhir+json",
+    "_payload": {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content",
+          "valueCode": "id-only"
+        }
+      ]
+    },
+    "header": [
+      "Authorization: Bearer xxxxxxxxxx"
+    ]
+  },
+  "status": "requested",
+  "reason": "Patient merge subscription",
+  "criteria": "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge"
+}
+```
 
-Hier muss sich der Client per [`$get-ws-binding-token` Operation](https://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition-backport-subscription-get-ws-binding-token.html) einen Token zum Zugriff auf den Websocket-Endpunkt des patientenführenden Systems holen. In der Operation-Response sind zusätzlich die Expiration-Dauer, sowie der Websocket-Endpunkt enthalten.  
-Siehe auch: [Subscriptions R5 Backport IG, Websocket](https://hl7.org/fhir/uv/subscriptions-backport/channels.html#websockets)
+Nach erfolgreicher Patientenzusammenführung würde ein abonnierter Client eine Notification als Bundle mit `SubscriptionStatus` erhalten, z.B.:
 
-### Beispiele
-Die *Patient merge Notification* kann folgendermaßen illustriert werden: 
+```json
+{
+  "resourceType": "Bundle",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscriptionNotification"
+    ]
+  },
+  "type": "history",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:9bb6fcbd-8391-4e35-bd4c-620a2db47af0",
+      "resource": {
+        "resourceType": "Parameters",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscriptionStatus"
+          ]
+        },
+        "parameter": [
+          {
+            "name": "subscription",
+            "valueReference": {
+              "reference": "Subscription/PatientMergeSubscriptionExample"
+            }
+          },
+          {
+            "name": "topic",
+            "valueCanonical": "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge"
+          },
+          {
+            "name": "status",
+            "valueCode": "active"
+          },
+          {
+            "name": "type",
+            "valueCode": "event-notification"
+          },
+          {
+            "name": "events-since-subscription-start",
+            "valueString": "1"
+          },
+          {
+            "name": "notification-event",
+            "part": [
+              {
+                "name": "event-number",
+                "valueString": "1"
+              },
+              {
+                "name": "timestamp",
+                "valueInstant": "2026-03-12T17:05:00+01:00"
+              },
+              {
+                "name": "focus",
+                "valueReference": {
+                  "reference": "Patient/DorisZiel"
+                }
+              },
+              {
+                "name": "additional-context",
+                "valueReference": {
+                  "reference": "Patient/DorisQuelle"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge/$status"
+      },
+      "response": {
+        "status": "200"
+      }
+    }
+  ]
+}
+```
+
+### Beispiele zur Patientenzusammenführung
+
+Die Patientenzusammenführung kann über Quell-, Ziel- und resultierende Patienten-Ressourcen illustriert werden.
 
 Es existieren fälschlicherweise zwei Instanzen im patientenführenden System, die sich lediglich hinsichtlich der organisationsspezifischen Patienten-ID unterscheiden.
 Diese sind:
@@ -267,6 +379,3 @@ Mittels eines *Patient merge* wird die "Ziel" Patienten-Ressource ausgewählt un
 }
 
 ```
-
-Da sich ein Client am patientenführenden System für das dedizierte SubscriptionTopic (http://hl7.org/SubscriptionTopic/patient-merge) registriert hat, erhält der Client eine Benachrichtigung in Form eines Bundles mit Verweis auf die resultierende Ressource.
-

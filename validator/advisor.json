@@ -59,6 +59,30 @@
     //Filter Bug with coding pattern only containing the system in the java validate (Issue: https://github.com/hapifhir/org.hl7.fhir.core/issues/2108 - can't filter on path, so filtering on message id only)
     "Unknown_Code_in_Version",
     //Filter Bug with ignoring the display language '-langage de' (https://github.com/hapifhir/org.hl7.fhir.core/issues/2111 - can't filter on path, so filtering on message id only)
-   "NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_ERR"
+   "NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_ERR",
+    // filters errors caused by the ISiKMedikationsInformation profile only allowing Range for dose, but examples using Quantity
+    "Extension_PROF_Type@MedicationStatement.dosage[0].doseAndRate[0].dose.ofType(Quantity)",
+    "Extension_PROF_Type@Bundle.entry[0].resource/*MedicationStatement/ExampleISiKMedikationsInformation1*/.dosage[0].doseAndRate[0].dose.ofType(Quantity)",
+    "Validation_VAL_Profile_NotAllowed@MedicationStatement.dosage[0].doseAndRate[0].dose.ofType(Quantity).value",
+    "Validation_VAL_Profile_NotAllowed@MedicationStatement.dosage[0].doseAndRate[0].dose.ofType(Quantity).unit",
+    "Validation_VAL_Profile_NotAllowed@MedicationStatement.dosage[0].doseAndRate[0].dose.ofType(Quantity).system",
+    "Validation_VAL_Profile_NotAllowed@MedicationStatement.dosage[0].doseAndRate[0].dose.ofType(Quantity).code",
+    "Validation_VAL_Profile_NotAllowed@Bundle.entry[0].resource/*MedicationStatement/ExampleISiKMedikationsInformation1*/.dosage[0].doseAndRate[0].dose.ofType(Quantity).value",
+    "Validation_VAL_Profile_NotAllowed@Bundle.entry[0].resource/*MedicationStatement/ExampleISiKMedikationsInformation1*/.dosage[0].doseAndRate[0].dose.ofType(Quantity).unit",
+    "Validation_VAL_Profile_NotAllowed@Bundle.entry[0].resource/*MedicationStatement/ExampleISiKMedikationsInformation1*/.dosage[0].doseAndRate[0].dose.ofType(Quantity).system",
+    "Validation_VAL_Profile_NotAllowed@Bundle.entry[0].resource/*MedicationStatement/ExampleISiKMedikationsInformation1*/.dosage[0].doseAndRate[0].dose.ofType(Quantity).code",
+    // KBV_VS_Base_Role_Care is currently not loadable through devDependencies, filtering the resulting error for now
+    "Validation_VAL_Profile_NotSlice@PractitionerRole.code[0].coding[0]",
+    // filters expected Encounter.location slicing errors caused by the temporary closed slicing
+    "Validation_VAL_Profile_NotSlice@Encounter.location[0]",
+    "Validation_VAL_Profile_NotSlice@Encounter.location[2]",
+    "Validation_VAL_Profile_NotSlice@Encounter.location[3]"
+  ],
+  "suppress-complies-with": [
+    "https://gematik.de/fhir/ti/StructureDefinition/ti-patient@Patient.name",
+    "https://gematik.de/fhir/ti/StructureDefinition/ti-patient@Patient.telecom",
+    "https://gematik.de/fhir/ti/StructureDefinition/ti-patient@Patient.photo",
+    "https://gematik.de/fhir/ti/StructureDefinition/ti-patient@Patient.generalPractitioner",
+    "https://gematik.de/fhir/ti/StructureDefinition/ti-patient@Patient.managingOrganization"
   ]
 }

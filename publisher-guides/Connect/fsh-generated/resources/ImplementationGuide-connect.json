@@ -1,11 +1,11 @@
 {
   "resourceType": "ImplementationGuide",
   "id": "connect",
-  "url": "http://example.org/fhir/isik/ImplementationGuide/connect",
-  "version": "6.0.0-rc",
+  "url": "https://gematik.de/fhir/isik/ImplementationGuide/connect",
+  "version": "6.0.0",
   "name": "ConnectISiKImplementationGuide",
   "title": "ISiK Connect Implementierungsleitfaden",
-  "status": "draft",
+  "status": "active",
   "publisher": "gematik GmbH",
   "contact": [
     {
@@ -24,8 +24,78 @@
   "fhirVersion": [
     "4.0.1"
   ],
+  "dependsOn": [
+    {
+      "packageId": "hl7.fhir.uv.xver-r5.r4",
+      "version": "0.1.0",
+      "uri": "http://hl7.org/fhir/uv/xver/ImplementationGuide/hl7.fhir.uv.xver-r5.r4",
+      "id": "hl7_fhir_uv_xver_r5_r4"
+    },
+    {
+      "packageId": "hl7.fhir.uv.ips",
+      "version": "2.0.0",
+      "uri": "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
+      "id": "hl7_fhir_uv_ips"
+    },
+    {
+      "packageId": "hl7.fhir.uv.subscriptions-backport.r4",
+      "version": "1.1.0",
+      "uri": "http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport",
+      "id": "hl7_fhir_uv_subscriptions_backport_r4"
+    },
+    {
+      "packageId": "de.basisprofil.r4",
+      "version": "1.6.0",
+      "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
+      "id": "de_basisprofil_r4"
+    },
+    {
+      "packageId": "de.ihe-d.terminology",
+      "version": "3.0.1",
+      "uri": "http://fhir.de/packages/de.ihe-d.terminology",
+      "id": "de_ihe_d_terminology"
+    },
+    {
+      "packageId": "ihe.formatcode.fhir",
+      "version": "1.4.0",
+      "uri": "https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir",
+      "id": "ihe_formatcode_fhir"
+    },
+    {
+      "packageId": "hl7.fhir.uv.sdc",
+      "version": "4.0.0",
+      "uri": "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
+      "id": "hl7_fhir_uv_sdc"
+    },
+    {
+      "packageId": "de.gematik.terminology",
+      "version": "1.0.6",
+      "uri": "https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology",
+      "id": "de_gematik_terminology"
+    },
+    {
+      "packageId": "de.gematik.ti",
+      "version": "1.3.1",
+      "uri": "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
+      "id": "de_gematik_ti"
+    },
+    {
+      "packageId": "de.fhir.medication",
+      "version": "1.0.7",
+      "uri": "http://ig.fhir.de/igs/medication/ImplementationGuide/de.fhir.medication",
+      "id": "de_fhir_medication"
+    }
+  ],
   "definition": {
-    "resource": [],
+    "resource": [
+      {
+        "reference": {
+          "reference": "Parameters/exp-params"
+        },
+        "exampleBoolean": false,
+        "name": "exp-params"
+      }
+    ],
     "page": {
       "nameUrl": "toc.html",
       "title": "Table of Contents",
@@ -110,11 +180,23 @@
       },
       {
         "code": "releaselabel",
-        "value": "STU1"
+        "value": "active"
       },
       {
-        "code": "no-validate",
+        "code": "display-warnings",
         "value": "true"
+      },
+      {
+        "code": "path-expansion-params",
+        "value": "../../input/resources/Parameters-exp-params.json"
+      },
+      {
+        "code": "special-url",
+        "value": "http://example.org/fhir/CodeSystem/TestKatalog"
+      },
+      {
+        "code": "special-url",
+        "value": "http://example.org/fhir/ValueSet/TestValueSet"
       }
     ]
   }

@@ -1,0 +1,83 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "ExampleISiKMedikationsVerordnungBedarfsmedikation",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedikationsart",
+      "valueCoding": {
+        "code": "akut",
+        "system": "https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS"
+      }
+    }
+  ],
+  "dosageInstruction": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "version": "http://snomed.info/sct/11000274103/version/20251115",
+                "code": "76948002",
+                "display": "Starke Schmerzen"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "version": "http://snomed.info/sct/11000274103/version/20251115",
+                "code": "50415004",
+                "display": "Moderate Schmerzen"
+              }
+            ]
+          }
+        }
+      ],
+      "asNeededBoolean": true,
+      "timing": {
+        "repeat": {
+          "frequency": 1,
+          "period": 6,
+          "periodUnit": "h"
+        }
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "Tablette",
+            "system": "http://standardterms.edqm.eu",
+            "code": "15054000"
+          }
+        }
+      ]
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "medicationReference": {
+    "reference": "Medication/ExampleISiKMedikament1"
+  },
+  "subject": {
+    "reference": "Patient/PatientinMusterfrau"
+  },
+  "encounter": {
+    "reference": "Encounter/Fachabteilungskontakt"
+  },
+  "authoredOn": "2026-04-24",
+  "requester": {
+    "reference": "Practitioner/PractitionerWalterArzt"
+  }
+}

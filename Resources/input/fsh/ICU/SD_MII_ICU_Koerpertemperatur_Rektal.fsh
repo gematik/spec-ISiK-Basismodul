@@ -21,11 +21,11 @@ Usage: #example
 * status = #final
 * code
   * coding[specific-loinc] = $loinc#8332-9 "Rectal temperature"
-  * coding[snomed] = $sct#307047009 "Core body temperature measured in rectum"
+  * coding[snomed] = $sct#307047009 "Rektaltemperatur"
   * coding[specific-IEEE-11073] = $IEEE11073#188420 "Rectal temperature"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
 * valueQuantity = 37 'Cel' "degree Celsius"
-* bodySite = $sct#34402009 "Rectum structure (body structure)"
+* bodySite = $sct#34402009 "Rectum structure"

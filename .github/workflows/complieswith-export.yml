@@ -1,0 +1,101 @@
+name: CompliesWith Export
+
+on:
+  pull_request:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: write
+  issues: write
+  pull-requests: write
+
+env:
+  COMPLIESWITH_DEPENDENCIES: |
+    hl7.fhir.eu.eps#current
+    hl7.fhir.eu.hdr#current
+    hl7.fhir.eu.base#current
+    hl7.fhir.eu.laboratory#current
+    hl7.fhir.eu.mpd#current
+    de.medizininformatikinitiative.kerndatensatz.base#2026.0.0
+    kbv.basis#1.8.0
+    de.gevko.emdaf#1.3.0
+
+jobs:
+  export_validation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || github.ref_name }}
+
+      - name: Add CompliesWith dependencies
+        env:
+          COMPLIESWITH_DEPENDENCIES: ${{ env.COMPLIESWITH_DEPENDENCIES }}
+        run: node scripts/complieswith/add-dependencies.js
+
+      - name: Uncomment CompliesWith inserts in FSH files
+        run: node scripts/complieswith/uncomment-inserts.js
+
+      - name: Run SUSHI
+        run: npx fsh-sushi Resources/ -s
+
+      - name: Filter validation targets
+        run: node scripts/complieswith/filter-validation-targets.js
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Download Java validator
+        run: curl -L https://github.com/jschoen-gefyra/org.hl7.fhir.core/releases/download/v6.9.8-snapshot-build/org.hl7.fhir.validation.cli-6.9.8-SNAPSHOT.jar -o validator_cli.jar
+        #https://github.com/hapifhir/org.hl7.fhir.core/releases/download/6.9.7/validator_cli.jar -o validator_cli.jar
+
+      - name: Run Java validator for CompliesWith
+        id: java_validator
+        continue-on-error: true
+        env:
+          VALIDATOR_JAR: validator_cli.jar
+          VALIDATION_DIR: Resources/fsh-generated/complieswith-validation
+          RESOLUTION_CONTEXT_DIR: Resources/fsh-generated/resources
+          ADVISOR_FILE: validator/advisor.json
+          RAW_LOG_PATH: validation-raw.log
+          DETAILS_JSON_PATH: validation-details.json
+        run: node scripts/complieswith/run-java-validator.js
+
+      - name: Check validation outputs
+        id: validation_outputs
+        if: always()
+        shell: bash
+        run: |
+          if [ -f validation-details.json ]; then
+            echo "has_validation_details=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_validation_details=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload validation artifacts
+        if: always() && steps.validation_outputs.outputs.has_validation_details == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: complieswith-export-validation-results
+          path: |
+            validation-details.json
+            validation-raw.log
+          retention-days: 1
+          if-no-files-found: warn
+
+      - name: Comment validation results on PR
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const run = require('./scripts/complieswith/update-pr-comment.js');
+            await run({ github, context, core });

@@ -1,7 +1,3 @@
----
-topic: UebergreifendeFestlegungen-UebergreifendeFestlegungen-Must-Support-Flags
----
-
 Das [Must-Support-Flag](https://hl7.org/fhir/R4/profiling.html#mustsupport) (MS-Flag) kennzeichnet Elemente, die auf bestimmte Weise unterstützt werden müssen. Sowohl für die Erstellung - d.h. das Exponieren der Ressource -, als auch für die Verarbeitung - d.h. den Umgang beim Eingang von extern - greifen die MS-Flag Festlegungen. 
 Die Verwendung des MS-Flag an Profil-Elementen hat im Kontext dieses Leitfadens folgende Bedeutung:
 
@@ -24,14 +20,14 @@ Die Verwendung des MS-Flag an Profil-Elementen hat im Kontext dieses Leitfadens 
     Beispielhafte Abfrage in zwei Schritten: 
     
     - Suche eines speziellen Encounter
-    ```http
-    GET [BASE_URL]/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+    ```text
+    GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
     &type=http://fhir.de/CodeSystem/kontaktart-de|normalstationaer
     ```
     
     - Suche der zugehörigen Diagnosen
-    ```http
-    GET [BASE_URL]/Condition?encounter=Encounter/123,Encounter/456,Encounter/789
+    ```text
+    GET BASE_URL/Condition?encounter=Encounter/123,Encounter/456,Encounter/789
     ```
 
     Die Ergebnisliste gibt alle Diagnosen zurück, die diesem Fall zugeordnet sind.

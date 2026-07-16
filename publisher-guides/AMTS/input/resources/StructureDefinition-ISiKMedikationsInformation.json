@@ -2,13 +2,13 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKMedikationsInformation",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation",
-  "version": "5.1.1",
+  "version": "6.0.0",
   "name": "ISiKMedikationsInformation",
   "status": "active",
   "experimental": false,
-  "date": "2025-12-17",
+  "date": "2026-07-01",
   "publisher": "gematik GmbH",
-  "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Medikation eines Patienten in ISiK Szenarien.\n\nHinweis zur Auswahl des Profils: \nIn Abgrenzung zu ISiKMedikationsVerabreichung (MedicationAdministration) wird mittels des vorliegenden Profils die Verabreichung eines Medikaments an einen Patienten mit einer lediglich Datums-genauen Angabe abgebildet (einschließlich Granularität Jahr, Monat oder Tag für .effectiveDateTime oder .effectivePeriod auf Datums-Ebene gemäß der [FHIR-Core Vorgabe](https://hl7.org/fhir/R4/datatypes.html#dateTime)).\nZur sekunden-genauen Angabe der Verabreichung eines Medikaments (im Sinne einer medizinischen Verabreichungsdokumentation durch medizinisches Personal) an einen Patienten SOLL das Profil ISiKMedikationsVerabreichung (MedicationAdministration) verwendet werden. Siehe entsprechende Profilseite für weitere Begründung.\n\n**Hinweis zur Pausierung einer Medikation (Best-Practice):**\n\nFür die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `MedicationStatement`-Ressourcen** zu verwenden, anstatt eine bestehende zu überschreiben. Dies bringt folgende Vorteile:\n\n- **Korrekte Statusabbildung:**  \n  Das `status`-Feld muss stets aktuell gepflegt werden, um den momentanen Zustand der Medikation systemweit sichtbar und durchsuchbar zu halten.\n\n- **Effiziente Abfragen über REST API:**  \n  In Kombination mit `effective[x]` ermöglicht das `status`-Feld die gezielte Abfrage aller aktuell gültigen Medikationseinträge über die REST API.  \n  Wird stattdessen nur das `dosage`-Element verändert, ist keine zuverlässige Filterung möglich – alle `MedicationStatements` müssten abgerufen und manuell analysiert werden.\n\n- **Erhalt von Verlaufsinformationen:**  \n  Wenn z. B. auch ein `statusReason` (z. B. „pausiert wegen Nebenwirkungen“) dokumentiert wird, ginge diese Information bei einem Update der bestehenden Ressource verloren, sobald die Medikation fortgesetzt wird.  \n  Durch neue `MedicationStatement`-Einträge bleibt die Verlaufshistorie erhalten.  \n  *(Dieser Anwendungsfall ist aktuell nicht gefordert, aber zukünftig denkbar.)*\n",
+  "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Medikation eines Patienten in ISiK Szenarien.\n\nHinweis zur Auswahl des Profils: \nIn Abgrenzung zu ISiKMedikationsVerabreichung (MedicationAdministration) wird mittels des vorliegenden Profils die Verabreichung eines Medikaments an einen Patienten mit einer lediglich Datums-genauen Angabe abgebildet (einschließlich Granularität Jahr, Monat oder Tag für .effectiveDateTime oder .effectivePeriod auf Datums-Ebene gemäß der [FHIR-Core Vorgabe](https://hl7.org/fhir/R4/datatypes.html#dateTime)).\nZur sekunden-genauen Angabe der Verabreichung eines Medikaments (im Sinne einer medizinischen Verabreichungsdokumentation durch medizinisches Personal) an einen Patienten SOLL das Profil ISiKMedikationsVerabreichung (MedicationAdministration) verwendet werden. Siehe entsprechende Profilseite für weitere Begründung.\n\n**Hinweis zur Pausierung einer Medikation (Best-Practice):**\n\nFür die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `MedicationStatement`-Ressourcen** zu verwenden, anstatt eine bestehende zu überschreiben. Dies bringt folgende Vorteile:\n\n- **Korrekte Statusabbildung:**  \n  Das `status`-Feld muss stets aktuell gepflegt werden, um den momentanen Zustand der Medikation systemweit sichtbar und durchsuchbar zu halten.\n\n- **Effiziente Abfragen über REST API:**  \n  In Kombination mit `effective[x]` ermöglicht das `status`-Feld die gezielte Abfrage aller aktuell gültigen Medikationseinträge über die REST API.  \n  Wird stattdessen nur das `dosage`-Element verändert, ist keine zuverlässige Filterung möglich – alle `MedicationStatements` müssten abgerufen und manuell analysiert werden.\n\n- **Erhalt von Verlaufsinformationen:**  \n  Wenn z.B. auch ein `statusReason` (z.B. „pausiert wegen Nebenwirkungen“) dokumentiert wird, ginge diese Information bei einem Update der bestehenden Ressource verloren, sobald die Medikation fortgesetzt wird.  \n  Durch neue `MedicationStatement`-Einträge bleibt die Verlaufshistorie erhalten.  \n  *(Dieser Anwendungsfall ist aktuell nicht gefordert, aber zukünftig denkbar.)*\n",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -161,34 +161,6 @@
         "mustSupport": true
       },
       {
-        "id": "MedicationStatement.extension:medicationStatementReplaces",
-        "path": "MedicationStatement.extension",
-        "sliceName": "medicationStatementReplaces",
-        "short": "Welche Medikationsinformation wird ersetzt?",
-        "comment": "Begründung des Must-Support: historische Nachvollziehbarkeit\n\n  Hinweis: Welche Medikationsinformation wird ersetzt?",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedicationStatementReplaces"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationStatement.extension:medicationStatementReplaces.value[x]",
-        "path": "MedicationStatement.extension.value[x]",
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationStatement.extension:medicationStatementReplaces.value[x].reference",
-        "path": "MedicationStatement.extension.value[x].reference",
-        "mustSupport": true
-      },
-      {
         "id": "MedicationStatement.partOf",
         "path": "MedicationStatement.partOf",
         "short": "Referenz auf andere Objekte, deren Bestandteil diese MedikationsInformation ist",
@@ -251,7 +223,7 @@
         "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:PZN",
         "path": "MedicationStatement.medication[x].coding",
         "sliceName": "PZN",
-        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z. B. existieren für Aspirin 3 verschiedene Packungsgrößen.",
+        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z.B. existieren für Aspirin 3 verschiedene Packungsgrößen.",
         "min": 0,
         "max": "*",
         "type": [
@@ -271,7 +243,7 @@
         "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:ATC-DE",
         "path": "MedicationStatement.medication[x].coding",
         "sliceName": "ATC-DE",
-        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z. B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
+        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z.B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
         "min": 0,
         "max": "*",
         "type": [
@@ -511,12 +483,81 @@
             ]
           }
         ],
+        "constraint": [
+          {
+            "key": "isik-dosage-as-needed-for",
+            "severity": "error",
+            "human": "Wenn Indikationen für eine Bedarfsmedikation angegeben sind, MUSS asNeededBoolean vorhanden und true sein.",
+            "expression": "extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor').empty() or asNeededBoolean = true",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.extension",
+        "path": "MedicationStatement.dosage.extension",
+        "short": "Indikation für die Bedarfsmedikation",
+        "comment": "Begründung des Must-Support: Ermöglicht die Angabe mehrerer Indikationen für die Bedarfsmedikation, z.B. 'Schmerzen', 'Fieber', 'Hustenreiz' etc. Diese Bedingungen sind ODER verknüpft, d.h. die Bedarfsmedikation soll bei Vorliegen einer ODER mehrerer dieser Bedingungen angewendet werden."
+      },
+      {
+        "id": "MedicationStatement.dosage.extension.extension",
+        "path": "MedicationStatement.dosage.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.extension.value[x]",
+        "path": "MedicationStatement.dosage.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationStatement.dosage.extension.value[x]:valueCodeableConcept",
+        "path": "MedicationStatement.dosage.extension.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dosage.extension.value[x]:valueCodeableConcept.text",
+        "path": "MedicationStatement.dosage.extension.value[x].text",
+        "short": "Indikation für die Bedarfsmedikation (Freitext)",
+        "comment": "Begründung des Must-Support: Ermöglicht die Angabe einer Indikation für die Bedarfsmedikation in Freitextform, eine Kodierung ist nicht verpflichtend. Es wird jedoch empfohlen, die Indikation zusätzlich in kodierter Form anzugeben, um die Interoperabilität zu erhöhen.",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.extension:asNeededFor",
+        "path": "MedicationStatement.dosage.extension",
+        "sliceName": "asNeededFor",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
         "id": "MedicationStatement.dosage.text",
         "path": "MedicationStatement.dosage.text",
-        "comment": "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\n        \n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\n    \n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'\n    \n    Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsinformation in strukturierte Dosierungsinformation umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsinformation als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsinformationen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert.\n"
+        "comment": "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\n\n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\n\n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'\n\n    Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsinformation in strukturierte Dosierungsinformation umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsinformation als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsinformationen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert."
       },
       {
         "id": "MedicationStatement.dosage.patientInstruction",
@@ -745,24 +786,8 @@
       {
         "id": "MedicationStatement.dosage.asNeeded[x]",
         "path": "MedicationStatement.dosage.asNeeded[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "MedicationStatement.dosage.asNeeded[x]:asNeededBoolean",
-        "path": "MedicationStatement.dosage.asNeeded[x]",
-        "sliceName": "asNeededBoolean",
-        "short": "Bedarfsmedikation",
-        "min": 0,
-        "max": "1",
+        "short": "Bedarfsmedikation (ja/nein)",
+        "comment": "Begründung des Must-Support: Abbildung einer Bedarfsmedikation.",
         "type": [
           {
             "code": "boolean"
@@ -1092,6 +1117,7 @@
       {
         "id": "MedicationStatement.dosage.maxDosePerPeriod.numerator",
         "path": "MedicationStatement.dosage.maxDosePerPeriod.numerator",
+        "min": 1,
         "type": [
           {
             "code": "Quantity",
@@ -1105,6 +1131,7 @@
       {
         "id": "MedicationStatement.dosage.maxDosePerPeriod.denominator",
         "path": "MedicationStatement.dosage.maxDosePerPeriod.denominator",
+        "min": 1,
         "type": [
           {
             "code": "Quantity",

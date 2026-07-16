@@ -20,7 +20,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   Wird stattdessen nur das `dosage`-Element verändert, ist keine zuverlässige Filterung möglich – alle `MedicationAdministrations` müssten abgerufen und manuell analysiert werden.
 
 - **Erhalt von Verlaufsinformationen:**  
-  Wenn z. B. auch ein `statusReason` (z. B. „pausiert wegen Nebenwirkungen“) dokumentiert wird, ginge diese Information bei einem Update der bestehenden Ressource verloren, sobald die Medikation fortgesetzt wird.  
+  Wenn z.B. auch ein `statusReason` (z.B. „pausiert wegen Nebenwirkungen“) dokumentiert wird, ginge diese Information bei einem Update der bestehenden Ressource verloren, sobald die Medikation fortgesetzt wird.  
   Durch neue `MedicationAdministration`-Einträge bleibt die Verlaufshistorie erhalten.  
   *(Dieser Anwendungsfall ist aktuell nicht gefordert, aber zukünftig denkbar.)*
 "
@@ -122,12 +122,12 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * text MS
     * ^short = "Freitext-Dosierungsangabe"
     * ^comment = "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.
-        
-    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.
-    
-    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.' 
-    
-    Zum Beispiel kann die textuelle Information '1L Infusion mit Rate 50ml/h' in eine entsprechende, strukturierte Form überführt werden - d.h. in die Angabe von 'dose' und 'rateQuantity'."
+
+  Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.
+
+  Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'
+
+  Zum Beispiel kann die textuelle Information '1L Infusion mit Rate 50ml/h' in eine entsprechende, strukturierte Form überführt werden - d.h. in die Angabe von 'dose' und 'rateQuantity'."
   * site MS
     * ^short = "Körperstelle der Verabreichung"
     * coding MS

@@ -7,9 +7,10 @@ Usage: #definition
 * title = "ISiK CapabilityStatement MedikamentRolle"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
-* purpose = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen, die ein ISiK-konformes System unterstützen muss, um Abfragen zum Medikament zu ermöglichen.
+* purpose = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden lesenden Interaktionen, die ein ISiK-konformes System unterstützen muss, um Abfragen zum Medikament zu ermöglichen.
   
 **HISTORIE:**    
+* `change` Alle modifizierenden Interaktionen (z.B. `update`, `create`) wurden entfernt aus dieser Rolle und ausgelagert in eine dedizierte Rolle.
 * 5.0.0
   * `refactor`als eigene Rolle initiiert
 "
@@ -30,17 +31,7 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-      * code = #create
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
       * code = #read
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * code = #update
     * interaction[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -50,20 +41,8 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-    * searchParam[0]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**  
-        `GET [base]/Medication?_id=103270`
-
-        **Anwendungshinweise:** Weitere Informationen zur Suche nach '_id' finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Parameters for all resources'](https://hl7.org/fhir/R4/search.html#all).
-
-        "
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter    
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"

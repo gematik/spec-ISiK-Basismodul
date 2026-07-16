@@ -2,14 +2,17 @@ Profile: ISiKProzedur
 Parent: Procedure
 Id: ISiKProzedur
 Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Behandlungen/Prozeduren eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.
-### Motivation
+
+**Motivation**
+
 Die Möglichkeit auf eine Übersicht der Prozeduren eines Patienten zuzugreifen, Patienten anhand durchgeführter oder geplanter Prozeduren zu suchen, oder zu prüfen, ob eine konkrete Prozedur bei einem Patienten durchgeführt wurde, sind wichtige Funktionen im klinischen Behandlungsablauf.
 
 In FHIR werden Prozeduren mit der Procedure-Ressource repräsentiert.
 
 Da die Prozeduren in klinischen Primärsystemen, in der Regel, in OPS-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. Falls eine Prozedur zwar dokumentiert aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), ist alternativ eine Repräsentation als Freitext-Prozedur möglich.
 
-### Kompatibilität
+**Kompatibilität**
+
 Für das Profil ISIKProzedur wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKProzedur valide sind, auch valide sind gegen:
 
 * [Profil Prozedur](https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure) der Medizininformatik Initiative  
@@ -17,8 +20,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
-//* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/hdr/StructureDefinition/procedure-obl-eu-hdr"
-//* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/eps/StructureDefinition/procedure-eu-eps"
+// * insert CompliesWith(http://hl7.eu/fhir/hdr/StructureDefinition/procedure-obl-eu-hdr)
+// * insert CompliesWith(http://hl7.eu/fhir/eps/StructureDefinition/procedure-eu-eps)
+// * insert CompliesWith(https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)
 * obeys proc-ISiK-1 and proc-ISiK-2
 * . ^constraint[5].source = Canonical(ISiKProzedur)
 * extension MS
@@ -72,9 +76,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^short = "OPS-codierte Darstellung der Prozedur"
     * extension[Seitenlokalisation] MS
       * ^short = "Seitenlokalisation"
-      * ^comment = "**Begründung MS:** Bei OPS-codierten Prozeduren an paarigen Organen oder Körperteilen müssen die Zusatzkennzeichen für die Seitigkeit (R, L oder B) angeben werden. 
-      
-      **Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, wird für die Kodierung der Lateralität aktuell die Nutzung einer BodyStructure-Ressource inkl. einer Snomet-CT Kodierung diskutiert. Siehe [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html)."
+      * ^comment = "**Begründung MS:** Bei OPS-codierten Prozeduren an paarigen Organen oder Körperteilen müssen die Zusatzkennzeichen für die Seitigkeit (R, L oder B) angeben werden.
+
+  **Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, wird für die Kodierung der Lateralität aktuell die Nutzung einer BodyStructure-Ressource inkl. einer Snomet-CT Kodierung diskutiert. Siehe [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html)."
     * system MS
       * ^short = "Namensraum des Prozeduren-Codes"
       * ^comment = "Hier ist stets der Wert `http://fhir.de/CodeSystem/bfarm/ops` anzugeben."
@@ -120,8 +124,8 @@ Usage: #example
 * extension.url = "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum"
 * extension.valueDateTime = "2020-04-23"
 * status = #completed
-* category = $sct#387713003 "Surgical procedure (procedure)"
-* code.coding[0] = $sct#80146002 "Excision of appendix (procedure)"
+* category = $sct#387713003 "Chirurgische Prozedur"
+* code.coding[0] = $sct#80146002 "Appendektomie"
 * code.coding[+].version = "2024"
 * code.coding[=] = $ops#5-470 "Appendektomie"
 * code.text = "Entfernung des Blinddarms"

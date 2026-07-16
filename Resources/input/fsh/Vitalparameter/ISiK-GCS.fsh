@@ -3,11 +3,14 @@ Parent: ScoreDE_GCS
 Id: ISiKGCS
 Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Glasgow Coma Scale (GCS) Score eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
 
-### Motivation
+**Motivation**
+
 Die Erfassung und Überwachung des Bewusstseinszustands anhand des GCS ist essenziell für die Beurteilung neurologischer Funktionen, die Überwachung von Patienten mit Schädel-Hirn-Trauma oder anderen neurologischen Erkrankungen sowie die Unterstützung klinischer Entscheidungen.
 
 In FHIR wird der GCS-Score mit der Observation-Ressource repräsentiert, wobei die einzelnen Komponenten der Skala - Augenöffnung, verbale Reaktion und motorische Reaktion - als Component-Elemente abgebildet werden.
-### Kompatibilität
+
+**Kompatibilität**
+
 Das Profil ISiKGCS ist vom Profil [ScoreDE_GCS](http://fhir.de/StructureDefinition/observation-de-score-gcs) aus den deutschen Basisprofilen abgeleitet."
 * insert Meta
 * insert CommonElements
@@ -78,7 +81,7 @@ Usage: #example
 * subject = Reference(PatientinMinimal)
 * effectiveDateTime = "2024-01-15"
 * component[Verbal].code = $loinc#9270-0 "Glasgow coma score verbal"
-* component[Verbal].valueCodeableConcept = $loinc#LA6557-8 "No verbal response"
+* component[Verbal].valueCodeableConcept = $loinc#LA6557-8 "No verbal response (>2 yrs); no vocal response (<=2 yrs)"
 * component[Motor].code = $loinc#9268-4 "Glasgow coma score motor"
 * component[Motor].valueCodeableConcept = $loinc#LA6562-8 "No motor response"
 * component[Eye].code = $loinc#9267-6 "Glasgow coma score eye opening"
@@ -98,8 +101,8 @@ Usage: #example
 * interpretation = $v3-ObservationInterpretation#N "Normal"
 * note.text = "Patient vollständig orientiert und kooperativ"
 * component[Verbal].code = $loinc#9270-0 "Glasgow coma score verbal"
-* component[Verbal].valueCodeableConcept = $loinc#LA6558-6 "Oriented"
+* component[Verbal].valueCodeableConcept = $loinc#LA6558-6 "Incomprehensible sounds"
 * component[Motor].code = $loinc#9268-4 "Glasgow coma score motor"
 * component[Motor].valueCodeableConcept = $loinc#LA6567-7 "Obeys commands"
 * component[Eye].code = $loinc#9267-6 "Glasgow coma score eye opening"
-* component[Eye].valueCodeableConcept = $loinc#LA6556-0 "Eyes open spontaneously"
+* component[Eye].valueCodeableConcept = $loinc#LA6556-0 "Eye opening spontaneously"

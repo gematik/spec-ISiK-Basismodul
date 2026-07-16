@@ -1,8 +1,4 @@
-﻿---
-topic: markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen
----
-
-In diesem Kapitel werden die folgenden übergreifenden Festlegungen definiert, die generell für die weitere Spezifikation gelten.
+﻿In diesem Kapitel werden die folgenden übergreifenden Festlegungen definiert, die generell für die weitere Spezifikation gelten.
 
 ### Kompatibilität zu SDC (Structured Data Capture) 
 
@@ -19,20 +15,21 @@ und welche nicht.
 |-
 |Workflow|SDC Form Filler<br>SDC Form Manager<br>SDC Response Manager<br>SDC Form Receiver<br>|SDC Form Designer<br>SDC Form Archiver|
 |Finding a Questionnaire|API Search|workflow based|
-|Advanced Form Rendering|FHIR R4 Core|Core-Extensions<br>SDC-Extensions|
+|Advanced Form Rendering|FHIR R4 Core<br>Core-Extensions|SDC-Extensions|
 |Form Behavior and Calculation|FHIR R4 Core|Core-Extensions<br>SDC-Extensions|
 |Modular Forms||X|
 |Adaptive Forms||X|
 |Form Population|
-|&emsp;*Operations:*||X|
+|&emsp;*Operations:*|(optional) $populate||
 |&emsp;*Modes:*|Full population|Answer context<br>Choice selection|
 |&emsp;*Design:*| Observation Based<br> Expression Based|StructureMap based|
 |Form Data Extraction|
-|&emsp;*Design:*| Observation Based|Definition Based <br> StructureMap based|
+|&emsp;*Operations:*|(optional) $extract||
+|&emsp;*Design:*| Observation Based<br>Template Based|Definition Based <br> StructureMap based|
 
 ### Übergreifende Festlegungen
 
-Es gelten die Festlegungen aus dem Modul [ISiK Basis Stufe 6](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html).
+Es gelten die Festlegungen aus dem Modul [ISiK Basis Stufe 6](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/Index_Festlegungen.html).
 
 ### Begriffe und Abkürzungen
 

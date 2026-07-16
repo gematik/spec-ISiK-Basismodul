@@ -41,6 +41,10 @@ for dir in "${publish_output_dir}"/fhir-ig-*; do
   ig_name="${ig_name#fhir-ig-}"
   branch_dir="gh-pages/${branch_name}/${ig_name}"
   echo "Publishing ${ig_name} to ${branch_dir}/"
+
+  # Safety net: never publish files that GitHub rejects on gh-pages.
+  OUTPUT_DIR="${dir}" bash scripts/ig-publisher/remove-oversized-output-files.sh
+
   case "${branch_dir}" in
     gh-pages|gh-pages/|gh-pages/.|gh-pages/..)
       echo "Refusing to modify root path: ${branch_dir}"

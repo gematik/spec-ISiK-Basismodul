@@ -2,14 +2,17 @@ Profile: ISiKBlutdruckSystemischArteriell
 Parent: VitalSignDE_Blutdruck
 Id: ISiKBlutdruckSystemischArteriell
 Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Blutdruck eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
-### Motivation
+
+**Motivation**
+
 Die Erfassung und Überwachung des Blutdrucks ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.
 
 In FHIR wird der Blutdruck mit der Observation-Ressource repräsentiert, die einzelnen Komponenten des Blutdrucks werden als Component-Elemente abgebildet.
 
 Hinweis: In Fällen, in denen fachlich motiviert ausschließlich ein systolischer Blutdruck erhoben wird (z.B. in der Intensivmedizin), kann für den Slice zur Diastole (DiastolicBP) das Element .dataAbsentReason (mit dem Code 'not-performed') verwendet werden.
 
-### Kompatibilität
+**Kompatibilität**
+
 Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruck](http://fhir.de/StructureDefinition/observation-de-vitalsign-blutdruck) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Blood Pressure Profile](http://hl7.org/fhir/StructureDefinition/bp) aus der FHIR R4 Spezifikation."
 * insert Meta
 * insert CommonElements
@@ -90,7 +93,7 @@ InstanceOf: ISiKBlutdruckSystemischArteriell
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#85354-9 "Blood pressure panel with all children optional"
+* code = $loinc#85354-9 "Blutdruck (Liste) optional mit allen Unterbegriffen"
   * coding[snomed] = $sct#75367002 "Blood pressure"
   * coding[IEEE11073] = $IEEE11073#150016 "MDC_PRESS_BLD"
   * text = "Systolischer und Diastolischer Blutdruck"
@@ -99,21 +102,21 @@ Usage: #example
 * performer.reference = "Practitioner/example"
 * interpretation = $v3-ObservationInterpretation#L "low"
 * interpretation.text = "Below low normal"
-* bodySite = $sct#368209003 "Right arm"
+* bodySite = $sct#368209003 "Right upper arm structure"
 * component[SystolicBP]
   * code.coding[IEEE11073] = $IEEE11073#150017 "MDC_PRESS_BLD_SYS"
   * code.coding[SCT] = $sct#271649006 "Systolischer Blutdruck"
-    * version = "http://snomed.info/sct/11000274103"
+    * version = "http://snomed.info/sct/11000274103/version/20251115"
   * valueQuantity = 107 'mm[Hg]' "mmHg"
 * component[DiastolicBP]
   * code.coding[IEEE11073] = $IEEE11073#150018 "MDC_PRESS_BLD_DIA"
   * code.coding[SCT] = $sct#271650006 "Diastolischer Blutdruck"
-    * version = "http://snomed.info/sct/11000274103"
+    * version = "http://snomed.info/sct/11000274103/version/20251115"
   * valueQuantity = 60 'mm[Hg]' "mmHg"
 * component[meanBP]
   * code.coding[IEEE11073] = $IEEE11073#150019 "MDC_PRESS_BLD_MEAN"
   * code.coding[SCT] = $sct#6797001 "Mittlerer arterieller Druck"
-    * version = "http://snomed.info/sct/11000274103"
+    * version = "http://snomed.info/sct/11000274103/version/20251115"
   * valueQuantity = 80 'mm[Hg]' "mmHg"
 
 Instance: ISiKBlutdruckSystemischArteriellMinExample
@@ -121,7 +124,7 @@ InstanceOf: ISiKBlutdruckSystemischArteriell
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#85354-9 "Blood pressure panel with all children optional"
+* code = $loinc#85354-9 "Blutdruck (Liste) optional mit allen Unterbegriffen"
 * subject = Reference(PatientinMinimal)
 * effectiveDateTime = "2024-01-15"
 * component[SystolicBP].valueQuantity = 90 'mm[Hg]' "mmHg"
@@ -132,7 +135,7 @@ InstanceOf: ISiKBlutdruckSystemischArteriell
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#85354-9 "Blood pressure panel with all children optional"
+* code = $loinc#85354-9 "Blutdruck (Liste) optional mit allen Unterbegriffen"
   * coding[snomed] = $sct#75367002 "Blood pressure"
   * coding[IEEE11073] = $IEEE11073#150016 "MDC_PRESS_BLD"
   * text = "Blutdruck - Intensivmonitoring"
@@ -141,25 +144,25 @@ Usage: #example
 * performer = Reference(PractitionerWalterArzt)
 * interpretation = $v3-ObservationInterpretation#H "High"
 * interpretation.text = "Hypertensive Krise"
-* bodySite = $sct#368208008 "Left arm"
+* bodySite = $sct#66480008 "Structure of left forearm"
 * method = $sct#113011001 "Palpation"
 * device = Reference(ExampleDevice)
 * note.text = "Arterielle Blutdruckmessung über arteriellen Katheter"
 * component[SystolicBP]
   * code.coding[IEEE11073] = $IEEE11073#150017 "MDC_PRESS_BLD_SYS"
   * code.coding[SCT] = $sct#271649006 "Systolischer Blutdruck"
-    * version = "http://snomed.info/sct/11000274103"
+    * version = "http://snomed.info/sct/11000274103/version/20251115"
   * valueQuantity = 200 'mm[Hg]' "mmHg"
   * interpretation = $v3-ObservationInterpretation#H "High"
 * component[DiastolicBP]
   * code.coding[IEEE11073] = $IEEE11073#150018 "MDC_PRESS_BLD_DIA"
   * code.coding[SCT] = $sct#271650006 "Diastolischer Blutdruck"
-    * version = "http://snomed.info/sct/11000274103"
+    * version = "http://snomed.info/sct/11000274103/version/20251115"
   * valueQuantity = 120 'mm[Hg]' "mmHg"
   * interpretation = $v3-ObservationInterpretation#H "High"
 * component[meanBP]
   * code.coding[IEEE11073] = $IEEE11073#150019 "MDC_PRESS_BLD_MEAN"
   * code.coding[SCT] = $sct#6797001 "Mittlerer arterieller Druck"
-    * version = "http://snomed.info/sct/11000274103"
+    * version = "http://snomed.info/sct/11000274103/version/20251115"
   * valueQuantity = 147 'mm[Hg]' "mmHg"
   * interpretation = $v3-ObservationInterpretation#H "High"

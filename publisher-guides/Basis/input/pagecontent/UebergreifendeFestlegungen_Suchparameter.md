@@ -1,15 +1,23 @@
----
-topic: UebergreifendeFestlegungen-UebergreifendeFestlegungen-Suchparameter
----
-
-Originäre ISiK Use Cases sind versorgungsorientiert und patientenorientiert. Dies resultiert darin, dass in der Profilierung der ISiK-Datenobjekte das Vorhandensein einer Referenz auf ISiKPatient (Patient) und ISiKKontaktGesundheitseinrichtung (Encounter) - wo möglich - gefordert wird. Entsprechend sollten sich Abfragen durch Clients in der Regel auf *eine einzelne* Patient- und/oder Encounter-Ressource begrenzen (Abfragen auf Patientenkohorten oder sonstige Forschungsabfragen sind nicht im Fokus von ISiK; jedoch können sie notwendig sein, z. B. für die Abfrage von Patientenlisten einer Station). Dies kann beispielsweise dadurch erreicht werden, dass der Client innerhalb einer Suchanfrage explizit eine Patient-ID übergibt oder dass die Einschränkung aus relevanten Claims eines Access-Tokens extrahiert wird.
+Originäre ISiK Use Cases sind versorgungsorientiert und patientenorientiert. Dies resultiert darin, dass in der Profilierung der ISiK-Datenobjekte das Vorhandensein einer Referenz auf ISiKPatient (Patient) und ISiKKontaktGesundheitseinrichtung (Encounter) - wo möglich - gefordert wird. Entsprechend sollten sich Abfragen durch Clients in der Regel auf *eine einzelne* Patient- und/oder Encounter-Ressource begrenzen (Abfragen auf Patientenkohorten oder sonstige Forschungsabfragen sind nicht im Fokus von ISiK; s. u. zu Ausnahmen). Dies kann beispielsweise dadurch erreicht werden, dass der Client innerhalb einer Suchanfrage explizit eine Patient-ID übergibt oder dass die Einschränkung aus relevanten Claims eines Access-Tokens extrahiert wird.
 
 Auf Basis dieser grundsätzlichen Design-Entscheidung können Clients davon ausgehen, dass alle vorliegenden referenzierten bzw. referenzierenden Ressourcen aus dem Kontext der genannten Ressourcen-Typen abrufbar sind. Durch das Vorliegen der Referenzen erfolgt die Dokumentation aller Datenobjekte stets im korrekten Patientenkontext. Zudem liegen für den jeweiligen Kontext relevante Informationen zur Interpretation der Dokumentation und Sicherstellung der Datenintegrität vor. 
 
-Auf der Seite (Artefakte)[artifacts.md] werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt, welche im Rahmen des Bestätigungsverfahrens von ISiK unterstützt werden MÜSSEN.
+Neben Patienten- und Encounter- zentrierten Abfragen, SOLLEN bzw. (MÜSSEN in bestimmten Kontexten) bereitstellende Systeme auch generische Abfragen wie folgende unterstützen:
+- Stationslisten 
+    - Beispielabruf: `GET baseURL/Location?characteristic=wa`
+- Patienten und Kontakte auf einer bestimmten Station mit einem aktiven Kontakt auf dieser Station
+    - Beispielabruf: `GET baseURL/Encounter?location=Location/loc-hospital&status=in-progress&_include=Encounter:patient`
+    - Hinweis: Die Suchparameter `location` und `status` werden in dieser Anfrage UND-verknüpft, d.h. es werden nur Encounter zurückgegeben, bei denen beide Kriterien im selben Encounter erfüllt sind. Soll dieselbe UND-Verknüpfung über `_has` (Reverse Chaining) auf der Patient-Ressource erfolgen, ist ein Composite-Suchparameter erforderlich, der beide Kriterien in einem einzigen `_has`-Parameter kombiniert – andernfalls können die beiden `_has`-Parameter nicht garantieren, dass `location` und `status` aus demselben Encounter stammen. Dies gilt auch für ein vorwärts Chaining.
+    - Hinweis: Clients SOLLTEN nach dem Abruf prüfen, ob die im Encounter referenzierte und gesuchte Location tatsächlich `status = active` aufweist. Manche Systeme pflegen eine Historie von Location-Ressourcen und können daher auch inaktive Locations referenzieren, die zum Abfragezeitpunkt nicht mehr belegt sind.
+- Alle Medikamente mit einer ATC Kodierung "Ibuprofen" (Hinweis: terminologische Unschärfe: Es gibt verschiedene ATC-Codes für Ibuprofen, z.B. abhängig von der Darreichungsform oder der Wirkstärke)
+    - Beispielabruf: `GET baseURL/Medication?code=http://fhir.de/CodeSystem/bfarm/atc|C01EB16`
+
+Auf der Seite (Artefakte)[artifacts.html] werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt, welche im Rahmen des Bestätigungsverfahrens von ISiK unterstützt werden MÜSSEN.
 
 Ein Server MUSS sicherstellen, dass nicht unterstützte oder leere Suchparameter ignoriert werden und **nicht** zu einem Fehler führen. Siehe [FHIR RESTful Search - Handling Errors](https://www.hl7.org/fhir/R4/search.html#errors).
 Alle vom Server für eine konkrete Suche verwendeten Parameter MÜSSEN im Self-Link des Searchset-Bundles angegeben sein, siehe [Self-Link](https://hl7.org/fhir/R4/search.html#selflink).
+
+Ein Server MUSS die für eine Ressource definierten Suchparameter auch in Kombination unterstützen.
 
 Alle Suchparameter in FHIR entsprechen einem von neun definierten [Such-Parameter-Typen](https://hl7.org/fhir/R4/search.html):
 
@@ -117,7 +125,7 @@ Der Suchparameter ``_include`` MUSS verpflichtend für Suchparameter implementie
 
     - Beispiele: ``GET [base]/Encounter?_include=Encounter:patient``
     - Anwendungshinweise: Weitere Informationen zur Suche nach "_include" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/R4/search.html#revinclude).
-    - Für alle Referenzen, für die ein Chaining unterstützt wird, MUSS auch der _include-Parameter implementiert werden. Alle unterstützten Include-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchInclude``` angegeben werden. Siehe [ISiK CapabilityStatements Basis](artifacts.md#capabilitystatements).
+    - Für alle Referenzen, für die ein Chaining unterstützt wird, MUSS auch der _include-Parameter implementiert werden. Alle unterstützten Include-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchInclude``` angegeben werden. Siehe [ISiK CapabilityStatements Basis](artifacts.html#capabilitystatements).
 
 
 Für Suchparameter KÖNNEN die Festlegungen für `_revinclude` implementiert werden.
@@ -126,7 +134,7 @@ Für Suchparameter KÖNNEN die Festlegungen für `_revinclude` implementiert wer
 
     - Beispiele: ``GET [base]/Patient?_revinclude=Encounter:subject``
     - Anwendungshinweise: Weitere Informationen zur Suche nach "_revinclude" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/R4/search.html#revinclude).
-    - Alle unterstützten Revinclude-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchRevInclude``` angegeben werden. Siehe {{pagelink:ISiK CapabilityStatements Basis}}.
+    - Alle unterstützten Revinclude-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchRevInclude``` angegeben werden. Siehe [ISiK CapabilityStatements Basis](artifacts.html#capabilitystatements).
 
 Im Kontext dieser Spezifikation (einschließlich weitere ISIK Module) werden - wo notwendig - weitere Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) getroffen.
 
@@ -146,3 +154,12 @@ Diese grundlegenden Best-Practice-Empfehlungen beziehen sich auf die korrekte Ve
 - Wenn der Server geeignete Standardfilter bei der Suche auf der Grundlage des Patientenkontextes (z.B. das Herausfiltern von fehlerhaften Datensätzen oder inaktiven und verstorbenen Patienten) enthält, SOLLTEN diese angemessen und eindeutig dokumentiert sein (vorzugsweise durch Aufnahme in den 'self link' für eine Suche).
 
 - Weitere Hinweise können in der [FHIR Spezifikation im Abschnitt `Search`](https://www.hl7.org/fhir/R4/search.html#errors) eingesehen werden.
+
+### Zusammenfassung der Search-Modifier
+
+| Modifier | Suchparameter-Typ | Beschreibung | Festlegung |
+| --- | --- | --- | --- |
+| `:contains` | String | Partielles Matching – findet den Suchbegriff an beliebiger Stelle im String, unabhängig von Groß-/Kleinschreibung | MUSS für alle spezifizierten Suchparameter vom Typ 'String' |
+| `:text` | Token | Suche auf dem `.text`- bzw. `.display`-Element eines Coding oder CodeableConcept (implizites partielles Matching) | MUSS für alle spezifizierten Suchparameter vom Typ 'Token', sofern diese auf die Datentypen "Coding" oder "CodeableConcept" angewendet werden |
+| `:not` | Token | Schließt Ressourcen mit dem angegebenen Code aus; Ressourcen ohne Wert für das Element MÜSSEN im Ergebnis enthalten sein | MUSS für alle spezifizierten Suchparameter vom Typ 'Token', sofern diese auf die Datentypen "code", "Coding" oder "CodeableConcept" angewendet werden |
+| `:identifier` | Reference | Suche anhand des Identifiers der referenzierten Ressource statt per Ressourcen-ID (logische Referenz) | KANN für alle spezifizierten Suchparameter vom Typ 'Reference'; MUSS wenn die Reference eine 1..1-Kardinalität hat oder ein MS-Flag auf Reference.identifier gesetzt ist |

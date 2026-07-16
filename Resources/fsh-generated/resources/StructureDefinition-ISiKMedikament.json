@@ -2,13 +2,13 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKMedikament",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament",
-  "version": "5.1.1",
+  "version": "6.0.0",
   "name": "ISiKMedikament",
   "status": "active",
   "experimental": false,
-  "date": "2025-12-17",
+  "date": "2026-07-01",
   "publisher": "gematik GmbH",
-  "description": "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen Informationen zu Medikamenten in ISiK Szenarien.",
+  "description": "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen Informationen zu Medikamenten in ISiK Szenarien.\n\n**Motivation**\n\nDie strukturierte Bereitstellung von Informationen zu Medikamenten ist eine zentrale Voraussetzung für eine interoperable Arzneimitteltherapie und unterstützt insbesondere Prozesse im Kontext der Arzneimitteltherapiesicherheit (AMTS) sowie der sektorenübergreifenden Versorgung.\n\nIn FHIR werden Medikamente mit der [Medication](https://hl7.org/fhir/R4/medication.html)-Ressource repräsentiert.\n\n**Hinweise zur Verwendung von Medication.amount**\n\n`Medication.amount` beschreibt in FHIR R4 die Menge des Arzneimittels im verpackten Produkt bzw. Behältnis. Das Element ist nicht zur Abbildung der Wirkstoffstärke vorgesehen; diese wird über `Medication.ingredient.strength` dokumentiert.\n\nBeispiel: Enthält ein Infusionsbeutel 100 ml Paracetamol-Infusionslösung mit einer Wirkstoffkonzentration von 10 mg/ml, beschreibt `Medication.amount` die Füllmenge des Behältnisses, also `100 ml / 1 Beutel`. Die Wirkstoffkonzentration wird separat über `Medication.ingredient.strength` als `10 mg / 1 ml` angegeben.\n\n`Medication.amount` ist insbesondere dann relevant, wenn der Arzneimittelcode allein die konkrete Packungsgröße, Füllmenge oder Menge je Verpackungseinheit nicht eindeutig ausdrückt.\n\n**Kompatibilität**\n\nFür das Profil ISiKMedikament wird eine größtmögliche Kompatibilität mit dem Profil [epa-medication der gematik](https://gemspec.gematik.de/ig/fhir/epa-medication) angestrebt. Ziel ist insbesondere eine vergleichbare semantische Struktur zur Unterstützung interoperabler Nutzungsszenarien.\n\nDie spezifischen Extensions des epa-medication-Profils werden in diesem Profil jedoch nicht übernommen. Stattdessen erlaubt das Profil die Nutzung von Extensions, um projektspezifische Anforderungen abzubilden.\n\nEs kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKMedikament valide sind, auch valide gegen das epa-medication-Profil sind.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -213,14 +213,14 @@
       {
         "id": "Medication.amount",
         "path": "Medication.amount",
-        "short": "Menge",
-        "comment": "Begründung des Must-Support: Bei einer Medikation MUSS die Menge dokumentierbar sein",
+        "short": "Menge des Arzneimittels im verpackten Produkt bzw. Behältnis",
+        "comment": "Begründung des Must-Support: Die Packungsgröße bzw. Füllmenge kann erforderlich sein, um ein Arzneimittelprodukt eindeutig von anderen Produkten gleicher Wirkstoffstärke und Darreichungsform zu unterscheiden.",
         "mustSupport": true
       },
       {
         "id": "Medication.amount.numerator",
         "path": "Medication.amount.numerator",
-        "comment": "Begründung des Must-Support: Bei einer Medikation MUSS die Menge dokumentierbar sein",
+        "comment": "Begründung des Must-Support: Gibt die enthaltene Menge bzw. Füllmenge an, z.B. `100 ml`.",
         "min": 1,
         "type": [
           {
@@ -235,7 +235,7 @@
       {
         "id": "Medication.amount.denominator",
         "path": "Medication.amount.denominator",
-        "comment": "Begründung des Must-Support: Bei einer Medikation MUSS die Menge dokumentierbar sein",
+        "comment": "Begründung des Must-Support: Gibt die zugehörige Verpackungs- oder Bezugseinheit an, z.B. `1 Beutel`.",
         "min": 1,
         "type": [
           {
@@ -268,7 +268,7 @@
           "rules": "open"
         },
         "short": "Wirkstofftyp",
-        "comment": "Begründung des Must-Support: Alignment mit den MII-Profilen\n\n    Hinweis: Hiermit kann geklärt werden, ob es sich um eine Angabe zum Wirkstoff oder zum exakten Inhaltsstoff (z.B. Salze) handelt.",
+        "comment": "Begründung des Must-Support: Alignment mit den MII-Profilen\n\n  Hinweis: Hiermit kann geklärt werden, ob es sich um eine Angabe zum Wirkstoff oder zum exakten Inhaltsstoff (z.B. Salze) handelt.",
         "mustSupport": true
       },
       {
@@ -353,7 +353,7 @@
         "id": "Medication.ingredient.item[x]:itemCodeableConcept.coding:ATC-DE",
         "path": "Medication.ingredient.item[x].coding",
         "sliceName": "ATC-DE",
-        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z. B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
+        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z.B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
         "min": 0,
         "max": "1",
         "type": [
@@ -373,7 +373,7 @@
         "id": "Medication.ingredient.item[x]:itemCodeableConcept.coding:PZN",
         "path": "Medication.ingredient.item[x].coding",
         "sliceName": "PZN",
-        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z. B. existieren für Aspirin 3 verschiedene Packungsgrößen.",
+        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z.B. existieren für Aspirin 3 verschiedene Packungsgrößen.",
         "min": 0,
         "max": "1",
         "type": [
@@ -491,7 +491,7 @@
         "id": "Medication.batch.lotNumber",
         "path": "Medication.batch.lotNumber",
         "short": "Chargennummer",
-        "comment": "Begründung des Must-Support: Therapiesicherheit und Nachvollziehbarkeit\n\n    Hinweis: Gemäß Anlage 1 der TA7 kann hier übergangsweise bis zum 30. Juni 2025 eine Musterchargennummer (\"STELLEN\") eingetragen werden. Wenn die Übermittlung der Chargenbezeichnung beim Stellen von Arzneimitteln technisch nicht möglich ist, z.B. beim Verblistern, wird von der Verpflichtung zur Chargendokumentation abgesehen. Dementsprechend kann anstatt der tatsächlichen Chargenbezeichnungen \"STELLEN\" in das hierbeschirebene Datenfeld eingetragen werden.",
+        "comment": "Begründung des Must-Support: Therapiesicherheit und Nachvollziehbarkeit\n\n  Hinweis: Gemäß Anlage 1 der TA7 kann hier übergangsweise bis zum 30. Juni 2025 eine Musterchargennummer (\"STELLEN\") eingetragen werden. Wenn die Übermittlung der Chargenbezeichnung beim Stellen von Arzneimitteln technisch nicht möglich ist, z.B. beim Verblistern, wird von der Verpflichtung zur Chargendokumentation abgesehen. Dementsprechend kann anstatt der tatsächlichen Chargenbezeichnungen \"STELLEN\" in das hierbeschirebene Datenfeld eingetragen werden.",
         "mustSupport": true
       }
     ]

@@ -3,14 +3,15 @@ Parent: AllergyIntolerance
 Id: ISiKAllergieUnvertraeglichkeit
 Description: "
 Diese Profil ermöglicht die Dokumentation von Allergien und Unverträglichkeiten in ISiK Szenarien.
-### Motivation
+
+**Motivation**
 
 Die Möglichkeit, auf eine Übersicht der Allergien und Unverträglichkeiten eines Patienten zuzugreifen, ist eine wichtige Funktion im klinischen Behandlungsablauf. Dies gilt insbesondere, aber nicht ausschließlich, im Bereich der Arzneimitteltherapiesicherheit.
-Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/UseCases.html).
+Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc1/UseCases.html).
 
 In FHIR werden Allergien und Unverträglichkeiten mit der [AllergyIntolerance](https://hl7.org/fhir/R4/allergyintolerance.html)-Ressource repräsentiert.
 
-### Kompatibilität
+**Kompatibilität**
 
 Für das Profil ISiKAllergieUnvertraeglichkeit wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKAllergieUnvertraeglichkeit valide sind, auch valide sind gegen:
 * [das Profil KBV_PR_Base_AllergyIntolerance der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_AllergyIntolerance)
@@ -21,6 +22,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
+// * insert CompliesWith(http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips)
+// * insert CompliesWith(https://fhir.gevko.de/StructureDefinition/EMDAF_PR_AllergyIntolerance)
+// * insert CompliesWith(https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_AllergyIntolerance)
 
 /* 
 hier sollte genauer spezifiziert werden, welche Statuswerte  für clincial- und verificationStatus implementiert werden müssen, z.B. durch Hinzufügen folgenden Kommentars:    
@@ -33,6 +37,41 @@ hier sollte genauer spezifiziert werden, welche Statuswerte  für clincial- und 
 Alternativ: hier einen Sermon analog zu Condition.clincalStatus einfügen.
 Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag hat!
 */
+* extension contains
+  http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement named abatement 0..1 MS
+* extension[abatement] 
+  * ^short = "Klinisch relevantes Enddatum"
+  * ^comment = "Hier wird angegeben, bis wann der/die Patient:in die Allergie/Unverträglichkeit hatte. Bei einer fortbestehenden Diagnose/Erkrankung ist diese Angabe nicht zu übermitteln.
+  
+  **Begründung MS:** Das Enddatum der Allergie/Unverträglichkeit ist für die klinische Bewertung der aktuellen Relevanz und die Priorisierung von Warnhinweisen essenziell. Es ermöglicht die Unterscheidung zwischen aktiven und zurückliegenden Allergien, was insbesondere in Medikations- und Entscheidungsunterstützungsprozessen von großer Bedeutung ist."
+  * value[x] ^slicing.discriminator.type = #type
+  * value[x] ^slicing.discriminator.path = "$this"
+  * value[x] ^slicing.rules = #open
+  * valueDateTime 0..1 MS
+  * valueDateTime only dateTime
+    * ^sliceName = "valueDateTime"
+    * ^short = "Datum, bis wann der/die Patient:in die Allergie/Unverträglichkeit hatte"
+    * ^comment = "**Begründung MS:** Diese Variante erlaubt es, das klinisch relevante Enddatum als exakten Zeitstempel zu übertragen, wie er in Primärsystemen üblich dokumentiert wird. Ein präzises Datum ist die belastbarste Grundlage für die Bewertung, ob eine Allergie/Unverträglichkeit noch aktuell relevant ist."
+  * valueAge 0..1 MS
+  * valueAge only Age
+    * ^sliceName = "valueAge"
+    * ^short = "Alter, bis zu dem der/die Patient:in die Allergie/Unverträglichkeit hatte"
+    * ^comment = "**Begründung MS:** Für lang zurückliegende oder anamnestisch erhobene Allergien/Unverträglichkeiten ist das Ende häufig nur als Lebensalter der/des Patient:in dokumentiert. Diese Variante verhindert Informationsverlust, wenn kein exaktes Enddatum vorliegt."
+  * valueRange 0..1 MS
+  * valueRange only Range
+    * ^sliceName = "valueRange"
+    * ^short = "Altersspanne, bis zu der der/die Patient:in die Allergie/Unverträglichkeit hatte"
+    * ^comment = "**Begründung MS:** Ist das Ende zeitlich nicht exakt eingrenzbar, ermöglicht die Angabe einer Altersspanne dennoch eine medizinisch verwertbare zeitliche Einordnung der zurückliegenden Allergie/Unverträglichkeit."
+    * extension contains http://fhir.de/StructureDefinition/lebensphase named lebensphase-bis 0..1 MS
+    * extension[lebensphase-bis] ^short = "Lebensphase"
+    * extension[lebensphase-bis] ^definition = "Lebensphase als kodierte Information angegeben, bis zu der der/die Patient:in die Allergie/Unverträglichkeit hatte."
+    * extension[lebensphase-bis] ^comment = "**Begründung MS:** Ist auch eine Altersspanne nicht bezifferbar, erlaubt die kodierte Lebensphase (z. B. Kindheit, Erwachsenenalter) eine grobe, aber klinisch nachvollziehbare Einordnung des Endes der Allergie/Unverträglichkeit."
+    * low MS
+      * ^short = "Beginn der Altersspanne für die Schätzung des Alters"
+      * ^comment = "**Begründung MS:** Die Untergrenze grenzt den frühesten Zeitpunkt ein, ab dem die Allergie/Unverträglichkeit nicht mehr bestand, und ist für die Interpretation der Altersspanne unverzichtbar."
+    * high MS
+      * ^short = "Ende der Altersspanne für die Schätzung des Alters"
+      * ^comment = "**Begründung MS:** Die Obergrenze grenzt den spätesten Zeitpunkt ein, bis zu dem die Allergie/Unverträglichkeit noch relevant gewesen sein kann, und ist für die Interpretation der Altersspanne unverzichtbar."
 * clinicalStatus MS
   * ^short = "klinischer Status"
   * ^comment = "**Begründung MS:** Der klinische Status ist notwendig, um aktive gegenüber zurückliegenden Allergien unterscheiden und in Medikations- sowie Entscheidungsunterstützungsprozessen korrekt berücksichtigen zu können."
@@ -56,7 +95,9 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
   * ^comment = "**Begründung MS:** Die Kritikalität beschreibt das erwartete Risiko bei erneuter Exposition und dient der Priorisierung von Warnhinweisen."
 * code 1.. MS
   * ^short = "Benennung der Allergie/Unverträglichkeit"
-  * ^comment = "**Begründung Pflichtfeld:** Nur mit einer codierten oder textuell benannten Auslösersubstanz lässt sich die Allergie klinisch interpretieren und für Interaktionsprüfungen nutzen."
+  * ^comment = "**Begründung Pflichtfeld:** Nur mit einer codierten oder textuell benannten Auslösersubstanz lässt sich die Allergie klinisch interpretieren und für Interaktionsprüfungen nutzen.
+
+  **Hinweis und Hintergrund:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `auslösende Substanz` im deutschen Gesundheitswesen erarbeitet. Dieses ValueSet steht zum Zeitpunkt der Veröffentlichung noch nicht als FHIR-konformes und stabil referenzierbares Artefakt zur Verfügung und wird daher zu einem späteren Zeitpunkt in dieser Form ergänzt. Weitere Informationen finden Sie hier: https://mio.kbv.de/spaces/ALDOK1X0X0/overview."
   * coding MS
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "system"
@@ -87,7 +128,7 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
     * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
-  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der AllergieUnverträglichkeit MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
+  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Allergie MUSS zum Zwecke der Nachvollziehbarkeit und Datenintegrität exponiert und empfangen werden können."
   * reference 1.. MS
     * ^short = "Encounter-Link"
     * insert Comment-Reference-Encounter(Begründung MS)
@@ -132,6 +173,7 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
   * ^comment = "**Begründung MS:** Die beobachtete Reaktion ist für die klinische Bewertung der Gefährdung essenziell und Grundlage für Entscheidungshilfen."
   * manifestation MS
     * ^short = "Manifestation der Reaktion"
+    * ^comment = "**Hinweis und Hintergrund:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `Allergiemanifestationen` im deutschen Gesundheitswesen erarbeitet. Dieses ValueSet steht zum Zeitpunkt der Veröffentlichung noch nicht als FHIR-konformes und stabil referenzierbares Artefakt zur Verfügung und wird daher zu einem späteren Zeitpunkt in dieser Form ergänzt. Weitere Informationen finden Sie hier: https://mio.kbv.de/spaces/ALDOK1X0X0/overview."
     * coding MS
       * ^slicing.discriminator.type = #pattern
       * ^slicing.discriminator.path = "system"
@@ -163,7 +205,7 @@ Usage: #example
 * type = #allergy
 * category = #environment
 * criticality = #low
-* code = $sct#256262001 "Betula pendula pollen"
+* code = $sct#256262001 "Silberbirkenpollen"
 * patient = Reference(PatientinMusterfrau)
 * onsetDateTime = "1987"
 * recordedDate = 2011-05-12
@@ -174,6 +216,6 @@ Usage: #example
   * time = 2024-02-20T14:34:12+01:00
   * text = "Patientin berichtet von einer leichten Verschlimmerung in den letzten 3 Jahren."
 * reaction
-  * manifestation = $sct#76067001 "Sneezing (finding)"
+  * manifestation = $sct#76067001 "Niesen"
   * severity = #moderate
   * exposureRoute = $sct#14910006 "Inspiration"

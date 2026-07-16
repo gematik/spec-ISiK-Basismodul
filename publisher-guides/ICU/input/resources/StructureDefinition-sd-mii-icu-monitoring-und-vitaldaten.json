@@ -2,12 +2,12 @@
   "resourceType": "StructureDefinition",
   "id": "sd-mii-icu-monitoring-und-vitaldaten",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-monitoring-und-vitaldaten",
-  "version": "5.1.1",
+  "version": "6.0.0",
   "name": "SD_MII_ICU_Monitoring_Und_Vitaldaten",
   "title": "SD MII ICU Monitoring und Vitaldaten",
   "status": "active",
   "experimental": false,
-  "date": "2025-12-17",
+  "date": "2026-07-01",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil dient als Abstraktionsprofil für verschiedene spezialisierte Beobachtungen in der Akutmedizin zur Abbildung von Monitoring- und Vitaldaten.",
   "fhirVersion": "4.0.1",
@@ -23,11 +23,18 @@
         "path": "Observation",
         "constraint": [
           {
-            "key": "vs-de-2",
+            "key": "isik-obs-4",
             "human": "If there is no component or hasMember element then either a value[x] or a data absent reason must be present",
             "source": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-monitoring-und-vitaldaten",
             "severity": "error",
             "expression": "(component.empty() and hasMember.empty()) implies (dataAbsentReason.exists() or value.exists())"
+          },
+          {
+            "key": "mii-icu-1",
+            "human": "If there is no Observation.value, a dataAbsentReason must be given.",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-monitoring-und-vitaldaten",
+            "severity": "error",
+            "expression": "value.exists().not() implies dataAbsentReason.exists()"
           }
         ]
       },
@@ -320,15 +327,6 @@
       {
         "id": "Observation.dataAbsentReason",
         "path": "Observation.dataAbsentReason",
-        "constraint": [
-          {
-            "key": "mii-icu-1",
-            "human": "If there is no Observation.value, a dataAbsentReason must be given.",
-            "source": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-monitoring-und-vitaldaten",
-            "severity": "error",
-            "expression": "value.exists().not() implies dataAbsentReason.exists()"
-          }
-        ],
         "mustSupport": true
       },
       {

@@ -3,11 +3,11 @@
 
 ISiK-Connect konkretisiert in der aktuellen Stufe die Anforderungen an eine Autorisierung zur Absicherung eines ISiK-konformen FHIR-Endpunkts. Die normativen Vorgaben beschränken sich zunächst auf Ressourcen-Server, die ein ISiK-relevantes FHIR RESTful API bereitstellen ('ISiK-Ressourcen-Server'), d. h. die auch bereits für andere Teile von ISiK bestätigungsrelevant sind. In zukünftigen Ausbaustufen werden weitere Bausteine zur Umsetzung eines vollständigen Autorisierungssystems sowie zu weiteren Themen der Konnektivität wie z. B. Protokollierung und Authentisierung spezifiziert. 
 
-|  | |
-|---------|---------------------|
-| **Hinweis an IT-Verantwortliche**
-<img src="Ampel_auf_Rot_Blau_gematik.svg" />
-|  **ISiK-Ressourcen-Server kein Standalone:** Die beschriebenen Autorisierungsszenarien funktionieren nur, wenn der ISiK-Ressourcenserver entweder gleichzeitig die Anforderungen eines ISiK-Autorisierungsservers erfüllt oder an einen Autorisierungsserver gekoppelt ist, der ISiK-Anforderungen erfüllt (Rolle ISiK-Autorisierungsserver). Dies ist bei der Integration von lokalen Systemen (z.B. eines zentralen Autorisierungsservers zu beachten).|
+
+<div style="display: flex; align-items: stretch; gap: 1rem;">
+	<img src="Ampel_auf_Rot_Blau_gematik.svg" style="width: 20%; max-width: 20%; height: auto; max-height: 75px; object-fit: contain; align-self: stretch;" />
+	<p style="margin: 0;"><b>ISiK-Ressourcen-Server kein Standalone:</b> Die beschriebenen Autorisierungsszenarien funktionieren nur, wenn der ISiK-Ressourcenserver entweder gleichzeitig die Anforderungen eines ISiK-Autorisierungsservers erfüllt oder an einen Autorisierungsserver gekoppelt ist, der ISiK-Anforderungen erfüllt (Rolle ISiK-Autorisierungsserver). Dies ist bei der Integration von lokalen Systemen (z.B. eines zentralen Autorisierungsservers zu beachten).</p>
+</div>
 
 ### Zugriffsrechte und Compartments
 

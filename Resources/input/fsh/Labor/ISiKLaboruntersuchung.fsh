@@ -5,11 +5,35 @@ Description: "Dieses Profil ermöglicht die Abbildung von Informationen zur Labo
 
 Viele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.
 Jede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.
-Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/UseCases.html).
+Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc1/UseCases.html).
 
 In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen."
 * insert Meta
 * insert CommonElements
+// * insert CompliesWith(http://hl7.eu/fhir/laboratory/StructureDefinition/Observation-resultslab-eu-lab)
+* obeys isik-obs-1 and isik-obs-2
+* identifier MS
+  * ^short = "Eindeutiger Identifier der Laboruntersuchung"
+  * ^comment = "**Begründung MS**: Ein eindeutiger Identifier ermöglicht die zuverlässige Referenzierung und Nachverfolgung von Laboruntersuchungen über verschiedene Systeme hinweg."
+  * type 1.. MS
+    * ^short = "Art des Identifiers"
+    * ^comment = "**Begründung MS**: Der Identifier-Typ dient zur fachlichen Unterscheidung verschiedener Identifikatoren eines Laborbefunds."
+    * coding 1.. MS
+      * ^short = "Kodierung des Identifier-Typs"
+      * ^definition = "**Begründung MS**: Die Kodierung des Identifier-Typs ermöglicht die eindeutige Identifikation der Art des Identifiers."
+  * system 1.. MS
+    * ^short = "Namensraum des Identifiers"
+    * ^definition = "**Begründung MS**: Das System gibt den Kontext oder die Quelle des Identifiers an"
+  * value 1.. MS
+    * ^short = "Der eigentliche Identifier-Wert"
+    * ^definition = "**Begründung MS**: Der Wert ist die konkrete Kennung der Laboruntersuchung und muss in ihrem Namensraum eindeutig sein."
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "$this"
+* identifier ^slicing.rules = #open
+* identifier contains analyseBefundCode 0..1 MS
+  * ^short = "Analyse-Befund-Code"
+  * ^definition = "**Begründung MS**: Der Analyse-Befund-Code ermöglicht die eindeutige Identifikation der Laboruntersuchung."
+* identifier[analyseBefundCode] ^patternIdentifier.type = $v2-0203#OBI
 * status MS
   * ^short = "Status der Laboruntersuchung"
   * ^comment = "**Begründung MS**: Der Status ist unerlässlich für die korrekte Interpretation einer Untersuchung. **WICHTIGER Hinweis für Implementierer**:  
@@ -19,8 +43,17 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
   beispielsweise durch Ausblenden/Durchstreichen von Prozeduren mit dem status `entered-in-error` und Ausgrauen von Untersuchungen, die noch nicht stattgefunden haben, o.ä."
 * category 1.. MS
   * ^short = "Kategorie der Laboruntersuchung"
-  * ^comment = "**Begründung MS**: Ermöglicht das Filtern, Sortieren und Gruppieren von Befunden. Für Laboruntersuchungen ist die Kategorie zwingend mit dem entsprechenden Code (z. B. LOINC-Kategorie „laboratory“) zu befüllen."
-* category = $cs-observation-category#laboratory 
+  * ^comment = "**Begründung MS**: Ermöglicht das Filtern, Sortieren und Gruppieren von Befunden. Für Laboruntersuchungen ist die Kategorie zwingend mit dem entsprechenden Code (z.B. LOINC-Kategorie „laboratory“) zu befüllen."
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "$this"
+* category ^slicing.rules = #open
+* category contains observation-category 1..1 MS and laborbereich 0..1
+* category[observation-category] = $cs-observation-category#laboratory
+  * ^short = "Festlegung der Kategorie 'laboratory'"
+  * ^comment = "**Begründung MS**: Pflicht-Slice zur Kennzeichnung als Laboruntersuchung."
+* category[laborbereich] from ISiKLaborbereichVS (required)
+  * ^short = "Fachlicher Laborbereich"
+  * ^comment = "Optionaler Slice zur weiteren Einordnung der Laboruntersuchung in einen LOINC-Fachbereich (z. B. Hematologie, Klinische Chemie). Die Fachbereiche Mikrobiologie, Humangenetik sowie Zytologie sind ausgeschlossen, da sie eine spezialisierte Abbildung mit differenzierter Terminologie und Struktur erfordern."
 * code MS
   * ^short = "Gegenstand der Untersuchung (Laborparameter)"
   * ^comment = "**Begründung MS**: Der Code identifiziert, was gemessen wurde, und ist damit das zentrale Element der Observation. Ohne .code ist kein eindeutiger sowie maschinell auswertbarer klinischer Kontext  dokumentiert."  
@@ -31,7 +64,7 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
   * coding 1.. MS
     * ^short = "Kodierung des Laborparameters"
     * system 1.. MS
-      * ^short = "System, aus dem der Code für den Laborparameter stammt (z. B. LOINC)"
+      * ^short = "System, aus dem der Code für den Laborparameter stammt (z.B. LOINC)"
     * code 1.. MS
       * ^short = "Code des Laborparameters entsprechend dem verwendeten System"
     * display MS
@@ -40,6 +73,7 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
   * coding contains loinc 1.. MS
   * coding[loinc] only ISiKLoincCoding
   * coding[loinc] ^patternCoding.system = $loinc
+  * coding[loinc] from $vs-results-laboratory-pathology-observations (extensible)
 * subject only Reference(Patient)  
 * subject 1.. MS
   * ^short = "Referenz auf den Patienten"
@@ -52,16 +86,24 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
   * ^comment = "**Begründung MS**: Dient der Einordnung in den klinischen Verlauf und ermöglicht Kontextinformationen wie Aufnahmediagnose oder behandelnde Abteilung."
   * reference MS
     * insert Comment-Reference-Encounter(Begründung MS)
-* effective[x] MS
+* effective[x] 1.. MS
   * ^short = "Zeitpunkt der Untersuchung"
-  * ^comment = "**Begründung Must Support**:
-Das Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen. Es stellt sicher, dass Systeme erkennen können, wann eine Untersuchung durchgeführt oder ein Zustand beobachtet wurde. Dies ist entscheidend für:
+  * ^definition = """
+Für die klinische zeitliche Einordnung einer Laboruntersuchung ist `Observation.effective[x]` maßgeblich.
 
-* die klinische Relevanz des Ergebnisses (z.B. aktueller vs. älterer Befund),
-* Verlaufsauswertungen und Trendanalysen,
-* zeitlich abhängige Entscheidungsunterstützung,
-* eine valide Anzeige im zeitlichen Kontext des Patientenaufenthalts."
+Der Wert von `Observation.effective[x]` ist aus den verfügbaren Zeitangaben zum Probenmaterial nach folgender Priorität abzuleiten:
+
+1. Ist ein Entnahmezeitpunkt des Probenmaterials angegeben, ist dieser zu verwenden.
+2. Handelt es sich um eine Sammelprobe und ist das Ende des Sammelzeitraums angegeben, ist der Bis-Zeitpunkt des Sammelzeitraums zu verwenden.
+3. Liegt weder ein Entnahmezeitpunkt noch ein Ende des Sammelzeitraums vor, ist der Zeitpunkt des Probeneingangs im Labor zu verwenden.
+"""
+  * ^comment = "**Begründung Must Support**:
+Die EHDS Kombatiblität erfordert die Angabe von effective. Das Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen."
 * effectiveDateTime MS
+* performer 1.. MS
+  * ^short = "Verantwortliche Person oder Organisation für die Untersuchung"
+  * ^comment = "**Begründung MS**: Die durchführende Person oder Organisation ist für die Validität und Verantwortlichkeit des Befunds maßgeblich. 
+  **Begründung Kardinalität**: Die EHDS Kombatiblität erfordert mindestens einen Performer. "
 * issued MS
   * ^short = "Zeitpunkt der Verfügbarkeit des Untersuchungsergebnisses"
   * ^comment = "**Begründung MS**: Relevant zur Nachvollziehbarkeit und Validierung von Befunden, z.B. wann eine Entscheidung darauf basierte."
@@ -74,23 +116,27 @@ Das Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Labo
   * value 1.. MS
     * ^short = "Der numerische Messwert"
   * unit MS
-    * ^short = "Einheit des Messwertes (z. B. mg/dL)"
+    * ^short = "Einheit des Messwertes (z.B. mg/dL)"
   * system 1.. MS
     * ^short = "Kodiersystem für die Einheit (UCUM)"
   * system = $cs-ucum
   * code 1.. MS
     * ^short = "UCUM-Code der Einheit"
+* valueCodeableConcept from $vs-results-coded-values-laboratory (preferred)
+  * ^short = "Kodierter Ergebniswert"
+  * ^comment = "Slice für kodierte Ergebnisse (z.B. positiv/negativ). Das Binding auf das IPS-ValueSet dient der Sicherstellung der Kompatibilität mit IPS und EHDS, die beide dieses ValueSet verwenden."    
 * dataAbsentReason MS
   * ^short = "Angabe eines Grundes weshalb kein Ergebniss der Laboruntersuchung vorliegt"
   * ^comment = "**Begründung Must Support**:
 Nicht alle geplanten oder dokumentierten Untersuchungen liefern auch tatsächlich ein Ergebnis. In solchen Fällen ist es wichtig, nicht nur auf das Fehlen eines Wertes zu reagieren, sondern den Grund strukturiert anzugeben. dataAbsentReason ermöglicht diese präzise Aussage und verhindert Fehlinterpretationen"
 * interpretation MS
   * ^short = "Interpretation oder Bewertung des Messergebnisses (z.B. „hoch“, „niedrig“, „normal“)"
-  * ^comment = "Begründung MS: Unterstützt die klinische Interpretation, insbesondere bei komplexen Parametern und automatisierten Auswertungen."
+  * ^comment = "**Begründung MS**: Die Angabe einer Interpretation ist für die klinische Einordnung von Messergebnissen essenziell und wird in vielen Anwendungsfällen (z. B. Entscheidungsunterstützung, Anzeige in Primärsystemen) benötigt."
 * note MS
-  * ^short = "Freitextnotiz oder Kommentar zur Beobachtung (z. B. Hinweise des Labors)"
+  * ^short = "Freitextnotiz oder Kommentar zur Beobachtung (z.B. Hinweise des Labors)"
   * ^comment = "**Begründung MS**: Dient zur Dokumentation abweichender Umstände, Freitextbefundung oder ergänzender Laborkommentare."
 * method MS
+* method from ISiKLaborMethodeVS (extensible)
   * ^comment = "**Einschränkung der übergreifenden MS-Definition:** 
   Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der zugrundeliegenden Methode, so MUSS dieses System
    die Information NICHT abbilden. 
@@ -102,7 +148,7 @@ Nicht alle geplanten oder dokumentierten Untersuchungen liefern auch tatsächlic
   Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Laboruntersuchung zugrundeliegenden Probe, so MUSS dieses System
    die Information NICHT abbilden. 
    
-   Motivation zum eingeschränkten MS: Die Probe (z. B. Serum, Urin) ist zentral für die korrekte Bewertung des Ergebnisses. Die Unterscheidung von Materialtypen ist oft diagnostisch ausschlaggebend.
+   Motivation zum eingeschränkten MS: Die Probe (z.B. Serum, Urin) ist zentral für die korrekte Bewertung des Ergebnisses. Die Unterscheidung von Materialtypen ist oft diagnostisch ausschlaggebend.
    Da die Information aktuell jedoch häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird"
   * reference MS
   * identifier MS
@@ -113,7 +159,7 @@ Nicht alle geplanten oder dokumentierten Untersuchungen liefern auch tatsächlic
   * ^comment = "**Begründung Must Support**:
 Das verwendete Mess- oder Analysegerät kann einen entscheidenden Einfluss auf die Genauigkeit, Validität und Vergleichbarkeit von Untersuchungsergebnissen haben."
 * referenceRange MS
-  * ^short = "Referenzbereich zur Interpretation des Messergebnisses (z. B. Normalwerte)"
+  * ^short = "Referenzbereich zur Interpretation des Messergebnisses (z.B. Normalwerte)"
   * ^comment = "**Begründung MS**: Referenzbereiche erlauben die sofortige klinische Bewertung eines Wertes"
   * low MS
     * ^short = "Untergrenze des Referenzbereichs"
@@ -130,14 +176,14 @@ Das verwendete Mess- oder Analysegerät kann einen entscheidenden Einfluss auf d
     * system = $cs-ucum
     * code 1.. MS
   * type MS
-    * ^short = "Art des Referenzbereichs (z. B. normal, kritisch)"
+    * ^short = "Art des Referenzbereichs (z.B. normal, kritisch)"
     * coding MS
       * system 1.. MS
       * code 1.. MS
       * display MS
     * text MS
   * appliesTo MS
-    * ^short = "Für wen der Referenzbereich gilt (z. B. Geschlecht, Alter)"
+    * ^short = "Für wen der Referenzbereich gilt (z.B. Geschlecht, Alter)"
     * coding MS
       * ^short = "Kodierte Angabe zur Zielgruppe"
       * system 1.. MS
@@ -150,3 +196,28 @@ Das verwendete Mess- oder Analysegerät kann einen entscheidenden Einfluss auf d
     * high MS
   * text MS
     * ^short = "Freitextbeschreibung des Referenzbereichs"
+
+Invariant: isik-obs-1
+Description: "Wenn der Status der Observation nicht \"registered\" oder \"cancelled\" ist, muss mindestens eines der folgenden Elemente vorhanden sein: \"value\", \"dataAbsentReason\", \"hasMember\" oder \"component\"."
+Expression: "(status in ('registered' | 'cancelled')) or value.exists() or hasMember.exists() or component.exists() or dataAbsentReason.exists()"
+Severity: #error
+
+Invariant: isik-obs-2
+Description: "Wenn die Observation Komponenten enthält und der Status nicht \"registered\" oder \"cancelled\" ist, muss in mindestens einer Observation.component entweder \"value\" oder \"dataAbsentReason\" vorhanden sein."
+Expression: "component.exists() implies ((status in ('registered' | 'cancelled')) or component.value.exists() or component.dataAbsentReason.exists())"
+Severity: #error
+
+Instance: ExampleISiKLaboruntersuchungMaximal
+InstanceOf: ISiKLaboruntersuchung
+Usage: #example
+Title: "Beispiel ISiKLaboruntersuchung (Maximal) - MRSA Screening"
+Description: "Maximalbeispiel zur Demonstration optionaler Elemente: Laborbereich-Kategorie, kodiertes Ergebnis (valueCodeableConcept) und Untersuchungsmethode."
+* status = #final
+* subject = Reference(PatientinMusterfrau)
+* category[observation-category] = $cs-observation-category#laboratory
+* category[laborbereich] = $loinc#18727-8 "Serologie"
+* code.coding[loinc] = $loinc#13317-3	"Methicillin-resistenter Staphylococcus aureus [Nachweis] in Probenmaterial mittels erregerspezifischer Kultur"
+* valueCodeableConcept = $sct#10828004 "Positiv"
+* method = $sct#83581000052107 "Matrix-assisted laser desorption/ionization time-of-flight mass spectrometry technique"
+* note.text = "MRSA-Nachweis positiv. Isolat zur weiteren Typisierung eingesandt."
+* insert EffectiveAndPerformer

@@ -5,18 +5,22 @@ Title: "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
 Description: 
   "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Dokumentenmetadaten im Rahmen des Bestätigungsverfahrens der gematik.  
 
-  ### Motivation
+  **Motivation**
+
 Die Ressource DocumentReference enthält die Metadaten, die für die Verwaltung von und die Suche nach Dokumenten benötigt werden. Der Inhalt des Dokumentes wird über DocumentReference.content beschrieben und über DocumentReference.content.attachment referenziert. Die Trennung von Dokument und Metadaten ermöglicht Clients die effiziente Suche und Auflistung von verfügbaren Dokumenten, ohne dass diese vollständig vom Server geladen werden müssen. Servern ermöglicht dieser Ansatz die Trennung zwischen den Metadaten in einer Datenbank und der Dokumentenablage in z.B. einem Dateisystem.
 
-  ### Kompatibilität
+  **Kompatibilität**
+
 Dieses Profil basiert auf dem Profil [MHD DocumentReference Comprehensive UnContained References Option](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html) (Version 4.2.0) von IHE International.
 
-  #### Abweichungen vom IHE-Profil
+  #**Abweichungen vom IHE-Profil**
+
 - Die Verwendung von `DocumentReference.docStatus` ist im ISiK-Kontext gestattet.
 - `DocumentReference.category` muss vom Client bei Vorhandensein eines KDL-Codes in `DocumentReference.type` nicht gefüllt werden. Bei der Verarbeitung auf dem Server im Rahmen der Interaktion [Dokumentenbereitstellung](Interaktion-Dokumentenbereitstellung.md.html) wird `DocumentReference.category` anhand der [KDL-Mappings](https://simplifier.net/kdl/%7Eresources?category=ConceptMap&sortBy=RankScore_desc) ergänzt und damit die IHE-Kompatibilität hergestellt.
 - `DocumentReference.sourcePatientInfo` muss im Rahmen von ISiK nicht gefüllt werden
 
-#### Einschränkungen des IHE-Profils
+#**Einschränkungen des IHE-Profils**
+
 Elemente mit ValueSet-Bindings ohne verbindliche Vorgabe seitens IHE wurden auf die in Deutschland gebräuchlichen Terminologien (gemäß der Festlegungen von IHE Deutschland e.V.) eingeschränkt."
 * insert Meta
 * insert CommonElements
@@ -38,6 +42,12 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
 Update für Stufe 3:
 In MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.
 "
+  * system MS
+    * ^short = "Namensraum des Identifiers"
+    * ^comment = "**Begründung MS:** Das System gibt den Kontext oder die Quelle des Identifiers an."
+  * value MS
+    * ^short = "Wert des Identifiers"
+    * ^comment = "**Begründung MS:** Der Wert ist die konkrete Kennung des Dokumentes und muss in ihrem Namensraum eindeutig sein."
 * status MS
   * ^short = "Status des Dokumentenmetadatensatzes"
   * ^comment = "Der Status des Dokumentes wird in DocumentReference.docStatus gesetzt."
@@ -114,14 +124,14 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das
   * reference 0.. MS
     * ^short = "Patienten-Link"
     * ^comment = "**Bedingtes Pflichtfeld:** Clients und Server sind verpflichtet, Dokumente stets mit einem Bezug zu einem Patienten zu versehen.  
-Leer bleiben darf dieses Element einzig im Kontext der Dokumentenbereitstellung in Verbindung mit der Patientenzuordnung über logische Referenzen, siehe {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}
+Leer bleiben darf dieses Element einzig im Kontext der Dokumentenbereitstellung in Verbindung mit der Patientenzuordnung über logische Referenzen, siehe [Dokumentenbereitstellung](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc1/Interaktion-Dokumentenbereitstellung.html#herstellung-von-patient--und-encounterkontext)
 
 Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
 Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.
 Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden."
   * identifier MS
     * ^short = "Patienten-Link (logische Referenz)"
-    * ^comment = "**Bedingtes Must Support:** Logische Referenzen KÖNNEN als Alternative zur Verlinkung über `reference`genutzt werden. BITTE HINWEISE BEACHTEN: {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}"
+    * ^comment = "**Bedingtes Must Support:** Logische Referenzen KÖNNEN als Alternative zur Verlinkung über `reference`genutzt werden. BITTE HINWEISE BEACHTEN: [Dokumentenbereitstellung](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc1/Interaktion-Dokumentenbereitstellung.html#herstellung-von-patient--und-encounterkontext)"
     * system 1.. MS
     * value 1.. MS
 
@@ -189,7 +199,7 @@ Es ist zu beachten, dass diese base64-codierten Daten wiederum ein FHIR-Bundle (
       *  ^comment = "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, 
       sondern müssen als separates Datenobjekt referenziert werden. 
 
-Wird ein separates Datenobjekt im ISIK-Kontext referenziert, so MUSS dieses konform zum Profil [ISIKBinary](https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBinary) aus dem Basismodul sein.
+Wird ein separates Datenobjekt im ISIK-Kontext referenziert, so MUSS dieses konform zum Profil [ISIKBinary](https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKBinary) aus dem Basismodul sein.
       
 Update für Stufe 3:
 Die Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, 
@@ -256,7 +266,7 @@ Title: "dok-beispiel"
 * content.attachment.language = #de
 * content.attachment.title = "Molekularpathologiebefund vom 31.12.21"
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
-* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "Format aus MIME Type ableitbar"
+* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(FachabteilungskontaktNormal)
@@ -277,7 +287,7 @@ Title: "dok-beispiel"
 * content.attachment.language = #de
 * content.attachment.title = "Molekularpathologiebefund vom 31.12.21"
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
-* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "Format aus MIME Type ableitbar"
+* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(FachabteilungskontaktNormal)
@@ -298,7 +308,7 @@ Title: "dok-beispiel"
 * content.attachment.language = #de
 * content.attachment.title = "Fotodokumentation Operation vom 31.12.21"
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
-* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "Format aus MIME Type ableitbar"
+* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(FachabteilungskontaktNormal)
@@ -319,7 +329,7 @@ Title: "dok-beispiel"
 * content.attachment.language = #de
 * content.attachment.title = "Fotodokumentation Operation vom 31.12.21"
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
-* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "Format aus MIME Type ableitbar"
+* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(FachabteilungskontaktNormal)
@@ -340,7 +350,7 @@ Title: "dok-beispiel"
 * content.attachment.language = #de
 * content.attachment.title = "Molekularpathologiebefund vom 31.12.21"
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
-* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "Format aus MIME Type ableitbar"
+* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(FachabteilungskontaktNormal)

@@ -47,6 +47,7 @@ Alias: $Abrechnungsart = http://fhir.de/CodeSystem/dkgev/Abrechnungsart
 
 Alias: $condition-related = http://hl7.org/fhir/StructureDefinition/condition-related
 Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
+Alias: $data-absent-reason-cs = http://terminology.hl7.org/CodeSystem/data-absent-reason
 Alias: $diagnosesSCT = https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT
 Alias: $ProzedurenKategorieSCT = https://gematik.de/fhir/isik/ValueSet/ProzedurenKategorieSCT
 Alias: $KBV_VS_Base_Practitioner_Speciality = https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality
@@ -54,13 +55,15 @@ Alias: $ProzedurenCodesSCT = https://gematik.de/fhir/isik/ValueSet/ProzedurenCod
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
 Alias: $kvid10 = http://fhir.de/sid/gkv/kvid-10
 Alias: $kvnr30 = http://fhir.de/sid/gkv/kvnr-30
+Alias: $KBV_CS_Base_Role_Care = https://fhir.kbv.de/CodeSystem/KBV_CS_Base_Role_Care
+Alias: $KBV_VS_Base_Role_Care = https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care
 
 Alias: $patient-merge-topic = https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge
 Alias: $vsAllergyIntoleranceClinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
 Alias: $vsAllergyIntoleranceVerificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 
 Alias: $imposeProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile
-Alias: $compliesWith = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile
+Alias: $compliesWithProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile
 Alias: $GEM_PR_KIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-kim
 Alias: $GEM_PR_TIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-tim
 Alias: $vs-ti-medication-snomed-ct = https://gematik.de/fhir/terminology/ValueSet/ti-medication-snomed-ct-vs
@@ -80,6 +83,7 @@ Alias: $organization_typeVS = http://hl7.org/fhir/ValueSet/organization-type
 Alias: $v3-ActReason = http://terminology.hl7.org/CodeSystem/v3-ActReason
 Alias: $v3-Confidentiality = http://terminology.hl7.org/CodeSystem/v3-Confidentiality
 Alias: $v3-ObservationInterpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
+Alias: $v2-0074 = http://terminology.hl7.org/CodeSystem/v2-0074
 
 Alias: $ihe-de-class = http://ihe-d.de/CodeSystems/IHEXDSclassCode
 Alias: $ihe-de-type = http://ihe-d.de/CodeSystems/IHEXDStypeCode
@@ -91,6 +95,7 @@ Alias: $IHEXDSFacilityType = http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityT
 Alias: $authorSpecialtyVS = http://ihe-d.de/ValueSets/IHEXDSauthorSpeciality
 Alias: $IHEpracticeSettingVS = http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode 
 Alias: $IHEAerztlicheFachrichtungen = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen
+
 
 Alias: $LocationPhysicalType = http://terminology.hl7.org/CodeSystem/location-physical-type
 Alias: $LocationPhysicalTypeVS = 	http://hl7.org/fhir/ValueSet/location-physical-type
@@ -105,11 +110,11 @@ Alias: $cs-observation-category = http://terminology.hl7.org/CodeSystem/observat
 Alias: $cs-pzn = http://fhir.de/CodeSystem/ifa/pzn
 Alias: $cs-sct = http://snomed.info/sct
 Alias: $cs-ucum = http://unitsofmeasure.org
-Alias: $cs-wg14 = http://fhir.de/CodeSystem/abdata/wg14
 Alias: $vs-edqm-doseform = http://hl7.org/fhir/uv/ips/ValueSet/medicine-doseform
 Alias: $vs-edqm-route = http://hl7.org/fhir/uv/ips/ValueSet/medicine-route-of-administration
+Alias: $vs-results-laboratory-pathology-observations = http://hl7.org/fhir/uv/ips/ValueSet/results-laboratory-pathology-observations-uv-ips
+Alias: $vs-results-coded-values-laboratory = http://hl7.org/fhir/uv/ips/ValueSet/results-coded-values-laboratory-uv-ips
 Alias: $vs-observation-codes = http://hl7.org/fhir/ValueSet/observation-codes
-Alias: $ext-data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $ext-mii-wirkstofftyp = https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/wirkstofftyp
 
 
@@ -117,13 +122,18 @@ Alias: $cs-pzn = http://fhir.de/CodeSystem/ifa/pzn
 Alias: $cs-risk-probability = http://terminology.hl7.org/CodeSystem/risk-probability
 Alias: $cs-v3-event-timing = http://terminology.hl7.org/CodeSystem/v3-TimingEvent
 Alias: $vs-risk-probability = http://hl7.org/fhir/ValueSet/risk-probability
-Alias: $ext-data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $ext-wirkstofftyp = http://fhir.de/StructureDefinition/WirkstofftypEX
 
 Alias: $appointmentStatus = http://hl7.org/fhir/appointmentstatus
 Alias: $cancelationReason = http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason
 
 Alias: $IEEE11073 = urn:iso:std:iso:11073:10101
+Alias: $ieee-11073 = urn:iso:std:iso:11073:10101 // mii alias - redundant, da bereits $IEEE11073 definiert, aber in einigen Profilen verwendet
 
 Alias: $BodyStructureReferenceExtension = http://hl7.org/fhir/StructureDefinition/bodySite
 Alias: $vs-dosage-dose-quantity-de = http://ig.fhir.de/igs/medication/ValueSet/DosageDoseQuantityDE
+
+Alias: $ISiKSubscriptionTopicCS = https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic
+Alias: $capabilitystatement-subscriptiontopic-canonical = http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical
+
+Alias: $ext-dosage-as-needed-for = http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor

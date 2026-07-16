@@ -1,7 +1,7 @@
 Profile: ISiKLaboruntersuchungTSH
 Parent: ISiKLaboruntersuchung
 Id: ISiKLaboruntersuchungTSH
-Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung TSH eines Patienten in ISiK Szenarien."
+Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Thyreoidea-stimulierenden Hormons (TSH) eines Patienten in ISiK Szenarien."
 * insert Meta
 * insert CommonElements
 * code.coding[loinc] from ObservationCodesTSH
@@ -17,7 +17,7 @@ InstanceOf: ISiKLaboruntersuchungTSH
 Usage: #example
 * status = #final
 * subject = Reference(PatientinMusterfrau)
-* category.coding[0] = $cs-observation-category#laboratory
+* category[observation-category] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#3015-5
 * code.coding[snomed] = $sct#61167004 "Thyroid stimulating hormone measurement"
 * valueQuantity = 3.4 $cs-ucum#u[IU]/mL

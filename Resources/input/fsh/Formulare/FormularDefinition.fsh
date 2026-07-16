@@ -12,11 +12,16 @@ Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezi
 * insert Meta
 * insert CommonElements
 * modifierExtension contains
-  ISiKMDRRelevanzFormularExtension named MDR-Relevant 0..1 MS
-* modifierExtension[MDR-Relevant]
-  * ^short = "MPG-Relevanz der Formulardaten"
+  ISiKMpFormularExtension named MpFormular 0..1 MS
+* modifierExtension[MpFormular]
+  * ^short = "Formular wird in einem Medizinprodukt eingesetzt"
   * ^comment = "**Begründung MS:**
-  In dieser Extension wird angegeben, dass die Formulardaten MDR-relevant sind. Für die Erhebung und/oder Darstellung müssen ggf. bestimmte Voraussetzungen erfüllt sein. Ist die Extension nicht vorhanden, liegt keine MDR-relevanmt vor."  
+  In dieser Extension wird die Zweckbestimmung angegeben, mit der dieses Formular im Kontext eines Medizinproduktes verwendet wird. Sobald diese Extension vorhanden ist, sollten die Konsequenzen für die Anzeige und Verarbeitung des Formulars geprüft werden. Ein Formularrenderer, der sich nicht mit dem Thema MDR und Medizinprodukte auseinandergesetzt hat, sollte hier auf das im FHIR-Standard festgelegte Verhalten bei [modifierExtension](http://hl7.org/fhir/extensibility.html#modifierExtension) zurückgreifen."  
+* language 1..1 MS
+  * ^short = "Sprache der Formulardefinition"
+  * ^comment = "Im ISiK Kontext ist hier die Sprache meist mit de-DE (deutsch-Deutschland) anzugeben. Weicht die Sprache ab, bitte die BestPractice zu mehrsprachigen Formularen beachten.
+  
+  **Begründung Pflichtfeld:** Die Angabe der Sprache ist für die Interpretation und Darstellung der Formulardefinition relevant."
 * url 1.. MS
   * ^short = "CanoncialURL des Formulars" 
   * ^comment = "Weltweit eindeutiger Name des Formulars.
@@ -40,13 +45,10 @@ Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezi
   * ^comment = "Die im ISiK-Kontext bereitgestellten Formulare sollten final ausspezifiziert sein und daher den Status 'active' haben. 
   Formulare, die zurückgezogen oder durch neuere Versionen ersetzt wurden, können mit 'retired' gekennzeichnet werden."
 * subjectType 1..1 MS
-* subjectType = #Patient
   * ^short = "Subject, über das in diesem Formular berichtet wird."
-  * ^comment = "**Begründung Pflichtfeld:**  
-  Zur Vereinfachung des Workflows werden zunächst nur Formulare mit Patientenbezug zugelassen. 
-  Dabei ist stets davon auszugehen, dass der Patient, für den dieses Formular ausgefüllt wird, 
-  identisch ist, mit dem Patient, der im Launch-Kontext übergeben wird. 
-  Diese Anforderung kann in künftigen Ausbaustufen gelockert werden."
+  * ^comment = "**Begründung Pflichtfeld:** Die in diesem Modul beschriebenen Funktionen und Interaktionen beziehen sich auf den subjectType `Patient`. Ist hier ein anderer subjectType angegeben, so unterliegt das Formular nicht den Einschränkungen und Anforderungen, die in diesem IG für ISiK-Formulare definiert sind. Um dennoch eine Validität zum Profil herzustellen, wurde das Pattern entfernt.
+  
+  **Hinweis:** Ist der subjectType `Patient` gesetzt, ist stets davon auszugehen, dass der Patient, für den dieses Formular ausgefüllt wird, identisch ist, mit dem Patient, der im Launch-Kontext übergeben wird."
 * description 1..1 MS 
   * ^short = "Formularbeschreibung"
   * ^comment = "**Begründung Pflichtfeld:**  

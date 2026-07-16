@@ -197,6 +197,7 @@ RuleSet: qritem (id, text)
 * text = {text}
 
 RuleSet: QuestionnaireExamplesMetadata(name)
+* language = #de-DE
 * name = "{name}"
 * version = "0.1.0"
 * url = "https://gematik.de/fhir/isik/Questionnaire/{name}"
@@ -206,6 +207,7 @@ RuleSet: QuestionnaireExamplesMetadata(name)
 * subjectType = #Patient
 
 RuleSet: QuestionnaireResponseCommons(questionnaire, patient)
+* language = #de-DE
 * questionnaire = Canonical({questionnaire})
 * status = #completed
 * subject = Reference({patient})
@@ -222,12 +224,15 @@ RuleSet: tbeValue(expression)
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
   * valueString = {expression}
 
-RuleSet: tbeExtract(resourceId, fullUrl)
+RuleSet: tbeExtract(template, resourceId, fullUrl)
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
   * extension[+]
     * url = "template"
-    * valueReference = Reference({resourceId})
+    * valueReference = Reference({template})
+  * extension[+]
+    * url = "resourceId"
+    * valueString = {resourceId}
   * extension[+]
     * url = "fullUrl"
     * valueString = {fullUrl}

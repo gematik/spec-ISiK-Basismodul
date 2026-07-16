@@ -1,8 +1,3 @@
----
-topic: AkteureUndInteraktionen-AkteureUndInteraktionen-Update
-canonical: https://gematik.de/fhir/isik/OperationDefinition/UpdateMetadata
----
-
 Zur entsprechenden Operation siehe [$update-metadata](OperationDefinition-UpdateMetadata.html). 
 
 | Hinweis | Experimentelle Funktion |
@@ -19,14 +14,14 @@ BODY:
 
 ```json
 {
-"resourceType": "Parameters",
-"id": "ParametersExampleUpdateMetadata",
-"parameter": [
-{
-"name": "docStatus",
-"valueCode": "final"
-}
-]
+  "resourceType": "Parameters",
+  "id": "ParametersExampleUpdateMetadata",
+  "parameter": [
+    {
+      "name": "docStatus",
+      "valueCode": "final"
+    }
+  ]
 }
 ```
 

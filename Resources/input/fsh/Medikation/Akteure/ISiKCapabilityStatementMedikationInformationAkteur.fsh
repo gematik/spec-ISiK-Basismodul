@@ -22,9 +22,13 @@ Usage: #definition
 
 * imports[+] = Canonical(ISiKCapabilityStatementMedikationInformationRolle)
   * insert ExpectationImports(#SHALL)
+* imports[+] = Canonical(ISiKCapabilityStatementMedikationInformationWRITERolle)
+  * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementStammdatenRolle)
   * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)
   * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementMedikamentRolle)
+  * insert ExpectationImports(#SHALL)
+* imports[+] = Canonical(ISiKCapabilityStatementMedikamentWRITERolle)
   * insert ExpectationImports(#SHALL)

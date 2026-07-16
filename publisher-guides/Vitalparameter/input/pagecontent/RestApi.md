@@ -1,5 +1,5 @@
 ﻿
-Es gelten die Festlegungen aus dem [Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Rest.html).
+Es gelten die Festlegungen aus dem [Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/UebergreifendeFestlegungen_Rest.html).
 
 #### Datenübernahme - Zusammenspiel von KIS & Patientendatenmanagementsystem (PDMS)
 

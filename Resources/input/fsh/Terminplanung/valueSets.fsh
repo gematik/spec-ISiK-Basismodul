@@ -12,7 +12,7 @@ ValueSet: ISiKTerminPriority
 Id: ISiKTerminPriority
 Description: "Enthaelt alle SNOMED Codes, die eine valide Priorität für den ISiKTermin sind"
 * insert Meta
-* $sct#709122007 "ASAP"
+* $sct#709122007 "As soon as possible"
 * $sct#441808003 "Delayed priority"
 * $sct#103390000 "Elective"
 * $sct#25876001 "Emergency"
@@ -29,3 +29,10 @@ Description: "Enthaelt alle SNOMED Codes, die eine valide Priorität für den IS
 * $sct#416774000 "Scheduled - priority"
 * $sct#49499008 "Stat"
 * $sct#103391001 "Urgent"
+
+ValueSet: ISiKSubscriptionTopicAppointmentVS
+Id: ISiKSubscriptionTopicAppointmentVS
+Description: "Enthaelt die Codes der Subscription Topics, die für die Absage- bzw. Änderung von Terminen relevant sind."
+* insert Meta
+* $ISiKSubscriptionTopicCS#https://gematik.de/fhir/isik/SubscriptionTopic/appointment-update "appointment-update"
+* $ISiKSubscriptionTopicCS#https://gematik.de/fhir/isik/SubscriptionTopic/appointment-cancel "appointment-cancel"

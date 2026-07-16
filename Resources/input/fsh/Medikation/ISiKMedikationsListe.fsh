@@ -4,8 +4,13 @@ Id: ISiKMedikationsListe
 Title: "ISiK Medikationsliste"
 Description: """Dieses Profil ermöglicht die Zusammenführung einzelner MedikationsInformationen eines Patienten in ISiK Szenarien.
 
-Die MedicationList verweist auf MedicationStatement-Ressourcen und bildet Medikationen ab, die aktuell eingenommen, im Krankenhaus verabreicht oder aus externen Quellen dokumentiert wurden - etwa durch Patientenangaben, Medikationspläne oder Entlassbriefe.
-Im Unterschied zum eMP der ePA ist die ISiK-MedikationsListe dynamisch generierbar und systemseitig aktualisierbar. Sie kann auch Informationen enthalten, die außerhalb des eigenen Hauses erfasst wurden – sofern diese dem System strukturiert vorliegen (z.B. durch eMP-Import).
+Die Medikationsliste verweist auf MedicationStatement-Ressourcen und bildet Medikationen ab, die aktuell eingenommen, im Krankenhaus verabreicht oder aus externen Quellen dokumentiert wurden - etwa durch Patientenangaben, Medikationspläne oder Entlassbriefe.
+
+Die Wahl von 'List.mode' richtet sich danach, ob die Liste als dokumentierter Zustand oder als Arbeitsgrundlage verwendet wird.
+Pro Patient und fachlichem Kontext (z. B. Behandlungskontext) sollte in der Regel nur eine aktiv gepflegte Medikationsliste ('List.mode = working' und 'List.status = current') geführt werden.  
+Dies dient der Vermeidung konkurrierender Listen und stellt eine eindeutige fachliche Referenz sicher. Mehrere parallele Listen können in unterschiedlichen Kontexten oder für unterschiedliche Zwecke existieren, sollten jedoch klar voneinander abgegrenzt sein.
+
+Im Unterschied zum eMP der ePA ist die ISiK-MedikationsListe dynamisch generierbar und systemseitig aktualisierbar. Sie kann auch Informationen enthalten, die außerhalb des eigenen Hauses erfasst wurden - sofern diese dem System strukturiert vorliegen (z.B. durch eMP-Import).
 Ein Import aus dem eMP ist möglich, aber nicht verpflichtend.
 """
 * insert Meta
@@ -15,9 +20,9 @@ Ein Import aus dem eMP ist möglich, aber nicht verpflichtend.
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard"
 * mode MS
 * mode from MedikationsListeListModeVS
-  * ^short = "Listenmodus"
+  * ^short = "Listenmodus zur fachlichen Einordnung des Charakters der Medikationsliste."
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard
-
+  Die `ISiKMedikationsListe` stellt eine fachliche Zusammenführung von Medikationsinformationen dar. Die Wahl von `List.mode` hängt davon ab, ob ein definierter Zustand dokumentiert oder eine fortschreibbare Liste geführt wird.
   Beispiel: eingelesene Medikationspläne werden als snapshot repräsentiert. Kontinuierlich fortgeschriebene Listen, z.B. im Rahmen der hausinternen Behandlung, sind als 'working' codiert."
 * code 1.. MS
   * ^short = "Art der Liste."
@@ -58,7 +63,7 @@ Ein Import aus dem eMP ist möglich, aber nicht verpflichtend.
     * ^short = "Datum des Listeneintrags"
     * ^comment = "Begründung des Must-Support: Nachvollziehbarkeit
 
-    Hinweis: nur zulässig im Listenmodus 'working'"
+  Hinweis: nur zulässig im Listenmodus 'working'"
   * item MS
     * ^short = "Referenz auf die MedikationsInformation"
     * ^comment = "Begründung des Must-Support: Basisinformation (eigentlicher Zweck der Liste ist das Verbinden mehrerer MedikationsInformationen)"

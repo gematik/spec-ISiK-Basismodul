@@ -2,10 +2,10 @@
   "resourceType": "ImplementationGuide",
   "id": "labor",
   "url": "https://gematik.de/fhir/isik/ImplementationGuide/labor",
-  "version": "6.0.0-rc",
+  "version": "6.0.0",
   "name": "ISiKLaborImplementationGuide",
   "title": "ISiK Labor Implementierungsleitfaden",
-  "status": "draft",
+  "status": "active",
   "publisher": "gematik GmbH",
   "contact": [
     {
@@ -26,8 +26,14 @@
   ],
   "dependsOn": [
     {
+      "packageId": "hl7.fhir.uv.xver-r5.r4",
+      "version": "0.1.0",
+      "uri": "http://hl7.org/fhir/uv/xver/ImplementationGuide/hl7.fhir.uv.xver-r5.r4",
+      "id": "hl7_fhir_uv_xver_r5_r4"
+    },
+    {
       "packageId": "hl7.fhir.uv.ips",
-      "version": "1.1.0",
+      "version": "2.0.0",
       "uri": "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
       "id": "hl7_fhir_uv_ips"
     },
@@ -39,7 +45,7 @@
     },
     {
       "packageId": "de.basisprofil.r4",
-      "version": "1.5.4",
+      "version": "1.6.0",
       "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
       "id": "de_basisprofil_r4"
     },
@@ -50,16 +56,34 @@
       "id": "de_ihe_d_terminology"
     },
     {
-      "packageId": "dvmd.kdl.r4",
-      "version": "2025.0.1",
-      "uri": "http://fhir.org/packages/dvmd.kdl.r4/ImplementationGuide/dvmd.kdl.r4",
-      "id": "dvmd_kdl_r4"
-    },
-    {
       "packageId": "ihe.formatcode.fhir",
       "version": "1.4.0",
       "uri": "https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir",
       "id": "ihe_formatcode_fhir"
+    },
+    {
+      "packageId": "hl7.fhir.uv.sdc",
+      "version": "4.0.0",
+      "uri": "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
+      "id": "hl7_fhir_uv_sdc"
+    },
+    {
+      "packageId": "de.gematik.terminology",
+      "version": "1.0.6",
+      "uri": "https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology",
+      "id": "de_gematik_terminology"
+    },
+    {
+      "packageId": "de.gematik.ti",
+      "version": "1.3.1",
+      "uri": "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
+      "id": "de_gematik_ti"
+    },
+    {
+      "packageId": "de.fhir.medication",
+      "version": "1.0.7",
+      "uri": "http://ig.fhir.de/igs/medication/ImplementationGuide/de.fhir.medication",
+      "id": "de_fhir_medication"
     }
   ],
   "definition": {
@@ -84,6 +108,13 @@
         },
         "exampleBoolean": false,
         "name": "ExampleISiKLaboruntersuchungHb1"
+      },
+      {
+        "reference": {
+          "reference": "Observation/ExampleISiKLaboruntersuchungMaximal"
+        },
+        "exampleBoolean": false,
+        "name": "ExampleISiKLaboruntersuchungMaximal"
       },
       {
         "reference": {
@@ -129,6 +160,34 @@
       },
       {
         "reference": {
+          "reference": "Observation/ExampleOrganSerumNatrium202003110104"
+        },
+        "exampleBoolean": false,
+        "name": "ExampleOrganSerumNatrium202003110104"
+      },
+      {
+        "reference": {
+          "reference": "Observation/ExampleOrganSerumNatrium202003110159"
+        },
+        "exampleBoolean": false,
+        "name": "ExampleOrganSerumNatrium202003110159"
+      },
+      {
+        "reference": {
+          "reference": "Observation/ExampleOrganSerumNatrium202003110306"
+        },
+        "exampleBoolean": false,
+        "name": "ExampleOrganSerumNatrium202003110306"
+      },
+      {
+        "reference": {
+          "reference": "Parameters/exp-params"
+        },
+        "exampleBoolean": false,
+        "name": "exp-params"
+      },
+      {
+        "reference": {
           "reference": "CapabilityStatement/ISiKCapabilityStatementLaborMinimalRolle"
         },
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
@@ -145,9 +204,33 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/ISiKLaborMethodeVS"
+        },
+        "description": "SNOMED-CT-Codes für Untersuchungsmethoden im Labor (alle Konzepte unterhalb von #272394005 'Technique (qualifier value)').",
+        "exampleBoolean": false,
+        "name": "ISiK Labor Methode"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKLaborbereichVS"
+        },
+        "description": "LOINC-Codes zur Kategorisierung von Laboruntersuchungen nach Fachbereichen.",
+        "exampleBoolean": false,
+        "name": "ISiK Laborbereich"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKCoding"
+        },
+        "description": "Data Type profile for Codings in ISiK",
+        "exampleBoolean": false,
+        "name": "ISiKCoding"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchung"
         },
-        "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.\n\nViele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.\nJede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/UseCases.html).\n\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.",
+        "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.\n\nViele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.\nJede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc1/UseCases.html).\n\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.",
         "exampleBoolean": false,
         "name": "ISiKLaboruntersuchung"
       },
@@ -155,7 +238,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchungCRP"
         },
-        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung CRP eines Patienten in ISiK Szenarien.",
+        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des C-reaktiven Proteins (CRP) eines Patienten in ISiK Szenarien.",
         "exampleBoolean": false,
         "name": "ISiKLaboruntersuchungCRP"
       },
@@ -163,7 +246,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchungGFR"
         },
-        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung GFR eines Patienten in ISiK Szenarien.",
+        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung der Glomerulären Filtrationsrate (GFR) eines Patienten in ISiK Szenarien.",
         "exampleBoolean": false,
         "name": "ISiKLaboruntersuchungGFR"
       },
@@ -171,7 +254,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchungHb"
         },
-        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Hb eines Patienten in ISiK Szenarien.",
+        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Hämoglobin-Wertes (Hb) eines Patienten in ISiK Szenarien.",
         "exampleBoolean": false,
         "name": "ISiKLaboruntersuchungHb"
       },
@@ -179,7 +262,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchungPCT"
         },
-        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung PCT eines Patienten in ISiK Szenarien.",
+        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Procalcitonin (PCT) eines Patienten in ISiK Szenarien.",
         "exampleBoolean": false,
         "name": "ISiKLaboruntersuchungPCT"
       },
@@ -219,9 +302,17 @@
         "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchungTSH"
         },
-        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung TSH eines Patienten in ISiK Szenarien.",
+        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Thyreoidea-stimulierenden Hormons (TSH) eines Patienten in ISiK Szenarien.",
         "exampleBoolean": false,
         "name": "ISiKLaboruntersuchungTSH"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKLoincCoding"
+        },
+        "description": "Data Type profile for LOINC Codings in ISiK",
+        "exampleBoolean": false,
+        "name": "ISiKLoincCoding"
       },
       {
         "reference": {
@@ -437,11 +528,23 @@
       },
       {
         "code": "releaselabel",
-        "value": "ci-build"
+        "value": "active"
       },
       {
-        "code": "no-validate",
+        "code": "display-warnings",
         "value": "true"
+      },
+      {
+        "code": "path-expansion-params",
+        "value": "../../input/resources/Parameters-exp-params.json"
+      },
+      {
+        "code": "special-url",
+        "value": "http://example.org/fhir/CodeSystem/TestKatalog"
+      },
+      {
+        "code": "special-url",
+        "value": "http://example.org/fhir/ValueSet/TestValueSet"
       }
     ]
   }

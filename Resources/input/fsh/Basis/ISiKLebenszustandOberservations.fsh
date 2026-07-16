@@ -4,10 +4,10 @@ Id: ISiKLebensZustand
 Title: "ISiKLebensZustand"
 Description: "Basisprofil für ISiKLebensZustand Observation 
 
-### Motivation
+**Motivation**
 
 Viele medizinischen Entscheidungen benötigen Informationen zu den Lebensumständen eines Patienten. Hierzu gehören eine aktuelle Schwangerschaft, Raucherstatus sowie der Alkoholabususstatus.
-Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/UseCases.html).
+Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc1/UseCases.html).
 
 In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert.
 
@@ -19,7 +19,7 @@ Die folgenden Profile vom Typ `Observation` sind spezifische Profile im oben gen
 * https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus
 * https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus
 
-### Kompatibilität
+**Kompatibilität**
 
 Für Schwangerschaftsstatus & Erwarteter Geburtstermin wird eine Kompatibilität mit folgenden **IPS** Profilen angestrebt:
 * [IPS Resource Profile: Observation - Pregnancy: EDD](https://hl7.org/fhir/uv/ips/STU1.1/StructureDefinition-Observation-pregnancy-edd-uv-ips.html). 
@@ -94,7 +94,7 @@ Id: ISiKSchwangerschaftsstatus
 Title: "ISiK Schwangerschaftsstatus"
 Description: "Dieses Profil bildet den Schwangerschaftsstatus einer Patientin ab."
 * insert Meta
-* code = $loinc#82810-3
+* code.coding[loinc] = $loinc#82810-3
 * valueCodeableConcept 1.. MS
   * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)"
 * valueCodeableConcept from SchwangerschaftsstatusVS
@@ -108,8 +108,8 @@ Instance: ISiKSchwangerschaftsstatusBeispiel
 InstanceOf: ISiKSchwangerschaftsstatus
 Usage: #example
 Title: "ISiKSchwangerschaftsstatusBeispiel"
-* code = $loinc#82810-3 "Pregnancy status"
-  * coding.version = "2.77"
+* code.coding[loinc] = $loinc#82810-3 "Schwangerschaftsstatus"
+* code.coding[loinc].version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
@@ -117,7 +117,7 @@ Title: "ISiKSchwangerschaftsstatusBeispiel"
   * coding.version = "2.77"
 * hasMember = Reference(ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel)
 * encounter = Reference(Fachabteilungskontakt)
-* performer = Reference(PractitionerWalterArzt)
+
 
 Profile: ISiKSchwangerschaftErwarteterEntbindungstermin
 Parent: ISiKLebensZustand
@@ -125,7 +125,7 @@ Id: ISiKSchwangerschaftErwarteterEntbindungstermin
 Description: "Dieses Profil dient der Abbildung des erwarteten Entbindungstermins bei einer Schwangerschaft."
 Title: "ISiK Schwangerschaft - Erwarteter Entbindungstermin"
 * insert Meta
-* code from SchwangerschaftEtMethodeVS
+* code.coding[loinc] from SchwangerschaftEtMethodeVS
 * value[x] only dateTime
 * valueDateTime 1.. MS
   * ^comment = "Motivation: Eine Observation MUSS immer einen Wert enthalten"
@@ -134,14 +134,13 @@ Instance: ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel
 InstanceOf: ISiKSchwangerschaftErwarteterEntbindungstermin
 Usage: #example
 Title: "ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"
-* code.coding[loinc] = $loinc#11779-6 "Delivery date Estimated from last menstrual period"
+* code.coding[loinc] = $loinc#11779-6 "Entbindungstermin, geschätzt aus der letzten Menstruationsperiode"
   * version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
 * valueDateTime = "2024-08-01"
 * encounter = Reference(Fachabteilungskontakt)
-* performer = Reference(PractitionerWalterArzt)
 
 Profile: ISiKAlkoholAbusus
 Parent: ISiKLebensZustand
@@ -155,22 +154,20 @@ Title: "ISiK Alkohol Abusus"
 * value[x] only CodeableConcept
 * valueCodeableConcept 1.. MS
 * valueCodeableConcept from YesNoUnknownNotAsked
-* performer = Reference(PractitionerWalterArzt)
 
 Instance: ISiKAlkoholAbususBeispiel
 InstanceOf: ISiKAlkoholAbusus
 Usage: #example
 Title: "ISiKAlkoholAbususBeispiel"
 * code.coding[snomed-ct] = $sct#15167005 "Schädlicher Gebrauch von Alkohol"
-  * version = "http://snomed.info/sct/11000274103/version/20231115"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[loinc] = $loinc#74043-1 "Alcohol use disorder"
   * version = "2.77"  
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
-* valueCodeableConcept = ExpandedYesNoIndicator#Y "Yes"
+* valueCodeableConcept = ExpandedYesNoIndicator#Y "Ja"
 * encounter = Reference(Fachabteilungskontakt)
-* performer = Reference(PractitionerWalterArzt)
 
 Profile: ISiKRaucherStatus
 Parent: ISiKLebensZustand
@@ -184,14 +181,13 @@ Title: "ISiK Raucherstatus"
 * value[x] only CodeableConcept
 * valueCodeableConcept 1.. MS
 * valueCodeableConcept from CurrentSmokingStatusUvIps
-* performer = Reference(PractitionerWalterArzt)
 
 Instance: ISiKRaucherStatusBeispiel
 InstanceOf: ISiKRaucherStatus
 Usage: #example
 Title: "ISiKRaucherStatusBeispiel"
-* code.coding[snomed-ct] = $sct#77176002 "Smoker"
-  * version = "http://snomed.info/sct/11000274103/version/20231115"
+* code.coding[snomed-ct] = $sct#77176002 "Raucher"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[loinc] = $loinc#72166-2 "Tobacco smoking status"
   * version = "2.77"
 * status = #final
@@ -200,7 +196,6 @@ Title: "ISiKRaucherStatusBeispiel"
 * valueCodeableConcept = $loinc#LA15920-4 "Former smoker"
   * coding.version = "2.77"
 * encounter = Reference(Fachabteilungskontakt)
-* performer = Reference(PractitionerWalterArzt)
 
 Profile: ISiKStillstatus
 Parent: ISiKLebensZustand
@@ -213,7 +208,6 @@ Description: "Dieses Profil dient der Abbildung des Stillstatus, d.h ob gestillt
 * value[x] only CodeableConcept
 * valueCodeableConcept 1.. MS
 * valueCodeableConcept from StillstatusVS
-* performer = Reference(PractitionerWalterArzt)
 
 Instance: ISiKStillstatusBeispiel
 InstanceOf: ISiKStillstatus
@@ -221,7 +215,7 @@ Usage: #example
 Title: "ISiKStillstatusBeispiel"
 Description: "ISiKStillstatusBeispiel"
 * code.coding[snomed-ct] = $sct#413712001 "Breastfeeding (mother)"
-  * version = "http://snomed.info/sct/11000274103/version/20231115"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[loinc] = $loinc#63895-7 "Breastfeeding status"
   * version = "2.77" 
 * status = #final
@@ -229,4 +223,3 @@ Description: "ISiKStillstatusBeispiel"
 * effectiveDateTime = "2024-01-01"
 * valueCodeableConcept = $loinc#LA29252-6 "Currently breastfeeding"
 * encounter = Reference(Fachabteilungskontakt)
-* performer = Reference(PractitionerWalterArzt)

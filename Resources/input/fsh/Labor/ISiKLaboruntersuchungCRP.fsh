@@ -1,7 +1,7 @@
 Profile: ISiKLaboruntersuchungCRP
 Parent: ISiKLaboruntersuchung
 Id: ISiKLaboruntersuchungCRP
-Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung CRP eines Patienten in ISiK Szenarien."
+Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des C-reaktiven Proteins (CRP) eines Patienten in ISiK Szenarien."
 * insert Meta
 * insert CommonElements
 * code.coding[loinc] from ObservationCodesCRP 
@@ -17,7 +17,7 @@ InstanceOf: ISiKLaboruntersuchungCRP
 Usage: #example
 * status = #final
 * subject = Reference(PatientinMusterfrau)
-* category.coding[0] = $cs-observation-category#laboratory
+* category[observation-category] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#1988-5 "C-reaktives Protein [Masse/Volumen] in Serum oder Plasma"
 * code.coding[snomed] = $sct#55235003 "C-reactive protein measurement"
 * valueQuantity = 7.4 $cs-ucum#mg/L

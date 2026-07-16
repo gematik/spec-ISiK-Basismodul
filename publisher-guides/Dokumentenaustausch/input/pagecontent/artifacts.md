@@ -2,9 +2,9 @@
 
 Folgende Datenobjekte aus dem Modul ISiK Basis werden in diesem Modul verwendet:
 
-   * Patient - https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKPatient.html
-   * Kontakt/Fall (Encounter) - https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html
-   * Binary - https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/StructureDefinition-ISiKBinary.html
+   * Patient - https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/StructureDefinition-ISiKPatient.html
+   * Kontakt/Fall (Encounter) - https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html
+   * Binary - https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc1/StructureDefinition-ISiKBinary.html
 
 Die Verwendung der genannten Ressourcen in diesem Modul bedeutet: Wenn ein Profil aus diesem Modul auf die genannten Datenobjekte aus dem Basismodul referenziert, dann MÜSSEN die referenzierten FHIR-Ressourcen im ISiK-Kontext konform zu Vorgaben an diese Ressourcen aus dem Basismodul sein (Profilkonformität). Die konkreten Vorgaben zu Interaktionen und Abhängigkeiten zwischen Modulen werden noch präzisiert.
 
@@ -22,10 +22,22 @@ Darüber hinaus gelten die [übergreifenden Festlegungen zu FHIR-Artefakten aus 
 {% include artifacts-table-generator-isik.html resourceType="CapabilityStatement" nameContains="Rolle" withPurpose=true %}
 <div><figcaption><strong>Tabelle:</strong> Capability Statements - Rollen</figcaption></div>
 
-### Ressourcenprofile
+### Profile
 
-{% include artifacts-table-generator-isik.html resourceType="StructureDefinition" %}
-<div><figcaption><strong>Tabelle:</strong> Ressourcenprofile</figcaption></div>
+#### Datentyp-Profile
+
+{% include artifacts-table-generator-isik.html resourceType="StructureDefinition" filterKind="complex-type" filterTypeNotEquals="Extension" showType=true %}
+<div><figcaption><strong>Tabelle:</strong> Datentyp-Profile</figcaption></div>
+
+#### Extensions
+
+{% include artifacts-table-generator-isik.html resourceType="StructureDefinition" filterKind="complex-type" filterTypeEquals="Extension" %}
+<div><figcaption><strong>Tabelle:</strong> Extensions</figcaption></div>
+
+#### Ressourcen-Profile
+
+{% include artifacts-table-generator-isik.html resourceType="StructureDefinition" filterKind="resource" showType=true sortByType=true %}
+<div><figcaption><strong>Tabelle:</strong> Ressourcen-Profile</figcaption></div>
 
 ### Terminologien
 
@@ -43,6 +55,6 @@ Darüber hinaus gelten die [übergreifenden Festlegungen zu FHIR-Artefakten aus 
 
 ### Beispiele
 
-{% include example-list-generator.html %}
+{% include example-list-generator-isik.html %}
 <div><figcaption><strong>Tabelle:</strong> Beispiel-Instanzen</figcaption></div>
 

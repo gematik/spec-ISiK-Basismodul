@@ -1,12 +1,8 @@
-﻿---
-topic: AkteureUndInteraktionen-AkteureUndInteraktionen-Akteure
----
-
-### Dokumentenserver
+﻿### Dokumentenserver
 Das bestätigungsrelevante System nimmt die Rolle des Dokumentenservers ein. Ein Dokumentenserver nimmt Dokumente von Clients zur Speicherung/Archivierung/Verwaltung entgegen und erlaubt Clients die Suche nach und den Abruf von Dokumenten.
 
 Dieses ISiK-Modul legt fest, welche Suchkriterien mindestens implementiert werden müssen und welche Kriterien darüber hinaus optional bereitgestellt werden können.
-Um Clients die Herstellung von Patienten- und Encounterkontext zu ermöglichen, müssen weiterhin die im Basismodul Stufe 4 festgelegten Interaktionen auf den Datenobjekten ["Patient"](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKPatient.html#Patient_Interaktionen) und ["Kontakt/Fall (Encounter)"](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html) implementiert werden.
+Um Clients die Herstellung von Patienten- und Encounterkontext zu ermöglichen, müssen weiterhin die im Basismodul Stufe 4 festgelegten Interaktionen auf den Datenobjekten ["Patient"](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/StructureDefinition-ISiKPatient.html#Patient_Interaktionen) und ["Kontakt/Fall (Encounter)"](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html) implementiert werden.
 
 Der Dokumentenserver nimmt im IHE-MHD-Kontext die Rollen [Document Recipient](https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133113-document-recipient) und [Document Responder](https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133114-document-responder) ein und implementiert die IHE-MHD-Interaktionen
 * Simplified Publish [ITI-105] (verpflichtend)

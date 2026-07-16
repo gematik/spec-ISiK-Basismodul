@@ -1,7 +1,3 @@
----
-topic: Fall
----
-
 ### Der Begriff "Fall" im Kontext von FHIR
 
 Der Begriff "Fall" gruppiert im Sprachgebrauch verschiedene Konzepte, die in FHIR durch unterschiedliche Ressourcen repräsentiert werden:
@@ -11,7 +7,15 @@ Der stationäre Aufenthalt oder der ambulante Kontakt eines Patienten in einer G
 
 * **Abrechnungsfall (Account):**
 Der Fall, im Sinne einer Gruppierung von medizinischen Leistungen, die in einem gemeinsamen Kontext abgerechnet werden, sind in FHIR durch die [Ressource Account](https://hl7.org/fhir/R4/account.html) repräsentiert. Ein Abrechnungsfall kann mehrere Encounter umfassen (z.B. vorstationärer Besuch, stationärer Aufenthalt und nachstationäre Besuche)
-{{render:Material/Basis/images/Encounter/Encounter-Modell-Abrechnung.png}}
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Encounter-Modell-Abrechnung.png" alt="Fall Abbildung generisch" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Generische Fall Abbildung </figcaption>
+</figure>
+
+* **AbrechnungsfallAmbulant (Account):**
+    Diese Spezialisierung des ISiK Abrechnungsfall-Profils ist für die Abbildung von ambulanten Abrechnungsfällen im Krankenhaus vorgesehen. Auch dieser Abrechnungsfall kann mehrere Encounter umfassen, diese stellen in dem Fall aber punktuelle Besuche dar.
 
 * **Medizinischer Fall (EpisodeOfCare):**
 Der medizinische Fall gruppiert Informationen, die im Kontext einer gemeinsamen (Dauer-)Diagnose stehen und wird in FHIR durch die [Ressource EpisodeOfCare](https://hl7.org/fhir/R4/episodeofcare.html) dargestellt.
@@ -20,7 +24,7 @@ Der medizinische Fall gruppiert Informationen, die im Kontext einer gemeinsamen 
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Encounter-Modell-Medizinisch.png" alt="Fall Abbildung generisch" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung:</strong>Generische Fall Abbildung </figcaption>
+    <figcaption><strong>Abbildung: </strong>Generische Fall Abbildung </figcaption>
 </figure>
 
 Wichtig ist die Herausstellung, dass "Besuch" und "Fall" wechselseitig keine synonymen Begriffe sind. 
@@ -45,7 +49,7 @@ Zur Unterscheidung der verschiedenen Kontaktebenen wird in der MI-I eine Kodieru
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Encounter-Modell-MII.png" alt="MII Fall Abbildung" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung:</strong>Fall Abbildung MII</figcaption>
+    <figcaption><strong>Abbildung: </strong>Fall Abbildung MII</figcaption>
 </figure>
 
 
@@ -59,7 +63,7 @@ Für die derzeitige Ausbaustufe des ISiK Basismoduls werden alle zuvor genannten
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Encounter-Modelle.png" alt="Encounter Modelle" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung:</strong>Encounter Modelle</figcaption>
+    <figcaption><strong>Abbildung: </strong>Encounter Modelle</figcaption>
 </figure>
 
 Verpflichtend umzusetzen ist für die bestätigungsrelevanten Systeme der Account, im Sinne der Gruppierung einzelner Besuche, zu einem gemeinsamen (Abrechnungs-)Fall sowie der Encounter der Ebene "Abteilungskontakt" im Sinne des Modells der Medizininformatikinitiative.
@@ -76,7 +80,7 @@ Wichtig sind dabei jedoch folgende Punkte zu beachten:
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Encounter-Modell-ISiK.png" alt="ISiK Fall Abbildung" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung:</strong>Fall Abbildung ISiK</figcaption>
+    <figcaption><strong>Abbildung: </strong>Fall Abbildung ISiK</figcaption>
 </figure>
 
 ---
@@ -96,9 +100,21 @@ Um insbesondere Subsysteme von der Pflicht zu entbinden, die Account-Ressource z
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Encounter-Modell-Fallnummer.png" alt="Repräsentation Fallnummer" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung:</strong>Repräsentation der Fallnummer</figcaption>
+    <figcaption><strong>Abbildung: </strong>Repräsentation der Fallnummer</figcaption>
 </figure>
 
+
+---
+
+### Die Repräsentation von ambulanten Fällen im Krankenhaus
+
+Neben der stationären Versorgung gibt es im Krankenhaus einen zunehmend wachsenden Teil an ambulanter Versorgung. Ob Chefarztambulanzen, Hochschulambulanzen oder ambulantes Operieren - diese Fälle kommen im Krankenhaus vor und sind teilweise auch in den Primär- und Subsystemen vorhanden. Deshalb wird ab ISiK Stufe 6 die Möglichkeit ergänzt, auch ambulante Fälle in den Fall-bezogenen Ressourcen abzubilden.
+
+Zum einen wird ein neues Account-Profil "AbrechnungsfallAmbulant" eingeführt, welches vom ISiKAbrechnungsfall ableitet und diesen um die Möglichkeit erweitert, ambulante "Schein"-Nummern zu repräsentieren, einen Gültigkeitszeitraum anzugeben und Informationen über die durchführende Ambulanz zu hinterlegen.
+
+Zum anderen wird der ISiKKontaktGesundheitseinrichtung so erweitert, dass jetzt auch ambulante Besuche als Kontaktarten abgebildet werden können.
+
+Bei ambulanten Fällen spielen noch weitere Informationen eine Rolle, wie z.B. EBM-Ziffern. Da das ISiK-Basismodul allerdings kein Abrechnungsmodul ist, wurden diese Informationen bewusst nicht abgebildet. Für EBM-Ziffern verweisen wir auf die Profilierung eines ChargeItem in den deutschen Basisprofilen: [ChargeItem für EBM-Ziffer als Abrechnungsposition](http://fhir.de/StructureDefinition/chargeitem-de-ebm).
 
 ---
 
@@ -111,14 +127,12 @@ Im ISiK-Modell sind klinische Ressourcen an Abteilungskontakte geknüpft. Die Ab
 
 Dieser Ansatz gewährleistet, dass klinische Daten eindeutig dem korrekten Abteilungskontakt zugeordnet werden können und berücksichtigt, dass ein Abrechnungsfall mehrere Abteilungskontakte umfassen kann.
 
----
-
 #### Schritt 1: Ermittlung der relevanten Encounter
 
 Die Basis-Abfrage für alle zu einem Abrechnungsfall gehörenden Encounter erfolgt über den `account:identifier` Suchparameter:
 
-```http
-GET [BASE_URL]/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+```text
+GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
 ```
 
 Diese Abfrage liefert alle Encounter, die mit dem Account verknüpft sind, der die angegebene Fallnummer trägt.
@@ -129,43 +143,43 @@ Je nach Anwendungsfall können zusätzliche Filter verwendet werden, um die Erge
 
 **Einschränkung auf Abteilungskontakte** (empfohlen für Systeme, die zusätzliche Encounter-Typen implementieren):
 
-```http
-GET [BASE_URL]/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+```text
+GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
     &type=http://fhir.de/CodeSystem/Kontaktebene|abteilungskontakt
 ```
 
 **Ausschluss vor- und nachstationärer Kontakte**:
 
-```http
-GET [BASE_URL]/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+```text
+GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
     &type=http://fhir.de/CodeSystem/kontaktart-de|normalstationaer
 ```
 
 Oder für Intensivkontakte:
 
-```http
-GET [BASE_URL]/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+```text
+GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
     &type=http://fhir.de/CodeSystem/kontaktart-de|intensivstationaer
 ```
 
 **Kombination mehrerer Kontaktarten**:
 
-```http
-GET [BASE_URL]/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+```text
+GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
     &type=http://fhir.de/CodeSystem/kontaktart-de|normalstationaer,http://fhir.de/CodeSystem/kontaktart-de|intensivstationaer
 ```
 
 **Einschränkung auf aktive Encounter**:
 
-```http
-GET [BASE_URL]/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+```text
+GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
     &status=in-progress
 ```
 
 **Zeitliche Einschränkung**:
 
-```http
-GET [BASE_URL]/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+```text
+GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
     &date=ge2024-01-01&date=le2024-12-31
 ```
 
@@ -179,26 +193,26 @@ Nach der Ermittlung der relevanten Encounter können alle klinischen Ressourcen 
 
 Angenommen, die Abfrage aus Schritt 1 hat folgende Encounter-IDs zurückgeliefert: `Encounter/123`, `Encounter/456`, `Encounter/789`
 
-```http
-GET [BASE_URL]/Condition?encounter=Encounter/123,Encounter/456,Encounter/789
+```
+GET BASE_URL/Condition?encounter=Encounter/123,Encounter/456,Encounter/789
 ```
 
 ##### Beispiel: Ermittlung aller Prozeduren
 
-```http
-GET [BASE_URL]/Procedure?encounter=Encounter/123,Encounter/456,Encounter/789
+```text
+GET BASE_URL/Procedure?encounter=Encounter/123,Encounter/456,Encounter/789
 ```
 
 ##### Beispiel: Ermittlung aller Observations (z.B. Vitalparameter)
 
-```http
-GET [BASE_URL]/Observation?encounter=Encounter/123,Encounter/456,Encounter/789
+```text
+GET BASE_URL/Observation?encounter=Encounter/123,Encounter/456,Encounter/789
 ```
 
 ##### Beispiel: Ermittlung aller Medikationsverordnungen
 
-```http
-GET [BASE_URL]/MedicationRequest?encounter=Encounter/123,Encounter/456,Encounter/789
+```text
+GET BASE_URL/MedicationRequest?encounter=Encounter/123,Encounter/456,Encounter/789
 ```
 
 ---
@@ -209,8 +223,8 @@ Ein typischer Workflow für die Abfrage aller Diagnosen eines Abrechnungsfalls k
 
 **1. Ermittlung der Encounter:**
 
-```http
-GET [BASE_URL]/Encounter?account:identifier=http://krankenhaus-beispiel.de/fhir/sid/fallnummer|F-2024-123456
+```text
+GET BASE_URL/Encounter?account:identifier=http://krankenhaus-beispiel.de/fhir/sid/fallnummer|F-2024-123456
     &type=http://fhir.de/CodeSystem/Kontaktebene|abteilungskontakt
 ```
 
@@ -279,13 +293,11 @@ GET [BASE_URL]/Encounter?account:identifier=http://krankenhaus-beispiel.de/fhir/
 
 **2. Abfrage der Diagnosen für alle ermittelten Encounter:**
 
-```http
-GET [BASE_URL]/Condition?encounter=Encounter/enc-innere-medizin,Encounter/enc-intensivmedizin
+```text
+GET BASE_URL/Condition?encounter=Encounter/enc-innere-medizin,Encounter/enc-intensivmedizin
 ```
 
 Dieser zwei-Schritt-Prozess stellt sicher, dass alle relevanten klinischen Daten eines Abrechnungsfalls korrekt ermittelt werden, auch wenn der Patient während des Aufenthalts mehrere Fachabteilungen durchlaufen hat.
-
----
 
 #### Wichtige Hinweise
 

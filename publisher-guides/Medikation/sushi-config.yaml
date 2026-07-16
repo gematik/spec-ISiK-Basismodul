@@ -1,13 +1,13 @@
 id: medikation
-canonical: https://gematik.de/fhir/isik/
+canonical: https://gematik.de/fhir/isik
 name: MedikationImplementationGuide
 title: ISiK Medikation Implementierungsleitfaden
 description: Dieser Implementierungsleitfaden spezifiziert eine ISiK-konforme Umsetzung der Medikation im Krankenhaus.
-status: draft
-version: 6.0.0-rc
+status: active
+version: 6.0.0
 fhirVersion: 4.0.1
 copyrightYear: 2026+
-releaseLabel: release-candidate
+releaseLabel: active
 license: Apache-2.0
 publisher:
   name: gematik GmbH
@@ -16,23 +16,30 @@ publisher:
 
 applyExtensionMetadataToRoot: false
 dependencies:
-  # hl7.fhir.extensions.r5: 4.0.1
-  hl7.fhir.uv.ips: 1.1.0
+  hl7.fhir.uv.xver-r5.r4: 0.1.0
+  hl7.fhir.uv.ips: 2.0.0
   hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
-  de.basisprofil.r4: 1.5.4
+  de.basisprofil.r4: 1.6.0
   de.ihe-d.terminology: 3.0.1
-  dvmd.kdl.r4: 2025.0.1
   ihe.formatcode.fhir: 1.4.0
-  hl7.fhir.uv.sdc: 3.0.0
+  hl7.fhir.uv.sdc: 4.0.0
   de.gematik.terminology: 1.0.6
-  
+  de.gematik.ti: 1.3.1
+  de.fhir.medication: 1.0.7
+
 pages:
   index.md:
     title: Einführung
   ReleaseNotes.md:
     title: Release Notes
   UebersichtAnwendungsfaelle.md:
-    title: Übersicht Anwendungsfälle  
+    title: Übersicht Anwendungsfälle
+  AnwendungsfallClosedLoopMedikationsprozess.md:
+    title: Anwendungsfall - Closed Loop Medikationsprozess  
+  Bedarfsmedikation.md:
+    title: Bedarfsmedikation
+  Infusionen.md:
+    title: Infusionen
   Informationsmodell.md:
     title: Informationsmodell
   UebergreifendeFestlegungen.md:
@@ -52,6 +59,9 @@ menu:
   Release Notes: ReleaseNotes.html
   Use Cases:
     Übersicht Anwendungsfälle (Use Cases): UebersichtAnwendungsfaelle.html
+    Anwendungsfall - Closed Loop Medikationsprozess: AnwendungsfallClosedLoopMedikationsprozess.html
+    Bedarfsmedikation: Bedarfsmedikation.html
+    Infusionen: Infusionen.html
     Informationsmodell: Informationsmodell.html
   Übergreifende Festlegungen:
     Übergreifende Festlegungen: UebergreifendeFestlegungen.html
@@ -60,11 +70,12 @@ menu:
     Akteure und Interaktionen: AkteureUndInteraktionen.html
   FHIR-Artefakte: artifacts.html
  
-
-
-
 parameters:
-  no-validate: true
+  display-warnings: true
+  path-expansion-params: ../../input/resources/Parameters-exp-params.json
+  special-url:
+    - http://example.org/fhir/CodeSystem/TestKatalog
+    - http://example.org/fhir/ValueSet/TestValueSet
 
 #und ggfs noch:
 #  no-narrative: true

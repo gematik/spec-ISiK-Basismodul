@@ -2,14 +2,14 @@ Profile: ISiKMedikationsVerordnung
 Parent: MedicationRequest
 Id: ISiKMedikationsVerordnung
 Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnungen eines Patienten in ISiK Szenarien."
+// * insert CompliesWith(http://hl7.eu/fhir/mpd/StructureDefinition/MedicationRequest-eu-mpd)
 * insert Meta
 * insert CommonElements
 * extension MS
 * extension contains
     ExtensionISiKAcceptedRisk named acceptedRisk 0..1 MS and
     ExtensionISiKMedikationsart named medikationsart 0..1 MS and
-    ExtensionISiKBehandlungsziel named behandlungsziel 0..1 MS and
-    ExtensionISiKMedicationRequestReplaces named medicationRequestReplaces 0..1 MS
+    ExtensionISiKBehandlungsziel named behandlungsziel 0..1 MS
 * extension[acceptedRisk]
   * ^short = "akzeptiertes (in Kauf genommenes) Risiko"
   * ^comment = "Begründung des Must-Support: Folgeinformation der AMTS-Bewertung, sollte auch an nachfolgende Behandelnde übermittelbar sein
@@ -31,14 +31,6 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
 
   Hinweis: Freitext-Beschreibung des Behandlungsziels."
   * valueString MS
-* extension[medicationRequestReplaces]
-  * ^short = "Welche Medikationsverordnung wird ersetzt?"
-  * ^comment = "Begründung des Must-Support: historische Nachvollziehbarkeit ersetzter Verordnungen.
-
-    Hinweis: Diese Extension dient der Abbildung einer Verordnung, die eine vorherige Medikation ersetzt - z.B. bei Unverträglichkeit, mangelnder Wirksamkeit oder Wechsel des Wirkstoffs.
-    Abgrenzung: Im Gegensatz zum Feld 'priorPrescription', das eine Folgeverordnung bei fortgesetzter Therapie beschreibt, kennzeichnet diese Extension eine bewusste Ablösung der ursprünglichen Verordnung."
-  * valueReference MS
-    * reference MS
 * status MS
   * ^short = "Status der Verordnungsinformation"
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard.
@@ -50,8 +42,9 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard
 
   Hinweis: i.d.R. 'order'"
-* doNotPerform ..0
-  * ^comment = "Begründung der Kardinalitätsänderung: Use Case für dieses Feld ist nicht im Scope"
+* doNotPerform MS
+  * ^short = "Nicht durchführen"
+  * ^comment = "**Begründung MS:** Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. Und wegen der Kompatibilität mit eRezept und ePA Profilen, welche die Angabe von 'doNotPerform' nicht verbieten." 
 * medicationCodeableConcept MS
   * ^short = "Medikament in codierter Form oder ggf. als Freitext"
   * ^comment = "Begründung des Must-Support: Basisinformation
@@ -130,125 +123,7 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   
   **Hinweis:** Zahlreiche [Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland](https://ig.fhir.de/igs/medication/dosierung-beispiele.html) dokumentiert.
   "
-* dosageInstruction only DosageDE
-  * text 
-    * ^comment = "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.
-        
-    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.
-    
-    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'
-    
-    Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsanweisungen in strukturierte Dosierungsanweisungen umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsanweisung als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsanweisungen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert."
-  * patientInstruction MS
-    * ^short = "besondere Anweisungen für den Patienten"
-  * timing 
-    * event MS
-      * ^short = "fester Zeitpunkt"
-    * repeat 
-      * ^short = "Wiederholungs-Angaben"
-      * boundsDuration MS
-        * ^short = "Begrenzung der Dauer"
-        * ^patternDuration.system = $cs-ucum
-        * value 1..1 MS
-        * unit MS
-        * system 1..1 MS
-        * code 1..1 MS
-      * boundsPeriod MS
-        * ^short = "begrenzender Zeitraum"
-        * start MS
-        * end MS
-      * count MS
-        * ^short = "Anzahl Wiederholungen"
-      * countMax MS
-        * ^short = "maximale Anzahl Wiederholungen"
-      * duration MS
-        * ^short = "Dauer der Verabreichung"
-      * durationMax MS
-        * ^short = "maximale Dauer der Verabreichung"
-      * durationUnit MS
-        * ^short = "Einheit der Dauer"
-      * frequency
-        * ^short = "Frequenz (Anzahl der Gaben pro Periode)"
-      * frequencyMax MS
-        * ^short = "maximale Frequenz"
-      * period
-        * ^short = "Zeitperiode zur Frequenz"
-      * periodMax MS
-        * ^short = "maximale Zeitperiode zur Frequenz"
-      * periodUnit 
-        * ^short = "Einheit der Zeitperiode"
-      * dayOfWeek
-        * ^short = "Wochentag"
-      * timeOfDay
-        * ^short = "Tageszeit"
-      * when
-        * ^short = "Tageszeitpunkt codiert"
-      * offset MS
-        * ^short = "zeitlicher Abstand der Gabe zum beschriebenen Zeitpunkt"
-  * asNeededBoolean MS
-    * ^short = "Bedarfsmedikation"
-  * site MS
-    * ^short = "Körperstelle der Verabreichung"
-    * coding MS
-      * ^slicing.discriminator.type = #pattern
-      * ^slicing.discriminator.path = "$this"
-      * ^slicing.rules = #open
-    * coding contains
-        SNOMED-CT 0..1 MS
-    * coding[SNOMED-CT] only ISiKSnomedCTCoding
-      * ^patternCoding.system = $cs-sct
-    * text MS
-  * route MS
-    * ^short = "Route"
-    * coding MS
-      * ^slicing.discriminator.type = #pattern
-      * ^slicing.discriminator.path = "$this"
-      * ^slicing.rules = #open
-    * coding contains
-        EDQM 0..1 MS and
-        SNOMED-CT 0..1 MS
-    * coding[EDQM] from $vs-edqm-route (required)
-    * coding[EDQM] only ISiKCoding
-      * ^patternCoding.system = $cs-edqm
-    * coding[SNOMED-CT] from SctRouteOfAdministration (required)
-    * coding[SNOMED-CT] only ISiKSnomedCTCoding
-      * ^patternCoding.system = $cs-sct
-    * text MS
-  * doseAndRate 
-    * doseRange MS
-      * ^short = "Dosisbereich"
-      * low MS
-      * low only MedicationQuantityDoseForm
-      * high MS
-      * high only MedicationQuantityDoseForm
-    * doseQuantity MS
-      * ^short = "Dosis"
-    * rateRatio MS
-      * ^short = "Raten-Verhältnis"
-      * ^comment = "Das Must-Support-Flag auf rateRatio bzw. rateQuantity bedeutet, dass produzierende Systeme zur Kodierung der Ratenangaben nach eigenem Ermessen entweder den Datentyp Ratio oder Quantity verwenden KÖNNEN. Beim Empfang und Verarbeitung der eingehenden Daten MÜSSEN dagegen beide Datentypen interpretiert werden können."
-      * numerator 1.. MS
-      * numerator only MedicationQuantity
-      * denominator 1.. MS
-      * denominator only MedicationQuantity
-    * rateRange MS
-      * ^short = "Raten-Bereich"
-      * low MS
-      * low only MedicationQuantityDoseForm
-      * high MS
-      * high only MedicationQuantityDoseForm
-    * rateQuantity MS
-    * rateQuantity only MedicationQuantity
-      * ^short = "Rate"
-      * ^comment = "Das Must-Support-Flag auf rateRatio bzw. rateQuantity bedeutet, dass produzierende Systeme zur Kodierung der Ratenangaben nach eigenem Ermessen entweder den Datentyp Ratio oder Quantity verwenden KÖNNEN. Beim Empfang und Verarbeitung der eingehenden Daten MÜSSEN dagegen beide Datentypen interpretiert werden können."
-  * maxDosePerPeriod MS
-    * ^short = "Maximaldosis (Zähler) pro Zeitraum (Nenner)"
-    * numerator 1.. MS
-    * numerator only MedicationQuantityDoseForm
-    * denominator 1.. MS
-    * denominator only MedicationQuantity
-  * maxDosePerAdministration MS
-  * maxDosePerAdministration only MedicationQuantityDoseForm
-    * ^short = "Maximaldosis pro Verabreichung"
+* insert ISiKDosageDE(dosageInstruction)
 * dispenseRequest MS
   * ^short = "angeforderte Abgabemenge"
   * ^comment = "Begründung des Must-Support: Basisinformation"
@@ -260,11 +135,9 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * ^short = "Ersatz zulässig"
   * ^comment = "Begründung des Must-Support: Alignment mit dem (E-)Rezept"
   * allowedBoolean MS
-* priorPrescription 
-  * ^short = "Vorherige Verordnung bei fortgesetzter Therapie"
-  * ^comment = "Hinweis: Dieses Feld dient der Referenz auf eine frühere Verordnung, auf deren Basis die aktuelle Verschreibung fortgeführt wird - z.B. bei Folgerezepten.
-
-  Abgrenzung: Im Gegensatz zur Extension 'medicationRequestReplaces', die das Ersetzen einer Verordnung (z.B. bei Unverträglichkeit) abbildet, beschreibt 'priorPrescription' eine Fortführung einer bestehenden Medikation."
+* priorPrescription MS 
+  * ^short = "Vorherige Verordnung mit Bezug zur aktuellen Verordnung"
+  * ^comment = "Begründung des Must-Support: Erforderlich zur Abbildung des fachlichen Zusammenhangs zwischen Verordnungen (z. B. Fortführung, Änderung oder Ersetzung) und zur Nachvollziehbarkeit der Medikationshistorie."
 
 Instance: ExampleISiKMedikationsVerordnung
 InstanceOf: ISiKMedikationsVerordnung
@@ -294,7 +167,7 @@ Usage: #example
 Instance: ExampleISiKMedikationsVerordnung2
 InstanceOf: ISiKMedikationsVerordnung
 Usage: #example
-* extension[medicationRequestReplaces].valueReference.reference = "MedicationRequest/77777"
+* priorPrescription = Reference(ExampleISiKMedikationsVerordnung)
 * status = #active
 * intent = #order
 * medicationReference = Reference(ExampleISiKMedikament8)
@@ -315,3 +188,39 @@ Usage: #example
     * unit = "ml Infusionslösung"
     * system = $cs-ucum
     * code = #mL
+
+Instance: ExampleISiKMedikationsVerordnungBedarfsmedikation
+InstanceOf: ISiKMedikationsVerordnung
+Usage: #example
+* extension[medikationsart].valueCoding = ISiKMedikationsartCS#akut
+* status = #active
+* intent = #order
+* medicationReference.reference = "Medication/ExampleISiKMedikament1"
+* subject = Reference(PatientinMusterfrau)
+* encounter.reference = "Encounter/Fachabteilungskontakt"
+* authoredOn = 2026-04-24
+* requester.reference = "Practitioner/PractitionerWalterArzt"
+* dosageInstruction
+  * asNeededBoolean = true
+  // TODO: nach Release MedicationIG weiteres Beispiel ohne timing adden. Aktuell verhindert durch zu strenge constraints. 
+  * timing.repeat
+    * frequency = 1
+    * period = 6
+    * periodUnit = #h
+  * extension[asNeededFor][+]
+    * valueCodeableConcept.coding[0]
+      * system = $cs-sct
+      * version = "http://snomed.info/sct/11000274103/version/20251115"
+      * code = #76948002
+      * display = "Starke Schmerzen"
+  * extension[asNeededFor][+]
+    * valueCodeableConcept.coding[0]
+      * system = $cs-sct
+      * version = "http://snomed.info/sct/11000274103/version/20251115"
+      * code = #50415004
+      * display = "Moderate Schmerzen"
+  * doseAndRate.doseQuantity
+    * value = 1
+    * unit = "Tablette"
+    * system = $cs-edqm
+    * code = #15054000

@@ -2,10 +2,10 @@
   "resourceType": "ImplementationGuide",
   "id": "terminplanung",
   "url": "https://gematik.de/fhir/isik/ImplementationGuide/terminplanung",
-  "version": "6.0.0-rc",
+  "version": "6.0.0",
   "name": "ISiKTerminplanungImplementationGuide",
   "title": "ISiK Terminplanung Implementierungsleitfaden",
-  "status": "draft",
+  "status": "active",
   "publisher": "gematik GmbH",
   "contact": [
     {
@@ -26,8 +26,14 @@
   ],
   "dependsOn": [
     {
+      "packageId": "hl7.fhir.uv.xver-r5.r4",
+      "version": "0.1.0",
+      "uri": "http://hl7.org/fhir/uv/xver/ImplementationGuide/hl7.fhir.uv.xver-r5.r4",
+      "id": "hl7_fhir_uv_xver_r5_r4"
+    },
+    {
       "packageId": "hl7.fhir.uv.ips",
-      "version": "1.1.0",
+      "version": "2.0.0",
       "uri": "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
       "id": "hl7_fhir_uv_ips"
     },
@@ -39,7 +45,7 @@
     },
     {
       "packageId": "de.basisprofil.r4",
-      "version": "1.5.4",
+      "version": "1.6.0",
       "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
       "id": "de_basisprofil_r4"
     },
@@ -50,12 +56,6 @@
       "id": "de_ihe_d_terminology"
     },
     {
-      "packageId": "dvmd.kdl.r4",
-      "version": "2025.0.1",
-      "uri": "http://fhir.org/packages/dvmd.kdl.r4/ImplementationGuide/dvmd.kdl.r4",
-      "id": "dvmd_kdl_r4"
-    },
-    {
       "packageId": "ihe.formatcode.fhir",
       "version": "1.4.0",
       "uri": "https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir",
@@ -63,7 +63,7 @@
     },
     {
       "packageId": "hl7.fhir.uv.sdc",
-      "version": "3.0.0",
+      "version": "4.0.0",
       "uri": "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
       "id": "hl7_fhir_uv_sdc"
     },
@@ -72,6 +72,18 @@
       "version": "1.0.6",
       "uri": "https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology",
       "id": "de_gematik_terminology"
+    },
+    {
+      "packageId": "de.gematik.ti",
+      "version": "1.3.1",
+      "uri": "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
+      "id": "de_gematik_ti"
+    },
+    {
+      "packageId": "de.fhir.medication",
+      "version": "1.0.7",
+      "uri": "http://ig.fhir.de/igs/medication/ImplementationGuide/de.fhir.medication",
+      "id": "de_fhir_medication"
     }
   ],
   "definition": {
@@ -82,14 +94,6 @@
         },
         "exampleBoolean": false,
         "name": "Allgemeine Beratungsstelle der Fachabteilung 0100"
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/AppointmentReplaces"
-        },
-        "description": "Mit dieser Erweiterung kann eine neue Appointment-Ressource auf eine frühere, ersetzte Appointment-Ressource verweisen, z. B. bei einer Terminverschiebung oder -umbuchung. Dies erleichtert die Nachverfolgung von Terminänderungen und stellt sicher, dass der Zusammenhang zwischen ursprünglichem und aktuellem Termin eindeutig dokumentiert ist.",
-        "exampleBoolean": false,
-        "name": "AppointmentReplaces"
       },
       {
         "reference": {
@@ -114,6 +118,14 @@
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
         "exampleBoolean": false,
         "name": "CapabilityStatement für Rolle StammdatenRolle"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementTerminSubscriptionRolle"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+        "exampleBoolean": false,
+        "name": "CapabilityStatement für Rolle Termin Subscription"
       },
       {
         "reference": {
@@ -144,6 +156,21 @@
         "description": "The actual end date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values.",
         "exampleBoolean": false,
         "name": "EndDate"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKEncounterTypeErweiterungCS"
+        },
+        "description": "ISiK definiert an dieser Stelle eigene Encounter Typen. Dieses CodeSystem ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+        "exampleBoolean": false,
+        "name": "Erweiterung von Encounter.type in ISiK"
+      },
+      {
+        "reference": {
+          "reference": "Parameters/exp-params"
+        },
+        "exampleBoolean": false,
+        "name": "exp-params"
       },
       {
         "reference": {
@@ -225,6 +252,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/FhirMimeTypeVS"
+        },
+        "description": "FHIR Mime Types",
+        "exampleBoolean": false,
+        "name": "FhirMimeTypeVS"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation"
         },
         "description": "Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to *not* support a feature.",
@@ -254,6 +289,44 @@
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
         "exampleBoolean": false,
         "name": "ISiK CapabilityStatement Termin-Repository Rolle"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKSubscription"
+        },
+        "description": "ISiK Subscription  \n\n**Motivation**\n\nSubscription ist eine FHIR Ressource, um als Client-System Benachrichtigungen über Events auf dem FHIR Server anzufragen. Der Subscription Mechanismus in FHIR R4 ist nicht geeignet, um alle relevanten Events (hier im Speziellen das Mergen von Patienten) zu unterstützen. Daher basiert das ISiK Subscription-Profil auf dem [Subscriptions R5 Backport Profil von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription.html).\n\nUm als Subsystem über ein Subscription-Event informiert zu werden, MUSS der FHIR Subscription Mechanismus gemäß des [Subscriptions R5 Backport IGs von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) vom Subscription Server Akteur unterstützt werden.\n\n**Kompatibilität**\n\nDas Profil ISiKSubscription basiert auf dem [Backport-Subscription Profil](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription.html).\nDer [SubscriptionStatus](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription-status-r4.html), sowie das [Subscription Notification Bundle](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription-notification-r4.html) werden unverändert direkt aus dem [Subscriptions R5 Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/index.html) genutzt.  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "exampleBoolean": false,
+        "name": "ISiK Subscription"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKSubscriptionTermin"
+        },
+        "description": "ISiK Subscription  \n**Motivation**\n\nDie Subscription Ressource für Appointments unterstützt den Informationsaustausch von Termininformationen, die ausgehend vom Termin Repository eine Änderung erfahren haben.\nHierdurch können Client-Systeme über relevante Terminänderungen informiert werden, um beispielsweise die Anzeige von Termininformationen zu aktualisieren oder Benachrichtigungen (bspw. im Fall von abgesagten Terminen) an Patienten zu senden.\n\n**Kompatibilität**\n\nDas Profil ISiKSubscriptionTermin basiert auf dem Profil ISiKSubscription, welches wiederum auf dem [Backport-Subscription Profil](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription.html) basiert.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "exampleBoolean": false,
+        "name": "ISiK Subscription Termine"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/isik-encounter-Sternenfall"
+        },
+        "exampleBoolean": false,
+        "name": "isik-encounter-Sternenfall"
+      },
+      {
+        "reference": {
+          "reference": "Patient/isik-patient-156722"
+        },
+        "exampleBoolean": false,
+        "name": "isik-patient-156722"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKSubscriptionTopic"
+        },
+        "description": "Liste der aller SubscriptionTopics, die in ISiK verwendet werden können. Neben den merge-SubscriptionTopics sind auch die SubscriptionTopics für Updates der Ressourcen enthalten, die in ISiK verwendet werden können.",
+        "exampleBoolean": false,
+        "name": "ISiK-SubscriptionTopic"
       },
       {
         "reference": {
@@ -291,9 +364,25 @@
         "reference": {
           "reference": "StructureDefinition/ISiKCodeSystem"
         },
-        "description": "Dieses Profil beschreibt die maschinenlesbare Repräsentation von \nsystem-spezifischen Kodierungen in ISiK-Szenarien.  \n\n### Motivation\n\nISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus-/System-interne Kodierungen. Das Profil ISiKKatalog (CodeSystem) als Profil erlaubt die Repräsentation der dazugehörigen Codes und Display-Werte. \n\nEine maschinenlesbare Repräsentation dieser Kodierungen erlaubt es Clients, dazugehörige Anzeigetext und Definitionen zu verarbeiten.\n\nEin Codesystem eignet sich auch dazu, auf dessen Basis definierte ValueSets zu expandieren (https://hl7.org/fhir/R4/valueset-operation-expand.html).\nDa ISiKValueSet expandierte Valuesets vorsieht, ist eine dynamische Expansion in der Regel nicht erforderlich.\nDarüber hinausgehend ist ein Use Case im Kontext der Katalogabfrage folgender: Ein Client möchte eine Expansion neu generieren (z.B. mit anderen Expansionen-Parametern), um das ValueSet beispielsweise in einer anderen Sprache auszugeben. ",
+        "description": "Dieses Profil beschreibt die maschinenlesbare Repräsentation von \nsystem-spezifischen Kodierungen in ISiK-Szenarien.  \n\n**Motivation**\n\nISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus-/System-interne Kodierungen. Das Profil ISiKKatalog (CodeSystem) als Profil erlaubt die Repräsentation der dazugehörigen Codes und Display-Werte. \n\nEine maschinenlesbare Repräsentation dieser Kodierungen erlaubt es Clients, dazugehörige Anzeigetext und Definitionen zu verarbeiten.\n\nEin Codesystem eignet sich auch dazu, auf dessen Basis definierte ValueSets zu expandieren (https://hl7.org/fhir/R4/valueset-operation-expand.html).\nDa ISiKValueSet expandierte Valuesets vorsieht, ist eine dynamische Expansion in der Regel nicht erforderlich.\nDarüber hinausgehend ist ein Use Case im Kontext der Katalogabfrage folgender: Ein Client möchte eine Expansion neu generieren (z.B. mit anderen Expansionen-Parametern), um das ValueSet beispielsweise in einer anderen Sprache auszugeben. ",
         "exampleBoolean": false,
         "name": "ISiKCodeSystem"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKEncounterClassDE"
+        },
+        "description": "Erweitert das ValueSet EncounterClassDE der Deutschen Basisprofile um die Codes ACUTE, NONAC und OBSENC aus dem HL7 v3 ActCode System zur Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR). Ein Issue zur Aufnahme dieser Codes in EncounterClassDE wurde bei den Deutschen Basisprofilen eingereicht.",
+        "exampleBoolean": false,
+        "name": "ISiKEncounterClassDE"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKEncounterTypeErweiterungVS"
+        },
+        "description": "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+        "exampleBoolean": false,
+        "name": "ISiKEncounterTypeErweiterungVS"
       },
       {
         "reference": {
@@ -330,7 +419,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKKontaktGesundheitseinrichtung"
         },
-        "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n### Motivation\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}\n\n### Kompatibilität\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n\n**Motivation**\n\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Abbildung-des-Konstrukts-Fall.html).\n\n**Kompatibilität**\n\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiKKontaktGesundheitseinrichtung"
       },
@@ -356,6 +445,22 @@
         },
         "exampleBoolean": false,
         "name": "IsikPatientTemplate"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKSubscriptionTopicVS"
+        },
+        "description": "ValueSet, das alle Codes des ISiKSubscriptionTopic CodeSystems enthält",
+        "exampleBoolean": false,
+        "name": "ISiKSubscriptionTopic ValueSet"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKSubscriptionTopicAppointmentVS"
+        },
+        "description": "Enthaelt die Codes der Subscription Topics, die für die Absage- bzw. Änderung von Terminen relevant sind.",
+        "exampleBoolean": false,
+        "name": "ISiKSubscriptionTopicAppointmentVS"
       },
       {
         "reference": {
@@ -438,9 +543,17 @@
         "reference": {
           "reference": "StructureDefinition/ISiKValueSet"
         },
-        "description": "Dieses Profil beschreibt die maschinenlesbare Auswahl von Codes \nfür die Kodierung spezifischer FHIR-Elemente in ISiK-Szenarien.\n### Motivation\n\nISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus- / System-interne Kodierungen.\nMittels der Veröffentlichung von ValueSets können Auswahllisten für externe Clients bereitgestellt werden, sodass diese entsprechende Kodierungen ebenfalls anbieten können.\n### Kompatibilität\n\nFür das Profil ISiKValueSet wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "description": "Dieses Profil beschreibt die maschinenlesbare Auswahl von Codes \nfür die Kodierung spezifischer FHIR-Elemente in ISiK-Szenarien.\n\n**Motivation**\n\nISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus- / System-interne Kodierungen.\nMittels der Veröffentlichung von ValueSets können Auswahllisten für externe Clients bereitgestellt werden, sodass diese entsprechende Kodierungen ebenfalls anbieten können.\n\n**Kompatibilität**\n\nFür das Profil ISiKValueSet wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiKValueSet"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/MimeTypeCS"
+        },
+        "description": "Fragment des CodeSystems urn:ietf:bcp:13 mit den in ISiK relevanten MIME-Typen.",
+        "exampleBoolean": false,
+        "name": "MIME Types (Fragment)"
       },
       {
         "reference": {
@@ -465,27 +578,42 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/PlannedEndDate"
+          "reference": "Subscription/PatientMergeSubscriptionExample"
         },
-        "description": "Diese Erweiterung dokumentiert das geplante Enddatum bzw. den geplanten Endzeitpunkt eines Encounters. Sie unterstützt die Vorausplanung von Aufenthalten oder Behandlungen, beispielsweise für die Ressourcenplanung, Terminverwaltung und für die Kommunikation mit nachfolgenden Einrichtungen.",
         "exampleBoolean": false,
-        "name": "PlannedEndDate"
+        "name": "PatientMergeSubscriptionExample"
       },
       {
         "reference": {
-          "reference": "StructureDefinition/PlannedStartDate"
+          "reference": "StructureDefinition/BackportSubscriptionStatusR4Fixed"
         },
-        "description": "Diese Extension dient der Erfassung des geplanten Startzeitpunkts (dateTime) eines Encounters, z. B. einer stationären Aufnahme, Operation oder eines Termins. Sie ermöglicht eine strukturierte Terminplanung, erleichtert die Koordination verschiedener Versorgungsprozesse und verbessert die Kommunikation zwischen Systemen und Leistungserbringern.",
+        "description": "Profil auf der FHIR-R4-Resource Parameters zur Unterstützung themenbasierter Subscription-Benachrichtigungen in R4.\n\nDieses Profil ist funktional identisch mit `http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-status-r4`.  \nDie Version 1.1.0 des offiziellen Profils weist jedoch technische Fehler auf. Daher wurde es hier als Workaround erneut implementiert.\nDiese lokale Definition wird durch das offizielle `backport-subscription-status-r4` Profil ersetzt, sobald eine korrigierte Version veröffentlicht wurde.",
         "exampleBoolean": false,
-        "name": "PlannedStartDate"
+        "name": "R4 Backported R5 SubscriptionStatus"
       },
       {
         "reference": {
-          "reference": "StructureDefinition/ScheduleName"
+          "reference": "StructureDefinition/BackportSubscriptionNotificationR4Fixed"
         },
-        "description": "Diese Erweiterung ermöglicht es, einem FHIR Schedule (Kalender) einen menschenlesbaren Namen zuzuweisen, der eine schnelle Identifikation und Unterscheidung mehrerer Kalender in Terminplanungsanwendungen erlaubt. Der Name dient zur besseren Übersichtlichkeit, z. B. bei der Auswahl eines Kalenders durch Nutzer oder in Verwaltungsoberflächen für Terminressourcen.",
+        "description": "Profil auf der FHIR-R4-Resource Bundle, um R5-ähnliche, themenbasierte Subscription-Benachrichtigungen in FHIR R4 zu ermöglichen.\n\nDieses Profil ist funktional identisch mit `http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-notification-r4`.  \nDie Version 1.1.0 des offiziellen Profils enthält jedoch technische Fehler. Daher wurde dieses Profil lokal als temporärer Workaround nachgebildet.\nEs wird durch das offizielle `backport-subscription-notification-r4` Profil ersetzt, sobald eine korrigierte Version veröffentlicht wurde.",
         "exampleBoolean": false,
-        "name": "ScheduleName"
+        "name": "R4 Topic-Based Subscription Notification Bundle"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/subscription-notification-type"
+        },
+        "description": "The type of notification represented by the status message.",
+        "exampleBoolean": false,
+        "name": "SubscriptionNotificationType"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/subscription-notification-type"
+        },
+        "description": "The type of notification represented by the status message.",
+        "exampleBoolean": false,
+        "name": "SubscriptionNotificationType"
       },
       {
         "reference": {
@@ -600,6 +728,11 @@
           "generation": "markdown"
         },
         {
+          "nameUrl": "Performance.html",
+          "title": "Performance",
+          "generation": "markdown"
+        },
+        {
           "nameUrl": "Operations.html",
           "title": "Operation: $book",
           "generation": "markdown"
@@ -618,11 +751,39 @@
       },
       {
         "code": "releaselabel",
-        "value": "ci-build"
+        "value": "active"
       },
       {
-        "code": "no-validate",
+        "code": "display-warnings",
         "value": "true"
+      },
+      {
+        "code": "path-expansion-params",
+        "value": "../../input/resources/Parameters-exp-params.json"
+      },
+      {
+        "code": "special-url",
+        "value": "http://example.org/fhir/CodeSystem/TestKatalog"
+      },
+      {
+        "code": "special-url",
+        "value": "http://example.org/fhir/ValueSet/TestValueSet"
+      },
+      {
+        "code": "special-url",
+        "value": "http://hl7.org/fhir/ValueSet/subscription-notification-type"
+      },
+      {
+        "code": "special-url",
+        "value": "http://hl7.org/fhir/subscription-notification-type"
+      },
+      {
+        "code": "special-url",
+        "value": "https://gematik.de/fhir/isik/OperationDefinition/AppointmentBook"
+      },
+      {
+        "code": "special-url",
+        "value": "urn:ietf:bcp:13"
       }
     ]
   }

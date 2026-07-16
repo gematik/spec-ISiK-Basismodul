@@ -1,8 +1,4 @@
-﻿---
-topic: ISiKAppointmentBookOperation
-canonical: https://gematik.de/fhir/isik/OperationDefinition/AppointmentBook
----
-
+﻿
 Es gelten die allgemeinen Vorgaben der FHIR-Kernspezifikation für die Ausführung von [Custom Operations](https://www.hl7.org/fhir/R4/operations.html).
 
 ### Buchung eines Termins
@@ -13,7 +9,7 @@ Nähere Informationen zu der Custom-Operation zur Buchung eines Termins bitte hi
 
 Folgende Schritte KÖNNEN notwendig sein, sodass ein Termin durch einen Termin-Requestor innerhalb eines Termin-Repository eingestellt wird. Es ist zu beachten, dass für spezielle Implementierungen nicht alle Schritte hiervon relevant sind und übersprungen werden können.
 
-Generell wird darauf hingewiesen, dass abhängig davon, welcher Client oder Benutzer eine Interaktion ausführt, unterschiedliche Ergebnisse zurückgeliefert werden können. Die vorliegende Spezifikation macht keine Vorgaben, wie eine Authentifizierung und Autorisierung zu implementieren ist. Es wird hierzu auf das [ISiK-Modul 'Connect'](https://gemspec.gematik.de/ig/fhir/isik/connect/6.0.0-rc/index.html) verwiesen.
+Generell wird darauf hingewiesen, dass abhängig davon, welcher Client oder Benutzer eine Interaktion ausführt, unterschiedliche Ergebnisse zurückgeliefert werden können. Die vorliegende Spezifikation macht keine Vorgaben, wie eine Authentifizierung und Autorisierung zu implementieren ist. Es wird hierzu auf das [ISiK-Modul 'Connect'](https://gemspec.gematik.de/ig/fhir/isik/connect/6.0.0-rc1/index.html) verwiesen.
 
 User Story für die folgenden Beispiele: Ein Patient bucht über ein externes Patientenportal einen Termin in der allgemeinmedizinischen Ambulanz eines Krankenhauses. Da der Patient seit Tagen Bauchschmerzen hat, die in den letzten Stunden stärker werden, wählt er die Priorität "Notfall".
 
@@ -189,11 +185,11 @@ User Story für die folgenden Beispiele: Ein Patient bucht über ein externes Pa
     ```
 
     Für den Fall, dass ein Termin-Repository zum aktuellen Zeitpunkt keine Terminbestätigung geben kann, wird in der Antwortnachricht zurückgegebenen Appointment-Ressource der Wert von "Appointment.status" auf "pending" gesetzt. Als HTTP-Status-Code MUSS das Termin-Repository "202 - Accepted" zurückgeben.
-    Beispielsweise kann dies der Fall sein, falls ein Termin zunächst manuell im Termin-Repository bestätigt werden muss. Sobald ein Termin im Status "pending" seitens des Termin-Repository bestätigt oder abgesagt wurde, MUSS das Termin-Repository den Status des Termins auf "booked" bzw. "cancelled" stellen. Sofern dieses unterstützt wird, SOLL eine Benachrichtigung des Termin-Consumers per Push-Mechanismus erfolgen (siehe auch nächster Abschnitt). In jedem Fall MUSS der Termin-Consumer über eine Lese- oder Such-Anfrage jederzeit den aktuellen Status der Terminbuchung ermitteln können.
+    Beispielsweise kann dies der Fall sein, falls ein Termin zunächst manuell im Termin-Repository bestätigt werden muss. Sobald ein Termin im Status "pending" seitens des Termin-Repository bestätigt oder abgesagt wurde, MUSS das Termin-Repository den Status des Termins auf "booked" bzw. "cancelled" stellen. Das Termin-Repository MUSS den Termin-Consumer über die Statusänderung per Subscription-Benachrichtigung informieren. Hierfür MUSS das im [ISiK Subscription Implementation Guide](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc1/index.html) beschriebene Vorgehen auf Basis des R5-Subscription-Backport-Mechanismus in FHIR R4 angewendet werden. In jedem Fall MUSS der Termin-Consumer über eine Lese- oder Such-Anfrage jederzeit den aktuellen Status der Terminbuchung ermitteln können.
 
 ### Aktualisierung / Absage eines Termins
 
-Es ist zu beachten, dass es aus Effizienzgründen für bestimmte Implementierungen sinnvoll sein kann, dass Updates einer Appointment-Ressource ausgelöst durch das Termin-Repository mittels eines Push-Mechanismus an Termin-Consumer / Termin-Requestor übermittelt werden. Im Standard-Fall müssen diese Akteure die Ressourcen mittels des entsprechenden Endpunktes eigenständig abfragen und auf Updates überprüfen. Für einen Push-Mechanismus wird auf [FHIR Subscriptions](https://www.hl7.org/fhir/R4/subscription.html) verwiesen. Die vorliegende Spezifikation macht jedoch KEINE Vorgaben für die Verwendung einer solchen Methodik.
+Updates einer Appointment-Ressource ausgelöst durch das Termin-Repository MÜSSEN dem Termin-Consumer und Termin-Requestor per Subscription-Benachrichtigung mitgeteilt werden. Hierfür ist das im [ISiK Subscription Implementation Guide](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc1/index.html) beschriebene Vorgehen auf Basis des R5-Subscription-Backport-Mechanismus in FHIR R4 anzuwenden. Für diesen Use-Case steht das Subscription-Profil [ISiKSubscriptionTermin](ISiKSubscriptionTermin.html) zur Verfügung.
 
 Eine Aktualisierung der Ressource erfolgt mittels einer [HTTP PATCH-Interaktion](https://www.hl7.org/fhir/R4/http.html#patch). Updates einer Appointment-Ressource MUSS das Termin-Repository unterstützen. Es MUSS mindestens die PATCH-Interaktion auf Basis einer FHIRPath-Patch-Parameter Ressource unterstützt werden.
 
@@ -239,12 +235,20 @@ Falls die Aktualisierung eines Termins die Veränderung eines der oben genannten
 
 Mindestens einer der nachfolgenden Wege MUSS unterstützt werden, um eine Patient-Ressource im Kontext der Terminbuchung zu erstellen oder zu übermitteln:
 
-- Direkte Erstellung über Create-Interaktion: Das Termin-Repository unterstüzt die Anlage einer Patient-Ressource über eine FHIR-Create-Interaktion – gemäß den Vorgaben des [ISiK-Basismoduls](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Rest.html). Um auch eine Aktualisierung von Patienteninformationen zu ermöglichen, SOLLTE zusätzlich die Unterstützung einer Update-Interaktion bereitgestellt werden.
+- Direkte Erstellung über Create-Interaktion: Das Termin-Repository unterstüzt die Anlage einer Patient-Ressource über eine FHIR-Create-Interaktion – gemäß den Vorgaben des [ISiK-Basismoduls](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/UebergreifendeFestlegungen_Rest.html). Um auch eine Aktualisierung von Patienteninformationen zu ermöglichen, SOLLTE zusätzlich die Unterstützung einer Update-Interaktion bereitgestellt werden.
 
     > **Hintergrund**: Ein Update der Patient-Ressource über den `patient`-Parameter in der `$book`-Operation ist technisch aufwändiger, da das Termin-Repository hierzu zunächst die interne ID der bestehenden Instanz mittels Patient-Matching ermitteln müsste. Dies ist bei unvollständigen oder minimalen Patientenangaben häufig nicht zuverlässig möglich.
 
 - Übergabe innerhalb der `$book`-Operation:
   Das Termin-Repository unterstützt die Übergabe einer Patient-Instanz mittels des dafür vorgesehenen Parameters innerhalb der `$book`-Operation.
+
+### Übermittlung zusätzlicher Patientenangaben
+
+Zusätzlich KANN innerhalb der `$book`-Operation über den Parameter `patientSubmittedInformation` eine `QuestionnaireResponse`-Ressource übermittelt werden, um patientenseitig erhobene Angaben im Rahmen der Terminbuchung zu übertragen. Dies ermöglicht es insbesondere Portalsystemen, abhängig vom Anwendungsfall oder von der Terminart unterschiedliche Fragen zu stellen, ohne dass hierfür Änderungen an der Spezifikation erforderlich sind.
+
+Im ersten Ausbauschritt genügt es, wenn die `QuestionnaireResponse` die Fragen und Antworten selbst enthält. Eine Auflösung oder Mitlieferung der zugrundeliegenden `Questionnaire`-Definition ist hierfür nicht erforderlich. Das Element `QuestionnaireResponse.questionnaire` SOLL jedoch befüllt sein, damit unterschiedlich strukturierte Antworten unterschieden und perspektivisch automatisiert verarbeitet werden können. Das Element `QuestionnaireResponse.text` MUSS befüllt sein, damit die Inhalte durch das empfangende System unmittelbar dargestellt werden können.
+
+Die Vorgaben aus dem [ISiK-Formularmodul](https://gemspec.gematik.de/ig/fhir/isik/formularmodul/6.0.0-rc1/index.html) sind für die `QuestionnaireResponse`-Ressource entsprechend anzuwenden, insbesondere hinsichtlich der Kodierung von Fragen und Antworten.  
 
 ### Asynchrone Ausführung $book
 

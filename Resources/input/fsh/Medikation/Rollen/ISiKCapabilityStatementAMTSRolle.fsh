@@ -7,10 +7,11 @@ Usage: #definition
 * title = "ISiK CapabilityStatement AMTS Rolle"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
-* purpose = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'AMTS' zu bestehen.
+* purpose = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden lesenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'AMTS' zu bestehen.
   
 **HISTORIE:**    
 
+* `change` Alle modifizierenden Interaktionen (z.B. `update`, `create`, `transaction`) wurden entfernt aus dieser Rolle und ausgelagert in eine dedizierte Rolle.
 * `change` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist.   
 * `change` Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter `patient` und `encounter`, da diese für ISiK-Zwecke ausreichend sind.  
 "
@@ -31,17 +32,7 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-      * code = #create
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
       * code = #read
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * code = #update
     * interaction[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -59,20 +50,9 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**  
-        `GET [base]/RiskAssessment?_id=103270`
-
-        **Anwendungshinweise:** Weitere Informationen zur Suche nach '_id' finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Parameters for all resources'](https://hl7.org/fhir/R4/search.html#all).
-
-        "
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter    
+ 
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -129,12 +109,6 @@ Usage: #definition
         **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
 
         "
-  * interaction[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * code = #transaction
-    * documentation = "Transaktions-Bundle gemäß Profil https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationTransaction - Transaktions-Antwort-Bundle gemäß Profil https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationTransactionResponse"
   * resource[+]
     * extension
       * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -145,17 +119,7 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-      * code = #create
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
       * code = #read
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * code = #update
     * interaction[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -165,13 +129,8 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter    
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -186,13 +145,6 @@ Usage: #definition
       * name = "patient"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
       * type = #reference
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "onset"
-      * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-onset"
-      * type = #date
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -232,17 +184,7 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-      * code = #create
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
       * code = #read
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * code = #update
     * interaction[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -256,13 +198,8 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter    
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"

@@ -1,11 +1,12 @@
 {
   "resourceType": "ImplementationGuide",
   "id": "vitalparameter",
+  "language": "de",
   "url": "https://gematik.de/fhir/isik/ImplementationGuide/vitalparameter",
-  "version": "6.0.0-rc",
+  "version": "6.0.0",
   "name": "ISiKVitalparameterImplementationGuide",
   "title": "ISiK Vitalparameter Implementierungsleitfaden",
-  "status": "draft",
+  "status": "active",
   "publisher": "gematik GmbH",
   "contact": [
     {
@@ -18,7 +19,7 @@
       ]
     }
   ],
-  "description": "Implementation guide for the Vitalparameter module based on ISiK specifications.",
+  "description": "Dieser Implementierungsleitfaden beschreibt eine ISiK-konforme Umsetzung der Vitalparameter im Krankenhaus.",
   "packageId": "vitalparameter",
   "license": "Apache-2.0",
   "fhirVersion": [
@@ -26,8 +27,14 @@
   ],
   "dependsOn": [
     {
+      "packageId": "hl7.fhir.uv.xver-r5.r4",
+      "version": "0.1.0",
+      "uri": "http://hl7.org/fhir/uv/xver/ImplementationGuide/hl7.fhir.uv.xver-r5.r4",
+      "id": "hl7_fhir_uv_xver_r5_r4"
+    },
+    {
       "packageId": "hl7.fhir.uv.ips",
-      "version": "1.1.0",
+      "version": "2.0.0",
       "uri": "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
       "id": "hl7_fhir_uv_ips"
     },
@@ -39,7 +46,7 @@
     },
     {
       "packageId": "de.basisprofil.r4",
-      "version": "1.5.4",
+      "version": "1.6.0",
       "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
       "id": "de_basisprofil_r4"
     },
@@ -50,16 +57,34 @@
       "id": "de_ihe_d_terminology"
     },
     {
-      "packageId": "dvmd.kdl.r4",
-      "version": "2025.0.1",
-      "uri": "http://fhir.org/packages/dvmd.kdl.r4/ImplementationGuide/dvmd.kdl.r4",
-      "id": "dvmd_kdl_r4"
-    },
-    {
       "packageId": "ihe.formatcode.fhir",
       "version": "1.4.0",
       "uri": "https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir",
       "id": "ihe_formatcode_fhir"
+    },
+    {
+      "packageId": "hl7.fhir.uv.sdc",
+      "version": "4.0.0",
+      "uri": "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
+      "id": "hl7_fhir_uv_sdc"
+    },
+    {
+      "packageId": "de.gematik.terminology",
+      "version": "1.0.6",
+      "uri": "https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology",
+      "id": "de_gematik_terminology"
+    },
+    {
+      "packageId": "de.gematik.ti",
+      "version": "1.3.1",
+      "uri": "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
+      "id": "de_gematik_ti"
+    },
+    {
+      "packageId": "de.fhir.medication",
+      "version": "1.0.7",
+      "uri": "http://ig.fhir.de/igs/medication/ImplementationGuide/de.fhir.medication",
+      "id": "de_fhir_medication"
     }
   ],
   "definition": {
@@ -104,6 +129,14 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/ISiKEncounterTypeErweiterungCS"
+        },
+        "description": "ISiK definiert an dieser Stelle eigene Encounter Typen. Dieses CodeSystem ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+        "exampleBoolean": false,
+        "name": "Erweiterung von Encounter.type in ISiK"
+      },
+      {
+        "reference": {
           "reference": "Observation/ExampleISiKLaboruntersuchungCRP1"
         },
         "exampleBoolean": false,
@@ -122,6 +155,13 @@
         },
         "exampleBoolean": false,
         "name": "ExampleISiKLaboruntersuchungHb1"
+      },
+      {
+        "reference": {
+          "reference": "Observation/ExampleISiKLaboruntersuchungMaximal"
+        },
+        "exampleBoolean": false,
+        "name": "ExampleISiKLaboruntersuchungMaximal"
       },
       {
         "reference": {
@@ -164,6 +204,34 @@
         },
         "exampleBoolean": false,
         "name": "ExampleISiKLaboruntersuchungTSH1"
+      },
+      {
+        "reference": {
+          "reference": "Observation/ExampleOrganSerumNatrium202003110104"
+        },
+        "exampleBoolean": false,
+        "name": "ExampleOrganSerumNatrium202003110104"
+      },
+      {
+        "reference": {
+          "reference": "Observation/ExampleOrganSerumNatrium202003110159"
+        },
+        "exampleBoolean": false,
+        "name": "ExampleOrganSerumNatrium202003110159"
+      },
+      {
+        "reference": {
+          "reference": "Observation/ExampleOrganSerumNatrium202003110306"
+        },
+        "exampleBoolean": false,
+        "name": "ExampleOrganSerumNatrium202003110306"
+      },
+      {
+        "reference": {
+          "reference": "Parameters/exp-params"
+        },
+        "exampleBoolean": false,
+        "name": "exp-params"
       },
       {
         "reference": {
@@ -259,6 +327,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/ISiKKernTempSctVS"
+        },
+        "description": "ValueSet der Körperkerntemperatur SnomedCT Konzepte",
+        "exampleBoolean": false,
+        "name": "ISiK  Kerntemperatur SnomedCT ValueSet"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation"
         },
         "description": "Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to *not* support a feature.",
@@ -299,9 +375,47 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/ISiKLaborMethodeVS"
+        },
+        "description": "SNOMED-CT-Codes für Untersuchungsmethoden im Labor (alle Konzepte unterhalb von #272394005 'Technique (qualifier value)').",
+        "exampleBoolean": false,
+        "name": "ISiK Labor Methode"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKLaborbereichVS"
+        },
+        "description": "LOINC-Codes zur Kategorisierung von Laboruntersuchungen nach Fachbereichen.",
+        "exampleBoolean": false,
+        "name": "ISiK Laborbereich"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKSpecificKernTempLoincVS"
+        },
+        "description": "ValueSet der spezifischen Körperkerntemperatur LOINC Konzepte",
+        "exampleBoolean": false,
+        "name": "ISiK Specific Kerntemperatur LOINC ValueSet"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/isik-encounter-Sternenfall"
+        },
+        "exampleBoolean": false,
+        "name": "isik-encounter-Sternenfall"
+      },
+      {
+        "reference": {
+          "reference": "Patient/isik-patient-156722"
+        },
+        "exampleBoolean": false,
+        "name": "isik-patient-156722"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ISiKAtemfrequenz"
         },
-        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Atemfrequenz eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n### Motivation\nDie Erfassung und Überwachung der Atemfrequenz ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird die Atemfrequenz mit der Observation-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKAtemfrequenz ist vom Profil [VitalSignDE_Atemfrequenz](http://fhir.de/StructureDefinition/observation-de-vitalsign-atemfrequenz) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Respiratory Rate Profile](http://hl7.org/fhir/StructureDefinition/resprate) aus der FHIR R4 Spezifikation.",
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Atemfrequenz eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung der Atemfrequenz ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird die Atemfrequenz mit der Observation-Ressource repräsentiert.\n\n**Kompatibilität**\n\nDas Profil ISiKAtemfrequenz ist vom Profil [VitalSignDE_Atemfrequenz](http://fhir.de/StructureDefinition/observation-de-vitalsign-atemfrequenz) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Respiratory Rate Profile](http://hl7.org/fhir/StructureDefinition/resprate) aus der FHIR R4 Spezifikation.",
         "exampleBoolean": false,
         "name": "ISiKAtemfrequenz"
       },
@@ -362,7 +476,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKBlutdruckSystemischArteriell"
         },
-        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Blutdruck eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n### Motivation\nDie Erfassung und Überwachung des Blutdrucks ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird der Blutdruck mit der Observation-Ressource repräsentiert, die einzelnen Komponenten des Blutdrucks werden als Component-Elemente abgebildet.\n\nHinweis: In Fällen, in denen fachlich motiviert ausschließlich ein systolischer Blutdruck erhoben wird (z.B. in der Intensivmedizin), kann für den Slice zur Diastole (DiastolicBP) das Element .dataAbsentReason (mit dem Code 'not-performed') verwendet werden.\n\n### Kompatibilität\nDas Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruck](http://fhir.de/StructureDefinition/observation-de-vitalsign-blutdruck) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Blood Pressure Profile](http://hl7.org/fhir/StructureDefinition/bp) aus der FHIR R4 Spezifikation.",
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Blutdruck eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung des Blutdrucks ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird der Blutdruck mit der Observation-Ressource repräsentiert, die einzelnen Komponenten des Blutdrucks werden als Component-Elemente abgebildet.\n\nHinweis: In Fällen, in denen fachlich motiviert ausschließlich ein systolischer Blutdruck erhoben wird (z.B. in der Intensivmedizin), kann für den Slice zur Diastole (DiastolicBP) das Element .dataAbsentReason (mit dem Code 'not-performed') verwendet werden.\n\n**Kompatibilität**\n\nDas Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruck](http://fhir.de/StructureDefinition/observation-de-vitalsign-blutdruck) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Blood Pressure Profile](http://hl7.org/fhir/StructureDefinition/bp) aus der FHIR R4 Spezifikation.",
         "exampleBoolean": false,
         "name": "ISiKBlutdruckSystemischArteriell"
       },
@@ -399,7 +513,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKEKG"
         },
-        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über kurze, relevante EKG-Ausschnitte eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK. Es wurde entwickelt, um spezifische klinische Fragestellungen zu unterstützen, bei denen prägnante und gezielte EKG-Daten im Vordergrund stehen. Für vollständige und längere EKG-Aufzeichnungen sind alternative Formate vorgesehen, die für umfangreiche Daten besser geeignet sind.\n### Motivation\nDie Bereitstellung kurzer EKG-Ausschnitte ermöglicht eine präzise und effiziente Unterstützung bei der Diagnose akuter kardiologischer Fragestellungen, der Überwachung von Arrhythmien oder der Beurteilung bestimmter Ereignisse wie ST-Strecken-Veränderungen. Diese fokussierte Darstellung dient der Optimierung klinischer Entscheidungen und der schnellen Verarbeitung relevanter Daten.\n\nIn FHIR wird das EKG durch die Observation-Ressource repräsentiert, wobei spezifische Anforderungen für die Darstellung und Kodierung der Daten in diesem Profil berücksichtigt werden.\n\n### Kompatibilität\nDas Profil ISiKEKG ist vom Profil [EkgDE](http://fhir.de/StructureDefinition/observation-de-ekg) aus den deutschen Basisprofilen abgeleitet.",
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über kurze, relevante EKG-Ausschnitte eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK. Es wurde entwickelt, um spezifische klinische Fragestellungen zu unterstützen, bei denen prägnante und gezielte EKG-Daten im Vordergrund stehen. Für vollständige und längere EKG-Aufzeichnungen sind alternative Formate vorgesehen, die für umfangreiche Daten besser geeignet sind.\n\n**Motivation**\n\nDie Bereitstellung kurzer EKG-Ausschnitte ermöglicht eine präzise und effiziente Unterstützung bei der Diagnose akuter kardiologischer Fragestellungen, der Überwachung von Arrhythmien oder der Beurteilung bestimmter Ereignisse wie ST-Strecken-Veränderungen. Diese fokussierte Darstellung dient der Optimierung klinischer Entscheidungen und der schnellen Verarbeitung relevanter Daten.\n\nIn FHIR wird das EKG durch die Observation-Ressource repräsentiert, wobei spezifische Anforderungen für die Darstellung und Kodierung der Daten in diesem Profil berücksichtigt werden.\n\n**Kompatibilität**\n\nDas Profil ISiKEKG ist vom Profil [EkgDE](http://fhir.de/StructureDefinition/observation-de-ekg) aus den deutschen Basisprofilen abgeleitet.",
         "exampleBoolean": false,
         "name": "ISiKEKG"
       },
@@ -426,6 +540,22 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/ISiKEncounterClassDE"
+        },
+        "description": "Erweitert das ValueSet EncounterClassDE der Deutschen Basisprofile um die Codes ACUTE, NONAC und OBSENC aus dem HL7 v3 ActCode System zur Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR). Ein Issue zur Aufnahme dieser Codes in EncounterClassDE wurde bei den Deutschen Basisprofilen eingereicht.",
+        "exampleBoolean": false,
+        "name": "ISiKEncounterClassDE"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKEncounterTypeErweiterungVS"
+        },
+        "description": "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+        "exampleBoolean": false,
+        "name": "ISiKEncounterTypeErweiterungVS"
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/ISiKEntlassformRehaCS"
         },
         "description": "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform.",
@@ -444,7 +574,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKGCS"
         },
-        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Glasgow Coma Scale (GCS) Score eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n### Motivation\nDie Erfassung und Überwachung des Bewusstseinszustands anhand des GCS ist essenziell für die Beurteilung neurologischer Funktionen, die Überwachung von Patienten mit Schädel-Hirn-Trauma oder anderen neurologischen Erkrankungen sowie die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird der GCS-Score mit der Observation-Ressource repräsentiert, wobei die einzelnen Komponenten der Skala - Augenöffnung, verbale Reaktion und motorische Reaktion - als Component-Elemente abgebildet werden.\n### Kompatibilität\nDas Profil ISiKGCS ist vom Profil [ScoreDE_GCS](http://fhir.de/StructureDefinition/observation-de-score-gcs) aus den deutschen Basisprofilen abgeleitet.",
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Glasgow Coma Scale (GCS) Score eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung des Bewusstseinszustands anhand des GCS ist essenziell für die Beurteilung neurologischer Funktionen, die Überwachung von Patienten mit Schädel-Hirn-Trauma oder anderen neurologischen Erkrankungen sowie die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird der GCS-Score mit der Observation-Ressource repräsentiert, wobei die einzelnen Komponenten der Skala - Augenöffnung, verbale Reaktion und motorische Reaktion - als Component-Elemente abgebildet werden.\n\n**Kompatibilität**\n\nDas Profil ISiKGCS ist vom Profil [ScoreDE_GCS](http://fhir.de/StructureDefinition/observation-de-score-gcs) aus den deutschen Basisprofilen abgeleitet.",
         "exampleBoolean": false,
         "name": "ISiKGCS"
       },
@@ -473,7 +603,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKHerzfrequenz"
         },
-        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Herzfrequenz eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n### Motivation\nDie Erfassung und Überwachung der Herzfrequenz ist essenziell für die frühzeitige Erkennung von Herz-Kreislauf-Problemen, die Beurteilung des Gesundheitszustands sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\n\nIn FHIR wird die Herzfrequenz mit der Observation-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKHerzfrequenz ist vom Profil [VitalSignDE_Herzfrequenz](http://fhir.de/StructureDefinition/observation-de-vitalsign-herzfrequenz) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Respiratory Rate Profile](http://hl7.org/fhir/StructureDefinition/heartrate) aus der FHIR R4 Spezifikation.",
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Herzfrequenz eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung der Herzfrequenz ist essenziell für die frühzeitige Erkennung von Herz-Kreislauf-Problemen, die Beurteilung des Gesundheitszustands sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\n\nIn FHIR wird die Herzfrequenz mit der Observation-Ressource repräsentiert.\n\n**Kompatibilität**\n\nDas Profil ISiKHerzfrequenz ist vom Profil [VitalSignDE_Herzfrequenz](http://fhir.de/StructureDefinition/observation-de-vitalsign-herzfrequenz) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Respiratory Rate Profile](http://hl7.org/fhir/StructureDefinition/heartrate) aus der FHIR R4 Spezifikation.",
         "exampleBoolean": false,
         "name": "ISiKHerzfrequenz"
       },
@@ -502,7 +632,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKKoerpergewicht"
         },
-        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über das Körpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n### Motivation\nDie Erfassung und Überwachung des Körpergewichts ist essenziell für die Beurteilung des Ernährungszustands, die Überwachung von Veränderungen im Rahmen der Therapie sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\n\nIn FHIR wird das Körpergewicht mit der Observation-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation.",
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über das Körpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung des Körpergewichts ist essenziell für die Beurteilung des Ernährungszustands, die Überwachung von Veränderungen im Rahmen der Therapie sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\n\nIn FHIR wird das Körpergewicht mit der Observation-Ressource repräsentiert.\n\n**Kompatibilität**\n\nDas Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation.",
         "exampleBoolean": false,
         "name": "ISiKKoerpergewicht"
       },
@@ -531,7 +661,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKKoerpergroesse"
         },
-        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körpergröße eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n### Motivation\nDie Erfassung und Überwachung der Körpergröße ist essenziell für die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\n\nIn FHIR wird die Körpergröße mit der Observation-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation.",
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körpergröße eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung der Körpergröße ist essenziell für die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\n\nIn FHIR wird die Körpergröße mit der Observation-Ressource repräsentiert.\n\n**Kompatibilität**\n\nDas Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation.",
         "exampleBoolean": false,
         "name": "ISiKKoerpergroesse"
       },
@@ -558,38 +688,38 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/ISiKKoerpertemperatur"
+          "reference": "StructureDefinition/ISiKKoerperkerntemperatur"
         },
-        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körpertemperatur eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n### Motivation\nDie Erfassung und Überwachung der Körpertemperatur ist essenziell für die frühzeitige Erkennung von Infektionen, die Beurteilung des Gesundheitszustands sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\n\nIn FHIR wird die Körpertemperatur mit der Observation-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKKoerpertemperatur ist vom Profil [VitalSignDE_Koerpertemperatur](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpertemperatur) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [OObservation Body Temperature Profile](http://hl7.org/fhir/StructureDefinition/bodytemp) aus der FHIR R4 Spezifikation.",
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körperkerntemperatur eines Patienten im Rahmen der interoperablen Kommunikation gemäß den ISiK Vorgaben.  \nDieses Profil repräsentiert sowohl direkte als auch indirekte Messungen der Körperkerntemperatur.\n\n**Motivation**\n\nDie Erfassung und Überwachung der Körpertemperatur ist essenziell für die frühzeitige Erkennung von Infektionen, die Beurteilung des Gesundheitszustands sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\nIn FHIR wird die Körpertemperatur mit der Observation-Ressource repräsentiert.\n\n**Kompatibilität**\n\nDas Profil ISiKKoerperkerntemperatur ist vom Profil [VitalSignDE_Koerperkerntemperatur](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpertemperatur) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Temperature Profile](http://hl7.org/fhir/StructureDefinition/bodytemp) aus der FHIR R4 Spezifikation.",
         "exampleBoolean": false,
-        "name": "ISiKKoerpertemperatur"
+        "name": "ISiKKoerperkerntemperatur"
       },
       {
         "reference": {
-          "reference": "Observation/ISiKKoerpertemperaturExample"
+          "reference": "Observation/ISiKKoerperkerntemperaturExample"
         },
         "exampleBoolean": false,
-        "name": "ISiKKoerpertemperaturExample"
+        "name": "ISiKKoerperkerntemperaturExample"
       },
       {
         "reference": {
-          "reference": "Observation/ISiKKoerpertemperaturMaxExample"
+          "reference": "Observation/ISiKKoerperkerntemperaturMaxExample"
         },
         "exampleBoolean": false,
-        "name": "ISiKKoerpertemperaturMaxExample"
+        "name": "ISiKKoerperkerntemperaturMaxExample"
       },
       {
         "reference": {
-          "reference": "Observation/ISiKKoerpertemperaturMinExample"
+          "reference": "Observation/ISiKKoerperkerntemperaturMinExample"
         },
         "exampleBoolean": false,
-        "name": "ISiKKoerpertemperaturMinExample"
+        "name": "ISiKKoerperkerntemperaturMinExample"
       },
       {
         "reference": {
           "reference": "StructureDefinition/ISiKKontaktGesundheitseinrichtung"
         },
-        "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n### Motivation\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}\n\n### Kompatibilität\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n\n**Motivation**\n\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Abbildung-des-Konstrukts-Fall.html).\n\n**Kompatibilität**\n\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiKKontaktGesundheitseinrichtung"
       },
@@ -597,7 +727,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKKopfumfang"
         },
-        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Kopfumfang eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n### Motivation\nDie Erfassung und Überwachung des Kopfumfangs ist essenziell für die Beurteilung von Wachstumsprozessen, insbesondere bei Säuglingen und Kleinkindern, sowie für die frühzeitige Erkennung von Entwicklungsauffälligkeiten oder neurologischen Erkrankungen.\n\nIn FHIR wird der Kopfumfang mit der Observation-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKKopfumfang ist vom Profil [VitalSignDE_Kopfumfang](http://fhir.de/StructureDefinition/observation-de-vitalsign-kopfumfang) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Head Circumference Profile](\nhttp://hl7.org/fhir/StructureDefinition/headcircum) aus der FHIR R4 Spezifikation.",
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Kopfumfang eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung des Kopfumfangs ist essenziell für die Beurteilung von Wachstumsprozessen, insbesondere bei Säuglingen und Kleinkindern, sowie für die frühzeitige Erkennung von Entwicklungsauffälligkeiten oder neurologischen Erkrankungen.\n\nIn FHIR wird der Kopfumfang mit der Observation-Ressource repräsentiert.\n\n**Kompatibilität**\n\nDas Profil ISiKKopfumfang ist vom Profil [VitalSignDE_Kopfumfang](http://fhir.de/StructureDefinition/observation-de-vitalsign-kopfumfang) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Head Circumference Profile](\nhttp://hl7.org/fhir/StructureDefinition/headcircum) aus der FHIR R4 Spezifikation.",
         "exampleBoolean": false,
         "name": "ISiKKopfumfang"
       },
@@ -626,7 +756,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchung"
         },
-        "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.\n\nViele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.\nJede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/UseCases.html).\n\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.",
+        "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.\n\nViele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.\nJede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc1/UseCases.html).\n\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.",
         "exampleBoolean": false,
         "name": "ISiKLaboruntersuchung"
       },
@@ -634,7 +764,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchungCRP"
         },
-        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung CRP eines Patienten in ISiK Szenarien.",
+        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des C-reaktiven Proteins (CRP) eines Patienten in ISiK Szenarien.",
         "exampleBoolean": false,
         "name": "ISiKLaboruntersuchungCRP"
       },
@@ -642,7 +772,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchungGFR"
         },
-        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung GFR eines Patienten in ISiK Szenarien.",
+        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung der Glomerulären Filtrationsrate (GFR) eines Patienten in ISiK Szenarien.",
         "exampleBoolean": false,
         "name": "ISiKLaboruntersuchungGFR"
       },
@@ -650,7 +780,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchungHb"
         },
-        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Hb eines Patienten in ISiK Szenarien.",
+        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Hämoglobin-Wertes (Hb) eines Patienten in ISiK Szenarien.",
         "exampleBoolean": false,
         "name": "ISiKLaboruntersuchungHb"
       },
@@ -658,7 +788,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchungPCT"
         },
-        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung PCT eines Patienten in ISiK Szenarien.",
+        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Procalcitonin (PCT) eines Patienten in ISiK Szenarien.",
         "exampleBoolean": false,
         "name": "ISiKLaboruntersuchungPCT"
       },
@@ -698,7 +828,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchungTSH"
         },
-        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung TSH eines Patienten in ISiK Szenarien.",
+        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Thyreoidea-stimulierenden Hormons (TSH) eines Patienten in ISiK Szenarien.",
         "exampleBoolean": false,
         "name": "ISiKLaboruntersuchungTSH"
       },
@@ -729,7 +859,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKSauerstoffsaettigungArteriell"
         },
-        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die arterielle Sauerstoffsättigung eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n### Motivation\nDie Erfassung und Überwachung der arteriellen Sauerstoffsättigung ist essenziell für die Beurteilung der respiratorischen Funktion, die Überwachung von Patienten mit Atemwegserkrankungen sowie die Unterstützung klinischer Entscheidungen, insbesondere in kritischen Versorgungssituationen.\n\nIn FHIR wird die arterielle Sauerstoffsättigung mit der Observation-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKSauerstoffsaettigungArteriell ist vom Profil [VitalSignDE_Arterielle_Sauerstoffsaettigung_Pulsoximetrie](http://fhir.de/StructureDefinition/observation-de-vitalsign-sauerstoffsaettigung-pulsoximetrie) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Oxygen Saturation Profile](http://hl7.org/fhir/StructureDefinition/oxygensat) aus der FHIR R4 Spezifikation.",
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die arterielle Sauerstoffsättigung eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung der arteriellen Sauerstoffsättigung ist essenziell für die Beurteilung der respiratorischen Funktion, die Überwachung von Patienten mit Atemwegserkrankungen sowie die Unterstützung klinischer Entscheidungen, insbesondere in kritischen Versorgungssituationen.\n\nIn FHIR wird die arterielle Sauerstoffsättigung mit der Observation-Ressource repräsentiert.\n\n**Kompatibilität**\n\nDas Profil ISiKSauerstoffsaettigungArteriell ist vom Profil [VitalSignDE_Arterielle_Sauerstoffsaettigung_Pulsoximetrie](http://fhir.de/StructureDefinition/observation-de-vitalsign-sauerstoffsaettigung-pulsoximetrie) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Oxygen Saturation Profile](http://hl7.org/fhir/StructureDefinition/oxygensat) aus der FHIR R4 Spezifikation.",
         "exampleBoolean": false,
         "name": "ISiKSauerstoffsaettigungArteriell"
       },
@@ -945,22 +1075,6 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/PlannedEndDate"
-        },
-        "description": "Diese Erweiterung dokumentiert das geplante Enddatum bzw. den geplanten Endzeitpunkt eines Encounters. Sie unterstützt die Vorausplanung von Aufenthalten oder Behandlungen, beispielsweise für die Ressourcenplanung, Terminverwaltung und für die Kommunikation mit nachfolgenden Einrichtungen.",
-        "exampleBoolean": false,
-        "name": "PlannedEndDate"
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/PlannedStartDate"
-        },
-        "description": "Diese Extension dient der Erfassung des geplanten Startzeitpunkts (dateTime) eines Encounters, z. B. einer stationären Aufnahme, Operation oder eines Termins. Sie ermöglicht eine strukturierte Terminplanung, erleichtert die Koordination verschiedener Versorgungsprozesse und verbessert die Kommunikation zwischen Systemen und Leistungserbringern.",
-        "exampleBoolean": false,
-        "name": "PlannedStartDate"
-      },
-      {
-        "reference": {
           "reference": "Encounter/SZ1Nachstationaer"
         },
         "exampleBoolean": false,
@@ -1066,11 +1180,23 @@
       },
       {
         "code": "releaselabel",
-        "value": "STU1"
+        "value": "active"
       },
       {
-        "code": "no-validate",
+        "code": "display-warnings",
         "value": "true"
+      },
+      {
+        "code": "path-expansion-params",
+        "value": "../../input/resources/Parameters-exp-params.json"
+      },
+      {
+        "code": "special-url",
+        "value": "http://example.org/fhir/CodeSystem/TestKatalog"
+      },
+      {
+        "code": "special-url",
+        "value": "http://example.org/fhir/ValueSet/TestValueSet"
       }
     ]
   }

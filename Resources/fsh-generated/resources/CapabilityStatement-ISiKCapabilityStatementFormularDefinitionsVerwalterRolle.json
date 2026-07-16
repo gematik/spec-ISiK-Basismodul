@@ -2,11 +2,11 @@
   "resourceType": "CapabilityStatement",
   "id": "ISiKCapabilityStatementFormularDefinitionsVerwalterRolle",
   "url": "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementFormularDefinitionsVerwalterRolle",
-  "version": "5.1.1",
+  "version": "6.0.0",
   "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "date": "2025-12-17",
+  "date": "2026-07-01",
   "contact": [
     {
       "telecom": [
@@ -36,11 +36,11 @@
   ],
   "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
   "name": "ISiKCapabilityStatementFormularDefinitionsVerwalterRolle",
-  "title": "CapabilityStatement für Rolle &quot;FormularDefinitionsVerwalterRolle&quot;",
+  "title": "CapabilityStatement für Rolle `FormularDefinitionsVerwalterRolle`",
   "implementationGuide": [
     "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Formularmodul"
   ],
-  "purpose": "\nCapabilityStatement für die Rolle &quot;ISiKCapabilityStatementFormularDefinitionsVerwalterRolle&quot;.\nDiese Rolle stellt Interaktionen zur Abfrage von Formularen bereit.",
+  "purpose": "\nCapabilityStatement für die Rolle `ISiKCapabilityStatementFormularDefinitionsVerwalterRolle`.\nDiese Rolle stellt Interaktionen zur Abfrage von Formularen bereit.",
   "rest": [
     {
       "mode": "server",
@@ -125,6 +125,17 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "_lastUpdated",
+              "type": "date",
+              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdated=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "MAY"
                 }
               ],
@@ -132,17 +143,6 @@
               "definition": "http://hl7.org/fhir/SearchParameter/Resource-tag",
               "type": "token",
               "documentation": "**Beispiel:**\n        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`\n        **Anwendungshinweis:**\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)\n        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ],
-              "name": "_lastUpdated",
-              "type": "date",
-              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdate=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
             },
             {
               "extension": [

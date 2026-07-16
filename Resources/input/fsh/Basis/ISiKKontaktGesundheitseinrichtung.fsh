@@ -3,7 +3,9 @@ Parent: Encounter
 Id: ISiKKontaktGesundheitseinrichtung
 Description: "
 Dieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.
-### Motivation
+
+**Motivation**
+
 Informationen über die Besuche des Patienten entlang seines 
 Behandlungspfades im Krankenhaus sind ein wichtiger Bestandteil 
 des einrichtungsinternen Datenaustausches. 
@@ -25,9 +27,10 @@ und der gewünschte Besuch ausgewählt.
 
 In FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.
 
-Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}
+Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Abbildung-des-Konstrukts-Fall.html).
 
-### Kompatibilität
+**Kompatibilität**
+
 Für das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität 
 mit folgenden Profilen angestrebt; 
 allerdings kann nicht sichergestellt werden, dass Instanzen, 
@@ -42,6 +45,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
+// * insert CompliesWith(http://hl7.eu/fhir/hdr/StructureDefinition/encounter-eu-hdr)
+// * insert CompliesWith(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * obeys ISiK-enc-1 and ISiK-enc-2 and ISiK-enc-3 and ISiK-enc-4 and ISiK-enc-5 and ISiK-enc-6 and ISiK-enc-7 and ISiK-enc-8
 * extension MS
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
@@ -50,14 +55,14 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Aufnahmegrund nach § 301 Abs. 3 SGB V. Dieser gehört zu den 'Medizinischen Daten des Behandlungsfalls' entsprechend der Definitionen für die Datenübermittlung
 nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den Abrechnungsfall zu dokumentieren. Diese Extension SOLL am ersten Abteilungskontakt, der die stationäre Aufnahme repräsentiert, dokumentiert werden. Wird durch den Encounter ein Einrichtungskontakt repräsentiert, SOLL dort zusätzlich zu dem Abteilungskontakt der Aufnahmegrund dokumentiert werden."
   * extension[ErsteUndZweiteStelle] MS
-    * ^short = "Aufnahmegrund: 1. & 2. Stelle"
-    * ^comment = "1. und 2. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
+    * ^short = "Aufnahmegrund: 1. und 2. Stelle"
+    * ^comment = "Die 1. und 2. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
   * extension[DritteStelle] MS
     * ^short = "Aufnahmegrund: 3. Stelle"
-    * ^comment = "3. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
+    * ^comment = "Die 3. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
   * extension[VierteStelle] MS
     * ^short = "Aufnahmegrund: 4. Stelle"
-    * ^comment = "4. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
+    * ^comment = "Die 4. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
  
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate named plannedStartDate 0..1 MS
 * extension[plannedStartDate]
@@ -114,7 +119,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   erfolgt im Vorgriff auf eine entsprechende Anpassung in FHIR R5."
   * ^binding.description = "Eingeschränkter Status vgl. FHIR R5"
 * class MS
-* class from EncounterClassDE (required)
+* class from ISiKEncounterClassDE (required)
   * ^short = "Fallart"
   * ^comment = "Die Klassifikation von Encountern nach Fallarten folgt den internationalen Vorgaben und 
   dient der groben Unterscheidung von Besuchen mit und ohne Bettendisposition (ambulant/stationär). 
@@ -134,15 +139,14 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * ^binding.description = "Kontaktebene"
   * ^short = "Kontaktebene"
   * ^comment = "  **Begründung Pflichtfeld:** Die Abteilungsebene muss aus Kompatibilitätsgründen angegeben werden.
-  
-    **Hinweis bei Abbildung von Versorgungsstellenkontakten:**
+
+  **Hinweis bei Abbildung von Versorgungsstellenkontakten:**
   Es ist ein üblicher Fall, dass die Dauer eines Versorgungsstellenkontaktes in der Versorgung die eines Abteilungskontaktes übersteigt. Ein Beispiel hierfür: Ein Patient bleibt im Bett (Versorgungsstellenkontakt), aber ein Fachabteilungswechsel geschieht, da die Diagnose über eine Fachabteilung (Onkologie) läuft, dann aber der Wechsel zur Fachabteilung Chirurgie (neuer Abteilungskontakt) notwendig wird.
   Für einen solchen Fall gilt auf Ebene der FHIR-Instanzen (z.B. entgegen des tatsächliche Aufenthaltes im gleichen Bett): Im Falle eines Fachabteilungswechsels legt ein System einen neuen Abteilungskontakt an. Bestehende Versorgungsstellenkontakt SOLLEN NICHT in ihrer Relation (.partOf) zum Abteilungskontakt modifiziert werden. Hingegen SOLL das System einen oder mehrere Versorgungsstellenkontakte erzeugen und mit dem neu angelegten Abteilungskontakt in Verbindung setzen.
 
-  Hintergrund: Das Konzept der 'Kontaktebene' stammt aus dem Fallmodell der Medizininformatik-Initiative, 
-    das bei Encountern zwischen 'Einrichtungskontakten', 'Fachabteilungskontakten' und 'Versorgungsstellenkontakten' unterscheidet.
-    Im Kontext dieses Moduls werden lediglich Encounter der Ebene 'Fachabteilungskontakt' abgebildet.
-  
+  Hintergrund: Das Konzept der 'Kontaktebene' stammt aus dem Fallmodell der Medizininformatik-Initiative,
+  das bei Encountern zwischen 'Einrichtungskontakten', 'Fachabteilungskontakten' und 'Versorgungsstellenkontakten' unterscheidet.
+  Im Kontext dieses Moduls werden lediglich Encounter der Ebene 'Fachabteilungskontakt' abgebildet.
   "
   * coding
     * ^short = "Codierte Darstellung der Kontaktebene"
@@ -152,18 +156,16 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * code 1.. MS
       * ^short = "Code"
       * ^comment = "Hier ist stets der Wert `abteilungskontakt` anzugeben."
-* type[KontaktArt] from KontaktartDe (required)
+* type[KontaktArt] from ISiKEncounterTypeErweiterungVS (required)
   * ^short = "Kontaktart"
   * ^comment = "Die Kontaktart dient der feingranularen Differenzierung unterschiedlicher stationärer 
   und ambulanter Fallarten gemäß der in Deutschland üblichen regulatorischen 
   und abrechnungsrelevanten Rahmenbedingungen.  
   Für ein korrektes Mapping der in Deutschland gebräuchlichen Fallarten auf `type` siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-AmbulanterStationaererFall?version=current)"
-  * ^patternCodeableConcept.coding.system = "http://fhir.de/CodeSystem/kontaktart-de"
   * coding
     * ^short = "Codierte Darstellung der Kontaktart"
     * system 1.. MS
       * ^short = "Codier-Schema"
-      * ^comment = "Hier ist stets der Wert `http://fhir.de/CodeSystem/kontaktart-de` anzugeben." 
     * code 1.. MS
       * ^short = "Code"
       * ^comment = "vorstationaer | nachstationaer | begleitperson | tagesklinik | +"
@@ -183,6 +185,9 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * ^patternCoding.system = $FachabteilungsschluesselErweitertCS
     * ^short = "Fachabteilungsschlüssel"
     * ^comment = "Fachabteilungen gemäß Anhang 1 der BPflV inkl. Spezialisierungen"
+* priority MS
+  * ^short = "Aufnahmepriorität"
+  * ^comment = "**Begründung MS:** Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR)."
 * subject 1.. MS
   * ^short = "Patientenbezug"
   * ^comment = "**Begründung Must-Support:** Ein Patientenbezug des Kontakt MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
@@ -207,6 +212,10 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * ^comment = "Hier ist stets das *tatsächliche* Entlassdatum anzugeben.
     *Geplante* Entlassdaten müssen über die Extension `plannedEndDate` erfasst werden."
   
+* reasonCode 
+  * ^short = "Grund des Aufenthalts"
+  * ^comment = "**Historie:** Aufgrund von Harmonisierungsbestrebungen mit dem HL7 Europe Hospital Discharge Report (HDR) in der Ballot-Version von Stufe 6 als MS deklariert. 
+Wegen der unzureichenden Spezifikation und Abgrenzung zur Aufnahmediagnose in Encounter.diagnosis wieder entfernt, bis zur Herbeiführung einer Klärung mit HL7 Europe."
 * diagnosis 
   * ^short = "Falldiagnosen/-prozeduren"
   * ^comment = "Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters einnehmen, z.B. 'Aufnahmediagnose'   
@@ -308,7 +317,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   Die Slices `Station`, `Zimmer` und `Bettenstellplatz` verwenden jeweils ein Pattern auf dem status-Element mit dem Wert 'active'.
   Diese Einschränkung dient der sicheren Abbildung des aktuellen Aufenthaltsortes und soll garantieren, dass – wenn bekannt – stets nur ein aktueller Standort dokumentiert wird.
 
-  Gleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z. B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  
+  Gleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z.B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  
   Damit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird. Bei Verlegungen in einen anderen Fachbereich, welcher auch einen Wechsel des Aufenthaltsortes zur Folge hat, SOLL der Status der Location auf 'completed' gesetzt werden.
   """
   * physicalType from $LocationPhysicalTypeVS (extensible)
@@ -385,25 +394,7 @@ Die Anforderung einer Verknüpfung mit einem Appointment stammt aus dem Szenario
 
 Hieraus folgt, dass das Element nur relevant ist, falls das bestätigungsrelevante System zusätzlich zum vorliegenden Profil (Encounter) das Profil ISiKTermin (Appointment) implementiert.
 
-**Hinweis:**  Zur Umsetzung der Funktionalität zum Dokumentenaustausch gemäß ISiK ist der entsprechende [Implementation Guide zum Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/index.html) zu beachten."
-
-// This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
-Extension: PlannedStartDate
-Id: PlannedStartDate
-Context: Encounter
-Description: "Diese Extension dient der Erfassung des geplanten Startzeitpunkts (dateTime) eines Encounters, z. B. einer stationären Aufnahme, Operation oder eines Termins. Sie ermöglicht eine strukturierte Terminplanung, erleichtert die Koordination verschiedener Versorgungsprozesse und verbessert die Kommunikation zwischen Systemen und Leistungserbringern."
-* insert Meta
-* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
-* value[x] only dateTime
-
-// This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
-Extension: PlannedEndDate
-Id: PlannedEndDate
-Context: Encounter
-Description: "Diese Erweiterung dokumentiert das geplante Enddatum bzw. den geplanten Endzeitpunkt eines Encounters. Sie unterstützt die Vorausplanung von Aufenthalten oder Behandlungen, beispielsweise für die Ressourcenplanung, Terminverwaltung und für die Kommunikation mit nachfolgenden Einrichtungen."
-* insert Meta
-* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
-* value[x] only dateTime
+**Hinweis:**  Zur Umsetzung der Funktionalität zum Dokumentenaustausch gemäß ISiK ist der entsprechende [Implementation Guide zum Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc1/index.html) zu beachten."
 
 Extension: ExtensionISiKRehaEntlassung
 Id: ExtensionISiKRehaEntlassung
@@ -479,6 +470,8 @@ Usage: #example
 * class = $v3-ActCode#IMP
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * subject = Reference(PatientinNormal)
+* period.start = "2025-01-15T14:00:00+01:00"
+* period.end = "2025-01-20T10:00:00+01:00"
 
 Instance: FachabteilungskontaktNormal
 InstanceOf: ISiKKontaktGesundheitseinrichtung
@@ -724,7 +717,7 @@ Usage: #example
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * subject = Reference(PatientinNormal)
 * period.start = "2025-01-15T14:00:00+01:00"
-* period.start = "2025-01-20T10:00:00+01:00"
+* period.end = "2025-01-20T10:00:00+01:00"
 * serviceType = $FachabteilungsschluesselCS#0100 "Innere Medizin"
 * location[+].physicalType = $LocationPhysicalType#wa "Ward"
 * location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
@@ -746,12 +739,12 @@ Usage: #example
 Invariant: ISiK-enc-1
 Description: "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben"
 Severity: #error
-Expression: "status = 'finished' and class = 'AMB' implies period.start.exists()"
+Expression: "status = 'finished' and class.code = 'AMB' implies period.start.exists()"
 
 Invariant: ISiK-enc-2
 Description: "Abgeschlossene, stationäre Kontakte sollten einen Start- und End-Zeitpunkt angeben"
 Severity: #error
-Expression: "status = 'finished' and class = 'IMP' implies period.start.exists() and period.end.exists()"
+Expression: "status = 'finished' and class.code = 'IMP' implies period.start.exists() and period.end.exists()"
 
 Invariant: ISiK-enc-3
 Description: "Geplante Kontakte sollten keinen Start- oder End-Zeitpunkt angeben"

@@ -3,7 +3,9 @@ Parent: Condition
 Id: ISiKDiagnose
 Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen 
 über die Diagnosen eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.  
-### Motivation
+
+**Motivation**
+
 Die Möglichkeit, auf eine Übersicht der Diagnosen eines Patienten zuzugreifen, Patienten anhand ihrer Diagnose zu suchen oder zu prüfen, 
 ob eine konkrete Diagnose bei einem Patienten vorliegt, sind wichtige Funktionen im klinischen Behandlungsablauf.  
 
@@ -13,7 +15,8 @@ Da die Diagnosen in klinischen Primärsystemen in der Regel in ICD-10-codierter 
 Falls eine Diagnose zwar dokumentiert, aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), 
 ist alternativ eine Repräsentation als Freitext-Diagnose möglich.
 
-### Kompatibilität
+**Kompatibilität**
+
 Für das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKDiagnose valide sind, auch valide sind gegen:
 * das [Profil ProfileConditionDiagnose der Medizininformatik-Initative](https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
 * das [Profil KBV_PR_Base_Condition_Diagnosis der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis)]  
@@ -21,11 +24,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
-/*
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/base/StructureDefinition/condition-eu-core"
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/eps/StructureDefinition/condition-obl-eu-eps"
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/hdr/StructureDefinition/condition-obl-eu-hdr"
-*/
+// * insert CompliesWith(http://hl7.eu/fhir/base/StructureDefinition/condition-eu-core)
+// * insert CompliesWith(http://hl7.eu/fhir/eps/StructureDefinition/condition-obl-eu-eps)
+// * insert CompliesWith(http://hl7.eu/fhir/hdr/StructureDefinition/condition-obl-eu-hdr)
+// * insert CompliesWith(https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
+// * insert CompliesWith(https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis)
 * obeys isik-con1
 * extension MS
 * extension ^slicing.discriminator.type = #value
@@ -88,8 +91,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * extension[Seitenlokalisation] MS      
       * ^short = "Seitenlokalisation"
       * ^comment = "**Begründung MS:** Bei ICD-10-codierten Diagnosen an paarigen Organen oder Körperteilen müssen die Zusatzkennzeichen für die Seitigkeit (R, L oder B) angeben werden.
-      
-      **Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, wird für die Kodierung der Lateralität aktuell die Nutzung einer BodyStructure-Ressource inkl. einer Snomet-CT Kodierung diskutiert. Siehe [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html)."
+
+  **Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, wird für die Kodierung der Lateralität aktuell die Nutzung einer BodyStructure-Ressource inkl. einer Snomet-CT Kodierung diskutiert. Siehe [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html)."
     * extension[Diagnosesicherheit] MS
   * coding[Alpha-ID] only CodingAlphaID
     * ^patternCoding.system = $alphaid-cs
@@ -109,7 +112,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
-  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
+  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Diagnose MUSS zum Zwecke der Nachvollziehbarkeit und Datenintegrität exponiert und empfangen werden können."
   * reference 1.. MS
     * ^short = "Encounter-Link"
     * insert Comment-Reference-Encounter-with-hint(Begründung Pflichtfeld)
@@ -224,14 +227,14 @@ Usage: #example
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
 * bodySite.coding[snomed-ct] = $sct#1290031003 "Structure of left eye proper"
-  * version = "http://snomed.info/sct/11000274103/version/20231115"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 
-Instance: MittelgradigeIntelligenzminderung
+Instance: AkuteInfektionDerOberenAtemwege
 InstanceOf: ISiKDiagnose
 Usage: #example
 * clinicalStatus = $condition-clinical#active
 * code.coding.version = "2024"
-* code.coding = $icd-10-gm#F71 "Mittelgradige Intelligenzminderung"
+* code.coding = $icd-10-gm#J06.9 "Akute Infektion der oberen Atemwege"
 * subject = Reference(PatientinMusterfrau)
 * encounter = Reference(Fachabteilungskontakt)
 * onsetDateTime = "2019-09-02"

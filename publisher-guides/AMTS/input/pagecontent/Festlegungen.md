@@ -1,5 +1,1 @@
----
-topic: Festlegungen
----
-
-Es gelten die Festlegungen aus dem Modul ISiK Medikation **Hier noch Link zur Festlegungsseite einfügen**
+Es gelten die Festlegungen aus dem Modul [ISiK Basis](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Index_Festlegungen.html).

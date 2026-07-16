@@ -6,25 +6,23 @@
       "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"
     ]
   },
-  "subjectType": [
-    "Patient"
-  ],
   "contained": [
     {
       "resourceType": "ValueSet",
       "id": "pflegegrad-de",
       "meta": {
         "profile": [
-          "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+          "http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.1"
         ]
       },
-      "url": "http://fhir.de/ValueSet/pflegegrad-de",
-      "version": "1.5.4",
+      "status": "active",
       "name": "PflegegradDE",
       "title": "PflegegradDE ValueSet",
-      "status": "active",
+      "description": "Dieses ValueSet enthält OPS-Codes zur Differenzierung des dokumentierten Pflegegrads. Es ist für die strukturierte Angabe pflegebezogener Einstufungen im deutschen Versorgungskontext vorgesehen.",
+      "version": "1.6.0",
+      "url": "http://fhir.de/ValueSet/pflegegrad-de",
       "experimental": false,
-      "date": "2025-06-16",
+      "date": "2025-12-23",
       "publisher": "HL7 Deutschland e.V. (Technisches Komitee FHIR)",
       "contact": [
         {
@@ -36,21 +34,6 @@
           ]
         }
       ],
-      "description": "Codes zur genaueren Differenzierung des Pflegegrads.",
-      "compose": {
-        "include": [
-          {
-            "system": "http://fhir.de/CodeSystem/bfarm/ops",
-            "filter": [
-              {
-                "property": "parent",
-                "op": "=",
-                "value": "9-984"
-              }
-            ]
-          }
-        ]
-      },
       "expansion": {
         "identifier": "440c50b5-7272-4184-9ddd-95a75d8207f8",
         "timestamp": "2019-07-06",
@@ -87,15 +70,33 @@
             "display": "Pflegebedürftigkeit: Erfolgter Antrag auf Einstufung in einen Pflegegrad"
           }
         ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://fhir.de/CodeSystem/bfarm/ops",
+            "filter": [
+              {
+                "property": "parent",
+                "op": "=",
+                "value": "9-984"
+              }
+            ]
+          }
+        ]
       }
     }
   ],
+  "language": "de-DE",
   "name": "ExamplePrePopObservation",
   "version": "0.1.0",
   "url": "https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopObservation",
   "status": "draft",
   "experimental": false,
   "publisher": "Gematik GmbH",
+  "subjectType": [
+    "Patient"
+  ],
   "extension": [
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",

@@ -39,6 +39,11 @@ on:
         required: false
         type: boolean
         default: false
+      run_publish:
+        description: 'Publish to gh-pages (only for main-stufe-* branches)'
+        required: false
+        type: boolean
+        default: false
       verbose_changes:
         description: 'Print full change lists in check-changes logs'
         required: false
@@ -61,6 +66,7 @@ jobs:
 
   # Shared preparation step: Run SUSHI once for all IGs
   prepare:
+    if: github.event_name != 'push' || github.actor != 'github-actions[bot]' || !contains(github.event.head_commit.message, '[ig-publisher]')
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
@@ -129,14 +135,15 @@ jobs:
           - ig_name: ISiK-AMTS
             ig_dir: publisher-guides/AMTS
             capability_statement_urls:
-              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSAkteur
           
-          - ig_name: ISiK-Formularmodul
+          - ig_name: ISiK-Formular
             ig_dir: publisher-guides/Formular
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementFormularDatenQuelleAkteur
-              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementFormularDefinitionsVerwalterAkteur
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCpSFormDefinitionsVerwalterAkteur
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementFormularExtraktionAkteur
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementFormularVorbelegungAkteur
             import_cps_filter: SHOULD
 
           - ig_name: ISiK-Basis
@@ -148,6 +155,11 @@ jobs:
             ig_dir: publisher-guides/Vitalparameter
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignStandardSourceAkteur
+
+          - ig_name: ISiK-Organspendeerkennung
+            ig_dir: publisher-guides/Organspendeerkennung
+            capability_statement_urls:
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementOrganspendeerkennungSourceAkteur
 
           - ig_name: ISiK-Medikation
             ig_dir: publisher-guides/Medikation
@@ -161,7 +173,6 @@ jobs:
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur
-              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
 
           - ig_name: ISiK-Subscriptions
             ig_dir: publisher-guides/Subscription
@@ -222,15 +233,26 @@ jobs:
           name: fsh-generated
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
 
+      # Install Python for the CapabilityStatement expander script
+      - name: Setup Python
+        if: ${{ toJSON(matrix.capability_statement_urls) != 'null' && toJSON(matrix.capability_statement_urls) != '[]' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
       # Expand capability statements into concrete resources for the IG
       - name: Expand CapabilityStatement
         if: ${{ toJSON(matrix.capability_statement_urls) != 'null' && toJSON(matrix.capability_statement_urls) != '[]' }}
-        uses: Gefyra/capabilityStatement-expander@v0
-        with:
-          input_directory: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
-          output_directory: ${{ env.EXPANDED_RESOURCES_DIR }}
-          capability_statement_url: ${{ toJSON(matrix.capability_statement_urls) }}
-          expectation_filter: ${{ matrix.import_cps_filter }}
+        shell: bash
+        env:
+          CS_URLS: ${{ toJSON(matrix.capability_statement_urls) }}
+          CS_EXPECTATION_FILTER: ${{ matrix.import_cps_filter }}
+        run: |
+          bash scripts/capabilitystatement-expander/expand.sh \
+            --input-dir "${SUSHI_INPUT_DIR}/fsh-generated" \
+            --output-dir "${EXPANDED_RESOURCES_DIR}" \
+            --urls "${CS_URLS}" \
+            ${CS_EXPECTATION_FILTER:+--expectation-filter "${CS_EXPECTATION_FILTER}"}
 
       # Copy expanded resources into the IG input tree used by igpublisher
       - name: Apply expanded resources to IG input
@@ -252,6 +274,14 @@ jobs:
         env:
           IG_NAME: ${{ matrix.ig_name }}
         run: bash scripts/common-files/copy-config-files.sh
+
+      # Keep each IG-local SUSHI config dependencies aligned with the shared source of truth
+      - name: Sync SUSHI dependencies to IG config
+        shell: bash
+        run: |
+          bash scripts/ig-publisher/sync-sushi-dependencies.sh \
+            "${SUSHI_INPUT_DIR}/sushi-config.yaml" \
+            "${IG_PUBLISHER_DIR}/sushi-config.yaml"
 
       # Generate IG-specific ImplementationGuide and menu content
       - name: Run SUSHI (IG local)
@@ -287,7 +317,7 @@ jobs:
         id: check_changes
         shell: bash
         env:
-          FORCE_BUILD: ${{ (github.event_name == 'push' && startsWith(github.ref_name, 'main-stufe-')) || (github.event.inputs.force_build == 'true') }}
+          FORCE_BUILD: ${{ (github.event_name == 'push' && startsWith(github.ref_name, 'main-stufe-')) || (github.event.inputs.force_build == 'true') || (github.event_name == 'workflow_dispatch' && github.event.inputs.run_publish == 'true') }}
           SHOW_ALL_CHANGES: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.verbose_changes == 'true' }}
           LAST_SUCCESS_SHA: ${{ steps.resolve_last_success.outputs.last_success_sha }}
           DIFF_HEAD_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
@@ -306,6 +336,23 @@ jobs:
         run: |
           mkdir -p build-markers
           echo "${{ matrix.ig_name }}" > "build-markers/${{ matrix.ig_name }}.txt"
+
+      # Remove files too large for GitHub before any publish artifact is uploaded
+      - name: Remove oversized files from build output
+        if: steps.check_changes.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          OUTPUT_DIR="${IG_PUBLISHER_DIR}/output" bash scripts/ig-publisher/remove-oversized-output-files.sh
+
+      # Generate the HL7 publication-request.json into the IG output directory.
+      # The IG Publisher never produces this file itself; it is derived per IG
+      # from the SUSHI-generated ImplementationGuide resource. Running it here
+      # (before the output upload) lets the file ride along into gh-pages.
+      - name: Generate publication-request.json
+        if: steps.check_changes.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          node scripts/publication-request/generate.js --ig-dir "${IG_PUBLISHER_DIR}"
 
       # Upload build markers for the publish gate decision
       - name: Upload Build Marker
@@ -384,11 +431,22 @@ jobs:
             ${{ env.IG_PUBLISHER_DIR }}/output
 
 
-  # Commit all input resources of IGs in one go
+  # Commit generated source artifacts for all IGs in one go.
+  # IG Publisher output/ is published separately and is not committed.
+  # Runs on PR builds (commits to the PR head branch), on manual
+  # workflow_dispatch runs (commits to whichever branch was dispatched on,
+  # including main-stufe-* for manual production builds), and on pushes to
+  # main-stufe-* (commits straight to the main branch). The push case closes
+  # the race window where a PR is merged before this job's PR-branch commit
+  # lands: the post-merge run on main-stufe-* regenerates and commits the
+  # artifacts there instead.
   commit:
     needs: [build, publish_gate]
     runs-on: ubuntu-latest
-    if: needs.publish_gate.outputs.should_publish == 'true' && !(github.event_name == 'push' && startsWith(github.ref_name, 'main-stufe-'))
+    if: >-
+      needs.publish_gate.outputs.should_publish == 'true' &&
+      (github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch' ||
+      startsWith(github.ref_name, 'main-stufe-'))
 
     steps:
       # Check out the source branch so commits land in the right place
@@ -430,6 +488,11 @@ jobs:
       - name: Copy SUSHI-generated IGs and Expanded Resources
         shell: bash
         run: bash scripts/ig-publisher/copy-artifacts.sh
+
+      # Sync shared dependency versions in the fresh checkout before staging
+      - name: Sync SUSHI dependencies to all IG configs
+        shell: bash
+        run: bash scripts/ig-publisher/sync-sushi-dependencies.sh Resources/sushi-config.yaml
 
       # Commit updated generated artifacts back to the branch
       - name: Commit All SUSHI-generated ImplementationGuides and Expanded Resources
@@ -503,7 +566,7 @@ jobs:
   publish:
     needs: [build, publish_gate]
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && startsWith(github.ref_name, 'main-stufe-') && needs.publish_gate.outputs.should_publish == 'true'
+    if: startsWith(github.ref_name, 'main-stufe-') && needs.publish_gate.outputs.should_publish == 'true' && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.run_publish == 'true'))
     concurrency:
       group: gh-pages-publish
       cancel-in-progress: false

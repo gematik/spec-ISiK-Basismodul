@@ -3,11 +3,11 @@ canonical: https://gematik.de/fhir/isik
 name: ISiKSubscriptionImplementationGuide
 title: ISiK Subscription Implementierungsleitfaden
 description: Dieser Implementierungsleitfaden beschreibt eine ISiK-konforme Umsetzung der Subscription im Krankenhaus.
-status: draft
-version: 6.0.0-rc
+status: active
+version: 6.0.0
 fhirVersion: 4.0.1
 copyrightYear: 2026+
-releaseLabel: STU1
+releaseLabel: active
 license: Apache-2.0
 publisher: 
   name: gematik GmbH
@@ -15,16 +15,17 @@ publisher:
 
 applyExtensionMetadataToRoot: false
 dependencies:
-  # hl7.fhir.extensions.r5: 4.0.1
-  hl7.fhir.uv.ips: 1.1.0
+  hl7.fhir.uv.xver-r5.r4: 0.1.0
+  hl7.fhir.uv.ips: 2.0.0
   hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
-  de.basisprofil.r4: 1.5.4
+  de.basisprofil.r4: 1.6.0
   de.ihe-d.terminology: 3.0.1
-  dvmd.kdl.r4: 2025.0.1
   ihe.formatcode.fhir: 1.4.0
-  hl7.fhir.uv.sdc: 3.0.0
+  hl7.fhir.uv.sdc: 4.0.0
   de.gematik.terminology: 1.0.6
-  
+  de.gematik.ti: 1.3.1
+  de.fhir.medication: 1.0.7
+
 pages:
   index.md:
     title: Einführung
@@ -32,8 +33,8 @@ pages:
     title: Release Notes
   Patientenzusammenfuehrung.md: 
     title: Patient merge und Notification
-  Fallzusammenfuehrung.md:
-    title: Encounter Merge Notification (Fallzusammenführung)
+  Kontaktzusammenfuehrung.md:
+    title: Encounter Merge Notification (Kontaktzusammenführung)
   UseCases.md:
     title: Use Cases - Übersicht
   Akteure.md:
@@ -51,7 +52,7 @@ menu:
   Release Notes: ReleaseNotes.html
   Spezifikation:
     Patient merge und Notification: Patientenzusammenfuehrung.html
-    Encounter Merge Notification (Fallzusammenführung): Fallzusammenfuehrung.html
+    Encounter Merge Notification (Kontaktzusammenführung): Kontaktzusammenfuehrung.html
     Use Cases - Übersicht: UseCases.html
     Akteure: Akteure.html
     Funktionen und Interaktionen: FunktionenInteraktionen.html
@@ -64,7 +65,14 @@ menu:
     # Terminology: terminology.html
 
 parameters:
-  no-validate: true
+  display-warnings: true
+  path-expansion-params: ../../input/resources/Parameters-exp-params.json
+  special-url:
+    - http://example.org/fhir/CodeSystem/TestKatalog
+    - http://example.org/fhir/ValueSet/TestValueSet
+    - http://hl7.org/fhir/ValueSet/subscription-notification-type
+    - http://hl7.org/fhir/subscription-notification-type
+    - urn:ietf:bcp:13
 
 # und ggfs noch:
 #  no-narrative: true

@@ -18,10 +18,10 @@ InstanceOf: SD_MII_ICU_Koerpertemperatur_Brust
 Usage: #example
 * status = #final
 * code
-  * coding[sct] = $sct#248835004 "Temperature of breast"
+  * coding[sct] = $sct#248835004 "Breast temperature"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
 * valueQuantity = 37 'Cel' "degree Celsius"
-* bodySite = $sct#76752008 "Breast structure (body structure)"
+* bodySite = $sct#76752008 "Breast structure"

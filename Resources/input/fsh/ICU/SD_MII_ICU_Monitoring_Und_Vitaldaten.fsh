@@ -5,7 +5,7 @@ Title: "SD MII ICU Monitoring und Vitaldaten"
 Description: "Dieses Profil dient als Abstraktionsprofil für verschiedene spezialisierte Beobachtungen in der Akutmedizin zur Abbildung von Monitoring- und Vitaldaten."
 * insert Meta
 * insert CommonElements
-* obeys vs-de-2
+* obeys isik-obs-4
 * identifier MS
 * basedOn MS
   * ^short = "maximal Kardinalität bei Übernahme aus MII-Kerndatensatz-ICU entfernt"
@@ -58,7 +58,7 @@ Description: "Dieses Profil dient als Abstraktionsprofil für verschiedene spezi
   * system 1.. MS
   * code 1.. MS
 * dataAbsentReason MS
-  * obeys mii-icu-1
+* obeys mii-icu-1
 * interpretation MS
 * bodySite MS
 * bodySite from VS_MII_ICU_BodySite_Observation_Monitoring_und_Vitaldaten (extensible)

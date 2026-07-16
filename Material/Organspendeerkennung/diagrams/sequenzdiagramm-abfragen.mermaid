@@ -1,6 +1,6 @@
 sequenceDiagram
     actor TXB
-    participant D as DETECT
+    participant D as CLIENT
     participant F as FHIR-Server
 
     D->>F:/location?type=wa
@@ -25,7 +25,7 @@ sequenceDiagram
             F-->>D: List of Patient
             D->>F: /Observation?patient=relevantPIDs&code=NATRIUM,ICP,CPP&date=TODAY-48h
             F-->D: List of Observation
-            D->>F: /Procedure?patient=relevantPIDs&code=VENT,REANIMATION
+            D->>F: /Procedure?patient=relevantPIDs&category=VENT,REANIMATION
             F-->>D: List of Procedure
         end
         D->>D: Create Notifications
