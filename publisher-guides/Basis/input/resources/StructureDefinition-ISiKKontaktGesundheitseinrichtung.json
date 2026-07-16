@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKKontaktGesundheitseinrichtung",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung",
-  "version": "6.0.0-rc1",
+  "version": "6.0.0",
   "name": "ISiKKontaktGesundheitseinrichtung",
   "status": "active",
   "experimental": false,
-  "date": "2026-06-10",
+  "date": "2026-07-01",
   "publisher": "gematik GmbH",
   "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n\n**Motivation**\n\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Abbildung-des-Konstrukts-Fall.html).\n\n**Kompatibilität**\n\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion": "4.0.1",
@@ -25,14 +25,14 @@
             "key": "ISiK-enc-1",
             "severity": "error",
             "human": "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben",
-            "expression": "status = 'finished' and class = 'AMB' implies period.start.exists()",
+            "expression": "status = 'finished' and class.code = 'AMB' implies period.start.exists()",
             "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-2",
             "severity": "error",
             "human": "Abgeschlossene, stationäre Kontakte sollten einen Start- und End-Zeitpunkt angeben",
-            "expression": "status = 'finished' and class = 'IMP' implies period.start.exists() and period.end.exists()",
+            "expression": "status = 'finished' and class.code = 'IMP' implies period.start.exists() and period.end.exists()",
             "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
@@ -142,8 +142,8 @@
         "id": "Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle",
         "path": "Encounter.extension.extension",
         "sliceName": "ErsteUndZweiteStelle",
-        "short": "Aufnahmegrund: 1. & 2. Stelle",
-        "comment": "1. und 2. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V.",
+        "short": "Aufnahmegrund: 1. und 2. Stelle",
+        "comment": "Die 1. und 2. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V.",
         "mustSupport": true
       },
       {
@@ -151,7 +151,7 @@
         "path": "Encounter.extension.extension",
         "sliceName": "DritteStelle",
         "short": "Aufnahmegrund: 3. Stelle",
-        "comment": "3. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V.",
+        "comment": "Die 3. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V.",
         "mustSupport": true
       },
       {
@@ -159,7 +159,7 @@
         "path": "Encounter.extension.extension",
         "sliceName": "VierteStelle",
         "short": "Aufnahmegrund: 4. Stelle",
-        "comment": "4. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V.",
+        "comment": "Die 4. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V.",
         "mustSupport": true
       },
       {
@@ -341,7 +341,7 @@
         "path": "Encounter.type",
         "sliceName": "Kontaktebene",
         "short": "Kontaktebene",
-        "comment": "  **Begründung Pflichtfeld:** Die Abteilungsebene muss aus Kompatibilitätsgründen angegeben werden.\n  \n    **Hinweis bei Abbildung von Versorgungsstellenkontakten:**\n  Es ist ein üblicher Fall, dass die Dauer eines Versorgungsstellenkontaktes in der Versorgung die eines Abteilungskontaktes übersteigt. Ein Beispiel hierfür: Ein Patient bleibt im Bett (Versorgungsstellenkontakt), aber ein Fachabteilungswechsel geschieht, da die Diagnose über eine Fachabteilung (Onkologie) läuft, dann aber der Wechsel zur Fachabteilung Chirurgie (neuer Abteilungskontakt) notwendig wird.\n  Für einen solchen Fall gilt auf Ebene der FHIR-Instanzen (z.B. entgegen des tatsächliche Aufenthaltes im gleichen Bett): Im Falle eines Fachabteilungswechsels legt ein System einen neuen Abteilungskontakt an. Bestehende Versorgungsstellenkontakt SOLLEN NICHT in ihrer Relation (.partOf) zum Abteilungskontakt modifiziert werden. Hingegen SOLL das System einen oder mehrere Versorgungsstellenkontakte erzeugen und mit dem neu angelegten Abteilungskontakt in Verbindung setzen.\n\n  Hintergrund: Das Konzept der 'Kontaktebene' stammt aus dem Fallmodell der Medizininformatik-Initiative, \n    das bei Encountern zwischen 'Einrichtungskontakten', 'Fachabteilungskontakten' und 'Versorgungsstellenkontakten' unterscheidet.\n    Im Kontext dieses Moduls werden lediglich Encounter der Ebene 'Fachabteilungskontakt' abgebildet.\n  \n  ",
+        "comment": "  **Begründung Pflichtfeld:** Die Abteilungsebene muss aus Kompatibilitätsgründen angegeben werden.\n\n  **Hinweis bei Abbildung von Versorgungsstellenkontakten:**\n  Es ist ein üblicher Fall, dass die Dauer eines Versorgungsstellenkontaktes in der Versorgung die eines Abteilungskontaktes übersteigt. Ein Beispiel hierfür: Ein Patient bleibt im Bett (Versorgungsstellenkontakt), aber ein Fachabteilungswechsel geschieht, da die Diagnose über eine Fachabteilung (Onkologie) läuft, dann aber der Wechsel zur Fachabteilung Chirurgie (neuer Abteilungskontakt) notwendig wird.\n  Für einen solchen Fall gilt auf Ebene der FHIR-Instanzen (z.B. entgegen des tatsächliche Aufenthaltes im gleichen Bett): Im Falle eines Fachabteilungswechsels legt ein System einen neuen Abteilungskontakt an. Bestehende Versorgungsstellenkontakt SOLLEN NICHT in ihrer Relation (.partOf) zum Abteilungskontakt modifiziert werden. Hingegen SOLL das System einen oder mehrere Versorgungsstellenkontakte erzeugen und mit dem neu angelegten Abteilungskontakt in Verbindung setzen.\n\n  Hintergrund: Das Konzept der 'Kontaktebene' stammt aus dem Fallmodell der Medizininformatik-Initiative,\n  das bei Encountern zwischen 'Einrichtungskontakten', 'Fachabteilungskontakten' und 'Versorgungsstellenkontakten' unterscheidet.\n  Im Kontext dieses Moduls werden lediglich Encounter der Ebene 'Fachabteilungskontakt' abgebildet.\n  ",
         "min": 1,
         "max": "1",
         "patternCodeableConcept": {

@@ -224,12 +224,15 @@ RuleSet: tbeValue(expression)
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
   * valueString = {expression}
 
-RuleSet: tbeExtract(resourceId, fullUrl)
+RuleSet: tbeExtract(template, resourceId, fullUrl)
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
   * extension[+]
     * url = "template"
-    * valueReference = Reference({resourceId})
+    * valueReference = Reference({template})
+  * extension[+]
+    * url = "resourceId"
+    * valueString = {resourceId}
   * extension[+]
     * url = "fullUrl"
     * valueString = {fullUrl}
