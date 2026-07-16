@@ -68,7 +68,7 @@ Usage: #example
 Instance: ISiKEKGMinExample
 InstanceOf: ISiKEKG
 Usage: #example
-* code.coding[loinc] = $loinc#11524-6 "EKG-Bericht"
+* code.coding[loinc] = $loinc#11524-6 "EKG study"
 * subject = Reference(PatientinMinimal)
 * status = #final
 * category = $observation-category#procedure

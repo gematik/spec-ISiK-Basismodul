@@ -104,4 +104,4 @@ Usage: #example
 * component[Motor].code = $loinc#9268-4 "Glasgow coma score motor"
 * component[Motor].valueCodeableConcept = $loinc#LA6567-7 "Obeys commands"
 * component[Eye].code = $loinc#9267-6 "Glasgow coma score eye opening"
-* component[Eye].valueCodeableConcept = $loinc#LA6556-0 "Eyes open spontaneously"
+* component[Eye].valueCodeableConcept = $loinc#LA6556-0 "Eye opening spontaneously"
