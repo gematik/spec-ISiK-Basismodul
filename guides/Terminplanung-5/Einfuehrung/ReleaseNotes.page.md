@@ -11,9 +11,9 @@ Datum: t.b.d
 * `fix` Parameter-Typ für RelatedPerson entsprechend korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/1284
 * `improve` Ungenutztes Profil `ISiKTerminKontaktMitGesundheitseinrichtung` entfernt https://github.com/gematik/spec-ISiK-Basismodul/pull/1263
 
-## Version 5.1.2
+## Version 5.1.3
 
-Datum: 30.04.2026
+Datum: 16.07.2026
 
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` in allen Profilen außer dem ISiKTermin Profil https://github.com/gematik/spec-ISiK-Basismodul/pull/1034
 * `fix` Added missing "PATCH" interaction in FQL rendering of the ISiKCapabilityStatementTerminRepositoryRolle https://github.com/gematik/spec-ISiK-Basismodul/pull/1176

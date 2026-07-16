@@ -10,7 +10,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 ## Erklärung zum Status
 
-Datum: 15.07.2026
+Datum: 16.07.2026
 
 Dieser Implementierungsleitfaden ist obsolet, da er nicht normativ bindend ist und eine neue Version in der [Stufe 6](https://simplifier.net/isik-stufe-6) vorliegt.
 Implementierende sollen sich an dieser aktuellen Stufe ausrichten.
@@ -19,7 +19,7 @@ Implementierende sollen sich an dieser aktuellen Stufe ausrichten.
 Dies bedeutet, dass an diesem Implementierungsleitfaden ab heute keine Änderungen mehr vorgenommen werden.
 Die zugehörigen Ressourcen werden aus dem Package der Stufe 5 entfernt.
 
-## Version 5.1.2
+## Version 5.1.3
 
 Datum: 30.04.2026
 
