@@ -27,7 +27,7 @@ und der gewünschte Besuch ausgewählt.
 
 In FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.
 
-Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Abbildung-des-Konstrukts-Fall.html).
+Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Abbildung-des-Konstrukts-Fall.html).
 
 **Kompatibilität**
 
@@ -55,14 +55,14 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Aufnahmegrund nach § 301 Abs. 3 SGB V. Dieser gehört zu den 'Medizinischen Daten des Behandlungsfalls' entsprechend der Definitionen für die Datenübermittlung
 nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den Abrechnungsfall zu dokumentieren. Diese Extension SOLL am ersten Abteilungskontakt, der die stationäre Aufnahme repräsentiert, dokumentiert werden. Wird durch den Encounter ein Einrichtungskontakt repräsentiert, SOLL dort zusätzlich zu dem Abteilungskontakt der Aufnahmegrund dokumentiert werden."
   * extension[ErsteUndZweiteStelle] MS
-    * ^short = "Aufnahmegrund: 1. & 2. Stelle"
-    * ^comment = "1. und 2. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
+    * ^short = "Aufnahmegrund: 1. und 2. Stelle"
+    * ^comment = "Die 1. und 2. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
   * extension[DritteStelle] MS
     * ^short = "Aufnahmegrund: 3. Stelle"
-    * ^comment = "3. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
+    * ^comment = "Die 3. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
   * extension[VierteStelle] MS
     * ^short = "Aufnahmegrund: 4. Stelle"
-    * ^comment = "4. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
+    * ^comment = "Die 4. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
  
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate named plannedStartDate 0..1 MS
 * extension[plannedStartDate]
@@ -139,15 +139,14 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * ^binding.description = "Kontaktebene"
   * ^short = "Kontaktebene"
   * ^comment = "  **Begründung Pflichtfeld:** Die Abteilungsebene muss aus Kompatibilitätsgründen angegeben werden.
-  
-    **Hinweis bei Abbildung von Versorgungsstellenkontakten:**
+
+  **Hinweis bei Abbildung von Versorgungsstellenkontakten:**
   Es ist ein üblicher Fall, dass die Dauer eines Versorgungsstellenkontaktes in der Versorgung die eines Abteilungskontaktes übersteigt. Ein Beispiel hierfür: Ein Patient bleibt im Bett (Versorgungsstellenkontakt), aber ein Fachabteilungswechsel geschieht, da die Diagnose über eine Fachabteilung (Onkologie) läuft, dann aber der Wechsel zur Fachabteilung Chirurgie (neuer Abteilungskontakt) notwendig wird.
   Für einen solchen Fall gilt auf Ebene der FHIR-Instanzen (z.B. entgegen des tatsächliche Aufenthaltes im gleichen Bett): Im Falle eines Fachabteilungswechsels legt ein System einen neuen Abteilungskontakt an. Bestehende Versorgungsstellenkontakt SOLLEN NICHT in ihrer Relation (.partOf) zum Abteilungskontakt modifiziert werden. Hingegen SOLL das System einen oder mehrere Versorgungsstellenkontakte erzeugen und mit dem neu angelegten Abteilungskontakt in Verbindung setzen.
 
-  Hintergrund: Das Konzept der 'Kontaktebene' stammt aus dem Fallmodell der Medizininformatik-Initiative, 
-    das bei Encountern zwischen 'Einrichtungskontakten', 'Fachabteilungskontakten' und 'Versorgungsstellenkontakten' unterscheidet.
-    Im Kontext dieses Moduls werden lediglich Encounter der Ebene 'Fachabteilungskontakt' abgebildet.
-  
+  Hintergrund: Das Konzept der 'Kontaktebene' stammt aus dem Fallmodell der Medizininformatik-Initiative,
+  das bei Encountern zwischen 'Einrichtungskontakten', 'Fachabteilungskontakten' und 'Versorgungsstellenkontakten' unterscheidet.
+  Im Kontext dieses Moduls werden lediglich Encounter der Ebene 'Fachabteilungskontakt' abgebildet.
   "
   * coding
     * ^short = "Codierte Darstellung der Kontaktebene"
@@ -395,7 +394,7 @@ Die Anforderung einer Verknüpfung mit einem Appointment stammt aus dem Szenario
 
 Hieraus folgt, dass das Element nur relevant ist, falls das bestätigungsrelevante System zusätzlich zum vorliegenden Profil (Encounter) das Profil ISiKTermin (Appointment) implementiert.
 
-**Hinweis:**  Zur Umsetzung der Funktionalität zum Dokumentenaustausch gemäß ISiK ist der entsprechende [Implementation Guide zum Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/index.html) zu beachten."
+**Hinweis:**  Zur Umsetzung der Funktionalität zum Dokumentenaustausch gemäß ISiK ist der entsprechende [Implementation Guide zum Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc1/index.html) zu beachten."
 
 Extension: ExtensionISiKRehaEntlassung
 Id: ExtensionISiKRehaEntlassung
@@ -471,6 +470,8 @@ Usage: #example
 * class = $v3-ActCode#IMP
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * subject = Reference(PatientinNormal)
+* period.start = "2025-01-15T14:00:00+01:00"
+* period.end = "2025-01-20T10:00:00+01:00"
 
 Instance: FachabteilungskontaktNormal
 InstanceOf: ISiKKontaktGesundheitseinrichtung
@@ -716,7 +717,7 @@ Usage: #example
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * subject = Reference(PatientinNormal)
 * period.start = "2025-01-15T14:00:00+01:00"
-* period.start = "2025-01-20T10:00:00+01:00"
+* period.end = "2025-01-20T10:00:00+01:00"
 * serviceType = $FachabteilungsschluesselCS#0100 "Innere Medizin"
 * location[+].physicalType = $LocationPhysicalType#wa "Ward"
 * location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
@@ -738,12 +739,12 @@ Usage: #example
 Invariant: ISiK-enc-1
 Description: "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben"
 Severity: #error
-Expression: "status = 'finished' and class = 'AMB' implies period.start.exists()"
+Expression: "status = 'finished' and class.code = 'AMB' implies period.start.exists()"
 
 Invariant: ISiK-enc-2
 Description: "Abgeschlossene, stationäre Kontakte sollten einen Start- und End-Zeitpunkt angeben"
 Severity: #error
-Expression: "status = 'finished' and class = 'IMP' implies period.start.exists() and period.end.exists()"
+Expression: "status = 'finished' and class.code = 'IMP' implies period.start.exists() and period.end.exists()"
 
 Invariant: ISiK-enc-3
 Description: "Geplante Kontakte sollten keinen Start- oder End-Zeitpunkt angeben"

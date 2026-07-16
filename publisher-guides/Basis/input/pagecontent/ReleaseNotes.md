@@ -2,17 +2,27 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Tags werden folgendermaßen verwendet:
 
-- 'documentation': um zu Kennzeichnen, dass hier nur etwas an der Dokumentation geändert oder hinzugefügt wurde, das sich nicht auf normative Aspekte auswirkt.
+- 'documentation': um zu Kennzeichnen, dass hier nur etwas an der Dokumentation geändert oder hinzugefügt wurde, das sich nicht auf normative Aspekte auswirkt. 
 
-- 'improve'  um Änderungen und neue Aspekte hinsichtlich normativer Inhalte (u. a. per Technical Correction (TC)) umzusetzen, die aber keine Fehler beheben.
+- 'improve'  um Änderungen und neue Aspekte hinsichtlich normativer Inhalte (u. a. per Technical Correction (TC)) umzusetzen, die aber keine Fehler beheben. Hier sollen stets die ggf. betroffenen Ressourcen (bzw. CapabilityStatements, Rollen und Akteure) angegeben werden.
 
-- 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
+- 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CapabilityStatements); Typo fixes werden nicht in die Releasenotes aufgenommen. Hier sollen stets die ggf. betroffenen Ressourcen (bzw. CapabilityStatements, Rollen und Akteure) angegeben werden.
+
+### Version 6.0.0
+
+Datum: 01.07.2026
+
+* `fix` Fix der Invarianten `ISiK-enc-1` und `ISiK-enc-2` des Profils `ISiKKontaktGesundheitseinrichtung` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1260>
+* `improve` Hinzufügen von Anforderung zu den von mio42 GmbH und BfArM definierten Allergie ValueSets <https://github.com/gematik/spec-ISiK-Basismodul/pull/1268>
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module <https://github.com/gematik/spec-ISiK-Basismodul/pull/1272>
+
+Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
-Datum: tbd
+Datum: 10.06.2026
 
-* `improve` Überarbeitung des Kapitels "Motivation" <https://github.com/gematik/spec-ISiK-Basismodul/pull/1216>
+* `improve` Überarbeitung des Kapitels "Motivation" <https://github.com/gematik/spec-ISiK-Basismodul/pull/1216> 
 * `fix` Umbenennung des Suchparameters `characteristic` zu `form` und Verbesserung der Dokumentation des Suchparameters der Location-Ressource <https://github.com/gematik/spec-ISiK-Basismodul/pull/1233>
 * `improve` Hinzufügen einer Definition von Perzentil-Metriken für die Performance <https://github.com/gematik/spec-ISiK-Basismodul/pull/1219>
 * `fix` Suchparameter AllergyIntolerance.onset entfernt, aufgrund fehlerhafter Spezifikation <https://github.com/gematik/spec-ISiK-Basismodul/pull/1211>
@@ -28,7 +38,7 @@ Datum: tbd
 * `documentation` Anpassung der Beispiele zu den Standort Profilen. Entfernen des Codes Occupied an einer Station und Ergänzung an Beispielen zu Raum und Bettenstellplatz <https://github.com/gematik/spec-ISiK-Basismodul/pull/1170>
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 * `fix` Fehlerhafte Links in der Dokumentation korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>   
-* `documentation` Ergänzung einer Tabelle für [Search-Modifier](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Suchparameter.html) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1196>
+* `documentation` Ergänzung einer Tabelle für [Search-Modifier](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/UebergreifendeFestlegungen_Suchparameter.html) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1196>
 * `documentation` Entfernung von redundantem Text in Performance Anforderungen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1198>
 * `documentation` Ergänzung von Erläuterungen bei der Nutzung von `too-costly` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1208> 
 * `improve` Neuer Identifier-Slice `Mitarbeiterkennzeichen` (type code `EN`) mit MustSupport im Profil `ISiKPersonImGesundheitsberuf` für nicht-ärztliche Personen eingeführt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1223>
@@ -37,6 +47,10 @@ Datum: tbd
 * `documentation` Fix der Beispielsuchanfrage zu allen Patienten, die auf einer Station liegen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1201>
 * `documentation` Fix der Beispielsuchanfrage zu allen Medikamente <https://github.com/gematik/spec-ISiK-Basismodul/pull/1246>
 * `fix` Hinzufügen eines weiteren Codes zum ValueSet `ProzedurenKategorieSCT`, zur Abbildung von Reanimationsmaßnahmen 
+* `fix` Korrekturen am Profil `ISiKOrganisationFachabteilung` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1248>
+
+Die Änderungen zu dieser Version sind im Wesentlichen auf Grundlage der eingegangenen [Kommentare im Zuge der Kommentierung Stufe 6](https://github.com/gematik/spec-ISiK-Basismodul/blob/main-stufe-6/Material/_commons/texts/260611_Kommentarauflo%CC%88sung_ISiK_Stufe%206.pdf) vorgenommen worden.
+
  
 ### Version 6.0.0-rc
 

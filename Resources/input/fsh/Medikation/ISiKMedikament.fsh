@@ -93,7 +93,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^short = "Wirkstofftyp"
     * ^comment = "Begründung des Must-Support: Alignment mit den MII-Profilen
 
-    Hinweis: Hiermit kann geklärt werden, ob es sich um eine Angabe zum Wirkstoff oder zum exakten Inhaltsstoff (z.B. Salze) handelt."
+  Hinweis: Hiermit kann geklärt werden, ob es sich um eine Angabe zum Wirkstoff oder zum exakten Inhaltsstoff (z.B. Salze) handelt."
   * itemCodeableConcept MS
     * ^short = "Bestandteil in codierter Form oder ggf. als Freitext"
     * ^comment = "Begründung des Must-Support: Der Bestandteil muss eindeutig benannt sein"
@@ -140,7 +140,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^short = "Chargennummer"
     * ^comment = "Begründung des Must-Support: Therapiesicherheit und Nachvollziehbarkeit
 
-    Hinweis: Gemäß Anlage 1 der TA7 kann hier übergangsweise bis zum 30. Juni 2025 eine Musterchargennummer (\"STELLEN\") eingetragen werden. Wenn die Übermittlung der Chargenbezeichnung beim Stellen von Arzneimitteln technisch nicht möglich ist, z.B. beim Verblistern, wird von der Verpflichtung zur Chargendokumentation abgesehen. Dementsprechend kann anstatt der tatsächlichen Chargenbezeichnungen \"STELLEN\" in das hierbeschirebene Datenfeld eingetragen werden."
+  Hinweis: Gemäß Anlage 1 der TA7 kann hier übergangsweise bis zum 30. Juni 2025 eine Musterchargennummer (\"STELLEN\") eingetragen werden. Wenn die Übermittlung der Chargenbezeichnung beim Stellen von Arzneimitteln technisch nicht möglich ist, z.B. beim Verblistern, wird von der Verpflichtung zur Chargendokumentation abgesehen. Dementsprechend kann anstatt der tatsächlichen Chargenbezeichnungen \"STELLEN\" in das hierbeschirebene Datenfeld eingetragen werden."
 
 Invariant: isik-med-1
 Description: "Medikamenten-Code, -Bezeichnung oder Inhaltsstoffe müssen angegeben werden."

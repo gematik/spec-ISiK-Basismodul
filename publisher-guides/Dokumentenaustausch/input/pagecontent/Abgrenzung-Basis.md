@@ -24,7 +24,7 @@ Der Sender eines Subsystem-Berichtes gem. Modul "Basis" möchte parallel zur Üb
 Empfohlenes Vorgehen:
 1. Erzeugen einer DocumentReference-Ressource (siehe dazu $generate-metadata) 
 2. Übermittlung der DocumentReference sowie des Base64-codierten Bundles gemäß [Interaktion ISiK Modul Dokumentenaustausch: Dokumentenbereitstellung](Interaktion-Dokumentenbereitstellung.html)
-3. Übermittlung des Dokumentes zur Verarbeitung gemäß [Interaktion ISiK Modul Basis: Bericht aus Subsystem](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKBerichtSubSysteme.html)
+3. Übermittlung des Dokumentes zur Verarbeitung gemäß [Interaktion ISiK Modul Basis: Bericht aus Subsystem](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/StructureDefinition-ISiKBerichtSubSysteme.html)
 
 
 Der Empfänger eines Dokumentes gem. Modul "Dokumentenaustausch" möchte neben der Archivierung des Dokumentes auch dessen Inhalte weiterverarbeiten.

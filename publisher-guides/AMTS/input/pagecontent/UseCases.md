@@ -98,13 +98,13 @@ Im Folgenden sind exemplarisch die Interaktionen für einen AMTS Pull und -Push 
 ### FHIR-Profile des Anwendungsfalls AMTS
 
 Dieser Übergreifende Use Case umfasst mehrere Profile aus verschiedenen Modulen. Die Einzelbeschreibungen sind im Folgenden verlinkt:
-- Die [AMTS Bewertung der Medikation](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/StructureDefinition-ISiKAMTSBewertung.html) zur Persistierung des Ergebnisses eines AMTS-Checks.
-- Die [Allergien und Unverträglichkeiten der Basis](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKAllergieUnvertraeglichkeit.html) zur Synchronisation der patientenbezogenen Intoleranzfaktoren.
-- Verschiedene [Untersuchungsergebnisse des Labors](https://gemspec.gematik.de/ig/fhir/isik/labor/6.0.0-rc/StructureDefinition-ISiKLaboruntersuchung.html) zur Erfassung fallbezogener Einflussfaktoren.
-- Verschiedene [Lebenszustände der Basis](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKLebensZustand.html) zur Erfassung aktueller (zeitbezogener) Zustände oder Konditionen, insbesondere:
+- Die [AMTS Bewertung der Medikation](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc1/StructureDefinition-ISiKAMTSBewertung.html) zur Persistierung des Ergebnisses eines AMTS-Checks.
+- Die [Allergien und Unverträglichkeiten der Basis](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/StructureDefinition-ISiKAllergieUnvertraeglichkeit.html) zur Synchronisation der patientenbezogenen Intoleranzfaktoren.
+- Verschiedene [Untersuchungsergebnisse des Labors](https://gemspec.gematik.de/ig/fhir/isik/labor/6.0.0-rc1/StructureDefinition-ISiKLaboruntersuchung.html) zur Erfassung fallbezogener Einflussfaktoren.
+- Verschiedene [Lebenszustände der Basis](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/StructureDefinition-ISiKLebensZustand.html) zur Erfassung aktueller (zeitbezogener) Zustände oder Konditionen, insbesondere:
   - Schwangerschaft,
   - Alkoholabusus,
   - Raucherstatus.
-- Verschiedene aktuelle [Merkmale der Vitalparameter](https://gemspec.gematik.de/ig/fhir/isik/vitalparameter/6.0.0-rc/artifacts_isik.html) zur Erfassung von Einflussfaktoren, welche die physische Kondition des Patienten betreffen, insbesondere.
+- Verschiedene aktuelle [Merkmale der Vitalparameter](https://gemspec.gematik.de/ig/fhir/isik/vitalparameter/6.0.0-rc1/artifacts_isik.html) zur Erfassung von Einflussfaktoren, welche die physische Kondition des Patienten betreffen, insbesondere.
   - Körpergewicht,
   - Körpergröße.

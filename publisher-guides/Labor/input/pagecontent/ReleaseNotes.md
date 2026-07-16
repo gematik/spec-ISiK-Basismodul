@@ -1,17 +1,26 @@
 
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+### Version 6.0.0
+
+Datum: 01.07.2026
+
+* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module <https://github.com/gematik/spec-ISiK-Basismodul/pull/1272>
+
+Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
-Datum: tbd
+Datum: 10.06.2026
 
-* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
+* `improve` Klarstellung zur Ableitung von `Observation.effective[x]` im Profil `ISiKLaboruntersuchung`: Priorisierung von Entnahmezeitpunkt, Ende des Sammelzeitraums und Probeneingang im Labor <https://github.com/gematik/spec-ISiK-Basismodul/pull/1252>
 
 Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähig ist (eigene Use Cases bedient) oder bestätigtigungsrelevant ist.
 
 ### Version 6.0.0-rc1
 
-Datum: tbd
+Datum: 10.06.2026
 
 * `documentation` Ausschreiben der Abkürzungen der Laboruntersuchungen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1182>
 

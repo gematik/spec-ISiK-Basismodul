@@ -63,7 +63,7 @@ Ein Import aus dem eMP ist möglich, aber nicht verpflichtend.
     * ^short = "Datum des Listeneintrags"
     * ^comment = "Begründung des Must-Support: Nachvollziehbarkeit
 
-    Hinweis: nur zulässig im Listenmodus 'working'"
+  Hinweis: nur zulässig im Listenmodus 'working'"
   * item MS
     * ^short = "Referenz auf die MedikationsInformation"
     * ^comment = "Begründung des Must-Support: Basisinformation (eigentlicher Zweck der Liste ist das Verbinden mehrerer MedikationsInformationen)"

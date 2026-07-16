@@ -7,7 +7,7 @@ Diese Profil ermöglicht die Dokumentation von Allergien und Unverträglichkeite
 **Motivation**
 
 Die Möglichkeit, auf eine Übersicht der Allergien und Unverträglichkeiten eines Patienten zuzugreifen, ist eine wichtige Funktion im klinischen Behandlungsablauf. Dies gilt insbesondere, aber nicht ausschließlich, im Bereich der Arzneimitteltherapiesicherheit.
-Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/UseCases.html).
+Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc1/UseCases.html).
 
 In FHIR werden Allergien und Unverträglichkeiten mit der [AllergyIntolerance](https://hl7.org/fhir/R4/allergyintolerance.html)-Ressource repräsentiert.
 
@@ -95,7 +95,9 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
   * ^comment = "**Begründung MS:** Die Kritikalität beschreibt das erwartete Risiko bei erneuter Exposition und dient der Priorisierung von Warnhinweisen."
 * code 1.. MS
   * ^short = "Benennung der Allergie/Unverträglichkeit"
-  * ^comment = "**Begründung Pflichtfeld:** Nur mit einer codierten oder textuell benannten Auslösersubstanz lässt sich die Allergie klinisch interpretieren und für Interaktionsprüfungen nutzen."
+  * ^comment = "**Begründung Pflichtfeld:** Nur mit einer codierten oder textuell benannten Auslösersubstanz lässt sich die Allergie klinisch interpretieren und für Interaktionsprüfungen nutzen.
+
+  **Hinweis und Hintergrund:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `auslösende Substanz` im deutschen Gesundheitswesen erarbeitet. Dieses ValueSet steht zum Zeitpunkt der Veröffentlichung noch nicht als FHIR-konformes und stabil referenzierbares Artefakt zur Verfügung und wird daher zu einem späteren Zeitpunkt in dieser Form ergänzt. Weitere Informationen finden Sie hier: https://mio.kbv.de/spaces/ALDOK1X0X0/overview."
   * coding MS
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "system"
@@ -171,6 +173,7 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
   * ^comment = "**Begründung MS:** Die beobachtete Reaktion ist für die klinische Bewertung der Gefährdung essenziell und Grundlage für Entscheidungshilfen."
   * manifestation MS
     * ^short = "Manifestation der Reaktion"
+    * ^comment = "**Hinweis und Hintergrund:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `Allergiemanifestationen` im deutschen Gesundheitswesen erarbeitet. Dieses ValueSet steht zum Zeitpunkt der Veröffentlichung noch nicht als FHIR-konformes und stabil referenzierbares Artefakt zur Verfügung und wird daher zu einem späteren Zeitpunkt in dieser Form ergänzt. Weitere Informationen finden Sie hier: https://mio.kbv.de/spaces/ALDOK1X0X0/overview."
     * coding MS
       * ^slicing.discriminator.type = #pattern
       * ^slicing.discriminator.path = "system"

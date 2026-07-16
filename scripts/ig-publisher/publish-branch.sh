@@ -42,11 +42,8 @@ for dir in "${publish_output_dir}"/fhir-ig-*; do
   branch_dir="gh-pages/${branch_name}/${ig_name}"
   echo "Publishing ${ig_name} to ${branch_dir}/"
 
-  # Safety net: never publish oversized full-ig.zip bundles to gh-pages
-  while IFS= read -r zip_file; do
-    echo "Removing oversized artifact before publish: ${zip_file}"
-    rm -f "${zip_file}"
-  done < <(find "${dir}" -type f -name "full-ig.zip")
+  # Safety net: never publish files that GitHub rejects on gh-pages.
+  OUTPUT_DIR="${dir}" bash scripts/ig-publisher/remove-oversized-output-files.sh
 
   case "${branch_dir}" in
     gh-pages|gh-pages/|gh-pages/.|gh-pages/..)

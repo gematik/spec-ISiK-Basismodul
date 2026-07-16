@@ -2,9 +2,24 @@
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
 
+### 6.0.1
+
+Datum: t.b.d.
+
+* `fix` Parameter-Typ für RelatedPerson entsprechend korrigiert - <https://github.com/gematik/spec-ISiK-Basismodul/commit/4b0a95a5fa310525a593591d536c64144a43dd09> entspricht <https://github.com/gematik/spec-ISiK-Basismodul/pull/1284/changes>
+
+### Version 6.0.0
+
+Datum: 01.07.2026
+
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module <https://github.com/gematik/spec-ISiK-Basismodul/pull/1272>
+* Ungenutztes Profil `ISiKTerminKontaktMitGesundheitseinrichtung` entfernt in <https://github.com/gematik/spec-ISiK-Basismodul/pull/1262>
+
+Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
-Datum: tbd
+Datum: 10.06.2026
 
 * `improve` Seite zu Performance-Festlegungen hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1218>
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190

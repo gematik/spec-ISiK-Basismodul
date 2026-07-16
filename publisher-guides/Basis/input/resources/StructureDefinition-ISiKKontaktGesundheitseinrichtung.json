@@ -2,13 +2,13 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKKontaktGesundheitseinrichtung",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung",
-  "version": "6.0.0-rc",
+  "version": "6.0.0",
   "name": "ISiKKontaktGesundheitseinrichtung",
   "status": "active",
   "experimental": false,
-  "date": "2026-04-02",
+  "date": "2026-07-01",
   "publisher": "gematik GmbH",
-  "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n\n**Motivation**\n\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Abbildung-des-Konstrukts-Fall.html).\n\n**Kompatibilität**\n\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+  "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n\n**Motivation**\n\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Abbildung-des-Konstrukts-Fall.html).\n\n**Kompatibilität**\n\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -25,14 +25,14 @@
             "key": "ISiK-enc-1",
             "severity": "error",
             "human": "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben",
-            "expression": "status = 'finished' and class = 'AMB' implies period.start.exists()",
+            "expression": "status = 'finished' and class.code = 'AMB' implies period.start.exists()",
             "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-2",
             "severity": "error",
             "human": "Abgeschlossene, stationäre Kontakte sollten einen Start- und End-Zeitpunkt angeben",
-            "expression": "status = 'finished' and class = 'IMP' implies period.start.exists() and period.end.exists()",
+            "expression": "status = 'finished' and class.code = 'IMP' implies period.start.exists() and period.end.exists()",
             "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
@@ -142,8 +142,8 @@
         "id": "Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle",
         "path": "Encounter.extension.extension",
         "sliceName": "ErsteUndZweiteStelle",
-        "short": "Aufnahmegrund: 1. & 2. Stelle",
-        "comment": "1. und 2. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V.",
+        "short": "Aufnahmegrund: 1. und 2. Stelle",
+        "comment": "Die 1. und 2. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V.",
         "mustSupport": true
       },
       {
@@ -151,7 +151,7 @@
         "path": "Encounter.extension.extension",
         "sliceName": "DritteStelle",
         "short": "Aufnahmegrund: 3. Stelle",
-        "comment": "3. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V.",
+        "comment": "Die 3. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V.",
         "mustSupport": true
       },
       {
@@ -159,7 +159,7 @@
         "path": "Encounter.extension.extension",
         "sliceName": "VierteStelle",
         "short": "Aufnahmegrund: 4. Stelle",
-        "comment": "4. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V.",
+        "comment": "Die 4. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V.",
         "mustSupport": true
       },
       {
@@ -341,7 +341,7 @@
         "path": "Encounter.type",
         "sliceName": "Kontaktebene",
         "short": "Kontaktebene",
-        "comment": "  **Begründung Pflichtfeld:** Die Abteilungsebene muss aus Kompatibilitätsgründen angegeben werden.\n  \n    **Hinweis bei Abbildung von Versorgungsstellenkontakten:**\n  Es ist ein üblicher Fall, dass die Dauer eines Versorgungsstellenkontaktes in der Versorgung die eines Abteilungskontaktes übersteigt. Ein Beispiel hierfür: Ein Patient bleibt im Bett (Versorgungsstellenkontakt), aber ein Fachabteilungswechsel geschieht, da die Diagnose über eine Fachabteilung (Onkologie) läuft, dann aber der Wechsel zur Fachabteilung Chirurgie (neuer Abteilungskontakt) notwendig wird.\n  Für einen solchen Fall gilt auf Ebene der FHIR-Instanzen (z.B. entgegen des tatsächliche Aufenthaltes im gleichen Bett): Im Falle eines Fachabteilungswechsels legt ein System einen neuen Abteilungskontakt an. Bestehende Versorgungsstellenkontakt SOLLEN NICHT in ihrer Relation (.partOf) zum Abteilungskontakt modifiziert werden. Hingegen SOLL das System einen oder mehrere Versorgungsstellenkontakte erzeugen und mit dem neu angelegten Abteilungskontakt in Verbindung setzen.\n\n  Hintergrund: Das Konzept der 'Kontaktebene' stammt aus dem Fallmodell der Medizininformatik-Initiative, \n    das bei Encountern zwischen 'Einrichtungskontakten', 'Fachabteilungskontakten' und 'Versorgungsstellenkontakten' unterscheidet.\n    Im Kontext dieses Moduls werden lediglich Encounter der Ebene 'Fachabteilungskontakt' abgebildet.\n  \n  ",
+        "comment": "  **Begründung Pflichtfeld:** Die Abteilungsebene muss aus Kompatibilitätsgründen angegeben werden.\n\n  **Hinweis bei Abbildung von Versorgungsstellenkontakten:**\n  Es ist ein üblicher Fall, dass die Dauer eines Versorgungsstellenkontaktes in der Versorgung die eines Abteilungskontaktes übersteigt. Ein Beispiel hierfür: Ein Patient bleibt im Bett (Versorgungsstellenkontakt), aber ein Fachabteilungswechsel geschieht, da die Diagnose über eine Fachabteilung (Onkologie) läuft, dann aber der Wechsel zur Fachabteilung Chirurgie (neuer Abteilungskontakt) notwendig wird.\n  Für einen solchen Fall gilt auf Ebene der FHIR-Instanzen (z.B. entgegen des tatsächliche Aufenthaltes im gleichen Bett): Im Falle eines Fachabteilungswechsels legt ein System einen neuen Abteilungskontakt an. Bestehende Versorgungsstellenkontakt SOLLEN NICHT in ihrer Relation (.partOf) zum Abteilungskontakt modifiziert werden. Hingegen SOLL das System einen oder mehrere Versorgungsstellenkontakte erzeugen und mit dem neu angelegten Abteilungskontakt in Verbindung setzen.\n\n  Hintergrund: Das Konzept der 'Kontaktebene' stammt aus dem Fallmodell der Medizininformatik-Initiative,\n  das bei Encountern zwischen 'Einrichtungskontakten', 'Fachabteilungskontakten' und 'Versorgungsstellenkontakten' unterscheidet.\n  Im Kontext dieses Moduls werden lediglich Encounter der Ebene 'Fachabteilungskontakt' abgebildet.\n  ",
         "min": 1,
         "max": "1",
         "patternCodeableConcept": {
@@ -495,7 +495,7 @@
         "id": "Encounter.appointment",
         "path": "Encounter.appointment",
         "short": "Verknüpfung mit einem Termin",
-        "comment": "\n  \n**Begründung und Einschränkung des Must Support**: Dieses Element dient der Verknüpfung mit einem Termin (Appointment) aus dem entsprechenden ISiK Modul und - darauf aufbauend - der Dokumentenkommunikation. Das Element 'appointment' SOLL für den im Folgenden geschilderten Fall implementiert werden. Andernfalls KANN es entfallen. \n\nDie Anforderung einer Verknüpfung mit einem Appointment stammt aus dem Szenario der Dokumentenübertragung zwischen Patientenportal und krankenhaus-internem Primärsystem (z.B. KIS) im Kontext einer Terminbuchung: Dokumente liegen bei Terminbuchung erst im Patientenportal (im Appointment) vor und werden erst mit Anlage des Encounters in das KIS (etc.) übermittelt. Dazu SOLL ein Primärsystem zu Beginn des Termins das Appointment mit dem neu angelegten Encounter verknüpfen, um die Dokumente aus dem Patientenportal darüber vermittelt zuordnen zu können (ausgenommen hiervon sind Termine, die nicht stattfinden, da für diese in der Regel keine Encounter angelegt werden).\n\nÜber die Referenz auf Appointment KÖNNEN Patientenportale den Fallbezug aus dem Termin ermitteln und Dokumente an ein KIS senden.\n\nHieraus folgt, dass das Element nur relevant ist, falls das bestätigungsrelevante System zusätzlich zum vorliegenden Profil (Encounter) das Profil ISiKTermin (Appointment) implementiert.\n\n**Hinweis:**  Zur Umsetzung der Funktionalität zum Dokumentenaustausch gemäß ISiK ist der entsprechende [Implementation Guide zum Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/index.html) zu beachten.",
+        "comment": "\n  \n**Begründung und Einschränkung des Must Support**: Dieses Element dient der Verknüpfung mit einem Termin (Appointment) aus dem entsprechenden ISiK Modul und - darauf aufbauend - der Dokumentenkommunikation. Das Element 'appointment' SOLL für den im Folgenden geschilderten Fall implementiert werden. Andernfalls KANN es entfallen. \n\nDie Anforderung einer Verknüpfung mit einem Appointment stammt aus dem Szenario der Dokumentenübertragung zwischen Patientenportal und krankenhaus-internem Primärsystem (z.B. KIS) im Kontext einer Terminbuchung: Dokumente liegen bei Terminbuchung erst im Patientenportal (im Appointment) vor und werden erst mit Anlage des Encounters in das KIS (etc.) übermittelt. Dazu SOLL ein Primärsystem zu Beginn des Termins das Appointment mit dem neu angelegten Encounter verknüpfen, um die Dokumente aus dem Patientenportal darüber vermittelt zuordnen zu können (ausgenommen hiervon sind Termine, die nicht stattfinden, da für diese in der Regel keine Encounter angelegt werden).\n\nÜber die Referenz auf Appointment KÖNNEN Patientenportale den Fallbezug aus dem Termin ermitteln und Dokumente an ein KIS senden.\n\nHieraus folgt, dass das Element nur relevant ist, falls das bestätigungsrelevante System zusätzlich zum vorliegenden Profil (Encounter) das Profil ISiKTermin (Appointment) implementiert.\n\n**Hinweis:**  Zur Umsetzung der Funktionalität zum Dokumentenaustausch gemäß ISiK ist der entsprechende [Implementation Guide zum Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc1/index.html) zu beachten.",
         "mustSupport": true
       },
       {

@@ -1,8 +1,16 @@
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+### Version 6.0.0
+
+Datum: 01.07.2026
+
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module <https://github.com/gematik/spec-ISiK-Basismodul/pull/1272>
+
+Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
-Datum: tbd
+Datum: 10.06.2026
 
 * `improve` Guidance für ISiKMedikament.amount verbessert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1243>
 * `fix` Hinzufügen der Rulesets `CommonSearchParameters` und `OptionalTagSearchParameter` zu den Rollen CapabilityStatements <https://github.com/gematik/spec-ISiK-Basismodul/pull/1161> - analog zu TC 5.1.2 siehe <https://github.com/gematik/spec-ISiK-Basismodul/pull/1158>

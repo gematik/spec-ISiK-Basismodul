@@ -91,8 +91,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * extension[Seitenlokalisation] MS      
       * ^short = "Seitenlokalisation"
       * ^comment = "**Begründung MS:** Bei ICD-10-codierten Diagnosen an paarigen Organen oder Körperteilen müssen die Zusatzkennzeichen für die Seitigkeit (R, L oder B) angeben werden.
-      
-      **Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, wird für die Kodierung der Lateralität aktuell die Nutzung einer BodyStructure-Ressource inkl. einer Snomet-CT Kodierung diskutiert. Siehe [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html)."
+
+  **Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, wird für die Kodierung der Lateralität aktuell die Nutzung einer BodyStructure-Ressource inkl. einer Snomet-CT Kodierung diskutiert. Siehe [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html)."
     * extension[Diagnosesicherheit] MS
   * coding[Alpha-ID] only CodingAlphaID
     * ^patternCoding.system = $alphaid-cs

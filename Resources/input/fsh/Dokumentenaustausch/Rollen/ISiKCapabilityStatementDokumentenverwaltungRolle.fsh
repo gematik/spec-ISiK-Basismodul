@@ -20,11 +20,11 @@ Diese Rolle beschreibt verpflichtende Interaktionen zur Erstellung, dem Abruf un
   * interaction[+]
     * insert Expectation (#SHALL)
     * code = #create
-    * documentation = "siehe [Dokumentenbereitstellung](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/Interaktion-Dokumentenbereitstellung.html)"
+    * documentation = "siehe [Dokumentenbereitstellung](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc1/Interaktion-Dokumentenbereitstellung.html)"
   * interaction[+]
     * insert Expectation (#SHALL)
     * code = #read
-    * documentation = "siehe [Dokumentenabfrage](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/Dokumentenabfrage.html)"
+    * documentation = "siehe [Dokumentenabfrage](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc1/Dokumentenabfrage.html)"
   * interaction[+]
     * insert Expectation (#SHALL)
     * code = #search-type
