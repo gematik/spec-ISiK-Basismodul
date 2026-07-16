@@ -24,8 +24,7 @@ InstanceOf: ISiKHerzfrequenz
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#8867-4 "Heart rate"
-* code.coding[snomed] = $sct#364075005 "Herzfrequenz"
+* code = $loinc#8867-4 "Herzfrequenz"
  // * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#147842 "MDC_ECG_HEART_RATE"
 * code.text = "Herzfrequenz"
@@ -39,7 +38,7 @@ InstanceOf: ISiKHerzfrequenz
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#8867-4 "Heart rate"
+* code = $loinc#8867-4 "Herzfrequenz"
 * subject = Reference(PatientinMinimal)
 * effectiveDateTime = "2024-01-15"
 * valueQuantity = 45 '/min' "per minute"
@@ -49,16 +48,16 @@ InstanceOf: ISiKHerzfrequenz
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#8867-4 "Heart rate"
+* code = $loinc#8867-4 "Herzfrequenz"
 * code.coding[snomed] = $sct#364075005 "Herzfrequenz"
-//  * version = "http://snomed.info/sct/11000274103/version/20251115"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#147842 "MDC_ECG_HEART_RATE"
 * code.text = "Herzfrequenz - EKG-Monitoring"
 * subject = Reference(PatientinNormal)
 * effectiveDateTime = "2024-01-15T14:30:00+01:00"
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 180 '/min' "per minute"
-* method = $sct#268400002 "12 lead electrocardiogram"
+* method = $sct#268400002 "12-Kanal-Elektrokardiogramm"
 * bodySite = $sct#80891009 "Heart structure"
 * interpretation = $v3-ObservationInterpretation#H "High"
 * note.text = "Supraventrikuläre Tachykardie bei akuter Belastung"

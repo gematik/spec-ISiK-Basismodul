@@ -24,5 +24,5 @@ Usage: #example
 * referenceRange
   * low = 0.6 $cs-ucum#mg/dL
   * high = 1.2 $cs-ucum#mg/dL
-  * appliesTo = $sct#248152002 "female"
+  * appliesTo = $sct#248152002 "Weiblich"
 * insert EffectiveAndPerformer

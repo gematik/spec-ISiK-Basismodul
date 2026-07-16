@@ -28,7 +28,7 @@ Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
 * code.coding[coretemp-loinc] = $loinc#8329-5 "Body temperature - Core"
-* code.coding[snomed] = $sct#276885007 "Core body temperature"
+* code.coding[snomed] = $sct#276885007 "Körperkerntemperatur"
 //  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[coretemp-IEEE11073] = $IEEE11073#150368 "MDC_TEMP_CORE"
 * code.text = "Körpertemperatur"
@@ -53,7 +53,7 @@ Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code.coding[coretemp-loinc] = $loinc#8329-5 "Body temperature - Core"
-* code.coding[snomed] = $sct#276885007 "Core body temperature"
+* code.coding[snomed] = $sct#276885007 "Körperkerntemperatur"
 //  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[coretemp-IEEE11073] = $IEEE11073#150368 "MDC_TEMP_CORE"
 * code.text = "Körperkerntemperatur - Intensivmonitoring"
@@ -61,7 +61,8 @@ Usage: #example
 * effectiveDateTime = "2024-01-15T16:45:00+01:00"
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 42.5 'Cel' "°C"
-* method = $sct#448169003 "Digital thermometry"
+// TODO: SCT hat kein Konzept für digital Temperatur als Methode, daher hier Digital thermometer (physical object) verwendet
+* method = $sct#1461000205102 "Digital thermometer"
 * bodySite = $sct#181245004 "Entire esophagus"
 * interpretation = $v3-ObservationInterpretation#H "High"
 * note.text = "Hyperthermie - Ösophageale Kerntemperaturmessung bei maligner Hyperthermie"

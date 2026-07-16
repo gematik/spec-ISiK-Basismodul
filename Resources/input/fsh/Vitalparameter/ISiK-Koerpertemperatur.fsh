@@ -24,8 +24,8 @@ InstanceOf: ISiKKoerpertemperatur
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#8310-5 "Body temperature"
-* code.coding[snomed] = $sct#386725007 "Body temperature"
+* code = $loinc#8310-5 "Körpertemperatur"
+* code.coding[snomed] = $sct#386725007 "Körpertemperatur"
 //  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#150364 "MDC_TEMP_BODY"
 * code.text = "Körpertemperatur"
@@ -39,7 +39,7 @@ InstanceOf: ISiKKoerpertemperatur
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#8310-5 "Body temperature"
+* code = $loinc#8310-5 "Körpertemperatur"
 * subject = Reference(PatientinMinimal)
 * effectiveDateTime = "2024-01-15"
 * valueQuantity = 35.2 'Cel' "°C"
@@ -49,8 +49,8 @@ InstanceOf: ISiKKoerpertemperatur
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#8310-5 "Body temperature"
-* code.coding[snomed] = $sct#386725007 "Body temperature"
+* code = $loinc#8310-5 "Körpertemperatur"
+* code.coding[snomed] = $sct#386725007 "Körpertemperatur"
 //  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#150364 "MDC_TEMP_BODY"
 * code.text = "Körpertemperatur - Fiebermessung"
@@ -58,7 +58,8 @@ Usage: #example
 * effectiveDateTime = "2024-01-15T20:15:00+01:00"
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 41.2 'Cel' "°C"
-* method = $sct#448169003 "Digital thermometry"
+//TODO: SCT hat kein Konzept für digital Temperatur als Methode, daher hier Digital thermometer (physical object) verwendet
+* method = $sct#1461000205102 "Digital thermometer"
 * bodySite = $sct#21974007 "Tongue structure"
 * interpretation = $v3-ObservationInterpretation#H "High"
 * note.text = "Hyperthermie bei schwerer Sepsis - kontinuierliches Monitoring erforderlich"

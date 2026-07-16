@@ -26,8 +26,8 @@ InstanceOf: ISiKKopfumfang
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#9843-4 "Head Occipital-frontal circumference"
-* code.coding[snomed] = $sct#363812007 "Head circumference"
+* code = $loinc#9843-4 "Kopfumfang okzipital-frontal"
+* code.coding[snomed] = $sct#363812007 "Kopfumfang"
 //  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#153856 "MDC_CIRCUM_HEAD"
 * code.text = "Kopfumfang"
@@ -41,7 +41,7 @@ InstanceOf: ISiKKopfumfang
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#9843-4 "Head Occipital-frontal circumference"
+* code = $loinc#9843-4 "Kopfumfang okzipital-frontal"
 * subject = Reference(PatientinMinimal)
 * effectiveDateTime = "2024-01-15"
 * valueQuantity = 32.5 'cm' "Centimeter"
@@ -51,8 +51,8 @@ InstanceOf: ISiKKopfumfang
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#9843-4 "Head Occipital-frontal circumference"
-* code.coding[snomed] = $sct#363812007 "Head circumference"
+* code = $loinc#9843-4 "Kopfumfang okzipital-frontal"
+* code.coding[snomed] = $sct#363812007 "Kopfumfang"
 //  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#153856 "MDC_CIRCUM_HEAD"
 * code.text = "Kopfumfang - Pädiatrische Verlaufskontrolle"
@@ -60,7 +60,8 @@ Usage: #example
 * effectiveDateTime = "2024-01-15T11:00:00+01:00"
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 60.5 'cm' "Centimeter"
-* method = $sct#129264002 "Action - using tape measure"
+//TODO: SCT hat kein Konzept für Messband als Methode, daher hier Measuring tape (physical object) verwendet
+* method = $sct#51791000 "Measuring tape"
 * bodySite = $sct#69536005 "Head structure"
 * interpretation = $v3-ObservationInterpretation#N "Normal"
 * note.text = "Kopfumfang im normalen Bereich für Alter und Geschlecht - Wachstumsperzentile P50"
