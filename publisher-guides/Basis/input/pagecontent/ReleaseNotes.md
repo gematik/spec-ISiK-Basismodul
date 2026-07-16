@@ -10,10 +10,11 @@ Tags werden folgendermaßen verwendet:
 
 ### Version 6.0.0
 
-Datum: tbd
+Datum: 01.07.2026
 
 * `fix` Fix der Invarianten `ISiK-enc-1` und `ISiK-enc-2` des Profils `ISiKKontaktGesundheitseinrichtung` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1260>
 * `improve` Hinzufügen von Anforderung zu den von mio42 GmbH und BfArM definierten Allergie ValueSets <https://github.com/gematik/spec-ISiK-Basismodul/pull/1268>
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module <https://github.com/gematik/spec-ISiK-Basismodul/pull/1272>
 
 Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
