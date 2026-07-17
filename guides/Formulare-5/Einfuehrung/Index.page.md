@@ -10,7 +10,7 @@ Version: 5.1.3
 
 Datum: 17.07.2026
 
-Status: Draft (in Arbeit)
+Status: Retired - vgl. dagegen [Stufe 6 IG](https://simplifier.net/isik-stufe-6)
 
 Realm: Deutschland
 
