@@ -6,7 +6,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 ## Version 5.1.3
 
-Datum: 16.07.2026
+Datum: 17.07.2026
 
 * `fix` Parameter-Typ für RelatedPerson entsprechend korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/1284
 * `improve` Ungenutztes Profil `ISiKTerminKontaktMitGesundheitseinrichtung` entfernt https://github.com/gematik/spec-ISiK-Basismodul/pull/1263
