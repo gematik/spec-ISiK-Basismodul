@@ -6,7 +6,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 ## Version 5.1.3
 
-Datum: 16.07.2026
+Datum: 17.07.2026
 
 * `feature` Bedarfsmedikation mit mehreren Indikationen: R5-Backport-Extension `Dosage.asNeededFor` in `ISiKMedikationsVerordnung.dosageInstruction` ergänzt (ohne Must-Support; ab Stufe 6 mit Must-Support) und `asNeeded[x]` auf `boolean` eingeschränkt. Neue Use-Case-Seite `Bedarfsmedikation` mit Verweis auf den [FHIR Medication IG Deutschland](https://ig.fhir.de/igs/medication/) ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1264
 * `documentation` Neue Use-Case-Seite `Infusionen` mit Verweis auf den [FHIR Medication IG Deutschland](https://ig.fhir.de/igs/medication/) ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1264

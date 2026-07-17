@@ -11,7 +11,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 
 ## Version 5.1.3
 
-Datum: 16.07.2026
+Datum: 17.07.2026
 
 * `improve` Verpflichtung zur patientenübergreifenden Suche entfernt, aufgrund unklarer UseCases und fehlender Suchparameter für geeignete Abfragen https://github.com/gematik/spec-ISiK-Basismodul/pull/1215
 * `fix`: Fehlende Deklaration der StammdatenRolle im Capabilitystatement des Akteurs ISiKCapabilityStatementDokumentenServerAkteur hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/1225
