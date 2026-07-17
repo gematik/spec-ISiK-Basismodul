@@ -12,7 +12,7 @@ Darüber hinaus wird die Versionierung unabhängig von allen anderen Modulen und
 
 ## Version 5.1.3
 
-Datum: tbd
+Datum: 17.07.2026
 
 * `fix` Verschieben des Profils `SD_MII_ICU_Intrakranieller_Druck_Icp` aus der `ICUSourceMinimalRolle` in die `ICUSourceExtendedRolle` und damit Lockerung der Anforderungen an Systeme https://github.com/gematik/spec-ISiK-Basismodul/pull/1270
 
