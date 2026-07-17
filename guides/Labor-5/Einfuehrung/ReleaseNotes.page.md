@@ -8,7 +8,7 @@ Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähi
 
 ## Version 5.1.3
 
-Datum: 16.07.2026
+Datum: 17.07.2026
 
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY`
 * `documentation` Ausschreiben der Abkürzungen der Laboruntersuchungen https://github.com/gematik/spec-ISiK-Basismodul/pull/1184
