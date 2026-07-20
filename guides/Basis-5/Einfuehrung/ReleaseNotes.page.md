@@ -20,8 +20,9 @@ Die Tags werden folgendermaßen verwendet:
 
 ## Version 5.1.3
 
-Datum: 17.07.2026
+Datum: 20.07.2026
 
+* `fix` Package-Dependency Anpassung de.fhir.medication z 1.0.4 - siehe fix in 5.1.2
 * `fix` REQUIRED Suchparameter AllergyIntolerance.onset aus AMTS-Rolle und GesundheitsstatusRolle entfernt aufgrund fehlerhafter Spezifikation https://github.com/gematik/spec-ISiK-Basismodul/pull/1212
 * `improve` Neuer Identifier-Slice `Mitarbeiterkennzeichen` (type code `EN`) im Profil `ISiKPersonImGesundheitsberuf` für nicht-ärztliche Personen eingeführt https://github.com/gematik/spec-ISiK-Basismodul/pull/1222
 
