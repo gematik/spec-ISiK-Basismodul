@@ -459,6 +459,11 @@ Usage: #example
       * timeOfDay = 07:00:00
       * timeOfDay = 13:00:00
       * timeOfDay = 19:00:00
+  * doseAndRate.doseQuantity
+    * value = 3
+    * unit = "ml Injektionslösung"
+    * system = $cs-ucum
+    * code = #mL
 
 // Beispiel Parkinson-Medikation: Medikament 1
 Instance: ExampleISiKMedikationsInformationParkinson1
