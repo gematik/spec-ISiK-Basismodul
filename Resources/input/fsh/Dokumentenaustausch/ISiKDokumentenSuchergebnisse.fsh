@@ -8,7 +8,7 @@ Title: "Suchergebnisse einer Dokumentensuche"
 * type = #searchset (exactly)
   * ^short = "Bundle-Typ"
   * ^comment = "Fix: `searchset`"
-* total 1..
+* total 1.. MS
   * ^short = "Gesamtzahl der Suchtreffer"
   * ^comment = "Gesamtzahl der Suchtreffer auf dem Server, unabhängig vom Page-Size des aktuellen Bundles"
 * entry MS

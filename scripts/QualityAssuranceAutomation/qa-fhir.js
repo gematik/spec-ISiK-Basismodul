@@ -213,7 +213,8 @@ jsonFiles.forEach((filePath) => {
   try {
     const profile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
-    if (profile.resourceType !== 'StructureDefinition') {
+    // Wenn Beispiel oder Extension, dann überspringen
+    if (profile.resourceType !== 'StructureDefinition' || profile.baseDefinition === "http://hl7.org/fhir/StructureDefinition/Extension") {
       return;
     }
 
