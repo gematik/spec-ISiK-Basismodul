@@ -101,13 +101,13 @@
           "ordered": false,
           "rules": "open"
         },
-        "comment": "Begründung zum Must Support: Termineabsagen sollten verkettbar sein, da am originalen Termin noch weitere Informationen hängen können.",
         "mustSupport": true
       },
       {
         "id": "Appointment.extension:replaces",
         "path": "Appointment.extension",
         "sliceName": "replaces",
+        "comment": "Begründung zum Must Support: Termineabsagen sollten verkettbar sein, da am originalen Termin noch weitere Informationen hängen können.",
         "min": 0,
         "max": "1",
         "type": [
@@ -153,7 +153,7 @@
       {
         "id": "Appointment.specialty",
         "path": "Appointment.specialty",
-        "comment": "Optionale Angabe aller Fachbereiche aus denen ein oder mehrere Akteure für die Durchführung des Termins benötigt werden. \n  \n  Begründung zu Kardinalität und Must Support: KANN auch anhand des Kalenders, in dem ein Termin gebucht wird, ermittelt werden.\n  Die Angabe der Fachbereiche ist optional (0..*), muss jedoch implementiert werden (MS), um die Spezialisierung hinsichtlich der zugeordneten Behandlungseinheit des Termins eindeutig zu definieren und eine korrekte Zuordnung zu gewährleisten.\n  ",
+        "comment": "Optionale Angabe aller Fachbereiche aus denen ein oder mehrere Akteure für die Durchführung des Termins benötigt werden. \n  \n    **Begründung MS**: KANN auch anhand des Kalenders, in dem ein Termin gebucht wird, ermittelt werden.\n  Die Angabe der Fachbereiche ist optional (0..*), muss jedoch implementiert werden (MS), um die Spezialisierung hinsichtlich der zugeordneten Behandlungseinheit des Termins eindeutig zu definieren und eine korrekte Zuordnung zu gewährleisten.  ",
         "mustSupport": true
       },
       {
@@ -366,6 +366,7 @@
         "id": "Appointment.participant:AkteurMedizinischeBehandlungseinheit",
         "path": "Appointment.participant",
         "sliceName": "AkteurMedizinischeBehandlungseinheit",
+        "comment": "Im ISIK-Kontext MUSS die referenzierte HealthcareService-Ressource konform zum [ISiKMedizinischeBehandlungseinheit](https://gematik.de/fhir/isik/StructureDefinition/ISiKMedizinischeBehandlungseinheit) des Basismoduls sein.\n  **Begründung MS**: Über die Angabe einer medizinischen Behandlungseinheit, kann dem Termin eine spezifische Dienstleistung zugeordnet werden. ",
         "min": 0,
         "max": "*",
         "mustSupport": true
@@ -392,6 +393,7 @@
         "id": "Appointment.participant:Angehoeriger",
         "path": "Appointment.participant",
         "sliceName": "Angehoeriger",
+        "comment": "Im ISIK-Kontext MUSS die referenzierte RelatedPerson-Ressource konform zum [ISiKAngehoeriger](https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger) des Basismoduls sein.\n  **Begründung MS**: Die Angabe eines Angehörigen ist optional, da in vielen Fällen die Referenzierung des Patienten ausreichend ist. Bei Terminen, die durch einen Angehörigen gebucht/verwaltet werden, ist es jedoch wichtig, dass diese Information an das Termin-Repository übermittelt werden kann.",
         "min": 0,
         "max": "*",
         "mustSupport": true
