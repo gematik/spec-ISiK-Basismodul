@@ -125,7 +125,8 @@ Die EHDS Kombatiblität erfordert die Angabe von effective. Das Element effectiv
   * system = $cs-ucum
   * code 1.. MS
     * ^short = "UCUM-Code der Einheit"
-* valueCodeableConcept from $vs-results-coded-values-laboratory (preferred) MS
+* valueCodeableConcept MS    
+* valueCodeableConcept from $vs-results-coded-values-laboratory (preferred) 
   * ^short = "Kodierter Ergebniswert"
   * ^comment = "Slice für kodierte Ergebnisse (z.B. positiv/negativ). Das Binding auf das IPS-ValueSet dient der Sicherstellung der Kompatibilität mit IPS und EHDS, die beide dieses ValueSet verwenden."    
 * dataAbsentReason MS
