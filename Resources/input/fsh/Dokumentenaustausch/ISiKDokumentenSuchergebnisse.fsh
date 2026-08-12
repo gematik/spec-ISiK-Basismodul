@@ -20,7 +20,7 @@ Title: "Suchergebnisse einer Dokumentensuche"
 * entry contains DocumentReference 0..* MS
 * entry[DocumentReference] 
   * ^short = "Suchergebnis"
-  * ^comment = "Jedes Suchergebnis wird in einer separaten `entry` abgebildet. Bundles mit `total = 0` haben keine `entry`" 
+  * ^comment = "Spezifischer Slice für DocumentReference Entries. Diese Einträge MÜSSEN Ressourcen vom Typ ISiKDokumentenMetaDaten referenzieren" 
 * entry[DocumentReference]
   * fullUrl 1.. MS
     * ^short = "Serverseitige URL der Ressource"
