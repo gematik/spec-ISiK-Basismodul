@@ -48,11 +48,11 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
-* category contains observation-category 1..1 MS and laborbereich 0..1
+* category contains observation-category 1..1 MS and laborbereich 0..1 MS
 * category[observation-category] = $cs-observation-category#laboratory
   * ^short = "Festlegung der Kategorie 'laboratory'"
   * ^comment = "**Begründung MS**: Pflicht-Slice zur Kennzeichnung als Laboruntersuchung."
-* category[laborbereich] from ISiKLaborbereichVS (required) MS
+* category[laborbereich] from ISiKLaborbereichVS (required) 
   * ^short = "Fachlicher Laborbereich"
   * ^comment = "Optionaler Slice zur weiteren Einordnung der Laboruntersuchung in einen LOINC-Fachbereich (z. B. Hematologie, Klinische Chemie). Die Fachbereiche Mikrobiologie, Humangenetik sowie Zytologie sind ausgeschlossen, da sie eine spezialisierte Abbildung mit differenzierter Terminologie und Struktur erfordern."
 * code MS
