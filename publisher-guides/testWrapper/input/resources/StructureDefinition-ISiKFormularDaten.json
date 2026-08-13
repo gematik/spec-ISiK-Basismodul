@@ -1,0 +1,277 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKFormularDaten",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten",
+  "version": "6.0.0",
+  "name": "ISiKFormularDaten",
+  "title": "Ausgefülltes ISiK-Formular",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-07-01",
+  "publisher": "gematik GmbH",
+  "description": "Im Profil `ISiKFormularDaten` sind Mindestanforderungen an ISiK kompatible, ausgefüllte Formulare definiert.\nDie verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezifikationen->Extensions beschrieben.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "QuestionnaireResponse",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "QuestionnaireResponse",
+        "path": "QuestionnaireResponse",
+        "constraint": [
+          {
+            "key": "sdcqr-1",
+            "human": "Subject SHOULD be present (searching is difficult without subject).  Almost all QuestionnaireResponses should be with respect to some sort of subject.",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten",
+            "severity": "warning",
+            "expression": "subject.exists()",
+            "xpath": "exists(f:subject)",
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice",
+                "valueBoolean": true
+              }
+            ]
+          },
+          {
+            "key": "sdcqr-2",
+            "human": "When repeats=true for a group, it'll be represented with multiple items with the same linkId in the QuestionnaireResponse.  For a question, it'll be represented by a single item with that linkId with multiple answers.",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten",
+            "severity": "error",
+            "expression": "(QuestionnaireResponse|repeat(answer|item)).select(item.where(answer.value.exists()).linkId.isDistinct()).allTrue()",
+            "xpath": "not(exists(for $item in descendant::f:item[f:answer] return $item/preceding-sibling::f:item[f:linkId/@value=$item/f:linkId/@value]))",
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice",
+                "valueBoolean": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.id",
+        "path": "QuestionnaireResponse.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.meta.versionId",
+        "path": "QuestionnaireResponse.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "QuestionnaireResponse.meta.lastUpdated",
+        "path": "QuestionnaireResponse.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id": "QuestionnaireResponse.implicitRules",
+        "path": "QuestionnaireResponse.implicitRules",
+        "short": "Verweis auf die Regeln, nach denen die Ressource erstellt wurde",
+        "comment": "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.\n  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können.",
+        "max": "0"
+      },
+      {
+        "id": "QuestionnaireResponse.language",
+        "path": "QuestionnaireResponse.language",
+        "short": "Sprache der Formulardaten",
+        "comment": "Im ISiK Kontext ist hier die Sprache meist mit de-DE (deutsch-Deutschland) anzugeben.\n  \n  **Begründung Pflichtfeld:** Die Angabe der Sprache ist für die Interpretation und Darstellung der Formulardaten relevant.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.text",
+        "path": "QuestionnaireResponse.text",
+        "short": "Menschlich lesbare Zusammenfassung der FormularDaten",
+        "comment": "**Begründung MS:**\n  Wird ein Formular nicht im Kontext der `Datenübermittlung aus Subsystemen` übertragen, wo ein Narrativ im Kontext der Composition gefordert wird, muss an dieser Stelle eine menschenlesbare Zusammenfassung der FormularDaten bereitgestellt werden, damit die Informationen auch ohne Zugriff auf die zugrunde liegende FormularDefinition und die strukturierte Darstellung der Formulardaten interpretiert werden können.",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.modifierExtension",
+        "path": "QuestionnaireResponse.modifierExtension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.modifierExtension:MpFormular",
+        "path": "QuestionnaireResponse.modifierExtension",
+        "sliceName": "MpFormular",
+        "short": "Zurgrundeliegendes Formular wird in einem Medizinprodukt eingesetzt",
+        "comment": "**Begründung MS:**\n  In dieser Extension wird die Zweckbestimmung angegeben, welche die FormularDefinition, auf der diese FormularDaten basieren, für die Verwendung innerhalb eines Medizinproduktes identifiziert hat. Sobald diese Extension vorhanden ist, sollten die Konsequenzen für die Anzeige und Verarbeitung der FormularDaten geprüft werden. Ein Formularrenderer, der sich nicht mit dem Thema MDR und Medizinprodukte auseinandergesetzt hat, sollte hier auf das im FHIR-Standard festgelegte Verhalten bei [modifierExtension](http://hl7.org/fhir/extensibility.html#modifierExtension) zurückgreifen.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKMpFormularExtension"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.modifierExtension:MpFormular.value[x]",
+        "path": "QuestionnaireResponse.modifierExtension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.identifier",
+        "path": "QuestionnaireResponse.identifier",
+        "short": "eindeutiger Identifier der FormularDaten",
+        "comment": "**Begründung MS:**\n  Ein vom FormularRenderer vergebener, eindeutiger Identifier kann von weiterverarbeitenden Systemen genutzt werden, um Dubletten zu erkennen.",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.questionnaire",
+        "path": "QuestionnaireResponse.questionnaire",
+        "short": "Bezug zur FormularDefinition inkl. Version",
+        "comment": "Bei der Angabe der Canonical, sollte die Version der FormularDefinition, welche bei der Erstellung die Grundlage gebildet hat, angegeben sein.\n  **Begründung MS:** \n  Der Bezug zur Formulardefinition kann für die Interpretation und Darstellung der Formulardaten relevant sein.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.questionnaire.extension",
+        "path": "QuestionnaireResponse.questionnaire.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "QuestionnaireResponse.questionnaire.extension:questionnaireDisplay",
+        "path": "QuestionnaireResponse.questionnaire.extension",
+        "sliceName": "questionnaireDisplay",
+        "short": "Titel/Überschrift der zugrunde liegenden FormularDefinition",
+        "comment": "Wird für die Darstellung und Auffindbarkeit der FormularDaten benötigt.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/display"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.status",
+        "path": "QuestionnaireResponse.status",
+        "short": "Status",
+        "comment": "**Begründung Pflichtfeld:**\n  Bei der Verarbeitung von FormularDaten ist es wichtig, den Status zu beachten. Falls die Instanz noch nicht `completed` ist, sollte von einer Weiterverarbeitung abgesehen werden.",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.subject",
+        "path": "QuestionnaireResponse.subject",
+        "short": "Subject (Patient), über das in diesem Formular berichtet wird.",
+        "comment": "**Begründung Pflichtfeld:**  \n  Zur Vereinfachung des Workflows werden zunächst nur Formulare mit Patientenbezug zugelassen.  \n  Diese Anforderung kann in künftigen Ausbaustufen gelockert werden.\n  \n  **Hinweis:** In manchen Fällen kann eine Instanz nicht auf eine existierende Patient-Ressurces referenzieren. In diesen Fällen kann hier auch ein eindeutiger Identifier wie eine KVNR oder eine andere Patienten-ID angegeben werden, um die Zuordnung zu einem Patienten zu ermöglichen.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.subject.reference",
+        "path": "QuestionnaireResponse.subject.reference",
+        "short": "Patienten-Link",
+        "comment": "**Begründung MS:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.subject.identifier",
+        "path": "QuestionnaireResponse.subject.identifier",
+        "short": "eindeutiger Patienten-Identifier (bspw. KVNR)",
+        "comment": "**Begründung MS:** Ein eindeutiger Patienten-Identifier ermöglicht die Zuordnung der FormularDaten zu einem bestimmten Patienten, auch wenn keine direkte Referenz auf eine Patient-Ressource besteht.",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.authored",
+        "path": "QuestionnaireResponse.authored",
+        "short": "Datum der FormularDaten",
+        "comment": "**Begründung Pflichtfeld:** \n  Relevant für die Suche und zeitliche Einordnung der FormularDaten",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.author",
+        "path": "QuestionnaireResponse.author",
+        "short": "Ersteller des Fromulars",
+        "comment": "Auch wenn hier keine Einschränkung vorgenommen wurde, ist zu empfehlen, hier die ausfüllende Person (Patient/Practitioner) zu referenzieren und nicht nur die Software (Device), mit der das Formular ausgefüllt wurde.\n  **Begründung MS:**\n  In den meisten Fällen ist relevant, wer Formulardaten erfasst hat.",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item",
+        "path": "QuestionnaireResponse.item",
+        "short": "Formularelement",
+        "comment": "**Begründung MS:** Es können beliebig viele Formularelemente hier abgebildet werden.",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item.linkId",
+        "path": "QuestionnaireResponse.item.linkId",
+        "short": "Eindeutige ID des Formularelement",
+        "comment": "**Begründung Pflichtfeld:**\n    Die LinkId ordnet die Information der Antwort einer Frage in der FormularDefinition zu und ist aus dem Grund zur Interpretation der Antwort unablässig.",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item.text",
+        "path": "QuestionnaireResponse.item.text",
+        "short": "Frage, die beantwortet wurde",
+        "comment": "**Begründung Pflichtfeld:**  \n    Die FormularDaten sollte pro Antwort auch die Fragestellung mitführen, \n    damit die Daten auch von Systemen/Anwendern interpretiert werden können, \n    die *keinen* Zugriff auf die zugrunde liegende FormularDefinition haben.",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item.answer",
+        "path": "QuestionnaireResponse.item.answer",
+        "short": "Antwort",
+        "comment": "**Begründung MS:**\n    Die erfasste Antwort MUSS stets vorhanden sein.",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item.answer.value[x]",
+        "path": "QuestionnaireResponse.item.answer.value[x]",
+        "short": "Inhalt der Antwort",
+        "comment": "**Begründung MS:**\n      Der Inhalt der jeweilig erfassten Antwort MUSS stehts vorhanden sein.",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item.answer.item",
+        "path": "QuestionnaireResponse.item.answer.item",
+        "short": "Untergeordnetes Item",
+        "comment": "**Begründung MS:**  \n   Items können beliebig verschachtelt und zu Gruppen zusammengefasst werden, um komplexere und umfangreichere Formulare zu strukturieren.",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item.item",
+        "path": "QuestionnaireResponse.item.item",
+        "short": "Untergeordnetes Item",
+        "comment": "**Begründung MS:**  \n   Items können beliebig verschachtelt und zu Gruppen zusammengefasst werden, um komplexere und umfangreichere Formulare zu strukturieren.",
+        "mustSupport": true
+      }
+    ]
+  }
+}
