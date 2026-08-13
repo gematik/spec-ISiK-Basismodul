@@ -1,5 +1,11 @@
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+### Version 6.0.1
+
+Datum: tbd
+
+* `documentation` Update des Sequenzdiagramms. Suche nach allen Stationen wurde korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/1296
+
 ### Version 6.0.0
 
 Datum: 01.07.2026
