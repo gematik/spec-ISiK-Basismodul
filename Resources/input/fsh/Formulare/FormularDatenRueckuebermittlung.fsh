@@ -15,7 +15,7 @@ Description: "Auf Basis des [ISiKBerichtBundle](https://gematik.de/fhir/isik/Str
   * ^comment = "Die ISiKFormularDaten-Instanz enthält das ausgefüllte Questionnaire in Form einer QuestionnaireResponse."
 * entry[FormularDaten].resource only ISiKFormularDaten
 * entry contains FormularDatenExtrakt ..* MS
-* entry[Formular]
+* entry[FormularDatenExtrakt]
   * ^short = "Slice zur Hinterlegung von ISiKFormularDatenExtrakt-Instanzen"
   * ^comment = "Die ISiKFormularDatenExtrakt-Instanzen enthalten die extrahierten Daten aus dem Formular, die zurückübermittelt werden. Es können mehrere Extrakte enthalten sein."
 * entry[FormularDatenExtrakt].resource
