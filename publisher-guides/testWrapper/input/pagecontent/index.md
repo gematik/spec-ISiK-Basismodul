@@ -9,6 +9,10 @@ Unterschiedliche [Versionen zur Stufe 6 können Sie hier abrufen](https://simpli
 
 ----
 
+TEST ---
+Dieser IG ist nur ein Wrapper zu Testzwecken, um alle IGs über IG Publisher (und pipeline) in einem einzigen Package zu builden.
+---
+
 
 ### Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
 
