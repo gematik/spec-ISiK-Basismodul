@@ -2,10 +2,10 @@
   "resourceType": "ImplementationGuide",
   "id": "medikation",
   "url": "https://gematik.de/fhir/isik/ImplementationGuide/medikation",
-  "version": "6.0.0-rc",
+  "version": "6.0.0",
   "name": "MedikationImplementationGuide",
   "title": "ISiK Medikation Implementierungsleitfaden",
-  "status": "draft",
+  "status": "active",
   "publisher": "gematik GmbH",
   "contact": [
     {
@@ -45,7 +45,7 @@
     },
     {
       "packageId": "de.basisprofil.r4",
-      "version": "1.6.0-ballot2",
+      "version": "1.6.0",
       "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
       "id": "de_basisprofil_r4"
     },
@@ -74,16 +74,16 @@
       "id": "de_gematik_terminology"
     },
     {
-      "packageId": "de.fhir.medication",
-      "version": "1.0.4",
-      "uri": "http://ig.fhir.de/igs/medication/ImplementationGuide/de.fhir.medication",
-      "id": "de_fhir_medication"
-    },
-    {
       "packageId": "de.gematik.ti",
-      "version": "1.1.1",
+      "version": "1.3.1",
       "uri": "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
       "id": "de_gematik_ti"
+    },
+    {
+      "packageId": "de.fhir.medication",
+      "version": "1.0.7",
+      "uri": "http://ig.fhir.de/igs/medication/ImplementationGuide/de.fhir.medication",
+      "id": "de_fhir_medication"
     }
   ],
   "definition": {
@@ -125,6 +125,14 @@
         },
         "exampleBoolean": false,
         "name": "DorisZiel"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-Dosage.asNeededFor"
+        },
+        "description": "R5 Backport-Extension zur Angabe einer oder mehrerer Bedingungen, unter denen eine Bedarfsmedikation angewendet werden soll.",
+        "exampleBoolean": false,
+        "name": "Dosage AsNeededFor"
       },
       {
         "reference": {
@@ -337,6 +345,13 @@
         },
         "exampleBoolean": false,
         "name": "ExampleISiKMedikationsVerordnung2"
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/ExampleISiKMedikationsVerordnungBedarfsmedikation"
+        },
+        "exampleBoolean": false,
+        "name": "ExampleISiKMedikationsVerordnungBedarfsmedikation"
       },
       {
         "reference": {
@@ -579,7 +594,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKMedikationsListe"
         },
-        "description": "Dieses Profil ermöglicht die Zusammenführung einzelner MedikationsInformationen eines Patienten in ISiK Szenarien.\n\nDie MedicationList verweist auf MedicationStatement-Ressourcen und bildet Medikationen ab, die aktuell eingenommen, im Krankenhaus verabreicht oder aus externen Quellen dokumentiert wurden - etwa durch Patientenangaben, Medikationspläne oder Entlassbriefe.\nIm Unterschied zum eMP der ePA ist die ISiK-MedikationsListe dynamisch generierbar und systemseitig aktualisierbar. Sie kann auch Informationen enthalten, die außerhalb des eigenen Hauses erfasst wurden – sofern diese dem System strukturiert vorliegen (z.B. durch eMP-Import).\nEin Import aus dem eMP ist möglich, aber nicht verpflichtend.",
+        "description": "Dieses Profil ermöglicht die Zusammenführung einzelner MedikationsInformationen eines Patienten in ISiK Szenarien.\n\nDie Medikationsliste verweist auf MedicationStatement-Ressourcen und bildet Medikationen ab, die aktuell eingenommen, im Krankenhaus verabreicht oder aus externen Quellen dokumentiert wurden - etwa durch Patientenangaben, Medikationspläne oder Entlassbriefe.\n\nDie Wahl von 'List.mode' richtet sich danach, ob die Liste als dokumentierter Zustand oder als Arbeitsgrundlage verwendet wird.\nPro Patient und fachlichem Kontext (z. B. Behandlungskontext) sollte in der Regel nur eine aktiv gepflegte Medikationsliste ('List.mode = working' und 'List.status = current') geführt werden.  \nDies dient der Vermeidung konkurrierender Listen und stellt eine eindeutige fachliche Referenz sicher. Mehrere parallele Listen können in unterschiedlichen Kontexten oder für unterschiedliche Zwecke existieren, sollten jedoch klar voneinander abgegrenzt sein.\n\nIm Unterschied zum eMP der ePA ist die ISiK-MedikationsListe dynamisch generierbar und systemseitig aktualisierbar. Sie kann auch Informationen enthalten, die außerhalb des eigenen Hauses erfasst wurden - sofern diese dem System strukturiert vorliegen (z.B. durch eMP-Import).\nEin Import aus dem eMP ist möglich, aber nicht verpflichtend.",
         "exampleBoolean": false,
         "name": "ISiK Medikationsliste"
       },
@@ -697,7 +712,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKKontaktGesundheitseinrichtung"
         },
-        "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n\n**Motivation**\n\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Abbildung-des-Konstrukts-Fall.html).\n\n**Kompatibilität**\n\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n\n**Motivation**\n\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Abbildung-des-Konstrukts-Fall.html).\n\n**Kompatibilität**\n\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiKKontaktGesundheitseinrichtung"
       },
@@ -705,7 +720,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKMedikament"
         },
-        "description": "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen Informationen zu Medikamenten in ISiK Szenarien.\n\n**Motivation**\n\nDie strukturierte Bereitstellung von Informationen zu Medikamenten ist eine zentrale Voraussetzung für eine interoperable Arzneimitteltherapie und unterstützt insbesondere Prozesse im Kontext der Arzneimitteltherapiesicherheit (AMTS) sowie der sektorenübergreifenden Versorgung.\n\nIn FHIR werden Medikamente mit der [Medication](https://hl7.org/fhir/R4/medication.html)-Ressource repräsentiert.\n\n**Kompatibilität**\n\nFür das Profil ISiKMedikament wird eine größtmögliche Kompatibilität mit dem Profil [epa-medication der gematik](https://gemspec.gematik.de/ig/fhir/epa-medication) angestrebt. Ziel ist insbesondere eine vergleichbare semantische Struktur zur Unterstützung interoperabler Nutzungsszenarien.\n\nDie spezifischen Extensions des epa-medication-Profils werden in diesem Profil jedoch nicht übernommen. Stattdessen erlaubt das Profil die Nutzung von Extensions, um projektspezifische Anforderungen abzubilden.\n\nEs kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKMedikament valide sind, auch valide gegen das epa-medication-Profil sind.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "description": "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen Informationen zu Medikamenten in ISiK Szenarien.\n\n**Motivation**\n\nDie strukturierte Bereitstellung von Informationen zu Medikamenten ist eine zentrale Voraussetzung für eine interoperable Arzneimitteltherapie und unterstützt insbesondere Prozesse im Kontext der Arzneimitteltherapiesicherheit (AMTS) sowie der sektorenübergreifenden Versorgung.\n\nIn FHIR werden Medikamente mit der [Medication](https://hl7.org/fhir/R4/medication.html)-Ressource repräsentiert.\n\n**Hinweise zur Verwendung von Medication.amount**\n\n`Medication.amount` beschreibt in FHIR R4 die Menge des Arzneimittels im verpackten Produkt bzw. Behältnis. Das Element ist nicht zur Abbildung der Wirkstoffstärke vorgesehen; diese wird über `Medication.ingredient.strength` dokumentiert.\n\nBeispiel: Enthält ein Infusionsbeutel 100 ml Paracetamol-Infusionslösung mit einer Wirkstoffkonzentration von 10 mg/ml, beschreibt `Medication.amount` die Füllmenge des Behältnisses, also `100 ml / 1 Beutel`. Die Wirkstoffkonzentration wird separat über `Medication.ingredient.strength` als `10 mg / 1 ml` angegeben.\n\n`Medication.amount` ist insbesondere dann relevant, wenn der Arzneimittelcode allein die konkrete Packungsgröße, Füllmenge oder Menge je Verpackungseinheit nicht eindeutig ausdrückt.\n\n**Kompatibilität**\n\nFür das Profil ISiKMedikament wird eine größtmögliche Kompatibilität mit dem Profil [epa-medication der gematik](https://gemspec.gematik.de/ig/fhir/epa-medication) angestrebt. Ziel ist insbesondere eine vergleichbare semantische Struktur zur Unterstützung interoperabler Nutzungsszenarien.\n\nDie spezifischen Extensions des epa-medication-Profils werden in diesem Profil jedoch nicht übernommen. Stattdessen erlaubt das Profil die Nutzung von Extensions, um projektspezifische Anforderungen abzubilden.\n\nEs kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKMedikament valide sind, auch valide gegen das epa-medication-Profil sind.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiKMedikament"
       },
@@ -1002,7 +1017,7 @@
       },
       {
         "code": "releaselabel",
-        "value": "ballot"
+        "value": "active"
       },
       {
         "code": "display-warnings",

@@ -8,7 +8,7 @@ Title: "DemoTemplatebasedExtractionQuestionnaire"
 * title = "DemoTemplatebasedExtractionQuestionnaire"
 * description = "### Beispiel-Questionnaire zur Demonstration der Template-basierten Extraktion von Patientendaten"
 * item[+] 
-  * insert tbeExtract(IsikPatientTemplate, [["('Patient/' + item.where(linkId = 'resourceId').answer.value)"]])
+  * insert tbeExtract(IsikPatientTemplate, [["item.where(linkId = 'resourceId').answer.value"]], [["('Patient/' + item.where(linkId = 'resourceId').answer.value)"]])
   * linkId = "patient"
   * text = "Patient Informationen"
   * type = #group

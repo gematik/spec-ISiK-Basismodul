@@ -52,7 +52,7 @@ Die normativen Festlegungen des Moduls ISiK Connect sind im Wesentlichen der Sei
 
 ### Bedeutung für das Gesundheitswesen
 
-Die sichere und standardisierte Autorisierung von Zugriffen auf medizinische Daten ist essenziell für die digitale Vernetzung im Krankenhausumfeld. Eine zentrale Rolle spielt dabei das ISiK-Modul Connect (ISiK-Connect), das in ISiK Stufe 5 Anforderungen an die Autorisierung für über ISiK-Ressourcen-Server bereitgestellte FHIR-Endpunkte definiert. Dadurch wird es Krankenhäusern ermöglicht, die Zugriffsrechte eines Benutzers gezielt an verschiedene Clients zu delegieren – sei es an klinische Subsysteme, Patientenportale, Terminverwaltungssysteme oder mobile Anwendungen zur Erfassung von Gesundheitsdaten.
+Die sichere und standardisierte Autorisierung von Zugriffen auf medizinische Daten ist essenziell für die digitale Vernetzung im Krankenhausumfeld. Eine zentrale Rolle spielt dabei das ISiK-Modul Connect (ISiK-Connect), das in ISiK Stufe 6 Anforderungen an die Autorisierung für über ISiK-Ressourcen-Server bereitgestellte FHIR-Endpunkte definiert. Dadurch wird es Krankenhäusern ermöglicht, die Zugriffsrechte eines Benutzers gezielt an verschiedene Clients zu delegieren – sei es an klinische Subsysteme, Patientenportale, Terminverwaltungssysteme oder mobile Anwendungen zur Erfassung von Gesundheitsdaten.
 
 ISiK-Connect schafft eine einheitliche Grundlage für die Absicherung von FHIR-Schnittstellen und den darüber zugreifbaren Daten, sodass die Schutzziele Vertraulichkeit und Integrität in einer standardisierten Weise gewährleistet werden können. Dabei gibt das Modul selbst keine festen Berechtigungen vor, sondern fokussiert auf den interoperablen Austausch relevanter Autorisierungsinformationen. Dies ermöglicht es Krankenhäusern, bestehende Rollen- und Rechtekonzepte ISiK-konform weiterzuverwenden und nahtlos in ihre bestehenden IT-Strukturen zu integrieren.
 
@@ -65,7 +65,7 @@ Dieser Implementation Guide baut auf diesen Prinzipien auf und erweitert sie gez
 ### Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
 
 Die gematik wurde vom Gesetzgeber beauftragt, im Benehmen mit der Deutschen Krankenhausgesellschaft (DKG) und den maßgeblichen Bundesverbänden der Industrie im Gesundheitswesen, verbindliche Standards für den Austausch von Gesundheitsdaten mit Informationssystemen im Krankenhaus zu erarbeiten. 
-Für diesen Zweck wurden [FHIR-Profile](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/index.html) und ein REST-basiertes Application Programming Interface (API) entwickelt. Die REST-API wird im Wesentlichen [vom FHIR Standard vorgegeben](https://www.hl7.org/fhir/R4/http.html).
+Für diesen Zweck wurden [FHIR-Profile](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/index.html) und ein REST-basiertes Application Programming Interface (API) entwickelt. Die REST-API wird im Wesentlichen [vom FHIR Standard vorgegeben](https://www.hl7.org/fhir/R4/http.html).
 
 Weitere Informationen siehe [§ 373 SGB V](https://www.gesetze-im-internet.de/sgb_5/__373.html).
 

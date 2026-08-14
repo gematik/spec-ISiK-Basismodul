@@ -2,11 +2,11 @@
   "resourceType": "CapabilityStatement",
   "id": "ISiKCapabilityStatementAufbaustrukturRolle",
   "url": "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAufbaustrukturRolle",
-  "version": "6.0.0-rc",
+  "version": "6.0.0",
   "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "date": "2026-04-02",
+  "date": "2026-07-01",
   "contact": [
     {
       "telecom": [
@@ -449,10 +449,10 @@
                   "valueCode": "SHALL"
                 }
               ],
-              "name": "characteristic",
-              "definition": "https://gematik.de/fhir/isik/SearchParameter/Location-characteristic",
+              "name": "form",
+              "definition": "https://gematik.de/fhir/isik/SearchParameter/Location-form",
               "type": "token",
-              "documentation": "Begründung: Die Suche nach Stationen ist notwendig und wird über diesen Suchparameter ermöglicht.    \n        \n        **Beispiel:**    \n        `GET [base]/Location?characteristic=http://terminology.hl7.org/CodeSystem/location-physical-type|wa` \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+              "documentation": "Begründung: Die Location-Ressource kann für ein breites Spektrum an UseCases verwendet werden.\n        Im Kontext von ISiK ist speziell die Suche nach Stationen, Zimmern und Bettplätzen relevant, \n        es ist jedoch nicht auszuschließen, dass Systeme die Location-Ressource auch für die Abbildung von Örtlichkeiten \n        außerhalb des ISiK-Scopes verwenden, z.B. Gebäude, Standorte, Etagen, Lagerorte. \n        Der Suchparameter `form` ist notwendig um die Suche auf relevante Locations eingrenzen zu können.    \n        **Beispiel:**  \n        Suche nach Stationen:  \n        `GET [base]/Location?form=http://terminology.hl7.org/CodeSystem/location-physical-type|wa` \n        **Anwendungshinweis:**   \n        Bitte die Hinweise in der Beschreibung des [Custom-Suchparameters](https://gematik.de/fhir/isik/SearchParameter/Location-form) beachten!\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
             }
           ]
         }

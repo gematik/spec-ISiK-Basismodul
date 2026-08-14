@@ -2,13 +2,13 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKAllergieUnvertraeglichkeit",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit",
-  "version": "6.0.0-rc",
+  "version": "6.0.0",
   "name": "ISiKAllergieUnvertraeglichkeit",
   "status": "active",
   "experimental": false,
-  "date": "2026-04-02",
+  "date": "2026-07-01",
   "publisher": "gematik GmbH",
-  "description": "\nDiese Profil ermöglicht die Dokumentation von Allergien und Unverträglichkeiten in ISiK Szenarien.\n\n**Motivation**\n\nDie Möglichkeit, auf eine Übersicht der Allergien und Unverträglichkeiten eines Patienten zuzugreifen, ist eine wichtige Funktion im klinischen Behandlungsablauf. Dies gilt insbesondere, aber nicht ausschließlich, im Bereich der Arzneimitteltherapiesicherheit.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/UseCases.html).\n\nIn FHIR werden Allergien und Unverträglichkeiten mit der [AllergyIntolerance](https://hl7.org/fhir/R4/allergyintolerance.html)-Ressource repräsentiert.\n\n**Kompatibilität**\n\nFür das Profil ISiKAllergieUnvertraeglichkeit wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKAllergieUnvertraeglichkeit valide sind, auch valide sind gegen:\n* [das Profil KBV_PR_Base_AllergyIntolerance der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_AllergyIntolerance)\n* [das Profil EMDAF_PR_AllergyIntolerance der GEVKO](https://fhir.gevko.de/StructureDefinition/EMDAF_PR_AllergyIntolerance)\n* [das Profil AllergyIntolerance-uv-ips der International Patient Summary](http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+  "description": "\nDiese Profil ermöglicht die Dokumentation von Allergien und Unverträglichkeiten in ISiK Szenarien.\n\n**Motivation**\n\nDie Möglichkeit, auf eine Übersicht der Allergien und Unverträglichkeiten eines Patienten zuzugreifen, ist eine wichtige Funktion im klinischen Behandlungsablauf. Dies gilt insbesondere, aber nicht ausschließlich, im Bereich der Arzneimitteltherapiesicherheit.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc1/UseCases.html).\n\nIn FHIR werden Allergien und Unverträglichkeiten mit der [AllergyIntolerance](https://hl7.org/fhir/R4/allergyintolerance.html)-Ressource repräsentiert.\n\n**Kompatibilität**\n\nFür das Profil ISiKAllergieUnvertraeglichkeit wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKAllergieUnvertraeglichkeit valide sind, auch valide sind gegen:\n* [das Profil KBV_PR_Base_AllergyIntolerance der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_AllergyIntolerance)\n* [das Profil EMDAF_PR_AllergyIntolerance der GEVKO](https://fhir.gevko.de/StructureDefinition/EMDAF_PR_AllergyIntolerance)\n* [das Profil AllergyIntolerance-uv-ips der International Patient Summary](http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -42,6 +42,129 @@
         "short": "Verweis auf die Regeln, nach denen die Ressource erstellt wurde",
         "comment": "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.\n  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können.",
         "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.extension",
+        "path": "AllergyIntolerance.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement",
+        "path": "AllergyIntolerance.extension",
+        "sliceName": "abatement",
+        "short": "Klinisch relevantes Enddatum",
+        "comment": "Hier wird angegeben, bis wann der/die Patient:in die Allergie/Unverträglichkeit hatte. Bei einer fortbestehenden Diagnose/Erkrankung ist diese Angabe nicht zu übermitteln.\n  \n  **Begründung MS:** Das Enddatum der Allergie/Unverträglichkeit ist für die klinische Bewertung der aktuellen Relevanz und die Priorisierung von Warnhinweisen essenziell. Es ermöglicht die Unterscheidung zwischen aktiven und zurückliegenden Allergien, was insbesondere in Medikations- und Entscheidungsunterstützungsprozessen von großer Bedeutung ist.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement.value[x]",
+        "path": "AllergyIntolerance.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement.value[x]:valueDateTime",
+        "path": "AllergyIntolerance.extension.value[x]",
+        "sliceName": "valueDateTime",
+        "short": "Datum, bis wann der/die Patient:in die Allergie/Unverträglichkeit hatte",
+        "comment": "**Begründung MS:** Diese Variante erlaubt es, das klinisch relevante Enddatum als exakten Zeitstempel zu übertragen, wie er in Primärsystemen üblich dokumentiert wird. Ein präzises Datum ist die belastbarste Grundlage für die Bewertung, ob eine Allergie/Unverträglichkeit noch aktuell relevant ist.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement.value[x]:valueAge",
+        "path": "AllergyIntolerance.extension.value[x]",
+        "sliceName": "valueAge",
+        "short": "Alter, bis zu dem der/die Patient:in die Allergie/Unverträglichkeit hatte",
+        "comment": "**Begründung MS:** Für lang zurückliegende oder anamnestisch erhobene Allergien/Unverträglichkeiten ist das Ende häufig nur als Lebensalter der/des Patient:in dokumentiert. Diese Variante verhindert Informationsverlust, wenn kein exaktes Enddatum vorliegt.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Age"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement.value[x]:valueRange",
+        "path": "AllergyIntolerance.extension.value[x]",
+        "sliceName": "valueRange",
+        "short": "Altersspanne, bis zu der der/die Patient:in die Allergie/Unverträglichkeit hatte",
+        "comment": "**Begründung MS:** Ist das Ende zeitlich nicht exakt eingrenzbar, ermöglicht die Angabe einer Altersspanne dennoch eine medizinisch verwertbare zeitliche Einordnung der zurückliegenden Allergie/Unverträglichkeit.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Range"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement.value[x]:valueRange.extension:lebensphase-bis",
+        "path": "AllergyIntolerance.extension.value[x].extension",
+        "sliceName": "lebensphase-bis",
+        "short": "Lebensphase",
+        "definition": "Lebensphase als kodierte Information angegeben, bis zu der der/die Patient:in die Allergie/Unverträglichkeit hatte.",
+        "comment": "**Begründung MS:** Ist auch eine Altersspanne nicht bezifferbar, erlaubt die kodierte Lebensphase (z. B. Kindheit, Erwachsenenalter) eine grobe, aber klinisch nachvollziehbare Einordnung des Endes der Allergie/Unverträglichkeit.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/lebensphase"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement.value[x]:valueRange.low",
+        "path": "AllergyIntolerance.extension.value[x].low",
+        "short": "Beginn der Altersspanne für die Schätzung des Alters",
+        "comment": "**Begründung MS:** Die Untergrenze grenzt den frühesten Zeitpunkt ein, ab dem die Allergie/Unverträglichkeit nicht mehr bestand, und ist für die Interpretation der Altersspanne unverzichtbar.",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement.value[x]:valueRange.high",
+        "path": "AllergyIntolerance.extension.value[x].high",
+        "short": "Ende der Altersspanne für die Schätzung des Alters",
+        "comment": "**Begründung MS:** Die Obergrenze grenzt den spätesten Zeitpunkt ein, bis zu dem die Allergie/Unverträglichkeit noch relevant gewesen sein kann, und ist für die Interpretation der Altersspanne unverzichtbar.",
+        "mustSupport": true
       },
       {
         "id": "AllergyIntolerance.clinicalStatus",
@@ -120,7 +243,7 @@
         "id": "AllergyIntolerance.code",
         "path": "AllergyIntolerance.code",
         "short": "Benennung der Allergie/Unverträglichkeit",
-        "comment": "**Begründung Pflichtfeld:** Nur mit einer codierten oder textuell benannten Auslösersubstanz lässt sich die Allergie klinisch interpretieren und für Interaktionsprüfungen nutzen.",
+        "comment": "**Begründung Pflichtfeld:** Nur mit einer codierten oder textuell benannten Auslösersubstanz lässt sich die Allergie klinisch interpretieren und für Interaktionsprüfungen nutzen.\n\n  **Hinweis und Hintergrund:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `auslösende Substanz` im deutschen Gesundheitswesen erarbeitet. Dieses ValueSet steht zum Zeitpunkt der Veröffentlichung noch nicht als FHIR-konformes und stabil referenzierbares Artefakt zur Verfügung und wird daher zu einem späteren Zeitpunkt in dieser Form ergänzt. Weitere Informationen finden Sie hier: https://mio.kbv.de/spaces/ALDOK1X0X0/overview.",
         "min": 1,
         "mustSupport": true
       },
@@ -211,7 +334,7 @@
         "id": "AllergyIntolerance.encounter",
         "path": "AllergyIntolerance.encounter",
         "short": "Aufenthaltsbezug",
-        "comment": "**Begründung Must-Support:** Ein Aufenthaltsbezug der AllergieUnverträglichkeit MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.",
+        "comment": "**Begründung Must-Support:** Ein Aufenthaltsbezug der Allergie MUSS zum Zwecke der Nachvollziehbarkeit und Datenintegrität exponiert und empfangen werden können.",
         "mustSupport": true
       },
       {
@@ -379,6 +502,7 @@
         "id": "AllergyIntolerance.reaction.manifestation",
         "path": "AllergyIntolerance.reaction.manifestation",
         "short": "Manifestation der Reaktion",
+        "comment": "**Hinweis und Hintergrund:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `Allergiemanifestationen` im deutschen Gesundheitswesen erarbeitet. Dieses ValueSet steht zum Zeitpunkt der Veröffentlichung noch nicht als FHIR-konformes und stabil referenzierbares Artefakt zur Verfügung und wird daher zu einem späteren Zeitpunkt in dieser Form ergänzt. Weitere Informationen finden Sie hier: https://mio.kbv.de/spaces/ALDOK1X0X0/overview.",
         "mustSupport": true
       },
       {

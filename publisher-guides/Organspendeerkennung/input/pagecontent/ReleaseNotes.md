@@ -1,14 +1,22 @@
-### Release Notes
-
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
+
+### Version 6.0.0
+
+Datum: 01.07.2026
+
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module <https://github.com/gematik/spec-ISiK-Basismodul/pull/1272>
+
+Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
-Datum: tbd
+Datum: 10.06.2026
+
 
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
-* `fix` Pupillen-Beispiele (Pupillenlichtreaktion) korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
+* `documentation` Pupillen-Beispiele (Pupillenlichtreaktion) korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
 * `improve` Einführung des Suchparameters `category` für die Procedure Profil zur Vereinfachung der Abfrage dieser Profile
+* `documentation` Beispiel für Beatmungsmodus St-Mod korrigiert 
 
 Im Fall von prozessorientierten Implementierungsleitfäden beginnt die Versionierung nach Semver des Implementierungsleitfadens gemäß des Major Releases im Zuge dessen der Implementierungsleitfaden entstanden ist (X.0.0)
 

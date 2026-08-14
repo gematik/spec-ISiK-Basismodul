@@ -42,3 +42,4 @@ Description: "Dieses ValueSet enthaelt Codes fuer Vitaldaten sowie Daten aus dem
 * SNOMED_CT#8499008 "Pulse"
 * SNOMED_CT#442476006 "Arterial oxygen saturation"
 * SNOMED_CT#364090009 "Systemic arterial pressure"
+* SNOMED_CT#250846007 "Cerebral perfusion pressure"

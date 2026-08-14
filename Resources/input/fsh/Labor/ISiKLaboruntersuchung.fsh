@@ -5,7 +5,7 @@ Description: "Dieses Profil ermöglicht die Abbildung von Informationen zur Labo
 
 Viele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.
 Jede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.
-Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/UseCases.html).
+Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc1/UseCases.html).
 
 In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen."
 * insert Meta
@@ -88,6 +88,15 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
     * insert Comment-Reference-Encounter(Begründung MS)
 * effective[x] 1.. MS
   * ^short = "Zeitpunkt der Untersuchung"
+  * ^definition = """
+Für die klinische zeitliche Einordnung einer Laboruntersuchung ist `Observation.effective[x]` maßgeblich.
+
+Der Wert von `Observation.effective[x]` ist aus den verfügbaren Zeitangaben zum Probenmaterial nach folgender Priorität abzuleiten:
+
+1. Ist ein Entnahmezeitpunkt des Probenmaterials angegeben, ist dieser zu verwenden.
+2. Handelt es sich um eine Sammelprobe und ist das Ende des Sammelzeitraums angegeben, ist der Bis-Zeitpunkt des Sammelzeitraums zu verwenden.
+3. Liegt weder ein Entnahmezeitpunkt noch ein Ende des Sammelzeitraums vor, ist der Zeitpunkt des Probeneingangs im Labor zu verwenden.
+"""
   * ^comment = "**Begründung Must Support**:
 Die EHDS Kombatiblität erfordert die Angabe von effective. Das Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen."
 * effectiveDateTime MS
@@ -209,6 +218,6 @@ Description: "Maximalbeispiel zur Demonstration optionaler Elemente: Laborbereic
 * category[laborbereich] = $loinc#18727-8 "Serologie"
 * code.coding[loinc] = $loinc#13317-3	"Methicillin-resistenter Staphylococcus aureus [Nachweis] in Probenmaterial mittels erregerspezifischer Kultur"
 * valueCodeableConcept = $sct#10828004 "Positiv"
-* method = $sct#726446007 "Matrix-assisted laser desorption/ionization time-of-flight mass spectrometry technique"
+* method = $sct#83581000052107 "Matrix-assisted laser desorption/ionization time-of-flight mass spectrometry technique"
 * note.text = "MRSA-Nachweis positiv. Isolat zur weiteren Typisierung eingesandt."
 * insert EffectiveAndPerformer

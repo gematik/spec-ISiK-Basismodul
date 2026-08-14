@@ -44,13 +44,13 @@ jobs:
 
       - name: Checkout default branch (scripts)
         if: steps.gh-pages.outputs.exists == 'true'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           path: repo
 
       - name: Checkout gh-pages
         if: steps.gh-pages.outputs.exists == 'true'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: gh-pages
           fetch-depth: 0

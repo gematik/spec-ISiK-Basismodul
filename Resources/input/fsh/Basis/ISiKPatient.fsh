@@ -39,7 +39,7 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
     Patientennummer 1..* MS and
     Versichertennummer_PKV 0..1
 * identifier[VersichertenId] only IdentifierKvid10
-  * ^patternIdentifier.type = $identifier-type-de-basis#KVZ10
+  * ^patternIdentifier.system = "http://fhir.de/sid/gkv/kvid-10" 
   * ^short = "Lebenslange Krankenversichertennummer"
   * ^comment = "Die als 'KVZ10' kodierte Versichertennummer ist der 10-stellige, 
     unveränderbare Teil der Versichertennummer, 
@@ -246,9 +246,9 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
     **Begründung Pflichtfeld:** Das Geburstdatum dient - in Verbindung mit dem Namen - als wichtiges Such- und Unterscheidungskriterium.  
     **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Geburtsdatum)"
 * deceased[x] MS
-  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. 
-  
-    **WICHTIGER Hinweis für Implementierer:**  
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt.
+
+  **WICHTIGER Hinweis für Implementierer:**
   * Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden.
   * Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können."
 * address MS
@@ -354,9 +354,10 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
     * ^comment = "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar."
 * link MS
   * ^short = "Link"
-  * ^comment = "Dieses und untergeordnete Elemente KÖNNEN bei einem erfolgten Patient merge entsprechend der Festlegungen unter [Patient-merge](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc/Patientenzusammenfuehrung.html) befüllt werden. 
-  Da das Element der Unterstützung der Patient merge Notification dient, 
-  MUSS es im Rahmen des Bestätigungsverfahrens NICHT unterstützt werden (Stand: Stufe 4)."
+  * ^comment = "Dieses und untergeordnete Elemente SOLLEN bei einem erfolgten Patient merge entsprechend der Festlegungen unter [Patient-merge](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc1/Patientenzusammenfuehrung.html) befüllt werden.
+  Das Element dient der Unterstützung der Patient merge Notification.
+  Diese ist für den Akteur 'Subscription Server' des Subscription-Moduls verpflichtend;
+  im Rahmen des Bestätigungsverfahrens zum Basismodul wird das Element nicht geprüft."
   * other MS
     * identifier MS
       * ^comment = "Logischer Verweis auf Identifier[Patientennummer]"

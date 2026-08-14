@@ -49,7 +49,7 @@ Usage: #example
   * min = 0
   * max = "1"
   * documentation	= "Dieser Parameter KANN durch einen Client und MUSS durch ein Termin-Repository unterstützt werden. Wird der Parameter unterstützt, dann gelten folgende Festlegungen: Eine RelatedPerson-Ressource, die eine Person identifiziert, die den Termin im Namen des Patienten bucht. Die Ressource KANN vom ISiKRelatedPerson-Profil abweichen, falls für die Terminbuchung irrelevante Pflichtangaben aus dem Profil nicht bekannt sind. Invalide Ressourcen MÜSSEN vom Termin-Repository abgelehnt werden (siehe Form der Ablehnung unten). Dieser Parameter dient der Übermittlung der RelatedPerson-Informationen, falls diese dem Termin-Repository noch nicht bekannt sind. Das Termin-Repository SOLL im bestätigten Termin eine Referenz auf eine RelatedPerson zurückgeben, sofern keine RelatedPerson unter Appointment.participant im 'appt-resource'-Parameter referenziert ist."
-  * type = #Patient
+  * type = #RelatedPerson
 * parameter[+]
   * name = #patientSubmittedInformation
   * use = #in

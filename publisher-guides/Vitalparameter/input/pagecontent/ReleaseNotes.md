@@ -1,15 +1,21 @@
 ﻿Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+### Version 6.0.0 
+
+Datum: 01.07.2026
+
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module <https://github.com/gematik/spec-ISiK-Basismodul/pull/1272>
+
+Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
-Datum: tbd
+Datum: 10.06.2026 
 
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 * `documentation` Ergänzung von Beispielen und Dokumentation an Observation Suchparametern im CapabilityStatement <https://github.com/gematik/spec-ISiK-Basismodul/pull/1197>
-* `documentation` Ergänzung von Beispielen und Dokumentation an Observation Suchparametern im CapabilityStatement <https://github.com/gematik/spec-ISiK-Basismodul/pull/1197>
-
-
+* `fix` Entfernung des Patterns auf Observation.performer in den Profilen: `ISiKStillstatus`, `ISiKAlkoholAbusus` und `ISiKRaucherstatus` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1170>
+* `documentation` Hinzufügen der Snomed-Versionen zu den Beispielen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1170>
 
 ### Version 6.0.0-rc
 
@@ -127,12 +133,12 @@ Datum: 26.6.2024
 Datum: 4.4.2024
 
 * Klärung datenuebernahme pdms kis by @patrick-werner in <https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/154>
-* `documentation` Hinzufügen eines IG Abschnitts zur Abdeckung der ICU-Normal-Überleitung - siehe <https://gemspec.gematik.de/ig/fhir/isik/vitalparameter/6.0.0-rc/Intensivversorgung.html> 
+* `documentation` Hinzufügen eines IG Abschnitts zur Abdeckung der ICU-Normal-Überleitung - siehe <https://gemspec.gematik.de/ig/fhir/isik/vitalparameter/6.0.0-rc1/Intensivversorgung.html> 
 * `improve` Hinzufügen der MII-ICU-Profile <https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/150> 
 * `improve` Update der ISIk Basis Dependency: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156)
 * `improve` Hinzufügen von SnomedCT Coding Slices: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156)
 * `improve` Hinzufügen von MS für einzelne Components : <https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/138>
-* `improve` Hinweis zu Profilen aus ISiK Support-Modul Labor hinzugefügt - siehe <https://gemspec.gematik.de/ig/fhir/isik/vitalparameter/6.0.0-rc/artifacts_isik.html>
+* `improve` Hinweis zu Profilen aus ISiK Support-Modul Labor hinzugefügt - siehe <https://gemspec.gematik.de/ig/fhir/isik/vitalparameter/6.0.0-rc1/artifacts_isik.html>
 * `fix` Fix CpS rendering by @alexzautke in <https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/161> 
 
 ----

@@ -11,7 +11,7 @@ In FHIR wird die Körpertemperatur mit der Observation-Ressource repräsentiert.
 
 **Kompatibilität**
 
-Das Profil ISiKKoerperkerntemperatur ist vom Profil [VitalSignDE_Koerperkerntemperatur](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpertemperatur) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [OObservation Body Temperature Profile](http://hl7.org/fhir/StructureDefinition/bodytemp) aus der FHIR R4 Spezifikation."""
+Das Profil ISiKKoerperkerntemperatur ist vom Profil [VitalSignDE_Koerperkerntemperatur](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpertemperatur) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Temperature Profile](http://hl7.org/fhir/StructureDefinition/bodytemp) aus der FHIR R4 Spezifikation."""
 * insert Meta
 * insert CommonElements
 * insert ISiKVitalsignCommons
@@ -70,7 +70,7 @@ Usage: #example
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 42.5 'Cel' "°C"
 * method = $sct#448169003 "Hauskatze"
-* bodySite = $sct#245544008 "Entire esophagus"
+* bodySite = $sct#181245004 "Entire esophagus"
 * interpretation = $v3-ObservationInterpretation#H "High"
 * note.text = "Hyperthermie - Ösophageale Kerntemperaturmessung bei maligner Hyperthermie"
 * device = Reference(ExampleDevice)

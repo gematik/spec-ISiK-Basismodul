@@ -110,7 +110,6 @@ Alias: $cs-observation-category = http://terminology.hl7.org/CodeSystem/observat
 Alias: $cs-pzn = http://fhir.de/CodeSystem/ifa/pzn
 Alias: $cs-sct = http://snomed.info/sct
 Alias: $cs-ucum = http://unitsofmeasure.org
-Alias: $cs-wg14 = http://fhir.de/CodeSystem/abdata/wg14
 Alias: $vs-edqm-doseform = http://hl7.org/fhir/uv/ips/ValueSet/medicine-doseform
 Alias: $vs-edqm-route = http://hl7.org/fhir/uv/ips/ValueSet/medicine-route-of-administration
 Alias: $vs-results-laboratory-pathology-observations = http://hl7.org/fhir/uv/ips/ValueSet/results-laboratory-pathology-observations-uv-ips
@@ -136,3 +135,5 @@ Alias: $vs-dosage-dose-quantity-de = http://ig.fhir.de/igs/medication/ValueSet/D
 
 Alias: $ISiKSubscriptionTopicCS = https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic
 Alias: $capabilitystatement-subscriptiontopic-canonical = http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical
+
+Alias: $ext-dosage-as-needed-for = http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor

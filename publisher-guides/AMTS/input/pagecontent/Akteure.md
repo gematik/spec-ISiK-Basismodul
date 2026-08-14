@@ -10,7 +10,7 @@ Primär zu berücksichtigende User sind
 * Pharmazeutisches Personal (Apotheker, PTAs etc.)
 * Patienten (bei Aufnahme, Entlassung, stationärer Medikation usw.)
 
-Beteiligte Systeme sind prinzipiell alle [bestätigungsrelevanten Systeme](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html). Primär hervorzuheben sind dabei:
+Beteiligte Systeme sind prinzipiell alle [bestätigungsrelevanten Systeme](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html). Primär hervorzuheben sind dabei:
 * KIS, auch fokussierte KIS der Dentalklinik oder der Mund-, Kiefer- und Gesichtschirurgie
 * KIS-Submodule der Medikation
 * Eigenständige Systeme der Krankenhausapotheke (AVS)
@@ -26,13 +26,13 @@ Als übergreifender Use Case ist AMTS grundsätzlich im Modul Medikation veranke
 
 - **ISiK Modul Medikation: Mit Informationen zur Medikation und Verordnung** - In dem vorliegenden Modul finden sich Informationen zur aktuellen Medikation (z.B. Blutdruck-Senker) und patienten-spezifischen Verordnung. Ziel der hier verorteten Profile ist es vor allem, Wechselwirkungen mit weiteren Verordnungen oder Behandlungen zu identifizieren und ihr Risiko zu bewerten. Auch die Bewertung von akzeptierten Risiken findet sich hier. Da ISiK aktuell noch einen stark patientenzentrierten Ansatz verfolgt, sei darauf hingewiesen, dass es keine MedicationKnowledge-Profile gibt (also keine Arzneimittel- oder Wissensdatenbank im weiteren Sinne).
 - **ISiK Basismodul: Mit Informationen zum Patienten und Diagnosen** - Hier sind Profile im Zusammenhang mit Allergien und Unverträglichkeiten verortet. Es gehören aber auch chronische Erkrankungen (z.B. Niereninsuffizienz), Lebensumstände (z.B. Schwangerschaft) und Lebensgewohnheiten (z.B. Raucher) dazu. 
-[ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/index.html)
+[ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/index.html)
 - **ISiK Support Modul Labor: Mit Informationen aus der Labor Diagnostik** - In diesem Modul finden sich vor allem AMTS-relevante Beobachtungen und Messwerte, die als Ergebnis eines diagnostischen Prozesses oder einer Probe zugeordnet werden können.
-[ISiK Modul Labor](https://gemspec.gematik.de/ig/fhir/isik/labor/6.0.0-rc/index.html)
+[ISiK Modul Labor](https://gemspec.gematik.de/ig/fhir/isik/labor/6.0.0-rc1/index.html)
  
 ### Weitere zu berücksichtigende Systeme und Standards
 
-Die Kompatibilitäten zu den [gelisteten Spezifikationen](https://gemspec.gematik.de/ig/fhir/isik/medikation/6.0.0-rc/Kompatibilitaet.html) sollen weiterhin gewahrt bleiben.
+Die Kompatibilitäten zu den [gelisteten Spezifikationen](https://gemspec.gematik.de/ig/fhir/isik/medikation/6.0.0-rc1/Kompatibilitaet.html) sollen weiterhin gewahrt bleiben.
 
 Da mit dem [ePA Medication Service](https://gemspec.gematik.de/ig/fhir/epa-medication/1.2.0-ballot.1/index.html) eine FHIR-basierte Lösung zur Verwendung in der ePA für Alle erstellt wird, sollte die Kompatibilität sowohl organisatorisch als auch in der Umsetzung der Spezifikation angestrebt werden.
 

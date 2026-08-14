@@ -1,11 +1,22 @@
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+### Version 6.0.0
+
+Datum: 01.07.2026
+
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module <https://github.com/gematik/spec-ISiK-Basismodul/pull/1272>
+
+Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
-Datum: tbd
+Datum: 10.06.2026
 
-* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
-* `fix` ISiKDokumentenMetadaten Profil korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
+* `documentation` Verpflichtung zur patientenübergreifenden Suche entfernt, aufgrund unklarer UseCases und fehlender Suchparameter für geeignete Abfragen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1215>
+* `documentation` Hinweise auf historische Inkompatibilitäten zwischen IHE MHD unde ISiK entfernt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1215>
+* `fix`: Fehlende Deklaration der StammdatenRolle im Capabilitystatement des Akteurs ISiKCapabilityStatementDokumentenServerAkteur hinzugefügt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1224>
+* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
+* `fix` ISiKDokumentenMetadaten Profil korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 
 
 ### Version 6.0.0-rc

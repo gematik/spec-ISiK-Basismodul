@@ -18,7 +18,7 @@ ohne die Gesamtheit aller Kontakte betrachten zu müssen.
 
 In FHIR wird der Abrechnungsfall mit der `Account`-Ressource repräsentiert.
 
-Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Abbildung-des-Konstrukts-Fall.html).
+Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Abbildung-des-Konstrukts-Fall.html).
 
 **Kompatibilität**
 
@@ -96,7 +96,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * priority MS
     * ^short = "Priorität"
     * ^comment = "**Begründung des MS:** Wenn ein Primärsystem mehrere Kostenträger angibt, 
-    sollte für lesende Systeme ersichtlich sein, welches der Hauptkostenträger ist.   
+    sollte für lesende Systeme ersichtlich sein, welches der Hauptkostenträger ist. Hierbei ist die Priorisierung aufsteigend zu interpretieren. Demnach hat der Kostenträger mit der priority 1 die höchste Priorität, der mit priority 2 die zweithöchste Priorität etc.      
     **Historie:**  
     Diskussionstand der ISIK-Arbeitsgruppe vom 28.5.: Die Abbildung über einen Integer ist wünschenswert. 
     Eine binäre Einteilung in Hauptkostenträger (1) und alle anderen (2) wird der Komplexität der Priorisierung zur Kostenträgerschaft nicht gerecht. 

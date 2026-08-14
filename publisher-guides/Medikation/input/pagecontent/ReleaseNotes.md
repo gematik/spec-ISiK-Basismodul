@@ -1,15 +1,30 @@
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+### Version 6.0.0
+
+Datum: 01.07.2026
+
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module <https://github.com/gematik/spec-ISiK-Basismodul/pull/1272>
+
+Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+
 ### Version 6.0.0-rc1 (Benehmensherstellung)
 
-Datum: tbd
+Datum: 10.06.2026
 
+* `improve` Guidance für ISiKMedikament.amount verbessert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1243>
 * `fix` Hinzufügen der Rulesets `CommonSearchParameters` und `OptionalTagSearchParameter` zu den Rollen CapabilityStatements <https://github.com/gematik/spec-ISiK-Basismodul/pull/1161> - analog zu TC 5.1.2 siehe <https://github.com/gematik/spec-ISiK-Basismodul/pull/1158>
 * `fix` Fehlendes MS zum ISiKATCCoding hinzugefügt, die Version war bisher schon 1..1, aber es fehlte die MS-Definition <https://github.com/gematik/spec-ISiK-Basismodul/pull/1155>
 * `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 * `fix` CapabilityStatement FormDefinitionsVerwalter und ISiKMedikationsInformation Beispiel korrigiert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1190>
 * `improve` Entfernen der `replaces`-Extension (`extension.medicationRequestReplaces`) in Medikation-Verordnung und Medikation-Statement; in der Medikation-Verordnung wird stattdessen `MedicationRequest.priorPrescription` verwendet. ([chat.fhir.org](https://chat.fhir.org/#narrow/channel/179166-implementers/topic/Definition.20of.20MedicationRequest.2EpriorPrescription/with/542711071)) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1192>
 * `documentation` Neue Use-Case-Seiten `Bedarfsmedikation` und `Infusionen` im Menü ergänzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1204>
+* `improve` Gemeinsame Auslagerung der `DosageDE`-Vorgaben für ISiKMedikationsVerordnung und ISiKMedikationsInformation in ein RuleSet; Bedarfsmedikation wird auf `asNeededBoolean` eingeschränkt, die R5-Backport-Extension `Dosage.asNeededFor` lokal ergänzt. <https://github.com/gematik/spec-ISiK-Basismodul/pull/1177>
+* `fix` Hinzufügen der Rulesets `CommonSearchParameters` und `OptionalTagSearchParameter` zu den Rollen CapabilityStatements https://github.com/gematik/spec-ISiK-Basismodul/pull/1161 - analog zu TC 5.1.2 siehe <https://github.com/gematik/spec-ISiK-Basismodul/pull/1158>
+* `fix` Fehlendes MS zum ISiKATCCoding hinzugefügt, die Version war bisher schon 1..1, aber es fehlte die MS-Definition <https://github.com/gematik/spec-ISiK-Basismodul/pull/1155>
+* `documentation` Guidance zur Verwendung von List.mode (snapshot vs. working) in ISiKMedikationsListe anhand von Use-Cases ergänzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1194>
+* `fix` Erweiterung der ISiK eigenen Codesysteme um die Information zur Sprache <https://github.com/gematik/spec-ISiK-Basismodul/pull/1214>
+* `documentation` Aktualisierung der Seite zur Kompatibilität des Medikationsmoduls <https://github.com/gematik/spec-ISiK-Basismodul/pull/1241> 
 
 ### Version 6.0.0-rc
 

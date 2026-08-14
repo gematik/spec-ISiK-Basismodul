@@ -91,8 +91,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * extension[Seitenlokalisation] MS      
       * ^short = "Seitenlokalisation"
       * ^comment = "**Begründung MS:** Bei ICD-10-codierten Diagnosen an paarigen Organen oder Körperteilen müssen die Zusatzkennzeichen für die Seitigkeit (R, L oder B) angeben werden.
-      
-      **Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, wird für die Kodierung der Lateralität aktuell die Nutzung einer BodyStructure-Ressource inkl. einer Snomet-CT Kodierung diskutiert. Siehe [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html)."
+
+  **Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, wird für die Kodierung der Lateralität aktuell die Nutzung einer BodyStructure-Ressource inkl. einer Snomet-CT Kodierung diskutiert. Siehe [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html)."
     * extension[Diagnosesicherheit] MS
   * coding[Alpha-ID] only CodingAlphaID
     * ^patternCoding.system = $alphaid-cs
@@ -112,7 +112,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
-  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
+  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Diagnose MUSS zum Zwecke der Nachvollziehbarkeit und Datenintegrität exponiert und empfangen werden können."
   * reference 1.. MS
     * ^short = "Encounter-Link"
     * insert Comment-Reference-Encounter-with-hint(Begründung Pflichtfeld)

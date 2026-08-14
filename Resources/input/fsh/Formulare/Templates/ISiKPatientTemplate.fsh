@@ -3,9 +3,8 @@ InstanceOf: ISiKPatient
 Usage: #example
 Title: "Template ISiKPatient"
 Description: "Template für Template-based Extraction auf Basis des (ISiKPatient)[https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient]-Profils"
-* id
-  * insert tbeValue([["item.where(linkId = 'resourceId').answer.value"]])
 * identifier[VersichertenId]
+  * type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
   * value
     * insert tbeValue([["item.where(linkId = 'versichertenId').answer.value"]])
 * identifier[Patientennummer]

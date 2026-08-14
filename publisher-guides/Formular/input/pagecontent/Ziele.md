@@ -1,7 +1,7 @@
 ﻿Dieses Modul soll die zahlreichen, teilweise sehr komplexen Funktionalitäten, die im SDC-Leitfaden beschrieben sind, auf ein überschaubares aber dennoch nutzenbringendes Minimum reduzieren, um einen leichten Einstieg in die Welt der FHIR-basierten Formulare zu ermöglichen. Die Integration von Tools, die die Nutzung von Formularen ermöglichen (sog. ["FormularRenderer"](Akteure.html#formularrenderer)) soll - soweit möglich - nur mit den bereits vorhandenen Funktionalitäten ISiK-konformer[^1] Anwendungssysteme ermöglicht werden.
 
 Das ISIK-Formular-Modul ist ein Work-in-Progress und derzeit weder final noch verbindlich. Gemeinsam mit interessierten Herstellern soll ein Modul entwickelt werden, das folgende Ziele erfüllt und anschließend verbindlich festgelegt werden kann.
-Die Publikationen in Stufe 5 und Stufe 6 stellen erste Entwürfe des Moduls dar, das als Diskussionsgrundlage für die weitere Entwicklung und als Basis für erste, prototypische Implementierungen und Connectathons dienen soll.
+Die Publikation in Stufe 6 stellt einen ersten Entwurf des Moduls dar, der als Diskussionsgrundlage für die weitere Entwicklung und als Basis für erste, prototypische Implementierungen und Connectathons dienen soll.
 
 
 ### Best Practices für Formular-Autoren
@@ -33,4 +33,4 @@ Dieses Modul wird verbindliche Festlegungen für eine verlässliche Rückübermi
 ### Beispiel-Szenarien und -Formular-Definitionen
 Diese Modul wird diverse Beispielszenarien für die Nutzung von FHIR-Questionnaires enthalten sowie Beispiel-Daten, die Entwickler bei der Implementierung ISiK-konformer[^1] [FormularRenderer](Akteure.html#formularrenderer) unterstützen sollen.
 
-[^1]: Unter einem ISiK-konformen (klinischen) Anwendungssystem ist hier ein beliebiges Softwaresystem zu verstehen, das **mindestens** die folgenden Rollen implementiert: [ISiKStammdatenRolle](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/CapabilityStatement-ISiKCapabilityStatementStammdatenRolle.html) oder [ISiKCompositionKonsumentenRolle](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/CapabilityStatement-ISiKCapabilityStatementCompositionKonsumentenRolle.html)
+[^1]: Unter einem ISiK-konformen (klinischen) Anwendungssystem ist hier ein beliebiges Softwaresystem zu verstehen, das **mindestens** die folgenden Rollen implementiert: [ISiKStammdatenRolle](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/CapabilityStatement-ISiKCapabilityStatementStammdatenRolle.html) oder [ISiKCompositionKonsumentenRolle](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/CapabilityStatement-ISiKCapabilityStatementCompositionKonsumentenRolle.html)

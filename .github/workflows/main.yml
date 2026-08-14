@@ -4,13 +4,7 @@ name: CI (FHIR Validation)
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    paths:
-      - 'Resources/**'
-      - '.github/workflows/**'
-    branches-ignore:
-      - 'main**'
+  # Triggers the workflow on pull request events but only for the master branch
   pull_request:
     branches:
       - 'main**'
@@ -41,14 +35,30 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout code (PR)
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         if: github.event_name == 'pull_request'
         with:
           ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Checkout code (Main)
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         if: github.event_name != 'pull_request'
+
+      # FIXME: Workaround for empty .index.json shipped in the subscriptions-backport tarball.
+      # hl7.fhir.uv.subscriptions-backport.r4#1.1.0 ships an empty .index.json
+      # ({"index-version":2,"files":[]}). SUSHI extracts it verbatim and never rebuilds it,
+      # and the Java validator (>= 6.9.x package-management infra) trusts the empty index
+      # -> loads only 1 of 23 resources -> ISiKSubscription snapshot cannot be generated.
+      # Pre-caching the package and removing the stale index forces the validator to rebuild
+      # it; SUSHI leaves an already-cached package's missing index untouched. ZTS/bfarm cache
+      # stays untouched (so JAVA_SNAPSHOT_ENABLED, which would wipe the whole cache, is avoided).
+      - name: Workaround – rebuildable index for subscriptions-backport
+        shell: bash
+        run: |
+          PKG="$HOME/.fhir/packages/hl7.fhir.uv.subscriptions-backport.r4#1.1.0"
+          mkdir -p "$PKG"
+          curl -sL https://packages.fhir.org/hl7.fhir.uv.subscriptions-backport.r4/1.1.0 | tar xz -C "$PKG"
+          rm -f "$PKG/package/.index.json" "$PKG/package/.index.db"
 
       - name: Firely.Terminal (GitHub Actions)
         uses: FirelyTeam/firely-terminal-pipeline@v0.8.9
@@ -67,6 +77,8 @@ jobs:
             -advisor-file validator/advisor.json
             -resolution-context file:Resources/fsh-generated/resources/
             -sct 11000274103/version/20251115
+#          FIXME: remove after new version of firely-terminal-pipeline is released. Workaround for hanging tx validation.
+          JAVA_VALIDATOR_VERSION: 6.9.11
           SIMPLIFIER_USERNAME: ${{ secrets.SIMPLIFIER_USERNAME }}
           SIMPLIFIER_PASSWORD: ${{ secrets.SIMPLIFIER_PASSWORD }}
           SUSHI_ENABLED: true
@@ -96,15 +108,8 @@ jobs:
             Patient-IsikPatientTemplate.json|Validation_VAL_Profile_NotSlice||Patient.birthDate.extension[0]
             Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|Validation_VAL_Profile_NotSlice||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.gender.extension[0]
             Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|Validation_VAL_Profile_NotSlice||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.birthDate.extension[0]
-            # Allowlisted known validation findings, should validate, but doesn't follow up after release
-            |Terminology_TX_NoValid_16|*Encounter Status ValueSet*|*
-            ||*Error from https://tx.fhir.de/fhir: Error: Invalid request:*|
-            CapabilityStatement-ISiKCapabilityStatementSubscriptionRolle.json|Extension_EXT_Unknown_NotHere|*capabilitystatement-subscriptiontopic-canonical could not be found*|CapabilityStatement.rest[0].resource[0].extension[1]
-            Observation-ExampleISiKLaboruntersuchungMaximal.json||*Unknown code '726446007'*|Observation.method.coding[0].code
-            Observation-ExampleOrganRASS20200311.json|Terminology_TX_NoValid_1_CC|*MII VS ICU Score RASS*|Observation.value.ofType(CodeableConcept)
-            Observation-ISiKKoerperkerntemperaturMaxExample.json||*Unknown code '245544008'*|Observation.bodySite.coding[0].code
-            ValueSet-ISiKKernTempSctVS.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Wrong Display Name 'Körperkerntemperatur'*|ValueSet.compose.include[0].concept[0]
-            ValueSet-mii-vs-icu-category-procedure-beatmung-snomed.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Wrong Display Name 'Künstliche Beatmung'*|ValueSet.compose.include[0].concept[0]
+            # LL codes aren't tied to a LOINC on Questionnaire, it isn't included in the current release, will be included in the future.
+            # Zulip thread: https://chat.fhir.org/#narrow/channel/179202-terminology/topic/LOINC.3A.20Unknown.20code.20in.20the.20Codesystem/near/577684036
             ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33959-0'*|ValueSet.compose.include[0].concept[1]
             ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33960-8'*|ValueSet.compose.include[0].concept[2]
             ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33962-4'*|ValueSet.compose.include[0].concept[4]
@@ -113,7 +118,15 @@ jobs:
             ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33965-7'*|ValueSet.compose.include[0].concept[7]
             ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33966-5'*|ValueSet.compose.include[0].concept[8]
             ValueSet-mii-vs-icu-score-rass.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Unknown code 'LA33967-3'*|ValueSet.compose.include[0].concept[9]
-            ValueSet-vs-mii-icu-code-monitoring-und-vitaldaten-snomed.json|VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*Wrong Display Name 'Herzfrequenz'*|ValueSet.compose.include[0].concept[0]
+            Observation-ExampleOrganRASS20200311.json|Terminology_TX_NoValid_1_CC|*MII VS ICU Score RASS*|Observation.value.ofType(CodeableConcept)
+            # Validation for https://hl7.org/fhir/uv/ips/STU2/ValueSet-medicine-route-of-administration.html currently fails because the .ch tx server fails during validation.
+            # zulip thread: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/https.3A.2F.2Ftx.2Efhir.2Ech.2Fr4.20responsible.20IPS.20VS.3F/with/607452517
+            Medication-ExampleISiKMedikament2.json|Validation_VAL_Profile_NotSlice||Medication.form.coding[0]
+            Medication-ExampleISiKMedikament8.json|Validation_VAL_Profile_NotSlice||Medication.form.coding[0]
+            Medication-ExampleISiKMedikament9.json|Validation_VAL_Profile_NotSlice||Medication.form.coding[0]
+            Medication-ParacetamolInfusion.json|Validation_VAL_Profile_NotSlice||Medication.form.coding[0]
+            MedicationAdministration-ExampleISiKMedikationsVerabreichung3.json|Terminology_TX_NoValid_12||MedicationAdministration.dosage.route.coding[0]
+            MedicationAdministration-ExampleISiKMedikationsVerabreichung4.json|Terminology_TX_NoValid_12||MedicationAdministration.dosage.route.coding[0]
 
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.1

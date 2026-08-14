@@ -4,7 +4,7 @@ Die ISiK-Spezifikationen werden basierend auf folgenden IHE-Profilen entwickelt:
 * [PDQm (Patient Demographic Query for mobile)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf)
 * [QEDm (Query for Existing Data for mobile)](https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_Suppl_QEDm.pdf)
 
-Das [Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/Kompatibilitaet.html) basiert zudem auf:
+Das [Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc1/Kompatibilitaet.html) basiert zudem auf:
 * [MHD (Mobile access to Health Documents)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf)
 
 Hierbei ist anzumerken, dass der Zusatz "for mobile" seitens IHE irreführend sein kann.

@@ -3,6 +3,20 @@ Realm: Deutschland
 
 ----
 
+<div class="dragon">
+<b>Hinweis für Entwickler:</b>    
+Im Zusammenhang mit dem Subscription-Backport-Package besteht aktuell ein bekanntes Problem bei der Paketauflösung der packages: `hl7.fhir.uv.subscriptions-backport.r4#1.1.0`    
+Dieses Package enthält in seiner package.json wiederum folgende falsche Dependency: `hl7.fhir.r4.core#4.0.0` 
+Die Version 4.0.0 des Core-Packages wurde nie veröffentlicht. Verfügbar ist ausschließlich: `hl7.fhir.r4.core#4.0.1` 
+Dadurch kommt es bei einigen Validator-/Package-Resolver-Konfigurationen zu Fehlern beim Auflösen der Abhängigkeiten.
+
+Das Problem ist im Kontext des Subscription Backport IG bereits bekannt und wird mit dem kommenden Release: `1.2.0` behoben.
+
+<b>Empfohlener Workaround:</b>    
+Dependency Override / manuelles Patchen der Package-Dependency:
+hl7.fhir.r4.core#4.0.0 → hl7.fhir.r4.core#4.0.1
+</div>
+
 ### Motivation Subscription Modul
 
 Im Kontext von ISiK wird eine übergreifende Lösung für die strukturierte und kontextbezogene Bereitstellung von Änderungen benötigt. Ein entsprechender Lösungsansatz für die Kommunikation einer erfolgten Zusammenführung von ISiK-Patienten-Instanzen (patient-merge) ist bereits erarbeitet worden und wurde hier übernommen. Eine Verallgemeinerung dieses Ansatzes für ISiK soll im vorliegenden Implementierungsleitfaden erfolgen.

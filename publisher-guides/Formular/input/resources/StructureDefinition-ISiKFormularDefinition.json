@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKFormularDefinition",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition",
-  "version": "6.0.0-rc",
+  "version": "6.0.0",
   "name": "ISiKFormularDefinition",
   "status": "active",
   "experimental": false,
-  "date": "2026-04-02",
+  "date": "2026-07-01",
   "publisher": "gematik GmbH",
   "description": "Im Profil `ISiKFormularDefinition` sind Mindestanforderungen an ISiK kompatible Formulare definiert.\nDie verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezifikationen->Extensions beschrieben.",
   "fhirVersion": "4.0.1",
@@ -42,6 +42,14 @@
         "short": "Verweis auf die Regeln, nach denen die Ressource erstellt wurde",
         "comment": "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.\n  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können.",
         "max": "0"
+      },
+      {
+        "id": "Questionnaire.language",
+        "path": "Questionnaire.language",
+        "short": "Sprache der Formulardefinition",
+        "comment": "Im ISiK Kontext ist hier die Sprache meist mit de-DE (deutsch-Deutschland) anzugeben. Weicht die Sprache ab, bitte die BestPractice zu mehrsprachigen Formularen beachten.\n  \n  **Begründung Pflichtfeld:** Die Angabe der Sprache ist für die Interpretation und Darstellung der Formulardefinition relevant.",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Questionnaire.modifierExtension",
