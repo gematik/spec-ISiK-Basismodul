@@ -306,7 +306,7 @@ jobs:
       # Resolve the previous successful head SHA on this branch
       - name: Resolve previous successful head SHA
         id: resolve_last_success
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const run = require('./scripts/ig-publisher/resolve-last-success-sha.js');
@@ -542,7 +542,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Comment PR with build artifacts
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const run = require('./scripts/ig-publisher/update-pr-comment.js');
@@ -557,7 +557,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Delete fhir-packages artifact
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const run = require('./scripts/ig-publisher/delete-fhir-packages.js');
