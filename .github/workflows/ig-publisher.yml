@@ -76,7 +76,7 @@ jobs:
     steps:
       # Fetch the repository contents for the build container
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       # Download IG dependencies into the FHIR package cache
       - name: Download Dependencies
@@ -205,7 +205,7 @@ jobs:
     steps:
       # Fetch the repository contents for the build container
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -451,7 +451,7 @@ jobs:
     steps:
       # Check out the source branch so commits land in the right place
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -539,7 +539,7 @@ jobs:
     if: github.event_name == 'pull_request'
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Comment PR with build artifacts
         uses: actions/github-script@v8
@@ -554,7 +554,7 @@ jobs:
     if: always()
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Delete fhir-packages artifact
         uses: actions/github-script@v8
@@ -574,7 +574,7 @@ jobs:
     steps:
       # Fetch the repository contents for the publish step
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       # Download all IG build outputs produced by the build job
       - name: Download Build Results
