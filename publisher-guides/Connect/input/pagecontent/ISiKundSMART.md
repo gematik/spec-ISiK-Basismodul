@@ -1,7 +1,7 @@
 
 ISiK-Connect setzt auf dem HL7-Standard _SMART on FHIR_ auf, der u. a. das Zusammenspiel der Standards FHIR und OAuth2 für die Weitergabe von Zugriffskontexten zum sicheren Zugriff auf FHIR-Ressourcen beschreibt. Wie in der [Motivation](Einfuehrung.html) beschrieben, umfassen die normativen Vorgaben von ISiK-Connect jedoch nur eine Untermenge der SMART-on-FHIR-API. 
 
-Ergänzend zu den normativen Abschnitten [ISiK-Connect: Autorisierung](ISiKAutorisierung.html) und [ISiK-Konformität](Conformance.html) wird in diesem und den untergeordneten Abschnittem skizziert, wie eine vollständige Umsetzung des SMART-on-FHIR-Standards im Kontext von ISiK aussehen kann. **Dieser Abschnitt ist informativ, d. h. in ISiK Stufe 5 nicht Gegenstand des Konformitätsfeststellungsverfahrens.**
+Ergänzend zu den normativen Abschnitten [ISiK-Connect: Autorisierung](ISiKAutorisierung.html) und [ISiK-Konformität](Conformance.html) wird in diesem und den untergeordneten Abschnittem skizziert, wie eine vollständige Umsetzung des SMART-on-FHIR-Standards im Kontext von ISiK aussehen kann. **Dieser Abschnitt ist informativ, d. h. in ISiK Stufe 6 nicht Gegenstand des Konformitätsfeststellungsverfahrens.**
 
 #### _SMART App Launch_
 Ziel des _Smart App Launch_ (siehe [SMART App Launch](Kontext.html)) ist es, ein Zugangstoken von einem OAuth2-kompatiblen Autorisierungsserver zu erhalten, mittels dessen eine FHIR RESTful API-Interaktion durchgeführt werden kann. Dies erfolgt unter Berücksichtigung der Zugriffsrechte der Benutzer in dem den _SMART App Launch_ auslösenden System (KIS, Portal), das im Folgenden analog zur SMART-on-FHIR-Spezifikation als 'EHR' (_Electronic Health Record_) bezeichnet wird. 
