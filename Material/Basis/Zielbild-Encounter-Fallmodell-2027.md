@@ -7,11 +7,11 @@
 >
 > Kommentare und Rückmeldungen sind ausdrücklich erwünscht.
 
+
 ## Ausgangslage
 
 ISiK Stufe 6 verfügt bereits über ein differenziertes Fallmodell auf Basis von Encounter und Account.
 
-Referenz:
 https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/Abbildung-des-Konstrukts-Fall.html
 
 Im Rahmen von Implementierungen in Krankenhäusern, Diskussionen mit der Medizininformatik-Initiative (MII), Rückmeldungen aus den Datenintegrationszentren (DIZ) sowie Erfahrungen aus der Spezifikationsarbeit wurden verschiedene offene Fragestellungen identifiziert.
@@ -20,19 +20,19 @@ Dabei geht es nicht nur um einzelne Modellierungsdetails, sondern zunehmend um d
 
 Dieses Dokument beschreibt die Themenfelder, die bis April 2027 untersucht und entschieden werden sollen, sowie ein realistisches Vorgehensmodell für die Weiterentwicklung.
 
-## Nicht verhandelbare Tatsachen
+## Nicht verhandelbare Tatsache
 
 Folgende Grundannahmen gelten zunächst als gesetzt und sollen im Rahmen dieser Arbeiten nicht erneut grundsätzlich diskutiert werden:
 
-1. Die Trennung zwischen Encounter (Versorgungskontakt) und Account (Abrechnungsfall) bleibt bestehen.
-2. Die im deutschen Krankenhauswesen verwendete Fallnummer ist eine Abrechnungsnummer.
-3. Die Fallnummer wird über den Account repräsentiert und umfasst regelmäßig mehrere Encounter.
-4. Eine Fallnummer darf nicht als `Encounter.identifier` verwendet werden.
-5. Die grundlegende Orientierung am bestehenden ISiK-6-Fallmodell bleibt erhalten.
+Die Trennung zwischen Encounter (Versorgungskontakt) und Account (Abrechnungsfall) bleibt bestehen.
+Die im deutschen Krankenhauswesen verwendete Fallnummer ist eine Abrechnungsnummer.
+Die Fallnummer wird über den Account repräsentiert und umfasst regelmäßig mehrere Encounter.
+Eine Fallnummer darf nicht als Encounter.identifier verwendet werden.
+Die grundlegende Orientierung am bestehenden ISiK-6-Fallmodell bleibt erhalten.
 
-# Strategische Grundsatzfragen
+## Strategische Grundsatzfragen
 
-## 1. Rolle der EpisodeOfCare
+1. Rolle der EpisodeOfCare
 
 ### Ausgangslage
 
@@ -40,234 +40,287 @@ Derzeit existiert kein EpisodeOfCare-Profil in ISiK.
 
 Das bestehende Fallmodell adressiert primär:
 
-- Versorgungskontakt (Encounter)
-- Abrechnungsfall (Account)
+Aufenthalt/Besuch/Kontakt   (Encounter) - hier weiter als "Versorgungskontakte" bezeichnet
+Abrechnungszusammenhänge oder Abrechnungsfall  (Account) 
 
 Nicht eindeutig adressiert werden dagegen medizinische Zusammenhänge, die sich über mehrere Encounter und gegebenenfalls mehrere Accounts erstrecken.
 
 Beispiele:
 
-- chronische Erkrankungen
-- langfristige Behandlungspfade
-- Wiederaufnahmen
-- sektorübergreifende Versorgung
-- medizinische Fallzusammenhänge unabhängig vom Abrechnungsfall
+chronische Erkrankungen
+langfristige Behandlungspfade
+Wiederaufnahmen
+sektorübergreifende Versorgung
+medizinische Fallzusammenhänge unabhängig vom Abrechnungsfall
 
 ### Fragestellung
 
 Soll EpisodeOfCare künftig Teil des ISiK-Zielmodells werden?
 
-### Optionen
+### Mögliche Optionen
 
-**Option A**
+Option A
 
 Keine Einführung eines EpisodeOfCare-Profils.
 
-**Option B**
+Account und Encounter bleiben die zentralen Konzepte des Fallmodells.
+
+Option B
 
 Einführung eines EpisodeOfCare-Profils als zusätzliches fachliches Konzept zur Abbildung medizinischer Zusammenhänge jenseits des Abrechnungsfalls.
 
 ### Ziel bis April 2027
 
-- Entscheidung über die Aufnahme von EpisodeOfCare
-- Festlegung der fachlichen Rolle
-- Definition der Beziehungen zu Encounter, Account und Diagnosen
+Es soll entschieden werden,
 
-## 2. Rolle des Einrichtungskontakts
+ob EpisodeOfCare Bestandteil des ISiK-Zielmodells werden soll,
+welche fachliche Rolle EpisodeOfCare einnimmt,
+welche Beziehungen zu Encounter, Account und Diagnosen spezifiziert werden müssen.
+2. Rolle des Einrichtungskontakts
+Ausgangslage
 
-### Ausgangslage
+Die zukünftige Rolle des Einrichtungskontakts ist aus Sicht der ISiK-Spezifikationsarbeit bislang nicht abschließend geklärt.
 
 Das bestehende Modell unterscheidet heute zwischen:
 
-- Account
-- Einrichtungskontakt
-- Abteilungskontakt
-- Versorgungsstellenkontakt
+Account
+Einrichtungskontakt
+Abteilungskontakt
+Versorgungsstellenkontakt
 
-Während Abteilungskontakte und Versorgungsstellenkontakte einen unmittelbar nachvollziehbaren Versorgungskontext beschreiben, soll geprüft werden, welchen eigenständigen fachlichen Mehrwert der Einrichtungskontakt gegenüber dem Account liefert.
+Während Abteilungskontakte und Versorgungsstellenkontakte einen unmittelbar nachvollziehbaren Versorgungskontext beschreiben, ist aus Sicht der Weiterentwicklung von ISiK zu prüfen, welchen eigenständigen fachlichen Mehrwert der Einrichtungskontakt gegenüber dem bereits vorhandenen Account liefert.
 
-### Fragestellungen
+Dabei handelt es sich ausdrücklich nicht um eine Kritik an bestehenden Implementierungen oder bisherigen ISiK-Versionen. Vielmehr soll überprüft werden, ob die fachliche Bedeutung des Einrichtungskontakts ausreichend klar definiert ist und langfristig spezifikatorisch begründet werden kann.
 
-- Welche Informationen gehören fachlich ausschließlich auf den Einrichtungskontakt?
-- Welche Informationen sind bereits über den Account ableitbar?
-- Welche Anwendungsfälle benötigen zwingend einen Einrichtungskontakt?
-- Ist der Einrichtungskontakt für Fallakte, Berechtigungen und Suchstrategien erforderlich?
-- Ist der Einrichtungskontakt langfristig Bestandteil des fachlichen Zielmodells?
+Fragestellungen
+Welche Informationen gehören fachlich ausschließlich auf den Einrichtungskontakt?
+Welche Informationen sind bereits über den Account ableitbar?
+Welche Anwendungsfälle benötigen zwingend einen Einrichtungskontakt?
+Ist der Einrichtungskontakt für Fallakte, Berechtigungen und Suchstrategien erforderlich?
+Ist der Einrichtungskontakt langfristig Bestandteil des fachlichen Zielmodells?
+Ziel bis April 2027
 
-### Ziel bis April 2027
+Es soll eine belastbare Entscheidungsvorlage erarbeitet werden, ob:
 
-**Option A:** Eigenständige und klar abgegrenzte Ebene.
+Option A
 
-**Option B:** Zulässig, aber nicht mehr zentrale Ebene.
+Der Einrichtungskontakt weiterhin eine eigenständige und klar abgegrenzte Ebene des ISiK-Zielmodells darstellt.
 
-**Option C:** Langfristig alternative Modellierungsansätze.
+Option B
 
-## 3. Geltungsbereich des ISiK-Fallmodells
+Der Einrichtungskontakt weiterhin zulässig bleibt, aber nicht mehr als zentrale Ebene des Zielmodells betrachtet wird.
 
-### Ausgangslage
+Option C
 
-Zu klären ist der fachliche Anwendungsbereich hinsichtlich:
+Langfristig alternative Modellierungsansätze verfolgt werden sollen.
 
-- MVZ
-- ambulanten Krankenhausleistungen
-- organisatorisch getrennten ambulanten Subsystemen
-- sektorübergreifenden Versorgungskontexten
+Bedeutung für die weitere Arbeit
 
-### Fragestellungen
+Die Klärung dieser Frage beeinflusst unmittelbar:
 
-- Welche Versorgungsformen sollen adressiert werden?
-- Wo verläuft die fachliche Grenze?
-- Soll das Encounter-Modell diese Kontexte explizit berücksichtigen?
-- Entstehen zusätzliche Anforderungen an Encounter, Account oder EpisodeOfCare?
+Encounter-Hierarchien
+partOf-Regeln
+Profilstruktur
+Definition der Fallakte
+Nutzung von Locations
+Umgang mit fehlenden Encounter-Ebenen
+3. Geltungsbereich des ISiK-Fallmodells
+Ausgangslage
 
-### Ziel bis April 2027
+Das bestehende ISiK-Fallmodell wurde primär aus Sicht klassischer Krankenhaus-Informationssysteme entwickelt.
 
-Festlegung des fachlichen Geltungsbereichs als Grundlage weiterer Modellierungsentscheidungen.
+Zunehmend stellt sich jedoch die Frage, wie mit Versorgungsformen umzugehen ist, die organisatorisch mit Krankenhäusern verbunden sind, aber nicht dem klassischen stationären Versorgungskontext entsprechen.
 
-# Fachliche Problemstellungen
+Hierzu gehören insbesondere:
 
-## Ambulantes Konsil bzw. Notaufnahme während stationärem Aufenthalt
+Medizinische Versorgungszentren (MVZ)
+ambulante Krankenhausleistungen
+organisatorisch getrennte ambulante Subsysteme
+sektorübergreifende Versorgungskontexte
+Fragestellungen
+Welche Versorgungsformen sollen durch das ISiK-Fallmodell grundsätzlich adressiert werden?
+Wo verläuft die fachliche Grenze zwischen Krankenhausversorgung und anderen Versorgungsformen?
+Soll das Encounter-Modell auch ambulante Krankenhausstrukturen und MVZ-Kontexte explizit berücksichtigen?
+Reicht das bestehende Modell aus oder entstehen zusätzliche Anforderungen an Encounter, Account oder EpisodeOfCare?
+Ziel bis April 2027
 
-### Zu klärende Fragen
+Festlegung des fachlichen Geltungsbereichs des ISiK-Fallmodells als Grundlage für alle weiteren Modellierungsentscheidungen.
 
-- Bleibt der stationäre Aufenthalt durchgängig bestehen?
-- Entsteht ein zusätzlicher ambulanter Kontakt?
-- Wie wird die Gesamtverweildauer bestimmt?
-- Wie werden Konsile und Notaufnahmekontakte eingeordnet?
+## Fachliche Problemstellungen
 
-### Zielbild
+Ambulantes Konsil bzw. Notaufnahme während stationärem Aufenthalt
+Ziel
 
-Zusätzliche Versorgungskontakte dürfen nicht als Wechsel der Fallart interpretiert werden.
+Klärung der Modellierung von Versorgungssituationen (anhand von Szenarien), in denen während eines stationären Aufenthaltes weitere organisatorische Einheiten beteiligt werden.
 
-## Wiederaufnahme
+Zu klärende Fragen
+Bleibt der stationäre Aufenthalt durchgängig bestehen?
+Entsteht ein zusätzlicher ambulanter Kontakt?
+Wie wird die Gesamtverweildauer bestimmt?
+Wie werden Konsile und Notaufnahmekontakte eingeordnet?
+Zielbild
 
-### Zu klärende Fragen
+Das Modell soll sicherstellen, dass zusätzliche Versorgungskontakte nicht fälschlich als Wechsel der Fallart (stationär → ambulant) interpretiert werden.
 
-- Nutzung derselben Fallnummer?
-- Zusammenführung von Accounts?
-- Nutzung von `Account.relatedAccount`?
-- Auswirkungen auf Fallaktenbildung und Suchstrategien?
+Wiederaufnahme
+Ziel
 
-### Zielbild
+Einheitliche Modellierung von Wiederaufnahmen im DRG-Kontext.
 
-Konsistente interoperable Empfehlung für Wiederaufnahmen.
+Zu klärende Fragen
+Nutzung derselben Fallnummer?
+Zusammenführung von Accounts?
+Nutzung von Account.relatedAccount?
+Auswirkungen auf Fallaktenbildung und Suchstrategien?
+Zielbild
 
-## Fachabteilungswechsel bei gleichbleibender Location
+ISiK soll eine konsistente und interoperable Empfehlung für Wiederaufnahmen bereitstellen.
 
-### Zu klärende Fragen
+Fachabteilungswechsel bei gleichbleibender Location
+Ziel
 
-- Auf welcher Ebene werden Locations geführt?
-- Wie wird ein Fachabteilungswechsel ohne Bettwechsel modelliert?
-- Welche Auswirkungen ergeben sich durch EncounterHistory in FHIR R5/R6?
+Klärung der Modellierung organisatorischer und physischer Bewegungen innerhalb eines Aufenthaltes.
 
-## Diagnosen
+Zu klärende Fragen
+Auf welcher Ebene werden Locations geführt?
+Wie wird ein Fachabteilungswechsel ohne Bettwechsel modelliert?
+Welche Auswirkungen ergeben sich durch EncounterHistory in FHIR R5/R6?
+Zielbild
 
-### Grundsatzfrage
+Eine konsistente und nachvollziehbare Modellierung von fachlicher Zuständigkeit und physischem Aufenthaltsort (ggf. unter Berücksichtigung von R5/R6).
 
-Sind Diagnosen:
+Diagnosen
+Ausgangspunkt
 
-- fallbezogene Instanzen
+Eine zentrale Grundsatzfrage betrifft den Lebenszyklus von Diagnosen.
+
+Zu klärende Frage
+
+Sind Diagnosen grundsätzlich:
+
+fallbezogene Instanzen
 
 oder
 
-- langlebige medizinische Fakten?
+langlebige medizinische Fakten?
+Zielrichtung
 
-### Zu prüfen
+Zu prüfen ist insbesondere, ob Conditions grundsätzlich wiederverwendbare medizinische Sachverhalte darstellen sollten.
 
-- ePA-Unterstützung
-- EHDS-Kompatibilität
-- Vermeidung von Dubletten
-- Vereinfachung von Patient Summaries
+Mögliche Vorteile:
 
-## Fallakte
+Unterstützung von ePA-Szenarien
+EHDS-Kompatibilität
+Vermeidung von Dubletten
+Vereinfachung von Patient Summaries
 
-### Zu klärende Fragen
+Parallel muss der fachliche Kontext eines Aufenthaltes erhalten bleiben.
 
-- Welche Ressourcen gehören zu einer Fallakte?
-- Wie werden diese ermittelt?
-- Welche Suchstrategien werden empfohlen?
+Fallakte
+Ziel
 
-### Relevante Anwendungsfälle
+Definition einer standardisierten Sicht auf den Umfang einer Fallakte.
 
-- Datenmigration
-- Entlassbriefschreibung
-- SMART-on-FHIR
-- Berechtigungsmanagement
+Zu klärende Fragen
+Welche Ressourcen gehören zu einer Fallakte?
+Wie werden diese ermittelt?
+Welche Suchstrategien werden empfohlen?
 
-# Technisches Zielbild
+Relevante Anwendungsfälle:
 
-## Dreiebenenmodell
+Datenmigration
+Entlassbriefschreibung
+SMART-on-FHIR
+Berechtigungsmanagement
 
-```text
+## Technisches Zielbild
+Dreiebenenmodell
+
+Das bestehende dreistufige Modell bleibt zunächst fachlicher Referenzpunkt:
+
+ 
 Einrichtungskontakt
+
 └─ Abteilungskontakt
-   └─ Versorgungsstellenkontakt
-```
 
-Bis April 2027 soll geprüft werden:
+ └─ Versorgungsstellenkontakt
 
-- ob diese Struktur langfristig bestätigt wird,
-- welche Ebenen verpflichtend sind,
-- wie mit fehlenden Ebenen umzugehen ist.
 
-## Heterogene Datenverfügbarkeit
 
-Zu untersuchen:
 
-- Welche Ebenen sind tatsächlich verfügbar?
-- Welche Ebenen müssen rekonstruiert werden?
-- Welche Mindestanforderungen sind für Interoperabilität erforderlich?
-- Soll die Erzeugung fehlender Ebenen empfohlen werden?
+Bis April 2027 soll geprüft werden,
 
-## Profilstruktur
+ob diese Struktur langfristig bestätigt wird,
+welche Ebenen verpflichtend sind,
+wie mit fehlenden Ebenen umzugehen ist.
 
-Zu prüfen ist die Aufteilung in:
+Dabei sind IST-Zustand und Zielmodell bewusst voneinander zu trennen.
 
-- Encounter Einrichtungskontakt
-- Encounter Abteilungskontakt
-- Encounter Versorgungsstellenkontakt
+Heterogene Datenverfügbarkeit
 
-### Motivation
+Die Diskussionen der vergangenen Jahre haben gezeigt, dass die Datenlage zwischen den Standorten teilweise erheblich variiert.
 
-- Klarere Dokumentation
-- Eindeutigere Regeln
-- Weniger Redundanzen
-- Präzisere Must-Support-Festlegungen
+Folgende Fragestellungen sollen untersucht werden:
 
-## Spezifikation der Kontaktebenen
+Welche Ebenen sind tatsächlich verfügbar?
+Welche Ebenen müssen rekonstruiert werden?
+Welche Mindestanforderungen sind für Interoperabilität erforderlich?
+Soll die Erzeugung fehlender Ebenen empfohlen werden?
 
-Zu definieren für:
+Dabei soll ausdrücklich vermieden werden, das Zielmodell ausschließlich aus aktuellen Einschränkungen einzelner Systeme abzuleiten.
 
-- Location
-- Fachabteilungsschlüssel
-- Diagnosenbezug
-- Account-Referenzen
-- Organisationsreferenzen
-- Encounter.period
-- Fachdisziplinen
-- Konsile
+Profilstruktur
 
-## partOf und Hierarchien
+Es soll geprüft werden, ob langfristig drei getrennte Encounter-Profile sinnvoller sind als ein gemeinsames Profil.
 
-### Zu klären
+Zu untersuchende Variante
+Encounter Einrichtungskontakt
+Encounter Abteilungskontakt
+Encounter Versorgungsstellenkontakt
+Motivation
+Klarere Dokumentation
+Eindeutigere Regeln
+Weniger Redundanzen
+Präzisere Must-Support-Festlegungen
+Spezifikation der Kontaktebenen
 
-- Soll `partOf` verpflichtend sein?
-- Darf eine Ebene ausgelassen werden?
-- Wie werden überlappende Kontakte modelliert?
-- Wie werden verschachtelte Kontakte modelliert?
+Für alle relevanten Elemente soll festgelegt werden:
 
-### Arbeitshypothese
+Auf welcher Ebene das Element erwartet wird
+Auf welcher Ebene das Element zulässig ist
+Auf welcher Ebene das Element vermieden werden sollte
 
-1. Die bestehende dreistufige Hierarchie bleibt Zielmodell.
-2. Direkte Beziehungen von Versorgungsstellenkontakten auf Einrichtungskontakte sollen vermieden werden.
-3. Fehlende Abteilungskontakte sollten nach Möglichkeit ergänzt werden.
+Insbesondere zu prüfen:
 
-# Zusammenfassung
+Location
+Fachabteilungsschlüssel
+Diagnosenbezug
+Account-Referenzen
+Referenzen auf Organisationen
+Encounter.period
+Fachdisziplinen
+Konsile
+partOf und Hierarchien
 
-Die Arbeiten konzentrieren sich auf drei übergreifende Architekturfragen:
+Zu klären sind insbesondere:
 
-1. Soll EpisodeOfCare künftig Bestandteil von ISiK werden?
-2. Welche langfristige Rolle soll der Einrichtungskontakt einnehmen?
-3. Welchen fachlichen Geltungsbereich soll das ISiK-Fallmodell künftig abdecken?
+Soll partOf bei vorhandenen Hierarchien verpflichtend sein?
+Darf eine Ebene ausgelassen werden?
+Wie werden überlappende Kontakte modelliert?
+Wie werden verschachtelte Kontakte modelliert?
 
-Von der Beantwortung dieser Fragen hängen wesentliche Teile der zukünftigen Encounter-Modellierung und der Weiterentwicklung des ISiK-Fallkonzepts ab.
+Aktuelle Arbeitshypothese:
+
+Die bestehende dreistufige Hierarchie bleibt Zielmodell.
+Direkte Beziehungen von Versorgungsstellenkontakten auf Einrichtungskontakte sollen vermieden werden.
+Fehlende Abteilungskontakte sollten nach Möglichkeit ergänzt bzw. erzeugt werden.
+
+## Zusammenfassung
+
+Die Arbeiten  konzentrieren sich auf drei übergreifende Architekturfragen:
+
+Soll EpisodeOfCare künftig als eigenes Konzept zur Abbildung medizinischer Versorgungsepisoden Bestandteil von ISiK werden?
+Welche langfristige Rolle soll der Einrichtungskontakt innerhalb des ISiK-Fallmodells neben dem Account einnehmen?
+Welchen fachlichen Geltungsbereich soll das ISiK-Fallmodell künftig abdecken, insbesondere hinsichtlich MVZs, ambulanter Krankenhausversorgung und sektorübergreifender Versorgungskontexte?
+
+Von der Beantwortung dieser drei Fragen hängen wesentliche Teile der zukünftigen Encounter-Modellierung und der Weiterentwicklung des ISiK-Fallkonzepts ab. Insbesondere die Detailfragen zu Wiederaufnahmen, Diagnosen, Hierarchien, Profilstruktur, Locations und Fallakten können erst auf Basis dieser strategischen Entscheidungen abschließend spezifiziert werden.
