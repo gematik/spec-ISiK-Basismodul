@@ -1,11 +1,11 @@
 
 # Zielbild zur Weiterentwicklung des ISiK Encounter- und Fallmodells bis April 2027
 
-> Status: Diskussionsentwurf
->
-> Dieses Dokument beschreibt identifizierte Fragestellungen und ein mögliches Zielbild für die Weiterentwicklung des ISiK Encounter- und Fallmodells bis April 2027. Es handelt sich ausdrücklich nicht um eine beschlossene Fachspezifikation.
->
-> Kommentare und Rückmeldungen sind ausdrücklich erwünscht.
+ Status: Diskussionsentwurf
+
+ Dieses Dokument beschreibt identifizierte Fragestellungen und ein mögliches Zielbild für die Weiterentwicklung des ISiK Encounter- und Fallmodells bis April 2027. Es handelt sich ausdrücklich nicht um eine beschlossene Fachspezifikation.
+
+ Kommentare und Rückmeldungen sind ausdrücklich erwünscht.
 
 ## Ausgangslage
 
