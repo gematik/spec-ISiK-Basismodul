@@ -27,6 +27,7 @@ All jobs with an `x` in the boxes were performed to the best of knowledge.
 <!--- Do some update, refresh and cleanup of related resources. -->
 
 - [ ] Go to the corresponding SIMPLIFIER Project and _-> Github -> Reimport_ the project.
+- [ ]  Make sure the package.json in the simplifier files folder is updated and synced between simplifier an the repo (mind the dependency versions)
 - [ ] Go to the corresponding SIMPLIFIER Project and _-> Packages -> Expand the Dropdown for Create -> Create new package_ for the project.
   - [ ] With the corresponding version number, and
   - [ ] The Release notes (from all Igs with changes) 
