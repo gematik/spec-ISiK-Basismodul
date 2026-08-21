@@ -5,7 +5,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd.
 
-* `improve` Für DocumentReference.context.practiceSetting wurde die Kardinalität 1.. entfernt und das required binding auf extensible gelockert https://github.com/gematik/spec-ISiK-Basismodul/pull/1310
+* `improve` Für DocumentReference.context.practiceSetting wurde die Kardinalität 1.. entfernt und das required binding auf extensible gelockert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1310>
 
 ### Version 6.0.0
 
