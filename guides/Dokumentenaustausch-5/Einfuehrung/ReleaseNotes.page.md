@@ -13,7 +13,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 
 Datum: tbd.
 
-* `improve` Für DocumentReference.context.practiceSetting wurde die Kardinalität 1.. entfernt und das required binding auf extensible gelockert
+* `improve` Für DocumentReference.context.practiceSetting wurde die Kardinalität 1.. entfernt und das required binding auf extensible gelockert https://github.com/gematik/spec-ISiK-Basismodul/pull/1309
 
 
 ## Version 5.1.3
