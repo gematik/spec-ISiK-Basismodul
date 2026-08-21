@@ -9,6 +9,13 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
+## Version 5.x.x
+
+Datum: tbd.
+
+* `improve` Für DocumentReference.context.practiceSetting wurde die Kardinalität 1.. entfernt und das required binding auf extensible gelockert
+
+
 ## Version 5.1.3
 
 Datum: 17.07.2026
