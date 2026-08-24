@@ -97,7 +97,7 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
   * ^short = "Benennung der Allergie/Unverträglichkeit"
   * ^comment = "**Begründung Pflichtfeld:** Nur mit einer codierten oder textuell benannten Auslösersubstanz lässt sich die Allergie klinisch interpretieren und für Interaktionsprüfungen nutzen.
 
-  **Hinweis und Hintergrund:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `auslösende Substanz` im deutschen Gesundheitswesen erarbeitet und ist an dieser Stelle eingebunden worden. Da die Vollständigkeit des ValueSets im ISiK-Kontext nicht garantiert werden kann, ist es mit 'extensible' eingebunden."
+  **Hinweis und Hintergrund:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `auslösende Substanz` im deutschen Gesundheitswesen erarbeitet und dies ist an dieser Stelle eingebunden worden. Da die Vollständigkeit des ValueSets im ISiK-Kontext nicht garantiert werden kann, ist es mit 'extensible' eingebunden."
   * coding MS
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "system"
@@ -173,7 +173,7 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
   * ^comment = "**Begründung MS:** Die beobachtete Reaktion ist für die klinische Bewertung der Gefährdung essenziell und Grundlage für Entscheidungshilfen."
   * manifestation MS
     * ^short = "Manifestation der Reaktion"
-    * ^comment = "**Hinweis und Hintergrund:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `Allergiemanifestationen` im deutschen Gesundheitswesen erarbeitet und ist an dieser Stelle eingebunden worden. Da die Vollständigkeit des ValueSets im ISiK-Kontext nicht garantiert werden kann, ist es mit 'extensible' eingebunden."
+    * ^comment = "**Hinweis und Hintergrund:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `Allergiemanifestationen` im deutschen Gesundheitswesen erarbeitet und dies ist an dieser Stelle eingebunden worden. Da die Vollständigkeit des ValueSets im ISiK-Kontext nicht garantiert werden kann, ist es mit 'extensible' eingebunden."
     * coding MS
       * ^slicing.discriminator.type = #pattern
       * ^slicing.discriminator.path = "system"
