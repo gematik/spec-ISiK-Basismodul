@@ -61,6 +61,8 @@ Alias: $KBV_VS_Base_Role_Care = https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Ca
 Alias: $patient-merge-topic = https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge
 Alias: $vsAllergyIntoleranceClinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
 Alias: $vsAllergyIntoleranceVerificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
+Alias: $KBV_VS_Base_Allergien-ausloesende-Substanz = https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Substance_SNOMED_CT
+Alias: $KBV_VS_Base_Allergien-Manifestation = https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT
 
 Alias: $imposeProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile
 Alias: $compliesWithProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile

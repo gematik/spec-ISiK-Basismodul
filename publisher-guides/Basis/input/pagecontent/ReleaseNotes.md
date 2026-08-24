@@ -8,6 +8,13 @@ Tags werden folgendermaßen verwendet:
 
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CapabilityStatements); Typo fixes werden nicht in die Releasenotes aufgenommen. Hier sollen stets die ggf. betroffenen Ressourcen (bzw. CapabilityStatements, Rollen und Akteure) angegeben werden.
 
+### Version 6.x.y
+
+Datum: tbd.
+
+* `improve`Einbinden der Allergie-ValueSets nach Publikation auf Zentralem Terminologie-Server im Profil ISiKAllergieUnvertraeglichkeit
+
+
 ### Version 6.0.0
 
 Datum: 01.07.2026
