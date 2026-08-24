@@ -106,8 +106,9 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
       snomed-ct 1..1 MS and
       ask 0..1 MS and
       atc 0..1 MS
-  * coding[snomed-ct] MS from $KBV_VS_Base_Allergien-ausloesende-Substanz (extensible)
+  * coding[snomed-ct] MS 
   * coding[snomed-ct] only ISiKSnomedCTCoding
+  * coding[snomed-ct] from $KBV_VS_Base_Allergien-ausloesende-Substanz (extensible)
   * coding[ask] MS
   * coding[ask] only ISiKASKCoding
     * system MS
@@ -180,8 +181,9 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
       * ^slicing.rules = #open
     * coding contains
         snomed-ct 0..1 MS
-    * coding[snomed-ct] MS from $KBV_VS_Base_Allergien-Manifestation (extensible)
+    * coding[snomed-ct] MS 
     * coding[snomed-ct] only ISiKSnomedCTCoding
+    * coding[snomed-ct] from $KBV_VS_Base_Allergien-Manifestation (extensible)
     * text MS
   * severity MS
     * ^short = "Schweregrad der Reaktion"
