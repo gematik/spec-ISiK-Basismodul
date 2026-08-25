@@ -87,8 +87,10 @@ hardcoded `ACCEPTED_DOWNLOAD_CONDITIONS` placeholder with the configured value,
 then runs it in the given directory. `sushi-wrap.sh` fetches FHIR packages that
 are only available via the BfArM Zentraler Terminologieserver (ZTS) — e.g.
 `kbv.all.terminology.allergyintolerance` — into the local FHIR package cache
-before invoking SUSHI (`sushi .`) there. See
+before invoking SUSHI there. See
 [gematik/zts-api-client-examples](https://github.com/gematik/zts-api-client-examples/tree/main/sushi-wrap).
+Used by both `ig-publisher.yml` (global `sushi` binary) and
+`complieswith-export.yml` (no global binary, runs `npx fsh-sushi . -s` instead).
 
 **Usage**
 ```bash
@@ -96,9 +98,10 @@ bash scripts/ig-publisher/run-sushi-with-zts.sh <dir-containing-sushi-config.yam
 ```
 
 **Inputs**
-- arg 1: directory containing the `sushi-config.yaml` to resolve dependencies for (SUSHI runs there, i.e. `sushi .`)
-- `SUSHI_WRAP_URL`: raw URL of `sushi-wrap.sh` (set once as a workflow-level `env` in `ig-publisher.yml`)
+- arg 1: directory containing the `sushi-config.yaml` to resolve dependencies for (SUSHI runs there)
+- `SUSHI_WRAP_URL`: raw URL of `sushi-wrap.sh` (set once as a workflow-level `env`)
 - `ACCEPTED_DOWNLOAD_CONDITIONS`: comma-separated list of accepted ZTS download conditions (see below)
+- `SUSHI_COMMAND` (optional): command to run instead of the reference script's hardcoded `sushi .`, e.g. `npx fsh-sushi . -s`. Defaults to `sushi .`.
 
 **One-time setup: `ZTS_ACCEPTED_DOWNLOAD_CONDITIONS`**
 
@@ -121,8 +124,9 @@ just means GitHub doesn't know about the variable yet. The script itself fails
 fast with a clear error if the variable is missing or empty at runtime.
 
 **Notes**
-- Requires `curl` in the job's container image; `jq`, `yq` (mikefarah/yq), and
-  `uuidgen` (needed internally by `sushi-wrap.sh`) are installed automatically
-  via `apt-get`/`apk` if not already present.
+- Requires `curl`. `jq`, `yq` (mikefarah/yq), and `uuidgen` (needed internally
+  by `sushi-wrap.sh`) are installed automatically via `apt-get`/`apk` if not
+  already present; `sudo` is used automatically when not running as root
+  (e.g. plain GitHub-hosted runners, as opposed to the IG Publisher container).
 - `sushi-wrap.sh` is fetched fresh on every run instead of vendored into this
   repo, so upstream fixes from gematik apply automatically.
