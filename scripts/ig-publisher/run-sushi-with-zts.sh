@@ -45,6 +45,11 @@ sed -i "s|^ACCEPTED_DOWNLOAD_CONDITIONS=.*|ACCEPTED_DOWNLOAD_CONDITIONS=\"${ACCE
 sed -i "s|^sushi \.\$|${SUSHI_COMMAND}|" "${wrap_script}"
 chmod +x "${wrap_script}"
 
+# sushi-wrap.sh's FHIR_HOME defaults to ~/.fhir and its "mv" into
+# $FHIR_HOME/packages fails silently if that dir doesn't exist yet
+# (e.g. on a fresh runner not preloaded with a package cache).
+mkdir -p "${HOME}/.fhir/packages"
+
 # sushi-wrap.sh always reads ./sushi-config.yaml and runs SUSHI in the cwd.
 cd "${SUSHI_DIR}"
 "${wrap_script}"
