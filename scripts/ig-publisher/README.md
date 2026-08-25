@@ -121,7 +121,8 @@ just means GitHub doesn't know about the variable yet. The script itself fails
 fast with a clear error if the variable is missing or empty at runtime.
 
 **Notes**
-- Requires `curl`, `jq`, `yq`, and `uuidgen` to be available in the job's
-  container image (used internally by `sushi-wrap.sh`).
+- Requires `curl` in the job's container image; `jq`, `yq` (mikefarah/yq), and
+  `uuidgen` (needed internally by `sushi-wrap.sh`) are installed automatically
+  via `apt-get`/`apk` if not already present.
 - `sushi-wrap.sh` is fetched fresh on every run instead of vendored into this
   repo, so upstream fixes from gematik apply automatically.
