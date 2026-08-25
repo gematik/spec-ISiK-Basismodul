@@ -106,7 +106,7 @@ bash scripts/ig-publisher/run-sushi-with-zts.sh <dir-containing-sushi-config.yam
 **One-time setup: `ZTS_ACCEPTED_DOWNLOAD_CONDITIONS`**
 
 The list of accepted ZTS download conditions is not hardcoded in the workflow —
-it must be configured as a repository (or organization) Actions **variable**:
+it must be configured as a repository (or organization) Actions **variable** in Github:
 
 1. Go to **Settings → Secrets and variables → Actions → Variables** in the repository.
 2. Add a repository variable named `ZTS_ACCEPTED_DOWNLOAD_CONDITIONS`.
