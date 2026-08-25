@@ -79,3 +79,49 @@ Deletes the temporary `fhir-packages` artifact after the workflow run.
 
 Resolves the previous successful workflow run head SHA on the current branch and
 exposes it as `last_success_sha` output for later change detection.
+
+### run-sushi-with-zts.sh
+
+Downloads gematik's reference `sushi-wrap.sh` from a raw GitHub URL, patches its
+hardcoded `ACCEPTED_DOWNLOAD_CONDITIONS` placeholder with the configured value,
+then runs it in the given directory. `sushi-wrap.sh` fetches FHIR packages that
+are only available via the BfArM Zentraler Terminologieserver (ZTS) — e.g.
+`kbv.all.terminology.allergyintolerance` — into the local FHIR package cache
+before invoking SUSHI (`sushi .`) there. See
+[gematik/zts-api-client-examples](https://github.com/gematik/zts-api-client-examples/tree/main/sushi-wrap).
+
+**Usage**
+```bash
+bash scripts/ig-publisher/run-sushi-with-zts.sh <dir-containing-sushi-config.yaml>
+```
+
+**Inputs**
+- arg 1: directory containing the `sushi-config.yaml` to resolve dependencies for (SUSHI runs there, i.e. `sushi .`)
+- `SUSHI_WRAP_URL`: raw URL of `sushi-wrap.sh` (set once as a workflow-level `env` in `ig-publisher.yml`)
+- `ACCEPTED_DOWNLOAD_CONDITIONS`: comma-separated list of accepted ZTS download conditions (see below)
+
+**One-time setup: `ZTS_ACCEPTED_DOWNLOAD_CONDITIONS`**
+
+The list of accepted ZTS download conditions is not hardcoded in the workflow —
+it must be configured as a repository (or organization) Actions **variable**:
+
+1. Go to **Settings → Secrets and variables → Actions → Variables** in the repository.
+2. Add a repository variable named `ZTS_ACCEPTED_DOWNLOAD_CONDITIONS`.
+3. Set its value to the comma-separated list of accepted download conditions, e.g.:
+   ```
+   kbv.all.terminology.allergyintolerance
+   ```
+   Add more entries (comma-separated) as additional ZTS-only packages become needed.
+4. Review the applicable download conditions on the [BfArM terminology website](https://terminologien.bfarm.de) before accepting them.
+
+Until this variable is created, editors/linters may flag
+`${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}` in `ig-publisher.yml` with a
+"Context access might be invalid" warning — this is expected and harmless; it
+just means GitHub doesn't know about the variable yet. The script itself fails
+fast with a clear error if the variable is missing or empty at runtime.
+
+**Notes**
+- Requires `curl`, `jq`, `yq`, and `uuidgen` to be available in the job's
+  container image (used internally by `sushi-wrap.sh`).
+- `sushi-wrap.sh` is fetched fresh on every run instead of vendored into this
+  repo, so upstream fixes from gematik apply automatically.
