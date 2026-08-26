@@ -17,7 +17,7 @@ SUSHI_COMMAND="${SUSHI_COMMAND:-sushi .}"
 # Root inside the IG Publisher container, but plain GitHub-hosted runners need sudo.
 as_root() { if [ "$(id -u)" -eq 0 ]; then "$@"; else sudo "$@"; fi; }
 
-# The job's environment ships neither jq, yq (mikefarah/yq) nor uuidgen
+# For IG Publisher Build action the job's environment ships neither jq, yq (mikefarah/yq) nor uuidgen
 # (util-linux), all required by sushi-wrap.sh; install if missing.
 if ! command -v jq >/dev/null 2>&1 || ! command -v uuidgen >/dev/null 2>&1; then
   if command -v apt-get >/dev/null 2>&1; then
