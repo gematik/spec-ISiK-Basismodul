@@ -239,9 +239,9 @@ jobs:
       # Install Python for the CapabilityStatement expander script
       - name: Setup Python
         if: ${{ toJSON(matrix.capability_statement_urls) != 'null' && toJSON(matrix.capability_statement_urls) != '[]' }}
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
-          python-version: '3.11'
+          python-version: '3.13'
 
       # Expand capability statements into concrete resources for the IG
       - name: Expand CapabilityStatement
