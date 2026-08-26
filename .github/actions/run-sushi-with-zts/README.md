@@ -43,9 +43,8 @@ just means GitHub doesn't know about the variable yet.
   `sushi-wrap.sh`) are installed automatically via `apt-get`/`apk` if not
   already present; `sudo` is used automatically when not running as root
   (e.g. plain GitHub-hosted runners, as opposed to the IG Publisher container).
-- `sushi-wrap-url` currently points at the
-  [feature/improve-sushi-wrap-PTDATA-2340](https://github.com/gematik/zts-api-client-examples/tree/feature/improve-sushi-wrap-PTDATA-2340)
-  branch of a pending upstream PR (env-var overrides for
-  `ACCEPTED_DOWNLOAD_CONDITIONS`/`SUSHI_COMMAND`, plus a package-cache-dir bug
-  fix). Switch the default back to the upstream `main` branch once that PR is
-  merged.
+- `sushi-wrap-url` is pinned to the
+  [1.0.0](https://github.com/gematik/zts-api-client-examples/releases/tag/1.0.0)
+  release tag, which includes env-var overrides for
+  `ACCEPTED_DOWNLOAD_CONDITIONS`/`SUSHI_COMMAND` and a package-cache-dir bug
+  fix contributed upstream.
