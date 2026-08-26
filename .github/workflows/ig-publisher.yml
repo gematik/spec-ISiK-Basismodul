@@ -292,12 +292,9 @@ jobs:
             "${IG_PUBLISHER_DIR}/sushi-config.yaml"
 
       # Generate IG-specific ImplementationGuide and menu content.
-      # Uses gematik's sushi-wrap.sh to fetch ZTS-only packages first (PTDATA-2315).
       - name: Run SUSHI (IG local)
-        env:
-          ACCEPTED_DOWNLOAD_CONDITIONS: ${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}
         run: |
-          bash scripts/ig-publisher/run-sushi-with-zts.sh "${{ env.IG_PUBLISHER_DIR }}"
+          sushi "${{ env.IG_PUBLISHER_DIR }}"
 
       # Tag the SUSHI output with its IG directory for later artifact copy
       - name: Write IG dir metadata (SUSHI)
