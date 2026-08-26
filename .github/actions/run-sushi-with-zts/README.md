@@ -4,7 +4,7 @@ Composite action wrapping gematik's reference `sushi-wrap.sh`
 ([gematik/zts-api-client-examples](https://github.com/gematik/zts-api-client-examples/tree/main/sushi-wrap))
 so FHIR packages only available via the BfArM Zentraler Terminologieserver
 (ZTS) — e.g. `kbv.all.terminology.allergyintolerance` — are downloaded into
-the local FHIR package cache before SUSHI runs. See PTDATA-2315.
+the local FHIR package cache before SUSHI runs.
 
 Used by `ig-publisher.yml` and `complieswith-export.yml` in place of a plain
 `sushi`/`npx fsh-sushi` invocation.
