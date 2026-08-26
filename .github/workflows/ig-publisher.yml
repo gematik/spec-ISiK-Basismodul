@@ -62,11 +62,6 @@ permissions:
   issues: write
   pull-requests: write
 
-env:
-  # Raw URL of gematik's reference sushi-wrap.sh, used to fetch ZTS-only FHIR
-  # packages (e.g. kbv.all.terminology.*) before SUSHI runs. See PTDATA-2315.
-  SUSHI_WRAP_URL: https://raw.githubusercontent.com/gematik/zts-api-client-examples/refs/heads/main/sushi-wrap/BfArM-Package-Test/sushi-wrap.sh
-
 jobs:
 
   # Shared preparation step: Run SUSHI once for all IGs
@@ -94,10 +89,10 @@ jobs:
       # Convert shared FSH inputs into FHIR resources once per workflow.
       # Uses gematik's sushi-wrap.sh to fetch ZTS-only packages first (PTDATA-2315).
       - name: Run SUSHI
-        env:
-          ACCEPTED_DOWNLOAD_CONDITIONS: ${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}
-        run: |
-          bash scripts/ig-publisher/run-sushi-with-zts.sh "${{ env.SUSHI_INPUT_DIR }}"
+        uses: ./.github/actions/run-sushi-with-zts
+        with:
+          dir: ${{ env.SUSHI_INPUT_DIR }}
+          accepted-download-conditions: ${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}
 
       # Share the generated FSH output with parallel IG build jobs
       - name: Upload FSH Generated Resources
@@ -294,10 +289,10 @@ jobs:
       # Generate IG-specific ImplementationGuide and menu content.
       # Uses gematik's sushi-wrap.sh to fetch ZTS-only packages first (PTDATA-2315).
       - name: Run SUSHI (IG local)
-        env:
-          ACCEPTED_DOWNLOAD_CONDITIONS: ${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}
-        run: |
-          bash scripts/ig-publisher/run-sushi-with-zts.sh "${{ env.IG_PUBLISHER_DIR }}"
+        uses: ./.github/actions/run-sushi-with-zts
+        with:
+          dir: ${{ env.IG_PUBLISHER_DIR }}
+          accepted-download-conditions: ${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}
 
       # Tag the SUSHI output with its IG directory for later artifact copy
       - name: Write IG dir metadata (SUSHI)

@@ -1,0 +1,62 @@
+name: Run SUSHI with ZTS packages
+description: >
+  Downloads FHIR packages only available via the BfArM Zentraler
+  Terminologieserver (ZTS) into the local package cache using gematik's
+  sushi-wrap.sh, then runs SUSHI. See PTDATA-2315.
+
+inputs:
+  dir:
+    description: Directory containing the sushi-config.yaml to resolve dependencies for (SUSHI runs there)
+    required: true
+  accepted-download-conditions:
+    description: Comma-separated list of accepted ZTS download conditions
+    required: true
+  sushi-command:
+    description: Command used to invoke SUSHI (override for setups without a global "sushi" binary, e.g. "npx fsh-sushi . -s")
+    required: false
+    default: "sushi ."
+  sushi-wrap-url:
+    description: Raw URL of sushi-wrap.sh
+    required: false
+    # TODO: point back at the upstream main branch once PTDATA-2340 is merged.
+    default: https://raw.githubusercontent.com/gematik/zts-api-client-examples/refs/heads/feature/improve-sushi-wrap-PTDATA-2340/sushi-wrap/BfArM-Package-Test/sushi-wrap.sh
+
+runs:
+  using: composite
+  steps:
+    # sushi-wrap.sh needs jq, yq (mikefarah/yq) and uuidgen (util-linux); none
+    # of these are guaranteed to be present on the calling job's environment.
+    - name: Install ZTS wrapper prerequisites
+      shell: bash
+      run: |
+        as_root() { if [ "$(id -u)" -eq 0 ]; then "$@"; else sudo "$@"; fi; }
+        if ! command -v jq >/dev/null 2>&1 || ! command -v uuidgen >/dev/null 2>&1; then
+          if command -v apt-get >/dev/null 2>&1; then
+            as_root apt-get update -qq && as_root apt-get install -y -qq jq uuid-runtime >/dev/null
+          elif command -v apk >/dev/null 2>&1; then
+            as_root apk add --no-cache jq util-linux >/dev/null
+          else
+            echo "Cannot install jq/uuidgen: no supported package manager found" >&2
+            exit 1
+          fi
+        fi
+        if ! command -v yq >/dev/null 2>&1; then
+          curl -sSL "https://github.com/mikefarah/yq/releases/download/v4.53.6/yq_linux_amd64" -o /tmp/yq
+          chmod +x /tmp/yq
+          as_root mv /tmp/yq /usr/local/bin/yq
+        fi
+
+    - name: Download sushi-wrap.sh
+      shell: bash
+      run: |
+        curl -sSL "${{ inputs.sushi-wrap-url }}" -o /tmp/sushi-wrap.sh
+        chmod +x /tmp/sushi-wrap.sh
+
+    - name: Run sushi-wrap.sh
+      shell: bash
+      env:
+        ACCEPTED_DOWNLOAD_CONDITIONS: ${{ inputs.accepted-download-conditions }}
+        SUSHI_COMMAND: ${{ inputs.sushi-command }}
+      run: |
+        cd "${{ inputs.dir }}"
+        /tmp/sushi-wrap.sh

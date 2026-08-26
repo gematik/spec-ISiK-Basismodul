@@ -13,9 +13,6 @@ permissions:
   pull-requests: write
 
 env:
-  # Raw URL of gematik's reference sushi-wrap.sh, used to fetch ZTS-only FHIR
-  # packages (e.g. kbv.all.terminology.*) before SUSHI runs. See PTDATA-2315.
-  SUSHI_WRAP_URL: https://raw.githubusercontent.com/gematik/zts-api-client-examples/refs/heads/main/sushi-wrap/BfArM-Package-Test/sushi-wrap.sh
   COMPLIESWITH_DEPENDENCIES: |
     hl7.fhir.eu.eps#current
     hl7.fhir.eu.hdr#current
@@ -45,11 +42,12 @@ jobs:
         run: node scripts/complieswith/uncomment-inserts.js
 
       - name: Run SUSHI
-        env:
-          ACCEPTED_DOWNLOAD_CONDITIONS: ${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}
+        uses: ./.github/actions/run-sushi-with-zts
+        with:
+          dir: Resources
+          accepted-download-conditions: ${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}
           # this job has no global "sushi" binary, unlike the IG Publisher container image
-          SUSHI_COMMAND: npx fsh-sushi . -s
-        run: bash scripts/ig-publisher/run-sushi-with-zts.sh Resources
+          sushi-command: npx fsh-sushi . -s
 
       - name: Filter validation targets
         run: node scripts/complieswith/filter-validation-targets.js
