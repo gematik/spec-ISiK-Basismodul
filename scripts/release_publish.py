@@ -154,23 +154,35 @@ def get_guide_name_from_path(location: str):
     return None
 
 
-def load_excluded_igs(cli_value: str, exclude_config_path: str, stufe: str = None) -> list:
-    if cli_value:
-        return [ig.strip() for ig in cli_value.split(',') if ig.strip()]
-
-    git_branch = get_new_release_version_from_branch_name()
-    effective_stufe = stufe or get_stufe_from_branch(git_branch)
-    # the local default exclusion list only applies when the current branch matches the given stufe (TC-<stufe>*/TC_<stufe>*)
-    if not effective_stufe or not is_branch_for_stufe(git_branch, effective_stufe):
-        return []
-
-    if not os.path.exists(exclude_config_path):
+def read_local_excluded_igs_for_stufe(exclude_config_path: str, stufe: str) -> list:
+    if not stufe or not os.path.exists(exclude_config_path):
         return []
 
     with open(exclude_config_path, 'r', encoding='utf-8') as exclude_config_file:
         exclude_config = yaml.safe_load(exclude_config_file) or {}
     excludes_by_stufe = {str(key): value for key, value in (exclude_config.get('excluded_igs') or {}).items()}
-    return [ig.strip() for ig in excludes_by_stufe.get(str(effective_stufe), []) if ig and ig.strip()]
+    return [ig.strip() for ig in excludes_by_stufe.get(str(stufe), []) if ig and ig.strip()]
+
+
+def load_excluded_igs(cli_value: str, exclude_config_path: str, stufe: str = None) -> list:
+    git_branch = get_new_release_version_from_branch_name()
+    effective_stufe = stufe or get_stufe_from_branch(git_branch)
+    # the local config only applies/is comparable when the current branch matches the given stufe (TC-<stufe>*/TC_<stufe>*)
+    branch_matches_stufe = bool(effective_stufe) and is_branch_for_stufe(git_branch, effective_stufe)
+
+    if cli_value:
+        cli_igs = [ig.strip() for ig in cli_value.split(',') if ig.strip()]
+        if branch_matches_stufe:
+            local_igs = read_local_excluded_igs_for_stufe(exclude_config_path, effective_stufe)
+            if set(ig.lower() for ig in cli_igs) != set(ig.lower() for ig in local_igs):
+                print(f"Warning: Mismatch between parameter input and local config for stufe '{effective_stufe}': "
+                      f"parameter=[{', '.join(cli_igs)}], local config=[{', '.join(local_igs)}]. "
+                      f"Using the parameter value; please update '{exclude_config_path}' to keep them in sync.")
+        return cli_igs
+
+    if not branch_matches_stufe:
+        return []
+    return read_local_excluded_igs_for_stufe(exclude_config_path, effective_stufe)
 
 
 def filter_excluded_igs(files: list, excluded_igs: list) -> list:
