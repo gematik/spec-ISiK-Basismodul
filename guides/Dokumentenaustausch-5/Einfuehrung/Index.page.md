@@ -5,9 +5,9 @@ topic: ImplementationGuide-markdown-Einfuehrung
 
 ----
 
-Version: 5.1.3
+Version: 5.999.999-test-basisexclusion
 
-Datum: 17.07.2026
+Datum: 27.08.2026
 
 Status: Aktiv
 
