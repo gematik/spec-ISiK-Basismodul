@@ -18,9 +18,9 @@ Die Tags werden folgendermaßen verwendet:
 
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
-## Version 5.1.3
+## Version 5.999.999-testTESTtest
 
-Datum: 20.07.2026
+Datum: 27.08.2026
 
 * `fix` Package-Dependency Anpassung de.fhir.medication zu 1.0.4 - siehe fix in 5.1.2 - https://github.com/gematik/spec-ISiK-Basismodul/pull/1292
 * `fix` REQUIRED Suchparameter AllergyIntolerance.onset aus AMTS-Rolle und GesundheitsstatusRolle entfernt aufgrund fehlerhafter Spezifikation https://github.com/gematik/spec-ISiK-Basismodul/pull/1212

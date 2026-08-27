@@ -9,9 +9,9 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
-## Version 5.1.3
+## Version 5.999.999-testTESTtest
 
-Datum: 17.07.2026
+Datum: 27.08.2026
 
 * `improve` Verpflichtung zur patientenübergreifenden Suche entfernt, aufgrund unklarer UseCases und fehlender Suchparameter für geeignete Abfragen https://github.com/gematik/spec-ISiK-Basismodul/pull/1215
 * `fix`: Fehlende Deklaration der StammdatenRolle im Capabilitystatement des Akteurs ISiKCapabilityStatementDokumentenServerAkteur hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/1225

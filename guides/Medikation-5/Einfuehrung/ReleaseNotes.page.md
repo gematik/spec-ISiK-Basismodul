@@ -4,9 +4,9 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-## Version 5.1.3
+## Version 5.999.999-testTESTtest
 
-Datum: 20.07.2026
+Datum: 27.08.2026
 
 * `fix` Package-Dependency Anpassung de.fhir.medication zu 1.0.4 - siehe fix in 5.1.2 - https://github.com/gematik/spec-ISiK-Basismodul/pull/1292
 * `feature` Bedarfsmedikation mit mehreren Indikationen: R5-Backport-Extension `Dosage.asNeededFor` in `ISiKMedikationsVerordnung.dosageInstruction` ergänzt (ohne Must-Support; ab Stufe 6 mit Must-Support) und `asNeeded[x]` auf `boolean` eingeschränkt. Neue Use-Case-Seite `Bedarfsmedikation` mit Verweis auf den [FHIR Medication IG Deutschland](https://ig.fhir.de/igs/medication/) ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1264
