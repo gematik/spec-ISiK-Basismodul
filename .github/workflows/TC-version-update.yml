@@ -12,10 +12,11 @@ on:
 
 env:
     # Comma-separated list of IG name keywords excluded from the automatic version update.
+    # Only applies to Stufe-5 branches (TC-5*/TC_5*); Stufe-6 branches (TC-6*/TC_6*) get an empty list.
     # Matched case-insensitively as a substring against the IG folder name under guides/
     # (e.g. "formular" matches guides/Formulare-5, "subscription" matches guides/Subscriptions-5).
     # Maintain this list here to add/remove excluded IGs.
-    EXCLUDED_IGS: 'formular,subscription'
+    EXCLUDED_IGS: ${{ (startsWith(github.ref_name, 'TC-5') || startsWith(github.ref_name, 'TC_5')) && 'formular,subscription' || '' }}
 
 # setup python and run script 
 jobs:

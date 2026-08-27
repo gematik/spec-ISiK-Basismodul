@@ -35,6 +35,15 @@ def modify_TC_branch_name_to_version(git_branch):
         version = git_branch.lstrip('TC_')
     return version
 
+
+def get_stufe_from_branch(git_branch: str):
+    match = re.match(r'^TC[-_](\d+)', git_branch)
+    return match.group(1) if match else None
+
+
+def is_branch_for_stufe(git_branch: str, stufe: str) -> bool:
+    return git_branch.startswith(f'TC-{stufe}') or git_branch.startswith(f'TC_{stufe}')
+
 def create_files_to_update_list(config):
     files_to_update = []
     for filename, replacements in config.items():
@@ -145,14 +154,23 @@ def get_guide_name_from_path(location: str):
     return None
 
 
-def load_excluded_igs(cli_value: str, exclude_config_path: str) -> list:
+def load_excluded_igs(cli_value: str, exclude_config_path: str, stufe: str = None) -> list:
     if cli_value:
         return [ig.strip() for ig in cli_value.split(',') if ig.strip()]
-    if os.path.exists(exclude_config_path):
-        with open(exclude_config_path, 'r', encoding='utf-8') as exclude_config_file:
-            exclude_config = yaml.safe_load(exclude_config_file) or {}
-        return [ig.strip() for ig in exclude_config.get('excluded_igs', []) if ig and ig.strip()]
-    return []
+
+    git_branch = get_new_release_version_from_branch_name()
+    effective_stufe = stufe or get_stufe_from_branch(git_branch)
+    # the local default exclusion list only applies when the current branch matches the given stufe (TC-<stufe>*/TC_<stufe>*)
+    if not effective_stufe or not is_branch_for_stufe(git_branch, effective_stufe):
+        return []
+
+    if not os.path.exists(exclude_config_path):
+        return []
+
+    with open(exclude_config_path, 'r', encoding='utf-8') as exclude_config_file:
+        exclude_config = yaml.safe_load(exclude_config_file) or {}
+    excludes_by_stufe = {str(key): value for key, value in (exclude_config.get('excluded_igs') or {}).items()}
+    return [ig.strip() for ig in excludes_by_stufe.get(str(effective_stufe), []) if ig and ig.strip()]
 
 
 def filter_excluded_igs(files: list, excluded_igs: list) -> list:
@@ -206,7 +224,9 @@ def main():
     parser.add_argument('-x', '--exclude-igs', type=str, default=None,
                          help='comma-separated list of IG name keywords to exclude from the version update, e.g. "formular,subscription"')
     parser.add_argument('--exclude-config', type=str, default='excluded_igs.yaml',
-                         help='path (relative to this script) to a local yaml config providing an "excluded_igs" list, used when --exclude-igs is not given')
+                         help='path (relative to this script) to a local yaml config providing per-stufe "excluded_igs" lists, used when --exclude-igs is not given')
+    parser.add_argument('-s', '--stufe', type=str, default=None,
+                         help='stufe (e.g. "5") whose excluded_igs entry from --exclude-config should apply; defaults to the stufe parsed from the current branch name (TC-<stufe>*/TC_<stufe>*)')
     args = parser.parse_args()
 
     if args.version:
@@ -229,7 +249,7 @@ def main():
     located_files = locate_files_in_current_project(files_to_update)
 
     exclude_config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), args.exclude_config)
-    excluded_igs = load_excluded_igs(args.exclude_igs, exclude_config_path)
+    excluded_igs = load_excluded_igs(args.exclude_igs, exclude_config_path, args.stufe)
     located_files = filter_excluded_igs(located_files, excluded_igs)
 
     replace_content_in_files(located_files, new_release_version, custom_date)

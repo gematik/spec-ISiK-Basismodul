@@ -1,8 +1,10 @@
 # Local default exclusion list used by release_publish.py when --exclude-igs is not passed on the command line.
+# Keyed by stufe (as parsed from the branch name TC-<stufe>*/TC_<stufe>*, or via --stufe).
 # Entries are matched case-insensitively as a substring against the IG folder name under guides/
 # (e.g. "formular" matches "guides/Formulare-5", "subscription" matches "guides/Subscriptions-5").
 # The GitHub Action workflow maintains its own list and passes it explicitly via --exclude-igs,
 # overriding this file when running in CI.
 excluded_igs:
-  - formular
-  - subscription
+  "5":
+    - formular
+    - subscription
