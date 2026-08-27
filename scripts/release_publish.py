@@ -134,6 +134,46 @@ def replace_date_in_file(file: FileTypeCombinationToUpdate, new_date: datetime):
     with open(file.location, 'w', encoding='utf-8') as output_file:  # Specify encoding
         output_file.write(input_text)
 
+def get_guide_name_from_path(location: str):
+    # Returns the IG folder name directly under "guides/", e.g. "Formulare-5", or None if not applicable
+    normalized = location.replace('\\', '/')
+    parts = [part for part in normalized.split('/') if part]
+    if 'guides' in parts:
+        index = parts.index('guides')
+        if index + 1 < len(parts):
+            return parts[index + 1]
+    return None
+
+
+def load_excluded_igs(cli_value: str, exclude_config_path: str) -> list:
+    if cli_value:
+        return [ig.strip() for ig in cli_value.split(',') if ig.strip()]
+    if os.path.exists(exclude_config_path):
+        with open(exclude_config_path, 'r', encoding='utf-8') as exclude_config_file:
+            exclude_config = yaml.safe_load(exclude_config_file) or {}
+        return [ig.strip() for ig in exclude_config.get('excluded_igs', []) if ig and ig.strip()]
+    return []
+
+
+def filter_excluded_igs(files: list, excluded_igs: list) -> list:
+    if not excluded_igs:
+        return files
+
+    filtered_files = []
+    skipped_guides = set()
+    for file in files:
+        guide_name = get_guide_name_from_path(file.location)
+        if guide_name and any(ig.lower() in guide_name.lower() for ig in excluded_igs):
+            skipped_guides.add(guide_name)
+            continue
+        filtered_files.append(file)
+
+    if skipped_guides:
+        print(f"Info: Skipped version update for excluded IGs: {', '.join(sorted(skipped_guides))}.")
+
+    return filtered_files
+
+
 def output_commit_messages_since_last_release():
     latest_release_tag = get_latest_release_tag()
     if latest_release_tag is None:
@@ -163,6 +203,10 @@ def main():
     parser.add_argument('-d', '--date', type=str, help='specify custom date for release')
     parser.add_argument('-c', '--config', type=str, default='config.yaml', help='specify config file')
     parser.add_argument('-o', '--output', action='store_true', help='output commit messages since last release')
+    parser.add_argument('-x', '--exclude-igs', type=str, default=None,
+                         help='comma-separated list of IG name keywords to exclude from the version update, e.g. "formular,subscription"')
+    parser.add_argument('--exclude-config', type=str, default='excluded_igs.yaml',
+                         help='path (relative to this script) to a local yaml config providing an "excluded_igs" list, used when --exclude-igs is not given')
     args = parser.parse_args()
 
     if args.version:
@@ -183,6 +227,11 @@ def main():
     config = load_config_file(config_file_path)
     files_to_update = create_files_to_update_list(config)
     located_files = locate_files_in_current_project(files_to_update)
+
+    exclude_config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), args.exclude_config)
+    excluded_igs = load_excluded_igs(args.exclude_igs, exclude_config_path)
+    located_files = filter_excluded_igs(located_files, excluded_igs)
+
     replace_content_in_files(located_files, new_release_version, custom_date)
 
     if args.output:

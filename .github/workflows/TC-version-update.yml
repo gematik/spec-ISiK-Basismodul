@@ -7,7 +7,15 @@ on:
       branches:
         - 'TC-6*'
         - 'TC_6*'
+        - 'TC-5*'
+        - 'TC_5*'
 
+env:
+    # Comma-separated list of IG name keywords excluded from the automatic version update.
+    # Matched case-insensitively as a substring against the IG folder name under guides/
+    # (e.g. "formular" matches guides/Formulare-5, "subscription" matches guides/Subscriptions-5).
+    # Maintain this list here to add/remove excluded IGs.
+    EXCLUDED_IGS: 'formular,subscription'
 
 # setup python and run script 
 jobs:
@@ -28,7 +36,7 @@ jobs:
               pip install pyyaml
     
           - name: execute py script # run main.py
-            run: python ./scripts/release_publish.py -b
+            run: python ./scripts/release_publish.py -b --exclude-igs "$EXCLUDED_IGS"
 
           - name: Add & Commit
             uses: EndBug/add-and-commit@v9
