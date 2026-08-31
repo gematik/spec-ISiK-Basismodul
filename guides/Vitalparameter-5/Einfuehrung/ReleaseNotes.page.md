@@ -14,7 +14,7 @@ Datum: 17.07.2026
 
 Datum: 30.04.2026
 
-* `fix` Fehlender LOINC-Slice in .component für ISIKBlutdurck hinzugefügt. Keine inhaltiche Änderung, Änderung betrifft nur die Validierung von Instanzen.
+* `fix` Fehlender LOINC-Slice in .component für ISIKBlutdurck hinzugefügt. Keine inhaltiche Änderung, Änderung betrifft nur die Validierung von Instanzen. https://github.com/gematik/spec-ISiK-Basismodul/pull/979
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` https://github.com/gematik/spec-ISiK-Basismodul/pull/1034
 * `fix` Entfernung des Patterns auf Observation.performer in den Profilen: `ISiKStillstatus`, `ISiKAlkoholAbusus` und `ISiKRaucherstatus` https://github.com/gematik/spec-ISiK-Basismodul/pull/1169
 * `documentation` Hinzufügen der Snomed-Versionen zu den Beispielen https://github.com/gematik/spec-ISiK-Basismodul/pull/1169
