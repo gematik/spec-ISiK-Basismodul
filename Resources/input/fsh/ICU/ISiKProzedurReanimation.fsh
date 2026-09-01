@@ -7,7 +7,7 @@ Description: """Dieses Profil dient der Abbildung von Reanimationsmaßnahmen - i
 * insert Meta
 * insert CommonElements
 
-* category.coding[SNOMED-CT] = $sct#439569004 "Resuscitation (procedure)"
+* category.coding[SNOMED-CT] = $sct#439569004 "Resuscitation"
 //* code.coding[SNOMED-CT] only ISiKSnomedCTCoding
 * code.coding[SNOMED-CT] from ProzedurenReanimationCodesSCT (required)
 * code.coding[SNOMED-CT] ^patternCoding.system = $sct
