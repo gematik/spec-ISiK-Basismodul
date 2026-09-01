@@ -73,7 +73,6 @@ jobs:
             -show-message-ids
             -language de
             -jurisdiction de
-            -display-issues-are-warnings
             -advisor-file validator/advisor.json
             -resolution-context file:Resources/fsh-generated/resources/
             -sct 11000274103/version/20251115
@@ -127,7 +126,22 @@ jobs:
             Medication-ParacetamolInfusion.json|Validation_VAL_Profile_NotSlice||Medication.form.coding[0]
             MedicationAdministration-ExampleISiKMedikationsVerabreichung3.json|Terminology_TX_NoValid_12||MedicationAdministration.dosage.route.coding[0]
             MedicationAdministration-ExampleISiKMedikationsVerabreichung4.json|Terminology_TX_NoValid_12||MedicationAdministration.dosage.route.coding[0]
-
+            # Following errors are known and (partially) solved in ISiK Stufe 6, but filtered out due to obsolete IGs (non-normative)
+            Patient-IsikPatientTemplate.json|FHIR_RESOURCE_ID_CANT_BE_EXTENDED||Patient.id
+            Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|FHIR_RESOURCE_ID_CANT_BE_EXTENDED||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.id
+            Subscription-PatientMergeSubscriptionExample.json|Extension_EXT_Unknown_NotHere||Subscription.channel.payload.extension[0]
+            Subscription-PatientMergeSubscriptionExample.json|Type_Specific_Checks_DT_URL_Resolve||Subscription.channel.payload.extension[0].url
+            Subscription-PatientMergeSubscriptionExample.json|Validation_VAL_Profile_NoSnapshot||Subscription
+            # Falso positive error due to the closed slicing validation method
+            Bundle-BundleExampleIntensivstation.json|Validation_VAL_Profile_NotSlice||Bundle.entry[3]
+            Bundle-BundleExampleIntensivstation.json|Validation_VAL_Profile_NotSlice||Bundle.entry[4]
+            Bundle-BundleExampleIntensivstation.json|Validation_VAL_Profile_NotSlice||Bundle.entry[5]
+            # Folgende Errors beruhen auf Validator-Konflikten, die aus den Beispielinstanzen, sondern aus der Validator-Konfiguration hervorgehen - die Displays erscheinen korrekt
+            # EKG LOINC display: no German display name available, conflicting de-AT vs default
+            Observation-ISiKEKGExample.json||*EKG-Bericht*|Observation.code.coding[0].display
+            Observation-ISiKEKGMinExample.json|Display_Name_for__should_be_one_of__instead_of|*EKG-Bericht*|Observation.code.coding[0].display
+            # GCS: no German display available for LA6556-0
+            Observation-ISiKGCSMaxExample.json|NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_ERR|*Eye opening spontaneously*|Observation.component[2].value.ofType(CodeableConcept).coding[0].display
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.1
         with:

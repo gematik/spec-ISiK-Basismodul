@@ -3,7 +3,7 @@ Id: vs-mii-icu-code-monitoring-und-vitaldaten-loinc
 Title: "VS MII ICU Code Monitoring und Vitaldaten [LOINC]"
 Description: "Dieses ValueSet enthält Codes für Vitaldaten sowie Daten aus dem Patientenmonitoring."
 * insert Meta
-* $loinc#8867-4 "Heart Rate"
+* $loinc#8867-4 "Herzfrequenz"
 * $loinc#8480-6 "Systolic blood Pressure"
 * $loinc#8478-0 "Mean blood Pressure"
 * $loinc#8462-4 "Diastolic blood pressure"
