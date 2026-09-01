@@ -58,6 +58,8 @@ Alias: $kvnr30 = http://fhir.de/sid/gkv/kvnr-30
 Alias: $patient-merge-topic = https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge
 Alias: $vsAllergyIntoleranceClinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
 Alias: $vsAllergyIntoleranceVerificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
+Alias: $KBV_VS_Base_Allergien-ausloesende-Substanz = https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Substance_SNOMED_CT
+Alias: $KBV_VS_Base_Allergien-Manifestation = https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT
 
 Alias: $imposeProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile
 Alias: $GEM_PR_KIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-kim
