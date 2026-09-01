@@ -242,9 +242,10 @@ Ab dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Eleme
   * facilityType from http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode (required)
     * ^short = "Art der Einrichtung, aus der das Dokument stammt"
     * ^comment = "Kann, sofern keine abweichende Information bekannt ist auf &quot;KHS&quot; gesetzt werden."
-  * practiceSetting 1.. MS
-  * practiceSetting from http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode (required)
-    * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
+  * practiceSetting MS
+    * ^comment = "Must Support Begründung: Der organisatorische Kontext, aus dem das Dokument entstanden ist, stellt eine wesentliche Information zur Einordnung des Dokuments dar. Dennoch kann insbesondere in Fällen, in denen Dokumente von außerklinischen Personen (z. B. Patienten und Angehörigen) übergeben werden, eine solche Angabe nicht zwingend gefordert werden (daher keine Kardinalität 1..)."
+  * practiceSetting from http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode (extensible)
+    * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt. Ein extensible Binding ermöglicht Flexibilität bei der Kodierung, da es sich bei der Implementierung nicht als praktikabel erwiesen hat, ausschließlich Codes aus dem gewählten ValueSet zuzulassen."
 
 
 
