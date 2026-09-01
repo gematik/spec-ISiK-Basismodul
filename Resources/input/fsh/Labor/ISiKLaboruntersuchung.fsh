@@ -218,6 +218,6 @@ Description: "Maximalbeispiel zur Demonstration optionaler Elemente: Laborbereic
 * category[laborbereich] = $loinc#18727-8 "Serologie"
 * code.coding[loinc] = $loinc#13317-3	"Methicillin-resistenter Staphylococcus aureus [Nachweis] in Probenmaterial mittels erregerspezifischer Kultur"
 * valueCodeableConcept = $sct#10828004 "Positiv"
-* method = $sct#83581000052107 "Matrix-assisted laser desorption/ionization time-of-flight mass spectrometry technique"
+* method = $sct#83581000052107 "MALDI-TOF-Massenspektrometrie"
 * note.text = "MRSA-Nachweis positiv. Isolat zur weiteren Typisierung eingesandt."
 * insert EffectiveAndPerformer
