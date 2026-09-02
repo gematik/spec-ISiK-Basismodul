@@ -48,7 +48,7 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
-* category contains observation-category 1..1 MS and laborbereich 0..1 MS
+* category contains observation-category 1..1 MS and laborbereich 0..1
 * category[observation-category] = $cs-observation-category#laboratory
   * ^short = "Festlegung der Kategorie 'laboratory'"
   * ^comment = "**Begründung MS**: Pflicht-Slice zur Kennzeichnung als Laboruntersuchung."
@@ -125,7 +125,7 @@ Die EHDS Kombatiblität erfordert die Angabe von effective. Das Element effectiv
   * system = $cs-ucum
   * code 1.. MS
     * ^short = "UCUM-Code der Einheit"
-* valueCodeableConcept MS    
+* valueCodeableConcept   
 * valueCodeableConcept from $vs-results-coded-values-laboratory (preferred) 
   * ^short = "Kodierter Ergebniswert"
   * ^comment = "Slice für kodierte Ergebnisse (z.B. positiv/negativ). Das Binding auf das IPS-ValueSet dient der Sicherstellung der Kompatibilität mit IPS und EHDS, die beide dieses ValueSet verwenden."    
