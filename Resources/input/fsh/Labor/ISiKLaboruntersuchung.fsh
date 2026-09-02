@@ -61,6 +61,8 @@ Das Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Labo
 * zeitlich abhängige Entscheidungsunterstützung,
 * eine valide Anzeige im zeitlichen Kontext des Patientenaufenthalts."
 * effectiveDateTime MS
+  * ^short = "Zeitpunkt der Untersuchung"
+  * ^comment = "**Begründung MS**: Analog zur Begründung für effective[x] ist der Zeitpunkt der Untersuchung für die klinische Relevanz, Verlaufsauswertungen und Entscheidungsunterstützung entscheidend."
 * issued MS
   * ^short = "Zeitpunkt der Verfügbarkeit des Untersuchungsergebnisses"
   * ^comment = "**Begründung MS**: Relevant zur Nachvollziehbarkeit und Validierung von Befunden, z.B. wann eine Entscheidung darauf basierte."

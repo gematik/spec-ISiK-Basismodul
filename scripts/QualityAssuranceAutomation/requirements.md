@@ -23,7 +23,7 @@ Das QA-Tool automatisiert Qualitätssicherungsprüfungen für FHIR-Profile (Stru
 ### 4. Suppression-Funktionalität
 - **F4.1**: Profile können über eine Konfigurationsdatei von der Prüfung ausgeschlossen werden
 - **F4.2**: Die Suppression-Konfigurationsdatei muss `suppression.config.json` heißen und im gleichen Verzeichnis wie das Script liegen
-- **F4.3**: Einzelne Elemente von Ressourcen können gezielt unterdrückt werden --> Entfernen
+- **F4.3**: Einzelne Elemente von Ressourcen können gezielt unterdrückt werden 
 - **F4.4**: Unterdrückte Profile und Elemente müssen explizit in der Log-Datei ausgegeben werden
 - **F4.5**: Suppression-Einträge können optionale Kommentare enthalten
 
