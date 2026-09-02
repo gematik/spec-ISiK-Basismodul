@@ -8,7 +8,7 @@ Description: "Dieses Profil dient als Abstraktionsprofil für verschiedene spezi
 * obeys vs-de-2
 * identifier MS
 * basedOn
-  * ^comment = "Hinweis: maximal Kardinalität bei Übernahme aus MII-Kerndatensatz-ICU entfernt.
+  * ^comment = "Hinweis: maximale Kardinalität bei Übernahme aus MII-Kerndatensatz-ICU entfernt.
   
   Auch ein MS erscheint an dieser Stelle nicht sinnvoll, da eine Befüllung zunächst weiterer Profil-Definitionen bedürfte."
 * partOf only Reference(Procedure)
@@ -63,14 +63,14 @@ Description: "Dieses Profil dient als Abstraktionsprofil für verschiedene spezi
   * obeys mii-icu-1
 * interpretation MS
 * bodySite MS
-  * ^comment = "Hinweis für Implementierende: in wenigen abgeleiteten Profilen ist dieses Element nicht sinnvollbar befüllbar. Für diese Einzelfälle werden keine Testvorgaben gemacht."
+  * ^comment = "Hinweis für Implementierende: in wenigen abgeleiteten Profilen ist dieses Element nicht sinnvoll befüllbar. Für diese Einzelfälle werden keine Testvorgaben gemacht."
 * bodySite from VS_MII_ICU_BodySite_Observation_Monitoring_und_Vitaldaten (extensible)
 * device MS
-  * ^comment = "**Bedingtes MS:** Geräteangaben sind relevante Informationen. die persistiert und exponiert werden SOLLEN, sofern sie verfügbar sind. Das Must-Support gilt ausschließlich für Systeme, die
+  * ^comment = "**Bedingtes MS:** Geräteangaben sind relevante Informationen, die persistiert und exponiert werden SOLLEN, sofern sie verfügbar sind. Das Must-Support gilt ausschließlich für Systeme, die
   Geräteangaben persistieren."
 * referenceRange MS
 * component 
-  * ^comment = "Das Must Support wurde an dieser Stelle entfernt, da es im Wesentlichen für die sonstigen pulsatilen Drücke relevant ist."
+  * ^comment = "Das Must-Support wurde an dieser Stelle entfernt, da es im Wesentlichen für die sonstigen pulsatilen Drücke relevant ist."
   * code MS
   * value[x] only Quantity
   * valueQuantity MS
