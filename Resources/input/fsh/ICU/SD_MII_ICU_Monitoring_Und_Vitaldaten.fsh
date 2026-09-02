@@ -63,7 +63,7 @@ Description: "Dieses Profil dient als Abstraktionsprofil für verschiedene spezi
   * obeys mii-icu-1
 * interpretation MS
 * bodySite MS
-  * ^comment = "Hinweis für Implementierende: in wenigen abgeleiteten Profilen ist dieses Element nicht sinnvoll befüllbar. Für diese Einzelfälle werden keine Testvorgaben gemacht."
+  * ^comment = "Hinweis für Implementierende: In wenigen abgeleiteten Profilen ist dieses Element nicht sinnvoll befüllbar. Für diese Einzelfälle werden keine Testvorgaben gemacht."
 * bodySite from VS_MII_ICU_BodySite_Observation_Monitoring_und_Vitaldaten (extensible)
 * device MS
   * ^comment = "**Bedingtes MS:** Geräteangaben sind relevante Informationen, die persistiert und exponiert werden SOLLEN, sofern sie verfügbar sind. Das Must-Support gilt ausschließlich für Systeme, die
