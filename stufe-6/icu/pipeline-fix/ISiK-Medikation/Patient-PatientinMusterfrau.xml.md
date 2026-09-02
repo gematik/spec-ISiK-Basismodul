@@ -1,0 +1,14 @@
+# PatientinMusterfrau - XML Representation - ISiK Medikation Implementierungsleitfaden v6.0.0-rc
+
+ISiK Medikation Implementierungsleitfaden
+
+Version 6.0.0-rc - release-candidate 
+
+* [**Table of Contents**](toc.md)
+* [**Artefakte**](artifacts.md)
+* **PatientinMusterfrau**
+
+## : PatientinMusterfrau - XML Representation
+
+[Raw xml](Patient-PatientinMusterfrau.xml) | [Download](Patient-PatientinMusterfrau.xml)
+

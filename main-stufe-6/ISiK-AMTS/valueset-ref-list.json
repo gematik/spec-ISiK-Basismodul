@@ -1,0 +1,718 @@
+{
+  "codeSystems" : [{
+    "url" : "http://fhir.de/ValueSet/DiagnoseTyp",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "DiagnoseTyp",
+    "title" : "DiagnoseTyp ValueSet",
+    "description" : "Dieses ValueSet enthält übergeordnete Typen diagnostischer Angaben, etwa Einweisungs- oder behandlungsrelevante Diagnosen. Es dient der fachlichen Einordnung, in welchem Versorgungskontext eine Diagnose erhoben oder verwendet wird.",
+    "systems" : ["http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/Diagnosesubtyp",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "Diagnosesubtyp",
+    "title" : "Diagnosesubtyp ValueSet",
+    "description" : "Dieses ValueSet bündelt spezielle Untertypen von Diagnosen mit definierter fachlicher Rolle, etwa Operationsdiagnosen, Todesursachen oder Aufnahmediagnosen. Es dient der semantischen Verfeinerung diagnostischer Angaben innerhalb eines Versorgungskontexts.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/diagnosis-role",
+    "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/EncounterClassDE",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "EncounterClassDE",
+    "title" : "EncounterClassDE",
+    "description" : "Dieses ValueSet beschränkt `Encounter.class` auf im deutschen Versorgungskontext gebräuchliche Fallarten. Es dient der interoperablen Kennzeichnung des organisatorischen Rahmens eines Kontakts.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
+    "uses" : {
+    },
+    "ValueSet-ISiKEncounterClassDE.html" : "ISiKEncounterClassDE"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/EncounterStatusDe",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "EncounterStatusDe",
+    "title" : "Encounter Status ValueSet",
+    "description" : "Dieses ValueSet beschränkt die verwendbaren Encounter-Status auf die im Profilkontext vorgesehenen Codes. Es dient einer stabilen Nutzung des Statusmodells im Übergang zwischen FHIR-Versionen.",
+    "systems" : ["http://hl7.org/fhir/encounter-status"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/dgkev/Aufnahmeanlass",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "AufnahmeanlassVS",
+    "title" : "Aufnahmeanlass ValueSet",
+    "description" : "Dieses ValueSet enthält die zulässigen Codes für den Aufnahmeanlass nach § 301 Abs. 3 SGB V. Es dient der einheitlichen Codierung des administrativen Anlasses einer Krankenhausaufnahme.",
+    "systems" : ["http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "FachabteilungsschluesselVS",
+    "title" : "Fachabteilungsschlüssel ValueSet",
+    "description" : "Dieses ValueSet enthält die Fachabteilungsschlüssel gemäß Anhang 1 BPflV in der am 31.12.2003 geltenden Fassung. Es dient der Bindung von Angaben zur fachlichen Zuordnung von Krankenhausabteilungen.",
+    "systems" : ["http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "ValueSetFachabteilungsschluesselErweitert",
+    "title" : "FachabteilungsschluesselErweitert ValueSet",
+    "description" : "Dieses ValueSet enthält die erweiterten Fachabteilungsschlüssel gemäß Anhang 1 BPflV einschließlich Spezialisierungen. Es dient der feineren Bindung fachlicher Zuordnungen von Krankenhausabteilungen.",
+    "systems" : ["http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung",
+    "StructureDefinition-ISiKRolleImKrankenhaus.html" : "ISiKRolleImKrankenhaus"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/kontaktebene-de",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "KontaktebeneDe",
+    "title" : "KontaktebeneDe ValueSet",
+    "description" : "Dieses ValueSet enthält die zulässigen Kontaktebenen zur Modellierung von Versorgungskontakten. Es dient der Abgrenzung, ob ein Kontakt auf Einrichtungs-, Abteilungs- oder Versorgungsstellenebene beschrieben wird.",
+    "systems" : ["http://fhir.de/CodeSystem/Kontaktebene"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/location-physical-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "LocationType",
+    "title" : "Location type",
+    "description" : "This example value set defines a set of codes that can be used to indicate the physical form of the Location.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/location-physical-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.328"],
+    "sources" : ["2.16.840.1.113883.4.642.3.328"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medication-as-needed-reason",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTMedicationAsNeededReasonCodes",
+    "title" : "SNOMED CT Medication As Needed Reason Codes",
+    "description" : "This value set includes all clinical findings from SNOMED CT - provided as an exemplar value set.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.96"],
+    "sources" : ["2.16.840.1.113883.4.642.3.96"],
+    "uses" : {
+    },
+    "StructureDefinition-extension-Dosage.asNeededFor.html" : "Dosage AsNeededFor"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/risk-probability",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RiskProbability",
+    "title" : "Risk Probability",
+    "description" : "Codes representing the likelihood of a particular outcome in a risk assessment.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/risk-probability"],
+    "oids" : ["2.16.840.1.113883.4.642.3.450"],
+    "sources" : ["2.16.840.1.113883.4.642.3.450"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKAMTSBewertung.html" : "ISiK AMTS-Bewertung"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/ips/ValueSet/medicine-doseform",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "MedicineDoseFormUvIps",
+    "title" : "Medicine EDQM Doseform - IPS",
+    "description" : "While SNOMED remains a preferred binding for medicine doseform, EDQM (European Directorate for the Quality of Medicines and Healthcare) doseform codes are allowed as additional binding. \n\nThis Value Set includes all the EDQM Standard Terms having:  \n[Concept Status] = ‘C’ AND  \n[Concept Class] IN (‘PDF’, ‘CMT’, ‘CDF’, ‘PFT') AND  \n[Domain] = 'H+V'  \n\nC = 'Current'; PDF = 'Pharmaceutical dose form'; CMT = 'Combined terms'; CDF = 'Combined pharmaceutical dose form'; PFT = 'Patient Friendly'; H+V = 'Human and Veterinary'",
+    "systems" : ["http://standardterms.edqm.eu"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKMedikament.html" : "ISiKMedikament"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/ips/ValueSet/medicine-route-of-administration",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "MedicineRouteOfAdministrationUvIps",
+    "title" : "Medicine EDQM Route of Administration - IPS",
+    "description" : "While SNOMED remains a preferred binding for medicine route, EDQM (European Directorate for the Quality of Medicines and Healthcare) route of administration codes are allowed as additional binding. \n\nEDQM (European Directorate for the Quality of Medicines and Healthcare) Route of Administration codes.  This Value Set includes all the EDQM Standard Terms having:  \n[Concept Status] = ‘C’ AND  \n[Concept Class] = 'ROA' AND  \n[Domain] = 'H+V'  \n\nC = 'Current'; ROA = 'Route of administration'; H+V = 'Human and Veterinary'",
+    "systems" : ["http://standardterms.edqm.eu"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKMedikationsVerordnung.html" : "ISiKMedikationsVerordnung",
+    "StructureDefinition-ISiKMedikationsVerabreichung.html" : "ISiKMedikationsVerabreichung",
+    "StructureDefinition-ISiKMedikationsInformation.html" : "ISiKMedikationsInformation"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/ips/ValueSet/results-coded-values-laboratory-uv-ips",
+    "version" : "1.1.0",
+    "status" : "active",
+    "name" : "ResultsCodedValuesLaboratoryUvIps",
+    "title" : "Results Coded Values Laboratory - IPS",
+    "description" : "This value set is defined as the union of: (a) Blood group [Type]; (b) Presence/Absence Indicators (2.16.840.1.113883.11.22.52) (c) Microorganisms (2.16.840.1.113883.11.22.49)",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchung.html" : "ISiKLaboruntersuchung"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/ips/ValueSet/results-laboratory-pathology-observations-uv-ips",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "ResultsLaboratoryPathologyObservationUvIps",
+    "title" : "Results Laboratory/Pathology Observation - IPS",
+    "description" : "Value Set Definition: LOINC {STATUS in {ACTIVE}, CLASSTYPE in {Laboratory class (1)}, CLASS exclude {LP62148-9 (NR STATS), LP175679-2 (H&P.HX.LAB), LP7785-1 (CHALSKIN), LP94892-4 (LABORDERS)}}",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchung.html" : "ISiKLaboruntersuchung"
+  },
+  {
+    "url" : "http://ig.fhir.de/igs/medication/ValueSet/DosageDoseQuantityDE",
+    "version" : "1.0.7",
+    "status" : "active",
+    "name" : "DosageDoseQuantityDEVS",
+    "title" : "Dosage DoseQuantity ValueSet",
+    "description" : "Diese ValueSet enthält Konzepte für die Dosierungseinheit in der Dosiermenge.",
+    "systems" : ["https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT",
+    "http://standardterms.edqm.eu",
+    "http://unitsofmeasure.org"],
+    "uses" : {
+    },
+    "StructureDefinition-MedicationQuantityDoseForm.html" : "Medication Quantity Dose Form"
+  },
+  {
+    "url" : "http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode",
+    "version" : "2019-05-17T13:46:31",
+    "status" : "active",
+    "name" : "IHEXDSpracticeSettingCode",
+    "title" : "IHE XDS practiceSettingCode",
+    "description" : "**practiceSettingCode (XDSDocumentEntry)**\r\nThe code for an XDS Document that specifies the clinical specialty where the act that resulted in the document was performed (e.g., Family Practice, Laboratory, Radiology).",
+    "systems" : ["http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen",
+    "http://ihe-d.de/CodeSystems/NichtaerztlicheFachrichtungen"],
+    "oids" : ["1.2.276.0.76.11.37"],
+    "sources" : ["1.2.276.0.76.11.37"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKRolleImKrankenhaus.html" : "ISiKRolleImKrankenhaus"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/conformance-expectation",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "ConformanceExpectation",
+    "title" : "ConformanceExpectation",
+    "description" : "Indicates the degree of adherence to a specified behavior or capability expected for a system to be deemed conformant with a specification.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/conformance-expectation"],
+    "oids" : ["2.16.840.1.113883.4.642.3.919"],
+    "sources" : ["2.16.840.1.113883.4.642.3.919"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKCapabilityStatementImportsExpectation.html" : "ISiK CapabilityStatement Imports Expectation"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/yes-no-unknown-not-asked",
+    "version" : "1.0.0",
+    "status" : "active",
+    "name" : "YesNoUnknownNotAsked",
+    "title" : "Yes No Unknown NotAsked",
+    "description" : "This value set contains 4 concepts commonly used as answers to items in a questionnaire.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKAlkoholAbusus.html" : "ISiK Alkohol Abusus"
+  },
+  {
+    "url" : "https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT",
+    "version" : "1.0.0",
+    "status" : "active",
+    "name" : "KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT",
+    "title" : "Allergien Überempfindlichkeitsreaktionen Manifestation",
+    "description" : "Dieses Valueset enthält Konzepte über die mögliche Manifestation von allergischen und anderen Überempfindlichkeitsreaktionen. Es erhebt keinen Anspruch auf Vollständigkeit, sondern wird bedarfsgesteuert weiterentwickelt werden.",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKAllergieUnvertraeglichkeit.html" : "ISiKAllergieUnvertraeglichkeit"
+  },
+  {
+    "url" : "https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Substance_SNOMED_CT",
+    "version" : "1.0.0",
+    "status" : "active",
+    "name" : "KBV_VS_AllergyIntolerance_Substance_SNOMED_CT",
+    "title" : "Allergien Überempfindlichkeitsreaktionen Auslösende Substanz",
+    "description" : "Dieses Valueset enthält Konzepte über auslösende Substanzen von allergischen und anderen Überempfindlichkeitsreaktionen. Es erhebt keinen Anspruch auf Vollständigkeit, sondern wird bedarfsgesteuert weiterentwickelt werden.",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKAllergieUnvertraeglichkeit.html" : "ISiKAllergieUnvertraeglichkeit"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "DiagnosesSCT",
+    "title" : null,
+    "description" : "Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKDiagnose.html" : "ISiKDiagnose"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKBehandlungsergebnisReha",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKBehandlungsergebnisRehaVS",
+    "title" : null,
+    "description" : "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis.",
+    "systems" : ["https://gematik.de/fhir/isik/CodeSystem/ISiKBehandlungsergebnisRehaCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKRehaEntlassung.html" : "ExtensionISiKRehaEntlassung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKBesondereBehandlungsformReha",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKBesondereBehandlungsformRehaVS",
+    "title" : null,
+    "description" : "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. Vgl. Schlüsseltabelle 2.51 Besondere Behandlungsformen.",
+    "systems" : ["https://gematik.de/fhir/isik/CodeSystem/ISiKBesondereBehandlungsformRehaCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKRehaEntlassung.html" : "ExtensionISiKRehaEntlassung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKEncounterClassDE",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKEncounterClassDE",
+    "title" : "ISiKEncounterClassDE",
+    "description" : "Erweitert das ValueSet EncounterClassDE der Deutschen Basisprofile um die Codes ACUTE, NONAC und OBSENC aus dem HL7 v3 ActCode System zur Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR). Ein Issue zur Aufnahme dieser Codes in EncounterClassDE wurde bei den Deutschen Basisprofilen eingereicht.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKEncounterTypeErweiterungVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKEncounterTypeErweiterungVS",
+    "title" : "ISiKEncounterTypeErweiterungVS",
+    "description" : "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+    "systems" : ["http://fhir.de/CodeSystem/kontaktart-de",
+    "https://gematik.de/fhir/isik/CodeSystem/ISiKEncounterTypeErweiterungCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKEntlassformReha",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKEntlassformRehaVS",
+    "title" : null,
+    "description" : "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform.",
+    "systems" : ["https://gematik.de/fhir/isik/CodeSystem/ISiKEntlassformRehaCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKRehaEntlassung.html" : "ExtensionISiKRehaEntlassung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKLaborMethodeVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKLaborMethodeVS",
+    "title" : "ISiK Labor Methode",
+    "description" : "SNOMED-CT-Codes für Untersuchungsmethoden im Labor (alle Konzepte unterhalb von #272394005 'Technique (qualifier value)').",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchung.html" : "ISiKLaboruntersuchung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKLaborbereichVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKLaborbereichVS",
+    "title" : "ISiK Laborbereich",
+    "description" : "LOINC-Codes zur Kategorisierung von Laboruntersuchungen nach Fachbereichen.",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchung.html" : "ISiKLaboruntersuchung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKMedikationsartVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKMedikationsartVS",
+    "title" : null,
+    "description" : "ISiK Therapiearten für Medikation",
+    "systems" : ["https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKMedikationsart.html" : "ISiK Medikationsart"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKUnterbrechungReha",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKUnterbrechungRehaVS",
+    "title" : null,
+    "description" : "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung.",
+    "systems" : ["https://gematik.de/fhir/isik/CodeSystem/ISiKUnterbrechungRehaCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKRehaEntlassung.html" : "ExtensionISiKRehaEntlassung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/MedikationsListeListModeVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "MedikationsListeListModeVS",
+    "title" : "Medikationslisten-Modes",
+    "description" : "Erlaubte ListModes der ISiK MedikationsListe",
+    "systems" : ["http://hl7.org/fhir/list-mode"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKMedikationsListe.html" : "ISiK Medikationsliste"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationCodesCRP",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationCodesCRP",
+    "title" : null,
+    "description" : "Enthält LOINC-Codes für die Observation CRP",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungCRP.html" : "ISiKLaboruntersuchungCRP"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationCodesGFR",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationCodesGFR",
+    "title" : null,
+    "description" : "Enthält LOINC-Codes für die Observation GFR",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungGFR.html" : "ISiKLaboruntersuchungGFR"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationCodesHb",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationCodesHb",
+    "title" : null,
+    "description" : "Enthält LOINC-Codes für die Observation Hb",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungHb.html" : "ISiKLaboruntersuchungHb"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationCodesPCT",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationCodesPCT",
+    "title" : null,
+    "description" : "Enthält LOINC-Codes für die Observation PCT",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungPCT.html" : "ISiKLaboruntersuchungPCT"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationCodesSerumkreatinin",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationCodesSerumkreatinin",
+    "title" : null,
+    "description" : "Enthält LOINC-Codes für die Observation Serumkreatinin",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungSerumkreatinin.html" : "ISiKLaboruntersuchungSerumkreatinin"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationCodesSerumnatrium",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationCodesSerumnatrium",
+    "title" : null,
+    "description" : "Enthält LOINC-Codes für die Observation Serumnatrium",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungSerumnatrium.html" : "ISiKLaboruntersuchungSerumnatrium"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationCodesTSH",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationCodesTSH",
+    "title" : null,
+    "description" : "Enthält LOINC-Codes für die Observation TSH",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungTSH.html" : "ISiKLaboruntersuchungTSH"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationCodesThrombozyten",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationCodesThrombozyten",
+    "title" : null,
+    "description" : "Enthält LOINC-Codes für die Observation Thrombozyten",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungThrombozyten.html" : "ISiKLaboruntersuchungThrombozyten"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationCodesTroponin",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationCodesTroponin",
+    "title" : null,
+    "description" : "Enthält LOINC-Codes für die Observation Troponin",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungTroponin.html" : "ISiKLaboruntersuchungTroponin"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationUnitsCRP",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationUnitsCRP",
+    "title" : null,
+    "description" : "Enthält UCUM-Einheiten für die Observation CRP",
+    "systems" : ["http://unitsofmeasure.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungCRP.html" : "ISiKLaboruntersuchungCRP"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationUnitsGFR",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationUnitsGFR",
+    "title" : null,
+    "description" : "Enthält UCUM-Einheiten für die Observation GFR",
+    "systems" : ["http://unitsofmeasure.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungGFR.html" : "ISiKLaboruntersuchungGFR"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationUnitsHb",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationUnitsHb",
+    "title" : null,
+    "description" : "Enthält UCUM-Einheiten für die Observation Hb",
+    "systems" : ["http://unitsofmeasure.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungHb.html" : "ISiKLaboruntersuchungHb"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationUnitsPCT",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationUnitsPCT",
+    "title" : null,
+    "description" : "Enthält UCUM-Einheiten für die Observation PCT",
+    "systems" : ["http://unitsofmeasure.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungPCT.html" : "ISiKLaboruntersuchungPCT"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationUnitsSerumkreatinin",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationUnitsSerumkreatinin",
+    "title" : null,
+    "description" : "Enthält UCUM-Einheiten für die Observation Serumkreatinin",
+    "systems" : ["http://unitsofmeasure.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungSerumkreatinin.html" : "ISiKLaboruntersuchungSerumkreatinin"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationUnitsSerumnatrium",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationUnitsSerumnatrium",
+    "title" : null,
+    "description" : "Enthält UCUM-Einheiten für die Observation Serumnatrium",
+    "systems" : ["http://unitsofmeasure.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungSerumnatrium.html" : "ISiKLaboruntersuchungSerumnatrium"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationUnitsTSH",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationUnitsTSH",
+    "title" : null,
+    "description" : "Enthält UCUM-Einheiten für die Observation TSH",
+    "systems" : ["http://unitsofmeasure.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungTSH.html" : "ISiKLaboruntersuchungTSH"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationUnitsThrombozyten",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationUnitsThrombozyten",
+    "title" : null,
+    "description" : "Enthält UCUM-Einheiten für die Observation Thrombozyten",
+    "systems" : ["http://unitsofmeasure.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungThrombozyten.html" : "ISiKLaboruntersuchungThrombozyten"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationUnitsTroponin",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationUnitsTroponin",
+    "title" : null,
+    "description" : "Enthält UCUM-Einheiten für die Observation Troponin",
+    "systems" : ["http://unitsofmeasure.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungTroponin.html" : "ISiKLaboruntersuchungTroponin"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ProzedurenCodesSCT",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ProzedurenCodesSCT",
+    "title" : null,
+    "description" : "Enthaelt alle SNOMED Procedure Codes",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKProzedur.html" : "ISiKProzedur"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ProzedurenKategorieSCT",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ProzedurenKategorieSCT",
+    "title" : null,
+    "description" : "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKProzedur.html" : "ISiKProzedur"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/SchwangerschaftEtMethodeVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "SchwangerschaftEtMethodeVS",
+    "title" : "Schwangerschaft Erwarteter Entbindungstermin Methode",
+    "description" : "Dieses Valueset enthält die Codes zur Beschreibung der Methode zur Bestimmung des erwarteten Entbindungstermins bei einer Schwangerschaft.",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.html" : "ISiK Schwangerschaft - Erwarteter Entbindungstermin"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/SchwangerschaftsstatusVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "SchwangerschaftsstatusVS",
+    "title" : "Schwangerschaftsstatus Valueset",
+    "description" : "Dieses Valueset enthält die Codes zur Beschreibung des Schwangerschaftsstatus einer Patientin.",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKSchwangerschaftsstatus.html" : "ISiK Schwangerschaftsstatus"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/SctRouteOfAdministration",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "SctRouteOfAdministration",
+    "title" : null,
+    "description" : "Enthaelt alle SNOMED CT Administrationsarten",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKMedikationsVerordnung.html" : "ISiKMedikationsVerordnung",
+    "StructureDefinition-ISiKMedikationsVerabreichung.html" : "ISiKMedikationsVerabreichung",
+    "StructureDefinition-ISiKMedikationsInformation.html" : "ISiKMedikationsInformation"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/StillstatusVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "StillstatusVS",
+    "title" : "Stillstatus LOINC Antwortoptionen",
+    "description" : "Dieses Valueset enthält die Codes zur Beschreibung von Stillstatus LOINC.",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKStillstatus.html" : "ISiKStillstatus"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/current-smoking-status-uv-ips",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "CurrentSmokingStatusUvIps",
+    "title" : "Current Smoking Status - IPS",
+    "description" : "HL7 LOINC value set for smoking status.  Based on the HL7 Vocab and Structured Doc WG (formerly TC) consensus - per US CDC submission 7/12/2012 for smoking status terms.",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKRaucherStatus.html" : "ISiK Raucherstatus"
+  },
+  {
+    "url" : "https://gematik.de/fhir/terminology/ValueSet/ti-medication-snomed-ct-vs",
+    "version" : "1.0.5-3",
+    "status" : "active",
+    "name" : "TIMedicationSNOMEDCTVS",
+    "title" : "TI Arzneimittel SNOMED CT ValueSet",
+    "description" : "Dieses Valueset enthält die Codes für die Abbilung von Arzneimitteln in SNOMED CT.",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKMedikament.html" : "ISiKMedikament"
+  }]
+}

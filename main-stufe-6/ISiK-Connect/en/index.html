@@ -1,0 +1,449 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Einführung - ISiK Connect Implementierungsleitfaden v6.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"1"}
+    h3,h4,h5,h6{--heading-prefix:"1"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li>
+    <a href="Akteure.html">Akteure</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebergreifendeFestlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation.html">Kompatibilitaet der Gematik Spezifikation</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Kontext Smart-on-FHIR
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Kontext.html">Kontext</a>
+      </li>
+      <li>
+        <a href="ISiKundSMART.html">Smart on FHIR - App Launch</a>
+      </li>
+      <li>
+        <a href="BackendServices.html">Smart on FHIR - Backend Services</a>
+      </li>
+      <li>
+        <a href="AutoProvisioning.html">Auto Provisioning</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen Connect
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Conformance.html">Connect Festlegungen</a>
+      </li>
+      <li>
+        <a href="ConformanceSmartCapabilities.html">Smart Capabilities</a>
+      </li>
+      <li>
+        <a href="ConformanceScopesKontexte.html">Scopes und Compartments</a>
+      </li>
+      <li>
+        <a href="ISiKAutorisierung.html">Autorisierung</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="Anforderungsuebersicht.html">Anforderungsübersicht</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Connect Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0 - active
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Einführung</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Einführung</h2>
+  
+
+
+
+
+
+
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://gematik.de/fhir/isik/ImplementationGuide/connect<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://gematik.de/fhir/isik/ImplementationGuide/connect"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">6.0.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://gematik.de/fhir/isik/ImplementationGuide/connect|6.0.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+
+            as of 
+2026-09-02
+
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">ConnectISiKImplementationGuide</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#motivation---connect-modul" id="markdown-toc-motivation---connect-modul">Motivation - Connect Modul</a></li>
+  <li><a href="#herausforderung-der-identitätsverknüpfung-im-krankenhausumfeld" id="markdown-toc-herausforderung-der-identitätsverknüpfung-im-krankenhausumfeld">Herausforderung der Identitätsverknüpfung im Krankenhausumfeld</a></li>
+  <li><a href="#zielsetzung-des-implementation-guide" id="markdown-toc-zielsetzung-des-implementation-guide">Zielsetzung des Implementation Guide</a></li>
+  <li><a href="#technische-und-konzeptionelle-grundlagen" id="markdown-toc-technische-und-konzeptionelle-grundlagen">Technische und konzeptionelle Grundlagen</a></li>
+  <li><a href="#technischer-rahmen" id="markdown-toc-technischer-rahmen">Technischer Rahmen</a></li>
+  <li><a href="#bedeutung-für-das-gesundheitswesen" id="markdown-toc-bedeutung-für-das-gesundheitswesen">Bedeutung für das Gesundheitswesen</a></li>
+  <li><a href="#disclaimer" id="markdown-toc-disclaimer">Disclaimer</a></li>
+  <li><a href="#interoperabler-datenaustausch-durch-informationssysteme-im-krankenhaus-isik" id="markdown-toc-interoperabler-datenaustausch-durch-informationssysteme-im-krankenhaus-isik">Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)</a></li>
+</ul>
+
+</div>
+
+<p>Realm: Deutschland</p>
+
+<h3 id="motivation---connect-modul">Motivation - Connect Modul</h3>
+
+<p>Die sichere und interoperable Identitäts- und Zugriffskontrolle stellt eine zentrale Herausforderung im Gesundheitswesen dar. Insbesondere im Krankenhausumfeld müssen Systeme und Benutzer zuverlässig authentifiziert und autorisiert werden, um den Zugriff auf medizinische Daten zu steuern.</p>
+
+<h3 id="herausforderung-der-identitätsverknüpfung-im-krankenhausumfeld">Herausforderung der Identitätsverknüpfung im Krankenhausumfeld</h3>
+
+<p>Die sichere und eindeutige Verknüpfung von Nutzern eines Patientenportals mit den tatsächlichen Patientenentitäten in einem patientenführenden System stellt eine zentrale Herausforderung im Gesundheitswesen dar. Derzeit existieren unterschiedliche Ansätze zur Authentifizierung und Autorisierung, jedoch fehlt eine einheitliche, standardisierte Methode zur sicheren Identitätszuordnung.</p>
+
+<p>In der Praxis führt dies zu erheblichen Problemen:</p>
+
+<ul>
+  <li>Patienten registrieren sich in einem Portal, doch ohne eine zuverlässige Verknüpfung mit ihrer Patientenakte im Krankenhausinformationssystem (KIS) oder anderen medizinischen Systemen bleibt unklar, ob sie tatsächlich berechtigt sind, auf die entsprechenden Daten zuzugreifen.</li>
+  <li>Unterschiedliche Identitätsanbieter (IdPs) verwenden verschiedene Mechanismen zur Authentifizierung, was eine nahtlose Integration in bestehende Systeme erschwert.</li>
+  <li>Fehlende Standardisierung in der Begriffsverwendung und den zugrunde liegenden Protokollen führt zu Interoperabilitätsproblemen zwischen Systemen verschiedener Hersteller.</li>
+</ul>
+
+<p>Um eine sichere, interoperable und datenschutzkonforme Lösung für den Zugriff auf medizinische Daten zu schaffen, ist ein standardisierter Ansatz für die Identitäts- und Zugriffskontrolle erforderlich.</p>
+
+<h3 id="zielsetzung-des-implementation-guide">Zielsetzung des Implementation Guide</h3>
+
+<p>Dieser Implementation Guide (IG) soll eine einheitliche Methode zur Autorisierung und Authentifizierung von Systemen und Benutzern im Krankenhausumfeld definieren. Der Fokus liegt insbesondere auf der sicheren Identitätsverknüpfung zwischen Nutzern eines Patientenportals und den entsprechenden Patientendaten in den Ressourcenservern.</p>
+
+<p>Im Zentrum stehen folgende Anwendungsfälle:</p>
+
+<h4 id="sichere-authentifizierung-des-patienten">Sichere Authentifizierung des Patienten</h4>
+
+<p>Eine zuverlässige Authentifizierung stellt sicher, dass Patienten im Patientenportal eindeutig als berechtigte Nutzer identifiziert werden. Dies bildet die Grundlage für die sichere Zuordnung der digitalen Identität zu einer konkreten Patientenakte und den datenschutzkonformen Zugriff auf persönliche Gesundheitsinformationen.</p>
+
+<h4 id="gesicherter-zugriff-auf-medizinische-daten">Gesicherter Zugriff auf medizinische Daten</h4>
+
+<p>Nach erfolgreicher Authentifizierung soll ein Patient über das Portal auf seine medizinischen Daten zugreifen können, beispielsweise auf Befunde, Arztbriefe oder Laborergebnisse aus Krankenhausinformationssystemen (KIS) oder anderen medizinischen Systemen. Eine fehlerhafte oder unzureichende Identitätszuordnung würde dabei ein erhebliches Sicherheits- und Datenschutzrisiko darstellen.</p>
+
+<h3 id="technische-und-konzeptionelle-grundlagen">Technische und konzeptionelle Grundlagen</h3>
+
+<p>Um eine sichere und interoperable Lösung zu ermöglichen, werden folgende Aspekte berücksichtigt:</p>
+
+<ul>
+  <li>Standardisierte Autorisierungsprotokolle: Nutzung etablierter Protokolle wie OAuth2 und OpenID Connect zur sicheren Autorisierung und Authentifizierung.</li>
+  <li>Integration von Identitätsanbietern (IdPs): Untersuchung der Nutzung externer Identity Provider (IdPs), z. B. des Gematik-IdP, zur Verbesserung der Authentifizierung und Integration in bestehende Systeme.</li>
+  <li>Eindeutige Identitätszuordnung: Konzepte zur sicheren Verknüpfung von Identitäten zwischen Patientenportalen und den entsprechenden Patientenakten im Krankenhausinformationssystem.</li>
+</ul>
+
+<h3 id="technischer-rahmen">Technischer Rahmen</h3>
+
+<p>Der IG baut auf bestehenden Standards auf, insbesondere:</p>
+
+<ul>
+  <li>SMART on FHIR: Nutzung der Konzepte aus dem SMART on FHIR IG, insbesondere für OAuth2-basierte Autorisierung und OpenID Connect zur Authentifizierung.</li>
+  <li>FHIR R4: Sicherstellung der Kompatibilität mit der FHIR R4-Spezifikation.</li>
+  <li>OAuth2 &amp; OpenID Connect: Verwendung bewährter Sicherheitsstandards für den Zugriff auf medizinische Systeme.</li>
+</ul>
+
+<p>Die normativen Festlegungen des Moduls ISiK Connect sind im Wesentlichen der Seite zu den <a href="Conformance.html">Festlegungen für Connect</a> zu entnehmen.</p>
+
+<h3 id="bedeutung-für-das-gesundheitswesen">Bedeutung für das Gesundheitswesen</h3>
+
+<p>Die sichere und standardisierte Autorisierung von Zugriffen auf medizinische Daten ist essenziell für die digitale Vernetzung im Krankenhausumfeld. Eine zentrale Rolle spielt dabei das ISiK-Modul Connect (ISiK-Connect), das in ISiK Stufe 6 Anforderungen an die Autorisierung für über ISiK-Ressourcen-Server bereitgestellte FHIR-Endpunkte definiert. Dadurch wird es Krankenhäusern ermöglicht, die Zugriffsrechte eines Benutzers gezielt an verschiedene Clients zu delegieren – sei es an klinische Subsysteme, Patientenportale, Terminverwaltungssysteme oder mobile Anwendungen zur Erfassung von Gesundheitsdaten.</p>
+
+<p>ISiK-Connect schafft eine einheitliche Grundlage für die Absicherung von FHIR-Schnittstellen und den darüber zugreifbaren Daten, sodass die Schutzziele Vertraulichkeit und Integrität in einer standardisierten Weise gewährleistet werden können. Dabei gibt das Modul selbst keine festen Berechtigungen vor, sondern fokussiert auf den interoperablen Austausch relevanter Autorisierungsinformationen. Dies ermöglicht es Krankenhäusern, bestehende Rollen- und Rechtekonzepte ISiK-konform weiterzuverwenden und nahtlos in ihre bestehenden IT-Strukturen zu integrieren.</p>
+
+<p>Dieser Implementation Guide baut auf diesen Prinzipien auf und erweitert sie gezielt um Mechanismen zur sicheren Identitätsverknüpfung. Durch eine klare Methodik zur Authentifizierung und Autorisierung wird sichergestellt, dass Nutzer eines Patientenportals zuverlässig mit den entsprechenden Patientenakten in den patientenführenden Systemen verknüpft werden können. Damit leistet dieser IG einen entscheidenden Beitrag zur sicheren und interoperablen Nutzung von FHIR-Schnittstellen und fördert die digitale Transformation im Gesundheitswesen nachhaltig.</p>
+
+<h3 id="disclaimer">Disclaimer</h3>
+<p><strong>Es ist zu beachten, dass durch das Erlangen einer Bestätigung für das vorliegende ISiK-Modul keine Aussagen über die Sicherheit der Implementierung im jeweiligen bestätigungsrelevanten System abgeleitet werden können. Die Bestätigung bezieht sich alleinig auf die Konformität zu der Spezifikation. Weitere Sicherheit-Audits werden ausdrücklich empfohlen.</strong></p>
+
+<h3 id="interoperabler-datenaustausch-durch-informationssysteme-im-krankenhaus-isik">Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)</h3>
+
+<p>Die gematik wurde vom Gesetzgeber beauftragt, im Benehmen mit der Deutschen Krankenhausgesellschaft (DKG) und den maßgeblichen Bundesverbänden der Industrie im Gesundheitswesen, verbindliche Standards für den Austausch von Gesundheitsdaten mit Informationssystemen im Krankenhaus zu erarbeiten. 
+Für diesen Zweck wurden <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/index.html">FHIR-Profile</a> und ein REST-basiertes Application Programming Interface (API) entwickelt. Die REST-API wird im Wesentlichen <a href="https://www.hl7.org/fhir/R4/http.html">vom FHIR Standard vorgegeben</a>.</p>
+
+<p>Weitere Informationen siehe <a href="https://www.gesetze-im-internet.de/sgb_5/__373.html">§ 373 SGB V</a>.</p>
+
+<p>Hinweis: Sowohl für die Implementierung der ISiK-Spezifikation als auch für den Betrieb eines Produktes, das die ISiK-Spezifikation implementiert, ist eine SNOMED-CT-Lizenz notwendig. Diese kann beim <a href="https://www.bfarm.de/DE/Kodiersysteme/Terminologien/SNOMED-CT/_node.html">National Release Center für SNOMED CT in Deutschland</a> beantragt werden.</p>
+
+<p><strong>Kontakt</strong></p>
+
+<p>Bringen Sie allgemeine Fragen und Anmerkungen gerne über unser Anfrageportal ein: <a href="https://service.gematik.de/servicedesk/customer/portal/16">Anfragen ISiK + ISiP</a></p>
+
+<p>Falls Sie keinen Zugang zum Anfrageportal haben und dieses nutzen wollen, senden Sie uns bitte eine Nachricht an die Adresse isik [ at ] gematik.de mit dem Betreff "Portalzugang".</p>
+
+<p><strong>Herausgeber</strong></p>
+
+<p>gematik GmbH</p>
+
+<p><a href="https://www.gematik.de/impressum/">Impressum</a></p>
+
+<p><strong>Gender-Hinweis</strong></p>
+
+<p>Zugunsten des Leseflusses wird in dieser Publikation meist die
+die in der Alltagssprache gebräuchliche Form verwendet. Wir bitten, dies nicht als Zeichen einer
+geschlechtsspezifischen Wertung zu deuten. Diese Variante deckt auch alle
+weiteren Geschlechter, neben männlich und weiblich, ab.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.gematik.de">gematik GmbH</a>.  
+          Package connect#6.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Sep 2, 2026 11:30+0000">2026-09-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

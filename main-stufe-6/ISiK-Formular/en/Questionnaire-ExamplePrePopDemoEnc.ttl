@@ -1,0 +1,258 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopDemoEnc> a fhir:Questionnaire ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExamplePrePopDemoEnc"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext" ] ;
+         fhir:Coding.code [ fhir:value "patient" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "type" ] ;
+       fhir:Extension.valueCode [ fhir:value "Patient" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "description" ] ;
+       fhir:Extension.valueString [ fhir:value "Patientenkontext" ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext" ] ;
+         fhir:Coding.code [ fhir:value "encounter" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "type" ] ;
+       fhir:Extension.valueCode [ fhir:value "Encounter" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "description" ] ;
+       fhir:Extension.valueString [ fhir:value "Fallkontext" ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext" ]
+  ] ;
+  fhir:Questionnaire.url [ fhir:value "https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopDemoEnc"] ;
+  fhir:Questionnaire.version [ fhir:value "6.0.0"] ;
+  fhir:Questionnaire.name [ fhir:value "ExamplePrePopDemoEnc"] ;
+  fhir:Questionnaire.title [ fhir:value "Vorbelegung Demografischer Daten Encounter"] ;
+  fhir:Questionnaire.status [ fhir:value "draft"] ;
+  fhir:Questionnaire.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:Questionnaire.subjectType [
+     fhir:value "Patient" ;
+     fhir:index -1
+  ] ;
+  fhir:Questionnaire.date [ fhir:value "2026-09-02T11:31:15+00:00"^^xsd:dateTime] ;
+  fhir:Questionnaire.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:Questionnaire.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:Questionnaire.description [ fhir:value "### Beispiel-Questionnaire mit automatischer Vorbelegung von demografischen Patientendaten \nDer Patientenkontext wird mittels der [SDC-LaunchContexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)-Extension hergestellt.  \nDie Vorbelegung erfolgt über die [SDC-InitialExpression](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html)-Extension"] ;
+  fhir:Questionnaire.item [
+     fhir:index -1 ;
+     fhir:Questionnaire.item.linkId [ fhir:value "1" ] ;
+     fhir:Questionnaire.item.text [ fhir:value "Demografische Patientendaten" ] ;
+     fhir:Questionnaire.item.type [ fhir:value "group" ] ;
+     fhir:Questionnaire.item.required [ fhir:value "true"^^xsd:boolean ] ;
+     fhir:Questionnaire.item.item [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression" ] ;
+         fhir:Extension.valueExpression [
+           fhir:Expression.description [ fhir:value "Selektion des ersten Vornamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name" ] ;
+           fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+           fhir:Expression.expression [ fhir:value "(%patient.name.where(use = 'official').given[0] | %patient.name[0].given[0]).first()" ]
+         ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "1.1" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Vorname:" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "string" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression" ] ;
+         fhir:Extension.valueExpression [
+           fhir:Expression.description [ fhir:value "Selektion des Nachnamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name" ] ;
+           fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+           fhir:Expression.expression [ fhir:value "(%patient.name.where(use = 'official').family | %patient.name[0].family).first()" ]
+         ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "1.2" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Nachname:" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "string" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression" ] ;
+         fhir:Extension.valueExpression [
+           fhir:Expression.description [ fhir:value "Versichertennnummer(KVID) des Patienten" ] ;
+           fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+           fhir:Expression.expression [ fhir:value "%patient.identifier.where(system='http://fhir.de/sid/gkv/kvid-10').value" ]
+         ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "1.4" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Versichertennummer:" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "string" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Questionnaire.item.linkId [ fhir:value "2" ] ;
+     fhir:Questionnaire.item.text [ fhir:value "Fallinformationen" ] ;
+     fhir:Questionnaire.item.type [ fhir:value "group" ] ;
+     fhir:Questionnaire.item.item [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression" ] ;
+         fhir:Extension.valueExpression [
+           fhir:Expression.description [ fhir:value "Selektion der Fallnummer" ] ;
+           fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+           fhir:Expression.expression [ fhir:value "%encounter.account.identifier.first().value" ]
+         ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "2.1" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Fallnummer:" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "string" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression" ] ;
+         fhir:Extension.valueExpression [
+           fhir:Expression.description [ fhir:value "Selektion der Fallart" ] ;
+           fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+           fhir:Expression.expression [ fhir:value "(%encounter.type.coding.where(system = 'http://fhir.de/CodeSystem/kontaktart-de').display | %encounter.type.coding.where(system = 'http://fhir.de/CodeSystem/kontaktart-de').code)" ]
+         ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "2.2" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Fallart:" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "string" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression" ] ;
+         fhir:Extension.valueExpression [
+           fhir:Expression.description [ fhir:value "Selektion des Fachabteilungsschlüssel" ] ;
+           fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+           fhir:Expression.expression [ fhir:value "%encounter.serviceType.coding.where(system = 'http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel').display" ]
+         ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "2.3" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Fachabteilungsschlüssel §301:" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "string" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression" ] ;
+         fhir:Extension.valueExpression [
+           fhir:Expression.description [ fhir:value "Selektion der Status" ] ;
+           fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+           fhir:Expression.expression [ fhir:value "%encounter.status" ]
+         ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "2.4" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Status:" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "string" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression" ] ;
+         fhir:Extension.valueExpression [
+           fhir:Expression.description [ fhir:value "Selektion der Period Start" ] ;
+           fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+           fhir:Expression.expression [ fhir:value "%encounter.period.start" ]
+         ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "2.5" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Von:" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "string" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression" ] ;
+         fhir:Extension.valueExpression [
+           fhir:Expression.description [ fhir:value "Selektion der Period End" ] ;
+           fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+           fhir:Expression.expression [ fhir:value "%encounter.period.end" ]
+         ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "2.6" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Bis:" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "string" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression" ] ;
+         fhir:Extension.valueExpression [
+           fhir:Expression.description [ fhir:value "Selektion der Station" ] ;
+           fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+           fhir:Expression.expression [ fhir:value "%encounter.location.where(physicalType.coding.first().code = 'wa' and status = 'active').location.display" ]
+         ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "2.7" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Aktuelle Station:" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "string" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression" ] ;
+         fhir:Extension.valueExpression [
+           fhir:Expression.description [ fhir:value "Selektion des Bett" ] ;
+           fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+           fhir:Expression.expression [ fhir:value "%encounter.location.where(physicalType.coding.first().code = 'bd' and status = 'active').location.display" ]
+         ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "2.8" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Aktuelles Bett:" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "string" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopDemoEnc.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

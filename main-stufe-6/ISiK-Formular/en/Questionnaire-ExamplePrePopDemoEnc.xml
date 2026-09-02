@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Questionnaire xmlns="http://hl7.org/fhir">
+  <id value="ExamplePrePopDemoEnc"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/>
+  </text>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">
+    <extension url="name">
+      <valueCoding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"/>
+        <code value="patient"/>
+      </valueCoding>
+    </extension>
+    <extension url="type">
+      <valueCode value="Patient"/>
+    </extension>
+    <extension url="description">
+      <valueString value="Patientenkontext"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">
+    <extension url="name">
+      <valueCoding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"/>
+        <code value="encounter"/>
+      </valueCoding>
+    </extension>
+    <extension url="type">
+      <valueCode value="Encounter"/>
+    </extension>
+    <extension url="description">
+      <valueString value="Fallkontext"/>
+    </extension>
+  </extension>
+  <url value="https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopDemoEnc"/>
+  <version value="6.0.0"/>
+  <name value="ExamplePrePopDemoEnc"/>
+  <title value="Vorbelegung Demografischer Daten Encounter"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <subjectType value="Patient"/>
+  <date value="2026-09-02T11:31:15+00:00"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="### Beispiel-Questionnaire mit automatischer Vorbelegung von demografischen Patientendaten &#xA;Der Patientenkontext wird mittels der [SDC-LaunchContexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)-Extension hergestellt.  &#xA;Die Vorbelegung erfolgt über die [SDC-InitialExpression](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html)-Extension"/>
+  <item>
+    <linkId value="1"/>
+    <text value="Demografische Patientendaten"/>
+    <type value="group"/>
+    <required value="true"/>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion des ersten Vornamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name"/>
+          <language value="text/fhirpath"/>
+          <expression value="(%patient.name.where(use = 'official').given[0] | %patient.name[0].given[0]).first()"/>
+        </valueExpression>
+      </extension>
+      <linkId value="1.1"/>
+      <text value="Vorname:"/>
+      <type value="string"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion des Nachnamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name"/>
+          <language value="text/fhirpath"/>
+          <expression value="(%patient.name.where(use = 'official').family | %patient.name[0].family).first()"/>
+        </valueExpression>
+      </extension>
+      <linkId value="1.2"/>
+      <text value="Nachname:"/>
+      <type value="string"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Versichertennnummer(KVID) des Patienten"/>
+          <language value="text/fhirpath"/>
+          <expression value="%patient.identifier.where(system='http://fhir.de/sid/gkv/kvid-10').value"/>
+        </valueExpression>
+      </extension>
+      <linkId value="1.4"/>
+      <text value="Versichertennummer:"/>
+      <type value="string"/>
+    </item>
+  </item>
+  <item>
+    <linkId value="2"/>
+    <text value="Fallinformationen"/>
+    <type value="group"/>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion der Fallnummer"/>
+          <language value="text/fhirpath"/>
+          <expression value="%encounter.account.identifier.first().value"/>
+        </valueExpression>
+      </extension>
+      <linkId value="2.1"/>
+      <text value="Fallnummer:"/>
+      <type value="string"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion der Fallart"/>
+          <language value="text/fhirpath"/>
+          <expression value="(%encounter.type.coding.where(system = 'http://fhir.de/CodeSystem/kontaktart-de').display | %encounter.type.coding.where(system = 'http://fhir.de/CodeSystem/kontaktart-de').code)"/>
+        </valueExpression>
+      </extension>
+      <linkId value="2.2"/>
+      <text value="Fallart:"/>
+      <type value="string"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion des Fachabteilungsschlüssel"/>
+          <language value="text/fhirpath"/>
+          <expression value="%encounter.serviceType.coding.where(system = 'http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel').display"/>
+        </valueExpression>
+      </extension>
+      <linkId value="2.3"/>
+      <text value="Fachabteilungsschlüssel §301:"/>
+      <type value="string"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion der Status"/>
+          <language value="text/fhirpath"/>
+          <expression value="%encounter.status"/>
+        </valueExpression>
+      </extension>
+      <linkId value="2.4"/>
+      <text value="Status:"/>
+      <type value="string"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion der Period Start"/>
+          <language value="text/fhirpath"/>
+          <expression value="%encounter.period.start"/>
+        </valueExpression>
+      </extension>
+      <linkId value="2.5"/>
+      <text value="Von:"/>
+      <type value="string"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion der Period End"/>
+          <language value="text/fhirpath"/>
+          <expression value="%encounter.period.end"/>
+        </valueExpression>
+      </extension>
+      <linkId value="2.6"/>
+      <text value="Bis:"/>
+      <type value="string"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion der Station"/>
+          <language value="text/fhirpath"/>
+          <expression value="%encounter.location.where(physicalType.coding.first().code = 'wa' and status = 'active').location.display"/>
+        </valueExpression>
+      </extension>
+      <linkId value="2.7"/>
+      <text value="Aktuelle Station:"/>
+      <type value="string"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion des Bett"/>
+          <language value="text/fhirpath"/>
+          <expression value="%encounter.location.where(physicalType.coding.first().code = 'bd' and status = 'active').location.display"/>
+        </valueExpression>
+      </extension>
+      <linkId value="2.8"/>
+      <text value="Aktuelles Bett:"/>
+      <type value="string"/>
+    </item>
+  </item>
+</Questionnaire>

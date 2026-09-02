@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Questionnaire xmlns="http://hl7.org/fhir">
+  <id value="ExampleEntryValidationText"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/>
+  </text>
+  <url value="https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationText"/>
+  <version value="6.0.0"/>
+  <name value="ExampleEntryValidationText"/>
+  <title value="Validierung von Texten"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <subjectType value="Patient"/>
+  <date value="2026-09-02T11:31:15+00:00"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="### Beispiel-Questionnaire Validierung von Textfeldern&#xA;* Limitierung der Mindest- und Maximalvorkommen einer wiederholbaren Gruppe mittels [questionnaire-minOccurs](https://hl7.org/fhir/R4/extension-questionnaire-minoccurs.html)-Extension und [questionnaire-maxOccurs](https://hl7.org/fhir/R4/extension-questionnaire-maxoccurs.html)-Extension&#xA;* Limitierung der Eingabelänge mittels [minLength](https://hl7.org/fhir/R4/extension-minlength.html)-Extension"/>
+  <item>
+    <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs">
+      <valueInteger value="1"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs">
+      <valueInteger value="2"/>
+    </extension>
+    <linkId value="1"/>
+    <text value="Ausweisdaten"/>
+    <type value="group"/>
+    <required value="true"/>
+    <repeats value="true"/>
+    <item>
+      <linkId value="1.1"/>
+      <text value="Ausweistyp"/>
+      <type value="choice"/>
+      <answerOption>
+        <valueString value="Personalausweis"/>
+      </answerOption>
+      <answerOption>
+        <valueString value="Reisepass"/>
+      </answerOption>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/minLength">
+        <valueInteger value="9"/>
+      </extension>
+      <linkId value="1.2"/>
+      <text value="Ausweisnummer"/>
+      <type value="string"/>
+      <maxLength value="9"/>
+    </item>
+  </item>
+</Questionnaire>

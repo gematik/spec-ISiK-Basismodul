@@ -1,0 +1,86 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "ExampleEntryValidationDecimal",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"
+    ]
+  },
+  "subjectType": [
+    "Patient"
+  ],
+  "name": "ExampleEntryValidationDecimal",
+  "version": "0.1.0",
+  "url": "https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Gematik GmbH",
+  "title": "Validierung von Dezimalen",
+  "description": "### Beispiel-Questionnaire Validierung von Dezimalwerten  \n* Vorgabe des Eingabeformates mittels [entryFormat](https://hl7.org/fhir/R4/extension-entryformat.html)-Extension\n* Limitierung der Dezimalstellen mittels [maxDecimalPlaces](https://hl7.org/fhir/R4/extension-maxdecimalplaces.html)-Extension\n* Limitierung des Wertebereiches mittels [minValue](https://hl7.org/fhir/R4/extension-minvalue.html) \n   und [maxValue](https://hl7.org/fhir/R4/extension-maxvalue.html)-Extension\n* Vorgabe der anzugebenden Maßeinheit mittels [questionnaire-unit](https://hl7.org/fhir/R4/extension-questionnaire-unit.html)-Extension",
+  "item": [
+    {
+      "type": "group",
+      "required": false,
+      "linkId": "4",
+      "text": "Körpermaße",
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+              "valueCoding": {
+                "code": "kg",
+                "system": "http://unitsofmeasure.org"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+              "valueDecimal": 300
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+              "valueDecimal": 20
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+              "valueInteger": 1
+            }
+          ],
+          "linkId": "4.1",
+          "text": "Körpergewicht in kg (muss zwischen 20 und 300kg liegen)",
+          "type": "decimal"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+              "valueCoding": {
+                "code": "m",
+                "system": "http://unitsofmeasure.org"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+              "valueString": "x.xx"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+              "valueDecimal": 2.5
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+              "valueDecimal": 1
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+              "valueInteger": 3
+            }
+          ],
+          "linkId": "4.2",
+          "text": "Körpergröße in m (muss zwischen 1m und 2.50m liegen)",
+          "type": "decimal"
+        }
+      ]
+    }
+  ]
+}

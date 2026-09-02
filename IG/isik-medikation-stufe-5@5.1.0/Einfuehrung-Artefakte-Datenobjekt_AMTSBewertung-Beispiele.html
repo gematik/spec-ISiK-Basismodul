@@ -1,0 +1,577 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Medikation</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Medikation
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-UebersichtAnwendungsfaelle.html">
+                                            &#xDC;bersicht Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Informationsmodell.html">
+                                            Informationsmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-AMTS.html">
+                                            AMTS
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-RestApi.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-AkteureUndInteraktionen.html">
+                                            Akteure und Interaktionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Medikament.html">
+                                            ISiKMedikament (Medication)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsVerordnung.html">
+                                            ISiKMedikationsVerordnung (MedicationRequest)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsInformation.html">
+                                            ISiKMedikationsInformation (MedicationStatement)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsListe.html">
+                                            ISiKMedikationsListe (List)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsVerabreichung.html">
+                                            ISiKMedikationsVerabreichung (MedicationAdministration)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_AMTSBewertung.html">
+                                            ISiKAMTSBewertung (RiskAssessment)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationTransaction.html">
+                                            ISiKMedikationTransaction (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationTransactionResponse.html">
+                                            ISiKMedikationTransactionResponse (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#85dc62a2-fc4f-41eb-9f66-96a8a5d97127" aria-controls="85dc62a2-fc4f-41eb-9f66-96a8a5d97127" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#f8248e98-703d-486a-aed4-f8c782235372" aria-controls="f8248e98-703d-486a-aed4-f8c782235372" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#0e13cc1c-eb39-4927-a482-9b96c1a259a2" aria-controls="0e13cc1c-eb39-4927-a482-9b96c1a259a2" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#5f0eb233-8854-4281-8494-de65a0ac1425" aria-controls="5f0eb233-8854-4281-8494-de65a0ac1425" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="85dc62a2-fc4f-41eb-9f66-96a8a5d97127">
+    <div xmlns="http://www.w3.org/1999/xhtml">Beispiel für eine AMTS Risikobewertung.</div>
+</div><div role="tabpanel" class="tab-pane " id="f8248e98-703d-486a-aed4-f8c782235372">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">RiskAssessment</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.id" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ExampleISiKAMTSBewertung1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.meta" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.meta.profile" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKAMTSBewertung</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.text" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">text</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.text.status" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">additional</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+--- We have skipped the narrative for better readability of the resource ---
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">text</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.status" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.code" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.code.text" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">AMTS Risikobewertung</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.subject" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.subject.reference" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.encounter" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">encounter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.encounter.reference" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">encounter</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.occurrence" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">occurrenceDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-02-20T13:14:32+01:00</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.condition" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">condition</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.condition.reference" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Condition/BehandlungsDiagnoseFreitext</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">condition</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.reasonReference" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">reasonReference</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.reasonReference.reference" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">DocumentReference/AnamnesebogenScan123456</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">reasonReference</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.basis" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">basis</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.basis.reference" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Observation/Koerpergewicht7777</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">basis</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.prediction" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">prediction</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.prediction.outcome" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">outcome</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.prediction.outcome.text" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Niereninsuffizienz</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">outcome</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.prediction.qualitativeRisk" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">qualitativeRisk</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.prediction.qualitativeRisk.coding" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.prediction.qualitativeRisk.coding.system" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/risk-probability</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.prediction.qualitativeRisk.coding.code" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">high</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">qualitativeRisk</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">prediction</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.mitigation" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">mitigation</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Substitution der Stalevo Dauermedikation</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.note" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">note</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.note.text" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Abkl&#228;rung in der Fr&#252;hbesprechung am 21.02.2024</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">note</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">RiskAssessment</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="0e13cc1c-eb39-4927-a482-9b96c1a259a2">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.resourceType" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">RiskAssessment</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.id" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExampleISiKAMTSBewertung1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.meta" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.meta.profile" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKAMTSBewertung</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.text" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.text.status" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">additional</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+--- We have skipped the narrative for better readability of the resource ---
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.status" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.code" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.code.text" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">AMTS Risikobewertung</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.subject" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.subject.reference" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.encounter" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">encounter</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.encounter.reference" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.occurrenceDateTime" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">occurrenceDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-02-20T13:14:32+01:00</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.condition" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">condition</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.condition.reference" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Condition/BehandlungsDiagnoseFreitext</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.reasonReference" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">reasonReference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.reasonReference.reference" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">DocumentReference/AnamnesebogenScan123456</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.basis" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">basis</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.basis.reference" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation/Koerpergewicht7777</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.prediction" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">prediction</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.prediction.outcome" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">outcome</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.prediction.outcome.text" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Niereninsuffizienz</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.prediction.qualitativeRisk" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">qualitativeRisk</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.prediction.qualitativeRisk.coding" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.prediction.qualitativeRisk.coding.code" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">high</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.prediction.qualitativeRisk.coding.system" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/risk-probability</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.mitigation" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">mitigation</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Substitution der Stalevo Dauermedikation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.note" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">note</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAMTSBewertung.json#RiskAssessment.note.text" title="ISiK AMTS-Bewertung
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAMTSBewertung.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Abkl&#228;rung in der Fr&#252;hbesprechung am 21.02.2024</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="5f0eb233-8854-4281-8494-de65a0ac1425">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/RiskAssessment-ExampleISiKAMTSBewertung1.json'>RiskAssessment for Patient/PatientinMusterfrau</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

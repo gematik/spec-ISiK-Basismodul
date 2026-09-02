@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationStatement xmlns="http://hl7.org/fhir">
+  <id value="ExampleISiKMedikationsInformationParkinson1"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation"/>
+  </meta>
+  <text>
+    <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Parkinson-Medikation mit Medikament1</div>
+  </text>
+  <status value="active"/>
+  <medicationCodeableConcept>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+      <code value="00003056"/>
+      <display value="Stalevo® 100 mg/25 mg/200 mg"/>
+    </coding>
+  </medicationCodeableConcept>
+  <subject>
+    <reference value="Patient/PatientinMusterfrau"/>
+  </subject>
+  <context>
+    <reference value="Encounter/FachabteilungskontaktMinimal"/>
+  </context>
+  <effectivePeriod>
+    <start value="2024-02-20"/>
+  </effectivePeriod>
+  <dateAsserted value="2024-02-20"/>
+  <reasonReference>
+    <reference value="Condition/DiagnoseParkinson"/>
+  </reasonReference>
+  <dosage>
+    <timing>
+      <repeat>
+        <timeOfDay value="18:00:00"/>
+      </repeat>
+    </timing>
+    <doseAndRate>
+      <doseQuantity>
+        <value value="1"/>
+        <unit value="Tbl."/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="1"/>
+      </doseQuantity>
+    </doseAndRate>
+  </dosage>
+</MedicationStatement>

@@ -1,0 +1,365 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>MII VS ICU Code Observation Beatmung ISO11073 - ISiK ICU v6.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"8.140"}
+    h3,h4,h5,h6{--heading-prefix:"8.140"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li>
+    <a href="UseCases.html">Use Cases</a>
+  </li>
+  <li>
+    <a href="Akteure.html">Akteure</a>
+  </li>
+  <li>
+    <a href="ProzesseUndWorkflows.html">Prozesse und Workflows</a>
+  </li>
+  <li>
+    <a href="Festlegungen.html">Festlegungen</a>
+  </li>
+  <li>
+    <a href="artifacts-isik.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK ICU
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0 - active
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>MII VS ICU Code Observation Beatmung ISO11073</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<!-- layouts\layout-valueset -->
+<div class="col-12">
+  
+  
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-mii-vs-icu-code-observation-beatmung-loinc-iso11073.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-mii-vs-icu-code-observation-beatmung-loinc-iso11073.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-mii-vs-icu-code-observation-beatmung-loinc-iso11073.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: MII VS ICU Code Observation Beatmung ISO11073
+
+  </h2>
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-loinc-iso11073<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-loinc-iso11073"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">6.0.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-loinc-iso11073|6.0.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+
+            as of 
+2026-07-01
+
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">MII_VS_ICU_Code_Observation_Beatmung_ISO11073</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>Dieses ValueSet enthält Codes für die im Kontext einer Beatmung verwendeten Parameter.</p>
+
+<p>Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<ul>
+ <li><a href="StructureDefinition-mii-pr-vent-icu-parameter-von-beatmung.html">MII PR ICU Parameter von Beatmung</a></li>
+</ul>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+<!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"></p><a name="mii-vs-icu-code-observation-beatmung-loinc-iso11073"> </a><a name="hcmii-vs-icu-code-observation-beatmung-loinc-iso11073"> </a>
+<ul><li>Include these codes as defined in <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-mdc.html"><code>urn:iso:std:iso:11073:10101</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>150656</td><td>Oxygenation Ratio</td></tr><tr><td>151586</td><td>Ventilation rate</td></tr><tr><td>152498</td><td>Unassisted spontaneous breath rate; respiration rate</td></tr><tr><td>152490</td><td>Total respiratory rate; total breath rate</td></tr><tr><td>16929632</td><td>Inspiratory time setting</td></tr><tr><td>151832</td><td>Ratio inspiration expiration time</td></tr><tr><td>16929196</td><td>Tidal volume setting</td></tr><tr><td>151980</td><td>Ventilation tidal volume</td></tr><tr><td>152004</td><td>Ventilation inspiratory minute volume</td></tr><tr><td>16929860</td><td>High pressure hold time setting Ventilator</td></tr><tr><td>16929864</td><td>Low pressure hold time setting Ventilator</td></tr><tr><td>151948</td><td>Ventilation inspiratory flow</td></tr><tr><td>151944</td><td>Ventilation expiratory flow</td></tr><tr><td>153132</td><td>Expired oxygen concentration (or partial pressure) in airway gas</td></tr><tr><td>151975</td><td>Mean pressure Respiratory system airway --on ventilator</td></tr><tr><td>151973</td><td>Pressure.max Respiratory system airway --on ventilator</td></tr><tr><td>151692</td><td>Thoracic compliance</td></tr><tr><td>151976</td><td>Applied PEEP</td></tr><tr><td>152720</td><td>Inspiratory airway pressure relative to PEEP or BAP</td></tr><tr><td>151708</td><td>End tidal carbon dioxide concentration (or partial pressure) in airway gas</td></tr></table></li></ul></div>
+
+  <p>&#160;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"/><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion from tx.fhir.org based on codesystem ISO/IEEE 11073 Medical Device Communication Nomenclature version 2024-12-05<span class="copy-text-inline"><button data-clipboard-text="urn:iso:std:iso:11073:10101|2024-12-05" title="Click to Copy URL" class="btn-copy"> </button></span></p><p>This value set contains 20 concepts</p><table class="codes" data-fhir="generated"><tr><td><b>System</b></td><td style="white-space:nowrap"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-150656"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  150656</td><td>MDC_O2_OXYGENATION_RATIO</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;150656&quot;, &quot;display&quot;: &quot;MDC_O2_OXYGENATION_RATIO&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;150656&quot;&gt;&lt;display value=&quot;MDC_O2_OXYGENATION_RATIO&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-151586"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  151586</td><td>MDC_VENT_RESP_RATE</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;151586&quot;, &quot;display&quot;: &quot;MDC_VENT_RESP_RATE&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;151586&quot;&gt;&lt;display value=&quot;MDC_VENT_RESP_RATE&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-152498"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  152498</td><td>MDC_VENT_RESP_BTSD_P_RATE</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;152498&quot;, &quot;display&quot;: &quot;MDC_VENT_RESP_BTSD_P_RATE&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;152498&quot;&gt;&lt;display value=&quot;MDC_VENT_RESP_BTSD_P_RATE&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-152490"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  152490</td><td>MDC_VENT_RESP_BTSD_PSAZC_RATE</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;152490&quot;, &quot;display&quot;: &quot;MDC_VENT_RESP_BTSD_PSAZC_RATE&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;152490&quot;&gt;&lt;display value=&quot;MDC_VENT_RESP_BTSD_PSAZC_RATE&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-16929632"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  16929632</td><td>MDC_VENT_TIME_PD_INSP_SETTING</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;16929632&quot;, &quot;display&quot;: &quot;MDC_VENT_TIME_PD_INSP_SETTING&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;16929632&quot;&gt;&lt;display value=&quot;MDC_VENT_TIME_PD_INSP_SETTING&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-151832"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  151832</td><td>MDC_RATIO_IE</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;151832&quot;, &quot;display&quot;: &quot;MDC_RATIO_IE&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;151832&quot;&gt;&lt;display value=&quot;MDC_RATIO_IE&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-16929196"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  16929196</td><td>MDC_VENT_VOL_TIDAL_SETTING</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;16929196&quot;, &quot;display&quot;: &quot;MDC_VENT_VOL_TIDAL_SETTING&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;16929196&quot;&gt;&lt;display value=&quot;MDC_VENT_VOL_TIDAL_SETTING&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-151980"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  151980</td><td>MDC_VENT_VOL_TIDAL</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;151980&quot;, &quot;display&quot;: &quot;MDC_VENT_VOL_TIDAL&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;151980&quot;&gt;&lt;display value=&quot;MDC_VENT_VOL_TIDAL&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-152004"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  152004</td><td>MDC_VENT_VOL_MINUTE_INSP</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;152004&quot;, &quot;display&quot;: &quot;MDC_VENT_VOL_MINUTE_INSP&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;152004&quot;&gt;&lt;display value=&quot;MDC_VENT_VOL_MINUTE_INSP&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-16929860"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  16929860</td><td>MDC_VENT_TIME_PD_INSP_THIGH_SETTING</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;16929860&quot;, &quot;display&quot;: &quot;MDC_VENT_TIME_PD_INSP_THIGH_SETTING&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;16929860&quot;&gt;&lt;display value=&quot;MDC_VENT_TIME_PD_INSP_THIGH_SETTING&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-16929864"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  16929864</td><td>MDC_VENT_TIME_PD_EXP_TLOW_SETTING</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;16929864&quot;, &quot;display&quot;: &quot;MDC_VENT_TIME_PD_EXP_TLOW_SETTING&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;16929864&quot;&gt;&lt;display value=&quot;MDC_VENT_TIME_PD_EXP_TLOW_SETTING&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-151948"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  151948</td><td>MDC_VENT_FLOW_INSP</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;151948&quot;, &quot;display&quot;: &quot;MDC_VENT_FLOW_INSP&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;151948&quot;&gt;&lt;display value=&quot;MDC_VENT_FLOW_INSP&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-151944"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  151944</td><td>MDC_VENT_FLOW_EXP</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;151944&quot;, &quot;display&quot;: &quot;MDC_VENT_FLOW_EXP&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;151944&quot;&gt;&lt;display value=&quot;MDC_VENT_FLOW_EXP&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-153132"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  153132</td><td>MDC_CONC_AWAY_O2_EXP</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;153132&quot;, &quot;display&quot;: &quot;MDC_CONC_AWAY_O2_EXP&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;153132&quot;&gt;&lt;display value=&quot;MDC_CONC_AWAY_O2_EXP&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-151975"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  151975</td><td>MDC_VENT_PRESS_AWAY_MEAN</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;151975&quot;, &quot;display&quot;: &quot;MDC_VENT_PRESS_AWAY_MEAN&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;151975&quot;&gt;&lt;display value=&quot;MDC_VENT_PRESS_AWAY_MEAN&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-151973"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  151973</td><td>MDC_VENT_PRESS_AWAY_MAX</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;151973&quot;, &quot;display&quot;: &quot;MDC_VENT_PRESS_AWAY_MAX&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;151973&quot;&gt;&lt;display value=&quot;MDC_VENT_PRESS_AWAY_MAX&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-151692"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  151692</td><td>MDC_COMPL_LUNG_DYN</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;151692&quot;, &quot;display&quot;: &quot;MDC_COMPL_LUNG_DYN&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;151692&quot;&gt;&lt;display value=&quot;MDC_COMPL_LUNG_DYN&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-151976"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  151976</td><td>MDC_VENT_PRESS_AWAY_END_EXP_POS</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;151976&quot;, &quot;display&quot;: &quot;MDC_VENT_PRESS_AWAY_END_EXP_POS&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;151976&quot;&gt;&lt;display value=&quot;MDC_VENT_PRESS_AWAY_END_EXP_POS&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-152720"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  152720</td><td>MDC_VENT_PRESS_AWAY_DELTA</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;152720&quot;, &quot;display&quot;: &quot;MDC_VENT_PRESS_AWAY_DELTA&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;152720&quot;&gt;&lt;display value=&quot;MDC_VENT_PRESS_AWAY_DELTA&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-urn:iso:std:iso:11073:10101-151708"> </a><code>urn:iso:std:iso:11073:10101</code></td><td style="white-space:nowrap">  151708</td><td>MDC_CONC_AWAY_CO2_ET</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;urn:iso:std:iso:11073:10101&quot;, &quot;version&quot;: &quot;2024-12-05&quot;, &quot;code&quot;: &quot;151708&quot;, &quot;display&quot;: &quot;MDC_CONC_AWAY_CO2_ET&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:11073:10101&quot;&gt;&lt;version value=&quot;2024-12-05&quot;&gt;&lt;code value=&quot;151708&quot;&gt;&lt;display value=&quot;MDC_CONC_AWAY_CO2_ET&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr></table></div>
+
+  <hr/>
+  <p>
+    <a href="http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology">Description of the above table(s)</a>.
+  </p>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.gematik.de">gematik GmbH</a>.  
+          Package icu#6.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Sep 2, 2026 11:32+0000">2026-09-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

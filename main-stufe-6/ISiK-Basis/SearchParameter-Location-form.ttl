@@ -1,0 +1,47 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/SearchParameter/Location-form> a fhir:SearchParameter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "Location-form"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: SearchParameter Location-form</b></p><a name=\"Location-form\"> </a><a name=\"hcLocation-form\"> </a><h2>form</h2><p>Parameter <code>form</code>:<code>token</code></p><div><p>Die Location-Ressource kann für ein breites Spektrum an UseCases verwendet werden.\nIm Kontext von ISiK ist speziell die Suche nach Stationen, Zimmern und Bettplätzen relevant,\nes ist jedoch nicht auszuschließen, dass Systeme die Location-Ressource auch für die Abbildung von Örtlichkeiten\naußerhalb des ISiK-Scopes verwenden, z.B. Gebäude, Standorte, Etagen, Lagerorte.\nDer Suchparameter <code>form</code> ist notwendig um die Suche auf relevante Locations eingrenzen zu können.\nBei der Namensgebung des Suchparameters wurde bereits berücksichtigt,\ndass das durchsuchte Element <code>physicalType</code> in FHIR R6 zu <code>form</code> umbenannt wurde.\nDurch die Prä-Adoption der Namensänderung im Suchparameter soll vorausschauend die Migration auf FHIR R6 erleichtert werden\nund einen Breaking Change in der API verhindern.<br/>\nZum Zeitpunkt der Publikation dieses Suchparameters ist für das Element <code>form</code> in R6 zwar bereits ein Suchparameter\nnamens <code>characteristic</code> definiert. Hier scheint es sich jedoch um eine Verwechslung mit dem gleichnamigen Element zu handeln,\nweshalb auf die Prä-Adoption dieses Parameters verzichtet wurde.\nEin entsprechender Change Request liegt vor: https://jira.hl7.org/browse/FHIR-57431</p>\n</div><table class=\"grid\"><tr><td>Resource</td><td><a href=\"http://hl7.org/fhir/R4/location.html\">Location</a></td></tr><tr><td>Expression</td><td><code>Location.physicalType</code></td></tr><tr><td>Processing Mode</td><td>Normal</td></tr><tr><td>Multiples</td><td><ul><li>multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true</li><li>multipleOr: It's up to the server whether the parameter can have multiple values (separated by comma) where at least one must be true</li></ul></td></tr></table></div>"
+  ] ;
+  fhir:SearchParameter.url [ fhir:value "https://gematik.de/fhir/isik/SearchParameter/Location-form"] ;
+  fhir:SearchParameter.version [ fhir:value "6.0.0"] ;
+  fhir:SearchParameter.name [ fhir:value "form"] ;
+  fhir:SearchParameter.status [ fhir:value "active"] ;
+  fhir:SearchParameter.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:SearchParameter.date [ fhir:value "2026-07-01"^^xsd:date] ;
+  fhir:SearchParameter.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:SearchParameter.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:SearchParameter.description [ fhir:value "Die Location-Ressource kann für ein breites Spektrum an UseCases verwendet werden.\n        Im Kontext von ISiK ist speziell die Suche nach Stationen, Zimmern und Bettplätzen relevant, \n        es ist jedoch nicht auszuschließen, dass Systeme die Location-Ressource auch für die Abbildung von Örtlichkeiten \n        außerhalb des ISiK-Scopes verwenden, z.B. Gebäude, Standorte, Etagen, Lagerorte. \n        Der Suchparameter `form` ist notwendig um die Suche auf relevante Locations eingrenzen zu können. \n        Bei der Namensgebung des Suchparameters wurde bereits berücksichtigt, \n        dass das durchsuchte Element `physicalType` in FHIR R6 zu `form` umbenannt wurde. \n        Durch die Prä-Adoption der Namensänderung im Suchparameter soll vorausschauend die Migration auf FHIR R6 erleichtert werden\n        und einen Breaking Change in der API verhindern.  \n        Zum Zeitpunkt der Publikation dieses Suchparameters ist für das Element `form` in R6 zwar bereits ein Suchparameter \n        namens `characteristic` definiert. Hier scheint es sich jedoch um eine Verwechslung mit dem gleichnamigen Element zu handeln, \n        weshalb auf die Prä-Adoption dieses Parameters verzichtet wurde. \n        Ein entsprechender Change Request liegt vor: https://jira.hl7.org/browse/FHIR-57431"] ;
+  fhir:SearchParameter.code [ fhir:value "form"] ;
+  fhir:SearchParameter.base [
+     fhir:value "Location" ;
+     fhir:index 0
+  ] ;
+  fhir:SearchParameter.type [ fhir:value "token"] ;
+  fhir:SearchParameter.expression [ fhir:value "Location.physicalType"] ;
+  fhir:SearchParameter.xpathUsage [ fhir:value "normal"] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/SearchParameter/Location-form.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

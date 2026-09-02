@@ -1,0 +1,54 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/ValueSet/ISiKSubscriptionTopicAppointmentVS> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ISiKSubscriptionTopicAppointmentVS"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet ISiKSubscriptionTopicAppointmentVS</b></p><a name=\"ISiKSubscriptionTopicAppointmentVS\"> </a><a name=\"hcISiKSubscriptionTopicAppointmentVS\"> </a><ul><li>Include these codes as defined in <a href=\"CodeSystem-ISiKSubscriptionTopic.html\"><code>https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?6.0.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"CodeSystem-ISiKSubscriptionTopic.html#ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47appointment-update\">https://gematik.de/fhir/isik/SubscriptionTopic/appointment-update</a></td><td>appointment-update</td><td>Wird ausgelöst, wenn ein Termin (Appointment) geändert wird, z.B. durch eine Zeitverschiebung oder Statusänderung.</td></tr><tr><td><a href=\"CodeSystem-ISiKSubscriptionTopic.html#ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47appointment-cancel\">https://gematik.de/fhir/isik/SubscriptionTopic/appointment-cancel</a></td><td>appointment-cancel</td><td>Wird ausgelöst, wenn ein Termin (Appointment) abgesagt wird (Appointment.status=cancelled).</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://gematik.de/fhir/isik/ValueSet/ISiKSubscriptionTopicAppointmentVS"] ;
+  fhir:ValueSet.version [ fhir:value "6.0.0"] ;
+  fhir:ValueSet.name [ fhir:value "ISiKSubscriptionTopicAppointmentVS"] ;
+  fhir:ValueSet.status [ fhir:value "active"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-07-01"^^xsd:date] ;
+  fhir:ValueSet.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Enthaelt die Codes der Subscription Topics, die für die Absage- bzw. Änderung von Terminen relevant sind."] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/appointment-update" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "appointment-update" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/appointment-cancel" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "appointment-cancel" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/ValueSet/ISiKSubscriptionTopicAppointmentVS.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

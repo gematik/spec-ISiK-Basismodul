@@ -1,0 +1,484 @@
+# ISiKTermin - ISiK Terminplanung Implementierungsleitfaden v6.0.0-rc
+
+ISiK Terminplanung Implementierungsleitfaden
+
+Version 6.0.0-rc - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **ISiKTermin**
+
+## Resource Profile: ISiKTermin 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin | *Version*:6.0.0-rc |
+| Active as of 2025-12-17 | *Computable Name*:ISiKTermin |
+
+ 
+Das Datenobjekte ISiKTermin repräsentiert einen gebuchten Termin, sowie einen Terminvorschlag. 
+
+**Usages:**
+
+* Examples for this Profile: [Appointment/ISiKTerminExample](Appointment-ISiKTerminExample.md) and [Appointment/ISiKTerminExampleExtendedICU](Appointment-ISiKTerminExampleExtendedICU.md)
+* CapabilityStatements using this Profile: [ISiK CapabilityStatement Termin-Repository Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementTerminRepositoryAkteur-expanded.md) and [ISiK CapabilityStatement Termin-Repository Rolle](CapabilityStatement-ISiKCapabilityStatementTerminRepositoryRolle.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/terminplanung|current/StructureDefinition/ISiKTermin)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots and how the different presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](StructureDefinition-ISiKTermin.csv), [Excel](StructureDefinition-ISiKTermin.xlsx), [Schematron](StructureDefinition-ISiKTermin.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "ISiKTermin",
+  "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin",
+  "version" : "6.0.0-rc",
+  "name" : "ISiKTermin",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-12-17",
+  "publisher" : "gematik GmbH",
+  "contact" : [
+    {
+      "name" : "gematik GmbH",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "https://gematik.de"
+        }
+      ]
+    }
+  ],
+  "description" : "Das Datenobjekte ISiKTermin repräsentiert einen gebuchten Termin, sowie einen Terminvorschlag.",
+  "fhirVersion" : "4.0.1",
+  "mapping" : [
+    {
+      "identity" : "workflow",
+      "uri" : "http://hl7.org/fhir/workflow",
+      "name" : "Workflow Pattern"
+    },
+    {
+      "identity" : "rim",
+      "uri" : "http://hl7.org/v3",
+      "name" : "RIM Mapping"
+    },
+    {
+      "identity" : "ical",
+      "uri" : "http://ietf.org/rfc/2445",
+      "name" : "iCalendar"
+    },
+    {
+      "identity" : "w5",
+      "uri" : "http://hl7.org/fhir/fivews",
+      "name" : "FiveWs Pattern Mapping"
+    },
+    {
+      "identity" : "v2",
+      "uri" : "http://hl7.org/v2",
+      "name" : "HL7 v2 Mapping"
+    }
+  ],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Appointment",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Appointment",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "Appointment",
+        "path" : "Appointment",
+        "constraint" : [
+          {
+            "key" : "ISiK-app-1",
+            "severity" : "error",
+            "human" : "Der Endzeitpunkt eines Termins MUSS nach dem Startzeitpunkt liegen",
+            "expression" : "start <= end",
+            "source" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin"
+          }
+        ]
+      },
+      {
+        "id" : "Appointment.id",
+        "path" : "Appointment.id",
+        "short" : "serverseitige, interne ID des Datensatzes",
+        "comment" : "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.meta",
+        "path" : "Appointment.meta",
+        "comment" : "Ein Tag kann verwendet werden um zu kennzeichnen, dass die Ressource von Extern erstellt worden ist.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.meta.versionId",
+        "path" : "Appointment.meta.versionId",
+        "short" : "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id" : "Appointment.meta.lastUpdated",
+        "path" : "Appointment.meta.lastUpdated",
+        "short" : "Zeitpunkt der letzten Änderung",
+        "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id" : "Appointment.meta.tag",
+        "path" : "Appointment.meta.tag",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "$this"
+            }
+          ],
+          "rules" : "open"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.meta.tag:Source",
+        "path" : "Appointment.meta.tag",
+        "sliceName" : "Source",
+        "min" : 0,
+        "max" : "1",
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://fhir.de/ValueSet/common-meta-tag-de"
+        }
+      },
+      {
+        "id" : "Appointment.extension",
+        "path" : "Appointment.extension",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "value",
+              "path" : "url"
+            }
+          ],
+          "ordered" : false,
+          "rules" : "open"
+        },
+        "comment" : "Begründung zum Must Support: Termineabsagen sollten verkettbar sein, da am originalen Termin noch weitere Informationen hängen können.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.extension:replaces",
+        "path" : "Appointment.extension",
+        "sliceName" : "replaces",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "http://hl7.org/fhir/5.0/StructureDefinition/extension-Appointment.replaces"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.status",
+        "path" : "Appointment.status",
+        "short" : "Der Status des Termins",
+        "comment" : "Begründung zu Must Support : Im ISiK Kontext ist der Status eines Termins von entscheidender Bedeutung, um den aktuellen Stand und die Verfügbarkeit des Termins zu kommunizieren.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.cancelationReason",
+        "path" : "Appointment.cancelationReason",
+        "short" : "Der Grund für die Absage des Termins",
+        "comment" : "Begründung zu Must Support: Dieses Feld ist optional (0..1), muss jedoch implementiert werden (MS), um die Möglichkeit zu bieten, einen Grund für die Absage eines Termins zu hinterlegen.",
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "https://gematik.de/fhir/isik/ValueSet/ISiKTerminCancelationReason"
+        }
+      },
+      {
+        "id" : "Appointment.serviceType",
+        "path" : "Appointment.serviceType",
+        "comment" : "Begründung zu Kardinalität und Must Support: Die Dienstleistungsart eines Termins ist von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher ist dieses Feld verpflichtend (1..*) und muss unterstützt werden (MS). Aufgrund der Heterogenität von Dienstleistungen ist eine standardisierte Kodierung nicht zwingend notwendig, eine Freitextbeschreibung ist ausreichend.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.serviceType.text",
+        "path" : "Appointment.serviceType.text",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.specialty",
+        "path" : "Appointment.specialty",
+        "comment" : "Optionale Angabe aller Fachbereiche aus denen ein oder mehrere Akteure für die Durchführung des Termins benötigt werden. \n  \n  Begründung zu Kardinalität und Must Support: KANN auch anhand des Kalenders, in dem ein Termin gebucht wird, ermittelt werden.\n  Die Angabe der Fachbereiche ist optional (0..*), muss jedoch implementiert werden (MS), um die Spezialisierung hinsichtlich der zugeordneten Behandlungseinheit des Termins eindeutig zu definieren und eine korrekte Zuordnung zu gewährleisten.\n  ",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.specialty.coding",
+        "path" : "Appointment.specialty.coding",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "$this"
+            }
+          ],
+          "rules" : "open"
+        },
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.specialty.coding:Fachrichtung",
+        "path" : "Appointment.specialty.coding",
+        "sliceName" : "Fachrichtung",
+        "comment" : "Begründung zur Kardinalität: Die Kardinalität der Fachrichtung-Eigenschaft wird auf 1..1 festgelegt, um sicherzustellen, dass genau eine Fachrichtung vorhanden ist. Dies ist notwendig, um die Spezialisierung des Termins eindeutig zu definieren und eine korrekte Zuordnung zu gewährleisten.\n  \n  Hintergrund zur Entscheidung: Die Wahl des hinterlegten ValueSets (http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode) wurde mit einem Mitglied der IHE Deutschland Arbeitsgruppe XDS ValueSets (https://www.ihe-d.de/projekte/xds-value-sets-fuer-deutschland/) sowie mit der KBV abgestimmt (Stand:13.6.2024).",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode"
+        }
+      },
+      {
+        "id" : "Appointment.specialty.coding:ErweiterterFachabteilungsschluessel",
+        "path" : "Appointment.specialty.coding",
+        "sliceName" : "ErweiterterFachabteilungsschluessel",
+        "comment" : "Dieses ValueSet KANN über ein Mapping (siehe Abschnitt https://wiki.hl7.de/index.php?title=IG:Value_Sets_f%C3%BCr_XDS#DocumentEntry.practiceSettingCode) mit dem ValueSet der Fachrichtung verknüpft werden und darüber ggf. die Integration von Systemen erleichtern.",
+        "min" : 0,
+        "max" : "1",
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert"
+        }
+      },
+      {
+        "id" : "Appointment.priority",
+        "path" : "Appointment.priority",
+        "comment" : "Begründung Must Support: Die Priorität eines Termins ist von entscheidender Bedeutung, um die Dringlichkeit und Relevanz des Termins zu kommunizieren und zu priorisieren. Eine Priorität ist nicht zwingend erforderlich, muss jedoch implementiert werden (MS), um die Möglichkeit zu bieten, die Dringlichkeit und Relevanz des Termins abzurufen.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.priority.extension",
+        "path" : "Appointment.priority.extension",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "value",
+              "path" : "url"
+            }
+          ],
+          "ordered" : false,
+          "rules" : "open"
+        },
+        "comment" : "Hinweis: In R5 ist die Priority ein CodeableConcept. \n  \n  Begründung zu Must Support: Dieses Element ist optional (0..1), muss jedoch implementiert werden (MS), um besonders einen Notfall als solchen ausweisen zu können.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.priority.extension:Priority",
+        "path" : "Appointment.priority.extension",
+        "sliceName" : "Priority",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.start",
+        "path" : "Appointment.start",
+        "short" : "Der Startzeitpunkt des Termins",
+        "comment" : "Begründung zu Kardinalität und Must Support: Der Startzeitpunkt eines Termins ist von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS). Das Feld ist in den meisten Fällen verpflichtend, nur für die Status 'proposed', 'cancelled', 'waitlist' existiert kein Wert.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.end",
+        "path" : "Appointment.end",
+        "short" : "Der Endzeitpunkt des Termins",
+        "comment" : "Begründung zu Kardinalität und Must Support: Der Endzeitpunkt eines Termins ist von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS). Das Feld ist in den meisten Fällen verpflichtend, nur für die Status 'proposed', 'cancelled', 'waitlist' existiert kein Wert.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.slot",
+        "path" : "Appointment.slot",
+        "short" : "Verweise auf die gebuchten Terminblöcke",
+        "comment" : "Begründung zu Kardinalität und Must Support: Die Kardinalität der slot-Eigenschaft bleibt 0..*, sodass ein Termin-Requestor bei der Terminbuchung nur einen Termin und ein Verweis auf ein ISiKKalender übergeben kann. Es ist dann die Aufgabe des Termin-Repositories in Abhängigkeit der gebuchten Dienstleistung freie Terminblöcke zu finden. Diese sind im Appointment zu referenzieren.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.slot.reference",
+        "path" : "Appointment.slot.reference",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.comment",
+        "path" : "Appointment.comment",
+        "short" : "Zusätzliche Kommentare zum Termin zwischen Leistungserbringern",
+        "comment" : "Hinweis: Im ISiK Kontext sollte dieses Feld zur internen Kommunikation zwischen Leistungserbringern verwendet werden, z.B. für interne Notizen rund um den Termin.\n\nBegründung zum Must Support: Dieses Feld ist optional (0..1), muss jedoch implementiert werden (MS), um die Möglichkeit zu bieten, zusätzliche Informationen zum Termin zu hinterlegen und abrufen zu können. \n\nEs gilt weiterhin die Semantik des Elements nach FHIR-Kernspezifikation:\n\n'Additional text to aid in facilitating the appointment. For instance, a comment might be, 'patient should proceed immediately to infusion room upon arrival'\n\nWhere this is a planned appointment and the start/end dates are not set then this field can be used to provide additional guidance on the details of the appointment request, including any restrictions on when to book it.'",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.patientInstruction",
+        "path" : "Appointment.patientInstruction",
+        "short" : "Anweisungen für den Patienten zum Termin",
+        "comment" : "Hinweis: Dieses Feld sollte im Kontext von ISIK verwendet werden für die Kommunikation im Sinne der Definition der FHIR-Kernspezifikation - sowohl von Systemseite (administrativ) als auch von Seiten des medizinischen Fachpersonals.\n\nBeispiel für eine Nachricht: 'Bitte nüchtern erscheinen' etc.\n\nBegründung zum Must Support: Dieses Feld ist optional (0..1), muss jedoch implementiert werden (MS), um die Möglichkeit zu bieten, zusätzliche Informationen für Patienten zum Termin zu hinterlegen und abrufen zu können. \n\nEs gilt weiterhin der Hinweis der FHIR Kernspezifikation:\n'Note that FHIR strings SHALL NOT exceed 1MB in size'",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.participant",
+        "path" : "Appointment.participant",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "type",
+              "path" : "actor.resolve()"
+            }
+          ],
+          "rules" : "open"
+        },
+        "short" : "Teilnehmer des Termins",
+        "comment" : "Hinweis: Die Kardinalität von actor.display und das MS-Flag von .status wird an die Slices vererbt und diese sind entsprechend zu implementieren.\n\nBegründung zu Kardinalität und Must Support: Die Teilnehmer eines Termins sind von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS).",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.participant.actor",
+        "path" : "Appointment.participant.actor",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.participant.actor.display",
+        "path" : "Appointment.participant.actor.display",
+        "comment" : "Hinweis: Für alle Target-Ressourcen SOLL ein Displaywert für die Referenz angegeben werden, sodass Systeme eine Übersicht der am Termin beteiligten Akteure anzeigen können ohne die Referenzen auflösen zu müssen. Somit kann ein Termin-Consumer direkt anzeigen welche Akteure für den Termin relevant sind.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.participant.status",
+        "path" : "Appointment.participant.status",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.participant:AkteurPatient",
+        "path" : "Appointment.participant",
+        "sliceName" : "AkteurPatient",
+        "comment" : "Hinweis: Im ISIK-Kontext MUSS der referenzierte Patient konform zum [ISIKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) des Basismoduls sein. Ein Sonderfall sind Patienten, über die ein Termin-Requestor oder Termin-Repository nur rudimentäre Informationen verfügt. Diese Patienten-Ressourcen sind bis zur Vervollständigung nur gegen den Kernstandard valide.\n\nBegründung zu Kardinalität und Must Support: Die teilnehmenden Patienten eines Termins sind von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS). Hingegen kann die Patienten-Referenz separat in der $book-Operation übergeben werden, sodass hier keine verpflichtende Kardinaltiät gewählt werden kann.",
+        "min" : 0,
+        "max" : "*",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.participant:AkteurPatient.actor",
+        "path" : "Appointment.participant.actor",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Patient"]
+          }
+        ]
+      },
+      {
+        "id" : "Appointment.participant:AkteurPatient.actor.reference",
+        "path" : "Appointment.participant.actor.reference",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.participant:AkteurPersonImGesundheitsberuf",
+        "path" : "Appointment.participant",
+        "sliceName" : "AkteurPersonImGesundheitsberuf",
+        "comment" : "Im ISIK-Kontext MUSS die referenzierte RelatedPerson-Ressource konform zum [ISiKAngehoeriger](https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger) des Basismoduls sein.\n\nBegründung zu Kardinalität und Must Support: Die Angabe eines Angehörigen ist optional, da in vielen Fällen die Referenzierung des Patienten ausreichend ist. Bei Terminen, die durch einen Angehörigen gebucht/verwaltet werden, ist es jedoch wichtig, dass diese Information an das Termin-Repository übermittelt werden kann.",
+        "min" : 0,
+        "max" : "*",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.participant:AkteurPersonImGesundheitsberuf.actor",
+        "path" : "Appointment.participant.actor",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Practitioner"]
+          }
+        ]
+      },
+      {
+        "id" : "Appointment.participant:AkteurPersonImGesundheitsberuf.actor.reference",
+        "path" : "Appointment.participant.actor.reference",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.participant:AkteurMedizinischeBehandlungseinheit",
+        "path" : "Appointment.participant",
+        "sliceName" : "AkteurMedizinischeBehandlungseinheit",
+        "min" : 0,
+        "max" : "*",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.participant:AkteurMedizinischeBehandlungseinheit.actor",
+        "path" : "Appointment.participant.actor",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/HealthcareService"]
+          }
+        ]
+      },
+      {
+        "id" : "Appointment.participant:AkteurMedizinischeBehandlungseinheit.actor.reference",
+        "path" : "Appointment.participant.actor.reference",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.participant:Angehoeriger",
+        "path" : "Appointment.participant",
+        "sliceName" : "Angehoeriger",
+        "min" : 0,
+        "max" : "*",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Appointment.participant:Angehoeriger.actor",
+        "path" : "Appointment.participant.actor",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/RelatedPerson"]
+          }
+        ]
+      },
+      {
+        "id" : "Appointment.participant:Angehoeriger.actor.reference",
+        "path" : "Appointment.participant.actor.reference",
+        "min" : 1,
+        "mustSupport" : true
+      }
+    ]
+  }
+}
+
+```

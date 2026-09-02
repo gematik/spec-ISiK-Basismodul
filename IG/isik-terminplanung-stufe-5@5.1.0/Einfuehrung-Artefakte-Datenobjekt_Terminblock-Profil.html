@@ -1,0 +1,816 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Terminplanung</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Terminplanung
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Akteure.html">
+                                            Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Interaktionen.html">
+                                            Interaktionen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Prozesse.html">
+                                            Prozesse
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Informationsmodell.html">
+                                            Informationsmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Architekturoptionen.html">
+                                            Architekturoptionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Operations.html">
+                                            Operation: $book
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Kalender.html">
+                                            ISiKKalender (Schedule)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Terminblock.html">
+                                            ISiKTerminblock (Slot)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Termin.html">
+                                            ISiKTermin (Appointment)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedizinischeBehandlungseinheit.html">
+                                            ISiKMedizinischeBehandlungseinheit (HealthcareService)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="link"><a  href='artifacts/package/StructureDefinition-ISiKTerminblock.json'>ISiKTerminblock</a></h2>
+<p>Die Slot-Ressource repräsentiert die Verbindung eines Termins (Appointment) und den dazugehörigen Ressourcen (z.B. HealthcareService, Device, Practitioner). Für diese Ressourcen können separate Kalender (Schedules) verwaltet werden. Der Slot agiert als Verbindungsstück zwischen diesen Ressourcen.</p>
+<h3 id="bestatigungsrelevanz">Bestätigungsrelevanz</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Verbindlichkeit</b></th><td>SHALL</td></table>
+<h3 id="metadaten">Metadaten</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Canonical</b></th><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock'>https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock</a></td><tr><th><b>Status</b></th><td>active</td><tr><th><b>Version</b></th><td>5.0.0</td><tr><th><b>Basis</b></th><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/StructureDefinition/Slot'>http://hl7.org/fhir/StructureDefinition/Slot</a></td></table>
+<h3 id="inhalt">Inhalt</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#8f06c77a-5043-41d9-a41f-e1adb544cf0d" aria-controls="8f06c77a-5043-41d9-a41f-e1adb544cf0d" role="tab" data-toggle="tab">Darstellung</a>
+</li><li role="presentation" class="">
+    <a href="#4e89de4f-9184-4519-bffa-8826fff00d51" aria-controls="4e89de4f-9184-4519-bffa-8826fff00d51" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#858f828f-9fa3-4b22-b5b1-1fe19031f8bb" aria-controls="858f828f-9fa3-4b22-b5b1-1fe19031f8bb" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#efdd1917-cf6f-41db-ba36-3df4f0a03033" aria-controls="efdd1917-cf6f-41db-ba36-3df4f0a03033" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="8f06c77a-5043-41d9-a41f-e1adb544cf0d">
+    <div class="stu3-treetable" id="a30a81d298c942d69cd423a80009ff77" data-level="1"><div class="treetable-buttons"><div class="tree-control"><button class="tree-button" title="Show changes compared to parent resource" data-mode="diff">diff</button><button class="tree-button" title="Show combination of diff and snap" data-mode="hybrid">hybrid</button><button class="tree-button active" title="Show available resource elements" data-mode="snapshot">snap</button></div><div class="tree-settings"><button class="tree-button" id="ShowCommonResourceElements" title="Show common resource elements" data-settings="ShowCommonResourceElements">show common</button></div></div><div class="treetable-wrapper snapshot"><div class="treetable-left-panel"><table class="treetable"><tr class="collapsed constraints" data-id="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon resource" title="Resource"></span><span class="constraints" title="ISiKTerminblock is the name of the resource
+Slot is the type of the resource
+Slot is the name of the parent resource"><b>ISiKTerminblock</b><span class="constraints"> (</span><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Slot.json" title="Slot
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Slot.json" target="_blank" class="constraints">Slot</a><span class="constraints">)</span></span></td><td class="profile"><span class="invariant constraints" title="This element has or is affected by constraints">C</span></td><td></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Slot.json" title="Slot
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Slot.json" target="_blank">Slot</a></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><pre>Slot</pre><span><b>Short description</b></span><p><span>A slot of time on a schedule that may be available for booking appointments</span></p><span><b>Definition</b></span><div class="markdown"><p>A slot of time on a schedule that may be available for booking appointments.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Slot.json" title="Slot
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Slot.json" target="_blank">Slot</a></p><span class="constraints"><b>Constraints</b></span><ul><li><b>dom-2: </b>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br/><code>contained.contained.empty()</code></li><li><b>dom-3: </b>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br/><code>contained.where(((&#39;#&#39;+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = &#39;#&#39;).exists() or descendants().where(as(canonical) = &#39;#&#39;).exists() or descendants().where(as(canonical) = &#39;#&#39;).exists()).not()).trace(&#39;unmatched&#39;, id).empty()</code></li><li><b>dom-4: </b>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br/><code>contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</code></li><li><b>dom-5: </b>If a resource is contained in another resource, it SHALL NOT have a security label<br/><code>contained.meta.security.empty()</code></li><li><b>dom-6: </b>A resource should have narrative for robust management<br/><code>text.`div`.exists()</code></li><li class="constraints"><b>ISiK-slot-1: </b>Der Endzeitpunkt eines Terminsblocks MUSS nach dem Startzeitpunkt liegen<br/><code>start &lt;= end</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>Entity. Role, or Act</li><li><b>rim: </b>n/a</li><li><b>ical: </b>(refer to the Availability resource for the header mapping details)</li></ul></td></tr><tr class="common" id="Slot.id" data-id="6a24f93fc9f343b589c6cc6464943a56" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.id</pre><span><b>Short description</b></span><p><span>Logical id of this artifact</span></p><span><b>Definition</b></span><div class="markdown"><p>The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>The only time that a resource does not have an id is when it is being submitted to the server using a create operation.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></p></td></tr><tr class="common" id="Slot.meta" data-id="d5efe508d6064abfb340e07ec2ff89b9" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>meta</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Meta.json" title="Meta
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Meta.json" target="_blank">Meta</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.meta</pre><span><b>Short description</b></span><p><span>Metadata about the resource</span></p><span><b>Definition</b></span><div class="markdown"><p>The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Meta.json" title="Meta
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Meta.json" target="_blank">Meta</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="common" id="Slot.implicitRules" data-id="c11b4c583cc64a599d560318b56995c1" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>implicitRules</span></td><td class="profile"><span title="This element is included in summaries">Σ</span> <span title="This element is a modifier element">?!</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" target="_blank">uri</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.implicitRules</pre><span><b>Short description</b></span><p><span>A set of rules under which this content was created</span></p><span><b>Definition</b></span><div class="markdown"><p>A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it's narrative along with other profiles, value sets, etc.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" target="_blank">uri</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="common" id="Slot.language" data-id="9ad243878a1a4111bd0fbeab3dcfcd6c" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>language</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" target="_blank">code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.language</pre><span><b>Short description</b></span><p><span>Language of the resource content</span></p><span><b>Definition</b></span><div class="markdown"><p>The base language in which the resource is written.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource. Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" target="_blank">code</a></p><span><b>Binding</b></span><div class="markdown"><p>A human language.</p>
+</div><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-languages.json" title="CommonLanguages
+hl7.fhir.r4.core 4.0.1
+ValueSet-languages.json" target="_blank">CommonLanguages</a><span> (</span><a href="http://hl7.org/fhir/r4/terminologies.html#preferred" title="Instances are encouraged to draw from the specified codes for interoperability purposes but are not required to do so to be considered conformant.">preferred</a><span>)</span></p><span><b>Binding extensions</b></span><table><colgroup><col class="w-auto"/><col/></colgroup><tbody><tr class="noconstraints"><th class="nowrap"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-elementdefinition-maxValueSet.json" title="maxValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-elementdefinition-maxValueSet.json" target="_blank">maxValueSet</a></th><td><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-all-languages.json" title="AllLanguages
+hl7.fhir.r4.core 4.0.1
+ValueSet-all-languages.json" target="_blank">AllLanguages</a></td></tr></tbody></table><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="common" id="Slot.text" data-id="aebe04397b5d4484952b1a4bcedc0e6c" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>text</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Narrative.json" title="Narrative
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Narrative.json" target="_blank">Narrative</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.text</pre><span><b>Short description</b></span><p><span>Text summary of the resource, for human interpretation</span></p><span><b>Alternate names</b></span><p><span>narrative</span><span>, </span><span>html</span><span>, </span><span>xhtml</span><span>, </span><span>display</span></p><span><b>Definition</b></span><div class="markdown"><p>A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative. In some cases, a resource may only have text with little or no additional discrete data (as long as all minOccurs=1 elements are satisfied).  This may be necessary for data from legacy systems where information is captured as a &quot;text blob&quot; or where text is additionally entered raw or narrated and encoded information is added later.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Narrative.json" title="Narrative
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Narrative.json" target="_blank">Narrative</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>Act.text?</li></ul></td></tr><tr class="common" id="Slot.contained" data-id="0d29019f9b2a474b917bc9931c1ef9c2" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>contained</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Resource.json" title="Resource
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Resource.json" target="_blank">Resource</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.contained</pre><span><b>Short description</b></span><p><span>Contained, inline Resources</span></p><span><b>Alternate names</b></span><p><span>inline resources</span><span>, </span><span>anonymous resources</span><span>, </span><span>contained resources</span></p><span><b>Definition</b></span><div class="markdown"><p>These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Resource.json" title="Resource
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Resource.json" target="_blank">Resource</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common" id="Slot.extension" data-id="b3472d99bfa24fac907116e878f84bfb" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span>extension</span></td><td class="profile"><span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.extension</pre><span><b>Short description</b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names</b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition</b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br/><code>extension.exists() != value.exists()</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common" id="Slot.modifierExtension" data-id="4c3e019ef21145e0b884d0c6aa18c560" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon modifierExtension" title="Modifier Extension"></span><span>modifierExtension</span></td><td class="profile"><span title="This element is a modifier element">?!</span> <span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.modifierExtension</pre><span><b>Short description</b></span><p><span>Extensions that cannot be ignored</span></p><span><b>Alternate names</b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition</b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+<p>Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).</p>
+</div><span><b>Requirements</b></span><div class="markdown"><p>Modifier extensions allow for extensions that <em>cannot</em> be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the <a href="extensibility.html#modifierExtension">definition of modifier extensions</a>.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br/><code>extension.exists() != value.exists()</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>N/A</li></ul></td></tr><tr id="Slot.identifier" data-id="28866b274bd14ab5b6856089ee28d49d" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>identifier</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Identifier.json" title="Identifier
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Identifier.json" target="_blank">Identifier</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.identifier</pre><span><b>Short description</b></span><p><span>External Ids for this item</span></p><span><b>Definition</b></span><div class="markdown"><p>External Ids for this item.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Identifier.json" title="Identifier
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Identifier.json" target="_blank">Identifier</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>w5: </b>FiveWs.identifier</li></ul></td></tr><tr id="Slot.serviceCategory" data-id="21b2a56242b24edaa8331c85cf37ede7" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>serviceCategory</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeableConcept.json" title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" target="_blank">CodeableConcept</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.serviceCategory</pre><span><b>Short description</b></span><p><span>A broad categorization of the service that is to be performed during this appointment</span></p><span><b>Definition</b></span><div class="markdown"><p>A broad categorization of the service that is to be performed during this appointment.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeableConcept.json" title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" target="_blank">CodeableConcept</a></p><span><b>Binding</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-service-category.json" title="ServiceCategory
+hl7.fhir.r4.core 4.0.1
+ValueSet-service-category.json" target="_blank">ServiceCategory</a><span> (</span><a href="http://hl7.org/fhir/r4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set. The value set merely provides examples of the types of concepts intended to be included.">example</a><span>)</span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>w5: </b>FiveWs.class</li></ul></td></tr><tr id="Slot.serviceType" data-id="b1d255c2807d4eb68d8887bfbf813187" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>serviceType</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeableConcept.json" title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" target="_blank">CodeableConcept</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.serviceType</pre><span><b>Short description</b></span><p><span>The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource</span></p><span><b>Definition</b></span><div class="markdown"><p>The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeableConcept.json" title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" target="_blank">CodeableConcept</a></p><span><b>Binding</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-service-type.json" title="ServiceType
+hl7.fhir.r4.core 4.0.1
+ValueSet-service-type.json" target="_blank">ServiceType</a><span> (</span><a href="http://hl7.org/fhir/r4/terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set. The value set merely provides examples of the types of concepts intended to be included.">example</a><span>)</span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>w5: </b>FiveWs.class</li></ul></td></tr><tr id="Slot.specialty" data-id="226f1c2e541d412eab33f4cbdcf41257" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>specialty</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeableConcept.json" title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" target="_blank">CodeableConcept</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.specialty</pre><span><b>Short description</b></span><p><span>The specialty of a practitioner that would be required to perform the service requested in this appointment</span></p><span><b>Definition</b></span><div class="markdown"><p>The specialty of a practitioner that would be required to perform the service requested in this appointment.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeableConcept.json" title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" target="_blank">CodeableConcept</a></p><span><b>Binding</b></span><div class="markdown"><p>Additional details about where the content was created (e.g. clinical specialty).</p>
+</div><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-c80-practice-codes.json" title="PracticeSettingCodeValueSet
+hl7.fhir.r4.core 4.0.1
+ValueSet-c80-practice-codes.json" target="_blank">PracticeSettingCodeValueSet</a><span> (</span><a href="http://hl7.org/fhir/r4/terminologies.html#preferred" title="Instances are encouraged to draw from the specified codes for interoperability purposes but are not required to do so to be considered conformant.">preferred</a><span>)</span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>w5: </b>FiveWs.class</li></ul></td></tr><tr id="Slot.appointmentType" data-id="41e156c49195486c98811746ec64e000" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>appointmentType</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeableConcept.json" title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" target="_blank">CodeableConcept</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.appointmentType</pre><span><b>Short description</b></span><p><span>The style of appointment or patient that may be booked in the slot (not service type)</span></p><span><b>Definition</b></span><div class="markdown"><p>The style of appointment or patient that may be booked in the slot (not service type).</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeableConcept.json" title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" target="_blank">CodeableConcept</a></p><span><b>Binding</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-v2-0276.json" title="v2.0276
+hl7.fhir.r4.core 4.0.1
+ValueSet-v2-0276.json" target="_blank">v2.0276</a><span> (</span><a href="http://hl7.org/fhir/r4/terminologies.html#preferred" title="Instances are encouraged to draw from the specified codes for interoperability purposes but are not required to do so to be considered conformant.">preferred</a><span>)</span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>w5: </b>FiveWs.class</li></ul></td></tr><tr class="collapsed constraints" id="Slot.schedule" data-id="cf6468bd81f845f598e9bba011003ed7" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon reference" title="Reference to another Resource"></span><span class="constraints">schedule</span></td><td class="profile"><span class="mustsupport constraints" title="This element must be supported">S</span> <span title="This element is included in summaries">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Reference.json" title="Reference
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Reference.json" target="_blank">Reference</a><span>(</span><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Schedule.json" title="Schedule
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Schedule.json" target="_blank">Schedule</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><pre>Slot.schedule</pre><span><b>Short description</b></span><p><span>The schedule resource that this slot defines an interval of status information</span></p><span><b>Definition</b></span><div class="markdown"><p>The schedule resource that this slot defines an interval of status information.</p>
+</div><span class="constraints"><b>Comments</b></span><div class="markdown constraints"><p>Begründung Kardinalität und MS: Die Kardinalität der reference-Eigenschaft wird auf 1..* festgelegt, um sicherzustellen, dass ein Kalender eindeutig referenziert und identifiziert werden kann.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Reference.json" title="Reference
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Reference.json" target="_blank">Reference</a><span>(</span><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Schedule.json" title="Schedule
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Schedule.json" target="_blank">Schedule</a><span>)</span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="common" id="Slot.schedule.id" data-id="d7d0a1577b514f1999cb792e6ed645c5" data-parentId="cf6468bd81f845f598e9bba011003ed7"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.schedule.id</pre><span><b>Short description</b></span><p><span>Unique id for inter-element referencing</span></p><span><b>Definition</b></span><div class="markdown"><p>Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common sliced" id="Slot.schedule.extension" data-id="1017523194b548cda6b5d1e44116a777" data-parentId="cf6468bd81f845f598e9bba011003ed7"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span>extension</span></td><td class="profile"><span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.schedule.extension</pre><span><b>Short description</b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names</b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition</b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></p><span><b>Slicing</b></span><p><span>Unordered, Open, by url(Value)</span></p><p><span>Extensions are always sliced by (at least) url</span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br/><code>extension.exists() != value.exists()</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="constraints" id="Slot.schedule.reference" data-id="5b810a4578224c10850aaec84049ee8d" data-parentId="cf6468bd81f845f598e9bba011003ed7"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">reference</span></td><td class="profile"><span class="mustsupport constraints" title="This element must be supported">S</span> <span title="This element is included in summaries">Σ</span> <span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.schedule.reference</pre><span><b>Short description</b></span><p><span>Literal reference, Relative, internal or absolute URL</span></p><span><b>Definition</b></span><div class="markdown"><p>A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries.   Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the URL conforms to the structure &quot;/[type]/[id]&quot; then it should be assumed that the reference is to a FHIR RESTful server.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></p><span><b>Conditions</b></span><p><span>The cardinality or value of this element may be affected by these constraints: </span><span><b>ref-1</b></span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>N/A</li></ul></td></tr><tr id="Slot.schedule.type" data-id="4161643c49b2429c99c061778b25b21b" data-parentId="cf6468bd81f845f598e9bba011003ed7"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>type</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" target="_blank">uri</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.schedule.type</pre><span><b>Short description</b></span><p><span>Type the reference refers to (e.g. &quot;Patient&quot;)</span></p><span><b>Definition</b></span><div class="markdown"><p>The expected type of the target of the reference. If both Reference.type and Reference.reference are populated and Reference.reference is a FHIR URL, both SHALL be consistent.</p>
+<p>The type is the Canonical URL of Resource Definition that is the type this reference refers to. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition/ e.g. &quot;Patient&quot; is a reference to http://hl7.org/fhir/StructureDefinition/Patient. Absolute URLs are only allowed for logical models (and can only be used in references in logical models, not resources).</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>This element is used to indicate the type of  the target of the reference. This may be used which ever of the other elements are populated (or not). In some cases, the type of the target may be determined by inspection of the reference (e.g. a RESTful URL) or by resolving the target of the reference; if both the type and a reference is provided, the reference SHALL resolve to a resource of the same type as that specified.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" target="_blank">uri</a></p><span><b>Binding</b></span><div class="markdown"><p>Aa resource (or, for logical models, the URI of the logical model).</p>
+</div><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-resource-types.json" title="ResourceType
+hl7.fhir.r4.core 4.0.1
+ValueSet-resource-types.json" target="_blank">ResourceType</a><span> (</span><a href="http://hl7.org/fhir/r4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated. If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead.">extensible</a><span>)</span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>N/A</li></ul></td></tr><tr id="Slot.schedule.identifier" data-id="24e6d104d48944a99cfd10ab4a7a25d4" data-parentId="cf6468bd81f845f598e9bba011003ed7"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>identifier</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Identifier.json" title="Identifier
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Identifier.json" target="_blank">Identifier</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.schedule.identifier</pre><span><b>Short description</b></span><p><span>Logical reference, when literal reference is not known</span></p><span><b>Definition</b></span><div class="markdown"><p>An identifier for the target resource. This is used when there is no way to reference the other resource directly, either because the entity it represents is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location. There is no requirement that a Reference.identifier point to something that is actually exposed as a FHIR instance, but it SHALL point to a business concept that would be expected to be exposed as a FHIR instance, and that instance would need to be of a FHIR resource type allowed by the reference.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>When an identifier is provided in place of a reference, any system processing the reference will only be able to resolve the identifier to a reference if it understands the business context in which the identifier is used. Sometimes this is global (e.g. a national identifier) but often it is not. For this reason, none of the useful mechanisms described for working with references (e.g. chaining, includes) are possible, nor should servers be expected to be able resolve the reference. Servers may accept an identifier based reference untouched, resolve it, and/or reject it - see CapabilityStatement.rest.resource.referencePolicy.</p>
+<p>When both an identifier and a literal reference are provided, the literal reference is preferred. Applications processing the resource are allowed - but not required - to check that the identifier matches the literal reference</p>
+<p>Applications converting a logical reference to a literal reference may choose to leave the logical reference present, or remove it.</p>
+<p>Reference is intended to point to a structure that can potentially be expressed as a FHIR resource, though there is no need for it to exist as an actual FHIR resource instance - except in as much as an application wishes to actual find the target of the reference. The content referred to be the identifier must meet the logical constraints implied by any limitations on what resource types are permitted for the reference.  For example, it would not be legitimate to send the identifier for a drug prescription if the type were Reference(Observation|DiagnosticReport).  One of the use-cases for Reference.identifier is the situation where no FHIR representation exists (where the type is Reference (Any).</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Identifier.json" title="Identifier
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Identifier.json" target="_blank">Identifier</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>.identifier</li></ul></td></tr><tr id="Slot.schedule.display" data-id="a3b6c601e80442bfab6330cf987e78ff" data-parentId="cf6468bd81f845f598e9bba011003ed7"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>display</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.schedule.display</pre><span><b>Short description</b></span><p><span>Text alternative for the resource</span></p><span><b>Definition</b></span><div class="markdown"><p>Plain text narrative that identifies the resource in addition to the resource reference.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>N/A</li></ul></td></tr><tr class="constraints" id="Slot.status" data-id="64d9ed4cde3e46afbf3c6e4b8a1e9942" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">status</span></td><td class="profile"><span class="mustsupport constraints" title="This element must be supported">S</span> <span title="This element is included in summaries">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" target="_blank">code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><pre>Slot.status</pre><span><b>Short description</b></span><p><span>busy | free | busy-unavailable | busy-tentative | entered-in-error</span></p><span><b>Definition</b></span><div class="markdown"><p>busy | free | busy-unavailable | busy-tentative | entered-in-error.</p>
+</div><span class="constraints"><b>Comments</b></span><div class="markdown constraints"><p>Begründung Must Support: Dies ist wichtig, um die Verfügbarkeit von Terminen zu gewährleisten, eine Überbuchung zu verhindern und zudem einem Termin-Requestor die Möglichkeit zu bieten nur freie Termine bei der Terminbuchung anzuzeigen.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" target="_blank">code</a></p><span><b>Binding</b></span><div class="markdown"><p>The free/busy status of the slot.</p>
+</div><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-slotstatus.json" title="SlotStatus
+hl7.fhir.r4.core 4.0.1
+ValueSet-slotstatus.json" target="_blank">SlotStatus</a><span> (</span><a href="http://hl7.org/fhir/r4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a><span>)</span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>ical: </b>FREEBUSY;FBTYPE=(freeBusyType):19980314T233000Z/19980315T003000Z If the freeBusyType is BUSY, then this value can be excluded</li></ul></td></tr><tr class="constraints" id="Slot.start" data-id="9ad1b5d3c6e04e7c88a7529b71bedcc8" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">start</span></td><td class="profile"><span class="mustsupport constraints" title="This element must be supported">S</span> <span title="This element is included in summaries">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-instant.json" title="instant
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-instant.json" target="_blank">instant</a></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><pre>Slot.start</pre><span><b>Short description</b></span><p><span>Date/Time that the slot is to begin</span></p><span><b>Definition</b></span><div class="markdown"><p>Date/Time that the slot is to begin.</p>
+</div><span class="constraints"><b>Comments</b></span><div class="markdown constraints"><p>Begründung Must Support: Dies ist wichtig, um den Zeitpunkt des Termins an einen Termin-Requestor / Termin-Consumer zu kommunizieren.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-instant.json" title="instant
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-instant.json" target="_blank">instant</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>w5: </b>FiveWs.planned</li><li><b>ical: </b>FREEBUSY;FBTYPE=FREE:(start)/19980315T003000Z If the freeBusyType is BUSY, then this value can be excluded</li></ul></td></tr><tr class="constraints" id="Slot.end" data-id="ee2e84e2e0cb4012a1d2539e6de1b8a5" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">end</span></td><td class="profile"><span class="mustsupport constraints" title="This element must be supported">S</span> <span title="This element is included in summaries">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-instant.json" title="instant
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-instant.json" target="_blank">instant</a></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><pre>Slot.end</pre><span><b>Short description</b></span><p><span>Date/Time that the slot is to conclude</span></p><span><b>Definition</b></span><div class="markdown"><p>Date/Time that the slot is to conclude.</p>
+</div><span class="constraints"><b>Comments</b></span><div class="markdown constraints"><p>Begründung Must Support: Dies ist wichtig, um die Länge des Termins an einen Termin-Requestor / Termin-Consumer zu kommunizieren.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-instant.json" title="instant
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-instant.json" target="_blank">instant</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>w5: </b>FiveWs.planned</li><li><b>ical: </b>FREEBUSY:19980314T233000Z/(end) If the freeBusyType is BUSY, then this value can be excluded (as shown)</li></ul></td></tr><tr id="Slot.overbooked" data-id="01bbfbe53a9c48f1a9793f4f23f1c743" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>overbooked</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-boolean.json" title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" target="_blank">boolean</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.overbooked</pre><span><b>Short description</b></span><p><span>This slot has already been overbooked, appointments are unlikely to be accepted for this time</span></p><span><b>Definition</b></span><div class="markdown"><p>This slot has already been overbooked, appointments are unlikely to be accepted for this time.</p>
+</div><span><b>Meaning when missing</b></span><div class="markdown"><p>If overbooked is missing, systems may assume that there are still appointments available</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-boolean.json" title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" target="_blank">boolean</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr id="Slot.comment" data-id="261c680528194ed882e6b247f1b9d545" data-parentId="5f53550f3a704e019b6226a2fd4ee39b"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>comment</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Slot.comment</pre><span><b>Short description</b></span><p><span>Comments on the slot to describe any extended information. Such as custom constraints on the slot</span></p><span><b>Definition</b></span><div class="markdown"><p>Comments on the slot to describe any extended information. Such as custom constraints on the slot.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr></table></div><div class="treetable-right-panel"></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTablea30a81d298c942d69cd423a80009ff77 = new Stu3TreeTable(false);
+resourceTreeTablea30a81d298c942d69cd423a80009ff77.init("a30a81d298c942d69cd423a80009ff77");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="4e89de4f-9184-4519-bffa-8826fff00d51">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">StructureDefinition</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKTerminblock</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.url" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">url</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.version" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">5.0.0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.name" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKTerminblock</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.status" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.experimental" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">experimental</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.date" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2025-06-26</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.publisher" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">publisher</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">gematik GmbH</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.description" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Die Slot-Ressource repr&#228;sentiert die Verbindung eines Termins (Appointment) und den dazugeh&#246;rigen Ressourcen (z.B. HealthcareService, Device, Practitioner). F&#252;r diese Ressourcen k&#246;nnen separate Kalender (Schedules) verwaltet werden. Der Slot agiert als Verbindungsst&#252;ck zwischen diesen Ressourcen.</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.fhirVersion" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">fhirVersion</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">4.0.1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.kind" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">kind</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">resource</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.abstract" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">abstract</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.type" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.baseDefinition" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">baseDefinition</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/Slot</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.derivation" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">derivation</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">constraint</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">differential</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.constraint" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">constraint</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.constraint.key" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">key</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiK-slot-1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.constraint.severity" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">severity</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">error</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.constraint.human" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">human</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Der Endzeitpunkt eines Terminsblocks MUSS nach dem Startzeitpunkt liegen</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.constraint.expression" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">expression</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">start &lt;= end</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.constraint.source" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">source</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">constraint</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot.schedule</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot.schedule</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.comment" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">comment</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Begr&#252;ndung Kardinalit&#228;t und MS: Die Kardinalit&#228;t der reference-Eigenschaft wird auf 1..* festgelegt, um sicherzustellen, dass ein Kalender eindeutig referenziert und identifiziert werden kann.</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot.schedule.reference</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot.schedule.reference</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.min" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">min</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot.status</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot.status</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.comment" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">comment</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Begr&#252;ndung Must Support: Dies ist wichtig, um die Verf&#252;gbarkeit von Terminen zu gew&#228;hrleisten, eine &#220;berbuchung zu verhindern und zudem einem Termin-Requestor die M&#246;glichkeit zu bieten nur freie Termine bei der Terminbuchung anzuzeigen.</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot.start</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot.start</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.comment" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">comment</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Begr&#252;ndung Must Support: Dies ist wichtig, um den Zeitpunkt des Termins an einen Termin-Requestor / Termin-Consumer zu kommunizieren.</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot.end</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot.end</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.comment" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">comment</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Begr&#252;ndung Must Support: Dies ist wichtig, um die L&#228;nge des Termins an einen Termin-Requestor / Termin-Consumer zu kommunizieren.</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">differential</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">StructureDefinition</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="858f828f-9fa3-4b22-b5b1-1fe19031f8bb">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.resourceType" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">StructureDefinition</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKTerminblock</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.url" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.version" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">5.0.0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.name" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKTerminblock</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.status" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.experimental" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">experimental</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.date" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2025-06-26</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.publisher" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">publisher</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">gematik GmbH</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.description" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">description</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Die Slot-Ressource repr&#228;sentiert die Verbindung eines Termins (Appointment) und den dazugeh&#246;rigen Ressourcen (z.B. HealthcareService, Device, Practitioner). F&#252;r diese Ressourcen k&#246;nnen separate Kalender (Schedules) verwaltet werden. Der Slot agiert als Verbindungsst&#252;ck zwischen diesen Ressourcen.</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.fhirVersion" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">fhirVersion</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4.0.1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.kind" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">kind</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">resource</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.abstract" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">abstract</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.type" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.baseDefinition" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">baseDefinition</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/Slot</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.derivation" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">derivation</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">constraint</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">differential</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.constraint" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">constraint</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.constraint.key" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">key</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiK-slot-1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.constraint.severity" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">severity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">error</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.constraint.human" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">human</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Der Endzeitpunkt eines Terminsblocks MUSS nach dem Startzeitpunkt liegen</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.constraint.expression" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">expression</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">start &lt;= end</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.constraint.source" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">source</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot.schedule</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot.schedule</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.comment" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">comment</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Begr&#252;ndung Kardinalit&#228;t und MS: Die Kardinalit&#228;t der reference-Eigenschaft wird auf 1..* festgelegt, um sicherzustellen, dass ein Kalender eindeutig referenziert und identifiziert werden kann.</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot.schedule.reference</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot.schedule.reference</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.min" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">min</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">1</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot.status</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot.status</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.comment" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">comment</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Begr&#252;ndung Must Support: Dies ist wichtig, um die Verf&#252;gbarkeit von Terminen zu gew&#228;hrleisten, eine &#220;berbuchung zu verhindern und zudem einem Termin-Requestor die M&#246;glichkeit zu bieten nur freie Termine bei der Terminbuchung anzuzeigen.</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot.start</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot.start</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.comment" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">comment</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Begr&#252;ndung Must Support: Dies ist wichtig, um den Zeitpunkt des Termins an einen Termin-Requestor / Termin-Consumer zu kommunizieren.</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot.end</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot.end</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.comment" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">comment</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Begr&#252;ndung Must Support: Dies ist wichtig, um die L&#228;nge des Termins an einen Termin-Requestor / Termin-Consumer zu kommunizieren.</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="efdd1917-cf6f-41db-ba36-3df4f0a03033">
+    <a  href='artifacts/package/StructureDefinition-ISiKTerminblock.json'>ISiKTerminblock</a>
+</div>
+  </div>
+</div>
+<h3 id="constraintsinvarianten">Constraints/Invarianten</h3>
+<table  class='table table-bordered fql-table'><thead><tr><th>Name</th><th>Schweregrad</th><th>Beschreibung</th><th>Ausdruck</th></tr></thead><tbody><tr><td>ISiK-slot-1</td><td>error</td><td>Der Endzeitpunkt eines Terminsblocks MUSS nach dem Startzeitpunkt liegen</td><td>start <= end</td></tr>
+</tbody></table>
+<h3 id="terminology-bindings">Terminology-Bindings</h3>
+<!--### Mappings
+
+-->
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

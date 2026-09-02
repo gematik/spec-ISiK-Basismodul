@@ -1,0 +1,103 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Questionnaire/ExampleConditionalItem> a fhir:Questionnaire ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleConditionalItem"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ]
+  ] ;
+  fhir:Questionnaire.url [ fhir:value "https://gematik.de/fhir/isik/Questionnaire/ExampleConditionalItem"] ;
+  fhir:Questionnaire.version [ fhir:value "6.0.0"] ;
+  fhir:Questionnaire.name [ fhir:value "ExampleConditionalItem"] ;
+  fhir:Questionnaire.title [ fhir:value "Bedingte Fragestellungen"] ;
+  fhir:Questionnaire.status [ fhir:value "draft"] ;
+  fhir:Questionnaire.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:Questionnaire.subjectType [
+     fhir:value "Patient" ;
+     fhir:index -1
+  ] ;
+  fhir:Questionnaire.date [ fhir:value "2026-09-02T11:31:15+00:00"^^xsd:dateTime] ;
+  fhir:Questionnaire.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:Questionnaire.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:Questionnaire.description [ fhir:value "### Beispiel-Questionnaire mit bedingten Fragestellungen/Items  \nDie zweite Frage `Was ist denn los?` soll nur gestellt werden, \nwenn die erste Frage `Wie geht's` mit `muss.` beantwortet wurde."] ;
+  fhir:Questionnaire.item [
+     fhir:index -1 ;
+     fhir:Questionnaire.item.linkId [ fhir:value "2" ] ;
+     fhir:Questionnaire.item.text [ fhir:value "Fragen mit EnableWhen-Bedingung" ] ;
+     fhir:Questionnaire.item.type [ fhir:value "group" ] ;
+     fhir:Questionnaire.item.item [
+       fhir:index -1 ;
+       fhir:Questionnaire.item.linkId [ fhir:value "2.1" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Wie geht's?" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "choice" ] ;
+       fhir:Questionnaire.item.answerOption [
+         fhir:index -1 ;
+         fhir:Questionnaire.item.answerOption.valueCoding [
+           fhir:Coding.display [ fhir:value "gut." ]
+         ]
+       ], [
+         fhir:index -1 ;
+         fhir:Questionnaire.item.answerOption.valueCoding [
+           fhir:Coding.display [ fhir:value "geht." ]
+         ]
+       ], [
+         fhir:index -1 ;
+         fhir:Questionnaire.item.answerOption.valueCoding [
+           fhir:Coding.display [ fhir:value "muss." ]
+         ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Questionnaire.item.linkId [ fhir:value "2.2" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Was ist denn los?" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "choice" ] ;
+       fhir:Questionnaire.item.enableWhen [
+         fhir:index -1 ;
+         fhir:Questionnaire.item.enableWhen.question [ fhir:value "2.1" ] ;
+         fhir:Questionnaire.item.enableWhen.operator [ fhir:value "=" ] ;
+         fhir:Questionnaire.item.enableWhen.answerCoding [
+           fhir:Coding.display [ fhir:value "muss." ]
+         ]
+       ] ;
+       fhir:Questionnaire.item.answerOption [
+         fhir:index -1 ;
+         fhir:Questionnaire.item.answerOption.valueCoding [
+           fhir:Coding.display [ fhir:value "Nix." ]
+         ]
+       ], [
+         fhir:index -1 ;
+         fhir:Questionnaire.item.answerOption.valueCoding [
+           fhir:Coding.display [ fhir:value "Frag nicht!" ]
+         ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Questionnaire/ExampleConditionalItem.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

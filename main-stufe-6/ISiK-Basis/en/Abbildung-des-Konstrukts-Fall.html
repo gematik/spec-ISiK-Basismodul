@@ -1,0 +1,639 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Abbildung des Konstrukts &quot;Fall&quot; - ISiK Basis Implementierungsleitfaden v6.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"4"}
+    h3,h4,h5,h6{--heading-prefix:"4"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="Motivation.html">Motivation</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Kontext und Use Cases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Abbildung-des-Konstrukts-Fall.html">Abbildung des Konstrukts &quot;Fall&quot;</a>
+      </li>
+      <li>
+        <a href="Datenuebermittlung-aus-Subsystemen.html">Datenübermittlung aus Subsystemen</a>
+      </li>
+      <li>
+        <a href="Erlaeuterung-Akteurs-und-Rollenmodell.html">Akteurs- und Rollenmodell</a>
+      </li>
+      <li>
+        <a href="Index_Beispielszenarien.html">Beispielszenarien</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebergreifendeFestlegungen_Methodik.html">Methodik</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">Bestätigungsrelevante Systeme</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation_Andere.html">Kompatibilität der gematik-Spezifikation Andere</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation_IHE.html">Kompatibilität der gematik-Spezifikation IHE</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation_HL7Europe.html">Kompatibilität der gematik-Spezifikation HL7 Europe</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Must-Support-Flags.html">Must-Support-Flags</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Repraesentationsformate.html">Repräsentationsformate</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Suchparameter.html">Suchparameter</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Rest.html">REST-API</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Performance.html">Performance</a>
+      </li>
+      <li>
+        <a href="Patient-Besuch-Kontext.html">Herstellung von Patienten- und Besuchskontext</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_UmgangFehlendeDaten.html">Umgang mit fehlenden Daten</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_FHIR_Artefakte.html">Umgang mit FHIR-Artefakten</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Basis Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0 - active
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Abbildung des Konstrukts &quot;Fall&quot;</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Abbildung des Konstrukts &quot;Fall&quot;</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#der-begriff-fall-im-kontext-von-fhir" id="markdown-toc-der-begriff-fall-im-kontext-von-fhir">Der Begriff "Fall" im Kontext von FHIR</a></li>
+  <li><a href="#der-begriff-fall-im-kontext-der-medizininformatik-initiative" id="markdown-toc-der-begriff-fall-im-kontext-der-medizininformatik-initiative">Der Begriff "Fall" im Kontext der Medizininformatik-Initiative</a></li>
+  <li><a href="#der-begriff-fall-im-kontext-der-isik-spezifikation" id="markdown-toc-der-begriff-fall-im-kontext-der-isik-spezifikation">Der Begriff "Fall" im Kontext der ISiK-Spezifikation</a></li>
+  <li><a href="#die-repräsentation-der-fall-nummer" id="markdown-toc-die-repräsentation-der-fall-nummer">Die Repräsentation der "Fall"-Nummer</a></li>
+  <li><a href="#die-repräsentation-von-ambulanten-fällen-im-krankenhaus" id="markdown-toc-die-repräsentation-von-ambulanten-fällen-im-krankenhaus">Die Repräsentation von ambulanten Fällen im Krankenhaus</a></li>
+  <li><a href="#abfrage-von-fall-daten-über-fhir-search" id="markdown-toc-abfrage-von-fall-daten-über-fhir-search">Abfrage von "Fall"-Daten über FHIR-Search</a></li>
+</ul>
+
+</div>
+<h3 id="der-begriff-fall-im-kontext-von-fhir">Der Begriff "Fall" im Kontext von FHIR</h3>
+
+<p>Der Begriff "Fall" gruppiert im Sprachgebrauch verschiedene Konzepte, die in FHIR durch unterschiedliche Ressourcen repräsentiert werden:</p>
+
+<ul>
+  <li>
+    <p><strong>Aufenthalt/Besuch/Kontakt (Encounter):</strong>
+Der stationäre Aufenthalt oder der ambulante Kontakt eines Patienten in einer Gesundheitseinrichtung wird in FHIR durch die <a href="https://hl7.org/fhir/R4/encounter.html">Ressource Encounter</a> abgebildet.</p>
+  </li>
+  <li>
+    <p><strong>Abrechnungsfall (Account):</strong>
+Der Fall, im Sinne einer Gruppierung von medizinischen Leistungen, die in einem gemeinsamen Kontext abgerechnet werden, sind in FHIR durch die <a href="https://hl7.org/fhir/R4/account.html">Ressource Account</a> repräsentiert. Ein Abrechnungsfall kann mehrere Encounter umfassen (z.B. vorstationärer Besuch, stationärer Aufenthalt und nachstationäre Besuche)</p>
+  </li>
+</ul>
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Encounter-Modell-Abrechnung.png" alt="Fall Abbildung generisch" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung: </strong>Generische Fall Abbildung </figcaption>
+</figure>
+
+<ul>
+  <li>
+    <p><strong>AbrechnungsfallAmbulant (Account):</strong>
+  Diese Spezialisierung des ISiK Abrechnungsfall-Profils ist für die Abbildung von ambulanten Abrechnungsfällen im Krankenhaus vorgesehen. Auch dieser Abrechnungsfall kann mehrere Encounter umfassen, diese stellen in dem Fall aber punktuelle Besuche dar.</p>
+  </li>
+  <li>
+    <p><strong>Medizinischer Fall (EpisodeOfCare):</strong>
+Der medizinische Fall gruppiert Informationen, die im Kontext einer gemeinsamen (Dauer-)Diagnose stehen und wird in FHIR durch die <a href="https://hl7.org/fhir/R4/episodeofcare.html">Ressource EpisodeOfCare</a> dargestellt.</p>
+  </li>
+</ul>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Encounter-Modell-Medizinisch.png" alt="Fall Abbildung generisch" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung: </strong>Generische Fall Abbildung </figcaption>
+</figure>
+
+<p>Wichtig ist die Herausstellung, dass "Besuch" und "Fall" wechselseitig keine synonymen Begriffe sind.</p>
+
+<hr />
+
+<h3 id="der-begriff-fall-im-kontext-der-medizininformatik-initiative">Der Begriff "Fall" im Kontext der Medizininformatik-Initiative</h3>
+<p>In dem <a href="https://simplifier.net/guide/mii-ig-modul-fall-2025/MIIIGModulFall/BeschreibungModul/EinfachesAufbaumodell.page.md">von der Medizininformatik-Initiative zur Kontaktverfolgung (Infektionsketten) des Patienten entworfenen Modell</a> wird der Encounter in drei verschiedenen Ebenen verwendet:</p>
+
+<ul>
+  <li>
+    <p><strong>Einrichtungskontakt:</strong>
+Als Kontakt eines Patienten mit einer Einrichtung (z.B. Klinik) gruppiert mehrere Besuche bei einer Einrichtung als gemeinsamen Behandlungskontext.</p>
+  </li>
+  <li>
+    <p><strong>Abteilungskontakt:</strong>
+Als Kontakt des Patienten mit einer Fachabteilung eines Krankenhauses (z.B. einer Ambulanz oder einer stationären Fachabteilung).</p>
+  </li>
+  <li>
+    <p><strong>Versorgungsstellenkontakt:</strong> 
+Als Kontakt des Patienten mit konkreten Servicestellen, wie z.B. Radiologie oder Endoskopie</p>
+  </li>
+</ul>
+
+<p>Zur Unterscheidung der verschiedenen Kontaktebenen wird in der MI-I eine Kodierung in <code class="language-plaintext highlighter-rouge">Encounter.type</code> verwendet. Die Hierarchie der Encounter wird über die <code class="language-plaintext highlighter-rouge">Encounter.partOf</code>-Relation hergestellt. Ambulante Besuche werden in dem Modell derzeit noch nicht berücksichtigt.</p>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Encounter-Modell-MII.png" alt="MII Fall Abbildung" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung: </strong>Fall Abbildung MII</figcaption>
+</figure>
+
+<hr />
+
+<h3 id="der-begriff-fall-im-kontext-der-isik-spezifikation">Der Begriff "Fall" im Kontext der ISiK-Spezifikation</h3>
+
+<p>Für die derzeitige Ausbaustufe des ISiK Basismoduls werden alle zuvor genannten Sichtweise und Modelle berücksichtigt:</p>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Encounter-Modelle.png" alt="Encounter Modelle" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung: </strong>Encounter Modelle</figcaption>
+</figure>
+
+<p>Verpflichtend umzusetzen ist für die bestätigungsrelevanten Systeme der Account, im Sinne der Gruppierung einzelner Besuche, zu einem gemeinsamen (Abrechnungs-)Fall sowie der Encounter der Ebene "Abteilungskontakt" im Sinne des Modells der Medizininformatikinitiative.</p>
+
+<p>Herstellern steht es frei, weitere Ressourcen, wie zum Beispiel die EpisodeOfCare oder den Encounter, im Sinne des Einrichtungskontaktes bzw. des Versorgungsstellenkontaktes, zu implementieren.</p>
+
+<p>Wichtig sind dabei jedoch folgende Punkte zu beachten:</p>
+
+<ul>
+  <li>Encounter im ISiK-Kontext sind stets als "Abteilungskontakte", im Sinne der MI-I mit dem entsprechenden <code class="language-plaintext highlighter-rouge">Encounter.type</code>-Code, zu kennzeichnen.</li>
+  <li>Jegliche im ISiK-Basis-Modul, als auch in anderen ISiK-Modulen definierte Ressourcen, die über einen Encounter-Kontext verfügen, müssen auf einen ISiK-Encounter (Abteilungskontakt) referenzieren.</li>
+  <li>Bei optionaler Implementierung eines "Einrichtungskontaktes" nach dem MII-Modell ist zu beachten, dass <code class="language-plaintext highlighter-rouge">Encounter.partOf</code> in ISiK nicht als "Must Support" markiert ist. Systeme können daher nicht verlässlich davon ausgehen, dass diese Beziehung zur Herstellung der Encounter-Hierarchie zwischen Einrichtungs- und Abteilungskontakt vorhanden ist.</li>
+</ul>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Encounter-Modell-ISiK.png" alt="ISiK Fall Abbildung" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung: </strong>Fall Abbildung ISiK</figcaption>
+</figure>
+
+<hr />
+
+<h3 id="die-repräsentation-der-fall-nummer">Die Repräsentation der "Fall"-Nummer</h3>
+
+<p>Die "Fall"-Nummer ist ein im Kontext der stationären Versorgung häufig verwendetes Vehikel, um (insbesondere in der HL7-V2-Kommunikation) mit einfachen Mitteln den Fallkontext medizinischer Dokumentationen herzustellen.</p>
+
+<p>In den meisten Fällen handelt es sich bei der "Fall"-Nummer um einen eindeutigen Identifier des Abrechnungsfalls. 
+Im ISiK-Kontext ist die Fallnummer daher als Identifier des Accounts zu sehen und nicht geeignet, einen Encounter eindeutig zu identifizieren und damit den für FHIR-Ressourcen erforderlichen Encounter-Kontext zu etablieren.
+Es müssen zusätzliche Kriterien, wie z.B. Zeitraum(<code class="language-plaintext highlighter-rouge">Encounter.period</code>), Fallart (<code class="language-plaintext highlighter-rouge">Encounter.class</code>) oder Status (<code class="language-plaintext highlighter-rouge">Encounter.status</code>) berücksichtigt werden, um den korrekten Encounter zu finden.</p>
+
+<p>ISiK berücksichtigt jedoch die gängige Praxis, dass die Fallnummer als primäres Suchkriterium verwendet wird; auch von Systemen, die rein der medizinischen Versorgung dienen und keine Abrechnungsfunktionen implementieren. 
+Um insbesondere Subsysteme von der Pflicht zu entbinden, die Account-Ressource zu implementieren, nur um Zugriff zur Fallnummer zu bekommen, ist das Mitführen des Account-Identifiers als logische Referenz auf den Account im Encounter verpflichtend. Die Fallnummer eines Encounters kann daher auch ohne Kenntnis des Accounts ermittelt werden.</p>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Encounter-Modell-Fallnummer.png" alt="Repräsentation Fallnummer" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung: </strong>Repräsentation der Fallnummer</figcaption>
+</figure>
+
+<hr />
+
+<h3 id="die-repräsentation-von-ambulanten-fällen-im-krankenhaus">Die Repräsentation von ambulanten Fällen im Krankenhaus</h3>
+
+<p>Neben der stationären Versorgung gibt es im Krankenhaus einen zunehmend wachsenden Teil an ambulanter Versorgung. Ob Chefarztambulanzen, Hochschulambulanzen oder ambulantes Operieren - diese Fälle kommen im Krankenhaus vor und sind teilweise auch in den Primär- und Subsystemen vorhanden. Deshalb wird ab ISiK Stufe 6 die Möglichkeit ergänzt, auch ambulante Fälle in den Fall-bezogenen Ressourcen abzubilden.</p>
+
+<p>Zum einen wird ein neues Account-Profil "AbrechnungsfallAmbulant" eingeführt, welches vom ISiKAbrechnungsfall ableitet und diesen um die Möglichkeit erweitert, ambulante "Schein"-Nummern zu repräsentieren, einen Gültigkeitszeitraum anzugeben und Informationen über die durchführende Ambulanz zu hinterlegen.</p>
+
+<p>Zum anderen wird der ISiKKontaktGesundheitseinrichtung so erweitert, dass jetzt auch ambulante Besuche als Kontaktarten abgebildet werden können.</p>
+
+<p>Bei ambulanten Fällen spielen noch weitere Informationen eine Rolle, wie z.B. EBM-Ziffern. Da das ISiK-Basismodul allerdings kein Abrechnungsmodul ist, wurden diese Informationen bewusst nicht abgebildet. Für EBM-Ziffern verweisen wir auf die Profilierung eines ChargeItem in den deutschen Basisprofilen: <a href="http://fhir.de/StructureDefinition/chargeitem-de-ebm">ChargeItem für EBM-Ziffer als Abrechnungsposition</a>.</p>
+
+<hr />
+
+<h3 id="abfrage-von-fall-daten-über-fhir-search">Abfrage von "Fall"-Daten über FHIR-Search</h3>
+
+<p>Im ISiK-Modell sind klinische Ressourcen an Abteilungskontakte geknüpft. Die Abfrage von klinischen Daten erfolgt daher in der Regel in einem zwei-Schritt-Prozess:</p>
+
+<ol>
+  <li><strong>Ermittlung der relevanten Encounter</strong> anhand der Abrechnungsfallnummer</li>
+  <li><strong>Abfrage der klinischen Ressourcen</strong> über die ermittelten Encounter-Referenzen</li>
+</ol>
+
+<p>Dieser Ansatz gewährleistet, dass klinische Daten eindeutig dem korrekten Abteilungskontakt zugeordnet werden können und berücksichtigt, dass ein Abrechnungsfall mehrere Abteilungskontakte umfassen kann.</p>
+
+<h4 id="schritt-1-ermittlung-der-relevanten-encounter">Schritt 1: Ermittlung der relevanten Encounter</h4>
+
+<p>Die Basis-Abfrage für alle zu einem Abrechnungsfall gehörenden Encounter erfolgt über den <code class="language-plaintext highlighter-rouge">account:identifier</code> Suchparameter:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+</code></pre></div></div>
+
+<p>Diese Abfrage liefert alle Encounter, die mit dem Account verknüpft sind, der die angegebene Fallnummer trägt.</p>
+
+<h5 id="optionale-filter">Optionale Filter</h5>
+
+<p>Je nach Anwendungsfall können zusätzliche Filter verwendet werden, um die Ergebnismenge einzuschränken:</p>
+
+<p><strong>Einschränkung auf Abteilungskontakte</strong> (empfohlen für Systeme, die zusätzliche Encounter-Typen implementieren):</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+    &amp;type=http://fhir.de/CodeSystem/Kontaktebene|abteilungskontakt
+</code></pre></div></div>
+
+<p><strong>Ausschluss vor- und nachstationärer Kontakte</strong>:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+    &amp;type=http://fhir.de/CodeSystem/kontaktart-de|normalstationaer
+</code></pre></div></div>
+
+<p>Oder für Intensivkontakte:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+    &amp;type=http://fhir.de/CodeSystem/kontaktart-de|intensivstationaer
+</code></pre></div></div>
+
+<p><strong>Kombination mehrerer Kontaktarten</strong>:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+    &amp;type=http://fhir.de/CodeSystem/kontaktart-de|normalstationaer,http://fhir.de/CodeSystem/kontaktart-de|intensivstationaer
+</code></pre></div></div>
+
+<p><strong>Einschränkung auf aktive Encounter</strong>:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+    &amp;status=in-progress
+</code></pre></div></div>
+
+<p><strong>Zeitliche Einschränkung</strong>:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+    &amp;date=ge2024-01-01&amp;date=le2024-12-31
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="schritt-2-abfrage-der-klinischen-ressourcen">Schritt 2: Abfrage der klinischen Ressourcen</h4>
+
+<p>Nach der Ermittlung der relevanten Encounter können alle klinischen Ressourcen über die Encounter-Referenzen abgerufen werden. Die Encounter-IDs aus Schritt 1 werden dabei als Suchparameter verwendet.</p>
+
+<h5 id="beispiel-ermittlung-aller-diagnosen">Beispiel: Ermittlung aller Diagnosen</h5>
+
+<p>Angenommen, die Abfrage aus Schritt 1 hat folgende Encounter-IDs zurückgeliefert: <code class="language-plaintext highlighter-rouge">Encounter/123</code>, <code class="language-plaintext highlighter-rouge">Encounter/456</code>, <code class="language-plaintext highlighter-rouge">Encounter/789</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET BASE_URL/Condition?encounter=Encounter/123,Encounter/456,Encounter/789
+</code></pre></div></div>
+
+<h5 id="beispiel-ermittlung-aller-prozeduren">Beispiel: Ermittlung aller Prozeduren</h5>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET BASE_URL/Procedure?encounter=Encounter/123,Encounter/456,Encounter/789
+</code></pre></div></div>
+
+<h5 id="beispiel-ermittlung-aller-observations-zb-vitalparameter">Beispiel: Ermittlung aller Observations (z.B. Vitalparameter)</h5>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET BASE_URL/Observation?encounter=Encounter/123,Encounter/456,Encounter/789
+</code></pre></div></div>
+
+<h5 id="beispiel-ermittlung-aller-medikationsverordnungen">Beispiel: Ermittlung aller Medikationsverordnungen</h5>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET BASE_URL/MedicationRequest?encounter=Encounter/123,Encounter/456,Encounter/789
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="vollständiges-beispiel-szenario">Vollständiges Beispiel-Szenario</h4>
+
+<p>Ein typischer Workflow für die Abfrage aller Diagnosen eines Abrechnungsfalls könnte wie folgt aussehen:</p>
+
+<p><strong>1. Ermittlung der Encounter:</strong></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET BASE_URL/Encounter?account:identifier=http://krankenhaus-beispiel.de/fhir/sid/fallnummer|F-2024-123456
+    &amp;type=http://fhir.de/CodeSystem/Kontaktebene|abteilungskontakt
+</code></pre></div></div>
+
+<p><strong>Antwort (vereinfacht):</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enc-innere-medizin"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"class"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IMP"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.de/CodeSystem/Kontaktebene"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abteilungskontakt"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"serviceType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0100"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Innere Medizin"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enc-intensivmedizin"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"class"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IMP"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.de/CodeSystem/Kontaktebene"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abteilungskontakt"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"serviceType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3600"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Intensivmedizin"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>2. Abfrage der Diagnosen für alle ermittelten Encounter:</strong></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET BASE_URL/Condition?encounter=Encounter/enc-innere-medizin,Encounter/enc-intensivmedizin
+</code></pre></div></div>
+
+<p>Dieser zwei-Schritt-Prozess stellt sicher, dass alle relevanten klinischen Daten eines Abrechnungsfalls korrekt ermittelt werden, auch wenn der Patient während des Aufenthalts mehrere Fachabteilungen durchlaufen hat.</p>
+
+<h4 id="wichtige-hinweise">Wichtige Hinweise</h4>
+
+<ul>
+  <li>Vor (fast) jeder Abfrage klinischer Ressourcen sollte Schritt 1 ausgeführt werden, um sicherzustellen, dass alle aktuellen Abteilungskontakte berücksichtigt werden.</li>
+  <li>Es gibt Abfragen von klinischen Ressourcen, bei denen eine Einschränkung auf den Fall über die Encounter-Referenzen nicht sinnvoll ist, bspw. die Abfrage von Allergien. In diesen Fällen kann direkt über die Patient-Referenz abgefragt werden, ohne die Encounter-IDs zu berücksichtigen.</li>
+  <li>Die Anzahl der Encounter-Referenzen in Schritt 2 kann je nach Komplexität des Falls variieren. Bei Patienten mit vielen Abteilungswechseln kann die Liste entsprechend länger werden.</li>
+  <li>Bestätigungsrelevante Systeme müssen den <code class="language-plaintext highlighter-rouge">account:identifier</code> Suchparameter für Encounter unterstützen.</li>
+  <li>Die Fallnummer ist im <code class="language-plaintext highlighter-rouge">Encounter.account.identifier</code> als logische Referenz verpflichtend mitzuführen, auch wenn die Account-Ressource selbst vom anfragenden System nicht implementiert wird.</li>
+  <li>Eine Abfrage mit Chaining über den Encounter zum Account.identifier ist zwar theoretisch möglich, wird aber im Kontext von ISiK nicht als MUSS-Kriterium definiert, da die meisten Systeme die direkte Suche über <code class="language-plaintext highlighter-rouge">account:identifier</code> unterstützen werden. Der <code class="language-plaintext highlighter-rouge">:identifier</code>-Modifier ist wiederum nicht für Chaining unterstützt.</li>
+</ul>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  
+          Package basis#6.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Sep 2, 2026 11:32+0000">2026-09-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

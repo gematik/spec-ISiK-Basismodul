@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Questionnaire xmlns="http://hl7.org/fhir">
+  <id value="ExamplePrePopObservation"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/>
+  </text>
+  <contained>
+    <ValueSet>
+      <id value="pflegegrad-de"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.1"/>
+      </meta>
+      <url value="http://fhir.de/ValueSet/pflegegrad-de"/>
+      <version value="1.6.0"/>
+      <name value="PflegegradDE"/>
+      <title value="PflegegradDE ValueSet"/>
+      <status value="active"/>
+      <experimental value="false"/>
+      <date value="2025-12-23"/>
+      <publisher value="HL7 Deutschland e.V. (Technisches Komitee FHIR)"/>
+      <contact>
+        <telecom>
+          <system value="url"/>
+          <value value="http://hl7.de/technische-komitees/fhir/"/>
+        </telecom>
+      </contact>
+      <description value="Dieses ValueSet enthält OPS-Codes zur Differenzierung des dokumentierten Pflegegrads. Es ist für die strukturierte Angabe pflegebezogener Einstufungen im deutschen Versorgungskontext vorgesehen."/>
+      <compose>
+        <include>
+          <system value="http://fhir.de/CodeSystem/bfarm/ops"/>
+          <filter>
+            <property value="parent"/>
+            <op value="="/>
+            <value value="9-984"/>
+          </filter>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="440c50b5-7272-4184-9ddd-95a75d8207f8"/>
+        <timestamp value="2019-07-06"/>
+        <total value="6"/>
+        <contains>
+          <system value="http://fhir.de/CodeSystem/bfarm/ops"/>
+          <code value="9-984.6"/>
+          <display value="Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 1"/>
+        </contains>
+        <contains>
+          <system value="http://fhir.de/CodeSystem/bfarm/ops"/>
+          <code value="9-984.7"/>
+          <display value="Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 2"/>
+        </contains>
+        <contains>
+          <system value="http://fhir.de/CodeSystem/bfarm/ops"/>
+          <code value="9-984.8"/>
+          <display value="Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 3"/>
+        </contains>
+        <contains>
+          <system value="http://fhir.de/CodeSystem/bfarm/ops"/>
+          <code value="9-984.9"/>
+          <display value="Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 4"/>
+        </contains>
+        <contains>
+          <system value="http://fhir.de/CodeSystem/bfarm/ops"/>
+          <code value="9-984.a"/>
+          <display value="Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 5"/>
+        </contains>
+        <contains>
+          <system value="http://fhir.de/CodeSystem/bfarm/ops"/>
+          <code value="9-984.b"/>
+          <display value="Pflegebedürftigkeit: Erfolgter Antrag auf Einstufung in einen Pflegegrad"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">
+    <extension url="name">
+      <valueCoding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"/>
+        <code value="patient"/>
+      </valueCoding>
+    </extension>
+    <extension url="type">
+      <valueCode value="Patient"/>
+    </extension>
+    <extension url="description">
+      <valueString value="Patientenkontext"/>
+    </extension>
+  </extension>
+  <url value="https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopObservation"/>
+  <version value="6.0.0"/>
+  <name value="ExamplePrePopObservation"/>
+  <title value="Vorbelegung von Observations"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <subjectType value="Patient"/>
+  <date value="2026-09-02T11:31:15+00:00"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="### Beispiel-Questionnaire mit automatischer Vorbelegung von Observations  &#xA;Die Suche nach passenden Observations geschieht innerhlab des Patienten-Kontextes anhand des in `item-code`hinterlegten Codes.&#xA;Die Extension [SDC-ObservationLinkPeriod](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationLinkPeriod.html) legt fest, wie alt  Observations maximal sein dürfen, um für die Vorbelegung herangezogen zu werden (hier: max. 1 Jahr)  &#xA;Die Extension [SDC-ObservationExtract](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationExtract.html) legt fest, ob aus den Angaben des Questionnaires eine neue Observation extrahiert werden soll (hier: true)"/>
+  <item>
+    <linkId value="3"/>
+    <text value="Pflegegrad"/>
+    <type value="group"/>
+    <required value="true"/>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationLinkPeriod">
+        <valueDuration>
+          <value value="1"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="a"/>
+        </valueDuration>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract">
+        <valueBoolean value="true"/>
+      </extension>
+      <linkId value="3.1"/>
+      <code>
+        <system value="http://loinc.org"/>
+        <code value="80391-6"/>
+      </code>
+      <text value="Bitte geben Sie den Pflegegrad an:"/>
+      <type value="choice"/>
+      <answerValueSet value="#pflegegrad-de"/>
+    </item>
+  </item>
+</Questionnaire>

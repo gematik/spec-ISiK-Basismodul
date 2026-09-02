@@ -1,0 +1,80 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Encounter/SZ1Nachstationaer> a fhir:Encounter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "SZ1Nachstationaer"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter SZ1Nachstationaer</b></p><a name=\"SZ1Nachstationaer\"> </a><a name=\"hcSZ1Nachstationaer\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKKontaktGesundheitseinrichtung.html\">ISiKKontaktGesundheitseinrichtung</a></p></div><p><b>identifier</b>: Visit number/0123456789-3</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB\">ActCode: AMB</a> (ambulatory)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}\">Abteilungskontakt</span>, <span title=\"Codes:{http://fhir.de/CodeSystem/kontaktart-de nachstationaer}\">Nachstationär</span></p><p><b>subject</b>: <a href=\"Patient-SZ1Patient.html\">Töchterchen Musterfrau (official) Female, DoB: 2010-01-01 ( Medical record number)</a></p><p><b>period</b>: 2024-10-14 --&gt; 2024-10-14</p><p><b>account</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Account/SZ1DRGFall\">Account/SZ1DRGFall</a></p></div>"
+  ] ;
+  fhir:Encounter.identifier [
+     fhir:index -1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "VN" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "http://beispiel-krankenhaus.de/sid/besuchsnummer" ] ;
+     fhir:Identifier.value [ fhir:value "0123456789-3" ]
+  ] ;
+  fhir:Encounter.status [ fhir:value "finished"] ;
+  fhir:Encounter.class [
+     fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ] ;
+     fhir:Coding.code [ fhir:value "AMB" ]
+  ] ;
+  fhir:Encounter.type [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/Kontaktebene" ] ;
+       fhir:Coding.code [ fhir:value "abteilungskontakt" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/kontaktart-de" ] ;
+       fhir:Coding.code [ fhir:value "nachstationaer" ] ;
+       fhir:Coding.display [ fhir:value "Nachstationär" ]
+     ]
+  ] ;
+  fhir:Encounter.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/SZ1Patient> ;
+     fhir:Reference.reference [ fhir:value "Patient/SZ1Patient" ]
+  ] ;
+  fhir:Encounter.period [
+     fhir:Period.start [ fhir:value "2024-10-14"^^xsd:date ] ;
+     fhir:Period.end [ fhir:value "2024-10-14"^^xsd:date ]
+  ] ;
+  fhir:Encounter.account [
+     fhir:index -1 ;
+     fhir:link <https://gematik.de/fhir/isik/Account/SZ1DRGFall> ;
+     fhir:Reference.reference [ fhir:value "Account/SZ1DRGFall" ] ;
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://beispiel-krankenhaus.de/sid/fallnummern" ] ;
+       fhir:Identifier.value [ fhir:value "0123456789" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Encounter/SZ1Nachstationaer.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

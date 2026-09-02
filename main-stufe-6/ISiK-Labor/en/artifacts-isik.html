@@ -1,0 +1,3220 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Artefakte - ISiK Labor Implementierungsleitfaden v6.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11"}
+    h3,h4,h5,h6{--heading-prefix:"11"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebergreifendeFestlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+      <li>
+        <a href="BestaetigungsrelevanteSysteme.html">Bestätigungsrelevante Systeme</a>
+      </li>
+      <li>
+        <a href="RestApi.html">REST-API Grundlagen</a>
+      </li>
+      <li>
+        <a href="Kompatibilitaet.html">Kompatibilität</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Use Cases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebergreifendeUseCases.html">Übergreifende Use Cases</a>
+      </li>
+      <li>
+        <a href="AMTS.html">Arzneimitteltherapiesicherheit (AMTS)</a>
+      </li>
+      <li>
+        <a href="UeberleitungIntensiv.html">Überleitung Intensiv</a>
+      </li>
+      <li>
+        <a href="InteraktionenUndSearchTypes.html">Interaktionen und Search Types</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts-isik.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Labor Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0 - active
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Artefakte</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Artefakte</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#capabilitystatements" id="markdown-toc-capabilitystatements">CapabilityStatements</a></li>
+  <li><a href="#profile" id="markdown-toc-profile">Profile</a></li>
+  <li><a href="#terminologien" id="markdown-toc-terminologien">Terminologien</a></li>
+  <li><a href="#beispiele" id="markdown-toc-beispiele">Beispiele</a></li>
+</ul>
+
+</div>
+<p>Auf dieser Seite befindet sich eine Liste der FHIR-Artefakte, welche im Rahmen dieses Implementation Guide definiert werden.</p>
+
+<p>Folgende Datenobjekte aus dem Modul ISiK Basis werden in diesem Modul verwendet:</p>
+
+<ul>
+  <li><a href="">Patient</a></li>
+  <li><a href="">Kontakt/Fall (Encounter)</a></li>
+</ul>
+
+<p>Die Verwendung der genannten Ressourcen in diesem Modul bedeutet: Wenn ein Profil aus diesem Modul auf die genannten Datenobjekte aus dem Basismodul referenziert, dann MÜSSEN die referenzierten FHIR-Ressourcen im ISiK-Kontext konform zu Vorgaben an diese Ressourcen aus dem Basismodul sein (Profilkonformität). Die konkreten Vorgaben zu Interaktionen und Abhängigkeiten zwischen Modulen werden noch präzisiert.</p>
+
+<h3 id="capabilitystatements">CapabilityStatements</h3>
+
+<h4 id="akteure">Akteure</h4>
+
+<p>Das CapabilityStatement mit der Kennzeichnung “Expanded” dient der direkten Übersicht aller zu implementierender Interaktionen und Profile.</p>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Capability Statements - Akteure</figcaption></div>
+
+<h4 id="rollen">Rollen</h4>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+             <tr>
+                <td style="column-width:30%">
+                    <a href="CapabilityStatement-ISiKCapabilityStatementLaborMinimalRolle-expanded.html" title="CapabilityStatement/ISiKCapabilityStatementLaborMinimalRolle-expanded">
+                    
+                    
+                    
+                        ISiK CapabilityStatement Labor Minimal Rolle (Expanded)
+                    
+                    </a>
+                </td>
+                
+                
+                
+                <td>
+                    <p>Das vorliegende CapabilityStatement beschreibt Interaktionen für ein System, das Labordaten exponiert.</p>
+
+<p><strong>HISTORIE</strong></p>
+
+<p><em>Historie</em>: mit der Version 4.0.2 des IG ICU-Normalstation-Workflow wurde das vorliegende CapabilityStatement im Sinne einer eigenständigen Rolle extrahiert (die Funktionalität bleibt dabei unverändert).</p>
+
+                </td>
+                
+             </tr>
+             
+        
+            
+            
+            
+            
+            
+            
+             <tr>
+                <td style="column-width:30%">
+                    <a href="CapabilityStatement-ISiKCapabilityStatementLaborMinimalRolle.html" title="CapabilityStatement/ISiKCapabilityStatementLaborMinimalRolle">
+                    
+                    
+                    
+                        ISiK CapabilityStatement Labor Minimal Rolle
+                    
+                    </a>
+                </td>
+                
+                
+                
+                <td>
+                    <p>Das vorliegende CapabilityStatement beschreibt Interaktionen für ein System, das Labordaten exponiert.</p>
+
+<p><strong>HISTORIE</strong></p>
+
+<p><em>Historie</em>: mit der Version 4.0.2 des IG ICU-Normalstation-Workflow wurde das vorliegende CapabilityStatement im Sinne einer eigenständigen Rolle extrahiert (die Funktionalität bleibt dabei unverändert).</p>
+
+                </td>
+                
+             </tr>
+             
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Capability Statements - Rollen</figcaption></div>
+
+<h3 id="profile">Profile</h3>
+
+<h4 id="datentyp-profile">Datentyp-Profile</h4>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+             <tr>
+                <td style="column-width:30%">
+                    <a href="StructureDefinition-ISiKCoding.html" title="StructureDefinition/ISiKCoding">
+                    
+                    
+                    
+                        ISiKCoding (Coding)
+                    
+                    </a>
+                </td>
+                
+                <td style="white-space:nowrap">Coding</td>
+                
+                
+                <td>
+                    <p>Data Type profile for Codings in ISiK</p>
+
+                </td>
+                
+                
+             </tr>
+             
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+             <tr>
+                <td style="column-width:30%">
+                    <a href="StructureDefinition-ISiKLoincCoding.html" title="StructureDefinition/ISiKLoincCoding">
+                    
+                    
+                    
+                        ISiKLoincCoding (ISiKCoding)
+                    
+                    </a>
+                </td>
+                
+                <td style="white-space:nowrap">Coding</td>
+                
+                
+                <td>
+                    <p>Data Type profile for LOINC Codings in ISiK</p>
+
+                </td>
+                
+                
+             </tr>
+             
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Datentyp-Profile</figcaption></div>
+
+<h4 id="extensions">Extensions</h4>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Extensions</figcaption></div>
+
+<h4 id="ressourcen-profile">Ressourcen-Profile</h4>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+                
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                     <tr>
+                        <td style="column-width:30%">
+                            <a href="StructureDefinition-ISiKLaboruntersuchung.html" title="StructureDefinition/ISiKLaboruntersuchung">
+                            
+                                ISiKLaboruntersuchung (Observation)
+                            
+                            </a>
+                        </td>
+                        
+                        <td style="white-space:nowrap">Observation</td>
+                        
+                        
+                        <td>
+                            <p>Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.</p>
+
+<p>Viele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.
+Jede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.
+Motivierender Use-Case zur Einführung dieser Profile ist die <a href="https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc1/UseCases.html">Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS</a>.</p>
+
+<p>In FHIR werden Untersuchungen, bzw. Beobachtungen als <a href="https://hl7.org/fhir/R4/observation.html"><code class="language-plaintext highlighter-rouge">Observation</code></a>-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.</p>
+
+                        </td>
+                        
+                        
+                     </tr>
+                    
+                
+            
+                
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                     <tr>
+                        <td style="column-width:30%">
+                            <a href="StructureDefinition-ISiKLaboruntersuchungCRP.html" title="StructureDefinition/ISiKLaboruntersuchungCRP">
+                            
+                                ISiKLaboruntersuchungCRP (ISiKLaboruntersuchung)
+                            
+                            </a>
+                        </td>
+                        
+                        <td style="white-space:nowrap">Observation</td>
+                        
+                        
+                        <td>
+                            <p>Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des C-reaktiven Proteins (CRP) eines Patienten in ISiK Szenarien.</p>
+
+                        </td>
+                        
+                        
+                     </tr>
+                    
+                
+            
+                
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                     <tr>
+                        <td style="column-width:30%">
+                            <a href="StructureDefinition-ISiKLaboruntersuchungGFR.html" title="StructureDefinition/ISiKLaboruntersuchungGFR">
+                            
+                                ISiKLaboruntersuchungGFR (ISiKLaboruntersuchung)
+                            
+                            </a>
+                        </td>
+                        
+                        <td style="white-space:nowrap">Observation</td>
+                        
+                        
+                        <td>
+                            <p>Dieses Profil ermöglicht die Abbildung der Laboruntersuchung der Glomerulären Filtrationsrate (GFR) eines Patienten in ISiK Szenarien.</p>
+
+                        </td>
+                        
+                        
+                     </tr>
+                    
+                
+            
+                
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                     <tr>
+                        <td style="column-width:30%">
+                            <a href="StructureDefinition-ISiKLaboruntersuchungHb.html" title="StructureDefinition/ISiKLaboruntersuchungHb">
+                            
+                                ISiKLaboruntersuchungHb (ISiKLaboruntersuchung)
+                            
+                            </a>
+                        </td>
+                        
+                        <td style="white-space:nowrap">Observation</td>
+                        
+                        
+                        <td>
+                            <p>Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Hämoglobin-Wertes (Hb) eines Patienten in ISiK Szenarien.</p>
+
+                        </td>
+                        
+                        
+                     </tr>
+                    
+                
+            
+                
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                     <tr>
+                        <td style="column-width:30%">
+                            <a href="StructureDefinition-ISiKLaboruntersuchungPCT.html" title="StructureDefinition/ISiKLaboruntersuchungPCT">
+                            
+                                ISiKLaboruntersuchungPCT (ISiKLaboruntersuchung)
+                            
+                            </a>
+                        </td>
+                        
+                        <td style="white-space:nowrap">Observation</td>
+                        
+                        
+                        <td>
+                            <p>Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Procalcitonin (PCT) eines Patienten in ISiK Szenarien.</p>
+
+                        </td>
+                        
+                        
+                     </tr>
+                    
+                
+            
+                
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                     <tr>
+                        <td style="column-width:30%">
+                            <a href="StructureDefinition-ISiKLaboruntersuchungSerumkreatinin.html" title="StructureDefinition/ISiKLaboruntersuchungSerumkreatinin">
+                            
+                                ISiKLaboruntersuchungSerumkreatinin (ISiKLaboruntersuchung)
+                            
+                            </a>
+                        </td>
+                        
+                        <td style="white-space:nowrap">Observation</td>
+                        
+                        
+                        <td>
+                            <p>Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Serumkreatinin eines Patienten in ISiK Szenarien.</p>
+
+                        </td>
+                        
+                        
+                     </tr>
+                    
+                
+            
+                
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                     <tr>
+                        <td style="column-width:30%">
+                            <a href="StructureDefinition-ISiKLaboruntersuchungSerumnatrium.html" title="StructureDefinition/ISiKLaboruntersuchungSerumnatrium">
+                            
+                                ISiKLaboruntersuchungSerumnatrium (ISiKLaboruntersuchung)
+                            
+                            </a>
+                        </td>
+                        
+                        <td style="white-space:nowrap">Observation</td>
+                        
+                        
+                        <td>
+                            <p>Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Serumnatrium eines Patienten in ISiK Szenarien. Das Profil wird u. A. im Use Case zur Unterstützung von Transplantationsbeauftragten bei der Organspendeerkennung eingesetzt; besonders in diesem Kontext muss es auch Werte abbilden, die im Rahmen von Messungen mittels Point-of-Care-Testing erhoben wurden. Das Profil ist auch geeignet, um Serumnatrium Werte abzubilden, die mittels Laboruntersuchung erhoben wurden.</p>
+
+<p>Eine eindeutige Kennzeichnung für die Differenzierung hinsichtlich der Erhebungsmethode ist derzeit über dieses Profil nicht vorgesehen. Es kann jedoch das Element .method verwendet werden. Die Differenzierung aufgrund der Methode kann unter Umständen sinnvoll sein, wenn im Falle einer Laboruntersuchung ein Arzt die Werte zuerst sichten und bestätigen müsste, bevor sie im PDMS als 'final' für den Patienten hinterlegt werden.</p>
+
+                        </td>
+                        
+                        
+                     </tr>
+                    
+                
+            
+                
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                     <tr>
+                        <td style="column-width:30%">
+                            <a href="StructureDefinition-ISiKLaboruntersuchungTSH.html" title="StructureDefinition/ISiKLaboruntersuchungTSH">
+                            
+                                ISiKLaboruntersuchungTSH (ISiKLaboruntersuchung)
+                            
+                            </a>
+                        </td>
+                        
+                        <td style="white-space:nowrap">Observation</td>
+                        
+                        
+                        <td>
+                            <p>Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Thyreoidea-stimulierenden Hormons (TSH) eines Patienten in ISiK Szenarien.</p>
+
+                        </td>
+                        
+                        
+                     </tr>
+                    
+                
+            
+                
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                     <tr>
+                        <td style="column-width:30%">
+                            <a href="StructureDefinition-ISiKLaboruntersuchungThrombozyten.html" title="StructureDefinition/ISiKLaboruntersuchungThrombozyten">
+                            
+                                ISiKLaboruntersuchungThrombozyten (ISiKLaboruntersuchung)
+                            
+                            </a>
+                        </td>
+                        
+                        <td style="white-space:nowrap">Observation</td>
+                        
+                        
+                        <td>
+                            <p>Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Thrombozyten eines Patienten in ISiK Szenarien.</p>
+
+                        </td>
+                        
+                        
+                     </tr>
+                    
+                
+            
+                
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                     <tr>
+                        <td style="column-width:30%">
+                            <a href="StructureDefinition-ISiKLaboruntersuchungTroponin.html" title="StructureDefinition/ISiKLaboruntersuchungTroponin">
+                            
+                                ISiKLaboruntersuchungTroponin (ISiKLaboruntersuchung)
+                            
+                            </a>
+                        </td>
+                        
+                        <td style="white-space:nowrap">Observation</td>
+                        
+                        
+                        <td>
+                            <p>Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Troponin eines Patienten in ISiK Szenarien.</p>
+
+                        </td>
+                        
+                        
+                     </tr>
+                    
+                
+            
+                
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+            
+        
+
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Ressourcen-Profile</figcaption></div>
+
+<h3 id="terminologien">Terminologien</h3>
+
+<h4 id="value-sets">Value Sets</h4>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ISiKLaborMethodeVS.html" title="ValueSet/ISiKLaborMethodeVS">
+                
+                    ISiK Labor Methode
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>SNOMED-CT-Codes für Untersuchungsmethoden im Labor (alle Konzepte unterhalb von #272394005 'Technique (qualifier value)').</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ISiKLaborbereichVS.html" title="ValueSet/ISiKLaborbereichVS">
+                
+                    ISiK Laborbereich
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>LOINC-Codes zur Kategorisierung von Laboruntersuchungen nach Fachbereichen.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationCodesCRP.html" title="ValueSet/ObservationCodesCRP">
+                
+                    ObservationCodesCRP
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält LOINC-Codes für die Observation CRP</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationCodesGFR.html" title="ValueSet/ObservationCodesGFR">
+                
+                    ObservationCodesGFR
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält LOINC-Codes für die Observation GFR</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationCodesHb.html" title="ValueSet/ObservationCodesHb">
+                
+                    ObservationCodesHb
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält LOINC-Codes für die Observation Hb</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationCodesPCT.html" title="ValueSet/ObservationCodesPCT">
+                
+                    ObservationCodesPCT
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält LOINC-Codes für die Observation PCT</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationCodesSerumkreatinin.html" title="ValueSet/ObservationCodesSerumkreatinin">
+                
+                    ObservationCodesSerumkreatinin
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält LOINC-Codes für die Observation Serumkreatinin</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationCodesSerumnatrium.html" title="ValueSet/ObservationCodesSerumnatrium">
+                
+                    ObservationCodesSerumnatrium
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält LOINC-Codes für die Observation Serumnatrium</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationCodesTSH.html" title="ValueSet/ObservationCodesTSH">
+                
+                    ObservationCodesTSH
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält LOINC-Codes für die Observation TSH</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationCodesThrombozyten.html" title="ValueSet/ObservationCodesThrombozyten">
+                
+                    ObservationCodesThrombozyten
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält LOINC-Codes für die Observation Thrombozyten</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationCodesTroponin.html" title="ValueSet/ObservationCodesTroponin">
+                
+                    ObservationCodesTroponin
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält LOINC-Codes für die Observation Troponin</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationUnitsCRP.html" title="ValueSet/ObservationUnitsCRP">
+                
+                    ObservationUnitsCRP
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält UCUM-Einheiten für die Observation CRP</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationUnitsGFR.html" title="ValueSet/ObservationUnitsGFR">
+                
+                    ObservationUnitsGFR
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält UCUM-Einheiten für die Observation GFR</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationUnitsHb.html" title="ValueSet/ObservationUnitsHb">
+                
+                    ObservationUnitsHb
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält UCUM-Einheiten für die Observation Hb</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationUnitsPCT.html" title="ValueSet/ObservationUnitsPCT">
+                
+                    ObservationUnitsPCT
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält UCUM-Einheiten für die Observation PCT</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationUnitsSerumkreatinin.html" title="ValueSet/ObservationUnitsSerumkreatinin">
+                
+                    ObservationUnitsSerumkreatinin
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält UCUM-Einheiten für die Observation Serumkreatinin</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationUnitsSerumnatrium.html" title="ValueSet/ObservationUnitsSerumnatrium">
+                
+                    ObservationUnitsSerumnatrium
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält UCUM-Einheiten für die Observation Serumnatrium</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationUnitsTSH.html" title="ValueSet/ObservationUnitsTSH">
+                
+                    ObservationUnitsTSH
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält UCUM-Einheiten für die Observation TSH</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationUnitsThrombozyten.html" title="ValueSet/ObservationUnitsThrombozyten">
+                
+                    ObservationUnitsThrombozyten
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält UCUM-Einheiten für die Observation Thrombozyten</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ObservationUnitsTroponin.html" title="ValueSet/ObservationUnitsTroponin">
+                
+                    ObservationUnitsTroponin
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthält UCUM-Einheiten für die Observation Troponin</p>
+            </td>
+            
+         </tr>
+         
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Value Sets</figcaption></div>
+
+<h4 id="code-systems">Code Systems</h4>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Code Systems</figcaption></div>
+
+<h3 id="beispiele">Beispiele</h3>
+
+<p><b>Observation</b></p>
+<ul><li><a href="Observation-ExampleISiKLaboruntersuchungCRP1.html">ExampleISiKLaboruntersuchungCRP1</a></li><li><a href="Observation-ExampleISiKLaboruntersuchungGFR1.html">ExampleISiKLaboruntersuchungGFR1</a></li><li><a href="Observation-ExampleISiKLaboruntersuchungHb1.html">ExampleISiKLaboruntersuchungHb1</a></li><li><a href="Observation-ExampleISiKLaboruntersuchungMaximal.html">ExampleISiKLaboruntersuchungMaximal</a></li><li><a href="Observation-ExampleISiKLaboruntersuchungPCT1.html">ExampleISiKLaboruntersuchungPCT1</a></li><li><a href="Observation-ExampleISiKLaboruntersuchungSerumkreatinin1.html">ExampleISiKLaboruntersuchungSerumkreatinin1</a></li><li><a href="Observation-ExampleISiKLaboruntersuchungSerumnatrium1.html">ExampleISiKLaboruntersuchungSerumnatrium1</a></li><li><a href="Observation-ExampleISiKLaboruntersuchungTSH1.html">ExampleISiKLaboruntersuchungTSH1</a></li><li><a href="Observation-ExampleISiKLaboruntersuchungThrombozyten1.html">ExampleISiKLaboruntersuchungThrombozyten1</a></li><li><a href="Observation-ExampleISiKLaboruntersuchungTroponin1.html">ExampleISiKLaboruntersuchungTroponin1</a></li><li><a href="Observation-ExampleOrganSerumNatrium202003110104.html">ExampleOrganSerumNatrium202003110104</a></li><li><a href="Observation-ExampleOrganSerumNatrium202003110159.html">ExampleOrganSerumNatrium202003110159</a></li><li><a href="Observation-ExampleOrganSerumNatrium202003110306.html">ExampleOrganSerumNatrium202003110306</a></li></ul>
+<p><b>Parameters</b></p>
+<ul><li><a href="Parameters-exp-params.html">exp-params</a></li></ul>
+<div><figcaption><strong>Tabelle:</strong> Beispiel-Instanzen</figcaption></div>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  
+          Package labor#6.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Sep 2, 2026 11:31+0000">2026-09-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

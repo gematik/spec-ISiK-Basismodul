@@ -1,0 +1,81 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Questionnaire/ExampleInputPatternValidation> a fhir:Questionnaire ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleInputPatternValidation"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ]
+  ] ;
+  fhir:Questionnaire.url [ fhir:value "https://gematik.de/fhir/isik/Questionnaire/ExampleInputPatternValidation"] ;
+  fhir:Questionnaire.version [ fhir:value "6.0.0"] ;
+  fhir:Questionnaire.name [ fhir:value "ExampleInputPatternValidation"] ;
+  fhir:Questionnaire.title [ fhir:value "Validierung von Formulareingaben gegen RegExPattern"] ;
+  fhir:Questionnaire.status [ fhir:value "draft"] ;
+  fhir:Questionnaire.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:Questionnaire.subjectType [
+     fhir:value "Patient" ;
+     fhir:index -1
+  ] ;
+  fhir:Questionnaire.date [ fhir:value "2026-09-02T11:31:15+00:00"^^xsd:dateTime] ;
+  fhir:Questionnaire.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:Questionnaire.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:Questionnaire.description [ fhir:value "### Beispiel-Questionnaire mit Validierung von Benutzereingaben mittels einer FHIRPath-Expression  \nDie Validierung erfolgt über die [targetConstraint](https://hl7.org/fhir/extensions/StructureDefinition-targetConstraint.html)-Extension"] ;
+  fhir:Questionnaire.item [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "key" ] ;
+         fhir:Extension.valueId [ fhir:value "kvid-1" ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "severity" ] ;
+         fhir:Extension.valueCode [ fhir:value "warning" ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "expression" ] ;
+         fhir:Extension.valueExpression [
+           fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+           fhir:Expression.expression [ fhir:value "matches(^[A-Z][0-9]{9}$)" ]
+         ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "human" ] ;
+         fhir:Extension.valueString [ fhir:value "Eine Versichertennummer muss mit einem Großbuchstaben beginnen, gefolgt von 9 Zahlen!" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/targetConstraint" ]
+     ] ;
+     fhir:Questionnaire.item.linkId [ fhir:value "1.4" ] ;
+     fhir:Questionnaire.item.text [ fhir:value "Versichertennummer:" ] ;
+     fhir:Questionnaire.item.type [ fhir:value "string" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Questionnaire/ExampleInputPatternValidation.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

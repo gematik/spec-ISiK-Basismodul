@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Procedure/ExampleOrganVentilationModeNIV> a fhir:Procedure ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleOrganVentilationModeNIV"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedurBeatmung" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedurBeatmung>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Procedure ExampleOrganVentilationModeNIV</b></p><a name=\"ExampleOrganVentilationModeNIV\"> </a><a name=\"hcExampleOrganVentilationModeNIV\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKProzedurBeatmung.html\">ISiK Prozedur Beatmung</a></p></div><p><b>status</b>: In Progress</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 40617009}\">Künstliche Beatmung</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 428311008}\">NIV</span></p><p><b>subject</b>: <a href=\"Patient-isik-patient-156722.html\">Aelin Sternenfall (official) Unknown, DoB:  ( Medical record number)</a></p><p><b>performed</b>: 2020-03-11 20:17:06+0100</p></div>"
+  ] ;
+  fhir:Procedure.status [ fhir:value "in-progress"] ;
+  fhir:Procedure.category [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:40617009 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "40617009" ] ;
+       fhir:Coding.display [ fhir:value "Künstliche Beatmung" ]
+     ]
+  ] ;
+  fhir:Procedure.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:428311008 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "428311008" ] ;
+       fhir:Coding.display [ fhir:value "Non-invasive ventilation" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "NIV" ]
+  ] ;
+  fhir:Procedure.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/isik-patient-156722> ;
+     fhir:Reference.reference [ fhir:value "Patient/isik-patient-156722" ]
+  ] ;
+  fhir:Procedure.performedDateTime [ fhir:value "2020-03-11T20:17:06+01:00"^^xsd:dateTime] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Procedure/ExampleOrganVentilationModeNIV.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

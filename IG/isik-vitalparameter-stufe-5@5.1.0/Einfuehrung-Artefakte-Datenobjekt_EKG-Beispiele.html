@@ -1,0 +1,846 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden - ISiK-Vitalparameter</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden - ISiK-Vitalparameter
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende UseCases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases.html">
+                                            &#xDC;bergreifende UseCases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases-AMTS.html">
+                                            AMTS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases-Intensivversorgung.html">
+                                            Intensivversorgung
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-InteraktionenAkteure.html">
+                                            Interaktionen und Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Signaldaten.html">
+                                            Signaldaten
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-RestApi.html">
+                                            RestApi
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Atemfrequenz.html">
+                                            ISiKAtemfrequenz (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_BlutdruckSystemischArteriell.html">
+                                            ISiKBlutdruckSystemischArteriell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Herzfrequenz.html">
+                                            ISiKHerzfrequenz (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpergewicht.html">
+                                            ISiKKoerpergewicht (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpergroesse.html">
+                                            ISiKKoerpergroesse (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpertemperatur.html">
+                                            ISiKKoerpertemperatur (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Kopfumfang.html">
+                                            ISiKKopfumfang (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_SauerstoffsaettigungArteriell.html">
+                                            ISiKSauerstoffsaettigungArteriell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_GCS.html">
+                                            ISiKGCS (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_EKG.html">
+                                            ISiKEKG (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#c436eeb5-bbe2-4a0d-9271-eba98ac5ebb8" aria-controls="c436eeb5-bbe2-4a0d-9271-eba98ac5ebb8" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#8442eb96-8eb9-4c15-8f39-21b3b7a97ddc" aria-controls="8442eb96-8eb9-4c15-8f39-21b3b7a97ddc" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#49888501-638a-4efd-b77d-b5d7b03457bd" aria-controls="49888501-638a-4efd-b77d-b5d7b03457bd" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#0b249951-f70e-4899-803f-03d2f8d8b931" aria-controls="0b249951-f70e-4899-803f-03d2f8d8b931" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="c436eeb5-bbe2-4a0d-9271-eba98ac5ebb8">
+    <div class="stu3-treetable" id="61c303358ef54c04a6373942ce611783" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="bd11d789bceb412bac653d6af6aaded4"><td class="instance"><span class="baseIcon primitive"></span><b>Observation</b></td></tr><tr class="collapsed" data-id="a75110facb6549389d125a7b1804ca4b" data-parentId="bd11d789bceb412bac653d6af6aaded4"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ISiKEKGExample</span></td></tr><tr class="collapsed" data-id="6dd51b00cad741c8b5a7b291dacef434" data-parentId="bd11d789bceb412bac653d6af6aaded4"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="31838941834041f19562bd6068b0ca55" data-parentId="6dd51b00cad741c8b5a7b291dacef434"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKEKG</span></td></tr><tr class="collapsed" data-id="445432900143463d801760fb1d8a1a56" data-parentId="bd11d789bceb412bac653d6af6aaded4"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="c163fe8fd00d4938bf542be8319e8c58" data-parentId="bd11d789bceb412bac653d6af6aaded4"><td class="instance"><span class="baseIcon primitive"></span><b>category</b></td></tr><tr class="collapsed" data-id="02fd925a7fc74d5b9a9cecb8b6b707a1" data-parentId="c163fe8fd00d4938bf542be8319e8c58"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="309c0ac87528493298e1f724a9a4b9eb" data-parentId="02fd925a7fc74d5b9a9cecb8b6b707a1"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/observation-category</span></td></tr><tr class="collapsed" data-id="4778d5a7a7044dd3ae402857cffe26e2" data-parentId="02fd925a7fc74d5b9a9cecb8b6b707a1"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>procedure</span></td></tr><tr class="collapsed" data-id="9e20c09c2f554eafa85206ed63c9e1c3" data-parentId="bd11d789bceb412bac653d6af6aaded4"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="be81ee7c0de24c97b8688c6b181e0939" data-parentId="9e20c09c2f554eafa85206ed63c9e1c3"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="0a5de4fe3b7d4a079c31b9bbc963cfc2" data-parentId="be81ee7c0de24c97b8688c6b181e0939"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="17a969cfddb54fc592b1089977d6f1ec" data-parentId="be81ee7c0de24c97b8688c6b181e0939"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>11524-6</span></td></tr><tr class="collapsed" data-id="50ecee59bbb743409de6f8f48851d2b4" data-parentId="be81ee7c0de24c97b8688c6b181e0939"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>EKG study</span></td></tr><tr class="collapsed" data-id="3790c39c58494d7fac6af4ac4b762367" data-parentId="9e20c09c2f554eafa85206ed63c9e1c3"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="f9099733290949aa8b1040f1ac402574" data-parentId="3790c39c58494d7fac6af4ac4b762367"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="c4ce7e4ab0834117b8d33d774b2a3b11" data-parentId="3790c39c58494d7fac6af4ac4b762367"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>106073009</span></td></tr><tr class="collapsed" data-id="708ab48001254844bed921f19dc87b19" data-parentId="3790c39c58494d7fac6af4ac4b762367"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>EKG wave, interval AND/OR segment</span></td></tr><tr class="collapsed" data-id="2636afb7b05d4f9a8be5b97761e927e4" data-parentId="bd11d789bceb412bac653d6af6aaded4"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="77f06179430c4bce95227be35d039ea8" data-parentId="2636afb7b05d4f9a8be5b97761e927e4"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="e593c858f9ab4e1c8a4d069ea209b311" data-parentId="bd11d789bceb412bac653d6af6aaded4"><td class="instance"><span class="baseIcon primitive"></span><b>effective : </b><span>2019-07-02</span></td></tr><tr class="collapsed" data-id="2d8144a86ec7400885833b392979b10f" data-parentId="bd11d789bceb412bac653d6af6aaded4"><td class="instance"><span class="baseIcon primitive"></span><b>performer</b></td></tr><tr class="collapsed" data-id="826f5bb6ac4640cd81dbd0c89f22823e" data-parentId="2d8144a86ec7400885833b392979b10f"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Practitioner/DrMustermann</span></td></tr><tr class="collapsed" data-id="4bb5395c17c74be3acae188d9b1863da" data-parentId="bd11d789bceb412bac653d6af6aaded4"><td class="instance"><span class="baseIcon primitive"></span><b>device</b></td></tr><tr class="collapsed" data-id="dbd7f2f1c2ac460a9974fdb057f5499d" data-parentId="4bb5395c17c74be3acae188d9b1863da"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Device/ExampleDevice</span></td></tr><tr class="collapsed" data-id="31c0e91f9e70457a92582bcee2b5e719" data-parentId="bd11d789bceb412bac653d6af6aaded4"><td class="instance"><span class="baseIcon primitive"></span><b>component</b></td></tr><tr class="collapsed" data-id="4e7f4035df644b93900f76b29a0a99f5" data-parentId="31c0e91f9e70457a92582bcee2b5e719"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="35c23f54e11b453e9448d6f727daf92a" data-parentId="4e7f4035df644b93900f76b29a0a99f5"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="adc3a1238f0245d192ed2e4a38569dbb" data-parentId="35c23f54e11b453e9448d6f727daf92a"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="004512b23fa04f06bde89dc8ff664f86" data-parentId="35c23f54e11b453e9448d6f727daf92a"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>272729005</span></td></tr><tr class="collapsed" data-id="4606e2460c334954be052f1445462426" data-parentId="35c23f54e11b453e9448d6f727daf92a"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Lead I</span></td></tr><tr class="collapsed" data-id="1c8ed6a340cf436e84b1f340cb834dbf" data-parentId="31c0e91f9e70457a92582bcee2b5e719"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="09cd003dc9e94413b38187779435f61f" data-parentId="1c8ed6a340cf436e84b1f340cb834dbf"><td class="instance"><span class="baseIcon primitive"></span><b>origin</b></td></tr><tr class="collapsed" data-id="15b6c4eb6c804d56a78eaf9b0fec3aaf" data-parentId="09cd003dc9e94413b38187779435f61f"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>2048</span></td></tr><tr class="collapsed" data-id="97495063102b4841903364693e688d53" data-parentId="1c8ed6a340cf436e84b1f340cb834dbf"><td class="instance"><span class="baseIcon primitive"></span><b>period : </b><span>10</span></td></tr><tr class="collapsed" data-id="3cb0d4926cd0441eb8966d7e5ebab138" data-parentId="1c8ed6a340cf436e84b1f340cb834dbf"><td class="instance"><span class="baseIcon primitive"></span><b>dimensions : </b><span>1</span></td></tr><tr class="collapsed" data-id="4220873aa16b4aa39d31aef4ec3f7aa0" data-parentId="1c8ed6a340cf436e84b1f340cb834dbf"><td class="instance"><span class="baseIcon primitive"></span><b>data : </b><span>2041 2043 2037 2047 2060 2062 2051 2023 2014 2027 2034 2033 2040 2047 2047 2053 2058 2064 2059 2063 2061 2052 2053 2038 1966 1885 1884 2009 2129 2166 2137 2102 2086 2077 2067 2067 2060 2059 2062 2062 2060 2057 2045 2047 2057 2054 2042 2029 2027 2018 2007 1995 2001 2012 2024 2039 2068 2092 2111 2125 2131 2148 2137 2138 2128 2128 2115 2099 2097 2096 2101 2101 2091 2073 2076 2077 2084 2081 2088 2092 2070 2069 2074 2077 2075 2068 2064 2060 2062 2074 2075 2074 2075 2063 2058 2058 2064 2064 2070 2074 2067 2060 2062 2063 2061 2059 2048 2052 2049 2048 2051 2059 2059 2066 2077 2073</span></td></tr><tr class="collapsed" data-id="080977d51f2f40249de24c37481575ed" data-parentId="bd11d789bceb412bac653d6af6aaded4"><td class="instance"><span class="baseIcon primitive"></span><b>component</b></td></tr><tr class="collapsed" data-id="8567a12bc4db4ac8bab5de1767159454" data-parentId="080977d51f2f40249de24c37481575ed"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="a25a97940c6249c0b65eff7d017a65ae" data-parentId="8567a12bc4db4ac8bab5de1767159454"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="4a1e6b83470b4bea886e72ccb31d4ce2" data-parentId="a25a97940c6249c0b65eff7d017a65ae"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="90f6e77dc82b45ea82ddfe8c4e6fabdf" data-parentId="a25a97940c6249c0b65eff7d017a65ae"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>272730000</span></td></tr><tr class="collapsed" data-id="c5fbd0a38fcf4590a5e77b12aa800bfd" data-parentId="a25a97940c6249c0b65eff7d017a65ae"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Lead II</span></td></tr><tr class="collapsed" data-id="06eeb73c37974af28a5d3b9e1afc67a5" data-parentId="080977d51f2f40249de24c37481575ed"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="60a7ac1999d0483ca0c1bf6d02024072" data-parentId="06eeb73c37974af28a5d3b9e1afc67a5"><td class="instance"><span class="baseIcon primitive"></span><b>origin</b></td></tr><tr class="collapsed" data-id="e7e3cc160cab4ac9b9beed7219cdd909" data-parentId="60a7ac1999d0483ca0c1bf6d02024072"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>2048</span></td></tr><tr class="collapsed" data-id="a636583e6fab4ed99b8cf3f8c6b8324d" data-parentId="06eeb73c37974af28a5d3b9e1afc67a5"><td class="instance"><span class="baseIcon primitive"></span><b>period : </b><span>10</span></td></tr><tr class="collapsed" data-id="fd0a7bb867d242ccaf41267432c120da" data-parentId="06eeb73c37974af28a5d3b9e1afc67a5"><td class="instance"><span class="baseIcon primitive"></span><b>dimensions : </b><span>1</span></td></tr><tr class="collapsed" data-id="1148df8a77d642b782fba142aaf6043e" data-parentId="06eeb73c37974af28a5d3b9e1afc67a5"><td class="instance"><span class="baseIcon primitive"></span><b>data : </b><span>2041 2043 2037 2047 2060 2062 2051 2023 2014 2027 2034 2033 2040 2047 2047 2053 2058 2064 2059 2063 2061 2052 2053 2038 1966 1885 1884 2009 2129 2166 2137 2102 2086 2077 2067 2067 2060 2059 2062 2062 2060 2057 2045 2047 2057 2054 2042 2029 2027 2018 2007 1995 2001 2012 2024 2039 2068 2092 2111 2125 2131 2148 2137 2138 2128 2128 2115 2099 2097 2096 2101 2101 2091 2073 2076 2077 2084 2081 2088 2092 2070 2069 2074 2077 2075 2068 2064 2060 2062 2074 2075 2074 2075 2063 2058 2058 2064 2064 2070 2074 2067 2060 2062 2063 2061 2059 2048 2052 2049 2048 2051 2059 2059 2066 2077 2073</span></td></tr><tr class="collapsed" data-id="31a28c8da835424697b6abd96b2fe0ac" data-parentId="bd11d789bceb412bac653d6af6aaded4"><td class="instance"><span class="baseIcon primitive"></span><b>component</b></td></tr><tr class="collapsed" data-id="86a13ed17009407e9b0aa631d56f7275" data-parentId="31a28c8da835424697b6abd96b2fe0ac"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="52cacbc4c9b54ddd88320d668ba3b1b3" data-parentId="86a13ed17009407e9b0aa631d56f7275"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="9441bcbec86544e2932521fcfa6f1be5" data-parentId="52cacbc4c9b54ddd88320d668ba3b1b3"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="1d9da8a17ef24b13889ff98b6ec4bb05" data-parentId="52cacbc4c9b54ddd88320d668ba3b1b3"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>272731001</span></td></tr><tr class="collapsed" data-id="4d6552da2be347c7b8695ecf3a84bfbb" data-parentId="52cacbc4c9b54ddd88320d668ba3b1b3"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Lead III</span></td></tr><tr class="collapsed" data-id="5194e2a51dac4068b2b095faaf2ce4f4" data-parentId="31a28c8da835424697b6abd96b2fe0ac"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="51aa4a9bfeef4db6adc574b5d4716fe5" data-parentId="5194e2a51dac4068b2b095faaf2ce4f4"><td class="instance"><span class="baseIcon primitive"></span><b>origin</b></td></tr><tr class="collapsed" data-id="0cf85036970249f18c98d6c5c4dfeae7" data-parentId="51aa4a9bfeef4db6adc574b5d4716fe5"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>2048</span></td></tr><tr class="collapsed" data-id="59ff11e1bcd14a35a3915bc16c4dfe3c" data-parentId="5194e2a51dac4068b2b095faaf2ce4f4"><td class="instance"><span class="baseIcon primitive"></span><b>period : </b><span>10</span></td></tr><tr class="collapsed" data-id="aa58678c449d462f96349744ea0af395" data-parentId="5194e2a51dac4068b2b095faaf2ce4f4"><td class="instance"><span class="baseIcon primitive"></span><b>dimensions : </b><span>1</span></td></tr><tr class="collapsed" data-id="13808f9038264aa49f0de4bcc82f0cb7" data-parentId="5194e2a51dac4068b2b095faaf2ce4f4"><td class="instance"><span class="baseIcon primitive"></span><b>data : </b><span>2041 2043 2037 2047 2060 2062 2051 2023 2014 2027 2034 2033 2040 2047 2047 2053 2058 2064 2059 2063 2061 2052 2053 2038 1966 1885 1884 2009 2129 2166 2137 2102 2086 2077 2067 2067 2060 2059 2062 2062 2060 2057 2045 2047 2057 2054 2042 2029 2027 2018 2007 1995 2001 2012 2024 2039 2068 2092 2111 2125 2131 2148 2137 2138 2128 2128 2115 2099 2097 2096 2101 2101 2091 2073 2076 2077 2084 2081 2088 2092 2070 2069 2074 2077 2075 2068 2064 2060 2062 2074 2075 2074 2075 2063 2058 2058 2064 2064 2070 2074 2067 2060 2062 2063 2061 2059 2048 2052 2049 2048 2051 2059 2059 2066 2077 2073</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable61c303358ef54c04a6373942ce611783 = new InstanceTree();
+resourceTreeTable61c303358ef54c04a6373942ce611783.init("61c303358ef54c04a6373942ce611783");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="8442eb96-8eb9-4c15-8f39-21b3b7a97ddc">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">Observation</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.id" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKEKGExample</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.meta" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.meta.profile" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKEKG</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.status" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.category" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">category</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.category.coding" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.category.coding.system" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.category.coding.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">procedure</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">category</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding.system" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">11524-6</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding.display" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">EKG study</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding.system" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">106073009</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding.display" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">EKG wave, interval AND/OR segment</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.subject" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.subject.reference" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.effective" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">effectiveDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2019-07-02</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.performer" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">performer</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.performer.reference" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Practitioner/DrMustermann</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">performer</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.device" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">device</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.device.reference" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Device/ExampleDevice</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">device</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">component</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.system" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">272729005</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.display" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Lead I</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">valueSampledData</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.origin" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">origin</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.origin.value" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2048</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">origin</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.period" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">period</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">10</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.dimensions" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">dimensions</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.data" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">data</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2041 2043 2037 2047 2060 2062 2051 2023 2014 2027 2034 2033 2040 2047 2047 2053 2058 2064 2059 2063 2061 2052 2053 2038 1966 1885 1884 2009 2129 2166 2137 2102 2086 2077 2067 2067 2060 2059 2062 2062 2060 2057 2045 2047 2057 2054 2042 2029 2027 2018 2007 1995 2001 2012 2024 2039 2068 2092 2111 2125 2131 2148 2137 2138 2128 2128 2115 2099 2097 2096 2101 2101 2091 2073 2076 2077 2084 2081 2088 2092 2070 2069 2074 2077 2075 2068 2064 2060 2062 2074 2075 2074 2075 2063 2058 2058 2064 2064 2070 2074 2067 2060 2062 2063 2061 2059 2048 2052 2049 2048 2051 2059 2059 2066 2077 2073</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueSampledData</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">component</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">component</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.system" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">272730000</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.display" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Lead II</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">valueSampledData</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.origin" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">origin</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.origin.value" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2048</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">origin</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.period" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">period</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">10</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.dimensions" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">dimensions</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.data" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">data</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2041 2043 2037 2047 2060 2062 2051 2023 2014 2027 2034 2033 2040 2047 2047 2053 2058 2064 2059 2063 2061 2052 2053 2038 1966 1885 1884 2009 2129 2166 2137 2102 2086 2077 2067 2067 2060 2059 2062 2062 2060 2057 2045 2047 2057 2054 2042 2029 2027 2018 2007 1995 2001 2012 2024 2039 2068 2092 2111 2125 2131 2148 2137 2138 2128 2128 2115 2099 2097 2096 2101 2101 2091 2073 2076 2077 2084 2081 2088 2092 2070 2069 2074 2077 2075 2068 2064 2060 2062 2074 2075 2074 2075 2063 2058 2058 2064 2064 2070 2074 2067 2060 2062 2063 2061 2059 2048 2052 2049 2048 2051 2059 2059 2066 2077 2073</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueSampledData</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">component</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">component</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.system" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">272731001</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.display" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Lead III</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">valueSampledData</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.origin" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">origin</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.origin.value" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2048</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">origin</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.period" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">period</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">10</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.dimensions" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">dimensions</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.value.data" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">data</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2041 2043 2037 2047 2060 2062 2051 2023 2014 2027 2034 2033 2040 2047 2047 2053 2058 2064 2059 2063 2061 2052 2053 2038 1966 1885 1884 2009 2129 2166 2137 2102 2086 2077 2067 2067 2060 2059 2062 2062 2060 2057 2045 2047 2057 2054 2042 2029 2027 2018 2007 1995 2001 2012 2024 2039 2068 2092 2111 2125 2131 2148 2137 2138 2128 2128 2115 2099 2097 2096 2101 2101 2091 2073 2076 2077 2084 2081 2088 2092 2070 2069 2074 2077 2075 2068 2064 2060 2062 2074 2075 2074 2075 2063 2058 2058 2064 2064 2070 2074 2067 2060 2062 2063 2061 2059 2048 2052 2049 2048 2051 2059 2059 2066 2077 2073</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueSampledData</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">component</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Observation</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="49888501-638a-4efd-b77d-b5d7b03457bd">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.resourceType" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.id" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKEKGExample</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.meta" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.meta.profile" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKEKG</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding.system" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">11524-6</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding.display" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">EKG study</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding.system" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">106073009</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.code.coding.display" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">EKG wave, interval AND/OR segment</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.subject" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.subject.reference" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.status" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.category" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">category</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.category.coding" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.category.coding.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">procedure</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.category.coding.system" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.device" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">device</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.device.reference" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Device/ExampleDevice</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.effectiveDateTime" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">effectiveDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2019-07-02</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.performer" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">performer</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.performer.reference" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Practitioner/DrMustermann</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">component</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">272729005</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.system" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.display" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Lead I</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">valueSampledData</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.origin" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">origin</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.origin.value" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">2048</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.period" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">period</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">10</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.dimensions" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">dimensions</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">1</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.data" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">data</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2041 2043 2037 2047 2060 2062 2051 2023 2014 2027 2034 2033 2040 2047 2047 2053 2058 2064 2059 2063 2061 2052 2053 2038 1966 1885 1884 2009 2129 2166 2137 2102 2086 2077 2067 2067 2060 2059 2062 2062 2060 2057 2045 2047 2057 2054 2042 2029 2027 2018 2007 1995 2001 2012 2024 2039 2068 2092 2111 2125 2131 2148 2137 2138 2128 2128 2115 2099 2097 2096 2101 2101 2091 2073 2076 2077 2084 2081 2088 2092 2070 2069 2074 2077 2075 2068 2064 2060 2062 2074 2075 2074 2075 2063 2058 2058 2064 2064 2070 2074 2067 2060 2062 2063 2061 2059 2048 2052 2049 2048 2051 2059 2059 2066 2077 2073</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">272730000</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.system" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.display" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Lead II</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">valueSampledData</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.origin" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">origin</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.origin.value" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">2048</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.period" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">period</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">10</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.dimensions" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">dimensions</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">1</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.data" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">data</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2041 2043 2037 2047 2060 2062 2051 2023 2014 2027 2034 2033 2040 2047 2047 2053 2058 2064 2059 2063 2061 2052 2053 2038 1966 1885 1884 2009 2129 2166 2137 2102 2086 2077 2067 2067 2060 2059 2062 2062 2060 2057 2045 2047 2057 2054 2042 2029 2027 2018 2007 1995 2001 2012 2024 2039 2068 2092 2111 2125 2131 2148 2137 2138 2128 2128 2115 2099 2097 2096 2101 2101 2091 2073 2076 2077 2084 2081 2088 2092 2070 2069 2074 2077 2075 2068 2064 2060 2062 2074 2075 2074 2075 2063 2058 2058 2064 2064 2070 2074 2067 2060 2062 2063 2061 2059 2048 2052 2049 2048 2051 2059 2059 2066 2077 2073</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.code" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">272731001</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.system" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.code.coding.display" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Lead III</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">valueSampledData</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.origin" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">origin</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.origin.value" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">2048</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.period" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">period</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">10</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.dimensions" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">dimensions</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">1</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKEKG.json#Observation.component.valueSampledData.data" title="ISiKEKG
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKEKG.json" target="_blank">data</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2041 2043 2037 2047 2060 2062 2051 2023 2014 2027 2034 2033 2040 2047 2047 2053 2058 2064 2059 2063 2061 2052 2053 2038 1966 1885 1884 2009 2129 2166 2137 2102 2086 2077 2067 2067 2060 2059 2062 2062 2060 2057 2045 2047 2057 2054 2042 2029 2027 2018 2007 1995 2001 2012 2024 2039 2068 2092 2111 2125 2131 2148 2137 2138 2128 2128 2115 2099 2097 2096 2101 2101 2091 2073 2076 2077 2084 2081 2088 2092 2070 2069 2074 2077 2075 2068 2064 2060 2062 2074 2075 2074 2075 2063 2058 2058 2064 2064 2070 2074 2067 2060 2062 2063 2061 2059 2048 2052 2049 2048 2051 2059 2059 2066 2077 2073</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="0b249951-f70e-4899-803f-03d2f8d8b931">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Observation-ISiKEKGExample.json'>EKG study</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

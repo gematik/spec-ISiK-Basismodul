@@ -1,0 +1,74 @@
+# ISiKBehandlungsergebnisReha - AMTS ISiK Implementierungsleitfaden v6.0.0
+
+AMTS ISiK Implementierungsleitfaden
+
+Version 6.0.0 - active 
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **ISiKBehandlungsergebnisReha**
+
+## CodeSystem: ISiKBehandlungsergebnisReha 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/isik/CodeSystem/ISiKBehandlungsergebnisRehaCS | *Version*:6.0.0 |
+| Active as of 2026-07-01 | *Computable Name*:ISiKBehandlungsergebnisReha |
+
+ 
+Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis. 
+
+This Code system is referenced in the definition of the following value sets:
+
+* [ISiKBehandlungsergebnisRehaVS](ValueSet-ISiKBehandlungsergebnisReha.md)
+
+-------
+
+ [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CodeSystem",
+  "id" : "ISiKBehandlungsergebnisRehaCS",
+  "language" : "de-DE",
+  "url" : "https://gematik.de/fhir/isik/CodeSystem/ISiKBehandlungsergebnisRehaCS",
+  "version" : "6.0.0",
+  "name" : "ISiKBehandlungsergebnisReha",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-07-01",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    }]
+  }],
+  "description" : "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis.",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 4,
+  "concept" : [{
+    "code" : "0",
+    "display" : "Ziff. 1-3 trifft nicht zu"
+  },
+  {
+    "code" : "1",
+    "display" : "gebessert"
+  },
+  {
+    "code" : "2",
+    "display" : "unverändert"
+  },
+  {
+    "code" : "3",
+    "display" : "verschlechtert"
+  }]
+}
+
+```

@@ -1,0 +1,106 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/AllergyIntolerance/ISiKAllergieUnvertraeglichkeitBeispiel1> a fhir:AllergyIntolerance ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ISiKAllergieUnvertraeglichkeitBeispiel1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: AllergyIntolerance ISiKAllergieUnvertraeglichkeitBeispiel1</b></p><a name=\"ISiKAllergieUnvertraeglichkeitBeispiel1\"> </a><a name=\"hcISiKAllergieUnvertraeglichkeitBeispiel1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKAllergieUnvertraeglichkeit.html\">ISiKAllergieUnvertraeglichkeit</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-verification confirmed}\">Confirmed</span></p><p><b>type</b>: Allergy</p><p><b>category</b>: Environment</p><p><b>criticality</b>: Low Risk</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 256262001}\">Betula pendula pollen</span></p><p><b>patient</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>onset</b>: 1987</p><p><b>recordedDate</b>: 2011-05-12</p><p><b>recorder</b>: Dr. Martin Mustermann</p><p><b>asserter</b>: Dr. Berta Beispiel</p><p><b>note</b>: By Practitioner/PractitionerWalterArzt @2024-02-20 14:34:12+0100</p><blockquote><div><p>Patientin berichtet von einer leichten Verschlimmerung in den letzten 3 Jahren.</p>\n</div></blockquote><h3>Reactions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Manifestation</b></td><td><b>Severity</b></td><td><b>ExposureRoute</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://snomed.info/sct 76067001}\">Sneezing (finding)</span></td><td>Moderate</td><td><span title=\"Codes:{http://snomed.info/sct 14910006}\">Inspiration</span></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical>
+       ] ;
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:verificationStatus [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/allergyintolerance-verification>
+       ] ;
+       fhir:code [ fhir:v "confirmed" ]
+     ] )
+  ] ; # 
+  fhir:type [ fhir:v "allergy"] ; # 
+  fhir:category ( [ fhir:v "environment"] ) ; # 
+  fhir:criticality [ fhir:v "low"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:256262001 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "256262001" ] ;
+       fhir:display [ fhir:v "Betula pendula pollen" ]
+     ] )
+  ] ; # 
+  fhir:patient [
+     fhir:l <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:reference [ fhir:v "Patient/PatientinMusterfrau" ]
+  ] ; # 
+  fhir:onset [
+     a fhir:DateTime ;
+     fhir:v "1987"^^xsd:gYear
+  ] ; # 
+  fhir:recordedDate [ fhir:v "2011-05-12"^^xsd:date] ; # 
+  fhir:recorder [
+     fhir:display [ fhir:v "Dr. Martin Mustermann" ]
+  ] ; # 
+  fhir:asserter [
+     fhir:display [ fhir:v "Dr. Berta Beispiel" ]
+  ] ; # 
+  fhir:note ( [
+     fhir:author [
+       a fhir:Reference ;
+       fhir:l <https://gematik.de/fhir/isik/Practitioner/PractitionerWalterArzt> ;
+       fhir:reference [ fhir:v "Practitioner/PractitionerWalterArzt" ]
+     ] ;
+     fhir:time [ fhir:v "2024-02-20T14:34:12+01:00"^^xsd:dateTime ] ;
+     fhir:text [ fhir:v "Patientin berichtet von einer leichten Verschlimmerung in den letzten 3 Jahren." ]
+  ] ) ; # 
+  fhir:reaction ( [
+     fhir:manifestation ( [
+       fhir:coding ( [
+         a sct:76067001 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "76067001" ] ;
+         fhir:display [ fhir:v "Sneezing (finding)" ]
+       ] )
+     ] ) ;
+     fhir:severity [ fhir:v "moderate" ] ;
+     fhir:exposureRoute [
+       fhir:coding ( [
+         a sct:14910006 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "14910006" ] ;
+         fhir:display [ fhir:v "Inspiration" ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

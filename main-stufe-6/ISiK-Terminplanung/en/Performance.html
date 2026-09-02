@@ -1,0 +1,412 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Performance - ISiK Terminplanung Implementierungsleitfaden v6.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11"}
+    h3,h4,h5,h6{--heading-prefix:"11"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Use Cases und Kontext
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UseCases.html">UseCases</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="Interaktionen.html">Interaktionen</a>
+      </li>
+      <li>
+        <a href="Kompatibilitaet.html">Kompatibilität zu anderen nationalen FHIR-basierten Spezifikationen</a>
+      </li>
+      <li>
+        <a href="Prozesse.html">Prozesse</a>
+      </li>
+      <li>
+        <a href="Informationsmodell.html">Informationsmodell</a>
+      </li>
+      <li>
+        <a href="Architekturoptionen.html">Architekturoptionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebergreifendeFestlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+      <li>
+        <a href="Operations.html">Operation $book</a>
+      </li>
+      <li>
+        <a href="Performance.html">Performance</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts_isik.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Terminplanung Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0 - active
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Performance</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Performance</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#erwartbare-zeiträume-bei-slot-abfragen-auf-einzelne-kalender" id="markdown-toc-erwartbare-zeiträume-bei-slot-abfragen-auf-einzelne-kalender">Erwartbare Zeiträume bei Slot-Abfragen auf einzelne Kalender</a></li>
+  <li><a href="#buchungsstatus-rückmeldung-confirmed--pending" id="markdown-toc-buchungsstatus-rückmeldung-confirmed--pending">Buchungsstatus-Rückmeldung (confirmed / pending)</a></li>
+  <li><a href="#gültigkeit-vorgaben-basis" id="markdown-toc-gültigkeit-vorgaben-basis">Gültigkeit Vorgaben Basis</a></li>
+</ul>
+
+</div>
+<p>Da es sich im ISiK-Kontext bei dem Terminplanungs-Modul um ein dediziertes Modul zur Abbildung eines Workflows handelt, sind hier gesonderte Betrachtungen und Festlegungen zu Performance-Aspekten notwendig, um einen robusten und für Nutzende akzeptablen Einsatz der Schnittstelle zu ermöglichen.</p>
+
+<h3 id="erwartbare-zeiträume-bei-slot-abfragen-auf-einzelne-kalender">Erwartbare Zeiträume bei Slot-Abfragen auf einzelne Kalender</h3>
+
+<p>Slot-Abfragen (Terminblock-Abfragen) bilden den performanzkritischen Kern des Buchungsworkflows: Nutzende erwarten beim Suchen nach freien Terminen eine unmittelbare Rückmeldung. Gleichzeitig können Slot-Ergebnismengen – abhängig von Slot-Dauer und Abfragezeitraum – sehr groß werden, weshalb klare Grenzen für zulässige Abfragezeiträume und die daran geknüpften Anforderungen notwendig sind.</p>
+
+<h4 id="zulässige-abfragezeiträume-und-antwortzeit-anforderungen">Zulässige Abfragezeiträume und Antwortzeit-Anforderungen</h4>
+
+<p><strong>Annahme:</strong> Eine Slot-Abfrage enthält in der Regel den Suchparameter <code class="language-plaintext highlighter-rouge">schedule</code> , um die Ergebnismenge auf einen einzelnen Kalender einzuschränken.
+Client-Implementierungen können nicht davon ausgehen, dass <code class="language-plaintext highlighter-rouge">schedule</code>-unabhängige Anfragen innerhalb der unten definierten Zeiträume beantwortet werden können.
+Für die zulässigen Abfragezeiträume – gemessen ab dem Zeitpunkt der Anfrage – MÜSSEN Termin Repositories für <code class="language-plaintext highlighter-rouge">schedule</code> bezogene Abfragen folgende Antwortzeiten einhalten:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Abfragezeitraum</th>
+      <th>Beschreibung</th>
+      <th>Typischer Anwendungsfall</th>
+      <th>Antwortzeit-Anforderung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Bis 31 Tage bzw. ein ganzer Monat</strong> (Standardbereich)</td>
+      <td>Kurzfristige Verfügbarkeitsabfrage</td>
+      <td>Nächster freier Termin für Patientenbuchung</td>
+      <td>Unter 2 Sekunden (analog PK3 Basis)</td>
+    </tr>
+    <tr>
+      <td><strong>1 bis 3 Monate</strong> (erweiterter Bereich)</td>
+      <td>Mittelfristige Planung</td>
+      <td>Wiedervorstellungstermine, Vorausplanung</td>
+      <td>Unter 15 Sekunden (spezifisch Terminplanung, zwischen PK4 und PK5 Basis)</td>
+    </tr>
+    <tr>
+      <td><strong>Über 3 Monate</strong></td>
+      <td>Langfristige Planung</td>
+      <td>Jahresplanung, Kapazitätsmanagement</td>
+      <td>Nicht normiert</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>Hinweis:</strong> Die Anforderungen beziehen sich jeweils auf Abfragen mit einem einzelnen Kalender als Bezugskontext (und i.d.R. ohne gleichzeitige Nutzung von <code class="language-plaintext highlighter-rouge">_include</code>, <code class="language-plaintext highlighter-rouge">_revinclude</code> oder Chaining).</p>
+</blockquote>
+
+<h4 id="sonderfall-leere-trefferlisten-bei-slot-abfragen">Sonderfall: Leere Trefferlisten bei Slot-Abfragen</h4>
+<p>Für Slot-Abfragen auf einen einzelnen Kalender mit angegebenem <code class="language-plaintext highlighter-rouge">schedule</code> gilt zusätzlich:</p>
+
+<ul>
+  <li>Leere Response-Bundles bei Slot-Abfragen ohne Treffer <strong>MÜSSEN</strong> in unter 500 Millisekunden beantwortet werden.</li>
+  <li>Beispielabfrage: <code class="language-plaintext highlighter-rouge">baseUrl/Slot?schedule=Schedule/ISiKKalenderExample&amp;status=free&amp;start=ge2026-06-01&amp;start=le2026-07-02</code></li>
+  <li>Beispielkontext: Abfrage am 01.06.2026, im laufenden Monat kein freier Slot, daher kein Treffer im Response-Bundle</li>
+  <li>Begründung: Leere Response-Bundles dürfen sequentielle Abfragen nur minimal verzögern.</li>
+</ul>
+
+<h4 id="begründung-der-antwortzeit-anforderungen">Begründung der Antwortzeit-Anforderungen</h4>
+
+<p><strong>Warum überhaupt klare Zeitvorgaben?</strong>
+Ohne definierte Antwortzeiten müssen Client-Plattformen konservativ lange Timeouts konfigurieren (in der Praxis heute 10–30 Sekunden). Das führt zu vielen parallel offenen Requests auf Server-Seite – insbesondere zu Spitzenzeiten, wenn mehrere Patienten gleichzeitig einen Termin suchen (z. B. Montagmorgen nach Wochenende). Bei Spitzenlast können daraus Cascading Failures entstehen, bei denen einzelne langsame Anfragen das gesamte System zunehmend verlangsamen.</p>
+
+<p><strong>Warum speziell unter 15 Sekunden für den erweiterten Bereich?</strong>
+Untersuchungen zur Nutzerwahrnehmung zeigen konsistent, dass ab ca. 10 Sekunden Wartezeit Konzentration und Compliance deutlich nachlassen und Frustration stark ansteigt. Dies führt zu einer Reihe unerwünschter Verhaltensweisen:</p>
+<ul>
+  <li>Nutzende laden die Seite neu, weil sie einen Fehler vermuten</li>
+  <li>Nutzende öffnen parallel neue Tabs oder wechseln das Gerät, weil sie sich von einem anderen Weg eine schnellere Antwort erhoffen – und lösen damit weitere Last aus</li>
+  <li>Nutzende brechen den Vorgang ab und kontaktieren die Einrichtung auf anderem Weg (erhöhte Administrationslast) oder wandern ganz ab (Patientenverlust)</li>
+</ul>
+
+<p>Teile dieses Verhaltens lassen sich durch geeignete UI-Rückmeldungen (z. B. Ladeanimation, Zwischenstatusanzeige) abfedern, aber nicht vollständig vermeiden. Die Grenze von 15 Sekunden für den erweiterten Bereich (4–12 Wochen) setzt daher einen Rahmen, der technisch realisierbar ist und gleichzeitig die nutzerseitige Toleranzschwelle nicht überschreitet.</p>
+
+<p><strong>Begründung der Zeitraum-Grenzen</strong></p>
+
+<p>Als User des Systems erwarte ich bei Terminbuchung eine Übersicht freier Termine auf Monatsebene,</p>
+
+<p>Die Grenze von <strong>12 Wochen</strong> trägt dem Planungshorizont von Kliniken und spezialisierten Einrichtungen Rechnung, in denen Termine mehrere Monate im Voraus gebucht werden. Für diesen Bereich sind längere Antwortzeiten akzeptabel.</p>
+
+<p>Für Abfragen <strong>über 12 Wochen</strong> ist keine normierte Antwortzeit vorgesehen, da die Ergebnismenge unkalkulierbar wird und Terminblöcke für weit in der Zukunft liegende Zeiträume häufig noch nicht angelegt sind.</p>
+
+<h4 id="client-anforderungen-bei-slot-abfragen">Client-Anforderungen bei Slot-Abfragen</h4>
+
+<p>Client-Implementierungen <strong>SOLLEN</strong>:</p>
+<ul>
+  <li>den Suchparameter <code class="language-plaintext highlighter-rouge">schedule</code> angeben,</li>
+  <li>den Abfragezeitraum mittels <code class="language-plaintext highlighter-rouge">start=ge&lt;Datum&gt;&amp;start=le&lt;Datum&gt;</code> eingrenzen,</li>
+  <li>Paging (<code class="language-plaintext highlighter-rouge">_count</code>) nutzen, sofern mehr Ergebnisse benötigt werden als die Standard-Seitengröße liefert,</li>
+  <li>den Abfragezeitraum so klein wie fachlich notwendig wählen (initial z. B. 2 Wochen, bei Bedarf erweiterbar),</li>
+  <li>Slot-Ergebnisse für denselben Kalender und Zeitraum lokal zwischenspeichern und nicht bei jeder Nutzerinteraktion neu laden.</li>
+</ul>
+
+<h4 id="mehrfache-abfragen">Mehrfache Abfragen</h4>
+
+<p>Während der Terminbuchungs-Journey sind unter Umständen wiederholte, identische Abfragen auf eine Slot-Ressource nötig, um z. B. den Buchungsprozess auf einen Slot, der in der Zwischenzeit von einem anderen Buchenden belegt wurde, nicht unnötig fortzuführen.</p>
+
+<p>In einem solchen Kontext sei aber auch auf die <a href="https://gemspec.gematik.de/ig/fhir/isik/subscriptions/latest/CodeSystem-ISiKSubscriptionTopic.html">Funktion von Subscription verwiesen, die auch das Topic "Slot" vorsieht</a> und damit einen Mechanismus nach Push-Prinzip vorsieht.</p>
+
+<h3 id="buchungsstatus-rückmeldung-confirmed--pending">Buchungsstatus-Rückmeldung (confirmed / pending)</h3>
+
+<p>Die Rückmeldung des Buchungsstatus – d. h. ob ein Termin direkt bestätigt (<code class="language-plaintext highlighter-rouge">confirmed</code>) oder zunächst als Anfrage vorgemerkt (<code class="language-plaintext highlighter-rouge">pending</code>) wurde – ist mindestens genauso zeitkritisch wie die vorgelagerte Slot-Abfrage.</p>
+
+<p><strong>Antwortzeit-Anforderungen:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">$book</code>-Operation: Unter 2 Sekunden (Antwortzeit als Baseline; Zielwert analog PK3 Basis)</li>
+  <li><code class="language-plaintext highlighter-rouge">GET Appointment/&lt;id&gt;</code> (Statusabfrage): Unter 1 Sekunde (Antwortzeit als Baseline; siehe Festlegung PK1 Basis)</li>
+</ul>
+
+<p>Zusammen decken diese beiden Anforderungen den vollständigen Buchungs-Roundtrip ab: die schreibende Buchungsoperation sowie die nachgelagerte Abfrage, mit der der Termin-Requestor den aktuellen Buchungsstatus abruft.</p>
+
+<h4 id="begründung">Begründung</h4>
+
+<p>Das Risiko einer Doppelbuchung steigt überproportional mit der Antwortzeit: Wird dem Nutzenden keine zügige Rückmeldung gegeben, ob die Buchung erfolgreich war oder nicht, können parallele Buchungsversuche desselben Slots entstehen. Zudem nimmt mit zunehmender Wartezeit die Verunsicherung der Patienten zu – mehr noch als bei der Slot-Abfrage –, was zu unerwünschtem Verhalten (z. B. Mehrfachbuchungen, Abbruch und erneuter Buchungsversuch) führen kann.</p>
+
+<h3 id="gültigkeit-vorgaben-basis">Gültigkeit Vorgaben Basis</h3>
+
+<p>Über die hier getroffenen Festlegungen hinaus gelten die <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/latest/UebergreifendeFestlegungen_Performance.html">Festlegungen zur Performance des ISiK Moduls Basis</a>.</p>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  
+          Package terminplanung#6.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Sep 2, 2026 11:33+0000">2026-09-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

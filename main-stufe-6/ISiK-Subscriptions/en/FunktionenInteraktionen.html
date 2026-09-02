@@ -1,0 +1,435 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Funktionen und Interaktionen - ISiK Subscription Implementierungsleitfaden v6.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spezifikation
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Patientenzusammenfuehrung.html">Patient merge und Notification</a>
+      </li>
+      <li>
+        <a href="Kontaktzusammenfuehrung.html">Encounter Merge Notification (Kontaktzusammenführung)</a>
+      </li>
+      <li>
+        <a href="UseCases.html">Use Cases - Übersicht</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="FunktionenInteraktionen.html">Funktionen und Interaktionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Festlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Subscription Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0 - active
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Funktionen und Interaktionen</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Funktionen und Interaktionen</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#subscription-workflow" id="markdown-toc-subscription-workflow">Subscription-Workflow</a></li>
+  <li><a href="#workflow-sequenzen" id="markdown-toc-workflow-sequenzen">Workflow-Sequenzen</a></li>
+  <li><a href="#sicherheit" id="markdown-toc-sicherheit">Sicherheit</a></li>
+</ul>
+
+</div>
+
+<p>Es gelten die Interaktionen und der Workflow aus dem <a href="https://hl7.org/fhir/uv/subscriptions-backport/workflow.html#workflow-fhir-r4">Subscription Backport IG</a>.</p>
+
+<h3 id="subscription-workflow">Subscription-Workflow</h3>
+
+<p>Der Subscription-Workflow umfasst die folgenden verpflichtenden Schritte:</p>
+
+<h4 id="topic-discovery-muss">Topic Discovery (MUSS)</h4>
+
+<p>Clients sollen in der Lage sein, die vom Subscription Server unterstützten SubscriptionTopics abzufragen. Der Server MUSS die unterstützten Topics über die Extension<a href="https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-capabilitystatement-subscriptiontopic-canonical.html"><code class="language-plaintext highlighter-rouge">capabilitystatement-subscriptiontopic-canonical</code></a>
+im CapabilityStatement bekannt geben.</p>
+
+<h5 id="abruf">Abruf</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/metadata
+</code></pre></div></div>
+<h5 id="antwort">Antwort</h5>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CapabilityStatement"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rest"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"server"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscription"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"valueCanonical"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="err">...</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="subscription-anlage-muss">Subscription-Anlage (MUSS)</h4>
+
+<p>Clients können eine Subscription auf dem Subscription Server anlegen.
+Der Subscription Server MUSS dabei die folgenden Angaben unterstützen:</p>
+
+<ul>
+  <li><strong>Topic</strong> (<code class="language-plaintext highlighter-rouge">Subscription.criteria</code>): Canonical URL eines unterstützten SubscriptionTopics aus dem ISiKSubscriptionTopic CodeSystem.</li>
+  <li><strong>Filterparameter</strong> (<code class="language-plaintext highlighter-rouge">Subscription.criteria.extension:filterCriteria</code>): Optionale Einschränkung der Ereignisse.</li>
+  <li><strong>Kanal</strong> (<code class="language-plaintext highlighter-rouge">Subscription.channel.type</code>): MUSS <code class="language-plaintext highlighter-rouge">rest-hook</code> sein.</li>
+  <li><strong>Payload</strong> (<code class="language-plaintext highlighter-rouge">Subscription.channel.payload.extension[content]</code>): MUSS <code class="language-plaintext highlighter-rouge">id-only</code> sein. Die Notification enthält die ID der geänderten Ressource, aber keine vollständigen Ressourcendaten. Der Wert <code class="language-plaintext highlighter-rouge">full-resource</code> ist nicht zulässig.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST [base]/Subscription
+</code></pre></div></div>
+
+<h4 id="kanal-handshake--aktivierung-muss">Kanal-Handshake / Aktivierung (MUSS)</h4>
+
+<p>Nach der Anlage MUSS der Server einen Handshake-Aufruf am angegebenen REST-Hook-Endpunkt durchführen.
+Bei erfolgreicher Verarbeitung der Anfrage (HTTP 200 OK) MUSS der Subscription Server den Status der Subscription von <code class="language-plaintext highlighter-rouge">requested</code> auf <code class="language-plaintext highlighter-rouge">active</code> aktualisieren.
+Tritt ein Fehler auf, MUSS der Subscription Server den Status auf <code class="language-plaintext highlighter-rouge">error</code> setzen.</p>
+
+<p>Der Subscription Server KANN optional beim Handshake eine HTTP Basic Authentication mit einem statischen Secret (Subscription.channel.header) verwenden.</p>
+
+<h4 id="notifications-muss">Notifications (MUSS)</h4>
+
+<p>Der Subscription Server MUSS Benachrichtigungen als Bundle vom Typ <code class="language-plaintext highlighter-rouge">history</code> mit dem Entry <code class="language-plaintext highlighter-rouge">entry:subscriptionStatus</code> senden.
+Der Subscription Server MUSS dabei <code class="language-plaintext highlighter-rouge">payload=id-only</code> verwenden, sodass die Benachrichtigung nur die ID(s) der geänderten Ressource(n), jedoch keine vollständigen Ressourcendaten enthält.</p>
+
+<p>Anhand der übermittelten ID ruft der Client die aktuelle Version der Ressource über die reguläre FHIR-REST-API mit gültigem Autorisierungstoken ab (Pull-Prinzip).</p>
+
+<h4 id="heartbeat-muss">Heartbeat (MUSS)</h4>
+
+<p>Der Server MUSS einen Heartbeat senden, sobald die konfigurierte <code class="language-plaintext highlighter-rouge">heartbeatPeriod</code> seit der letzten erfolgreich zugestellten Benachrichtigung (Notification oder Heartbeat) abgelaufen ist und in diesem Zeitraum keine Notification erfolgt ist. Jede erfolgreiche Zustellung setzt den Zeitraum neu.</p>
+
+<p>Der Subscription Server MUSS den Heartbeat als Bundle mit <code class="language-plaintext highlighter-rouge">type=history</code> und einem Entry SubscriptionStatus mit <code class="language-plaintext highlighter-rouge">notificationType=heartbeat</code> senden.</p>
+
+<h4 id="status-operation-muss"><code class="language-plaintext highlighter-rouge">$status</code> Operation (MUSS)</h4>
+
+<p>Der Subscription Server MUSS die Operation <code class="language-plaintext highlighter-rouge">$status</code> unter <code class="language-plaintext highlighter-rouge">[base]/Subscription/[id]/$status</code> implementieren,
+um Kanalzustand, letzte Events und Diagnosedaten zu prüfen.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Subscription/[id]/$status
+</code></pre></div></div>
+
+<h4 id="events-operation-muss"><code class="language-plaintext highlighter-rouge">$events</code> Operation (MUSS)</h4>
+
+<p>Der Server MUSS die Operation <code class="language-plaintext highlighter-rouge">$events</code> unter <code class="language-plaintext highlighter-rouge">[base]/Subscription/[id]/$events</code> unterstützen,
+um verpasste Ereignisse nachzuliefern.</p>
+
+<p>Die Filterparameter <code class="language-plaintext highlighter-rouge">eventsSinceNumber</code> und <code class="language-plaintext highlighter-rouge">eventsUntilNumber</code> MÜSSEN dabei unterstützt werden.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Subscription/[id]/$events?eventsSinceNumber=5&amp;eventsUntilNumber=10
+</code></pre></div></div>
+
+<h4 id="fehler--und-statushandling-muss">Fehler- und Statushandling (MUSS)</h4>
+
+<p>Bei einem nicht erreichbaren REST-Hook-Endpunkt MUSS der Server den <code class="language-plaintext highlighter-rouge">SubscriptionStatus</code> auf <code class="language-plaintext highlighter-rouge">error</code>
+setzen. Der Client KANN per <code class="language-plaintext highlighter-rouge">$status</code> den Fehler prüfen und den Kanal reaktivieren.</p>
+
+<hr />
+
+<h3 id="workflow-sequenzen">Workflow-Sequenzen</h3>
+
+<p>Der dargestellte Workflow orientiert sich am <a href="https://hl7.org/fhir/uv/subscriptions-backport/workflow.html#workflow-fhir-r4">Workflow</a> des Subscription Backport Implementation Guide (R4) und fokussiert auf die für ISiK relevanten Aspekte und verpflichtenden Interaktionen.</p>
+
+<h4 id="normalfluss">Normalfluss</h4>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Workflow_Normalfluss.png" alt="Workflow Normalfluss" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung:</strong>Workflow Normalfluss</figcaption>
+</figure>
+
+<h4 id="fehlerfall">Fehlerfall</h4>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Workflow_Fehlerfall.png" alt="Workflow Fehlerfall" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung:</strong>Workflow Fehlerfall</figcaption>
+</figure>
+
+<hr />
+
+<h3 id="sicherheit">Sicherheit</h3>
+
+<h4 id="grundprinzipien-muss">Grundprinzipien (MUSS)</h4>
+
+<ul>
+  <li>
+    <p><strong>id-only Payload in Notifications (MUSS)</strong>: Benachrichtigungen enthalten die ID(s) der
+geänderten Ressourcen, aber keine vollständigen FHIR Ressourcen. Clients rufen die Ressource nach
+Erhalt der Notification gezielt per ID ab (Pull-Prinzip). Der Wert <code class="language-plaintext highlighter-rouge">full-resource</code> ist nicht
+zulässig.</p>
+  </li>
+  <li>
+    <p><strong>Keine Secrets in Subscription-Ressourcen</strong>: In <code class="language-plaintext highlighter-rouge">Subscription.channel.header</code> DÜRFEN keine
+Klartext-Secrets dauerhaft gespeichert sein. Secrets sind bei Erstellung/Aktualisierung einmalig
+übermittelbar (Write-Only). Bei READ-Interaktionen MUSS der Server den Header-Wert maskieren
+(z.B. <code class="language-plaintext highlighter-rouge">Authorization: Basic ****last5</code>).</p>
+  </li>
+</ul>
+
+<h4 id="autorisierung-des-rest-hook-endpunkts-optional">Autorisierung des REST-Hook-Endpunkts (OPTIONAL)</h4>
+
+<p>Da keine Payload in Notifications übertragen wird, ist die Authentifizierung des Empfängers optional.
+Wenn genutzt, erfolgt sie über HTTP Basic Authentication mit einem statischen Secret in
+<code class="language-plaintext highlighter-rouge">Subscription.channel.header</code>. Das Secret wird bei der Anlage einmalig angegeben und kann nicht
+im Klartext ausgelesen werden.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  
+          Package subscription#6.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Sep 2, 2026 11:32+0000">2026-09-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

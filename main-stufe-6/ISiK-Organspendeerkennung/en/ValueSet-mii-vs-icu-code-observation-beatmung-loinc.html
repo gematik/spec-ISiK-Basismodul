@@ -1,0 +1,369 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>MII VS ICU Code Observation Beatmung LOINC - ISiK Organspendeerkennung v6.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"7.48"}
+    h3,h4,h5,h6{--heading-prefix:"7.48"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Kontext und Use Cases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="ProzesseUndWorkflows.html">Prozesse und Workflows</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="Festlegungen.html">Festlegungen</a>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Organspendeerkennung
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0 - active
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>FHIR-Artefakte</b></a></li><li><b>MII VS ICU Code Observation Beatmung LOINC</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<!-- layouts\layout-valueset -->
+<div class="col-12">
+  
+  
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-mii-vs-icu-code-observation-beatmung-loinc.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-mii-vs-icu-code-observation-beatmung-loinc.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-mii-vs-icu-code-observation-beatmung-loinc.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: MII VS ICU Code Observation Beatmung LOINC
+
+  </h2>
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-loinc<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-loinc"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">6.0.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-loinc|6.0.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+
+            as of 
+2026-07-01
+
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">MII_VS_ICU_Code_Observation_Beatmung_LOINC</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>Dieses ValueSet enthält Codes für die im Kontext einer Beatmung verwendeten Parameter.</p>
+
+<p>Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<ul>
+ <li><a href="StructureDefinition-mii-pr-vent-icu-parameter-von-beatmung.html">MII PR ICU Parameter von Beatmung</a></li>
+</ul>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+<!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"></p><a name="mii-vs-icu-code-observation-beatmung-loinc"> </a><a name="hcmii-vs-icu-code-observation-beatmung-loinc"> </a>
+<ul><li>Include these codes as defined in <a href="http://loinc.org"><code>http://loinc.org</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="https://loinc.org/50984-4/">50984-4</a></td><td>Horowitz index in Arterial blood</td></tr><tr><td><a href="https://loinc.org/33438-3/">33438-3</a></td><td>Breath rate mechanical --on ventilator</td></tr><tr><td><a href="https://loinc.org/19839-0/">19839-0</a></td><td>Breath rate spontaneous --on ventilator</td></tr><tr><td><a href="https://loinc.org/19840-8/">19840-8</a></td><td>Breath rate spontaneous and mechanical --on ventilator</td></tr><tr><td><a href="https://loinc.org/76334-2/">76334-2</a></td><td>Inspiratory time setting Ventilator</td></tr><tr><td><a href="https://loinc.org/76187-4/">76187-4</a></td><td>Expiratory hold time setting Ventilator</td></tr><tr><td><a href="https://loinc.org/75931-6/">75931-6</a></td><td>Inspiration/Expiration time Ratio</td></tr><tr><td><a href="https://loinc.org/20112-9/">20112-9</a></td><td>Tidal volume setting Ventilator</td></tr><tr><td><a href="https://loinc.org/76222-9/">76222-9</a></td><td>Tidal volume Ventilator --on ventilator</td></tr><tr><td><a href="https://loinc.org/20116-0/">20116-0</a></td><td>Tidal volume.spontaneous --on ventilator</td></tr><tr><td><a href="https://loinc.org/76009-0/">76009-0</a></td><td>Inspired minute Volume during Mechanical ventilation</td></tr><tr><td><a href="https://loinc.org/20118-6/">20118-6</a></td><td>Tidal volume.spontaneous+mechanical --on ventilator</td></tr><tr><td><a href="https://loinc.org/76190-8/">76190-8</a></td><td>High pressure hold time setting Ventilator</td></tr><tr><td><a href="https://loinc.org/76229-4/">76229-4</a></td><td>Low pressure hold time setting Ventilator</td></tr><tr><td><a href="https://loinc.org/76275-7/">76275-7</a></td><td>Inspiratory flow setting Ventilator</td></tr><tr><td><a href="https://loinc.org/60794-5/">60794-5</a></td><td>Inspiratory gas flow Respiratory system airway --on ventilator</td></tr><tr><td><a href="https://loinc.org/60792-9/">60792-9</a></td><td>Expiratory gas flow Respiratory system airway --on ventilator</td></tr><tr><td><a href="https://loinc.org/19994-3/">19994-3</a></td><td>Oxygen/Total gas setting [Volume Fraction] Ventilator</td></tr><tr><td><a href="https://loinc.org/71835-3/">71835-3</a></td><td>Oxygen/Gas total [Pure volume fraction] Inhaled gas</td></tr><tr><td><a href="https://loinc.org/3147-6/">3147-6</a></td><td>Oxygen [Partial pressure] in Exhaled gas</td></tr><tr><td><a href="https://loinc.org/76530-5/">76530-5</a></td><td>Mean pressure Respiratory system airway --on ventilator</td></tr><tr><td><a href="https://loinc.org/76531-3/">76531-3</a></td><td>Pressure.max Respiratory system airway --on ventilator</td></tr><tr><td><a href="https://loinc.org/60827-3/">60827-3</a></td><td>Dynamic lung compliance</td></tr><tr><td><a href="https://loinc.org/76248-4/">76248-4</a></td><td>PEEP Respiratory system --on ventilator</td></tr><tr><td><a href="https://loinc.org/76154-4/">76154-4</a></td><td>Airway pressure delta --on ventilator</td></tr><tr><td><a href="https://loinc.org/20056-8/">20056-8</a></td><td>Airway pressure --at mean expiratory flow on ventilator</td></tr><tr><td><a href="https://loinc.org/20060-0/">20060-0</a></td><td>Airway pressure --at zero inspiratory flow on ventilator</td></tr><tr><td><a href="https://loinc.org/19891-1/">19891-1</a></td><td>Carbon dioxide [Partial pressure] in Exhaled gas --at end expiration</td></tr><tr><td><a href="https://loinc.org/20079-0/">20079-0</a></td><td>Pressure support setting Ventilator</td></tr></table></li></ul></div>
+
+  <p>&#160;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"/><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion from tx.fhir.org based on Loinc v2.82<span class="copy-text-inline"><button data-clipboard-text="http://loinc.org|2.82" title="Click to Copy URL" class="btn-copy"> </button></span></p><p>This value set contains 29 concepts</p><table class="codes" data-fhir="generated"><tr><td><b>System</b></td><td style="white-space:nowrap"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name="x-http://loinc.org-50984-4"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/50984-4/">50984-4</a></td><td>Horowitz-Index für arterielles Blut</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;50984-4&quot;, &quot;display&quot;: &quot;Horowitz-Index für arterielles Blut&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;50984-4&quot;&gt;&lt;display value=&quot;Horowitz-Index für arterielles Blut&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-33438-3"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/33438-3/">33438-3</a></td><td>Breath rate mechanical --on ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;33438-3&quot;, &quot;display&quot;: &quot;Breath rate mechanical --on ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;33438-3&quot;&gt;&lt;display value=&quot;Breath rate mechanical --on ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-19839-0"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/19839-0/">19839-0</a></td><td>Breath rate spontaneous --on ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;19839-0&quot;, &quot;display&quot;: &quot;Breath rate spontaneous --on ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;19839-0&quot;&gt;&lt;display value=&quot;Breath rate spontaneous --on ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-19840-8"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/19840-8/">19840-8</a></td><td>Atemfrequenz.spontan und mechanisch --am Beatmungsgerät</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;19840-8&quot;, &quot;display&quot;: &quot;Atemfrequenz.spontan und mechanisch --am Beatmungsgerät&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;19840-8&quot;&gt;&lt;display value=&quot;Atemfrequenz.spontan und mechanisch --am Beatmungsgerät&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-76334-2"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/76334-2/">76334-2</a></td><td>Inspiratory time setting Ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;76334-2&quot;, &quot;display&quot;: &quot;Inspiratory time setting Ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;76334-2&quot;&gt;&lt;display value=&quot;Inspiratory time setting Ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-76187-4"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/76187-4/">76187-4</a></td><td>Expiratory hold time setting Ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;76187-4&quot;, &quot;display&quot;: &quot;Expiratory hold time setting Ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;76187-4&quot;&gt;&lt;display value=&quot;Expiratory hold time setting Ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-75931-6"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/75931-6/">75931-6</a></td><td>Inspiration/Expiration time Ratio</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;75931-6&quot;, &quot;display&quot;: &quot;Inspiration/Expiration time Ratio&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;75931-6&quot;&gt;&lt;display value=&quot;Inspiration/Expiration time Ratio&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-20112-9"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/20112-9/">20112-9</a></td><td>Tidal volume setting Ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;20112-9&quot;, &quot;display&quot;: &quot;Tidal volume setting Ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;20112-9&quot;&gt;&lt;display value=&quot;Tidal volume setting Ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-76222-9"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/76222-9/">76222-9</a></td><td>Tidal volume Ventilator --on ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;76222-9&quot;, &quot;display&quot;: &quot;Tidal volume Ventilator --on ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;76222-9&quot;&gt;&lt;display value=&quot;Tidal volume Ventilator --on ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-20116-0"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/20116-0/">20116-0</a></td><td>Tidal volume.spontaneous --on ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;20116-0&quot;, &quot;display&quot;: &quot;Tidal volume.spontaneous --on ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;20116-0&quot;&gt;&lt;display value=&quot;Tidal volume.spontaneous --on ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-76009-0"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/76009-0/">76009-0</a></td><td>Inspired minute Volume during Mechanical ventilation</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;76009-0&quot;, &quot;display&quot;: &quot;Inspired minute Volume during Mechanical ventilation&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;76009-0&quot;&gt;&lt;display value=&quot;Inspired minute Volume during Mechanical ventilation&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-20118-6"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/20118-6/">20118-6</a></td><td>Tidal volume.spontaneous+mechanical --on ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;20118-6&quot;, &quot;display&quot;: &quot;Tidal volume.spontaneous+mechanical --on ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;20118-6&quot;&gt;&lt;display value=&quot;Tidal volume.spontaneous+mechanical --on ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-76190-8"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/76190-8/">76190-8</a></td><td>High pressure hold time setting Ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;76190-8&quot;, &quot;display&quot;: &quot;High pressure hold time setting Ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;76190-8&quot;&gt;&lt;display value=&quot;High pressure hold time setting Ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-76229-4"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/76229-4/">76229-4</a></td><td>Low pressure hold time setting Ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;76229-4&quot;, &quot;display&quot;: &quot;Low pressure hold time setting Ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;76229-4&quot;&gt;&lt;display value=&quot;Low pressure hold time setting Ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-76275-7"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/76275-7/">76275-7</a></td><td>Inspiratory flow setting Ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;76275-7&quot;, &quot;display&quot;: &quot;Inspiratory flow setting Ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;76275-7&quot;&gt;&lt;display value=&quot;Inspiratory flow setting Ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-60794-5"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/60794-5/">60794-5</a></td><td>Inspiratory gas flow Respiratory system airway --on ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;60794-5&quot;, &quot;display&quot;: &quot;Inspiratory gas flow Respiratory system airway --on ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;60794-5&quot;&gt;&lt;display value=&quot;Inspiratory gas flow Respiratory system airway --on ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-60792-9"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/60792-9/">60792-9</a></td><td>Expiratory gas flow Respiratory system airway --on ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;60792-9&quot;, &quot;display&quot;: &quot;Expiratory gas flow Respiratory system airway --on ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;60792-9&quot;&gt;&lt;display value=&quot;Expiratory gas flow Respiratory system airway --on ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-19994-3"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/19994-3/">19994-3</a></td><td>Sauerstoff/Gesamtgas-Einstellung [Volumenfraktion] des Beatmungsgeräts</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;19994-3&quot;, &quot;display&quot;: &quot;Sauerstoff/Gesamtgas-Einstellung [Volumenfraktion] des Beatmungsgeräts&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;19994-3&quot;&gt;&lt;display value=&quot;Sauerstoff/Gesamtgas-Einstellung [Volumenfraktion] des Beatmungsgeräts&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-71835-3"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/71835-3/">71835-3</a></td><td>O2 inhaliert</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;71835-3&quot;, &quot;display&quot;: &quot;O2 inhaliert&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;71835-3&quot;&gt;&lt;display value=&quot;O2 inhaliert&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-3147-6"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/3147-6/">3147-6</a></td><td>Oxygen [Partial pressure] in Exhaled gas</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;3147-6&quot;, &quot;display&quot;: &quot;Oxygen [Partial pressure] in Exhaled gas&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;3147-6&quot;&gt;&lt;display value=&quot;Oxygen [Partial pressure] in Exhaled gas&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-76530-5"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/76530-5/">76530-5</a></td><td>Mean pressure Respiratory system airway --on ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;76530-5&quot;, &quot;display&quot;: &quot;Mean pressure Respiratory system airway --on ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;76530-5&quot;&gt;&lt;display value=&quot;Mean pressure Respiratory system airway --on ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-76531-3"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/76531-3/">76531-3</a></td><td>Pressure.max Respiratory system airway --on ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;76531-3&quot;, &quot;display&quot;: &quot;Pressure.max Respiratory system airway --on ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;76531-3&quot;&gt;&lt;display value=&quot;Pressure.max Respiratory system airway --on ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-60827-3"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/60827-3/">60827-3</a></td><td>Dynamic lung compliance</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;60827-3&quot;, &quot;display&quot;: &quot;Dynamic lung compliance&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;60827-3&quot;&gt;&lt;display value=&quot;Dynamic lung compliance&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-76248-4"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/76248-4/">76248-4</a></td><td>PEEP Respiratory system --on ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;76248-4&quot;, &quot;display&quot;: &quot;PEEP Respiratory system --on ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;76248-4&quot;&gt;&lt;display value=&quot;PEEP Respiratory system --on ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-76154-4"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/76154-4/">76154-4</a></td><td>Airway pressure delta --on ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;76154-4&quot;, &quot;display&quot;: &quot;Airway pressure delta --on ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;76154-4&quot;&gt;&lt;display value=&quot;Airway pressure delta --on ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-20056-8"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/20056-8/">20056-8</a></td><td>Airway pressure --at mean expiratory flow on ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;20056-8&quot;, &quot;display&quot;: &quot;Airway pressure --at mean expiratory flow on ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;20056-8&quot;&gt;&lt;display value=&quot;Airway pressure --at mean expiratory flow on ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-20060-0"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/20060-0/">20060-0</a></td><td>Airway pressure --at zero inspiratory flow on ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;20060-0&quot;, &quot;display&quot;: &quot;Airway pressure --at zero inspiratory flow on ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;20060-0&quot;&gt;&lt;display value=&quot;Airway pressure --at zero inspiratory flow on ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-19891-1"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/19891-1/">19891-1</a></td><td>Carbon dioxide [Partial pressure] in Exhaled gas --at end expiration</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;19891-1&quot;, &quot;display&quot;: &quot;Carbon dioxide [Partial pressure] in Exhaled gas --at end expiration&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;19891-1&quot;&gt;&lt;display value=&quot;Carbon dioxide [Partial pressure] in Exhaled gas --at end expiration&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-20079-0"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">  <a href="https://loinc.org/20079-0/">20079-0</a></td><td>Pressure support setting Ventilator</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;20079-0&quot;, &quot;display&quot;: &quot;Pressure support setting Ventilator&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.82&quot;&gt;&lt;code value=&quot;20079-0&quot;&gt;&lt;display value=&quot;Pressure support setting Ventilator&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr></table></div>
+
+  <hr/>
+  <p>
+    <a href="http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology">Description of the above table(s)</a>.
+  </p>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  
+          Package organspendeerkennung#6.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Sep 2, 2026 11:31+0000">2026-09-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

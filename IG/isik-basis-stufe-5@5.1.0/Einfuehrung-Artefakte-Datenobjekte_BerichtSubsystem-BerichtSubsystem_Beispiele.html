@@ -1,0 +1,681 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Kontext und Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Kontext und Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Erlaeuterung-Akteurs-und-Rollenmodell.html">
+                                            Akteurs- und Rollenmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_UmgangFehlendeDaten.html">
+                                            Umgang mit fehlenden Daten
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungverhaeltnis-sonstige-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis sonstige (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_BerichtBundle.html">
+                                            Bericht aus Subsystemen (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="valides-minimalbeispiel">Valides Minimalbeispiel:</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#6e1ecb9f-527c-4e04-9a6f-0af500f2abb4" aria-controls="6e1ecb9f-527c-4e04-9a6f-0af500f2abb4" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#3ee7b43d-9c03-457e-a8c4-bf05905cb1a0" aria-controls="3ee7b43d-9c03-457e-a8c4-bf05905cb1a0" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#c562c5c6-b101-432d-ad4c-0f63b6013703" aria-controls="c562c5c6-b101-432d-ad4c-0f63b6013703" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#88fc8706-ba91-4628-92a9-9361501884b1" aria-controls="88fc8706-ba91-4628-92a9-9361501884b1" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="6e1ecb9f-527c-4e04-9a6f-0af500f2abb4">
+    <div class="stu3-treetable" id="062724bb876342818105c68a0406eebc" data-level="1"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="4b3ab9eedc66472983723056cb359b4e"><td class="instance"><span class="baseIcon primitive"></span><b>Composition</b></td></tr><tr class="collapsed" data-id="700b93d6353c4fe2a39be307728be6ae" data-parentId="4b3ab9eedc66472983723056cb359b4e"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>CompositionExampleBlutdruck</span></td></tr><tr class="collapsed" data-id="56c7d180792340f39ec2e32bfcea2343" data-parentId="4b3ab9eedc66472983723056cb359b4e"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="116d048dc0e44ac59e5d58fdcc4271ce" data-parentId="56c7d180792340f39ec2e32bfcea2343"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme</span></td></tr><tr class="collapsed" data-id="17ad2f8ced2b47f2a586266f0ae9a4a4" data-parentId="4b3ab9eedc66472983723056cb359b4e"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="825afb7f2a864dcc96cbcf86902ebc78" data-parentId="4b3ab9eedc66472983723056cb359b4e"><td class="instance"><span class="baseIcon primitive"></span><b>text</b></td></tr><tr class="collapsed" data-id="03d86e4884db4f2ab66fd5c4b7157499" data-parentId="825afb7f2a864dcc96cbcf86902ebc78"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>extensions</span></td></tr><tr class="collapsed" data-id="063fee5f95d34a808c6fe84d37600d69" data-parentId="4b3ab9eedc66472983723056cb359b4e"><td class="instance"><span class="baseIcon primitive"></span><b>identifier</b></td></tr><tr class="collapsed" data-id="db5bdbddef404ca48bd73efef2c7ce0e" data-parentId="063fee5f95d34a808c6fe84d37600d69"><td class="instance"><span class="baseIcon primitive"></span><b>type</b></td></tr><tr class="collapsed" data-id="1cb86eea841e4ca6918e2ed187f2a65e" data-parentId="db5bdbddef404ca48bd73efef2c7ce0e"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="44ac2646bc654868bd588719ee8977af" data-parentId="1cb86eea841e4ca6918e2ed187f2a65e"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>FILL</span></td></tr><tr class="collapsed" data-id="b2438caa7d994df6af5ce2d47a7db579" data-parentId="1cb86eea841e4ca6918e2ed187f2a65e"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/v2-0203</span></td></tr><tr class="collapsed" data-id="89ccc88b9ccd4a3f8036da341df36c41" data-parentId="063fee5f95d34a808c6fe84d37600d69"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>https://fhir.krankenhaus.example/sid/system-a/berichtnummer</span></td></tr><tr class="collapsed" data-id="92954010fabb49afaea35927adfe7c57" data-parentId="063fee5f95d34a808c6fe84d37600d69"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>0123456789</span></td></tr><tr class="collapsed" data-id="f2bf311954aa4ebf8fb831a0576bd77e" data-parentId="4b3ab9eedc66472983723056cb359b4e"><td class="instance"><span class="baseIcon primitive"></span><b>type</b></td></tr><tr class="collapsed" data-id="42e92756121f4d5abb2455de8a4c9f30" data-parentId="f2bf311954aa4ebf8fb831a0576bd77e"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="5348ac02e6b24364a75254b3277f68ed" data-parentId="42e92756121f4d5abb2455de8a4c9f30"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>55112-7</span></td></tr><tr class="collapsed" data-id="e5b758d5455448d6b38b87ea58ce265c" data-parentId="42e92756121f4d5abb2455de8a4c9f30"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="defaf1fc31004fd18015d42196952296" data-parentId="f2bf311954aa4ebf8fb831a0576bd77e"><td class="instance"><span class="baseIcon primitive"></span><b>text : </b><span>Kurzbericht</span></td></tr><tr class="collapsed" data-id="2a53a1759eed4c2ca4228ee599a50310" data-parentId="4b3ab9eedc66472983723056cb359b4e"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="cc478e00a27547029625513b26035f85" data-parentId="2a53a1759eed4c2ca4228ee599a50310"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345</span></td></tr><tr class="collapsed" data-id="4d84680d60ff48adb2e20fde3f062d64" data-parentId="4b3ab9eedc66472983723056cb359b4e"><td class="instance"><span class="baseIcon primitive"></span><b>encounter</b></td></tr><tr class="collapsed" data-id="b6837656d8e045c48eeeca0d5e509737" data-parentId="4d84680d60ff48adb2e20fde3f062d64"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765</span></td></tr><tr class="collapsed" data-id="f5dece9c43364ee8910f8b44c8718a03" data-parentId="4b3ab9eedc66472983723056cb359b4e"><td class="instance"><span class="baseIcon primitive"></span><b>date : </b><span>2022-05-03</span></td></tr><tr class="collapsed" data-id="1c60bf131ca94f0c8503e3ae93811787" data-parentId="4b3ab9eedc66472983723056cb359b4e"><td class="instance"><span class="baseIcon primitive"></span><b>author</b></td></tr><tr class="collapsed" data-id="5928e79c58b64ed99540edec5299de72" data-parentId="1c60bf131ca94f0c8503e3ae93811787"><td class="instance"><span class="baseIcon primitive"></span><b>type : </b><span>Device</span></td></tr><tr class="collapsed" data-id="e0eb7a3c602543c0952c51964af91a05" data-parentId="1c60bf131ca94f0c8503e3ae93811787"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Ger&#228;t XY, Fa. Z, Modell T</span></td></tr><tr class="collapsed" data-id="02a623ec4b4e4418bc7c399549285933" data-parentId="4b3ab9eedc66472983723056cb359b4e"><td class="instance"><span class="baseIcon primitive"></span><b>title : </b><span>Blutdruckmessung vom 3.5.2022</span></td></tr><tr class="collapsed" data-id="3c50aa0ffefb4b36a2fbb67f55cb5be9" data-parentId="4b3ab9eedc66472983723056cb359b4e"><td class="instance"><span class="baseIcon primitive"></span><b>section</b></td></tr><tr class="collapsed" data-id="70c68ba1ac0c48d19ecdde894bbc794f" data-parentId="3c50aa0ffefb4b36a2fbb67f55cb5be9"><td class="instance"><span class="baseIcon primitive"></span><b>title : </b><span>Messung</span></td></tr><tr class="collapsed" data-id="868ee212891b4212be98f1a87259109a" data-parentId="3c50aa0ffefb4b36a2fbb67f55cb5be9"><td class="instance"><span class="baseIcon primitive"></span><b>text</b></td></tr><tr class="collapsed" data-id="bae309d5841c48b59a32fd0ccf8f0cfc" data-parentId="868ee212891b4212be98f1a87259109a"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>generated</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable062724bb876342818105c68a0406eebc = new InstanceTree();
+resourceTreeTable062724bb876342818105c68a0406eebc.init("062724bb876342818105c68a0406eebc");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="3ee7b43d-9c03-457e-a8c4-bf05905cb1a0">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">Composition</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.id" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">CompositionExampleBlutdruck</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.meta" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.meta.profile" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.text" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">text</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.text.status" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">extensions</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+--- We have skipped the narrative for better readability of the resource ---
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">text</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.identifier" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">identifier</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.identifier.type" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">type</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.identifier.type.coding" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.identifier.type.coding.system" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.identifier.type.coding.code" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">FILL</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">type</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.identifier.system" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://fhir.krankenhaus.example/sid/system-a/berichtnummer</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.identifier.value" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">0123456789</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">identifier</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.status" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.type" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">type</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.type.coding" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.type.coding.system" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.type.coding.code" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">55112-7</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.type.text" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Kurzbericht</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">type</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.subject" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.subject.reference" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.encounter" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">encounter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.encounter.reference" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">encounter</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.date" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2022-05-03</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.author" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">author</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.author.type" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Device</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.author.display" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Ger&#228;t XY, Fa. Z, Modell T</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">author</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.title" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">title</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Blutdruckmessung vom 3.5.2022</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.section" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">section</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.section.title" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">title</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Messung</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.section.text" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">text</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.section.text.status" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">generated</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line">&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Systolisch&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Diastolisch&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Einheit&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Uhrzeit&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;140&lt;/td&gt;&lt;td&gt;110&lt;/td&gt;&lt;td&gt;mmHG&lt;/td&gt;&lt;td&gt;17:15h&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">text</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">section</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Composition</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="c562c5c6-b101-432d-ad4c-0f63b6013703">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.resourceType" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Composition</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.id" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">CompositionExampleBlutdruck</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.meta" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.meta.profile" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.status" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.text" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.text.status" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">extensions</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+--- We have skipped the narrative for better readability of the resource ---
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.identifier" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">identifier</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.identifier.type" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.identifier.type.coding" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.identifier.type.coding.code" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">FILL</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.identifier.type.coding.system" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.identifier.system" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://fhir.krankenhaus.example/sid/system-a/berichtnummer</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.identifier.value" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">0123456789</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.type" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.type.coding" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.type.coding.code" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">55112-7</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.type.coding.system" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.type.text" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Kurzbericht</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.subject" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.subject.reference" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.encounter" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">encounter</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.encounter.reference" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.date" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2022-05-03</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.author" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">author</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.author.type" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Device</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.author.display" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Ger&#228;t XY, Fa. Z, Modell T</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.title" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">title</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Blutdruckmessung vom 3.5.2022</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.section" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">section</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.section.title" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">title</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Messung</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.section.text" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.section.text.status" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">generated</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBerichtSubSysteme.json#Composition.section.text.div" title="ISiKBerichtSubSysteme
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBerichtSubSysteme.json" target="_blank">div</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Systolisch&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Diastolisch&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Einheit&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Uhrzeit&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;140&lt;/td&gt;&lt;td&gt;110&lt;/td&gt;&lt;td&gt;mmHG&lt;/td&gt;&lt;td&gt;17:15h&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="88fc8706-ba91-4628-92a9-9361501884b1">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Composition-CompositionExampleBlutdruck.json'>CompositionExampleBlutdruck</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

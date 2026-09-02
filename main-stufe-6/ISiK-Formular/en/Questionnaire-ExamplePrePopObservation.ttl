@@ -1,0 +1,182 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopObservation> a fhir:Questionnaire ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExamplePrePopObservation"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ]
+  ] ;
+  fhir:DomainResource.contained [
+     a fhir:ValueSet ;
+     fhir:index -1 ;
+     fhir:Resource.id [ fhir:value "pflegegrad-de" ] ;
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.1" ;
+         fhir:index -1 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.1>
+       ]
+     ] ;
+     fhir:ValueSet.url [ fhir:value "http://fhir.de/ValueSet/pflegegrad-de" ] ;
+     fhir:ValueSet.version [ fhir:value "1.6.0" ] ;
+     fhir:ValueSet.name [ fhir:value "PflegegradDE" ] ;
+     fhir:ValueSet.title [ fhir:value "PflegegradDE ValueSet" ] ;
+     fhir:ValueSet.status [ fhir:value "active" ] ;
+     fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean ] ;
+     fhir:ValueSet.date [ fhir:value "2025-12-23"^^xsd:date ] ;
+     fhir:ValueSet.publisher [ fhir:value "HL7 Deutschland e.V. (Technisches Komitee FHIR)" ] ;
+     fhir:ValueSet.contact [
+       fhir:index -1 ;
+       fhir:ContactDetail.telecom [
+         fhir:index -1 ;
+         fhir:ContactPoint.system [ fhir:value "url" ] ;
+         fhir:ContactPoint.value [ fhir:value "http://hl7.de/technische-komitees/fhir/" ]
+       ]
+     ] ;
+     fhir:ValueSet.description [ fhir:value "Dieses ValueSet enthält OPS-Codes zur Differenzierung des dokumentierten Pflegegrads. Es ist für die strukturierte Angabe pflegebezogener Einstufungen im deutschen Versorgungskontext vorgesehen." ] ;
+     fhir:ValueSet.compose [
+       fhir:ValueSet.compose.include [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.system [ fhir:value "http://fhir.de/CodeSystem/bfarm/ops" ] ;
+         fhir:ValueSet.compose.include.filter [
+           fhir:index -1 ;
+           fhir:ValueSet.compose.include.filter.property [ fhir:value "parent" ] ;
+           fhir:ValueSet.compose.include.filter.op [ fhir:value "=" ] ;
+           fhir:ValueSet.compose.include.filter.value [ fhir:value "9-984" ]
+         ]
+       ]
+     ] ;
+     fhir:ValueSet.expansion [
+       fhir:ValueSet.expansion.identifier [ fhir:value "440c50b5-7272-4184-9ddd-95a75d8207f8" ] ;
+       fhir:ValueSet.expansion.timestamp [ fhir:value "2019-07-06"^^xsd:date ] ;
+       fhir:ValueSet.expansion.total [ fhir:value "6"^^xsd:integer ] ;
+       fhir:ValueSet.expansion.contains [
+         fhir:index -1 ;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.de/CodeSystem/bfarm/ops" ] ;
+         fhir:ValueSet.expansion.contains.code [ fhir:value "9-984.6" ] ;
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 1" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.de/CodeSystem/bfarm/ops" ] ;
+         fhir:ValueSet.expansion.contains.code [ fhir:value "9-984.7" ] ;
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 2" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.de/CodeSystem/bfarm/ops" ] ;
+         fhir:ValueSet.expansion.contains.code [ fhir:value "9-984.8" ] ;
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 3" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.de/CodeSystem/bfarm/ops" ] ;
+         fhir:ValueSet.expansion.contains.code [ fhir:value "9-984.9" ] ;
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 4" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.de/CodeSystem/bfarm/ops" ] ;
+         fhir:ValueSet.expansion.contains.code [ fhir:value "9-984.a" ] ;
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 5" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.de/CodeSystem/bfarm/ops" ] ;
+         fhir:ValueSet.expansion.contains.code [ fhir:value "9-984.b" ] ;
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Pflegebedürftigkeit: Erfolgter Antrag auf Einstufung in einen Pflegegrad" ]
+       ]
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext" ] ;
+         fhir:Coding.code [ fhir:value "patient" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "type" ] ;
+       fhir:Extension.valueCode [ fhir:value "Patient" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "description" ] ;
+       fhir:Extension.valueString [ fhir:value "Patientenkontext" ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext" ]
+  ] ;
+  fhir:Questionnaire.url [ fhir:value "https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopObservation"] ;
+  fhir:Questionnaire.version [ fhir:value "6.0.0"] ;
+  fhir:Questionnaire.name [ fhir:value "ExamplePrePopObservation"] ;
+  fhir:Questionnaire.title [ fhir:value "Vorbelegung von Observations"] ;
+  fhir:Questionnaire.status [ fhir:value "draft"] ;
+  fhir:Questionnaire.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:Questionnaire.subjectType [
+     fhir:value "Patient" ;
+     fhir:index -1
+  ] ;
+  fhir:Questionnaire.date [ fhir:value "2026-09-02T11:31:15+00:00"^^xsd:dateTime] ;
+  fhir:Questionnaire.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:Questionnaire.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:Questionnaire.description [ fhir:value "### Beispiel-Questionnaire mit automatischer Vorbelegung von Observations  \nDie Suche nach passenden Observations geschieht innerhlab des Patienten-Kontextes anhand des in `item-code`hinterlegten Codes.\nDie Extension [SDC-ObservationLinkPeriod](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationLinkPeriod.html) legt fest, wie alt  Observations maximal sein dürfen, um für die Vorbelegung herangezogen zu werden (hier: max. 1 Jahr)  \nDie Extension [SDC-ObservationExtract](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationExtract.html) legt fest, ob aus den Angaben des Questionnaires eine neue Observation extrahiert werden soll (hier: true)"] ;
+  fhir:Questionnaire.item [
+     fhir:index -1 ;
+     fhir:Questionnaire.item.linkId [ fhir:value "3" ] ;
+     fhir:Questionnaire.item.text [ fhir:value "Pflegegrad" ] ;
+     fhir:Questionnaire.item.type [ fhir:value "group" ] ;
+     fhir:Questionnaire.item.required [ fhir:value "true"^^xsd:boolean ] ;
+     fhir:Questionnaire.item.item [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationLinkPeriod" ] ;
+         fhir:Extension.valueDuration [
+           fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+           fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+           fhir:Quantity.code [ fhir:value "a" ]
+         ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "3.1" ] ;
+       fhir:Questionnaire.item.code [
+         fhir:index -1 ;
+         a loinc:80391-6 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "80391-6" ]
+       ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Bitte geben Sie den Pflegegrad an:" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "choice" ] ;
+       fhir:Questionnaire.item.answerValueSet [ fhir:value "#pflegegrad-de" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopObservation.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

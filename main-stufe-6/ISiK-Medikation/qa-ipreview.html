@@ -1,0 +1,3223 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>IP Review</title>
+    <link rel="stylesheet" href="fhir.css"/>
+  </head>
+  <body>
+    <h2>Unattributed Code Systems</h2>
+    <ul>
+      <li>
+        <a href="PractitionerRole-RolleImKrankenhausInnereMedizinBeispiel.html">
+<code>http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen</code>        </a>
+      </li>
+      <li>
+        <a href="StructureDefinition-ISiKMedikationsVerordnung.html">
+<code>http://standardterms.edqm.eu</code>        </a>
+      </li>
+      <li>
+        <a href="PractitionerRole-RolleImKrankenhausInnereMedizinBeispiel.html">
+<code>https://fhir.kbv.de/CodeSystem/KBV_CS_Base_Role_Care</code>        </a>
+      </li>
+      <li>
+        <a href="MedicationStatement-ExampleISiKMedikationsInformation1.html">
+<code>https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS</code>        </a>
+      </li>
+    </ul>
+    <h2>Copyright Fragment</h2>
+    <p style="color: maroon">
+      <b>This fragment is not visible to the reader</b>
+    </p>
+    <p>Error parsing IP fragment: unable to parse character reference ' Conditions in https://www.edqm.eu/en/standard-terms-database'' (last text = '
+' at line 46 column 217</p>
+    <h2>Copyright and Registered Trademark Uses</h2>
+    <ul>
+      <li>
+
+
+
+
+          IG &copy; 2026+ gematik GmbH.  
+          Package medikation#6.0.0 based on FHIR 4.0.1.
+          Generated 2026-09-02
+          
+          
+                      Links: Table of Contents |
+                 QA Report
+                 
+                
+          
+         (        <a href="en/toc.html">src</a>
+)
+      </li>
+      <li>
+
+          hl7.fhir.us.hai: Healthcare Associated Infection Implementation Guide  &reg;&copy; HL7 |
+             
+                CC0
+         (        <a href="searchform.html">src</a>
+)
+      </li>
+      <li>
+ISiK Medikation Implementierungsleitfaden - Local Development build (v6.0.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the Directory of published versions (        <a href="toc.html">src</a>
+)
+      </li>
+      <li>
+LevoCarb 200/50 ret - 1 A Pharma&reg; (        <a href="en/MedicationStatement-ExampleISiKMedikationsInformationParkinson5.html">src</a>
+)
+      </li>
+      <li>
+Madopar&reg; 125 mg (        <a href="en/MedicationStatement-ExampleISiKMedikationsInformationParkinson3.html">src</a>
+)
+      </li>
+      <li>
+MedicationStatement: status = active; medication[x] = LevoCarb 200/50 ret - 1 A Pharma&reg;; effective[x] = 2024-02-20 --&gt; (ongoing); dateAsserted = 2024-02-20 (        <a href="en/List-ExampleISiKMedikationsListeParkinson.html">src</a>
+)
+      </li>
+      <li>
+MedicationStatement: status = active; medication[x] = Madopar&reg; 125 mg; effective[x] = 2024-02-20 --&gt; (ongoing); dateAsserted = 2024-02-20 (        <a href="en/List-ExampleISiKMedikationsListeParkinson.html">src</a>
+)
+      </li>
+      <li>
+MedicationStatement: status = active; medication[x] = Quetiapin HEXAL&reg; 50 mg; effective[x] = 2024-02-20 --&gt; (ongoing); dateAsserted = 2024-02-20 (        <a href="en/List-ExampleISiKMedikationsListeParkinson.html">src</a>
+)
+      </li>
+      <li>
+MedicationStatement: status = active; medication[x] = Stalevo&reg; 100 mg/25 mg/200 mg; effective[x] = 2024-02-20 --&gt; (ongoing); dateAsserted = 2024-02-20 (        <a href="en/List-ExampleISiKMedikationsListeParkinson.html">src</a>
+)
+      </li>
+      <li>
+Quetiapin HEXAL&reg; 50 mg (        <a href="en/MedicationStatement-ExampleISiKMedikationsInformationParkinson2.html">src</a>
+)
+      </li>
+      <li>
+There are examples where a medication request may include the option of an oral dose or an Intravenous or Intramuscular dose.  For example, "Ondansetron 8mg orally or IV twice a day as needed for nausea" or "Compazine&reg; (prochlorperazine) 5-10mg PO or 25mg PR bid prn nausea or vomiting".  In these cases, two medication requests would be created that could be grouped together.  The decision on which dose and route of administration to use is based on the patient's condition at the time the dose is needed. (        <a href="en/StructureDefinition-ISiKMedikationsVerordnung-definitions.html">src</a>
+)
+      </li>
+    </ul>
+    <h2>External References</h2>
+    <table class="grid">
+      <tr>
+        <th>
+          <b>Type</b>
+        </th>
+        <th>
+          <b>Reference</b>
+        </th>
+        <th>
+          <b>Content</b>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <a href="CapabilityStatement-ISiKCapabilityStatementMedikationInformationAkteur-expanded.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/UebergreifendeFestlegungen_Performance.html">gemspec.gematik.de</a>
+        </td>
+        <td>
+Ein ISiK Akteur darf sinnvolle Limits für die Einschränkung der Ergebnismenge definieren, wie die Forcierung von Pagination über den Parameter           <code>_count</code>
+ oder die Einschränkung des Zeitraums der zurückgegebenen Ressourcen über den Parameter           <code>_since</code>
+. Hierbei sollten die Hinweise und vorgaben der           <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/UebergreifendeFestlegungen_Performance.html">ISiK-Spezifikation zu Performance</a>
+ beachtet werden.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-ISiKRolleImKrankenhaus.html">web</a>
+        </td>
+        <td>
+          <a href="https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care">fhir.kbv.de</a>
+        </td>
+        <td>
+          <span style="opacity: 0.5">Code defined by a terminology system</span>
+          <br class="binding"/>
+          <span style="font-weight:bold" title="null" class="binding">Binding: </span>
+          <a href="https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care" class="binding">https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care</a>
+          <span title="null" class="binding"> (</span>
+          <a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set." class="binding">required</a>
+          <span title="null" class="binding">)</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/AkteureUndInteraktionen.html">web</a>
+        </td>
+        <td>
+          <a href="https://gematik.de">gematik.de</a>
+        </td>
+        <td>
+
+
+
+
+          IG &copy; 2026+           <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>
+.  
+          Package medikation#6.0.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
+.
+          Generated           <span title="Wed, Sep 2, 2026 11:32+0000">2026-09-02</span>
+
+                    <br/>
+
+                    <span style="color: var(--footer-highlight-text-color)">
+
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          
+          </span>
+
+        
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/AnwendungsfallClosedLoopMedikationsprozess.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.who.int/initiatives/medication-without-harm">www.who.int</a>
+        </td>
+        <td>
+Die automatisierte Medikamentenvergabe im Krankenhaus stellt einen komplexen, sicherheitskritischen Prozess dar, an dem mehrere Berufsgruppen und Systeme beteiligt sind. Medikationsfehler zählen weltweit zu den häufigsten vermeidbaren unerwünschten Ereignissen im stationären Bereich und können schwerwiegende Folgen für Patientinnen und Patienten haben [          <a href="https://www.who.int/initiatives/medication-without-harm">WHO, 2017</a>
+;           <a href="https://www.ncbi.nlm.nih.gov/books/NBK519065/">Tariq et al., 2024</a>
+]. Die Digitalisierung und Automatisierung dieses Prozesses bietet ein großes Potenzial, solche Fehler systematisch zu verhindern [          <a href="https://www.ncbi.nlm.nih.gov/books/NBK519065/">Tariq et al., 2024</a>
+].
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/Bedarfsmedikation.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/igs/medication/">ig.fhir.de</a>
+        </td>
+        <td>
+Die Abbildung und fachliche Spezifikation von Bedarfsmedikation wird derzeit im Implementierungsleitfaden           <a href="https://ig.fhir.de/igs/medication/">FHIR Medication IG Deutschland</a>
+ erarbeitet. Die dort beschriebenen Konzepte und Festlegungen können als fachliche und technische Guidance für die Umsetzung von Bedarfsmedikation im Kontext dieses Implementierungsleitfadens herangezogen werden.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/CapabilityStatement-ISiKCapabilityStatementMedikationInformationAkteur-expanded.html">web</a>
+        </td>
+        <td>
+          <a href="https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation">gematik.de</a>
+        </td>
+        <td>
+Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.
+Hierzu MUSS die           <a href="https://hl7.org/fhir/R4/http.html#capabilities">capabilities-Interaktion gemäß FHIR-Kernspezifikation</a>
+ unterstützt werden. 
+Der           <code class="language-plaintext highlighter-rouge">MODE</code>
+-Parameter kann ignoriert werden.          <br/>
+
+Das CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (          <code class="language-plaintext highlighter-rouge">kind = requirements</code>
+). 
+Zur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, 
+wird die           <a href="https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation">CapabilityStatement-Imports-Expectation-Extension</a>
+ mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/Infusionen.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/igs/medication/">ig.fhir.de</a>
+        </td>
+        <td>
+Die Abbildung und fachliche Spezifikation von Infusionen wird derzeit im Implementierungsleitfaden           <a href="https://ig.fhir.de/igs/medication/">FHIR Medication IG Deutschland</a>
+ erarbeitet. Die dort beschriebenen Konzepte und Festlegungen können als fachliche und technische Guidance für die Umsetzung von Infusionen im Kontext dieses Implementierungsleitfadens herangezogen werden.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/Kompatibilitaet.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.2/dgmp-overview.html">gemspec.gematik.de</a>
+        </td>
+        <td>
+Zu den betrachteten Spezifikationen und Anwendungen zählen insbesondere der           <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.2/dgmp-overview.html">digital gestützte Medikationsprozess (dgMP)</a>
+, der           <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.2/index.html">ePA Medication Service</a>
+ mit der elektronischen Medikationsliste (eML), das           <a href="https://simplifier.net/erezept">KBV eRezept</a>
+, der           <a href="https://ig.fhir.de/igs/medication">MedicationDE-Implementierungsleitfaden</a>
+ mit den Profilen DosageDE und TimingDE sowie der           <a href="https://www.medizininformatik-initiative.de/Kerndatensatz/KDS_Medikation_2026/MIIIGModulMedikation.html">Medizininformatik-Initiative Kerndatensatz Modul Medikation</a>
+. Die jeweiligen Abschnitte verweisen auf die entsprechenden Spezifikationen und beschreiben die relevanten Unterschiede aus Sicht von ISiK-Medikation.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/Kompatibilitaet.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.2/index.html">gemspec.gematik.de</a>
+        </td>
+        <td>
+Zu den betrachteten Spezifikationen und Anwendungen zählen insbesondere der           <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.2/dgmp-overview.html">digital gestützte Medikationsprozess (dgMP)</a>
+, der           <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.2/index.html">ePA Medication Service</a>
+ mit der elektronischen Medikationsliste (eML), das           <a href="https://simplifier.net/erezept">KBV eRezept</a>
+, der           <a href="https://ig.fhir.de/igs/medication">MedicationDE-Implementierungsleitfaden</a>
+ mit den Profilen DosageDE und TimingDE sowie der           <a href="https://www.medizininformatik-initiative.de/Kerndatensatz/KDS_Medikation_2026/MIIIGModulMedikation.html">Medizininformatik-Initiative Kerndatensatz Modul Medikation</a>
+. Die jeweiligen Abschnitte verweisen auf die entsprechenden Spezifikationen und beschreiben die relevanten Unterschiede aus Sicht von ISiK-Medikation.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/Kompatibilitaet.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/igs/medication">ig.fhir.de</a>
+        </td>
+        <td>
+Zu den betrachteten Spezifikationen und Anwendungen zählen insbesondere der           <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.2/dgmp-overview.html">digital gestützte Medikationsprozess (dgMP)</a>
+, der           <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.2/index.html">ePA Medication Service</a>
+ mit der elektronischen Medikationsliste (eML), das           <a href="https://simplifier.net/erezept">KBV eRezept</a>
+, der           <a href="https://ig.fhir.de/igs/medication">MedicationDE-Implementierungsleitfaden</a>
+ mit den Profilen DosageDE und TimingDE sowie der           <a href="https://www.medizininformatik-initiative.de/Kerndatensatz/KDS_Medikation_2026/MIIIGModulMedikation.html">Medizininformatik-Initiative Kerndatensatz Modul Medikation</a>
+. Die jeweiligen Abschnitte verweisen auf die entsprechenden Spezifikationen und beschreiben die relevanten Unterschiede aus Sicht von ISiK-Medikation.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/Kompatibilitaet.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/Kerndatensatz/KDS_Medikation_2026/MIIIGModulMedikation.html">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+Zu den betrachteten Spezifikationen und Anwendungen zählen insbesondere der           <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.2/dgmp-overview.html">digital gestützte Medikationsprozess (dgMP)</a>
+, der           <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.2/index.html">ePA Medication Service</a>
+ mit der elektronischen Medikationsliste (eML), das           <a href="https://simplifier.net/erezept">KBV eRezept</a>
+, der           <a href="https://ig.fhir.de/igs/medication">MedicationDE-Implementierungsleitfaden</a>
+ mit den Profilen DosageDE und TimingDE sowie der           <a href="https://www.medizininformatik-initiative.de/Kerndatensatz/KDS_Medikation_2026/MIIIGModulMedikation.html">Medizininformatik-Initiative Kerndatensatz Modul Medikation</a>
+. Die jeweiligen Abschnitte verweisen auf die entsprechenden Spezifikationen und beschreiben die relevanten Unterschiede aus Sicht von ISiK-Medikation.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/Kompatibilitaet.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/igs/medication">ig.fhir.de</a>
+        </td>
+        <td>
+Die Kompatibilität mit dem dgMP wird insbesondere dadurch unterstützt, dass ISiK-Medikation und die im dgMP verwendeten Profile auf Profilierungen aus dem           <a href="https://ig.fhir.de/igs/medication">MedicationDE-Implementierungsleitfaden</a>
+ aufbauen. ISiK-Medikation verwendet für strukturierte Dosierungsinformationen das Profil DosageDE sowie die darin verwendeten Strukturen zur Abbildung von Zeitangaben. Im dgMP wird hierfür das darauf aufbauende Profil DosageDgMP verwendet. Damit besteht für strukturierte Dosierungsinformationen eine gemeinsame Profilierungsgrundlage, auch wenn die Profile nicht identisch sind.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://semver.org/lang/de/">semver.org</a>
+        </td>
+        <td>
+Im Rahmen der ISiK-Veröffentlichungen wird das           <a href="https://semver.org/lang/de/">Semantic Versioning</a>
+ verwendet.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1272">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1272">https://github.com/gematik/spec-ISiK-Basismodul/pull/1272</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1243">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Guidance für ISiKMedikament.amount verbessert           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1243">https://github.com/gematik/spec-ISiK-Basismodul/pull/1243</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1161">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">fix</code>
+ Hinzufügen der Rulesets           <code class="language-plaintext highlighter-rouge">CommonSearchParameters</code>
+ und           <code class="language-plaintext highlighter-rouge">OptionalTagSearchParameter</code>
+ zu den Rollen CapabilityStatements           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1161">https://github.com/gematik/spec-ISiK-Basismodul/pull/1161</a>
+ - analog zu TC 5.1.2 siehe           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1158">https://github.com/gematik/spec-ISiK-Basismodul/pull/1158</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1158">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">fix</code>
+ Hinzufügen der Rulesets           <code class="language-plaintext highlighter-rouge">CommonSearchParameters</code>
+ und           <code class="language-plaintext highlighter-rouge">OptionalTagSearchParameter</code>
+ zu den Rollen CapabilityStatements           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1161">https://github.com/gematik/spec-ISiK-Basismodul/pull/1161</a>
+ - analog zu TC 5.1.2 siehe           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1158">https://github.com/gematik/spec-ISiK-Basismodul/pull/1158</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1155">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">fix</code>
+ Fehlendes MS zum ISiKATCCoding hinzugefügt, die Version war bisher schon 1..1, aber es fehlte die MS-Definition           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1155">https://github.com/gematik/spec-ISiK-Basismodul/pull/1155</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1190">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1190">https://github.com/gematik/spec-ISiK-Basismodul/pull/1190</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1190">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">fix</code>
+ CapabilityStatement FormDefinitionsVerwalter und ISiKMedikationsInformation Beispiel korrigiert           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1190">https://github.com/gematik/spec-ISiK-Basismodul/pull/1190</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1192">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Entfernen der           <code class="language-plaintext highlighter-rouge">replaces</code>
+-Extension (          <code class="language-plaintext highlighter-rouge">extension.medicationRequestReplaces</code>
+) in Medikation-Verordnung und Medikation-Statement; in der Medikation-Verordnung wird stattdessen           <code class="language-plaintext highlighter-rouge">MedicationRequest.priorPrescription</code>
+ verwendet. (          <a href="https://chat.fhir.org/#narrow/channel/179166-implementers/topic/Definition.20of.20MedicationRequest.2EpriorPrescription/with/542711071">chat.fhir.org</a>
+)           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1192">https://github.com/gematik/spec-ISiK-Basismodul/pull/1192</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1204">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">documentation</code>
+ Neue Use-Case-Seiten           <code class="language-plaintext highlighter-rouge">Bedarfsmedikation</code>
+ und           <code class="language-plaintext highlighter-rouge">Infusionen</code>
+ im Menü ergänzt           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1204">https://github.com/gematik/spec-ISiK-Basismodul/pull/1204</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1177">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Gemeinsame Auslagerung der           <code class="language-plaintext highlighter-rouge">DosageDE</code>
+-Vorgaben für ISiKMedikationsVerordnung und ISiKMedikationsInformation in ein RuleSet; Bedarfsmedikation wird auf           <code class="language-plaintext highlighter-rouge">asNeededBoolean</code>
+ eingeschränkt, die R5-Backport-Extension           <code class="language-plaintext highlighter-rouge">Dosage.asNeededFor</code>
+ lokal ergänzt.           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1177">https://github.com/gematik/spec-ISiK-Basismodul/pull/1177</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1194">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">documentation</code>
+ Guidance zur Verwendung von List.mode (snapshot vs. working) in ISiKMedikationsListe anhand von Use-Cases ergänzt           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1194">https://github.com/gematik/spec-ISiK-Basismodul/pull/1194</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1214">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">fix</code>
+ Erweiterung der ISiK eigenen Codesysteme um die Information zur Sprache           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1214">https://github.com/gematik/spec-ISiK-Basismodul/pull/1214</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1241">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">documentation</code>
+ Aktualisierung der Seite zur Kompatibilität des Medikationsmoduls           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1241">https://github.com/gematik/spec-ISiK-Basismodul/pull/1241</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1068">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module)           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1068">https://github.com/gematik/spec-ISiK-Basismodul/pull/1068</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1040">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">fix</code>
+ Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von           <code class="language-plaintext highlighter-rouge">SHALL</code>
+ zu           <code class="language-plaintext highlighter-rouge">MAY</code>
+ - analog zu TC 5.1.2           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1040">https://github.com/gematik/spec-ISiK-Basismodul/pull/1040</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1053">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Verpflichtende Einführung des Suchparameters           <code class="language-plaintext highlighter-rouge">_lastUpdated</code>
+            <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1053">https://github.com/gematik/spec-ISiK-Basismodul/pull/1053</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1075">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Implicit Rules auf 0..0 beschränkt           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1075">https://github.com/gematik/spec-ISiK-Basismodul/pull/1075</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1088">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">documentation</code>
+ Trennung der lesenden und schreibenden Interaktionen im Capability Statement als Refactoring           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/1088">https://github.com/gematik/spec-ISiK-Basismodul/pull/1088</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/929">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Ressourcen Referenzen in den FSH Dateien wurden auf das Format
+          <code class="language-plaintext highlighter-rouge">Reference(RessourcenNamen)</code>
+ vereinheitlicht. Hierdurch wurden teilweise das Referenzziel
+angepasst (falls es keine Instanz der Zielinstanz gab).           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/929">https://github.com/gematik/spec-ISiK-Basismodul/pull/929</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/882">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">documentation</code>
+ Link zu Dosierungsbeispielen im IG
+Medikation           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/882">https://github.com/gematik/spec-ISiK-Basismodul/pull/882</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/807">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">documentation</code>
+ Erläuterung zur Nutzung von MedicationRequest.status für die Umsetzung asynchroner Prüfung im empfangenden System            <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/807">https://github.com/gematik/spec-ISiK-Basismodul/pull/807</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/803">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">documentation</code>
+ Erläuterung für die Umsetzung der Pausierung einer Medikation           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/803">https://github.com/gematik/spec-ISiK-Basismodul/pull/803</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/799">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ id-Elemente sind in           <em>allen</em>
+ Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet.           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/799">https://github.com/gematik/spec-ISiK-Basismodul/pull/799</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/802">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">documentation</code>
+ Rendering der im Modul verwendeten ValueSets           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/802">https://github.com/gematik/spec-ISiK-Basismodul/pull/802</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/809">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">documentation</code>
+ Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/809">https://github.com/gematik/spec-ISiK-Basismodul/pull/809</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/737">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Öffnung der Kardinalität für ATC und PZN Kodierung, sodass nun eine Mehrfachkordierung möglich ist.           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/737">https://github.com/gematik/spec-ISiK-Basismodul/pull/737</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/728">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange - Der Datentyp
+boundsRange wurde als Must-Support entfernt, da er in der praktischen Verordnung medizinischer
+Therapien nur in sehr seltenen Spezialfällen Anwendung
+findet.           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/728">https://github.com/gematik/spec-ISiK-Basismodul/pull/728</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/734">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Das Element MedicationAdministration.request im Profil ISiKMedikationsVerabreichung
+wurde als eingeschränktes Must-Support gekennzeichnet, da die Angabe der zugrunde liegenden
+Verordnung fachlich relevant ist, aber nicht in allen Systemen strukturell abbildbar.           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/734">https://github.com/gematik/spec-ISiK-Basismodul/pull/734</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/733">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Verbesserung der Beschreibung des ISiKMedicationList-Profils: klarere Abgrenzung zur
+ePA/eMP und präzisere Darstellung der enthaltenen Informationen
+(MedicationStatements).           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/733">https://github.com/gematik/spec-ISiK-Basismodul/pull/733</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/736">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ ISiKMedikationsVerordnung: Kommentar zu priorPrescription hinzugefügt und Definitionen
+in den Kommentaren beider Elemente (priorPrescription und extension.medicationRequestReplaces)
+sprachlich und fachlich überarbeitet.           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/736">https://github.com/gematik/spec-ISiK-Basismodul/pull/736</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/597">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Überarbeitung von Akteuren und Rollen, dabei Procedure-Interaktionen für Akteur im Kontext von AMTS eingeführt und List-Interaktionen sowie Interaktionen auf ISiKSchwangerschaftErwarteterEntbindungstermin für AMTS eingeführt + Refactoring Rollen           <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/597">https://github.com/gematik/spec-ISiK-Basismodul/pull/597</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/171">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">documentation</code>
+ Migration des IG auf die neue IG Struktur basierend auf FQL Templates, die für ISiK-Basis erstellt wurden           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/171">https://github.com/gematik/spec-ISiK-Medikation/pull/171</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/168">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Klarstellung zu übergreifenden Festlegungen           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/168">https://github.com/gematik/spec-ISiK-Medikation/pull/168</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/140">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Möglicher Breaking Change für Clients: Änderung (Schwächung) der MS-Definition für .reasonCode und reasonReference für MedicationAdministration und MedicationStatement           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/140">https://github.com/gematik/spec-ISiK-Medikation/pull/140</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/154">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Klärung zur Nutzung der Zeit-Elemente in ISiKMedikationsInformation -und ISiKMedikationsVerabreichung           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/154">https://github.com/gematik/spec-ISiK-Medikation/pull/154</a>
+
+              <ul>
+
+                  <li>
+Zum Hintergrund der Entscheidungsfindung beachte               <a href="https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BMED.5D.20Administration.2FVerabreichung.20-.20Date.20or.20Timestamp">öffentliche Fragestellung und Diskussion</a>
+.
+            </li>
+
+    
+          </ul>
+
+  
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/155">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Klarstellung zum Umgang mit Freitext-Dosierungsinformationen für empfangende Systeme           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/155">https://github.com/gematik/spec-ISiK-Medikation/pull/155</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/141">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">fix</code>
+ Korrektur der Description &amp; Status des MedicationQuantity Profils           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/141">https://github.com/gematik/spec-ISiK-Medikation/pull/141</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/139">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">documentation</code>
+ Dokumentation für MS-Flags           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/139">https://github.com/gematik/spec-ISiK-Medikation/pull/139</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/158">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Formulierungsänderung zur Nutzung von Profilen aus der Basis           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/158">https://github.com/gematik/spec-ISiK-Medikation/pull/158</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/156/files">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Die Verbindlichkeit des Suchparameters           <code class="language-plaintext highlighter-rouge">subject</code>
+ wurde von SHALL auf MAY reduziert, da der Suchparameter           <code class="language-plaintext highlighter-rouge">patient</code>
+ für ISiK-Zwecke ausreichend ist. Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter           <code class="language-plaintext highlighter-rouge">patient</code>
+ und           <code class="language-plaintext highlighter-rouge">encounter</code>
+, da diese für ISiK-Zwecke ausreichend sind.           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/156/files">https://github.com/gematik/spec-ISiK-Medikation/pull/156/files</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/161">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ MS für ISiKMedikationsVerordnung.reasonReference &amp; reasonCode hinzugefügt, um diese Elemente über alle Medication-Ressourcen hinweg zu vereinheitlichen           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/161">https://github.com/gematik/spec-ISiK-Medikation/pull/161</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/148">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">fix</code>
+ Capability Statement Korrektur des Suchparameter-Typs und weitere Fixes für Beispiele            <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/148">https://github.com/gematik/spec-ISiK-Medikation/pull/148</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/167">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Hinweis zur Kontextherstellung           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/167">https://github.com/gematik/spec-ISiK-Medikation/pull/167</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/122">github.com</a>
+        </td>
+        <td>
+Entfernen von MS von .id der Ressourcen           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/122">https://github.com/gematik/spec-ISiK-Medikation/pull/122</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/124/files">github.com</a>
+        </td>
+        <td>
+Klärung Dosis-Rate Quantity und Ratio (Beispiele, Must-Support)            <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/124/files">https://github.com/gematik/spec-ISiK-Medikation/pull/124/files</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/123">github.com</a>
+        </td>
+        <td>
+Entfernen der WG14 Kodierung, Hinzufügen eines SimpleQuantity Profiles, Update der Abhängigkeit auf IPS 1.1.0, Hinzufügen eines SCT Slices zu Medikationsoprofilen, bei Medication.amount (Ratios) numerator und denominator auf 1..1           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/123">https://github.com/gematik/spec-ISiK-Medikation/pull/123</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/126">github.com</a>
+        </td>
+        <td>
+Entfernen von MS von MedicationStatement.partOf           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/126">https://github.com/gematik/spec-ISiK-Medikation/pull/126</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/102/commits/039654b03d5b159ed258c35b48c37cd2db3e4a81">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ Update dependency with Basis:            <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/102/commits/039654b03d5b159ed258c35b48c37cd2db3e4a81">https://github.com/gematik/spec-ISiK-Medikation/pull/102/commits/039654b03d5b159ed258c35b48c37cd2db3e4a81</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ReleaseNotes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/103">github.com</a>
+        </td>
+        <td>
+          <code class="language-plaintext highlighter-rouge">improve</code>
+ sentence on ISIKBasis Ressource usage by @f-peverali in           <a href="https://github.com/gematik/spec-ISiK-Medikation/pull/103">https://github.com/gematik/spec-ISiK-Medikation/pull/103</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/RestApi.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/UebergreifendeFestlegungen_Rest.html">gemspec.gematik.de</a>
+        </td>
+        <td>
+Es gelten grundsätzlich die           <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/UebergreifendeFestlegungen_Rest.html">Allgemeinen Hinweise zur REST API aus dem Basismodul</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKKontaktGesundheitseinrichtung-definitions.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc1/index.html">gemspec.gematik.de</a>
+        </td>
+        <td>
+          <strong>Hinweis:</strong>
+  Zur Umsetzung der Funktionalität zum Dokumentenaustausch gemäß ISiK ist der entsprechende           <a href="https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc1/index.html">Implementation Guide zum Modul Dokumentenaustausch</a>
+ zu beachten.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Abbildung-des-Konstrukts-Fall.html">gemspec.gematik.de</a>
+        </td>
+        <td>
+Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter           <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Abbildung-des-Konstrukts-Fall.html">Fall-Begriff in ISiK</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+Profil           <a href="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung">Kontakt mit einer Gesundheitseinrichtung 
+der Medizininformatik-Initiative</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html">web</a>
+        </td>
+        <td>
+          <a href="https://service.gematik.de/servicedesk/customer/portal/16">service.gematik.de</a>
+        </td>
+        <td>
+Hinweise zu Inkompatibilitäten können über die           <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a>
+ gemeldet werden.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKMedikament-mappings.html">web</a>
+        </td>
+        <td>
+          <a href="http://ncpdp.org/SCRIPT10_6">ncpdp.org</a>
+        </td>
+        <td>
+          <a href="http://ncpdp.org/SCRIPT10_6" title="http://ncpdp.org/SCRIPT10_6">Mapping to NCPDP SCRIPT 10.6</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKMedikament.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/epa-medication">gemspec.gematik.de</a>
+        </td>
+        <td>
+Für das Profil ISiKMedikament wird eine größtmögliche Kompatibilität mit dem Profil           <a href="https://gemspec.gematik.de/ig/fhir/epa-medication">epa-medication der gematik</a>
+ angestrebt. Ziel ist insbesondere eine vergleichbare semantische Struktur zur Unterstützung interoperabler Nutzungsszenarien.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKMedikationsInformation-definitions.html">web</a>
+        </td>
+        <td>
+          <a href="https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient">gematik.de</a>
+        </td>
+        <td>
+          <strong>Begründung MS:</strong>
+ Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
+Im ISik Kontext MUSS die referenzierte Ressource konform zu           <a href="https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient">ISiKPatient</a>
+ sein.
+Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKMedikationsInformation-definitions.html">web</a>
+        </td>
+        <td>
+          <a href="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung">gematik.de</a>
+        </td>
+        <td>
+          <strong>Begründung MS:</strong>
+ Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
+Im ISik Kontext MUSS die referenzierte Ressource konform zu           <a href="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung">ISiKKontaktGesundheitseinrichtung</a>
+ sein.
+Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKMedikationsInformation-definitions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/igs/medication/dosierung-beispiele.html">ig.fhir.de</a>
+        </td>
+        <td>
+          <strong>Hinweis:</strong>
+ Zahlreiche           <a href="https://ig.fhir.de/igs/medication/dosierung-beispiele.html">Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland</a>
+ dokumentiert.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKMedikationsVerabreichung-definitions.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags">gemspec.gematik.de</a>
+        </td>
+        <td>
+Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem           <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags">ISiK Basismodul</a>
+: 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKPatient-definitions.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc1/Patientenzusammenfuehrung.html">gemspec.gematik.de</a>
+        </td>
+        <td>
+Dieses und untergeordnete Elemente SOLLEN bei einem erfolgten Patient merge entsprechend der Festlegungen unter           <a href="https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc1/Patientenzusammenfuehrung.html">Patient-merge</a>
+ befüllt werden.
+Das Element dient der Unterstützung der Patient merge Notification.
+Diese ist für den Akteur 'Subscription Server' des Subscription-Moduls verpflichtend;
+im Rahmen des Bestätigungsverfahrens zum Basismodul wird das Element nicht geprüft.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKPatient.html">web</a>
+        </td>
+        <td>
+          <a href="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient">fhir.kbv.de</a>
+        </td>
+        <td>
+          <a href="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient">Profil KBV_PR_Base_Patient der KBV Basisprofile</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKPatient.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient">Profil Patient der MI-Initiative</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKPatient.html">web</a>
+        </td>
+        <td>
+          <a href="https://gematik.de/fhir/ti/StructureDefinition/ti-patient">gematik.de</a>
+        </td>
+        <td>
+          <a name="l464">​</a>
+          <a href="https://gematik.de/fhir/ti/StructureDefinition/ti-patient">Profil TIPatient der gematik</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKPatient.html">web</a>
+        </td>
+        <td>
+          <a href="https://gematik.de/fhir/epa/StructureDefinition/epa-patient">gematik.de</a>
+        </td>
+        <td>
+          <a href="https://gematik.de/fhir/epa/StructureDefinition/epa-patient">Profil EPAPatient der gematik</a>
+: In ISiK ist die Angabe einer KVNR nicht verpflichtend, da in vielen Use Cases bereits eine PID ausreichend ist. Außerdem ist in ISiK keine verpflichtende Versionierung über meta.versionId vorgesehen.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKPatient.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc1/Patientenzusammenfuehrung.html">gemspec.gematik.de</a>
+        </td>
+        <td>
+Dieses und untergeordnete Elemente SOLLEN bei einem erfolgten Patient merge entsprechend der Festlegungen unter           <a href="https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc1/Patientenzusammenfuehrung.html">Patient-merge</a>
+ befüllt werden.
+  Das Element dient der Unterstützung der Patient merge Notification.
+  Diese ist für den Akteur 'Subscription Server' des Subscription-Moduls verpflichtend;
+  im Rahmen des Bestätigungsverfahrens zum Basismodul wird das Element nicht geprüft.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKPersonImGesundheitsberuf-definitions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/basisprofile-de/1.2.0/LebenslangeArztnummerLANR-Identifier.html">ig.fhir.de</a>
+        </td>
+        <td>
+Im Krankenhaus ist die lebenslange Arztnummer der Ärzte bekannt und MUSS zur eindeutigen Identifikation eines Arztes bereitgestellt werden.
+          <strong>Hinweise:</strong>
+ Siehe           <a href="https://ig.fhir.de/basisprofile-de/1.2.0/LebenslangeArztnummerLANR-Identifier.html">Beschreibung der Deutschen Basisprofile</a>
+
+Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im KBV-Kontext das Akronym ANR gebräuchlich. Die Bezeichnung des Slices hat jedoch keinerlei Auswirkungen auf die Kompatibilität.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKPersonImGesundheitsberuf-definitions.html">web</a>
+        </td>
+        <td>
+          <a href="https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality">fhir.kbv.de</a>
+        </td>
+        <td>
+Zur Kodierung der Qualifikation ist das entsprechende           <a href="https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality">ValueSet der KBV</a>
+ zu empfehlen.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKPersonImGesundheitsberuf-mappings.html">web</a>
+        </td>
+        <td>
+          <a href="http://www.omg.org/spec/ServD/1.0/">www.omg.org</a>
+        </td>
+        <td>
+          <a href="http://www.omg.org/spec/ServD/1.0/" title="http://www.omg.org/spec/ServD/1.0/">ServD</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKPersonImGesundheitsberuf.html">web</a>
+        </td>
+        <td>
+          <a href="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner">fhir.kbv.de</a>
+        </td>
+        <td>
+          <a href="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner">Profil KBV_PR_Base_Practitioner der KBV Basisprofile</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKPersonImGesundheitsberuf.html">web</a>
+        </td>
+        <td>
+          <a href="https://gematik.de/fhir/ti/StructureDefinition/ti-practitioner">gematik.de</a>
+        </td>
+        <td>
+          <a name="l467">​</a>
+          <a href="https://gematik.de/fhir/ti/StructureDefinition/ti-practitioner">Profil TIPractitioner der gematik</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKRolleImKrankenhaus-definitions.html">web</a>
+        </td>
+        <td>
+          <a href="https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care">fhir.kbv.de</a>
+        </td>
+        <td>
+The codes SHALL be taken from           <span style="color:DarkGray;text-decoration:line-through">For codes, see </span>
+           <a href="https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care">https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care</a>
+          <br/>
+(          <a href="http://hl7.org/fhir/R4/terminologies.html#required">required</a>
+ to           <span class="copy-text-inline">
+<code>https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care</code><button data-clipboard-text="https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care" title="Click to Copy URL" class="btn-copy"></button>          </span>
+)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKRolleImKrankenhaus-definitions.html">web</a>
+        </td>
+        <td>
+          <a href="https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care">fhir.kbv.de</a>
+        </td>
+        <td>
+The codes SHALL be taken from            <a href="https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care">https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care</a>
+          <br/>
+(          <a href="http://hl7.org/fhir/R4/terminologies.html#required">required</a>
+ to           <span class="copy-text-inline">
+<code>https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care</code><button data-clipboard-text="https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care" title="Click to Copy URL" class="btn-copy"></button>          </span>
+)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-ISiKRolleImKrankenhaus.html">web</a>
+        </td>
+        <td>
+          <a href="https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care">fhir.kbv.de</a>
+        </td>
+        <td>
+
+                <a style="opacity: 1.0" href="https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care">https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care</a>
+
+                <button data-clipboard-text="https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care" title="Click to copy URL" class="btn-copy"></button>
+
+    
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/UebergreifendeFestlegungen.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Index_Festlegungen.html">gemspec.gematik.de</a>
+        </td>
+        <td>
+Es gelten die Festlegungen aus dem Modul ISiK           <a href="https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Index_Festlegungen.html">ISiK Basis</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/UebersichtAnwendungsfaelle.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/fhir/ig/isik/amts/latest">gemspec.gematik.de</a>
+        </td>
+        <td>
+Der Use-Case zum Thema Arzneimitteltherapiesicherheit (AMTS) wurde in einem eigenen Implementation Guide ausgelagert. Der Implementation Guide ist über folgenden Link erreichbar:           <a href="https://gemspec.gematik.de/fhir/ig/isik/amts/latest">AMTS Implementierungsleitfaden</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-ISiKEncounterTypeErweiterungVS.html">web</a>
+        </td>
+        <td>
+          <a href="http://fhir.de/CodeSystem/kontaktart-de">fhir.de</a>
+        </td>
+        <td>
+ISiK vereint hierbei das ValueSet           <a href="http://fhir.de/CodeSystem/kontaktart-de">KontaktArtDe</a>
+ aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/284009009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/284009009">284009009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/6064005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/6064005">6064005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/10547007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/10547007">10547007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/12130007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/12130007">12130007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/16857009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/16857009">16857009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/26643006">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/26643006">26643006</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/34206005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/34206005">34206005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/37161004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/37161004">37161004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/37737002">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/37737002">37737002</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/37839007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/37839007">37839007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/38239002">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/38239002">38239002</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/45890007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/45890007">45890007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/46713006">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/46713006">46713006</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/47625008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/47625008">47625008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/54471007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/54471007">54471007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/54485002">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/54485002">54485002</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/58100008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/58100008">58100008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/60213007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/60213007">60213007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/62226000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/62226000">62226000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/72607000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/72607000">72607000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/78421000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/78421000">78421000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/90028008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/90028008">90028008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/127490009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/127490009">127490009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/127491008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/127491008">127491008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/127492001">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/127492001">127492001</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372449004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372449004">372449004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372450004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372450004">372450004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372451000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372451000">372451000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372452007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372452007">372452007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372453002">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372453002">372453002</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372454008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372454008">372454008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372457001">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372457001">372457001</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372458006">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372458006">372458006</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372459003">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372459003">372459003</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372460008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372460008">372460008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372461007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372461007">372461007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372462000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372462000">372462000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372463005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372463005">372463005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372464004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372464004">372464004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372465003">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372465003">372465003</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372466002">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372466002">372466002</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372467006">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372467006">372467006</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372468001">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372468001">372468001</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372469009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372469009">372469009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372470005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372470005">372470005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372471009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372471009">372471009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372472002">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372472002">372472002</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372473007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372473007">372473007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372474001">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372474001">372474001</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372475000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372475000">372475000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/372476004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/372476004">372476004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/404818005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/404818005">404818005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/404819002">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/404819002">404819002</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/404820008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/404820008">404820008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/416174007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/416174007">416174007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/417070009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/417070009">417070009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/417255000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/417255000">417255000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/417950001">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/417950001">417950001</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/417985001">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/417985001">417985001</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/417989007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/417989007">417989007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418091004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418091004">418091004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418114005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418114005">418114005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418133000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418133000">418133000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418136008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418136008">418136008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418162004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418162004">418162004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418204005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418204005">418204005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418287000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418287000">418287000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418321004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418321004">418321004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418331006">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418331006">418331006</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418401004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418401004">418401004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418418000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418418000">418418000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418441008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418441008">418441008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418511008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418511008">418511008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418586008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418586008">418586008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418608002">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418608002">418608002</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418664002">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418664002">418664002</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418722009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418722009">418722009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418730005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418730005">418730005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418743005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418743005">418743005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418813001">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418813001">418813001</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418821007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418821007">418821007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418851001">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418851001">418851001</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418877009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418877009">418877009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418887008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418887008">418887008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418892005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418892005">418892005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418947002">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418947002">418947002</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/418987007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/418987007">418987007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419021003">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419021003">419021003</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419165009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419165009">419165009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419231003">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419231003">419231003</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419243002">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419243002">419243002</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419320008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419320008">419320008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419396008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419396008">419396008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419601003">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419601003">419601003</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419631009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419631009">419631009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419684008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419684008">419684008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419762003">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419762003">419762003</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419778001">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419778001">419778001</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419810008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419810008">419810008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419874009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419874009">419874009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419894000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419894000">419894000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419954003">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419954003">419954003</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/419993007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/419993007">419993007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/420047004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/420047004">420047004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/420163009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/420163009">420163009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/420168000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/420168000">420168000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/420185003">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/420185003">420185003</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/420201002">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/420201002">420201002</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/420204005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/420204005">420204005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/420218003">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/420218003">420218003</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/420254004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/420254004">420254004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/420287000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/420287000">420287000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/420719007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/420719007">420719007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/428191002">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/428191002">428191002</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/429817007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/429817007">429817007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/445752009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/445752009">445752009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/445754005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/445754005">445754005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/445755006">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/445755006">445755006</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/445756007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/445756007">445756007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/445767008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/445767008">445767008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/445768003">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/445768003">445768003</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/445771006">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/445771006">445771006</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/445913005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/445913005">445913005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/445941009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/445941009">445941009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/446105004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/446105004">446105004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/446407004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/446407004">446407004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/446435000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/446435000">446435000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/446442000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/446442000">446442000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/446540005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/446540005">446540005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/447026006">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/447026006">447026006</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/447052000">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/447052000">447052000</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/447080003">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/447080003">447080003</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/447081004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/447081004">447081004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/447121004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/447121004">447121004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/447122006">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/447122006">447122006</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/447227007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/447227007">447227007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/447229005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/447229005">447229005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/447694001">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/447694001">447694001</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/447964005">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/447964005">447964005</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/448077001">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/448077001">448077001</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/448491004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/448491004">448491004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/448492006">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/448492006">448492006</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/448598008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/448598008">448598008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/697971008">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/697971008">697971008</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/711360002">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/711360002">711360002</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/711378007">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/711378007">711378007</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/714743009">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/714743009">714743009</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/718329006">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/718329006">718329006</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/764723001">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/764723001">764723001</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/766790006">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/766790006">766790006</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/876824003">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/876824003">876824003</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/1254769004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/1254769004">1254769004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/1259221004">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/1259221004">1259221004</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/1611000175109">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/1611000175109">1611000175109</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/58751000052109">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/58751000052109">58751000052109</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/58761000052107">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/58761000052107">58761000052107</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/58771000052103">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/58771000052103">58771000052103</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/58811000052103">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/58811000052103">58811000052103</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/58821000052106">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/58821000052106">58821000052106</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/58831000052108">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/58831000052108">58831000052108</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/ValueSet-SctRouteOfAdministration.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/id/66621000052103">snomed.info</a>
+        </td>
+        <td>
+&nbsp;&nbsp;          <a href="http://snomed.info/id/66621000052103">66621000052103</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/artifacts.html">web</a>
+        </td>
+        <td>
+          <a href="https://gematik.de/fhir/ti/StructureDefinition/ti-patient">gematik.de</a>
+        </td>
+        <td>
+          <a name="l1703">​</a>
+          <a href="https://gematik.de/fhir/ti/StructureDefinition/ti-patient">Profil TIPatient der gematik</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/artifacts.html">web</a>
+        </td>
+        <td>
+          <a href="https://gematik.de/fhir/ti/StructureDefinition/ti-practitioner">gematik.de</a>
+        </td>
+        <td>
+          <a name="l1772">​</a>
+          <a href="https://gematik.de/fhir/ti/StructureDefinition/ti-practitioner">Profil TIPractitioner der gematik</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.0/dgmp-scenarios.html">gemspec.gematik.de</a>
+        </td>
+        <td>
+Diese Spezifikation lehnt sich an die entsprechenden Teile des IHE-Profils HMW (Hospital Medication Workflow) sowie partiell auch an das IHE-Profil CMPD (Community Medication Prescription and Dispense) an. Weiterhin erfolgte ein Abgleich mit den aktuell in Deutschland bestehenden Spezifikationen im Bereich Medikation, bspw. dem           <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.0/dgmp-scenarios.html">dgmP</a>
+ bzw. dem           <a href="https://ig.fhir.de/igs/medication/index.html">Medication DE IG</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/igs/medication/index.html">ig.fhir.de</a>
+        </td>
+        <td>
+Diese Spezifikation lehnt sich an die entsprechenden Teile des IHE-Profils HMW (Hospital Medication Workflow) sowie partiell auch an das IHE-Profil CMPD (Community Medication Prescription and Dispense) an. Weiterhin erfolgte ein Abgleich mit den aktuell in Deutschland bestehenden Spezifikationen im Bereich Medikation, bspw. dem           <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.0/dgmp-scenarios.html">dgmP</a>
+ bzw. dem           <a href="https://ig.fhir.de/igs/medication/index.html">Medication DE IG</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://de.wikipedia.org/wiki/Representational_State_Transfer">de.wikipedia.org</a>
+        </td>
+        <td>
+Die gematik wurde vom Gesetzgeber beauftragt, im Benehmen mit der Deutschen Krankenhausgesellschaft (DKG) und den maßgeblichen Bundesverbänden der Industrie im Gesundheitswesen, verbindliche Standards für den Austausch von Gesundheitsdaten mit Informationssystemen im Krankenhaus zu erarbeiten. Dieser FHIR ImplementationGuide (IG) beschreibt die für diesen Zweck entwickelten FHIR Profile und das           <a href="https://de.wikipedia.org/wiki/Representational_State_Transfer">REST</a>
+-basierte Application Programming Interface (API). Die REST-API wird im Wesentlichen           <a href="https://www.hl7.org/fhir/R4/http.html">vom FHIR Standard vorgegeben</a>
+. Dieser Leitfaden konkretisiert die ISiK-relevanten Funktionen der Standard-REST-API und trifft inhaltliche Festlegungen zu den ISiK-relevanten Ressourcen in Form von Ressourcen-Profilen.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.gesetze-im-internet.de/sgb_5/__373.html">www.gesetze-im-internet.de</a>
+        </td>
+        <td>
+Weitere Informationen siehe           <a href="https://www.gesetze-im-internet.de/sgb_5/__373.html">&sect;373 SGB V</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.bfarm.de/DE/Kodiersysteme/Terminologien/SNOMED-CT/_node.html">www.bfarm.de</a>
+        </td>
+        <td>
+Hinweis: Sowohl für die Implementierung der ISiK-Spezifikation als auch für den Betrieb eines Produktes, das die ISiK-Spezifikation implementiert, ist eine SNOMED-CT-Lizenz notwendig. Diese kann beim           <a href="https://www.bfarm.de/DE/Kodiersysteme/Terminologien/SNOMED-CT/_node.html">National Release Center für SNOMED CT in Deutschland</a>
+ beantragt werden.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://service.gematik.de/servicedesk/customer/portal/16">service.gematik.de</a>
+        </td>
+        <td>
+Bringen Sie allgemeine Fragen und Anmerkungen gerne über unser Anfrageportal ein:           <a href="https://service.gematik.de/servicedesk/customer/portal/16">Anfragen ISiK + ISiP</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.gematik.de/impressum/">www.gematik.de</a>
+        </td>
+        <td>
+          <a href="https://www.gematik.de/impressum/">Impressum</a>
+        </td>
+      </tr>
+    </table>
+    <h2>Internal Images</h2>
+    <table class="grid">
+      <tr>
+        <td>
+ClosedLoop-Medikationsprozess.svg          <br/>
+          <img src="ClosedLoop-Medikationsprozess.svg" alt="ClosedLoop-Medikationsprozess.svg" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+simple_infomodel.svg          <br/>
+          <img src="simple_infomodel.svg" alt="simple_infomodel.svg" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+tree-filter.png          <br/>
+          <img src="tree-filter.png" alt="tree-filter.png" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+usecases.svg          <br/>
+          <img src="usecases.svg" alt="usecases.svg" width="600px" height="auto"/>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

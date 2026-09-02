@@ -1,0 +1,405 @@
+{
+  "codeSystems" : [{
+    "url" : "http://example.org/fhir/ValueSet/TestValueSet",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "TestValueSet",
+    "title" : null,
+    "description" : ""
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/DiagnoseTyp",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "DiagnoseTyp",
+    "title" : "DiagnoseTyp ValueSet",
+    "description" : "Dieses ValueSet enthält übergeordnete Typen diagnostischer Angaben, etwa Einweisungs- oder behandlungsrelevante Diagnosen. Es dient der fachlichen Einordnung, in welchem Versorgungskontext eine Diagnose erhoben oder verwendet wird.",
+    "systems" : ["http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/Diagnosesubtyp",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "Diagnosesubtyp",
+    "title" : "Diagnosesubtyp ValueSet",
+    "description" : "Dieses ValueSet bündelt spezielle Untertypen von Diagnosen mit definierter fachlicher Rolle, etwa Operationsdiagnosen, Todesursachen oder Aufnahmediagnosen. Es dient der semantischen Verfeinerung diagnostischer Angaben innerhalb eines Versorgungskontexts.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/diagnosis-role",
+    "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/EncounterClassDE",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "EncounterClassDE",
+    "title" : "EncounterClassDE",
+    "description" : "Dieses ValueSet beschränkt `Encounter.class` auf im deutschen Versorgungskontext gebräuchliche Fallarten. Es dient der interoperablen Kennzeichnung des organisatorischen Rahmens eines Kontakts.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
+    "uses" : {
+    },
+    "ValueSet-ISiKEncounterClassDE.html" : "ISiKEncounterClassDE"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/EncounterStatusDe",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "EncounterStatusDe",
+    "title" : "Encounter Status ValueSet",
+    "description" : "Dieses ValueSet beschränkt die verwendbaren Encounter-Status auf die im Profilkontext vorgesehenen Codes. Es dient einer stabilen Nutzung des Statusmodells im Übergang zwischen FHIR-Versionen.",
+    "systems" : ["http://hl7.org/fhir/encounter-status"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/dgkev/Aufnahmeanlass",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "AufnahmeanlassVS",
+    "title" : "Aufnahmeanlass ValueSet",
+    "description" : "Dieses ValueSet enthält die zulässigen Codes für den Aufnahmeanlass nach § 301 Abs. 3 SGB V. Es dient der einheitlichen Codierung des administrativen Anlasses einer Krankenhausaufnahme.",
+    "systems" : ["http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "FachabteilungsschluesselVS",
+    "title" : "Fachabteilungsschlüssel ValueSet",
+    "description" : "Dieses ValueSet enthält die Fachabteilungsschlüssel gemäß Anhang 1 BPflV in der am 31.12.2003 geltenden Fassung. Es dient der Bindung von Angaben zur fachlichen Zuordnung von Krankenhausabteilungen.",
+    "systems" : ["http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "ValueSetFachabteilungsschluesselErweitert",
+    "title" : "FachabteilungsschluesselErweitert ValueSet",
+    "description" : "Dieses ValueSet enthält die erweiterten Fachabteilungsschlüssel gemäß Anhang 1 BPflV einschließlich Spezialisierungen. Es dient der feineren Bindung fachlicher Zuordnungen von Krankenhausabteilungen.",
+    "systems" : ["http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKRolleImKrankenhaus.html" : "ISiKRolleImKrankenhaus",
+    "StructureDefinition-ISiKOrganisation.html" : "ISiKOrganisation",
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/kontaktebene-de",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "KontaktebeneDe",
+    "title" : "KontaktebeneDe ValueSet",
+    "description" : "Dieses ValueSet enthält die zulässigen Kontaktebenen zur Modellierung von Versorgungskontakten. Es dient der Abgrenzung, ob ein Kontakt auf Einrichtungs-, Abteilungs- oder Versorgungsstellenebene beschrieben wird.",
+    "systems" : ["http://fhir.de/CodeSystem/Kontaktebene"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/location-physical-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "LocationType",
+    "title" : "Location type",
+    "description" : "This example value set defines a set of codes that can be used to indicate the physical form of the Location.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/location-physical-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.328"],
+    "sources" : ["2.16.840.1.113883.4.642.3.328"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung",
+    "StructureDefinition-ISiKStandort.html" : "ISiKStandort"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/organization-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "OrganizationType",
+    "title" : "Organization type",
+    "description" : "This example value set defines a set of codes that can be used to indicate a type of organization.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/organization-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.414"],
+    "sources" : ["2.16.840.1.113883.4.642.3.414"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKOrganisation.html" : "ISiKOrganisation"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/resource-types",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "ResourceType",
+    "title" : "ResourceType",
+    "description" : "One of the resource types defined as part of this version of FHIR.",
+    "systems" : ["http://hl7.org/fhir/resource-types"],
+    "oids" : ["2.16.840.1.113883.4.642.3.27"],
+    "sources" : ["2.16.840.1.113883.4.642.3.27"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKValueSet.html" : "ISiKValueSet"
+  },
+  {
+    "url" : "http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode",
+    "version" : "2021-07-06T21:23:52",
+    "status" : "active",
+    "name" : "IHEXDShealthcareFacilityTypeCode",
+    "title" : "IHE XDS healthcareFacilityTypeCode",
+    "description" : "**healthcareFacilityTypeCode (XDSDocumentEntry)**\r\nThis code for an XDS Document represents the type of organizational setting of the clinical encounter during which the documented act occurred.",
+    "systems" : ["http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung",
+    "http://ihe-d.de/CodeSystems/NichtPatientBezogeneGesundheitsversorgung"],
+    "oids" : ["1.2.276.0.76.11.36"],
+    "sources" : ["1.2.276.0.76.11.36"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKOrganisation.html" : "ISiKOrganisation"
+  },
+  {
+    "url" : "http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode",
+    "version" : "2019-05-17T13:46:31",
+    "status" : "active",
+    "name" : "IHEXDSpracticeSettingCode",
+    "title" : "IHE XDS practiceSettingCode",
+    "description" : "**practiceSettingCode (XDSDocumentEntry)**\r\nThe code for an XDS Document that specifies the clinical specialty where the act that resulted in the document was performed (e.g., Family Practice, Laboratory, Radiology).",
+    "systems" : ["http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen",
+    "http://ihe-d.de/CodeSystems/NichtaerztlicheFachrichtungen"],
+    "oids" : ["1.2.276.0.76.11.37"],
+    "sources" : ["1.2.276.0.76.11.37"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKOrganisationFachabteilung.html" : "ISiKOrganisationFachabteilung",
+    "StructureDefinition-ISiKRolleImKrankenhaus.html" : "ISiKRolleImKrankenhaus"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/conformance-expectation",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "ConformanceExpectation",
+    "title" : "ConformanceExpectation",
+    "description" : "Indicates the degree of adherence to a specified behavior or capability expected for a system to be deemed conformant with a specification.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/conformance-expectation"],
+    "oids" : ["2.16.840.1.113883.4.642.3.919"],
+    "sources" : ["2.16.840.1.113883.4.642.3.919"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKCapabilityStatementImportsExpectation.html" : "ISiK CapabilityStatement Imports Expectation"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/v2-0116",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "Hl7VSBedStatus",
+    "title" : "hl7VS-bedStatus",
+    "description" : "Value Set of codes that specify the state of a bed in an inpatient setting, and is used to determine if a patient may be assigned to it or not.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0116"],
+    "oids" : ["2.16.840.1.113883.21.51"],
+    "sources" : ["2.16.840.1.113883.21.51"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKStandortRaum.html" : "ISiKStandortRaum",
+    "StructureDefinition-ISiKStandortBettenstellplatz.html" : "ISiKStandortBettenstellplatz"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/yes-no-unknown-not-asked",
+    "version" : "1.0.0",
+    "status" : "active",
+    "name" : "YesNoUnknownNotAsked",
+    "title" : "Yes No Unknown NotAsked",
+    "description" : "This value set contains 4 concepts commonly used as answers to items in a questionnaire.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKAlkoholAbusus.html" : "ISiK Alkohol Abusus"
+  },
+  {
+    "url" : "https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT",
+    "version" : "1.0.0",
+    "status" : "active",
+    "name" : "KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT",
+    "title" : "Allergien Überempfindlichkeitsreaktionen Manifestation",
+    "description" : "Dieses Valueset enthält Konzepte über die mögliche Manifestation von allergischen und anderen Überempfindlichkeitsreaktionen. Es erhebt keinen Anspruch auf Vollständigkeit, sondern wird bedarfsgesteuert weiterentwickelt werden.",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKAllergieUnvertraeglichkeit.html" : "ISiKAllergieUnvertraeglichkeit"
+  },
+  {
+    "url" : "https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Substance_SNOMED_CT",
+    "version" : "1.0.0",
+    "status" : "active",
+    "name" : "KBV_VS_AllergyIntolerance_Substance_SNOMED_CT",
+    "title" : "Allergien Überempfindlichkeitsreaktionen Auslösende Substanz",
+    "description" : "Dieses Valueset enthält Konzepte über auslösende Substanzen von allergischen und anderen Überempfindlichkeitsreaktionen. Es erhebt keinen Anspruch auf Vollständigkeit, sondern wird bedarfsgesteuert weiterentwickelt werden.",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKAllergieUnvertraeglichkeit.html" : "ISiKAllergieUnvertraeglichkeit"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "DiagnosesSCT",
+    "title" : null,
+    "description" : "Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKDiagnose.html" : "ISiKDiagnose"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKBehandlungsergebnisReha",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKBehandlungsergebnisRehaVS",
+    "title" : null,
+    "description" : "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis.",
+    "systems" : ["https://gematik.de/fhir/isik/CodeSystem/ISiKBehandlungsergebnisRehaCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKRehaEntlassung.html" : "ExtensionISiKRehaEntlassung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKBesondereBehandlungsformReha",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKBesondereBehandlungsformRehaVS",
+    "title" : null,
+    "description" : "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. Vgl. Schlüsseltabelle 2.51 Besondere Behandlungsformen.",
+    "systems" : ["https://gematik.de/fhir/isik/CodeSystem/ISiKBesondereBehandlungsformRehaCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKRehaEntlassung.html" : "ExtensionISiKRehaEntlassung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKEncounterClassDE",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKEncounterClassDE",
+    "title" : "ISiKEncounterClassDE",
+    "description" : "Erweitert das ValueSet EncounterClassDE der Deutschen Basisprofile um die Codes ACUTE, NONAC und OBSENC aus dem HL7 v3 ActCode System zur Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR). Ein Issue zur Aufnahme dieser Codes in EncounterClassDE wurde bei den Deutschen Basisprofilen eingereicht.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKEncounterTypeErweiterungVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKEncounterTypeErweiterungVS",
+    "title" : "ISiKEncounterTypeErweiterungVS",
+    "description" : "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+    "systems" : ["http://fhir.de/CodeSystem/kontaktart-de",
+    "https://gematik.de/fhir/isik/CodeSystem/ISiKEncounterTypeErweiterungCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKEntlassformReha",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKEntlassformRehaVS",
+    "title" : null,
+    "description" : "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform.",
+    "systems" : ["https://gematik.de/fhir/isik/CodeSystem/ISiKEntlassformRehaCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKRehaEntlassung.html" : "ExtensionISiKRehaEntlassung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKUnterbrechungReha",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKUnterbrechungRehaVS",
+    "title" : null,
+    "description" : "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung.",
+    "systems" : ["https://gematik.de/fhir/isik/CodeSystem/ISiKUnterbrechungRehaCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKRehaEntlassung.html" : "ExtensionISiKRehaEntlassung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ProzedurenCodesSCT",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ProzedurenCodesSCT",
+    "title" : null,
+    "description" : "Enthaelt alle SNOMED Procedure Codes",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKProzedur.html" : "ISiKProzedur"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ProzedurenKategorieSCT",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ProzedurenKategorieSCT",
+    "title" : null,
+    "description" : "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKProzedur.html" : "ISiKProzedur"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/SchwangerschaftEtMethodeVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "SchwangerschaftEtMethodeVS",
+    "title" : "Schwangerschaft Erwarteter Entbindungstermin Methode",
+    "description" : "Dieses Valueset enthält die Codes zur Beschreibung der Methode zur Bestimmung des erwarteten Entbindungstermins bei einer Schwangerschaft.",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.html" : "ISiK Schwangerschaft - Erwarteter Entbindungstermin"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/SchwangerschaftsstatusVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "SchwangerschaftsstatusVS",
+    "title" : "Schwangerschaftsstatus Valueset",
+    "description" : "Dieses Valueset enthält die Codes zur Beschreibung des Schwangerschaftsstatus einer Patientin.",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKSchwangerschaftsstatus.html" : "ISiK Schwangerschaftsstatus"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/StillstatusVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "StillstatusVS",
+    "title" : "Stillstatus LOINC Antwortoptionen",
+    "description" : "Dieses Valueset enthält die Codes zur Beschreibung von Stillstatus LOINC.",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKStillstatus.html" : "ISiKStillstatus"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/current-smoking-status-uv-ips",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "CurrentSmokingStatusUvIps",
+    "title" : "Current Smoking Status - IPS",
+    "description" : "HL7 LOINC value set for smoking status.  Based on the HL7 Vocab and Structured Doc WG (formerly TC) consensus - per US CDC submission 7/12/2012 for smoking status terms.",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKRaucherStatus.html" : "ISiK Raucherstatus"
+  }]
+}

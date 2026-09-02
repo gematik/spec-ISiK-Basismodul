@@ -1,0 +1,65 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/RelatedPerson/SZ1Mutter> a fhir:RelatedPerson ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SZ1Mutter"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: RelatedPerson SZ1Mutter</b></p><a name=\"SZ1Mutter\"> </a><a name=\"hcSZ1Mutter\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKAngehoeriger.html\">ISiKAngehoeriger</a></p></div><p><b>identifier</b>: Krankenversichertennummer/A987654321</p><p><b>patient</b>: <a href=\"Patient-SZ1Patient.html\">Töchterchen Musterfrau (official) Female, DoB: 2010-01-01 ( Medical record number)</a></p><p><b>relationship</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode MTH}\">mother</span></p><p><b>name</b>: Mama Musterfrau (Official)</p><p><b>address</b>: Milchstr. 42 Beispielstadt 78143 DE </p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/identifier-type-de-basis"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/identifier-type-de-basis>
+         ] ;
+         fhir:code [ fhir:v "KVZ10" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+       fhir:l <http://fhir.de/sid/gkv/kvid-10>
+     ] ;
+     fhir:value [ fhir:v "A987654321" ]
+  ] ) ; # 
+  fhir:patient [
+     fhir:l <https://gematik.de/fhir/isik/Patient/SZ1Patient> ;
+     fhir:reference [ fhir:v "Patient/SZ1Patient" ]
+  ] ; # 
+  fhir:relationship ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleCode"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-RoleCode>
+       ] ;
+       fhir:code [ fhir:v "MTH" ]
+     ] )
+  ] ) ; # 
+  fhir:name ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "Musterfrau" ] ;
+     fhir:given ( [ fhir:v "Mama" ] )
+  ] ) ; # 
+  fhir:address ( [
+     fhir:type [ fhir:v "both" ] ;
+     fhir:line ( [ fhir:v "Milchstr. 42" ] ) ;
+     fhir:city [ fhir:v "Beispielstadt" ] ;
+     fhir:postalCode [ fhir:v "78143" ] ;
+     fhir:country [ fhir:v "DE" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

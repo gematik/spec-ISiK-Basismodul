@@ -1,0 +1,331 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Kompatibilität - ISiK Medikation Implementierungsleitfaden v6.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"9"}
+    h3,h4,h5,h6{--heading-prefix:"9"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Use Cases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebersichtAnwendungsfaelle.html">Übersicht Anwendungsfälle (Use Cases)</a>
+      </li>
+      <li>
+        <a href="AnwendungsfallClosedLoopMedikationsprozess.html">Anwendungsfall - Closed Loop Medikationsprozess</a>
+      </li>
+      <li>
+        <a href="Bedarfsmedikation.html">Bedarfsmedikation</a>
+      </li>
+      <li>
+        <a href="Infusionen.html">Infusionen</a>
+      </li>
+      <li>
+        <a href="Informationsmodell.html">Informationsmodell</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Übergreifende Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebergreifendeFestlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+      <li>
+        <a href="Kompatibilitaet.html">Kompatibilität</a>
+      </li>
+      <li>
+        <a href="RestApi.html">REST-API</a>
+      </li>
+      <li>
+        <a href="AkteureUndInteraktionen.html">Akteure und Interaktionen</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Medikation Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0 - active
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Kompatibilität</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Kompatibilität</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#kompatibilität-zum-digital-gestützten-medikationsprozess-dgmp" id="markdown-toc-kompatibilität-zum-digital-gestützten-medikationsprozess-dgmp">Kompatibilität zum digital gestützten Medikationsprozess (dgMP)</a></li>
+  <li><a href="#kompatibilität-zum-medizininformatik-initiative-kerndatensatz-modul-medikation" id="markdown-toc-kompatibilität-zum-medizininformatik-initiative-kerndatensatz-modul-medikation">Kompatibilität zum Medizininformatik-Initiative Kerndatensatz Modul Medikation</a></li>
+  <li><a href="#kompatibilität-zum-kbv-erezept" id="markdown-toc-kompatibilität-zum-kbv-erezept">Kompatibilität zum KBV eRezept</a></li>
+  <li><a href="#kompatibilität-zur-elektronischen-medikationsliste-der-epa" id="markdown-toc-kompatibilität-zur-elektronischen-medikationsliste-der-epa">Kompatibilität zur elektronischen Medikationsliste der ePA</a></li>
+</ul>
+
+</div>
+<p>Der vorliegende Implementierungsleitfaden wurde aus der Analyse verschiedener in Deutschland bestehender Spezifikationen im Bereich Medikation heraus entwickelt.</p>
+
+<p>Überwiegend wurde dabei eine Vereinigungsmenge aus diesen, teilweise mit stark unterschiedlicher Ausrichtung verfassten, Spezifikationen hergestellt. Allerdings wurde auch zum einen der Entwicklung der letzten Jahre Rechnung getragen, zum anderen wurden sehr spezifische Datenelemente, die für die Medikationskommunikation im stationären Bereich nicht von Bedeutung sind, nicht berücksichtigt.</p>
+
+<p>Zu den betrachteten Spezifikationen und Anwendungen zählen insbesondere der <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.2/dgmp-overview.html">digital gestützte Medikationsprozess (dgMP)</a>, der <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.2/index.html">ePA Medication Service</a> mit der elektronischen Medikationsliste (eML), das <a href="https://simplifier.net/erezept">KBV eRezept</a>, der <a href="https://ig.fhir.de/igs/medication">MedicationDE-Implementierungsleitfaden</a> mit den Profilen DosageDE und TimingDE sowie der <a href="https://www.medizininformatik-initiative.de/Kerndatensatz/KDS_Medikation_2026/MIIIGModulMedikation.html">Medizininformatik-Initiative Kerndatensatz Modul Medikation</a>. Die jeweiligen Abschnitte verweisen auf die entsprechenden Spezifikationen und beschreiben die relevanten Unterschiede aus Sicht von ISiK-Medikation.</p>
+
+<h3 id="kompatibilität-zum-digital-gestützten-medikationsprozess-dgmp">Kompatibilität zum digital gestützten Medikationsprozess (dgMP)</h3>
+
+<p>Die Kompatibilität mit dem dgMP wird insbesondere dadurch unterstützt, dass ISiK-Medikation und die im dgMP verwendeten Profile auf Profilierungen aus dem <a href="https://ig.fhir.de/igs/medication">MedicationDE-Implementierungsleitfaden</a> aufbauen. ISiK-Medikation verwendet für strukturierte Dosierungsinformationen das Profil DosageDE sowie die darin verwendeten Strukturen zur Abbildung von Zeitangaben. Im dgMP wird hierfür das darauf aufbauende Profil DosageDgMP verwendet. Damit besteht für strukturierte Dosierungsinformationen eine gemeinsame Profilierungsgrundlage, auch wenn die Profile nicht identisch sind.</p>
+
+<h3 id="kompatibilität-zum-medizininformatik-initiative-kerndatensatz-modul-medikation">Kompatibilität zum Medizininformatik-Initiative Kerndatensatz Modul Medikation</h3>
+
+<p>Zwischen dem Medizininformatik-Initiative Kerndatensatz Modul Medikation und ISiK-Medikation bestehen fachliche und strukturelle Überschneidungen. Beide Spezifikationen verwenden die FHIR-Ressource Medication zur Abbildung von Medikamenten, unterscheiden sich jedoch in Profilierung, Terminologien und Kardinalitäten. Eine vollständige oder weitgehende Deckungsgleichheit der Spezifikationen ist damit nicht verbunden.</p>
+
+<p>Unterschiede bestehen insbesondere bei der Medikamenten-Codierung. Beide Spezifikationen unterstützen PZN und ATC-DE. Die Medizininformatik-Initiative sieht zusätzlich ATC-WHO für Medication.code vor, während ISiK-Medikation hierfür zusätzlich SNOMED CT zulässt. Je nach Ausgangsdaten kann daher ein Mapping oder eine Umcodierung erforderlich sein.</p>
+
+<p>Weitere Unterschiede bestehen bei der Abbildung von Wirkstoffen und Bestandteilen. Die Medizininformatik-Initiative verlangt mindestens einen Bestandteil und sieht für ingredient.itemCodeableConcept unter anderem ASK, UNII, CAS und SNOMED CT vor. ISiK-Medikation unterstützt an dieser Stelle ASK, ATC-DE, PZN und SNOMED CT und erlaubt außerdem die Abbildung von Medikamenteninformationen über Medication.code oder Freitext, sofern keine strukturierte Codierung möglich ist.</p>
+
+<h3 id="kompatibilität-zum-kbv-erezept">Kompatibilität zum KBV eRezept</h3>
+
+<p>Zwischen ISiK-Medikation und dem KBV eRezept besteht eine gemeinsame Profilierungsgrundlage über den MedicationDE-Implementierungsleitfaden. Insbesondere werden für die strukturierte Abbildung von Dosierungs- und Zeitangaben Profile aus MedicationDE verwendet. Dadurch wird eine fachliche und technische Kompatibilität in den gemeinsam genutzten Strukturen unterstützt.</p>
+
+<p>Gleichzeitig unterscheiden sich die Anwendungskontexte der beiden Spezifikationen. Die eRezept-Spezifikation enthält Datenelemente, die spezifisch für Rezept-Verordnungen, Einlösung und Abrechnung relevant sind. Diese sind unter anderem im Profil <a href="https://simplifier.net/erezept/kbv_pr_erp_prescription">KBV_PR_ERP_Prescription</a> beschrieben. Beispiele hierfür sind eRezept-spezifische Extensions, etwa Angaben im Kontext der Abrechnung wie die Notdienstgebühr. Solche eRezept-spezifischen Datenelemente werden in ISiK nicht explizit spezifiziert. Dennoch ist die Verwendung entsprechender Extensions in ISiK möglich und zulässig, sofern hierfür im konkreten Anwendungsfall ein Bedarf besteht.</p>
+
+<p>Umgekehrt erlaubt ISiK-Medikation Angaben, die über die Anforderungen und Einschränkungen des eRezepts hinausgehen. Soll aus einer ISiK-Verordnung ein eRezept generiert werden, muss daher geprüft werden, welche strukturierten Informationen direkt übernommen werden können und welche Informationen reduziert, angepasst oder in eine textuelle Beschreibung überführt werden müssen.</p>
+
+<p>Weiterhin kann die Erzeugung eines eRezepts aus den ISiK-FHIR-Ressourcen die Umsetzung direkt codierter Medikamente in eine eigene Medication-Ressource und/oder die Umcodierung des Medikamentencodes sowie der codierten Medikamenten-Bestandteile in einen Freitext erfordern.</p>
+
+<h3 id="kompatibilität-zur-elektronischen-medikationsliste-der-epa">Kompatibilität zur elektronischen Medikationsliste der ePA</h3>
+
+<p>Die elektronische Medikationsliste der ePA (eML) wird im ePA Medication Service insbesondere über das Profil EPAMedicationStatement abgebildet. ISiK-Medikation stellt mit dem Profil ISiKMedikationsInformation ebenfalls ein MedicationStatement-basiertes Profil zur Abbildung von Medikationsinformationen eines Patienten bereit.</p>
+
+<p>Auf Ebene der Arzneimittelinformation strebt ISiK-Medikation für das Profil ISiKMedikament eine größtmögliche Kompatibilität mit EPAMedication an. Auf Ebene der Medikationsinformation bestehen zudem strukturelle Überschneidungen zwischen EPAMedicationStatement und ISiKMedikationsInformation, insbesondere hinsichtlich der Referenzierung der Medikation, der Angabe von Status, Zeitraum und Dosierungsinformationen.</p>
+
+<p>Unterschiede bestehen insbesondere im jeweiligen Anwendungskontext sowie in ePA-spezifischen Kontext- und Prozessinformationen. EPAMedicationStatement enthält hierfür unter anderem Extensions, beispielsweise für den Kontext des eML-Eintrags und Verarbeitungsereignisse, sowie Referenzen auf Verordnungs- und Dispensierinformationen. Diese Informationen werden in ISiKMedikationsInformation nicht vollständig explizit spezifiziert. Die Verwendung zusätzlicher Extensions wird durch ISiK jedoch nicht ausgeschlossen, sofern diese im konkreten Anwendungsfall benötigt werden. Bei einer Überführung ist daher zu prüfen, welche Informationen direkt übernommen, über zusätzliche Extensions transportiert oder auf andere ISiK-Elemente bzw. -Profile abgebildet werden können.</p>
+
+<p>Für die strukturierte Dosierung verwenden beide Spezifikationen Profile aus dem MedicationDE-Implementierungsleitfaden. ISiKMedikationsInformation verwendet DosageDE, während EPAMedicationStatement DosageDgMP verwendet. Dadurch besteht eine gemeinsame Profilierungsgrundlage, auch wenn die Profile nicht identisch sind.</p>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  
+          Package medikation#6.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Sep 2, 2026 11:32+0000">2026-09-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

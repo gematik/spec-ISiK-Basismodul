@@ -1,0 +1,1093 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Kontext und Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Kontext und Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Erlaeuterung-Akteurs-und-Rollenmodell.html">
+                                            Akteurs- und Rollenmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_UmgangFehlendeDaten.html">
+                                            Umgang mit fehlenden Daten
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungverhaeltnis-sonstige-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis sonstige (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_BerichtBundle.html">
+                                            Bericht aus Subsystemen (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<p>Beispiel Patientin</p>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#d3e144c2-a43e-45e1-b7a4-835cee7ee43b" aria-controls="d3e144c2-a43e-45e1-b7a4-835cee7ee43b" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#5c22b62f-9f48-4cfe-aa98-b633c7164e85" aria-controls="5c22b62f-9f48-4cfe-aa98-b633c7164e85" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#89988c59-0c0f-4668-818b-e565e81ce485" aria-controls="89988c59-0c0f-4668-818b-e565e81ce485" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#a6c1a330-f00a-4152-8f16-e8efa65485a3" aria-controls="a6c1a330-f00a-4152-8f16-e8efa65485a3" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="d3e144c2-a43e-45e1-b7a4-835cee7ee43b">
+    <div class="stu3-treetable" id="60c85c09038b4b7b83493dbdf68b2eb0" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="a7f3db05babf4f82a5371f25b765f9f0"><td class="instance"><span class="baseIcon primitive"></span><b>Patient</b></td></tr><tr class="collapsed" data-id="249ec8b0ab9c4f5288ea5be5533773df" data-parentId="a7f3db05babf4f82a5371f25b765f9f0"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="e585afa0662640ae9d3b1ccf59e028e9" data-parentId="a7f3db05babf4f82a5371f25b765f9f0"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="030f380c070d4b95a46787a2ab381474" data-parentId="e585afa0662640ae9d3b1ccf59e028e9"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient</span></td></tr><tr class="collapsed" data-id="29e305d22ee44a94b57500719ddaa886" data-parentId="a7f3db05babf4f82a5371f25b765f9f0"><td class="instance"><span class="baseIcon primitive"></span><b>identifier</b></td></tr><tr class="collapsed" data-id="76282c4fdd57415b8c54d5cf9b659816" data-parentId="29e305d22ee44a94b57500719ddaa886"><td class="instance"><span class="baseIcon primitive"></span><b>type</b></td></tr><tr class="collapsed" data-id="e1190912594f44ed88fc0045f4fd72fb" data-parentId="76282c4fdd57415b8c54d5cf9b659816"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="976035de36a54b54b0f180d79399c49d" data-parentId="e1190912594f44ed88fc0045f4fd72fb"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/v2-0203</span></td></tr><tr class="collapsed" data-id="bfdff8f889ee4608b8d193dd7a7d01a8" data-parentId="e1190912594f44ed88fc0045f4fd72fb"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>MR</span></td></tr><tr class="collapsed" data-id="0fd4a48f82dc4d7b89aa9de1a85e313b" data-parentId="29e305d22ee44a94b57500719ddaa886"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>https://fhir.krankenhaus.example/sid/PID</span></td></tr><tr class="collapsed" data-id="22d52a604fd74155a989c9cd3ef1809e" data-parentId="29e305d22ee44a94b57500719ddaa886"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>TestPID</span></td></tr><tr class="collapsed" data-id="70702ba2380c497ebd4c97155acabb4e" data-parentId="a7f3db05babf4f82a5371f25b765f9f0"><td class="instance"><span class="baseIcon primitive"></span><b>identifier</b></td></tr><tr class="collapsed" data-id="ad356b55f7d041bfa8206c6f0708f1b0" data-parentId="70702ba2380c497ebd4c97155acabb4e"><td class="instance"><span class="baseIcon primitive"></span><b>type</b></td></tr><tr class="collapsed" data-id="ce129e252c2e4927b1c0d577ceb35c98" data-parentId="ad356b55f7d041bfa8206c6f0708f1b0"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="50f002fde29d4b9ab2b5d8f4fa310953" data-parentId="ce129e252c2e4927b1c0d577ceb35c98"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/CodeSystem/identifier-type-de-basis</span></td></tr><tr class="collapsed" data-id="bad7f1ef936d4bc993fb6b4d5be1feb8" data-parentId="ce129e252c2e4927b1c0d577ceb35c98"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>KVZ10</span></td></tr><tr class="collapsed" data-id="f8a2036ca9bc42e2ab61c8fa5d755b6b" data-parentId="70702ba2380c497ebd4c97155acabb4e"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/sid/gkv/kvid-10</span></td></tr><tr class="collapsed" data-id="80edbbe773354b0cafe5b55c0a1be282" data-parentId="70702ba2380c497ebd4c97155acabb4e"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>A123456789</span></td></tr><tr class="collapsed" data-id="92d91a1ff4234f7ca7d1991c45a87192" data-parentId="a7f3db05babf4f82a5371f25b765f9f0"><td class="instance"><span class="baseIcon primitive"></span><b>identifier</b></td></tr><tr class="collapsed" data-id="7cf93b874c25482a99ac2f1d1d21c421" data-parentId="92d91a1ff4234f7ca7d1991c45a87192"><td class="instance"><span class="baseIcon primitive"></span><b>use : </b><span>secondary</span></td></tr><tr class="collapsed" data-id="3b92142dbe514ac888eedf943213cc55" data-parentId="92d91a1ff4234f7ca7d1991c45a87192"><td class="instance"><span class="baseIcon primitive"></span><b>type</b></td></tr><tr class="collapsed" data-id="2938cec6ec5d4e34849530b684b5fac1" data-parentId="3b92142dbe514ac888eedf943213cc55"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="70d4204e9c444d06bd405f012d6ab797" data-parentId="2938cec6ec5d4e34849530b684b5fac1"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/CodeSystem/identifier-type-de-basis</span></td></tr><tr class="collapsed" data-id="6b95f794143245559ce576e926716fed" data-parentId="2938cec6ec5d4e34849530b684b5fac1"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>PKV</span></td></tr><tr class="collapsed" data-id="7cb7e07c5d8a4a23ad082b020faf8299" data-parentId="92d91a1ff4234f7ca7d1991c45a87192"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>1234567890</span></td></tr><tr class="collapsed" data-id="1e2767d8d309454ea4f447a9b9a255ee" data-parentId="92d91a1ff4234f7ca7d1991c45a87192"><td class="instance"><span class="baseIcon primitive"></span><b>assigner</b></td></tr><tr class="collapsed" data-id="e320d7fa80e647b99bcf0e6ed0e7fb2b" data-parentId="1e2767d8d309454ea4f447a9b9a255ee"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Test PKV AG</span></td></tr><tr class="collapsed" data-id="d6c8922720fe44388bf1edb4cd3ca18a" data-parentId="a7f3db05babf4f82a5371f25b765f9f0"><td class="instance"><span class="baseIcon primitive"></span><b>active : </b><span>True</span></td></tr><tr class="collapsed" data-id="9c75e237b097487c99b09cfdfe06fe44" data-parentId="a7f3db05babf4f82a5371f25b765f9f0"><td class="instance"><span class="baseIcon primitive"></span><b>name</b></td></tr><tr class="collapsed" data-id="e6262caced55497ea2f0be3f74188c61" data-parentId="9c75e237b097487c99b09cfdfe06fe44"><td class="instance"><span class="baseIcon primitive"></span><b>use : </b><span>official</span></td></tr><tr class="collapsed" data-id="3ce8e564472b476790d5aa6e793beec8" data-parentId="9c75e237b097487c99b09cfdfe06fe44"><td class="instance"><span class="baseIcon primitive"></span><b>family : </b><span>F&#252;rstin von Musterfrau</span></td></tr><tr class="collapsed" data-id="6a856bfea7db4b1685c82eed0b543836" data-parentId="3ce8e564472b476790d5aa6e793beec8"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="a3ca8c150b514a41a502d2323e9ee8a1" data-parentId="6a856bfea7db4b1685c82eed0b543836"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://fhir.de/StructureDefinition/humanname-namenszusatz</span></td></tr><tr class="collapsed" data-id="2d03a30265f8413c88e3a61ccc5f753e" data-parentId="6a856bfea7db4b1685c82eed0b543836"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>F&#252;rstin</span></td></tr><tr class="collapsed" data-id="4495ab1d07db4a939464d34ab242e1dc" data-parentId="3ce8e564472b476790d5aa6e793beec8"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="ac243acf21d848bcb478dd700668cd06" data-parentId="4495ab1d07db4a939464d34ab242e1dc"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://hl7.org/fhir/StructureDefinition/humanname-own-name</span></td></tr><tr class="collapsed" data-id="e79fc9d725444c4c89de744369823df5" data-parentId="4495ab1d07db4a939464d34ab242e1dc"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>Musterfrau</span></td></tr><tr class="collapsed" data-id="cf223ecb7b264d9a87c78926467f93b2" data-parentId="3ce8e564472b476790d5aa6e793beec8"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="b21a620134cf4c83bfc902c176acf6c0" data-parentId="cf223ecb7b264d9a87c78926467f93b2"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://hl7.org/fhir/StructureDefinition/humanname-own-prefix</span></td></tr><tr class="collapsed" data-id="c5566835150b42a4973c2f20f6492d87" data-parentId="cf223ecb7b264d9a87c78926467f93b2"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>von</span></td></tr><tr class="collapsed" data-id="f692c7d3f0b945e8bf74cb96b565b8ce" data-parentId="9c75e237b097487c99b09cfdfe06fe44"><td class="instance"><span class="baseIcon primitive"></span><b>given : </b><span>Erika</span></td></tr><tr class="collapsed" data-id="3e313e5e6cf447309113228048bad0a5" data-parentId="9c75e237b097487c99b09cfdfe06fe44"><td class="instance"><span class="baseIcon primitive"></span><b>prefix : </b><span>Dr.</span></td></tr><tr class="collapsed" data-id="f3640601e7304c9190d71333b0b893e4" data-parentId="3e313e5e6cf447309113228048bad0a5"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="3ed2fb184e434751b45ca5e2087d73f4" data-parentId="f3640601e7304c9190d71333b0b893e4"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier</span></td></tr><tr class="collapsed" data-id="defd4c01a2394887b5dde8f476ef8596" data-parentId="f3640601e7304c9190d71333b0b893e4"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>AC</span></td></tr><tr class="collapsed" data-id="0417911dfd9c43fb80f13fe02671998e" data-parentId="a7f3db05babf4f82a5371f25b765f9f0"><td class="instance"><span class="baseIcon primitive"></span><b>name</b></td></tr><tr class="collapsed" data-id="e736c95fb5604b38927cf40d02d375db" data-parentId="0417911dfd9c43fb80f13fe02671998e"><td class="instance"><span class="baseIcon primitive"></span><b>use : </b><span>maiden</span></td></tr><tr class="collapsed" data-id="60f0d2bc60d84d35a7043e0896762c0d" data-parentId="0417911dfd9c43fb80f13fe02671998e"><td class="instance"><span class="baseIcon primitive"></span><b>family : </b><span>Gabler</span></td></tr><tr class="collapsed" data-id="e4554805395546a8a9921e2ba9001646" data-parentId="60f0d2bc60d84d35a7043e0896762c0d"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="0e837ef5084e4b71acbad0ffef96d541" data-parentId="e4554805395546a8a9921e2ba9001646"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://hl7.org/fhir/StructureDefinition/humanname-own-name</span></td></tr><tr class="collapsed" data-id="87f87e04c930408882a403deadc30ad6" data-parentId="e4554805395546a8a9921e2ba9001646"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>Gabler</span></td></tr><tr class="collapsed" data-id="a8cbb27839d54fc78fcd56d2ec78fc3d" data-parentId="a7f3db05babf4f82a5371f25b765f9f0"><td class="instance"><span class="baseIcon primitive"></span><b>gender : </b><span>female</span></td></tr><tr class="collapsed" data-id="e478cd22e95945828d0e5846e066b659" data-parentId="a7f3db05babf4f82a5371f25b765f9f0"><td class="instance"><span class="baseIcon primitive"></span><b>birthDate : </b><span>1964-08-12</span></td></tr><tr class="collapsed" data-id="4353373710c94a99b3bbbfb1ceac1777" data-parentId="a7f3db05babf4f82a5371f25b765f9f0"><td class="instance"><span class="baseIcon primitive"></span><b>address</b></td></tr><tr class="collapsed" data-id="c86e22a9c70f46bfaf208037311d1bd7" data-parentId="4353373710c94a99b3bbbfb1ceac1777"><td class="instance"><span class="baseIcon primitive"></span><b>type : </b><span>both</span></td></tr><tr class="collapsed" data-id="cbbd95b9fc7b44ccbf4c2e164d28c844" data-parentId="4353373710c94a99b3bbbfb1ceac1777"><td class="instance"><span class="baseIcon primitive"></span><b>line : </b><span>Musterweg 2</span></td></tr><tr class="collapsed" data-id="858322f0597e42b895070306e2798844" data-parentId="cbbd95b9fc7b44ccbf4c2e164d28c844"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="602a2f39cdac48d98084b9be9162e33b" data-parentId="858322f0597e42b895070306e2798844"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName</span></td></tr><tr class="collapsed" data-id="5df026dbd2c44ff89b4f80601517d32e" data-parentId="858322f0597e42b895070306e2798844"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>Musterweg</span></td></tr><tr class="collapsed" data-id="76e6504674e148e2afa72dd548dceca7" data-parentId="cbbd95b9fc7b44ccbf4c2e164d28c844"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="18352db44ef048dc892832af48f33b9e" data-parentId="76e6504674e148e2afa72dd548dceca7"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber</span></td></tr><tr class="collapsed" data-id="7b52bac3c1ec428f84dff48db55358b8" data-parentId="76e6504674e148e2afa72dd548dceca7"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>2</span></td></tr><tr class="collapsed" data-id="37008c89d2a44cc28cf439c847c03c20" data-parentId="4353373710c94a99b3bbbfb1ceac1777"><td class="instance"><span class="baseIcon primitive"></span><b>line : </b><span>3. Etage</span></td></tr><tr class="collapsed" data-id="e854e3174e7f430b9530049d7d7611e9" data-parentId="37008c89d2a44cc28cf439c847c03c20"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="ae7c61c061664698bbf3c9aaa2d2ebbd" data-parentId="e854e3174e7f430b9530049d7d7611e9"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator</span></td></tr><tr class="collapsed" data-id="42fcf866f27743fcb1ad685d36e224e6" data-parentId="e854e3174e7f430b9530049d7d7611e9"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>3. Etage</span></td></tr><tr class="collapsed" data-id="4a8729cc6c9b4662b2beb95656c42228" data-parentId="4353373710c94a99b3bbbfb1ceac1777"><td class="instance"><span class="baseIcon primitive"></span><b>city : </b><span>Musterhausen</span></td></tr><tr class="collapsed" data-id="87a15b8461644dc485d438e25b032825" data-parentId="4353373710c94a99b3bbbfb1ceac1777"><td class="instance"><span class="baseIcon primitive"></span><b>postalCode : </b><span>98764</span></td></tr><tr class="collapsed" data-id="e8d8d54545a04cd6889837d9ef36c560" data-parentId="4353373710c94a99b3bbbfb1ceac1777"><td class="instance"><span class="baseIcon primitive"></span><b>country : </b><span>DE</span></td></tr><tr class="collapsed" data-id="8da162f6774f4aafb338bdaa79de83fb" data-parentId="a7f3db05babf4f82a5371f25b765f9f0"><td class="instance"><span class="baseIcon primitive"></span><b>address</b></td></tr><tr class="collapsed" data-id="1a69d5e671514913bc511bde94877fb9" data-parentId="8da162f6774f4aafb338bdaa79de83fb"><td class="instance"><span class="baseIcon primitive"></span><b>type : </b><span>postal</span></td></tr><tr class="collapsed" data-id="05e316b212834c43ad3a8f6770dc69f7" data-parentId="8da162f6774f4aafb338bdaa79de83fb"><td class="instance"><span class="baseIcon primitive"></span><b>line : </b><span>Postfach 8 15</span></td></tr><tr class="collapsed" data-id="d1465b93aa654388ab0bd31ab1d3b5f5" data-parentId="05e316b212834c43ad3a8f6770dc69f7"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="6db269dae2b34ca69277d61ff9b84cdc" data-parentId="d1465b93aa654388ab0bd31ab1d3b5f5"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox</span></td></tr><tr class="collapsed" data-id="5b9657a527e84dd09defdb831ffd9b09" data-parentId="d1465b93aa654388ab0bd31ab1d3b5f5"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>Postfach 8 15</span></td></tr><tr class="collapsed" data-id="207dd5365bc543b7a290c4fe9e272643" data-parentId="8da162f6774f4aafb338bdaa79de83fb"><td class="instance"><span class="baseIcon primitive"></span><b>city : </b><span>Musterhausen</span></td></tr><tr class="collapsed" data-id="c27dc00a567b4fa99c9c561863ec1976" data-parentId="8da162f6774f4aafb338bdaa79de83fb"><td class="instance"><span class="baseIcon primitive"></span><b>postalCode : </b><span>98764</span></td></tr><tr class="collapsed" data-id="cb2613524ce4409ebeae9e84deb69f00" data-parentId="8da162f6774f4aafb338bdaa79de83fb"><td class="instance"><span class="baseIcon primitive"></span><b>country : </b><span>DE</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable60c85c09038b4b7b83493dbdf68b2eb0 = new InstanceTree();
+resourceTreeTable60c85c09038b4b7b83493dbdf68b2eb0.init("60c85c09038b4b7b83493dbdf68b2eb0");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="5c22b62f-9f48-4cfe-aa98-b633c7164e85">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">Patient</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.id" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.meta" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.meta.profile" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">identifier</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">type</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding.system" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding.code" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MR</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">type</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.system" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://fhir.krankenhaus.example/sid/PID</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">TestPID</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">identifier</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">identifier</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">type</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding.system" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/CodeSystem/identifier-type-de-basis</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding.code" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">KVZ10</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">type</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.system" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/sid/gkv/kvid-10</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">A123456789</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">identifier</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">identifier</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.use" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">use</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">secondary</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">type</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding.system" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/CodeSystem/identifier-type-de-basis</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding.code" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">PKV</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">type</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1234567890</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.assigner" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">assigner</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.assigner.display" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Test PKV AG</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">assigner</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">identifier</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.active" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">active</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">name</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.use" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">use</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">official</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.family" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">family</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">F&#252;rstin von Musterfrau</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.family.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/StructureDefinition/humanname-namenszusatz</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.family.extension.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">F&#252;rstin</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.family.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/humanname-own-name</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.family.extension.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Musterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.family.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/humanname-own-prefix</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.family.extension.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">von</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">family</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.given" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">given</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Erika</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.prefix" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">prefix</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Dr.</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.prefix.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.prefix.extension.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueCode</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">AC</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">prefix</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">name</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">name</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.use" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">use</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">maiden</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.family" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">family</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Gabler</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.family.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/humanname-own-name</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.family.extension.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Gabler</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">family</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">name</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.gender" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">gender</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">female</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.birthDate" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">birthDate</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1964-08-12</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">address</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.type" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">both</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.line" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">line</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Musterweg 2</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.line.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.line.extension.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Musterweg</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.line.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.line.extension.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">line</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.line" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">line</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">3. Etage</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.line.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.line.extension.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">3. Etage</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">line</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.city" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">city</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Musterhausen</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.postalCode" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">postalCode</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">98764</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.country" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">country</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">DE</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">address</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">address</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.type" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">postal</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.line" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">line</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Postfach 8 15</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.line.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.line.extension.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Postfach 8 15</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">line</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.city" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">city</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Musterhausen</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.postalCode" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">postalCode</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">98764</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.country" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">country</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">DE</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">address</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Patient</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="89988c59-0c0f-4668-818b-e565e81ce485">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.resourceType" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.id" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">PatientinMusterfrau</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.meta" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.meta.profile" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">identifier</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding.code" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MR</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding.system" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.system" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://fhir.krankenhaus.example/sid/PID</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">TestPID</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding.code" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">KVZ10</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding.system" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/identifier-type-de-basis</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.system" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/sid/gkv/kvid-10</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">A123456789</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.use" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">use</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">secondary</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding.code" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">PKV</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.type.coding.system" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/identifier-type-de-basis</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.value" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1234567890</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.assigner" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">assigner</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.identifier.assigner.display" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Test PKV AG</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.use" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">use</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">official</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.family" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">family</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">F&#252;rstin von Musterfrau</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._family" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">_family</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._family.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._family.extension.url" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/StructureDefinition/humanname-namenszusatz</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._family.extension.valueString" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">F&#252;rstin</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._family.extension.url" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/humanname-own-name</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._family.extension.valueString" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Musterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._family.extension.url" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/humanname-own-prefix</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._family.extension.valueString" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">von</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.given" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">given</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">Erika</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.prefix" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">prefix</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">Dr.</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._prefix" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">_prefix</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._prefix.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._prefix.extension.url" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._prefix.extension.valueCode" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueCode</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">AC</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.use" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">use</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">maiden</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name.family" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">family</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Gabler</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._family" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">_family</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._family.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._family.extension.url" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/humanname-own-name</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.name._family.extension.valueString" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Gabler</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.active" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">active</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.gender" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">gender</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">female</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.birthDate" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">birthDate</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1964-08-12</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">address</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.type" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">both</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.line" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">line</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">Musterweg 2</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="string">&quot;</span><span class="string">3. Etage</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address._line" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">_line</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address._line.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address._line.extension.url" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address._line.extension.valueString" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Musterweg</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address._line.extension.url" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address._line.extension.valueString" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address._line.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address._line.extension.url" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address._line.extension.valueString" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">3. Etage</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.city" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">city</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Musterhausen</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.postalCode" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">postalCode</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">98764</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.country" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">country</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">DE</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.type" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">postal</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.line" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">line</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">Postfach 8 15</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address._line" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">_line</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address._line.extension" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address._line.extension.url" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address._line.extension.valueString" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Postfach 8 15</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.city" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">city</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Musterhausen</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.postalCode" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">postalCode</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">98764</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKPatient.json#Patient.address.country" title="ISiKPatient
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKPatient.json" target="_blank">country</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">DE</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="a6c1a330-f00a-4152-8f16-e8efa65485a3">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Patient-PatientinMusterfrau.json'>Erika Fürstin von Musterfrau</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

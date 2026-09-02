@@ -1,0 +1,462 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Best Practice für FormularDefinitionen - ISiK Formularmodul Implementation Guide v6.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"8"}
+    h3,h4,h5,h6{--heading-prefix:"8"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li>
+    <a href="Ziele.html">Ziele</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spezifikationen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="FunktionenInteraktionen.html">Funktionen und Interaktionen</a>
+      </li>
+      <li>
+        <a href="Spezifikationen_Beispielszenarien.html">Beispielszenarien</a>
+      </li>
+      <li>
+        <a href="Spezifikationen_BestPractice.html">Best Practice für FormularDefinitionen</a>
+      </li>
+      <li>
+        <a href="Extensions.html">Extensions</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Festlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts-isik.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Formularmodul Implementation Guide<br />
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0 - ballot
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Best Practice für FormularDefinitionen</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Best Practice für FormularDefinitionen</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#funktionsumfang" id="markdown-toc-funktionsumfang">Funktionsumfang</a></li>
+  <li><a href="#annotation-für-die-vorbelegung" id="markdown-toc-annotation-für-die-vorbelegung">Annotation für die Vorbelegung</a></li>
+  <li><a href="#annotation-für-die-extraktion" id="markdown-toc-annotation-für-die-extraktion">Annotation für die Extraktion</a></li>
+  <li><a href="#vorbereitung-für-definition-based-extraction-und-prepopulation" id="markdown-toc-vorbereitung-für-definition-based-extraction-und-prepopulation">Vorbereitung für Definition-Based Extraction und Prepopulation</a></li>
+  <li><a href="#launch-kontext" id="markdown-toc-launch-kontext">Launch-Kontext</a></li>
+  <li><a href="#mehrsprachigkeit-von-formularen" id="markdown-toc-mehrsprachigkeit-von-formularen">Mehrsprachigkeit von Formularen</a></li>
+  <li><a href="#formulare-im-kontext-von-medizinprodukten" id="markdown-toc-formulare-im-kontext-von-medizinprodukten">Formulare im Kontext von Medizinprodukten</a></li>
+</ul>
+
+</div>
+<h3 id="funktionsumfang">Funktionsumfang</h3>
+
+<p>FormularDefinitionen sollten sich auf den Umfang der in diesem Modul festgelegten Funktionalitäten und Extensions beschränken.
+Alle weiteren Funtionalitäten und Extensions müssen so verwendet werden, dass diese von einem <a href="Akteure.html#formularrenderer">FormularRenderer</a> gefahrlos ignoriert werden können, 
+ohne dass dies die Nutzbarkeit des Formulars einschränkt.</p>
+
+<h3 id="annotation-für-die-vorbelegung">Annotation für die Vorbelegung</h3>
+
+<p>Formularfelder, die Daten erheben, die durch ein Element des ISiK-Patienten- oder ISiK-Encounter-Profils repräsentiert werden können, müssen <em>zwingend</em> für die automatische Vorbelegung annotiert werden.
+Formularfelder, die Daten erheben, die durch ein ISiK-Profil des Ressourcen-Typs Observation repräsentiert werden können, müssen <em>zwingend</em> in der Modellierung an das ISiK-Profil angepasst werden und für die automatische Vorbelegung annotiert werden.</p>
+
+<h3 id="annotation-für-die-extraktion">Annotation für die Extraktion</h3>
+
+<p>Formularfelder, die Daten erheben, die durch eine Observation-Ressource repräsentiert werden können, sollten für die Extraktion annotiert werden.
+Formularfelder, die Daten erheben, die durch eine Observation-Ressource repräsentiert werden können, sollten in item.definition auf ein geeignetes nationales oder internationales Observation-Profil für die Extraktion verweisen.
+Formulare, die sich im Bereich von ISiK-definierten Ressourcen (außer Observation) bewegen, sollten mit Template-based Extraction Annotationen versehen werden. Entsprechende Template Profile für die Basis sind vorhanden.</p>
+
+<h3 id="vorbereitung-für-definition-based-extraction-und-prepopulation">Vorbereitung für Definition-Based Extraction und Prepopulation</h3>
+
+<p>Obwohl die Definition-Based Extraction und Prepopulation derzeit nicht verbindlich sind, sollten Autoren von Formulardefinitionen die zugrunde liegenden Prinzipien berücksichtigen und ihre Modelle so strukturieren, dass eine zukünftige Extraktion in geeignete FHIR-Ressourcen ermöglicht wird.</p>
+
+<h3 id="launch-kontext">Launch-Kontext</h3>
+
+<p>FormularDefinitionen sollten immer das Vorhandensein eines Patienten- und Encounter-Kontextes annehmen und die Launch-Context-Extension entsprechend nutzen.</p>
+
+<h3 id="mehrsprachigkeit-von-formularen">Mehrsprachigkeit von Formularen</h3>
+
+<p>Im ISiK Kontext ist die Sprache der Formulardefinitionen und Formulardaten meist mit de-DE (deutsch-Deutschland) anzugeben. Weicht die Sprache ab, sollte dies in der Formulardefinition und den Formulardaten entsprechend annotiert werden. Liegt ein Formular in mehreren Sprachen vor, gibt es verschiedene Möglichkeiten, dies zu modellieren. Die Möglichkeiten sind im Folgenden aufgeführt, ohne dass im Rahmen dieses Moduls eine Präferenz oder Empfehlung für eine der Möglichkeiten gegeben wird. <strong>Wir bitten hier aktiv um Feedback aus der Praxis, um die BestPractices zu diesem Thema weiterzuentwickeln.</strong></p>
+
+<h4 id="möglichkeit-1-designation-und-translation-extension">Möglichkeit 1: Designation und Translation Extension</h4>
+
+<p>Die erste Möglichkeit ist die Nutzung der Translation Extension für die Übersetzung von Texten, sowie Designations in ValueSets für die Übersetzung von Antwortoptionen. Hierbei werden die Texte in der Formulardefinition und den Formulardaten in der Hauptsprache angegeben, sowie die Translation Extension für die Übersetzung verwendet wird:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de-DE"</span><span class="err">,</span><span class="w">
+</span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aufnahmebogen"</span><span class="err">,</span><span class="w">
+</span><span class="nl">"_title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/translation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lang"</span><span class="p">,</span><span class="w"> </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"content"</span><span class="p">,</span><span class="w"> </span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Admission form"</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de-DE"</span><span class="err">,</span><span class="w">
+</span><span class="nl">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"linkId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Haben Sie eine Voranmeldung?"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"_text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/translation"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lang"</span><span class="p">,</span><span class="w"> </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w"> </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"content"</span><span class="p">,</span><span class="w"> </span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do you have a pre-registration?"</span><span class="w"> </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"choice"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"answerValueSet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.org/fhir/ValueSet/ja-nein-vs"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Das referenzierte ValueSet nutzt dann designation für die Übersetzung der Antwortoptionen:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"concept"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Y"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ja"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"designation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de-DE"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ja"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nein"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"designation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de-DE"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nein"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w"> </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No"</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Vorteile:</strong></p>
+<ul>
+  <li>Eine einzige Formulardefinition für alle Sprachen (Single Source of Truth)</li>
+  <li>Sprachauswahl kann zur Laufzeit durch den Renderer erfolgen</li>
+  <li>Strukturänderungen müssen nur einmal vorgenommen werden</li>
+</ul>
+
+<p><strong>Nachteile:</strong></p>
+<ul>
+  <li>Die Formulardefinition wird umfangreicher und unübersichtlicher</li>
+  <li>Renderer muss die Translation Extension und ValueSet-Designations aktiv unterstützen</li>
+  <li>Fehlende Übersetzungen sind schwerer zu erkennen</li>
+  <li>Bei sprachspezifisch unterschiedlicher Formularstruktur ist dieser Ansatz nicht geeignet</li>
+</ul>
+
+<h4 id="möglichkeit-2-mehrere-formulardefinitionen-mit-language-und-sprach-suffix-in-der-url">Möglichkeit 2: Mehrere Formulardefinitionen mit "language" und "Sprach-Suffix" in der URL</h4>
+
+<p>Die zweite Möglichkeit ist die Anlage mehrerer Formulardefinitionen, die sich im Element <code class="language-plaintext highlighter-rouge">language</code> unterscheiden und zusätzlich in der URL ein Suffix für die Sprache tragen. Die Sprachversionen können über <code class="language-plaintext highlighter-rouge">derivedFrom</code> miteinander verknüpft werden.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Questionnaire"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aufnahmebogen-de"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.org/fhir/Questionnaire/aufnahmebogen-de"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de-DE"</span><span class="p">,</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Questionnaire"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aufnahmebogen-en"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.org/fhir/Questionnaire/aufnahmebogen-en"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"derivedFrom"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"http://example.org/fhir/Questionnaire/aufnahmebogen-de"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Vorteile:</strong></p>
+<ul>
+  <li>Klare, übersichtliche Formulardefinitionen je Sprache</li>
+  <li>Sprachspezifische Unterschiede in der Formularstruktur sind einfach abzubilden</li>
+  <li>Renderer benötigt keine besondere Unterstützung für Translation Extensions</li>
+  <li>Vollständigkeit einer Übersetzung ist leicht zu überprüfen</li>
+</ul>
+
+<p><strong>Nachteile:</strong></p>
+<ul>
+  <li>Redundanz: Formularstruktur und -logik werden dupliziert</li>
+  <li>Änderungen müssen in allen Sprachversionen synchron nachgezogen werden</li>
+  <li>Erhöhtes Risiko von Inkonsistenzen zwischen den Sprachversionen</li>
+</ul>
+
+<h3 id="formulare-im-kontext-von-medizinprodukten">Formulare im Kontext von Medizinprodukten</h3>
+<p>Erfüllt eine Software ein Kriterium aus der MDR Art. 2, wird sie zum Medizinprodukt. Formulare sind kein Medizinprodukt, es kann allerdings Einsatzzwecke geben, bei denen die Kriterien der MDR erfüllt sind. Konkretes Beispiel wäre die Nutzung von Berechnungen auf deren Basis z.B. Entscheidungen am individuellen Patienten abgeleitet werden. Die Verantwortlichkeit für die Inverkehrbringung liegt hierbei beim Hersteller der Software. Aus diesem Grund ist es wichtig, sich Gedanken über den Einsatzzweck zu machen und diesen festzulegen. Ist ein Formular für eine statistische Auswertung im Forschungskontext gedacht, kann es durch eine Software angezeigt, berechnet und verarbeitet werden, ohne unter die MDR zu fallen. Ist das selbe Formular aber mit medizinischem Zweck am individuellen Patienten im Einsatz, kann die anzeigende, berechnende und verarbeitende Software durchaus unter die MDR fallen.</p>
+
+<p>Aus diesem Grund soll im Rahmen des Moduls die Möglichkeit gegeben werden, die Zweckbestimmung eines Formulars mit zu erfassen und so teilweise strukturiert anzugeben, ob das Formular ohne vorheriges Auseinandersetzen mit der MDR angezeigt, berechnet und verarbeitet werden darf, oder ob hier gewisse Bedingungen erfüllt werden müssen. Für weitere Informationen zu diesem Thema verweisen wir auf die <a href="https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf">Richtlinie</a>.</p>
+
+<p>Mit der Extension <a href="StructureDefinition-ISiKMpFormularExtension.html">ISiKMpFormularExtension</a> besteht die Möglichkeit anzugeben, dass das Formular innerhalb eines Medizinproduktes eingesetzt wird und zusätzlich eine Zweckbestimmung anzugeben ist. Die Interpretation der Zweckbestimmung und der daraus folgenden Konsequenzen für die eingesetzte Software liegt im Verantwortungsbereich des Software-Hersteller!</p>
+
+<p>Formular-Renderer, die kein Medizinprodukt sind, müssen aufgrund dieser Extension keine ISiK-spezifischen Anpassungen implementieren.
+Da die Extension als Modifier-Extension modelliert ist, gelten die grundsätzlichen Regeln der FHIR-Spezifikation für den Umgang: http://hl7.org/fhir/extensibility.html#modifierExtension.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Work in Progress</strong></th>
+      <th><strong>Unvollständige Inhalte</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="Betriebskoordination_Gruen_gematik.svg" width="40" /></td>
+      <td>Diese Seite ist unvollständig. Die BestPractices sollen aus den Erfahrungen mit ersten Implementierungen und Anwendungen dieses Moduls heraus entwickelt und kontinuierlich fortgeschrieben werden. Vorschläge und Hinweise zur Weiterentwicklung können im  <a href="https://chat.fhir.org/#streams/287581/german.2Fisik">ISiK-Unterforum</a> des <a href="https://chat.fhir.org/">internationalen FHIR-Chats</a> gegeben werden. <strong>Bei der Anlage neuer Diskussionsthemen mit Bezug zu diesem Modul bitte das Präfix <code class="language-plaintext highlighter-rouge">[FORM]</code> verwenden!</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  
+          Package formular#6.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Sep 2, 2026 11:31+0000">2026-09-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

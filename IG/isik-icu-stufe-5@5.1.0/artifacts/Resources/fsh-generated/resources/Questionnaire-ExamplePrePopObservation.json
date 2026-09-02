@@ -1,0 +1,159 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "ExamplePrePopObservation",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"
+    ]
+  },
+  "subjectType": [
+    "Patient"
+  ],
+  "contained": [
+    {
+      "resourceType": "ValueSet",
+      "id": "pflegegrad-de",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+        ]
+      },
+      "url": "http://fhir.de/ValueSet/pflegegrad-de",
+      "version": "1.5.4",
+      "name": "PflegegradDE",
+      "title": "PflegegradDE ValueSet",
+      "status": "active",
+      "experimental": false,
+      "date": "2025-06-16",
+      "publisher": "HL7 Deutschland e.V. (Technisches Komitee FHIR)",
+      "contact": [
+        {
+          "telecom": [
+            {
+              "system": "url",
+              "value": "http://hl7.de/technische-komitees/fhir/"
+            }
+          ]
+        }
+      ],
+      "description": "Codes zur genaueren Differenzierung des Pflegegrads.",
+      "compose": {
+        "include": [
+          {
+            "system": "http://fhir.de/CodeSystem/bfarm/ops",
+            "filter": [
+              {
+                "property": "parent",
+                "op": "=",
+                "value": "9-984"
+              }
+            ]
+          }
+        ]
+      },
+      "expansion": {
+        "identifier": "440c50b5-7272-4184-9ddd-95a75d8207f8",
+        "timestamp": "2019-07-06",
+        "total": 6,
+        "contains": [
+          {
+            "system": "http://fhir.de/CodeSystem/bfarm/ops",
+            "code": "9-984.6",
+            "display": "Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 1"
+          },
+          {
+            "system": "http://fhir.de/CodeSystem/bfarm/ops",
+            "code": "9-984.7",
+            "display": "Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 2"
+          },
+          {
+            "system": "http://fhir.de/CodeSystem/bfarm/ops",
+            "code": "9-984.8",
+            "display": "Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 3"
+          },
+          {
+            "system": "http://fhir.de/CodeSystem/bfarm/ops",
+            "code": "9-984.9",
+            "display": "Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 4"
+          },
+          {
+            "system": "http://fhir.de/CodeSystem/bfarm/ops",
+            "code": "9-984.a",
+            "display": "Pflegebedürftigkeit: Pflegebedürftig nach Pflegegrad 5"
+          },
+          {
+            "system": "http://fhir.de/CodeSystem/bfarm/ops",
+            "code": "9-984.b",
+            "display": "Pflegebedürftigkeit: Erfolgter Antrag auf Einstufung in einen Pflegegrad"
+          }
+        ]
+      }
+    }
+  ],
+  "name": "ExamplePrePopObservation",
+  "version": "0.1.0",
+  "url": "https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopObservation",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Gematik GmbH",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "patient",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Patient"
+        },
+        {
+          "url": "description",
+          "valueString": "Patientenkontext"
+        }
+      ]
+    }
+  ],
+  "title": "Vorbelegung von Observations",
+  "description": "### Beispiel-Questionnaire mit automatischer Vorbelegung von Observations  \nDie Suche nach passenden Observations geschieht innerhlab des Patienten-Kontextes anhand des in `item-code`hinterlegten Codes.\nDie Extension [SDC-ObservationLinkPeriod](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationLinkPeriod.html) legt fest, wie alt  Observations maximal sein dürfen, um für die Vorbelegung herangezogen zu werden (hier: max. 1 Jahr)  \nDie Extension [SDC-ObservationExtract](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationExtract.html) legt fest, ob aus den Angaben des Questionnaires eine neue Observation extrahiert werden soll (hier: true)",
+  "item": [
+    {
+      "type": "group",
+      "required": true,
+      "linkId": "3",
+      "text": "Pflegegrad",
+      "item": [
+        {
+          "type": "choice",
+          "linkId": "3.1",
+          "text": "Bitte geben Sie den Pflegegrad an:",
+          "code": [
+            {
+              "code": "80391-6",
+              "system": "http://loinc.org"
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationLinkPeriod",
+              "valueDuration": {
+                "value": 1,
+                "code": "a",
+                "system": "http://unitsofmeasure.org"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            }
+          ],
+          "answerValueSet": "#pflegegrad-de"
+        }
+      ]
+    }
+  ]
+}

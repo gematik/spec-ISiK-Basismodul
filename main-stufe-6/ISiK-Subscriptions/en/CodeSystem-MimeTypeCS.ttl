@@ -1,0 +1,60 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/CodeSystem/MimeTypeCS> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "MimeTypeCS"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem MimeTypeCS</b></p><a name=\"MimeTypeCS\"> </a><a name=\"hcMimeTypeCS\"> </a><p>This case-insensitive code system <code>urn:ietf:bcp:13</code> provides <b>a fragment</b> that includes following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">application/fhir+xml<a name=\"MimeTypeCS-application.47fhir.43xml\"> </a></td><td>FHIR XML</td></tr><tr><td style=\"white-space:nowrap\">application/fhir+json<a name=\"MimeTypeCS-application.47fhir.43json\"> </a></td><td>FHIR JSON</td></tr><tr><td style=\"white-space:nowrap\">application/pdf<a name=\"MimeTypeCS-application.47pdf\"> </a></td><td>PDF</td></tr><tr><td style=\"white-space:nowrap\">image/jpeg<a name=\"MimeTypeCS-image.47jpeg\"> </a></td><td>JPEG</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "urn:ietf:bcp:13"] ;
+  fhir:CodeSystem.version [ fhir:value "6.0.0"] ;
+  fhir:CodeSystem.name [ fhir:value "MimeTypeCS"] ;
+  fhir:CodeSystem.title [ fhir:value "MIME Types (Fragment)"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-07-01"^^xsd:date] ;
+  fhir:CodeSystem.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:CodeSystem.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Fragment des CodeSystems urn:ietf:bcp:13 mit den in ISiK relevanten MIME-Typen."] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "fragment"] ;
+  fhir:CodeSystem.concept [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "application/fhir+xml" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "FHIR XML" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "application/fhir+json" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "FHIR JSON" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "application/pdf" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "PDF" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "image/jpeg" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "JPEG" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/CodeSystem/MimeTypeCS.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

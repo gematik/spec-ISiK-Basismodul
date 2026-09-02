@@ -1,0 +1,598 @@
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Vorbelegung Demografischer Daten Encounter - TTL Representation - ISiK Formularmodul Implementation Guide v6.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11.22"}
+    h3,h4,h5,h6{--heading-prefix:"11.22"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li>
+    <a href="Ziele.html">Ziele</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spezifikationen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="FunktionenInteraktionen.html">Funktionen und Interaktionen</a>
+      </li>
+      <li>
+        <a href="Spezifikationen_Beispielszenarien.html">Beispielszenarien</a>
+      </li>
+      <li>
+        <a href="Spezifikationen_BestPractice.html">Best Practice für FormularDefinitionen</a>
+      </li>
+      <li>
+        <a href="Extensions.html">Extensions</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Festlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts-isik.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Formularmodul Implementation Guide<br />
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0 - ballot
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Vorbelegung Demografischer Daten Encounter</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<!-- layouts\layout-instance-format -->
+<div style="counter-reset: section 9" class="col-12">
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="Questionnaire-ExamplePrePopDemoEnc.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="Questionnaire-ExamplePrePopDemoEnc.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Questionnaire-ExamplePrePopDemoEnc.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+
+<h2 id="root">: Vorbelegung Demografischer Daten Encounter</h2>
+
+  <table class="colsd">
+    <tr>
+
+      <td colspan="2">
+        
+          Draft
+          
+
+            as of 
+2026-09-02
+
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="Questionnaire-ExamplePrePopDemoEnc.ttl" no-download="true">Raw ttl</a> | <a href="Questionnaire-ExamplePrePopDemoEnc.ttl" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="rdf" data-fhir="generated" style="white-space: pre; overflow: hidden"><code class="language-turtle">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/Questionnaire/ExamplePrePopDemoEnc&gt; a fhir:Questionnaire ;
+  <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
+  <a href="http://hl7.org/fhir/R4/resource.html#Questionnaire.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;ExamplePrePopDemoEnc&quot;] ;
+  <a href="http://hl7.org/fhir/R4/resource.html#Questionnaire.meta">fhir:Resource.meta</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:Meta.profile</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition&quot; ;
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition&gt;
+     ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/resource.html#Questionnaire.language">fhir:Resource.language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;en&quot;] ;
+  <a href="http://hl7.org/fhir/R4/domainresource.html#Questionnaire.text">fhir:DomainResource.text</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;extensions&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/domainresource.html#Questionnaire.extension">fhir:DomainResource.extension</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">fhir:Element.extension</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;name&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueCoding</a> [
+         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;patient&quot; ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;type&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueCode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;Patient&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;description&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueString</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Patientenkontext&quot; ]
+     ] ;
+     <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext&quot; ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">fhir:Element.extension</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;name&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueCoding</a> [
+         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;encounter&quot; ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;type&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueCode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;Encounter&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;description&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueString</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Fallkontext&quot; ]
+     ] ;
+     <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.url">fhir:Questionnaire.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopDemoEnc&quot;] ;
+  <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.version">fhir:Questionnaire.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;6.0.0&quot;] ;
+  <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.name">fhir:Questionnaire.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;ExamplePrePopDemoEnc&quot;] ;
+  <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.title">fhir:Questionnaire.title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Vorbelegung Demografischer Daten Encounter&quot;] ;
+  <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.status">fhir:Questionnaire.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;draft&quot;] ;
+  <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.experimental">fhir:Questionnaire.experimental</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean] ;
+  <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.subjectType">fhir:Questionnaire.subjectType</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;Patient&quot; ;
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1
+  ] ;
+  <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.date">fhir:Questionnaire.date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2026-09-02T11:31:15+00:00&quot;^^xsd:dateTime] ;
+  <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.publisher">fhir:Questionnaire.publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;gematik GmbH&quot;] ;
+  <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.contact">fhir:Questionnaire.contact</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">fhir:ContactDetail.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;gematik GmbH&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">fhir:ContactDetail.telecom</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:ContactPoint.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;url&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:ContactPoint.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;https://gematik.de&quot; ]
+     ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.description">fhir:Questionnaire.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:value</a> &quot;### Beispiel-Questionnaire mit automatischer Vorbelegung von demografischen Patientendaten \nDer Patientenkontext wird mittels der [SDC-LaunchContexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)-Extension hergestellt.  \nDie Vorbelegung erfolgt über die [SDC-InitialExpression](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html)-Extension&quot;] ;
+  <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item">fhir:Questionnaire.item</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+     <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">fhir:Questionnaire.item.linkId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">fhir:Questionnaire.item.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Demografische Patientendaten&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">fhir:Questionnaire.item.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;group&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.required">fhir:Questionnaire.item.required</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;true&quot;^^xsd:boolean ] ;
+     <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.item">fhir:Questionnaire.item.item</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Questionnaire.item.extension">fhir:Element.extension</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueExpression</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.description">fhir:Expression.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Selektion des ersten Vornamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">fhir:Expression.language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;text/fhirpath&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">fhir:Expression.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;(%patient.name.where(use = 'official').given[0] | %patient.name[0].given[0]).first()&quot; ]
+         ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">fhir:Questionnaire.item.linkId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1.1&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">fhir:Questionnaire.item.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Vorname:&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">fhir:Questionnaire.item.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Questionnaire.item.extension">fhir:Element.extension</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueExpression</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.description">fhir:Expression.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Selektion des Nachnamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">fhir:Expression.language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;text/fhirpath&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">fhir:Expression.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;(%patient.name.where(use = 'official').family | %patient.name[0].family).first()&quot; ]
+         ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">fhir:Questionnaire.item.linkId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1.2&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">fhir:Questionnaire.item.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Nachname:&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">fhir:Questionnaire.item.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Questionnaire.item.extension">fhir:Element.extension</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueExpression</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.description">fhir:Expression.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Versichertennnummer(KVID) des Patienten&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">fhir:Expression.language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;text/fhirpath&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">fhir:Expression.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;%patient.identifier.where(system='http://fhir.de/sid/gkv/kvid-10').value&quot; ]
+         ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">fhir:Questionnaire.item.linkId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1.4&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">fhir:Questionnaire.item.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Versichertennummer:&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">fhir:Questionnaire.item.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+     ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+     <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">fhir:Questionnaire.item.linkId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">fhir:Questionnaire.item.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Fallinformationen&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">fhir:Questionnaire.item.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;group&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.item">fhir:Questionnaire.item.item</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Questionnaire.item.extension">fhir:Element.extension</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueExpression</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.description">fhir:Expression.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Selektion der Fallnummer&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">fhir:Expression.language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;text/fhirpath&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">fhir:Expression.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;%encounter.account.identifier.first().value&quot; ]
+         ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">fhir:Questionnaire.item.linkId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2.1&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">fhir:Questionnaire.item.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Fallnummer:&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">fhir:Questionnaire.item.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Questionnaire.item.extension">fhir:Element.extension</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueExpression</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.description">fhir:Expression.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Selektion der Fallart&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">fhir:Expression.language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;text/fhirpath&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">fhir:Expression.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;(%encounter.type.coding.where(system = 'http://fhir.de/CodeSystem/kontaktart-de').display | %encounter.type.coding.where(system = 'http://fhir.de/CodeSystem/kontaktart-de').code)&quot; ]
+         ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">fhir:Questionnaire.item.linkId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2.2&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">fhir:Questionnaire.item.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Fallart:&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">fhir:Questionnaire.item.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Questionnaire.item.extension">fhir:Element.extension</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueExpression</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.description">fhir:Expression.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Selektion des Fachabteilungsschlüssel&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">fhir:Expression.language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;text/fhirpath&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">fhir:Expression.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;%encounter.serviceType.coding.where(system = 'http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel').display&quot; ]
+         ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">fhir:Questionnaire.item.linkId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2.3&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">fhir:Questionnaire.item.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Fachabteilungsschlüssel §301:&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">fhir:Questionnaire.item.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Questionnaire.item.extension">fhir:Element.extension</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueExpression</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.description">fhir:Expression.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Selektion der Status&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">fhir:Expression.language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;text/fhirpath&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">fhir:Expression.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;%encounter.status&quot; ]
+         ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">fhir:Questionnaire.item.linkId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2.4&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">fhir:Questionnaire.item.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Status:&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">fhir:Questionnaire.item.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Questionnaire.item.extension">fhir:Element.extension</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueExpression</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.description">fhir:Expression.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Selektion der Period Start&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">fhir:Expression.language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;text/fhirpath&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">fhir:Expression.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;%encounter.period.start&quot; ]
+         ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">fhir:Questionnaire.item.linkId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2.5&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">fhir:Questionnaire.item.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Von:&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">fhir:Questionnaire.item.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Questionnaire.item.extension">fhir:Element.extension</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueExpression</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.description">fhir:Expression.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Selektion der Period End&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">fhir:Expression.language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;text/fhirpath&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">fhir:Expression.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;%encounter.period.end&quot; ]
+         ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">fhir:Questionnaire.item.linkId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2.6&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">fhir:Questionnaire.item.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Bis:&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">fhir:Questionnaire.item.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Questionnaire.item.extension">fhir:Element.extension</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueExpression</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.description">fhir:Expression.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Selektion der Station&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">fhir:Expression.language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;text/fhirpath&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">fhir:Expression.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;%encounter.location.where(physicalType.coding.first().code = 'wa' and status = 'active').location.display&quot; ]
+         ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">fhir:Questionnaire.item.linkId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2.7&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">fhir:Questionnaire.item.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Aktuelle Station:&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">fhir:Questionnaire.item.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Questionnaire.item.extension">fhir:Element.extension</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> -1 ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueExpression</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.description">fhir:Expression.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Selektion des Bett&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">fhir:Expression.language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;text/fhirpath&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">fhir:Expression.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;%encounter.location.where(physicalType.coding.first().code = 'bd' and status = 'active').location.display&quot; ]
+         ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">fhir:Questionnaire.item.linkId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2.8&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">fhir:Questionnaire.item.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Aktuelles Bett:&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">fhir:Questionnaire.item.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/Questionnaire/ExamplePrePopDemoEnc.ttl&gt; a owl:Ontology ;
+  owl:imports fhir:fhir.ttl ;
+  owl:versionIRI &lt;http://build.fhir.org/Questionnaire/ExamplePrePopDemoEnc.ttl&gt; .
+
+</code></pre>
+
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  
+          Package formular#6.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Sep 2, 2026 11:31+0000">2026-09-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

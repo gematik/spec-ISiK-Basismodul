@@ -1,0 +1,518 @@
+{
+  "codeSystems" : [{
+    "url" : "http://fhir.de/ValueSet/DiagnoseTyp",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "DiagnoseTyp",
+    "title" : "DiagnoseTyp ValueSet",
+    "description" : "Dieses ValueSet enthält übergeordnete Typen diagnostischer Angaben, etwa Einweisungs- oder behandlungsrelevante Diagnosen. Es dient der fachlichen Einordnung, in welchem Versorgungskontext eine Diagnose erhoben oder verwendet wird.",
+    "systems" : ["http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/Diagnosesubtyp",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "Diagnosesubtyp",
+    "title" : "Diagnosesubtyp ValueSet",
+    "description" : "Dieses ValueSet bündelt spezielle Untertypen von Diagnosen mit definierter fachlicher Rolle, etwa Operationsdiagnosen, Todesursachen oder Aufnahmediagnosen. Es dient der semantischen Verfeinerung diagnostischer Angaben innerhalb eines Versorgungskontexts.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/diagnosis-role",
+    "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/EncounterClassDE",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "EncounterClassDE",
+    "title" : "EncounterClassDE",
+    "description" : "Dieses ValueSet beschränkt `Encounter.class` auf im deutschen Versorgungskontext gebräuchliche Fallarten. Es dient der interoperablen Kennzeichnung des organisatorischen Rahmens eines Kontakts.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
+    "uses" : {
+    },
+    "ValueSet-ISiKEncounterClassDE.html" : "ISiKEncounterClassDE"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/EncounterStatusDe",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "EncounterStatusDe",
+    "title" : "Encounter Status ValueSet",
+    "description" : "Dieses ValueSet beschränkt die verwendbaren Encounter-Status auf die im Profilkontext vorgesehenen Codes. Es dient einer stabilen Nutzung des Statusmodells im Übergang zwischen FHIR-Versionen.",
+    "systems" : ["http://hl7.org/fhir/encounter-status"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/dgkev/Aufnahmeanlass",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "AufnahmeanlassVS",
+    "title" : "Aufnahmeanlass ValueSet",
+    "description" : "Dieses ValueSet enthält die zulässigen Codes für den Aufnahmeanlass nach § 301 Abs. 3 SGB V. Es dient der einheitlichen Codierung des administrativen Anlasses einer Krankenhausaufnahme.",
+    "systems" : ["http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "FachabteilungsschluesselVS",
+    "title" : "Fachabteilungsschlüssel ValueSet",
+    "description" : "Dieses ValueSet enthält die Fachabteilungsschlüssel gemäß Anhang 1 BPflV in der am 31.12.2003 geltenden Fassung. Es dient der Bindung von Angaben zur fachlichen Zuordnung von Krankenhausabteilungen.",
+    "systems" : ["http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "ValueSetFachabteilungsschluesselErweitert",
+    "title" : "FachabteilungsschluesselErweitert ValueSet",
+    "description" : "Dieses ValueSet enthält die erweiterten Fachabteilungsschlüssel gemäß Anhang 1 BPflV einschließlich Spezialisierungen. Es dient der feineren Bindung fachlicher Zuordnungen von Krankenhausabteilungen.",
+    "systems" : ["http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://fhir.de/ValueSet/kontaktebene-de",
+    "version" : "1.6.0",
+    "status" : "active",
+    "name" : "KontaktebeneDe",
+    "title" : "KontaktebeneDe ValueSet",
+    "description" : "Dieses ValueSet enthält die zulässigen Kontaktebenen zur Modellierung von Versorgungskontakten. Es dient der Abgrenzung, ob ein Kontakt auf Einrichtungs-, Abteilungs- oder Versorgungsstellenebene beschrieben wird.",
+    "systems" : ["http://fhir.de/CodeSystem/Kontaktebene"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/location-physical-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "LocationType",
+    "title" : "Location type",
+    "description" : "This example value set defines a set of codes that can be used to indicate the physical form of the Location.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/location-physical-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.328"],
+    "sources" : ["2.16.840.1.113883.4.642.3.328"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung",
+    "StructureDefinition-ISiKStandort.html" : "ISiKStandort"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/ips/ValueSet/results-coded-values-laboratory-uv-ips",
+    "version" : "1.1.0",
+    "status" : "active",
+    "name" : "ResultsCodedValuesLaboratoryUvIps",
+    "title" : "Results Coded Values Laboratory - IPS",
+    "description" : "This value set is defined as the union of: (a) Blood group [Type]; (b) Presence/Absence Indicators (2.16.840.1.113883.11.22.52) (c) Microorganisms (2.16.840.1.113883.11.22.49)",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchung.html" : "ISiKLaboruntersuchung"
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/ips/ValueSet/results-laboratory-pathology-observations-uv-ips",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "ResultsLaboratoryPathologyObservationUvIps",
+    "title" : "Results Laboratory/Pathology Observation - IPS",
+    "description" : "Value Set Definition: LOINC {STATUS in {ACTIVE}, CLASSTYPE in {Laboratory class (1)}, CLASS exclude {LP62148-9 (NR STATS), LP175679-2 (H&P.HX.LAB), LP7785-1 (CHALSKIN), LP94892-4 (LABORDERS)}}",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchung.html" : "ISiKLaboruntersuchung"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/conformance-expectation",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "ConformanceExpectation",
+    "title" : "ConformanceExpectation",
+    "description" : "Indicates the degree of adherence to a specified behavior or capability expected for a system to be deemed conformant with a specification.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/conformance-expectation"],
+    "oids" : ["2.16.840.1.113883.4.642.3.919"],
+    "sources" : ["2.16.840.1.113883.4.642.3.919"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKCapabilityStatementImportsExpectation.html" : "ISiK CapabilityStatement Imports Expectation"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKBehandlungsergebnisReha",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKBehandlungsergebnisRehaVS",
+    "title" : null,
+    "description" : "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis.",
+    "systems" : ["https://gematik.de/fhir/isik/CodeSystem/ISiKBehandlungsergebnisRehaCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKRehaEntlassung.html" : "ExtensionISiKRehaEntlassung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKBesondereBehandlungsformReha",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKBesondereBehandlungsformRehaVS",
+    "title" : null,
+    "description" : "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. Vgl. Schlüsseltabelle 2.51 Besondere Behandlungsformen.",
+    "systems" : ["https://gematik.de/fhir/isik/CodeSystem/ISiKBesondereBehandlungsformRehaCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKRehaEntlassung.html" : "ExtensionISiKRehaEntlassung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKEncounterClassDE",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKEncounterClassDE",
+    "title" : "ISiKEncounterClassDE",
+    "description" : "Erweitert das ValueSet EncounterClassDE der Deutschen Basisprofile um die Codes ACUTE, NONAC und OBSENC aus dem HL7 v3 ActCode System zur Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR). Ein Issue zur Aufnahme dieser Codes in EncounterClassDE wurde bei den Deutschen Basisprofilen eingereicht.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKEncounterTypeErweiterungVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKEncounterTypeErweiterungVS",
+    "title" : "ISiKEncounterTypeErweiterungVS",
+    "description" : "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+    "systems" : ["http://fhir.de/CodeSystem/kontaktart-de",
+    "https://gematik.de/fhir/isik/CodeSystem/ISiKEncounterTypeErweiterungCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKEntlassformReha",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKEntlassformRehaVS",
+    "title" : null,
+    "description" : "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform.",
+    "systems" : ["https://gematik.de/fhir/isik/CodeSystem/ISiKEntlassformRehaCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKRehaEntlassung.html" : "ExtensionISiKRehaEntlassung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKLaborMethodeVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKLaborMethodeVS",
+    "title" : "ISiK Labor Methode",
+    "description" : "SNOMED-CT-Codes für Untersuchungsmethoden im Labor (alle Konzepte unterhalb von #272394005 'Technique (qualifier value)').",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchung.html" : "ISiKLaboruntersuchung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKLaborbereichVS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKLaborbereichVS",
+    "title" : "ISiK Laborbereich",
+    "description" : "LOINC-Codes zur Kategorisierung von Laboruntersuchungen nach Fachbereichen.",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchung.html" : "ISiKLaboruntersuchung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKUnterbrechungReha",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ISiKUnterbrechungRehaVS",
+    "title" : null,
+    "description" : "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung.",
+    "systems" : ["https://gematik.de/fhir/isik/CodeSystem/ISiKUnterbrechungRehaCS"],
+    "uses" : {
+    },
+    "StructureDefinition-ExtensionISiKRehaEntlassung.html" : "ExtensionISiKRehaEntlassung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationCodesSerumnatrium",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationCodesSerumnatrium",
+    "title" : null,
+    "description" : "Enthält LOINC-Codes für die Observation Serumnatrium",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungSerumnatrium.html" : "ISiKLaboruntersuchungSerumnatrium"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationUnitsSerumnatrium",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ObservationUnitsSerumnatrium",
+    "title" : null,
+    "description" : "Enthält UCUM-Einheiten für die Observation Serumnatrium",
+    "systems" : ["http://unitsofmeasure.org"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKLaboruntersuchungSerumnatrium.html" : "ISiKLaboruntersuchungSerumnatrium"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ProzedurenCodesSCT",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ProzedurenCodesSCT",
+    "title" : null,
+    "description" : "Enthaelt alle SNOMED Procedure Codes",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKProzedur.html" : "ISiKProzedur"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ProzedurenKategorieSCT",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ProzedurenKategorieSCT",
+    "title" : null,
+    "description" : "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKProzedur.html" : "ISiKProzedur"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ProzedurenReanimationCodesOPS",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ProzedurenReanimationCodesOPS",
+    "title" : null,
+    "description" : "Enthaelt alle OPS Procedure Codes für Reanimationsmaßnahmen",
+    "systems" : ["http://fhir.de/CodeSystem/bfarm/ops"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKProzedurReanimation.html" : "ISiK Prozedur Reanimation"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/ProzedurenReanimationCodesSCT",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "ProzedurenReanimationCodesSCT",
+    "title" : null,
+    "description" : "Enthaelt alle SNOMED Procedure Codes für Reanimationsmaßnahmen",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKProzedurReanimation.html" : "ISiK Prozedur Reanimation"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-body-site-observation-beatmung",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "MII_VS_ICU_BodySite_Observation_Beatmung",
+    "title" : "MII VS ICU BodySite Observation Beatmung",
+    "description" : "Dieses ValueSet enthält Codes für bodySites für die im Kontext einer Beatmung eingestellten oder gemessenen Parametern.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-vent-icu-parameter-von-beatmung.html" : "MII PR ICU Parameter von Beatmung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-bodysite-observation-pupillenbefund",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "MII_VS_ICU_BodySite_Observation_Pupillenbefund",
+    "title" : "MII VS ICU BodySite Observation Pupillenbefund",
+    "description" : " Zulaessige Koerperstellen fuer lateralisierte Pupillenbefunde: linke oder rechte Pupille.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_BodySite_Observation_Pupillenbefund.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-icu-untersuchung-pupillenform.html" : "MII PR ICU Untersuchung Pupillenform",
+    "StructureDefinition-mii-pr-icu-untersuchung-pupillenlichtreaktion-indirekt.html" : "MII PR ICU Untersuchung Pupillenlichtreaktion Indirekt",
+    "StructureDefinition-mii-pr-icu-untersuchung-pupillenlichtreaktion-direkt.html" : "MII PR ICU Untersuchung Pupillenlichtreaktion Direkt",
+    "StructureDefinition-mii-pr-icu-untersuchung-pupillengroesse.html" : "MII PR ICU Untersuchung Pupillengroesse"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-category-procedure-beatmung-snomed",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "MII_VS_ICU_Category_Procedure_Beatmung_SNOMED",
+    "title" : "MII VS ICU Category Procedure Beatmung SNOMED",
+    "description" : "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Category_Beatmung_SNOMED.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-vent-icu-parameter-von-beatmung.html" : "MII PR ICU Parameter von Beatmung",
+    "StructureDefinition-ISiKProzedurBeatmung.html" : "ISiK Prozedur Beatmung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-loinc",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "MII_VS_ICU_Code_Observation_Beatmung_LOINC",
+    "title" : "MII VS ICU Code Observation Beatmung LOINC",
+    "description" : "Dieses ValueSet enthält Codes für die im Kontext einer Beatmung verwendeten Parameter.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-vent-icu-parameter-von-beatmung.html" : "MII PR ICU Parameter von Beatmung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-loinc-iso11073",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "MII_VS_ICU_Code_Observation_Beatmung_ISO11073",
+    "title" : "MII VS ICU Code Observation Beatmung ISO11073",
+    "description" : "Dieses ValueSet enthält Codes für die im Kontext einer Beatmung verwendeten Parameter.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+    "systems" : ["urn:iso:std:iso:11073:10101"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-vent-icu-parameter-von-beatmung.html" : "MII PR ICU Parameter von Beatmung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-snomed",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "MII_VS_ICU_Code_Observation_Beatmung_SNOMED",
+    "title" : "MII VS ICU Code Observation Beatmung SNOMED",
+    "description" : "Dieses ValueSet enthält Codes für die im Kontext einer Beatmung verwendeten Parameter.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-vent-icu-parameter-von-beatmung.html" : "MII PR ICU Parameter von Beatmung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-pupillengroesse",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "MII_VS_ICU_Code_Observation_Pupillengroesse",
+    "title" : "MII VS ICU Code Observation Pupillengroesse",
+    "description" : "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-icu-untersuchung-pupillengroesse.html" : "MII PR ICU Untersuchung Pupillengroesse"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-pupillenlichtreaktion",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "MII_VS_ICU_Code_Observation_Pupillenlichtreaktion",
+    "title" : "MII VS ICU Code Observation Pupillenlichtreaktion",
+    "description" : "Subset der LOINC AnswerList LL3762-3 fuer die Pupillen-Lichtreaktion: reaktiv, traege reaktiv, nicht reaktiv.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Code_Observation_Pupillenlichtreaktion.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-icu-untersuchung-pupillenlichtreaktion-indirekt.html" : "MII PR ICU Untersuchung Pupillenlichtreaktion Indirekt",
+    "StructureDefinition-mii-pr-icu-untersuchung-pupillenlichtreaktion-direkt.html" : "MII PR ICU Untersuchung Pupillenlichtreaktion Direkt"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-pupillensymmetrie",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "MII_VS_ICU_Code_Observation_Pupillensymmetrie",
+    "title" : "MII VS ICU Code Observation Pupillensymmetrie",
+    "description" : "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Code_Observation_Pupillenlichtreaktion.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-icu-untersuchung-pupillensymmetrie.html" : "MII PR ICU Untersuchung Pupillensymmetrie"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-oservation-pupillenform-loinc",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "MII_VS_ICU_Code_Observation_Pupillenform_LOINC",
+    "title" : "MII VS ICU Code Observation Pupillenform LOINC",
+    "description" : "Kategoriale Beurteilung der Pupillenform/Regularitaet: regelmaessig (rund) oder unregelmaessig. Zulaessig sind SNOMED-Findings und/oder LOINC-Antwortcodes.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-icu-untersuchung-pupillenform.html" : "MII PR ICU Untersuchung Pupillenform"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-procedure-beatmung-snomed",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "MII_VS_ICU_Code_Procedure_Beatmung_SNOMED",
+    "title" : "MII VS ICU Code Procedure Beatmung SNOMED",
+    "description" : "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Code_Procedure_Beatmung_SNOMED.fsh# - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ISiKProzedurBeatmung.html" : "ISiK Prozedur Beatmung"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-score-rass",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "MII_VS_ICU_Score_RASS",
+    "title" : "MII VS ICU Score RASS",
+    "description" : "Value set for RASS Score\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 3.3.2026",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-mii-pr-icu-score-rass.html" : "MII PR ICU Score RASS"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/vs-mii-icu-bodysite-observation-monitoring-und-vitaldaten",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "VS_MII_ICU_BodySite_Observation_Monitoring_und_Vitaldaten",
+    "title" : "VS MII ICU BodySite Observation Monitoring und Vitaldaten",
+    "description" : "Dieses ValueSet enthält Codes für bodySites von Vitaldaten sowie Daten aus dem Patientenmonitoring.",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-sd-mii-icu-monitoring-und-vitaldaten.html" : "SD MII ICU Monitoring und Vitaldaten"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-iso11073",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "VS_MII_ICU_Code_Monitoring_und_Vitaldaten_ISO11073",
+    "title" : "VS MII ICU Code Monitoring und Vitaldaten [ISO11073]",
+    "description" : "Dieses ValueSet enthält Codes für Vitaldaten sowie Daten aus dem Patientenmonitoring.",
+    "systems" : ["urn:iso:std:iso:11073:10101"],
+    "uses" : {
+    },
+    "StructureDefinition-sd-mii-icu-monitoring-und-vitaldaten.html" : "SD MII ICU Monitoring und Vitaldaten"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-loinc",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "VS_MII_ICU_Code_Monitoring_und_Vitaldaten_LOINC",
+    "title" : "VS MII ICU Code Monitoring und Vitaldaten [LOINC]",
+    "description" : "Dieses ValueSet enthält Codes für Vitaldaten sowie Daten aus dem Patientenmonitoring.",
+    "systems" : ["http://loinc.org"],
+    "uses" : {
+    },
+    "StructureDefinition-sd-mii-icu-monitoring-und-vitaldaten.html" : "SD MII ICU Monitoring und Vitaldaten"
+  },
+  {
+    "url" : "https://gematik.de/fhir/isik/ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-snomed",
+    "version" : "6.0.0",
+    "status" : "active",
+    "name" : "VS_MII_ICU_Code_Monitoring_und_Vitaldaten_SNOMED",
+    "title" : "VS MII ICU Code Monitoring und Vitaldaten [sct]",
+    "description" : "Dieses ValueSet enthaelt Codes fuer Vitaldaten sowie Daten aus dem Patientenmonitoring.",
+    "systems" : ["http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-sd-mii-icu-monitoring-und-vitaldaten.html" : "SD MII ICU Monitoring und Vitaldaten"
+  }]
+}

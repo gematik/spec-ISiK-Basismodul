@@ -1,0 +1,268 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikamentRolle> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ISiKCapabilityStatementMedikamentRolle"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CapabilityStatement ISiKCapabilityStatementMedikamentRolle</b></p><a name=\"ISiKCapabilityStatementMedikamentRolle\"> </a><a name=\"hcISiKCapabilityStatementMedikamentRolle\"> </a><h2 id=\"title\">ISiK CapabilityStatement MedikamentRolle</h2><ul><li>Implementation Guide Version: 6.0.0-rc </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>application/fhir+json</code></li><li>Published on: 2025-12-17 </li><li>Published by: gematik GmbH </li></ul><blockquote class=\"impl-note\"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id=\"rest\">FHIR RESTful Capabilities</h2><div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 id=\"mode1\" class=\"panel-title\">Mode: <code>server</code></h3></div><div class=\"panel-body\"/></div><h3 id=\"resourcesCap1\">Capabilities by Resource/Profile</h3><h4 id=\"resourcesSummary1\">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class=\"bg-info\">R</span></b>ead, <b><span class=\"bg-info\">S</span></b>earch, <b><span class=\"bg-info\">U</span></b>pdate, and <b><span class=\"bg-info\">C</span></b>reate, are always shown, while <b><span class=\"bg-info\">VR</span></b>ead, <b><span class=\"bg-info\">P</span></b>atch, <b><span class=\"bg-info\">D</span></b>elete, <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">I</span></b>nstance, or <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class=\"table-responsive\"><table class=\"table table-condensed table-hover\"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class=\"text-center\"><b title=\"GET a resource (read interaction)\">R</b></th><th class=\"text-center\"><b title=\"GET all set of resources of the type (search interaction)\">S</b></th><th class=\"text-center\"><b title=\"PUT a new resource version (update interaction)\">U</b></th><th class=\"text-center\"><b title=\"POST a new resource (create interaction)\">C</b></th><th><b title=\"Required and recommended search parameters\">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href=\"#Medication1-1\">Medication</a></td><td>Supported Profiles<br/>  <a href=\"StructureDefinition-ISiKMedikament.html\">ISiKMedikament</a></td><td class=\"text-center\"><span title=\"SHALL\"><b>Y</b></span></td><td class=\"text-center\"><span title=\"SHALL\"><b>Y</b></span></td><td class=\"text-center\"><span title=\"SHALL\"><b>Y</b></span></td><td class=\"text-center\"><span title=\"SHALL\"><b>Y</b></span></td><td>_id, code, form, ingredient, ingredient-code, status, ingredient.code, lot-number</td><td><code>Medication:ingredient</code></td><td/><td/></tr></tbody></table></div><hr/><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"Medication1-1\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: SHALL </span>Medication</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-4\"><span class=\"lead\">Core FHIR Resource</span><br/><a href=\"http://hl7.org/fhir/R4/medication.html\">Medication</a></div><div class=\"col-lg-4\"><span class=\"lead\">Reference Policy</span><br/></div><div class=\"col-lg-4\"><span class=\"lead\">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>create</code>, <code>read</code>, <code>update</code>, <code>search-type</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-6\"><span class=\"lead\">Supported Profiles</span><p><a href=\"StructureDefinition-ISiKMedikament.html\">ISiKMedikament</a></p></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/resource.html#search\">_id</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>\n<code>GET [base]/Medication?_id=103270</code></p>\n<pre><code>    **Anwendungshinweise:** Weitere Informationen zur Suche nach '_id' finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Parameters for all resources'](https://hl7.org/fhir/R4/search.html#all).\n</code></pre>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/medication.html#search\">code</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>\n<code>GET [base]/Medication?code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23</code></p>\n<pre><code>    **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n</code></pre>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/medication.html#search\">form</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>\n<code>GET [base]/Medication?form=http://standardterms.edqm.eu|11210000</code></p>\n<pre><code>    **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n</code></pre>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/medication.html#search\">ingredient</a></td><td><code>reference</code></td><td><div><p><strong>Beispiel:</strong><br/>\n<code>GET [base]/Medication?ingredient=Medication/123</code></p>\n<pre><code>    **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).\n</code></pre>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/medication.html#search\">ingredient-code</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>\n<code>GET [base]/Medication?ingredient-code=http://fhir.de/CodeSystem/bfarm/atc|L01DB01</code></p>\n<pre><code>    **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n</code></pre>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/medication.html#search\">status</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>\n<code>GET [base]/Medication?status=active</code></p>\n<pre><code>    **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n</code></pre>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/medication.html#search\">ingredient.code</a></td><td><code>reference</code></td><td><div><p><strong>Beispiel:</strong><br/>\n<code>GET [base]/Medication?ingredient.code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23</code></p>\n<pre><code>    **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n    Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).\n</code></pre>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/medication.html#search\">lot-number</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>\n<code>GET [base]/Medication?lot-number=X123456</code></p>\n<pre><code>    **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n</code></pre>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div></div></div></div></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikamentRolle"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikamentRolle>
+  ] ; # 
+  fhir:version [ fhir:v "6.0.0-rc"] ; # 
+  fhir:name [ fhir:v "ISiKCapabilityStatementMedikamentRolle"] ; # 
+  fhir:title [ fhir:v "ISiK CapabilityStatement MedikamentRolle"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-12-17"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."] ; # 
+  fhir:purpose [ fhir:v "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen, die ein ISiK-konformes System unterstützen muss, um Abfragen zum Medikament zu ermöglichen.\n  \n**HISTORIE:**    \n* 5.0.0\n  * `refactor`als eigene Rolle initiiert\n"] ; # 
+  fhir:kind [ fhir:v "requirements"] ; # 
+  fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
+  fhir:format ( [ fhir:v "application/fhir+xml"] [ fhir:v "application/fhir+json"] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "server" ] ;
+     fhir:resource ( [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "SHALL"
+         ]
+       ] ) ;
+       fhir:type [ fhir:v "Medication" ] ;
+       fhir:supportedProfile ( [
+         fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament>
+       ] ) ;
+       fhir:interaction ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "create" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "search-type" ]
+       ] ) ;
+       fhir:searchInclude ( [
+         fhir:v "Medication:ingredient" ;
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] )
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/Resource-id"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/SearchParameter/Resource-id>
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "**Beispiel:**  \n        `GET [base]/Medication?_id=103270`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach '_id' finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Parameters for all resources'](https://hl7.org/fhir/R4/search.html#all).\n\n        " ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:name [ fhir:v "code" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/clinical-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/SearchParameter/clinical-code>
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "**Beispiel:**  \n        `GET [base]/Medication?code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        " ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:name [ fhir:v "form" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/Medication-form"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/SearchParameter/Medication-form>
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "**Beispiel:**  \n        `GET [base]/Medication?form=http://standardterms.edqm.eu|11210000`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        " ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:name [ fhir:v "ingredient" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/Medication-ingredient"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/SearchParameter/Medication-ingredient>
+         ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "**Beispiel:**  \n        `GET [base]/Medication?ingredient=Medication/123`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).\n\n        " ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:name [ fhir:v "ingredient-code" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/Medication-ingredient-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/SearchParameter/Medication-ingredient-code>
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "**Beispiel:**  \n        `GET [base]/Medication?ingredient-code=http://fhir.de/CodeSystem/bfarm/atc|L01DB01`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        " ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:name [ fhir:v "status" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/Medication-status"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/SearchParameter/Medication-status>
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "**Beispiel:**  \n        `GET [base]/Medication?status=active`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        " ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:name [ fhir:v "ingredient.code" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/Medication-ingredient"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/SearchParameter/Medication-ingredient>
+         ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "**Beispiel:**  \n        `GET [base]/Medication?ingredient.code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).\n\n        " ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:name [ fhir:v "lot-number" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/Medication-lot-number"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/SearchParameter/Medication-lot-number>
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "**Beispiel:**  \n        `GET [base]/Medication?lot-number=X123456`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        " ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

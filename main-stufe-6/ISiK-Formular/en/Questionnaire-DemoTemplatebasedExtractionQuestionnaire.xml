@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Questionnaire xmlns="http://hl7.org/fhir">
+  <id value="DemoTemplatebasedExtractionQuestionnaire"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/>
+  </text>
+  <contained>
+    <Patient>
+      <id value="IsikPatientTemplate"/>
+      <meta>
+        <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"/>
+      </meta>
+      <identifier>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext">
+          <valueString value="item.where(linkId = 'patientId')"/>
+        </extension>
+        <type>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+            <code value="MR"/>
+          </coding>
+        </type>
+        <system>
+          <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue">
+            <valueString value="item.where(linkId = 'patientId-system').answer.value"/>
+          </extension>
+        </system>
+        <value>
+          <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue">
+            <valueString value="item.where(linkId = 'patientId-value').answer.value"/>
+          </extension>
+        </value>
+      </identifier>
+      <identifier>
+        <type>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+            <code value="KVZ10"/>
+          </coding>
+        </type>
+        <system value="http://fhir.de/sid/gkv/kvid-10"/>
+        <value>
+          <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue">
+            <valueString value="item.where(linkId = 'versichertenId').answer.value"/>
+          </extension>
+        </value>
+      </identifier>
+      <active value="true"/>
+      <name>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext">
+          <valueString value="item.where(linkId = 'name')"/>
+        </extension>
+        <use value="official"/>
+        <text>
+          <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue">
+            <valueString value="item.where(linkId = 'given' or linkId = 'family').answer.value.join(' ')"/>
+          </extension>
+        </text>
+        <family>
+          <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue">
+            <valueString value="item.where(linkId = 'family').answer.value.first()"/>
+          </extension>
+        </family>
+        <given>
+          <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue">
+            <valueString value="item.where(linkId = 'given').answer.value.first()"/>
+          </extension>
+        </given>
+      </name>
+      <telecom>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext">
+          <valueString value="item.where(linkId = 'telecom')"/>
+        </extension>
+        <system value="phone">
+          <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue">
+            <valueString value="item.where(linkId = 'telecom-system').answer.value"/>
+          </extension>
+        </system>
+        <value>
+          <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue">
+            <valueString value="item.where(linkId = 'telecom-value').answer.value"/>
+          </extension>
+        </value>
+      </telecom>
+      <gender value="unknown">
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue">
+          <valueString value="item.where(linkId = 'gender').answer.value.first().code"/>
+        </extension>
+      </gender>
+      <birthDate>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue">
+          <valueString value="item.where(linkId = 'birthDate').answer.value.first()"/>
+        </extension>
+      </birthDate>
+      <address>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext">
+          <valueString value="item.where(linkId = 'address')"/>
+        </extension>
+        <type value="both"/>
+        <line>
+          <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue">
+            <valueString value="item.where(linkId = 'address-line').answer.value"/>
+          </extension>
+        </line>
+        <city>
+          <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue">
+            <valueString value="item.where(linkId = 'address-city').answer.value.first()"/>
+          </extension>
+        </city>
+        <postalCode>
+          <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue">
+            <valueString value="item.where(linkId = 'address-postalCode').answer.value.first()"/>
+          </extension>
+        </postalCode>
+        <country value="DE">
+          <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue">
+            <valueString value="item.where(linkId = 'address-country').answer.value.first()"/>
+          </extension>
+        </country>
+      </address>
+    </Patient>
+  </contained>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">
+    <extension url="name">
+      <valueCoding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"/>
+        <code value="patient"/>
+      </valueCoding>
+    </extension>
+    <extension url="type">
+      <valueCode value="Patient"/>
+    </extension>
+    <extension url="description">
+      <valueString value="Patientenkontext"/>
+    </extension>
+  </extension>
+  <url value="https://gematik.de/fhir/isik/Questionnaire/DemoTemplatebasedExtractionQuestionnaire"/>
+  <version value="6.0.0"/>
+  <name value="DemoTemplatebasedExtractionQuestionnaire"/>
+  <title value="DemoTemplatebasedExtractionQuestionnaire"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <subjectType value="Patient"/>
+  <date value="2026-09-02T11:31:15+00:00"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="### Beispiel-Questionnaire zur Demonstration der Template-basierten Extraktion von Patientendaten"/>
+  <item>
+    <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract">
+      <extension url="template">
+        <valueReference>
+          <reference value="#IsikPatientTemplate"/>
+        </valueReference>
+      </extension>
+      <extension url="resourceId">
+        <valueString value="item.where(linkId = 'resourceId').answer.value"/>
+      </extension>
+      <extension url="fullUrl">
+        <valueString value="('Patient/' + item.where(linkId = 'resourceId').answer.value)"/>
+      </extension>
+    </extension>
+    <linkId value="patient"/>
+    <text value="Patient Informationen"/>
+    <type value="group"/>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-hidden">
+        <valueBoolean value="true"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion der Ressourcen-ID des Patienten"/>
+          <language value="text/fhirpath"/>
+          <expression value="%patient.id"/>
+        </valueExpression>
+      </extension>
+      <linkId value="resourceId"/>
+      <text value="Ressourcen-ID"/>
+      <type value="string"/>
+    </item>
+    <item>
+      <linkId value="name"/>
+      <text value="Name"/>
+      <type value="group"/>
+      <item>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+          <valueExpression>
+            <description value="Selektion des ersten Vornamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name"/>
+            <language value="text/fhirpath"/>
+            <expression value="(%patient.name.where(use = 'official').given[0] | %patient.name[0].given[0]).first()"/>
+          </valueExpression>
+        </extension>
+        <linkId value="given"/>
+        <text value="Vorname"/>
+        <type value="string"/>
+        <repeats value="true"/>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+          <valueExpression>
+            <description value="Selektion des Nachnamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name"/>
+            <language value="text/fhirpath"/>
+            <expression value="(%patient.name.where(use = 'official').family | %patient.name[0].family).first()"/>
+          </valueExpression>
+        </extension>
+        <linkId value="family"/>
+        <text value="Nachname"/>
+        <type value="string"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion des Geschlechts des Patienten"/>
+          <language value="text/fhirpath"/>
+          <expression value="%questionnaire.repeat(item).where(linkId='gender').answerOption.valueCoding.where(code=%patient.gender)"/>
+        </valueExpression>
+      </extension>
+      <linkId value="gender"/>
+      <text value="Geschlecht"/>
+      <type value="choice"/>
+      <answerOption>
+        <valueCoding>
+          <system value="http://hl7.org/fhir/administrative-gender"/>
+          <code value="unknown"/>
+          <display value="Unknown"/>
+        </valueCoding>
+        <initialSelected value="true"/>
+      </answerOption>
+      <answerOption>
+        <valueCoding>
+          <system value="http://hl7.org/fhir/administrative-gender"/>
+          <code value="male"/>
+          <display value="Male"/>
+        </valueCoding>
+      </answerOption>
+      <answerOption>
+        <valueCoding>
+          <system value="http://hl7.org/fhir/administrative-gender"/>
+          <code value="female"/>
+          <display value="Female"/>
+        </valueCoding>
+      </answerOption>
+      <answerOption>
+        <valueCoding>
+          <system value="http://hl7.org/fhir/administrative-gender"/>
+          <code value="other"/>
+          <display value="Other"/>
+        </valueCoding>
+      </answerOption>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion des Geburtsdatums des Patienten"/>
+          <language value="text/fhirpath"/>
+          <expression value="%patient.birthDate"/>
+        </valueExpression>
+      </extension>
+      <linkId value="birthDate"/>
+      <text value="Geburtsdatum"/>
+      <type value="date"/>
+    </item>
+    <item>
+      <linkId value="patientId"/>
+      <text value="Patienten-ID"/>
+      <type value="group"/>
+      <item>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+          <valueExpression>
+            <description value="Selektion des Systems der Patienten-ID."/>
+            <language value="text/fhirpath"/>
+            <expression value="%patient.identifier.where(type.coding.first().code = 'MR').system"/>
+          </valueExpression>
+        </extension>
+        <linkId value="patientId-system"/>
+        <text value="System der Patienten-ID"/>
+        <type value="string"/>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+          <valueExpression>
+            <description value="Selektion des Value der Patienten-ID."/>
+            <language value="text/fhirpath"/>
+            <expression value="%patient.identifier.where(type.coding.first().code = 'MR').value"/>
+          </valueExpression>
+        </extension>
+        <linkId value="patientId-value"/>
+        <text value="Wert der Patienten-ID"/>
+        <type value="string"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Versichertennnummer(KVID) des Patienten"/>
+          <language value="text/fhirpath"/>
+          <expression value="%patient.identifier.where(system = 'http://fhir.de/sid/gkv/kvid-10').value"/>
+        </valueExpression>
+      </extension>
+      <linkId value="versichertenId"/>
+      <text value="Versichertennummer"/>
+      <type value="string"/>
+    </item>
+    <item>
+      <linkId value="telecom"/>
+      <text value="Kontaktmöglichkeit"/>
+      <type value="group"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-hidden">
+          <valueBoolean value="true"/>
+        </extension>
+        <linkId value="telecom-system"/>
+        <type value="string"/>
+        <initial>
+          <valueString value="phone"/>
+        </initial>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+          <valueExpression>
+            <description value="Selektion des Value der Patienten-ID."/>
+            <language value="text/fhirpath"/>
+            <expression value="%patient.telecom.where(system = 'phone').first().value"/>
+          </valueExpression>
+        </extension>
+        <linkId value="telecom-value"/>
+        <text value="Telefonnummer"/>
+        <type value="string"/>
+      </item>
+    </item>
+  </item>
+</Questionnaire>

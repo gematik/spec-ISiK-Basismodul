@@ -1,0 +1,101 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Observation/ISiKKoerpergroesseMaxExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ISiKKoerpergroesseMaxExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergroesse" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergroesse>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation ISiKKoerpergroesseMaxExample</b></p><a name=\"ISiKKoerpergroesseMaxExample\"> </a><a name=\"hcISiKKoerpergroesseMaxExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKKoerpergroesse.html\">ISiKKoerpergroesse</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 8302-2}, {http://snomed.info/sct 1153637007}, {urn:iso:std:iso:11073:10101 188740}\">Körpergröße - Klinische Messung</span></p><p><b>subject</b>: <a href=\"Patient-PatientinNormal.html\">Anna Müller (official) Female, DoB: 1957-08-12 ( Medical record number)</a></p><p><b>effective</b>: 2024-01-15 09:00:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerWalterArzt.html\">Practitioner Walter Arzt(official)</a></p><p><b>value</b>: 205 centimeter<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codecm = 'cm')</span></p><p><b>note</b>: </p><blockquote><div><p>Körpergröße geschätzt aufgrund der Bettlägerigkeit des Patienten</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 38266002}\">Gesamter Körper als Ganzes</span></p><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 414135002}\">Estimated</span></p></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "vital-signs" ] ;
+       fhir:Coding.display [ fhir:value "Vital Signs" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a loinc:8302-2 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "8302-2" ] ;
+       fhir:Coding.display [ fhir:value "Körpergröße" ]
+     ], [
+       fhir:index -1 ;
+       a sct:1153637007 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "1153637007" ] ;
+       fhir:Coding.display [ fhir:value "Körpergröße" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ] ;
+       fhir:Coding.code [ fhir:value "188740" ] ;
+       fhir:Coding.display [ fhir:value "MDC_LEN_BODY_ACTUAL" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Körpergröße - Klinische Messung" ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinNormal> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinNormal" ]
+  ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2024-01-15T09:00:00+01:00"^^xsd:dateTime] ;
+  fhir:Observation.performer [
+     fhir:index -1 ;
+     fhir:link <https://gematik.de/fhir/isik/Practitioner/PractitionerWalterArzt> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/PractitionerWalterArzt" ]
+  ] ;
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "205"^^xsd:decimal ] ;
+     fhir:Quantity.unit [ fhir:value "centimeter" ] ;
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+     fhir:Quantity.code [ fhir:value "cm" ]
+  ] ;
+  fhir:Observation.note [
+     fhir:index -1 ;
+     fhir:Annotation.text [ fhir:value "Körpergröße geschätzt aufgrund der Bettlägerigkeit des Patienten" ]
+  ] ;
+  fhir:Observation.bodySite [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a sct:38266002 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "38266002" ] ;
+       fhir:Coding.display [ fhir:value "Gesamter Körper als Ganzes" ]
+     ]
+  ] ;
+  fhir:Observation.method [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a sct:414135002 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "414135002" ] ;
+       fhir:Coding.display [ fhir:value "Estimated" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Observation/ISiKKoerpergroesseMaxExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

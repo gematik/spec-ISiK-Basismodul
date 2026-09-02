@@ -1,0 +1,744 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Kontext und Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Kontext und Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Erlaeuterung-Akteurs-und-Rollenmodell.html">
+                                            Akteurs- und Rollenmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_UmgangFehlendeDaten.html">
+                                            Umgang mit fehlenden Daten
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungverhaeltnis-sonstige-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis sonstige (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_BerichtBundle.html">
+                                            Bericht aus Subsystemen (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h4 id="beispiele">Beispiele</h4>
+<h3 id="valides-minimalbeispiel-fur-das-profil-isikabrechnungsfall">valides Minimalbeispiel für das Profil ISiKAbrechnungsfall</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#b12bc853-35a9-4f59-9380-8cf2a6668871" aria-controls="b12bc853-35a9-4f59-9380-8cf2a6668871" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#4338ff69-4613-40a3-9a8d-e07ee9c569f2" aria-controls="4338ff69-4613-40a3-9a8d-e07ee9c569f2" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#acc6ba5b-b3cc-4c27-a2ba-137bcdc7dcb8" aria-controls="acc6ba5b-b3cc-4c27-a2ba-137bcdc7dcb8" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#e5052e8c-8b83-42e4-a049-0de298f9bc3f" aria-controls="e5052e8c-8b83-42e4-a049-0de298f9bc3f" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="b12bc853-35a9-4f59-9380-8cf2a6668871">
+    <div class="stu3-treetable" id="747d8f8de746494683c7898978239d21" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="c1b76050ed884624a7fc97dd6e6a6803"><td class="instance"><span class="baseIcon primitive"></span><b>Account</b></td></tr><tr class="collapsed" data-id="07640739e36d4560ba446ea7ce15d3d8" data-parentId="c1b76050ed884624a7fc97dd6e6a6803"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>AbrechnungsfallDRG</span></td></tr><tr class="collapsed" data-id="ffa7462de93a4fa382e7a354fef4185b" data-parentId="c1b76050ed884624a7fc97dd6e6a6803"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="ecf2860be9fe4702b81e0b0c945c7a86" data-parentId="ffa7462de93a4fa382e7a354fef4185b"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall</span></td></tr><tr class="collapsed" data-id="2cd8548409c842c59dde0984a67dbe83" data-parentId="c1b76050ed884624a7fc97dd6e6a6803"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="837912cbe44d4d76a4b17fb59bc6c9da" data-parentId="2cd8548409c842c59dde0984a67dbe83"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="9a1f57f732cc4aad8dd715506046070d" data-parentId="837912cbe44d4d76a4b17fb59bc6c9da"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>Use</span></td></tr><tr class="collapsed" data-id="d232a981b9ad4e5c9493154b207c7b69" data-parentId="837912cbe44d4d76a4b17fb59bc6c9da"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="f429ec8769a648a6b294245cf3e35537" data-parentId="d232a981b9ad4e5c9493154b207c7b69"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/CodeSystem/KontaktDiagnoseProzedur</span></td></tr><tr class="collapsed" data-id="16dcb42efaa54ac39cd2936101853036" data-parentId="d232a981b9ad4e5c9493154b207c7b69"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>hospital-main-diagnosis</span></td></tr><tr class="collapsed" data-id="6c88b0fa4adf4d128ff86d6c13e6c183" data-parentId="d232a981b9ad4e5c9493154b207c7b69"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Krankenhaus Hauptdiagnose</span></td></tr><tr class="collapsed" data-id="49bd3e29e65c4e018a5b9ea36f734903" data-parentId="2cd8548409c842c59dde0984a67dbe83"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="7cf0426a76564dd184ed41e1a8f32c6c" data-parentId="49bd3e29e65c4e018a5b9ea36f734903"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>Referenz</span></td></tr><tr class="collapsed" data-id="ca1d531390b4443abf3a227f1be217a3" data-parentId="49bd3e29e65c4e018a5b9ea36f734903"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="d47d59f3d8f74b5da4c78da4f5a4e5c7" data-parentId="ca1d531390b4443abf3a227f1be217a3"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Condition/DiagnoseSelteneErkrankung</span></td></tr><tr class="collapsed" data-id="1525ac2ebb974846bbe3b72608f6aebd" data-parentId="2cd8548409c842c59dde0984a67dbe83"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur</span></td></tr><tr class="collapsed" data-id="c44c0249c6904d7a82b241b9517c2842" data-parentId="c1b76050ed884624a7fc97dd6e6a6803"><td class="instance"><span class="baseIcon primitive"></span><b>identifier</b></td></tr><tr class="collapsed" data-id="52a379e4636f402f9f6f15690a6bbc90" data-parentId="c44c0249c6904d7a82b241b9517c2842"><td class="instance"><span class="baseIcon primitive"></span><b>type</b></td></tr><tr class="collapsed" data-id="a9b89074fc994706865fdfc4bb709b06" data-parentId="52a379e4636f402f9f6f15690a6bbc90"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="fb5f67da8d934fcdb26a23a41fb6faf2" data-parentId="a9b89074fc994706865fdfc4bb709b06"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/v2-0203</span></td></tr><tr class="collapsed" data-id="79e33746722f4ef3b5307ef591d42278" data-parentId="a9b89074fc994706865fdfc4bb709b06"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>AN</span></td></tr><tr class="collapsed" data-id="b27e39b9278b44edabd47f0cbfaa007f" data-parentId="c44c0249c6904d7a82b241b9517c2842"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>https://test.krankenhaus.de/fhir/sid/abrechnungsnummer</span></td></tr><tr class="collapsed" data-id="7e6a72912a814047b753d98c7b4c2675" data-parentId="c44c0249c6904d7a82b241b9517c2842"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>0123456789</span></td></tr><tr class="collapsed" data-id="389234b4a004499a8c6469a22fe74be7" data-parentId="c1b76050ed884624a7fc97dd6e6a6803"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>active</span></td></tr><tr class="collapsed" data-id="79abee83884249c5b166262beab411f6" data-parentId="c1b76050ed884624a7fc97dd6e6a6803"><td class="instance"><span class="baseIcon primitive"></span><b>type</b></td></tr><tr class="collapsed" data-id="ae931ca0abc046d9bf33b1c1dd2263fa" data-parentId="79abee83884249c5b166262beab411f6"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="c991909a11834f94b87799eaa9964971" data-parentId="ae931ca0abc046d9bf33b1c1dd2263fa"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/v3-ActCode</span></td></tr><tr class="collapsed" data-id="72ea233ff8f34806b23c036320ba9442" data-parentId="ae931ca0abc046d9bf33b1c1dd2263fa"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>IMP</span></td></tr><tr class="collapsed" data-id="2c93043061a54081a5956fc8247b3554" data-parentId="c1b76050ed884624a7fc97dd6e6a6803"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="e899003d412046a0b1b63c5593a2602f" data-parentId="2c93043061a54081a5956fc8247b3554"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="19a58371a7864ca68576bfb50ee31616" data-parentId="c1b76050ed884624a7fc97dd6e6a6803"><td class="instance"><span class="baseIcon primitive"></span><b>coverage</b></td></tr><tr class="collapsed" data-id="d0a056d5f23143efbc54252fe0dfaa7d" data-parentId="19a58371a7864ca68576bfb50ee31616"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="9bd643351b62469cbb6ee5d6380d520e" data-parentId="d0a056d5f23143efbc54252fe0dfaa7d"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://fhir.de/StructureDefinition/ExtensionAbrechnungsart</span></td></tr><tr class="collapsed" data-id="bd2ea83d5ab24955a6f3270f7cbd57d9" data-parentId="d0a056d5f23143efbc54252fe0dfaa7d"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="e2a899ecf0dd488bb5bb2f247c6bc189" data-parentId="bd2ea83d5ab24955a6f3270f7cbd57d9"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/CodeSystem/dkgev/Abrechnungsart</span></td></tr><tr class="collapsed" data-id="da2049db60594662b49ef67a925e81a7" data-parentId="bd2ea83d5ab24955a6f3270f7cbd57d9"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>DRG</span></td></tr><tr class="collapsed" data-id="a98cb0e2acfd4d73ad1bdce4a353ba10" data-parentId="bd2ea83d5ab24955a6f3270f7cbd57d9"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Diagnosebezogene Fallgruppen</span></td></tr><tr class="collapsed" data-id="46a979a7bd1e4f989c4c0b27aaaba092" data-parentId="19a58371a7864ca68576bfb50ee31616"><td class="instance"><span class="baseIcon primitive"></span><b>coverage</b></td></tr><tr class="collapsed" data-id="3063af8837e949f28c408c8fbfbddca3" data-parentId="46a979a7bd1e4f989c4c0b27aaaba092"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Coverage/CoverageGesetzlich</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable747d8f8de746494683c7898978239d21 = new InstanceTree();
+resourceTreeTable747d8f8de746494683c7898978239d21.init("747d8f8de746494683c7898978239d21");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="4338ff69-4613-40a3-9a8d-e07ee9c569f2">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">Account</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.id" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">AbrechnungsfallDRG</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.meta" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.meta.profile" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Use</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension.value" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">valueCoding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension.value.system" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/CodeSystem/KontaktDiagnoseProzedur</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension.value.code" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">hospital-main-diagnosis</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension.value.display" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Krankenhaus Hauptdiagnose</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCoding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Referenz</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension.value" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">valueReference</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension.value.reference" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Condition/DiagnoseSelteneErkrankung</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueReference</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.identifier" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">identifier</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.identifier.type" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">type</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.identifier.type.coding" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.identifier.type.coding.system" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.identifier.type.coding.code" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">AN</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">type</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.identifier.system" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://test.krankenhaus.de/fhir/sid/abrechnungsnummer</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.identifier.value" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">0123456789</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">identifier</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.status" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.type" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">type</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.type.coding" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.type.coding.system" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v3-ActCode</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.type.coding.code" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">IMP</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">type</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.subject" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.subject.reference" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">coverage</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.extension" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/StructureDefinition/ExtensionAbrechnungsart</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.extension.value" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">valueCoding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.extension.value.system" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/CodeSystem/dkgev/Abrechnungsart</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.extension.value.code" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">DRG</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.extension.value.display" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Diagnosebezogene Fallgruppen</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCoding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.coverage" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">coverage</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.coverage.reference" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Coverage/CoverageGesetzlich</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coverage</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coverage</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Account</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="acc6ba5b-b3cc-4c27-a2ba-137bcdc7dcb8">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.resourceType" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Account</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.id" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">AbrechnungsfallDRG</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.meta" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.meta.profile" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.identifier" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">identifier</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.identifier.type" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.identifier.type.coding" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.identifier.type.coding.code" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">AN</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.identifier.type.coding.system" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.identifier.system" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://test.krankenhaus.de/fhir/sid/abrechnungsnummer</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.identifier.value" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">0123456789</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">coverage</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.extension" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.extension.url" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/StructureDefinition/ExtensionAbrechnungsart</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.extension.valueCoding" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">valueCoding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.extension.valueCoding.code" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">DRG</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.extension.valueCoding.system" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/dkgev/Abrechnungsart</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.extension.valueCoding.display" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Diagnosebezogene Fallgruppen</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.coverage" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">coverage</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.coverage.coverage.reference" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Coverage/CoverageGesetzlich</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.url" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension.url" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Use</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension.valueCoding" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">valueCoding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension.valueCoding.code" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">hospital-main-diagnosis</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension.valueCoding.system" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/KontaktDiagnoseProzedur</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension.valueCoding.display" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Krankenhaus Hauptdiagnose</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension.url" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Referenz</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension.valueReference" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">valueReference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.extension.extension.valueReference.reference" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Condition/DiagnoseSelteneErkrankung</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.status" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.type" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.type.coding" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.type.coding.code" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">IMP</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.type.coding.system" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v3-ActCode</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.subject" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAbrechnungsfall.json#Account.subject.reference" title="ISiKAbrechnungsfall
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAbrechnungsfall.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="e5052e8c-8b83-42e4-a049-0de298f9bc3f">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Account-AbrechnungsfallDRG.json'>AbrechnungsfallDRG</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

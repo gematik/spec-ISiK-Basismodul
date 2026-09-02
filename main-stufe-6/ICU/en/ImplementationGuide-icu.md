@@ -1,0 +1,6259 @@
+# Resource ISiK ICU
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ImplementationGuide",
+  "id" : "icu",
+  "language" : "en",
+  "url" : "https://gematik.de/fhir/isik/ImplementationGuide/icu",
+  "version" : "6.0.0",
+  "name" : "ISiKICUImplementationGuide",
+  "title" : "ISiK ICU",
+  "status" : "active",
+  "date" : "2026-09-02T11:32:54+00:00",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.gematik.de"
+    }]
+  }],
+  "description" : "Dieser Implementierungsleitfaden spezifiziert eine Schnittstelle zur ISiK-konformen Umsetzung für Datenkommunikations-Workflows zur Verlegung zwischen der Intensivstation (Intensive Care Unit - ICU) und der Normalstation im Krankenhaus.",
+  "packageId" : "icu",
+  "license" : "Apache-2.0",
+  "fhirVersion" : ["4.0.1"],
+  "dependsOn" : [{
+    "id" : "hl7tx",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+    }],
+    "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+    "packageId" : "hl7.terminology.r4",
+    "version" : "7.3.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "5.3.0"
+  },
+  {
+    "id" : "hl7_fhir_uv_xver_r5_r4",
+    "uri" : "http://hl7.org/fhir/uv/xver/ImplementationGuide/hl7.fhir.uv.xver-r5.r4",
+    "packageId" : "hl7.fhir.uv.xver-r5.r4",
+    "version" : "0.1.0"
+  },
+  {
+    "id" : "hl7_fhir_uv_ips",
+    "uri" : "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
+    "packageId" : "hl7.fhir.uv.ips",
+    "version" : "2.0.0"
+  },
+  {
+    "id" : "hl7_fhir_uv_subscriptions_backport_r4",
+    "uri" : "http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport",
+    "packageId" : "hl7.fhir.uv.subscriptions-backport.r4",
+    "version" : "1.1.0"
+  },
+  {
+    "id" : "de_basisprofil_r4",
+    "uri" : "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
+    "packageId" : "de.basisprofil.r4",
+    "version" : "1.6.0"
+  },
+  {
+    "id" : "de_ihe_d_terminology",
+    "uri" : "http://fhir.de/packages/de.ihe-d.terminology",
+    "packageId" : "de.ihe-d.terminology",
+    "version" : "3.0.1"
+  },
+  {
+    "id" : "ihe_formatcode_fhir",
+    "uri" : "https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir",
+    "packageId" : "ihe.formatcode.fhir",
+    "version" : "1.4.0"
+  },
+  {
+    "id" : "hl7_fhir_uv_sdc",
+    "uri" : "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
+    "packageId" : "hl7.fhir.uv.sdc",
+    "version" : "4.0.0"
+  },
+  {
+    "id" : "de_gematik_terminology",
+    "uri" : "https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology",
+    "packageId" : "de.gematik.terminology",
+    "version" : "1.0.6"
+  },
+  {
+    "id" : "de_gematik_ti",
+    "uri" : "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
+    "packageId" : "de.gematik.ti",
+    "version" : "1.3.1"
+  },
+  {
+    "id" : "de_fhir_medication",
+    "uri" : "http://ig.fhir.de/igs/medication/ImplementationGuide/de.fhir.medication",
+    "packageId" : "de.fhir.medication",
+    "version" : "1.0.7"
+  },
+  {
+    "id" : "kbv_all_terminology_allergyintolerance",
+    "uri" : "http://fhir.org/packages/kbv.all.terminology.allergyintolerance/ImplementationGuide/kbv.all.terminology.allergyintolerance",
+    "packageId" : "kbv.all.terminology.allergyintolerance",
+    "version" : "1.0.0"
+  }],
+  "definition" : {
+    "extension" : [{
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "copyrightyear"
+      },
+      {
+        "url" : "value",
+        "valueString" : "2026+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "releaselabel"
+      },
+      {
+        "url" : "value",
+        "valueString" : "active"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "display-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-expansion-params"
+      },
+      {
+        "url" : "value",
+        "valueString" : "../../input/resources/Parameters-exp-params.json"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://example.org/fhir/CodeSystem/TestKatalog"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://example.org/fhir/ValueSet/TestValueSet"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-qa"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-suppressed-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-history"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/isik/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "template-html"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "template-md"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-contact"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-context"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-copyright"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-jurisdiction"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-publisher"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "active-tables"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "fmm-definition"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "propagate-status"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "excludelogbinaryformat"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "tabbed-snapshots"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "i18n-default-lang"
+      },
+      {
+        "url" : "value",
+        "valueString" : "en"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters",
+      "valueReference" : {
+        "reference" : "Parameters/expansion-parameters"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
+      "valueCode" : "hl7.fhir.uv.tools.r4#1.1.2"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "copyrightyear"
+      },
+      {
+        "url" : "value",
+        "valueString" : "2026+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "releaselabel"
+      },
+      {
+        "url" : "value",
+        "valueString" : "active"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "display-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-expansion-params"
+      },
+      {
+        "url" : "value",
+        "valueString" : "../../input/resources/Parameters-exp-params.json"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://example.org/fhir/CodeSystem/TestKatalog"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://example.org/fhir/ValueSet/TestValueSet"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-qa"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-suppressed-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-history"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/isik/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-html"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-md"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-contact"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-context"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-copyright"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-jurisdiction"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-publisher"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "active-tables"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "fmm-definition"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "propagate-status"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "excludelogbinaryformat"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "tabbed-snapshots"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "i18n-default-lang"
+      },
+      {
+        "url" : "value",
+        "valueString" : "en"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    }],
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-Appendektomie.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/Appendektomie"
+      },
+      "name" : "Appendektomie",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzAusfuhrBlutverlustBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzAusfuhrBlutverlustBeispiel"
+      },
+      "name" : "BilanzAusfuhrBlutverlustBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzAusfuhrDrainageGenerischBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzAusfuhrDrainageGenerischBeispiel"
+      },
+      "name" : "BilanzAusfuhrDrainageGenerischBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzAusfuhrFluessigkeitGesamtBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzAusfuhrFluessigkeitGesamtBeispiel"
+      },
+      "name" : "BilanzAusfuhrFluessigkeitGesamtBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzAusfuhrGallenfluessigkeitBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzAusfuhrGallenfluessigkeitBeispiel"
+      },
+      "name" : "BilanzAusfuhrGallenfluessigkeitBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzAusfuhrHaemofiltrationBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzAusfuhrHaemofiltrationBeispiel"
+      },
+      "name" : "BilanzAusfuhrHaemofiltrationBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzAusfuhrMagensondeBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzAusfuhrMagensondeBeispiel"
+      },
+      "name" : "BilanzAusfuhrMagensondeBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzAusfuhrOPDrainageBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzAusfuhrOPDrainageBeispiel"
+      },
+      "name" : "BilanzAusfuhrOPDrainageBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzAusfuhrPankreasdrainageBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzAusfuhrPankreasdrainageBeispiel"
+      },
+      "name" : "BilanzAusfuhrPankreasdrainageBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzAusfuhrStuhlgangBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzAusfuhrStuhlgangBeispiel"
+      },
+      "name" : "BilanzAusfuhrStuhlgangBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzAusfuhrUrinBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzAusfuhrUrinBeispiel"
+      },
+      "name" : "BilanzAusfuhrUrinBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzAusfuhrWunddrainageBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzAusfuhrWunddrainageBeispiel"
+      },
+      "name" : "BilanzAusfuhrWunddrainageBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzBeispiel"
+      },
+      "name" : "BilanzBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzEinfuhrAbgepumpteMuttermilchBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzEinfuhrAbgepumpteMuttermilchBeispiel"
+      },
+      "name" : "BilanzEinfuhrAbgepumpteMuttermilchBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzEinfuhrEnteraleFluessigkeitBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzEinfuhrEnteraleFluessigkeitBeispiel"
+      },
+      "name" : "BilanzEinfuhrEnteraleFluessigkeitBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzEinfuhrFluessigkeitGesamtBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzEinfuhrFluessigkeitGesamtBeispiel"
+      },
+      "name" : "BilanzEinfuhrFluessigkeitGesamtBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzEinfuhrMuttermilchBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzEinfuhrMuttermilchBeispiel"
+      },
+      "name" : "BilanzEinfuhrMuttermilchBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzEinfuhrOraleFluessigkeitBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzEinfuhrOraleFluessigkeitBeispiel"
+      },
+      "name" : "BilanzEinfuhrOraleFluessigkeitBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzEinfuhrSaeuglingsnahrungBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzEinfuhrSaeuglingsnahrungBeispiel"
+      },
+      "name" : "BilanzEinfuhrSaeuglingsnahrungBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzEinfuhrSpendermilchBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzEinfuhrSpendermilchBeispiel"
+      },
+      "name" : "BilanzEinfuhrSpendermilchBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-BilanzTagesbilanzFluessigkeitBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/BilanzTagesbilanzFluessigkeitBeispiel"
+      },
+      "name" : "BilanzTagesbilanzFluessigkeitBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-ISiKCapabilityStatementStammdatenRolle.html"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/ISiKCapabilityStatementStammdatenRolle"
+      },
+      "name" : "CapabilityStatement für Rolle StammdatenRolle",
+      "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-Encounter-date-start.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/Encounter-date-start"
+      },
+      "name" : "DateStart",
+      "description" : "The actual start date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-DorisQuelle.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/DorisQuelle"
+      },
+      "name" : "DorisQuelle",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-DorisZiel.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/DorisZiel"
+      },
+      "name" : "DorisZiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-Encounter-end-date.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/Encounter-end-date"
+      },
+      "name" : "EndDate",
+      "description" : "The actual end date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-ISiKEncounterTypeErweiterungCS.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ISiKEncounterTypeErweiterungCS"
+      },
+      "name" : "Erweiterung von Encounter.type in ISiK",
+      "description" : "ISiK definiert an dieser Stelle eigene Encounter Typen. Dieses CodeSystem ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleISiKLaboruntersuchungCRP1.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleISiKLaboruntersuchungCRP1"
+      },
+      "name" : "ExampleISiKLaboruntersuchungCRP1",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleISiKLaboruntersuchungGFR1.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleISiKLaboruntersuchungGFR1"
+      },
+      "name" : "ExampleISiKLaboruntersuchungGFR1",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleISiKLaboruntersuchungHb1.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleISiKLaboruntersuchungHb1"
+      },
+      "name" : "ExampleISiKLaboruntersuchungHb1",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleISiKLaboruntersuchungMaximal.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleISiKLaboruntersuchungMaximal"
+      },
+      "name" : "ExampleISiKLaboruntersuchungMaximal",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleISiKLaboruntersuchungPCT1.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleISiKLaboruntersuchungPCT1"
+      },
+      "name" : "ExampleISiKLaboruntersuchungPCT1",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleISiKLaboruntersuchungSerumkreatinin1.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleISiKLaboruntersuchungSerumkreatinin1"
+      },
+      "name" : "ExampleISiKLaboruntersuchungSerumkreatinin1",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleISiKLaboruntersuchungSerumnatrium1.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleISiKLaboruntersuchungSerumnatrium1"
+      },
+      "name" : "ExampleISiKLaboruntersuchungSerumnatrium1",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleISiKLaboruntersuchungThrombozyten1.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleISiKLaboruntersuchungThrombozyten1"
+      },
+      "name" : "ExampleISiKLaboruntersuchungThrombozyten1",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleISiKLaboruntersuchungTroponin1.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleISiKLaboruntersuchungTroponin1"
+      },
+      "name" : "ExampleISiKLaboruntersuchungTroponin1",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleISiKLaboruntersuchungTSH1.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleISiKLaboruntersuchungTSH1"
+      },
+      "name" : "ExampleISiKLaboruntersuchungTSH1",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleOrganPupilLightReactionLeft20200311.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleOrganPupilLightReactionLeft20200311"
+      },
+      "name" : "ExampleOrganPupilLightReactionLeft20200311",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleOrganPupilLightReactionLeftPrompt20200311.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleOrganPupilLightReactionLeftPrompt20200311"
+      },
+      "name" : "ExampleOrganPupilLightReactionLeftPrompt20200311",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleOrganPupilLightReactionLeftVerzogert20200311.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleOrganPupilLightReactionLeftVerzogert20200311"
+      },
+      "name" : "ExampleOrganPupilLightReactionLeftVerzogert20200311",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleOrganPupilLightReactionRight20200311.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleOrganPupilLightReactionRight20200311"
+      },
+      "name" : "ExampleOrganPupilLightReactionRight20200311",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleOrganPupilLightReactionRightKeine20200311.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleOrganPupilLightReactionRightKeine20200311"
+      },
+      "name" : "ExampleOrganPupilLightReactionRightKeine20200311",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleOrganRASS20200311.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleOrganRASS20200311"
+      },
+      "name" : "ExampleOrganRASS20200311",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleOrganSerumNatrium202003110104.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleOrganSerumNatrium202003110104"
+      },
+      "name" : "ExampleOrganSerumNatrium202003110104",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleOrganSerumNatrium202003110159.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleOrganSerumNatrium202003110159"
+      },
+      "name" : "ExampleOrganSerumNatrium202003110159",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExampleOrganSerumNatrium202003110306.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleOrganSerumNatrium202003110306"
+      },
+      "name" : "ExampleOrganSerumNatrium202003110306",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-ExampleOrganVentilationMode20200311.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/ExampleOrganVentilationMode20200311"
+      },
+      "name" : "ExampleOrganVentilationMode20200311",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-ExampleOrganVentilationModeASV.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/ExampleOrganVentilationModeASV"
+      },
+      "name" : "ExampleOrganVentilationModeASV",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-ExampleOrganVentilationModeBiLev.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/ExampleOrganVentilationModeBiLev"
+      },
+      "name" : "ExampleOrganVentilationModeBiLev",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-ExampleOrganVentilationModenC.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/ExampleOrganVentilationModenC"
+      },
+      "name" : "ExampleOrganVentilationModenC",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-ExampleOrganVentilationModeNIV.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/ExampleOrganVentilationModeNIV"
+      },
+      "name" : "ExampleOrganVentilationModeNIV",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-ExampleOrganVentilationModePCMod.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/ExampleOrganVentilationModePCMod"
+      },
+      "name" : "ExampleOrganVentilationModePCMod",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-ExampleOrganVentilationModePSIMV.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/ExampleOrganVentilationModePSIMV"
+      },
+      "name" : "ExampleOrganVentilationModePSIMV",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-ExampleOrganVentilationModeSPNMod.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/ExampleOrganVentilationModeSPNMod"
+      },
+      "name" : "ExampleOrganVentilationModeSPNMod",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-ExampleOrganVentilationModeStMod.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/ExampleOrganVentilationModeStMod"
+      },
+      "name" : "ExampleOrganVentilationModeStMod",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-exp-params.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/exp-params"
+      },
+      "name" : "exp-params",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ExtensionISiKRehaEntlassung.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ExtensionISiKRehaEntlassung"
+      },
+      "name" : "ExtensionISiKRehaEntlassung",
+      "description" : "Extension zur Dokumentation von Informationen nach §301 (4 und 4a) SGB V, entsprechend dem ärztliche Reha-Entlassungsbericht. Mit dieser Extension können spezifische Entlassungsinformationen im Kontext einer Rehabilitationsmaßnahme angegeben werden. Dies ist besonders relevant für Einrichtungen, die Leistungen im Bereich Rehabilitation erbringen, und unterstützt die strukturierte Kommunikation im Entlassmanagement.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExtractedObservationKoerpergewicht.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExtractedObservationKoerpergewicht"
+      },
+      "name" : "ExtractedObservationKoerpergewicht",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ExtractedObservationKoerpergroesse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExtractedObservationKoerpergroesse"
+      },
+      "name" : "ExtractedObservationKoerpergroesse",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-Fachabteilungskontakt.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/Fachabteilungskontakt"
+      },
+      "name" : "Fachabteilungskontakt",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-FachabteilungskontaktBettenverlegung.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/FachabteilungskontaktBettenverlegung"
+      },
+      "name" : "FachabteilungskontaktBettenverlegung",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-FachabteilungskontaktEntlassung.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/FachabteilungskontaktEntlassung"
+      },
+      "name" : "FachabteilungskontaktEntlassung",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-FachabteilungskontaktFachbereichswechsel1.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/FachabteilungskontaktFachbereichswechsel1"
+      },
+      "name" : "FachabteilungskontaktFachbereichswechsel1",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-FachabteilungskontaktFachbereichswechsel2.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/FachabteilungskontaktFachbereichswechsel2"
+      },
+      "name" : "FachabteilungskontaktFachbereichswechsel2",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-FachabteilungskontaktMinimal2.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/FachabteilungskontaktMinimal2"
+      },
+      "name" : "FachabteilungskontaktMinimal2",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-FachabteilungskontaktNormal.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/FachabteilungskontaktNormal"
+      },
+      "name" : "FachabteilungskontaktNormal",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-FachabteilungskontaktStationaereAufnahme.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/FachabteilungskontaktStationaereAufnahme"
+      },
+      "name" : "FachabteilungskontaktStationaereAufnahme",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-FachabteilungskontaktStationswechsel1.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/FachabteilungskontaktStationswechsel1"
+      },
+      "name" : "FachabteilungskontaktStationswechsel1",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-FachabteilungskontaktStationswechsel2.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/FachabteilungskontaktStationswechsel2"
+      },
+      "name" : "FachabteilungskontaktStationswechsel2",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Herzzeitvolumen.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Herzzeitvolumen"
+      },
+      "name" : "Herzzeitvolumen",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Ideales-Koerpergewicht.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Ideales-Koerpergewicht"
+      },
+      "name" : "Ideales-Koerpergewicht",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Location"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Location-isik-station-anaesthesie.html"
+      }],
+      "reference" : {
+        "reference" : "Location/isik-station-anaesthesie"
+      },
+      "name" : "Intensivstation Anaesthesie",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Intrakranieller-Druck-ICP.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Intrakranieller-Druck-ICP"
+      },
+      "name" : "Intrakranieller-Druck-ICP",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ISiKKernTempSctVS.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ISiKKernTempSctVS"
+      },
+      "name" : "ISiK  Kerntemperatur SnomedCT ValueSet",
+      "description" : "ValueSet der Körperkerntemperatur SnomedCT Konzepte",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ExtensionISiKCapabilityStatementImportsExpectation.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation"
+      },
+      "name" : "ISiK CapabilityStatement Imports Expectation",
+      "description" : "Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to *not* support a feature.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-ISiKCapabilityStatementLaborMinimalRolle.html"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/ISiKCapabilityStatementLaborMinimalRolle"
+      },
+      "name" : "ISiK CapabilityStatement Labor Minimal Rolle",
+      "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-ISiKCapabilityStatementOrganspendeerkennungSourceRolle.html"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/ISiKCapabilityStatementOrganspendeerkennungSourceRolle"
+      },
+      "name" : "ISiK CapabilityStatement Organspendeerkennung Source Rolle",
+      "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur.html"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur"
+      },
+      "name" : "ISiK CapabilityStatement Vitalparameter Server Extended",
+      "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   \n\n  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.\nHierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. \nDer `MODE`-Parameter kann ignoriert werden.  \nDas CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  \n\nEine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen \nund die Versionsnummer angeben.   \nDarüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.\nDie mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.\n\nDas CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. \nDas CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, \nsofern diese in der Instanz implementiert wurden.  \n\nDie Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur-expanded.html"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur-expanded"
+      },
+      "name" : "ISiK CapabilityStatement Vitalparameter Server Extended (Expanded)",
+      "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   \n\n  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.\nHierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. \nDer `MODE`-Parameter kann ignoriert werden.  \nDas CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  \n\nEine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen \nund die Versionsnummer angeben.   \nDarüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.\nDie mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.\n\nDas CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. \nDas CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, \nsofern diese in der Instanz implementiert wurden.  \n\nDie Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceExtendedRolle.html"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceExtendedRolle"
+      },
+      "name" : "ISiK CapabilityStatement VitalSign ICU Source Extended",
+      "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur.html"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur"
+      },
+      "name" : "ISiK CapabilityStatement VitalSign ICU Source Minimal Akteur",
+      "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   \n\n  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.\nHierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. \nDer `MODE`-Parameter kann ignoriert werden.  \nDas CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  \n\nEine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen \nund die Versionsnummer angeben.   \nDarüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.\nDie mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.\n\nDas CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. \nDas CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, \nsofern diese in der Instanz implementiert wurden.  \n\nDie Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur-expanded.html"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur-expanded"
+      },
+      "name" : "ISiK CapabilityStatement VitalSign ICU Source Minimal Akteur (Expanded)",
+      "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   \n\n  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.\nHierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. \nDer `MODE`-Parameter kann ignoriert werden.  \nDas CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  \n\nEine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen \nund die Versionsnummer angeben.   \nDarüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.\nDie mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.\n\nDas CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. \nDas CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, \nsofern diese in der Instanz implementiert wurden.  \n\nDie Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceMinimalRolle.html"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceMinimalRolle"
+      },
+      "name" : "ISiK CapabilityStatement VitalSign ICU Source Minimal Rolle",
+      "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-ISiKCapabilityStatementVitalSignStandardSourceRolle.html"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/ISiKCapabilityStatementVitalSignStandardSourceRolle"
+      },
+      "name" : "ISiK CapabilityStatement VitalSign Standard Source Rolle",
+      "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ISiKLaborMethodeVS.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ISiKLaborMethodeVS"
+      },
+      "name" : "ISiK Labor Methode",
+      "description" : "SNOMED-CT-Codes für Untersuchungsmethoden im Labor (alle Konzepte unterhalb von #272394005 'Technique (qualifier value)').",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ISiKLaborbereichVS.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ISiKLaborbereichVS"
+      },
+      "name" : "ISiK Laborbereich",
+      "description" : "LOINC-Codes zur Kategorisierung von Laboruntersuchungen nach Fachbereichen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKProzedurBeatmung.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKProzedurBeatmung"
+      },
+      "name" : "ISiK Prozedur Beatmung",
+      "description" : "Dieses Profil dient der Abbildung von Beatmungsmaßnahmen in der Akutmedizin.\n\nDie verwendeten ValueSets in diesem Profil wurden dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte/MII_PR_ICU_Beatmung.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. \nAls Parent wurde der letzte Stand des Prozedur-Profils der MII gewählt. \nStand 4.3.2026.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKProzedurReanimation.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKProzedurReanimation"
+      },
+      "name" : "ISiK Prozedur Reanimation",
+      "description" : "Dieses Profil dient der Abbildung von Reanimationsmaßnahmen - insbesondere in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ISiKSpecificGenericTempLoincVS.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ISiKSpecificGenericTempLoincVS"
+      },
+      "name" : "ISiK Specific Generische Koerpertemperatur LOINC Konzepte",
+      "description" : "ValueSet der spezifischen generischen Körperkerntemperatur LOINC Konzepte die nicht dazu dienen eine Körperkerntemperatur zu messen",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ISiKSpecificKernTempLoincVS.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ISiKSpecificKernTempLoincVS"
+      },
+      "name" : "ISiK Specific Kerntemperatur LOINC ValueSet",
+      "description" : "ValueSet der spezifischen Körperkerntemperatur LOINC Konzepte",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-isik-encounter-Sternenfall.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/isik-encounter-Sternenfall"
+      },
+      "name" : "isik-encounter-Sternenfall",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-isik-patient-156722.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/isik-patient-156722"
+      },
+      "name" : "isik-patient-156722",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKAtemfrequenz.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKAtemfrequenz"
+      },
+      "name" : "ISiKAtemfrequenz",
+      "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Atemfrequenz eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung der Atemfrequenz ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird die Atemfrequenz mit der Observation-Ressource repräsentiert.\n\n**Kompatibilität**\n\nDas Profil ISiKAtemfrequenz ist vom Profil [VitalSignDE_Atemfrequenz](http://fhir.de/StructureDefinition/observation-de-vitalsign-atemfrequenz) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Respiratory Rate Profile](http://hl7.org/fhir/StructureDefinition/resprate) aus der FHIR R4 Spezifikation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKAtemfrequenzExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKAtemfrequenzExample"
+      },
+      "name" : "ISiKAtemfrequenzExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKAtemfrequenzMaxExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKAtemfrequenzMaxExample"
+      },
+      "name" : "ISiKAtemfrequenzMaxExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKAtemfrequenzMinExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKAtemfrequenzMinExample"
+      },
+      "name" : "ISiKAtemfrequenzMinExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-ISiKBehandlungsergebnisRehaCS.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ISiKBehandlungsergebnisRehaCS"
+      },
+      "name" : "ISiKBehandlungsergebnisReha",
+      "description" : "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ISiKBehandlungsergebnisReha.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ISiKBehandlungsergebnisReha"
+      },
+      "name" : "ISiKBehandlungsergebnisRehaVS",
+      "description" : "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-ISiKBesondereBehandlungsformRehaCS.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ISiKBesondereBehandlungsformRehaCS"
+      },
+      "name" : "ISiKBesondereBehandlungsformReha",
+      "description" : "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. Vgl. Schlüsseltabelle 2.51 Besondere Behandlungsformen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ISiKBesondereBehandlungsformReha.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ISiKBesondereBehandlungsformReha"
+      },
+      "name" : "ISiKBesondereBehandlungsformRehaVS",
+      "description" : "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. Vgl. Schlüsseltabelle 2.51 Besondere Behandlungsformen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKBlutdruckSystemischArteriell.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKBlutdruckSystemischArteriell"
+      },
+      "name" : "ISiKBlutdruckSystemischArteriell",
+      "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Blutdruck eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung des Blutdrucks ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird der Blutdruck mit der Observation-Ressource repräsentiert, die einzelnen Komponenten des Blutdrucks werden als Component-Elemente abgebildet.\n\nHinweis: In Fällen, in denen fachlich motiviert ausschließlich ein systolischer Blutdruck erhoben wird (z.B. in der Intensivmedizin), kann für den Slice zur Diastole (DiastolicBP) das Element .dataAbsentReason (mit dem Code 'not-performed') verwendet werden.\n\n**Kompatibilität**\n\nDas Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruck](http://fhir.de/StructureDefinition/observation-de-vitalsign-blutdruck) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Blood Pressure Profile](http://hl7.org/fhir/StructureDefinition/bp) aus der FHIR R4 Spezifikation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKBlutdruckSystemischArteriellExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKBlutdruckSystemischArteriellExample"
+      },
+      "name" : "ISiKBlutdruckSystemischArteriellExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKBlutdruckSystemischArteriellMaxExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKBlutdruckSystemischArteriellMaxExample"
+      },
+      "name" : "ISiKBlutdruckSystemischArteriellMaxExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKBlutdruckSystemischArteriellMinExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKBlutdruckSystemischArteriellMinExample"
+      },
+      "name" : "ISiKBlutdruckSystemischArteriellMinExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKCoding.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKCoding"
+      },
+      "name" : "ISiKCoding",
+      "description" : "Data Type profile for Codings in ISiK",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKEKG.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKEKG"
+      },
+      "name" : "ISiKEKG",
+      "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über kurze, relevante EKG-Ausschnitte eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK. Es wurde entwickelt, um spezifische klinische Fragestellungen zu unterstützen, bei denen prägnante und gezielte EKG-Daten im Vordergrund stehen. Für vollständige und längere EKG-Aufzeichnungen sind alternative Formate vorgesehen, die für umfangreiche Daten besser geeignet sind.\n\n**Motivation**\n\nDie Bereitstellung kurzer EKG-Ausschnitte ermöglicht eine präzise und effiziente Unterstützung bei der Diagnose akuter kardiologischer Fragestellungen, der Überwachung von Arrhythmien oder der Beurteilung bestimmter Ereignisse wie ST-Strecken-Veränderungen. Diese fokussierte Darstellung dient der Optimierung klinischer Entscheidungen und der schnellen Verarbeitung relevanter Daten.\n\nIn FHIR wird das EKG durch die Observation-Ressource repräsentiert, wobei spezifische Anforderungen für die Darstellung und Kodierung der Daten in diesem Profil berücksichtigt werden.\n\n**Kompatibilität**\n\nDas Profil ISiKEKG ist vom Profil [EkgDE](http://fhir.de/StructureDefinition/observation-de-ekg) aus den deutschen Basisprofilen abgeleitet.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKEKGExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKEKGExample"
+      },
+      "name" : "ISiKEKGExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKEKGMinExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKEKGMinExample"
+      },
+      "name" : "ISiKEKGMinExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ISiKEncounterClassDE.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ISiKEncounterClassDE"
+      },
+      "name" : "ISiKEncounterClassDE",
+      "description" : "Erweitert das ValueSet EncounterClassDE der Deutschen Basisprofile um die Codes ACUTE, NONAC und OBSENC aus dem HL7 v3 ActCode System zur Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR). Ein Issue zur Aufnahme dieser Codes in EncounterClassDE wurde bei den Deutschen Basisprofilen eingereicht.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ISiKEncounterTypeErweiterungVS.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ISiKEncounterTypeErweiterungVS"
+      },
+      "name" : "ISiKEncounterTypeErweiterungVS",
+      "description" : "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-ISiKEntlassformRehaCS.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ISiKEntlassformRehaCS"
+      },
+      "name" : "ISiKEntlassformReha",
+      "description" : "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ISiKEntlassformReha.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ISiKEntlassformReha"
+      },
+      "name" : "ISiKEntlassformRehaVS",
+      "description" : "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKGCS.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKGCS"
+      },
+      "name" : "ISiKGCS",
+      "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Glasgow Coma Scale (GCS) Score eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung des Bewusstseinszustands anhand des GCS ist essenziell für die Beurteilung neurologischer Funktionen, die Überwachung von Patienten mit Schädel-Hirn-Trauma oder anderen neurologischen Erkrankungen sowie die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird der GCS-Score mit der Observation-Ressource repräsentiert, wobei die einzelnen Komponenten der Skala - Augenöffnung, verbale Reaktion und motorische Reaktion - als Component-Elemente abgebildet werden.\n\n**Kompatibilität**\n\nDas Profil ISiKGCS ist vom Profil [ScoreDE_GCS](http://fhir.de/StructureDefinition/observation-de-score-gcs) aus den deutschen Basisprofilen abgeleitet.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKGCSExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKGCSExample"
+      },
+      "name" : "ISiKGCSExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKGCSMaxExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKGCSMaxExample"
+      },
+      "name" : "ISiKGCSMaxExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKGCSMinExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKGCSMinExample"
+      },
+      "name" : "ISiKGCSMinExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKHerzfrequenz.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKHerzfrequenz"
+      },
+      "name" : "ISiKHerzfrequenz",
+      "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Herzfrequenz eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung der Herzfrequenz ist essenziell für die frühzeitige Erkennung von Herz-Kreislauf-Problemen, die Beurteilung des Gesundheitszustands sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\n\nIn FHIR wird die Herzfrequenz mit der Observation-Ressource repräsentiert.\n\n**Kompatibilität**\n\nDas Profil ISiKHerzfrequenz ist vom Profil [VitalSignDE_Herzfrequenz](http://fhir.de/StructureDefinition/observation-de-vitalsign-herzfrequenz) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Respiratory Rate Profile](http://hl7.org/fhir/StructureDefinition/heartrate) aus der FHIR R4 Spezifikation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKHerzfrequenzExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKHerzfrequenzExample"
+      },
+      "name" : "ISiKHerzfrequenzExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKHerzfrequenzMaxExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKHerzfrequenzMaxExample"
+      },
+      "name" : "ISiKHerzfrequenzMaxExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKHerzfrequenzMinExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKHerzfrequenzMinExample"
+      },
+      "name" : "ISiKHerzfrequenzMinExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKKoerpergewicht.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKKoerpergewicht"
+      },
+      "name" : "ISiKKoerpergewicht",
+      "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über das Körpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung des Körpergewichts ist essenziell für die Beurteilung des Ernährungszustands, die Überwachung von Veränderungen im Rahmen der Therapie sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\n\nIn FHIR wird das Körpergewicht mit der Observation-Ressource repräsentiert.\n\n**Kompatibilität**\n\nDas Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKKoerpergewichtExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKKoerpergewichtExample"
+      },
+      "name" : "ISiKKoerpergewichtExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKKoerpergewichtMaxExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKKoerpergewichtMaxExample"
+      },
+      "name" : "ISiKKoerpergewichtMaxExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKKoerpergewichtMinExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKKoerpergewichtMinExample"
+      },
+      "name" : "ISiKKoerpergewichtMinExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKKoerpergroesse.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKKoerpergroesse"
+      },
+      "name" : "ISiKKoerpergroesse",
+      "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körpergröße eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung der Körpergröße ist essenziell für die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\n\nIn FHIR wird die Körpergröße mit der Observation-Ressource repräsentiert.\n\n**Kompatibilität**\n\nDas Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKKoerpergroesseExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKKoerpergroesseExample"
+      },
+      "name" : "ISiKKoerpergroesseExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKKoerpergroesseMaxExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKKoerpergroesseMaxExample"
+      },
+      "name" : "ISiKKoerpergroesseMaxExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKKoerpergroesseMinExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKKoerpergroesseMinExample"
+      },
+      "name" : "ISiKKoerpergroesseMinExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKKoerperkerntemperatur.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKKoerperkerntemperatur"
+      },
+      "name" : "ISiKKoerperkerntemperatur",
+      "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körperkerntemperatur eines Patienten im Rahmen der interoperablen Kommunikation gemäß den ISiK Vorgaben.  \nDieses Profil repräsentiert sowohl direkte als auch indirekte Messungen der Körperkerntemperatur.\n\n**Motivation**\n\nDie Erfassung und Überwachung der Körpertemperatur ist essenziell für die frühzeitige Erkennung von Infektionen, die Beurteilung des Gesundheitszustands sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\nIn FHIR wird die Körpertemperatur mit der Observation-Ressource repräsentiert.\n\n**Kompatibilität**\n\nDas Profil ISiKKoerperkerntemperatur ist vom Profil [VitalSignDE_Koerperkerntemperatur](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpertemperatur) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Temperature Profile](http://hl7.org/fhir/StructureDefinition/bodytemp) aus der FHIR R4 Spezifikation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKKoerperkerntemperaturExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKKoerperkerntemperaturExample"
+      },
+      "name" : "ISiKKoerperkerntemperaturExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKKoerperkerntemperaturMaxExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKKoerperkerntemperaturMaxExample"
+      },
+      "name" : "ISiKKoerperkerntemperaturMaxExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKKoerperkerntemperaturMinExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKKoerperkerntemperaturMinExample"
+      },
+      "name" : "ISiKKoerperkerntemperaturMinExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+      },
+      "name" : "ISiKKontaktGesundheitseinrichtung",
+      "description" : "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n\n**Motivation**\n\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Abbildung-des-Konstrukts-Fall.html).\n\n**Kompatibilität**\n\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKKopfumfang.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKKopfumfang"
+      },
+      "name" : "ISiKKopfumfang",
+      "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Kopfumfang eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung des Kopfumfangs ist essenziell für die Beurteilung von Wachstumsprozessen, insbesondere bei Säuglingen und Kleinkindern, sowie für die frühzeitige Erkennung von Entwicklungsauffälligkeiten oder neurologischen Erkrankungen.\n\nIn FHIR wird der Kopfumfang mit der Observation-Ressource repräsentiert.\n\n**Kompatibilität**\n\nDas Profil ISiKKopfumfang ist vom Profil [VitalSignDE_Kopfumfang](http://fhir.de/StructureDefinition/observation-de-vitalsign-kopfumfang) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Head Circumference Profile](\nhttp://hl7.org/fhir/StructureDefinition/headcircum) aus der FHIR R4 Spezifikation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKKopfumfangExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKKopfumfangExample"
+      },
+      "name" : "ISiKKopfumfangExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKKopfumfangMaxExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKKopfumfangMaxExample"
+      },
+      "name" : "ISiKKopfumfangMaxExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKKopfumfangMinExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKKopfumfangMinExample"
+      },
+      "name" : "ISiKKopfumfangMinExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKLaboruntersuchung.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKLaboruntersuchung"
+      },
+      "name" : "ISiKLaboruntersuchung",
+      "description" : "Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.\n\nViele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.\nJede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc1/UseCases.html).\n\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKLaboruntersuchungCRP.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKLaboruntersuchungCRP"
+      },
+      "name" : "ISiKLaboruntersuchungCRP",
+      "description" : "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des C-reaktiven Proteins (CRP) eines Patienten in ISiK Szenarien.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKLaboruntersuchungGFR.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKLaboruntersuchungGFR"
+      },
+      "name" : "ISiKLaboruntersuchungGFR",
+      "description" : "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung der Glomerulären Filtrationsrate (GFR) eines Patienten in ISiK Szenarien.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKLaboruntersuchungHb.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKLaboruntersuchungHb"
+      },
+      "name" : "ISiKLaboruntersuchungHb",
+      "description" : "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Hämoglobin-Wertes (Hb) eines Patienten in ISiK Szenarien.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKLaboruntersuchungPCT.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKLaboruntersuchungPCT"
+      },
+      "name" : "ISiKLaboruntersuchungPCT",
+      "description" : "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Procalcitonin (PCT) eines Patienten in ISiK Szenarien.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKLaboruntersuchungSerumkreatinin.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKLaboruntersuchungSerumkreatinin"
+      },
+      "name" : "ISiKLaboruntersuchungSerumkreatinin",
+      "description" : "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Serumkreatinin eines Patienten in ISiK Szenarien.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKLaboruntersuchungSerumnatrium.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKLaboruntersuchungSerumnatrium"
+      },
+      "name" : "ISiKLaboruntersuchungSerumnatrium",
+      "description" : "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Serumnatrium eines Patienten in ISiK Szenarien. Das Profil wird u. A. im Use Case zur Unterstützung von Transplantationsbeauftragten bei der Organspendeerkennung eingesetzt; besonders in diesem Kontext muss es auch Werte abbilden, die im Rahmen von Messungen mittels Point-of-Care-Testing erhoben wurden. Das Profil ist auch geeignet, um Serumnatrium Werte abzubilden, die mittels Laboruntersuchung erhoben wurden.\n\nEine eindeutige Kennzeichnung für die Differenzierung hinsichtlich der Erhebungsmethode ist derzeit über dieses Profil nicht vorgesehen. Es kann jedoch das Element .method verwendet werden. Die Differenzierung aufgrund der Methode kann unter Umständen sinnvoll sein, wenn im Falle einer Laboruntersuchung ein Arzt die Werte zuerst sichten und bestätigen müsste, bevor sie im PDMS als 'final' für den Patienten hinterlegt werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKLaboruntersuchungThrombozyten.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKLaboruntersuchungThrombozyten"
+      },
+      "name" : "ISiKLaboruntersuchungThrombozyten",
+      "description" : "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Thrombozyten eines Patienten in ISiK Szenarien.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKLaboruntersuchungTroponin.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKLaboruntersuchungTroponin"
+      },
+      "name" : "ISiKLaboruntersuchungTroponin",
+      "description" : "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Troponin eines Patienten in ISiK Szenarien.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKLaboruntersuchungTSH.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKLaboruntersuchungTSH"
+      },
+      "name" : "ISiKLaboruntersuchungTSH",
+      "description" : "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung des Thyreoidea-stimulierenden Hormons (TSH) eines Patienten in ISiK Szenarien.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKLoincCoding.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKLoincCoding"
+      },
+      "name" : "ISiKLoincCoding",
+      "description" : "Data Type profile for LOINC Codings in ISiK",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKPatient.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKPatient"
+      },
+      "name" : "ISiKPatient",
+      "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von administrativen Patientendaten im Rahmen des Bestätigungsverfahrens der gematik.\n**Motivation**: Der Austausch administrativer Patientendaten ist eine der grundlegenden Funktionalitäten beim Datenaustausch in der klinischen Versorgung.  \nIn FHIR werden sämtliche klinischen Ressourcen durch Verlinkung auf die Ressource 'Patient' in einen Patientenkontext gestellt.  \nDie Herstellung des korrekten Patientenkontextes durch Suchen der Patientenressource anhand von Eigenschaften wie Aufnahmenummer, Name oder Geburtsdatum, \ndie Anzeige der zutreffenden Suchergebnisse und der Auswahl bzw. Bestätigung des richtigen Datensatzes durch den Anwender steht am Beginn der meisten klinischen Workflows.  \n\n**Kompatibilität**: Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n\n* [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient)\n* [Profil Patient im International Patient Summary (IPS)](https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)\n* [Profil Patient der MI-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)\n\nGegen folgende Profile ist das Profil ISiKPatient unmittelbar kompatibel:\n\n* [Profil TIPatient der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-patient)\n\nEs ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit folgenden Profilen ist:\n\n* [Profil EPAPatient der gematik](https://gematik.de/fhir/epa/StructureDefinition/epa-patient): In ISiK ist die Angabe einer KVNR nicht verpflichtend, da in vielen Use Cases bereits eine PID ausreichend ist. Außerdem ist in ISiK keine verpflichtende Versionierung über meta.versionId vorgesehen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-IsikPatientTemplate.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/IsikPatientTemplate"
+      },
+      "name" : "IsikPatientTemplate",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKProzedur.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKProzedur"
+      },
+      "name" : "ISiKProzedur",
+      "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Behandlungen/Prozeduren eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.\n\n**Motivation**\n\nDie Möglichkeit auf eine Übersicht der Prozeduren eines Patienten zuzugreifen, Patienten anhand durchgeführter oder geplanter Prozeduren zu suchen, oder zu prüfen, ob eine konkrete Prozedur bei einem Patienten durchgeführt wurde, sind wichtige Funktionen im klinischen Behandlungsablauf.\n\nIn FHIR werden Prozeduren mit der Procedure-Ressource repräsentiert.\n\nDa die Prozeduren in klinischen Primärsystemen, in der Regel, in OPS-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. Falls eine Prozedur zwar dokumentiert aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), ist alternativ eine Repräsentation als Freitext-Prozedur möglich.\n\n**Kompatibilität**\n\nFür das Profil ISIKProzedur wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKProzedur valide sind, auch valide sind gegen:\n\n* [Profil Prozedur](https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure) der Medizininformatik Initiative  \nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKSauerstoffsaettigungArteriell.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKSauerstoffsaettigungArteriell"
+      },
+      "name" : "ISiKSauerstoffsaettigungArteriell",
+      "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die arterielle Sauerstoffsättigung eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n**Motivation**\n\nDie Erfassung und Überwachung der arteriellen Sauerstoffsättigung ist essenziell für die Beurteilung der respiratorischen Funktion, die Überwachung von Patienten mit Atemwegserkrankungen sowie die Unterstützung klinischer Entscheidungen, insbesondere in kritischen Versorgungssituationen.\n\nIn FHIR wird die arterielle Sauerstoffsättigung mit der Observation-Ressource repräsentiert.\n\n**Kompatibilität**\n\nDas Profil ISiKSauerstoffsaettigungArteriell ist vom Profil [VitalSignDE_Arterielle_Sauerstoffsaettigung_Pulsoximetrie](http://fhir.de/StructureDefinition/observation-de-vitalsign-sauerstoffsaettigung-pulsoximetrie) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Oxygen Saturation Profile](http://hl7.org/fhir/StructureDefinition/oxygensat) aus der FHIR R4 Spezifikation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKSauerstoffsaettigungArteriellExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKSauerstoffsaettigungArteriellExample"
+      },
+      "name" : "ISiKSauerstoffsaettigungArteriellExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKSauerstoffsaettigungArteriellMaxExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKSauerstoffsaettigungArteriellMaxExample"
+      },
+      "name" : "ISiKSauerstoffsaettigungArteriellMaxExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-ISiKSauerstoffsaettigungArteriellMinExample.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/ISiKSauerstoffsaettigungArteriellMinExample"
+      },
+      "name" : "ISiKSauerstoffsaettigungArteriellMinExample",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKSnomedCTCoding.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKSnomedCTCoding"
+      },
+      "name" : "ISiKSnomedCTCoding",
+      "description" : "Data Type profile for Snomed-CT Codings in ISiK",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ISiKStandort.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKStandort"
+      },
+      "name" : "ISiKStandort",
+      "description" : "Dieses Profil dient der strukturierten Erfassung von Standortangaben eines \nKrankenhauses oder von Organisationseinheiten innerhalb eines Krankenhauses in ISiK-Szenarien.  \n\n**Motivation**\n\nIn FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.\n\nDie Abbildung von Standorten in einem Krankenhaus unterstützt u.a. die Raum- und Bettenbelegung in strukturierter Form. \n\nDie Erfassung des Standortes in strukturierter Form soll u.a. ermöglichen:\n- Zuweisungen von Diensten an bestimmte Standorte im Rahmen des Terminmanagements\n- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär) - u.a. für \n    - Patientenportale im Rahmen der Terminbuchung, z.B. um den Wunsch nach Einzelbett, bzw. 1 oder 2 Betten abzubilden\n    - KIS und weitere Subsysteme:\n      - zur Patientenabholung und Information für den Transportdienst\n      - Abbildung der Verfügbarkeit eines spezifischen Bettenstellplatzes (z.B. mit spezifischem Monitoring-Device) \n- Im Rahmen der Versorgung kann eine der folgenden Beispiel-Fragen beantworten werden:\n    - Handelt es sich um ein Isolationszimmer?\n    - Gibt es bestimmte Ausstattung, z.B. Beatmungsgeräte?\n    - etc.\n\nDafür werden Standort-Profile in unterschiedlicher Granularität definiert. \n\n**Kompatibilität**\n\nFür das Profil ISiKStandort wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der \nKompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.  \nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-ISiKUnterbrechungRehaCS.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ISiKUnterbrechungRehaCS"
+      },
+      "name" : "ISiKUnterbrechungReha",
+      "description" : "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ISiKUnterbrechungReha.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ISiKUnterbrechungReha"
+      },
+      "name" : "ISiKUnterbrechungRehaVS",
+      "description" : "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpergewicht-Percentile-altersabhaengig.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpergewicht-Percentile-altersabhaengig"
+      },
+      "name" : "Koerpergewicht-Percentile-altersabhaengig",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpergroesse-Percentil.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpergroesse-Percentil"
+      },
+      "name" : "Koerpergroesse-Percentil",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerperkerntemperatur-stirn.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerperkerntemperatur-stirn"
+      },
+      "name" : "Koerperkerntemperatur-stirn",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Achsel.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Achsel"
+      },
+      "name" : "Koerpertemperatur-Achsel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Atemwege.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Atemwege"
+      },
+      "name" : "Koerpertemperatur-Atemwege",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Blut.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Blut"
+      },
+      "name" : "Koerpertemperatur-Blut",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Brust.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Brust"
+      },
+      "name" : "Koerpertemperatur-Brust",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Brustwirbelsaeule.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Brustwirbelsaeule"
+      },
+      "name" : "Koerpertemperatur-Brustwirbelsaeule",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Gelenk.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Gelenk"
+      },
+      "name" : "Koerpertemperatur-Gelenk",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Halswirbelsaeule.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Halswirbelsaeule"
+      },
+      "name" : "Koerpertemperatur-Halswirbelsaeule",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Harnblase.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Harnblase"
+      },
+      "name" : "Koerpertemperatur-Harnblase",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Kern.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Kern"
+      },
+      "name" : "Koerpertemperatur-Kern",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Leiste.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Leiste"
+      },
+      "name" : "Koerpertemperatur-Leiste",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Lendenwirbelsaeule.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Lendenwirbelsaeule"
+      },
+      "name" : "Koerpertemperatur-Lendenwirbelsaeule",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Myokard.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Myokard"
+      },
+      "name" : "Koerpertemperatur-Myokard",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-nasal.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-nasal"
+      },
+      "name" : "Koerpertemperatur-nasal",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Nasen-Rachen-Raum.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Nasen-Rachen-Raum"
+      },
+      "name" : "Koerpertemperatur-Nasen-Rachen-Raum",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Oral.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Oral"
+      },
+      "name" : "Koerpertemperatur-Oral",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-rektal.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-rektal"
+      },
+      "name" : "Koerpertemperatur-rektal",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Speiseroehre.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Speiseroehre"
+      },
+      "name" : "Koerpertemperatur-Speiseroehre",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Stirn.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Stirn"
+      },
+      "name" : "Koerpertemperatur-Stirn",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-Trommelfell.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-Trommelfell"
+      },
+      "name" : "Koerpertemperatur-Trommelfell",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Koerpertemperatur-vaginal.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Koerpertemperatur-vaginal"
+      },
+      "name" : "Koerpertemperatur-vaginal",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Location"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Location-KrankenhausStandortBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Location/KrankenhausStandortBeispiel"
+      },
+      "name" : "Krankenhaus Standort",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Linksatrialer-Druck.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Linksatrialer-Druck"
+      },
+      "name" : "Linksatrialer-Druck",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Linksvent-Schlagvolumenindex-Durch-Indikatorverduennung.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Linksvent-Schlagvolumenindex-Durch-Indikatorverduennung"
+      },
+      "name" : "Linksvent-Schlagvolumenindex-Durch-Indikatorverduennung",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Linksventrikulaerer-Druck.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Linksventrikulaerer-Druck"
+      },
+      "name" : "Linksventrikulaerer-Druck",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Linksventrikulaerer-Herzindex.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Linksventrikulaerer-Herzindex"
+      },
+      "name" : "Linksventrikulaerer-Herzindex",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Linksventrikulaerer-Herzindex-Durch-Indikatorverduennung.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Linksventrikulaerer-Herzindex-Durch-Indikatorverduennung"
+      },
+      "name" : "Linksventrikulaerer-Herzindex-Durch-Indikatorverduennung",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Linksventrikulaeres-Herzzeitvolumen-durch-Indikatorverduennung.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Linksventrikulaeres-Herzzeitvolumen-durch-Indikatorverduennung"
+      },
+      "name" : "Linksventrikulaeres-Herzzeitvolumen-durch-Indikatorverduennung",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Linksventrikulaeres-Schlagvolumen.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Linksventrikulaeres-Schlagvolumen"
+      },
+      "name" : "Linksventrikulaeres-Schlagvolumen",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Linksventrikulaeres-Schlagvolumen-Durch-Indikatorverduennung.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Linksventrikulaeres-Schlagvolumen-Durch-Indikatorverduennung"
+      },
+      "name" : "Linksventrikulaeres-Schlagvolumen-Durch-Indikatorverduennung",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Linksventrikulaeres-Schlagvolumenindex.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Linksventrikulaeres-Schlagvolumenindex"
+      },
+      "name" : "Linksventrikulaeres-Schlagvolumenindex",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz"
+      },
+      "name" : "MII PR ICU Bilanz",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Bilanzierung von Patienten. Es ermöglicht die Erfassung von Einfuhr und Ausfuhr von Flüssigkeiten, Nahrungsmitteln und anderen relevanten Substanzen, um eine umfassende Dokumentation der Bilanzierung zu gewährleisten.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-ausfuhr-blutverlust.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-blutverlust"
+      },
+      "name" : "MII PR ICU Bilanz Ausfuhr Blutverlust",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung des Blutverlusts als Teil der Ausfuhr in der Bilanzierung von Patienten.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-ausfuhr-drainage-generisch.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-drainage-generisch"
+      },
+      "name" : "MII PR ICU Bilanz Ausfuhr Drainage Generisch",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung von Drainagen als Teil der Ausfuhr in der Bilanzierung von Patienten. Es ermöglicht die Erfassung von Drainagevolumina, unabhängig von der spezifischen Art der Drainage, und bietet somit eine flexible Lösung für die Dokumentation verschiedener Drainagetypen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-ausfuhr-fluessigkeit-gesamt.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-fluessigkeit-gesamt"
+      },
+      "name" : "MII PR ICU Bilanz Ausfuhr Fluessigkeit Gesamt",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der gesamten Flüssigkeitsausfuhr als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Gesamtmenge aller Flüssigkeiten, die ein Patient über einen bestimmten Zeitraum ausgeschieden hat, einschließlich Urin, Drainagen, Blutverlust und anderen Flüssigkeitsverlusten. Dieses Profil bietet somit eine umfassende Lösung für die Dokumentation der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-ausfuhr-gallenfluessigkeit.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-gallenfluessigkeit"
+      },
+      "name" : "MII PR ICU Bilanz Ausfuhr Gallenfluessigkeit",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Gallenflüssigkeitsausfuhr als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Gallenflüssigkeit, die ein Patient über einen bestimmten Zeitraum ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-ausfuhr-haemofiltration-einzelmesswerte.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-haemofiltration-einzelmesswerte"
+      },
+      "name" : "MII PR ICU Bilanz Ausfuhr Haemofiltration Einzelmesswerte",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung von Einzelmesswerten der Ausfuhr durch Hämo(dia)filtration als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung von spezifischen Volumina, die durch Hämo(dia)filtration aus dem Körper eines Patienten entfernt wurden, und bietet somit eine detaillierte Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-ausfuhr-magensonde.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-magensonde"
+      },
+      "name" : "MII PR ICU Bilanz Ausfuhr Magensonde",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Ausfuhr über eine Magensonde als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Flüssigkeit, die ein Patient über eine Magensonde ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-ausfuhr-op-drainage.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-op-drainage"
+      },
+      "name" : "MII PR ICU Bilanz Ausfuhr OP Drainage",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Ausfuhr über eine OP-Drainage als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Flüssigkeit, die ein Patient über eine OP-Drainage ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-ausfuhr-pankreasdrainage.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-pankreasdrainage"
+      },
+      "name" : "MII PR ICU Bilanz Ausfuhr Pankreasdrainage",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Ausfuhr über eine Pankreasdrainage als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Flüssigkeit, die ein Patient über eine Pankreasdrainage ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-ausfuhr-stuhlgang.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-stuhlgang"
+      },
+      "name" : "MII PR ICU Bilanz Ausfuhr Stuhlgang",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Stuhlausfuhr als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge des Stuhlgangs, die ein Patient über einen bestimmten Zeitraum ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-ausfuhr-urin.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-urin"
+      },
+      "name" : "MII PR ICU Bilanz Ausfuhr Urin",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Urinausfuhr als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge des Urins, die ein Patient über einen bestimmten Zeitraum ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-ausfuhr-wunddrainage.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-wunddrainage"
+      },
+      "name" : "MII PR ICU Bilanz Ausfuhr Wunddrainage",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Ausfuhr über eine Wunddrainage als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Flüssigkeit, die ein Patient über eine Wunddrainage ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-einfuhr-abgepumpte-muttermilch.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-einfuhr-abgepumpte-muttermilch"
+      },
+      "name" : "MII PR ICU Bilanz Einfuhr Abgepumpte Muttermilch",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von abgepumpter Muttermilch als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der abgepumpten Muttermilch, die einem Patienten verabreicht wurde, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-einfuhr-enterale-fluessigkeit.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-einfuhr-enterale-fluessigkeit"
+      },
+      "name" : "MII PR ICU Bilanz Einfuhr Enterale Fluessigkeit",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von enteraler Flüssigkeit als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der enteralen Flüssigkeit, die einem Patienten verabreicht wurde, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-einfuhr-fluessigkeit-gesamt.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-einfuhr-fluessigkeit-gesamt"
+      },
+      "name" : "MII PR ICU Bilanz Einfuhr Fluessigkeit Gesamt",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der gesamten Flüssigkeitseinfuhr als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Gesamtmenge aller Flüssigkeiten, die einem Patienten über einen bestimmten Zeitraum verabreicht wurden, einschließlich enteraler und parenteraler Flüssigkeiten, sowie anderer Flüssigkeitszufuhren. Dieses Profil bietet somit eine umfassende Lösung für die Dokumentation der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-einfuhr-muttermilch.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-einfuhr-muttermilch"
+      },
+      "name" : "MII PR ICU Bilanz Einfuhr Muttermilch",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von Muttermilch als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Muttermilch, die einem Patienten verabreicht wurde, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-einfuhr-orale-fluessigkeit.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-einfuhr-orale-fluessigkeit"
+      },
+      "name" : "MII PR ICU Bilanz Einfuhr Orale Fluessigkeit",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von oraler Flüssigkeit als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der oralen Flüssigkeit, die einem Patienten verabreicht wurde, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-einfuhr-saeuglingsnahrung.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-einfuhr-saeuglingsnahrung"
+      },
+      "name" : "MII PR ICU Bilanz Einfuhr Saeuglingsnahrung",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von Säuglingsnahrung als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Säuglingsnahrung, die einem Patienten verabreicht wurde, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-einfuhr-spendermilch.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-einfuhr-spendermilch"
+      },
+      "name" : "MII PR ICU Bilanz Einfuhr Spendermilch",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von Spendermilch als Teil der Bilanzierung.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-bilanz-tagesbilanz-fluessigkeit.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-bilanz-tagesbilanz-fluessigkeit"
+      },
+      "name" : "MII PR ICU Bilanz Tagesbilanz Fluessigkeit",
+      "description" : "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Tagesbilanz von Flüssigkeit als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Gesamtmenge aller Flüssigkeiten, die einem Patienten über einen Zeitraum von 24 Stunden verabreicht wurden, sowie der Gesamtmenge aller Flüssigkeiten, die ein Patient über denselben Zeitraum ausgeschieden hat. Dieses Profil bietet somit eine umfassende Lösung für die Dokumentation der täglichen Flüssigkeitsbilanz.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-muv-zerebraler-perfusionsdruck.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-muv-zerebraler-perfusionsdruck"
+      },
+      "name" : "MII PR ICU MUV zerebraler Perfusionsdruck",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des zerebralen Perfusionsdrucks (ICP) in der Akutmedizin.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Monitoring%20und%20Vitaldaten/MII_PR_ICU_MUV_zerebraler_Perfusionsdruck.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 3.3.2026.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-vent-icu-parameter-von-beatmung.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-vent-icu-parameter-von-beatmung"
+      },
+      "name" : "MII PR ICU Parameter von Beatmung",
+      "description" : "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-score-rass.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-score-rass"
+      },
+      "name" : "MII PR ICU Score RASS",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des Richmond Agitation Sedation Scale (RASS) Scores in der Akutmedizin.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Scores/MII_PR_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 13.3.2026.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-vent-spontane-atemfrequenz-beatmet.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-vent-spontane-atemfrequenz-beatmet"
+      },
+      "name" : "MII PR ICU Spontane Atemfrequenz Beatmet",
+      "description" : "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-vent-spontanes-atemzugvolumen.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-vent-spontanes-atemzugvolumen"
+      },
+      "name" : "MII PR ICU Spontanes Atemzugvolumen",
+      "description" : "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-vent-unterstuezungsdruck-beatmung.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-vent-unterstuezungsdruck-beatmung"
+      },
+      "name" : "MII PR ICU Unterstuezungsdruck Beatmung",
+      "description" : "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-untersuchung-pupillenbefund.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-untersuchung-pupillenbefund"
+      },
+      "name" : "MII PR ICU Untersuchung Pupillenbefund",
+      "description" : "Dieses Profil dient der Abbildung eines Pupillenbefunds, der als Panel die einzelnen Befunde zur Pupillenuntersuchung bündelt (Pupillengröße, Pupillenform, Pupillenlichtreaktion direkt/indirekt, Pupillensymmetrie).\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.3.2026.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-untersuchung-pupillenform.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-untersuchung-pupillenform"
+      },
+      "name" : "MII PR ICU Untersuchung Pupillenform",
+      "description" : "Dieses Profil dient der Abbildung der Pupillenform.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.3.2026.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-untersuchung-pupillengroesse.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-untersuchung-pupillengroesse"
+      },
+      "name" : "MII PR ICU Untersuchung Pupillengroesse",
+      "description" : "Dieses Profil dient der Abbildung der Pupillengröße.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.3.2026.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-untersuchung-pupillenlichtreaktion-direkt.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-untersuchung-pupillenlichtreaktion-direkt"
+      },
+      "name" : "MII PR ICU Untersuchung Pupillenlichtreaktion Direkt",
+      "description" : "Dieses Profil dient der Abbildung der direkten Pupillenlichtreaktion.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 13.3.2026.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-untersuchung-pupillenlichtreaktion-indirekt.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-untersuchung-pupillenlichtreaktion-indirekt"
+      },
+      "name" : "MII PR ICU Untersuchung Pupillenlichtreaktion Indirekt",
+      "description" : "Dieses Profil dient der Abbildung der indirekten Pupillenlichtreaktion.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.3.2026.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-mii-pr-icu-untersuchung-pupillensymmetrie.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mii-pr-icu-untersuchung-pupillensymmetrie"
+      },
+      "name" : "MII PR ICU Untersuchung Pupillensymmetrie",
+      "description" : "Dieses Profil dient der Abbildung der Pupillensymmetrie.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.3.2026.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-body-site-observation-beatmung.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-body-site-observation-beatmung"
+      },
+      "name" : "MII VS ICU BodySite Observation Beatmung",
+      "description" : "Dieses ValueSet enthält Codes für bodySites für die im Kontext einer Beatmung eingestellten oder gemessenen Parametern.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-bodysite-observation-pupillenbefund.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-bodysite-observation-pupillenbefund"
+      },
+      "name" : "MII VS ICU BodySite Observation Pupillenbefund",
+      "description" : " Zulaessige Koerperstellen fuer lateralisierte Pupillenbefunde: linke oder rechte Pupille.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_BodySite_Observation_Pupillenbefund.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-category-observation-bilanzen-hl7.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-category-observation-bilanzen-hl7"
+      },
+      "name" : "MII VS ICU Category Observation Bilanzen HL7",
+      "description" : "ValueSet defining HL7 observation categories for ICU Bilanzen",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-category-procedure-beatmung-snomed.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-category-procedure-beatmung-snomed"
+      },
+      "name" : "MII VS ICU Category Procedure Beatmung SNOMED",
+      "description" : "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Category_Beatmung_SNOMED.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-code-observation-beatmung-loinc-iso11073.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-code-observation-beatmung-loinc-iso11073"
+      },
+      "name" : "MII VS ICU Code Observation Beatmung ISO11073",
+      "description" : "Dieses ValueSet enthält Codes für die im Kontext einer Beatmung verwendeten Parameter.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-code-observation-beatmung-loinc.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-code-observation-beatmung-loinc"
+      },
+      "name" : "MII VS ICU Code Observation Beatmung LOINC",
+      "description" : "Dieses ValueSet enthält Codes für die im Kontext einer Beatmung verwendeten Parameter.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-code-observation-beatmung-snomed.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-code-observation-beatmung-snomed"
+      },
+      "name" : "MII VS ICU Code Observation Beatmung SNOMED",
+      "description" : "Dieses ValueSet enthält Codes für die im Kontext einer Beatmung verwendeten Parameter.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-code-observation-bilanzen-iso11073.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-code-observation-bilanzen-iso11073"
+      },
+      "name" : "MII VS ICU Code Observation Bilanzen ISO11073",
+      "description" : "Dieses ValueSet enthaelt Codes fuer die im Kontext einer Bilanz verwendeten ISO/IEEE 11073-Parameter.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-code-observation-bilanzen-loinc.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-code-observation-bilanzen-loinc"
+      },
+      "name" : "MII VS ICU Code Observation Bilanzen LOINC",
+      "description" : "Dieses ValueSet enthaelt Codes fuer die im Kontext einer Bilanz verwendeten LOINC-Parameter.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-code-observation-bilanzen-snomed.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-code-observation-bilanzen-snomed"
+      },
+      "name" : "MII VS ICU Code Observation Bilanzen SNOMED",
+      "description" : "Dieses ValueSet enthaelt Codes fuer die im Kontext einer Bilanz verwendeten SNOMED-Parameter.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-code-oservation-pupillenform-loinc.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-code-oservation-pupillenform-loinc"
+      },
+      "name" : "MII VS ICU Code Observation Pupillenform LOINC",
+      "description" : "Kategoriale Beurteilung der Pupillenform/Regularitaet: regelmaessig (rund) oder unregelmaessig. Zulaessig sind SNOMED-Findings und/oder LOINC-Antwortcodes.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-code-observation-pupillengroesse.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-code-observation-pupillengroesse"
+      },
+      "name" : "MII VS ICU Code Observation Pupillengroesse",
+      "description" : "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-code-observation-pupillenlichtreaktion.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-code-observation-pupillenlichtreaktion"
+      },
+      "name" : "MII VS ICU Code Observation Pupillenlichtreaktion",
+      "description" : "Subset der LOINC AnswerList LL3762-3 fuer die Pupillen-Lichtreaktion: reaktiv, traege reaktiv, nicht reaktiv.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Code_Observation_Pupillenlichtreaktion.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-code-observation-pupillensymmetrie.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-code-observation-pupillensymmetrie"
+      },
+      "name" : "MII VS ICU Code Observation Pupillensymmetrie",
+      "description" : "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Code_Observation_Pupillenlichtreaktion.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-code-procedure-beatmung-snomed.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-code-procedure-beatmung-snomed"
+      },
+      "name" : "MII VS ICU Code Procedure Beatmung SNOMED",
+      "description" : "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Code_Procedure_Beatmung_SNOMED.fsh# - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-score-rass.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-score-rass"
+      },
+      "name" : "MII VS ICU Score RASS",
+      "description" : "Value set for RASS Score\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 3.3.2026",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-mii-vs-icu-unit-equivalent-ucum-milliliter.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mii-vs-icu-unit-equivalent-ucum-milliliter"
+      },
+      "name" : "MII VS ICU Unit equivalent UCUM milliliter",
+      "description" : "Dieses ValueSet enthält äquivalente Codes für Milliliter.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationCodesCRP.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationCodesCRP"
+      },
+      "name" : "ObservationCodesCRP",
+      "description" : "Enthält LOINC-Codes für die Observation CRP",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationCodesGFR.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationCodesGFR"
+      },
+      "name" : "ObservationCodesGFR",
+      "description" : "Enthält LOINC-Codes für die Observation GFR",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationCodesHb.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationCodesHb"
+      },
+      "name" : "ObservationCodesHb",
+      "description" : "Enthält LOINC-Codes für die Observation Hb",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationCodesPCT.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationCodesPCT"
+      },
+      "name" : "ObservationCodesPCT",
+      "description" : "Enthält LOINC-Codes für die Observation PCT",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationCodesSerumkreatinin.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationCodesSerumkreatinin"
+      },
+      "name" : "ObservationCodesSerumkreatinin",
+      "description" : "Enthält LOINC-Codes für die Observation Serumkreatinin",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationCodesSerumnatrium.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationCodesSerumnatrium"
+      },
+      "name" : "ObservationCodesSerumnatrium",
+      "description" : "Enthält LOINC-Codes für die Observation Serumnatrium",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationCodesThrombozyten.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationCodesThrombozyten"
+      },
+      "name" : "ObservationCodesThrombozyten",
+      "description" : "Enthält LOINC-Codes für die Observation Thrombozyten",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationCodesTroponin.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationCodesTroponin"
+      },
+      "name" : "ObservationCodesTroponin",
+      "description" : "Enthält LOINC-Codes für die Observation Troponin",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationCodesTSH.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationCodesTSH"
+      },
+      "name" : "ObservationCodesTSH",
+      "description" : "Enthält LOINC-Codes für die Observation TSH",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationUnitsCRP.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationUnitsCRP"
+      },
+      "name" : "ObservationUnitsCRP",
+      "description" : "Enthält UCUM-Einheiten für die Observation CRP",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationUnitsGFR.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationUnitsGFR"
+      },
+      "name" : "ObservationUnitsGFR",
+      "description" : "Enthält UCUM-Einheiten für die Observation GFR",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationUnitsHb.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationUnitsHb"
+      },
+      "name" : "ObservationUnitsHb",
+      "description" : "Enthält UCUM-Einheiten für die Observation Hb",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationUnitsPCT.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationUnitsPCT"
+      },
+      "name" : "ObservationUnitsPCT",
+      "description" : "Enthält UCUM-Einheiten für die Observation PCT",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationUnitsSerumkreatinin.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationUnitsSerumkreatinin"
+      },
+      "name" : "ObservationUnitsSerumkreatinin",
+      "description" : "Enthält UCUM-Einheiten für die Observation Serumkreatinin",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationUnitsSerumnatrium.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationUnitsSerumnatrium"
+      },
+      "name" : "ObservationUnitsSerumnatrium",
+      "description" : "Enthält UCUM-Einheiten für die Observation Serumnatrium",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationUnitsThrombozyten.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationUnitsThrombozyten"
+      },
+      "name" : "ObservationUnitsThrombozyten",
+      "description" : "Enthält UCUM-Einheiten für die Observation Thrombozyten",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationUnitsTroponin.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationUnitsTroponin"
+      },
+      "name" : "ObservationUnitsTroponin",
+      "description" : "Enthält UCUM-Einheiten für die Observation Troponin",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ObservationUnitsTSH.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ObservationUnitsTSH"
+      },
+      "name" : "ObservationUnitsTSH",
+      "description" : "Enthält UCUM-Einheiten für die Observation TSH",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-PatientinMinimal.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/PatientinMinimal"
+      },
+      "name" : "PatientinMinimal",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-PatientinMusterfrau.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/PatientinMusterfrau"
+      },
+      "name" : "PatientinMusterfrau",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-PatientinNormal.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/PatientinNormal"
+      },
+      "name" : "PatientinNormal",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ProzedurenCodesSCT.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ProzedurenCodesSCT"
+      },
+      "name" : "ProzedurenCodesSCT",
+      "description" : "Enthaelt alle SNOMED Procedure Codes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ProzedurenKategorieSCT.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ProzedurenKategorieSCT"
+      },
+      "name" : "ProzedurenKategorieSCT",
+      "description" : "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ProzedurenReanimationCodesOPS.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ProzedurenReanimationCodesOPS"
+      },
+      "name" : "ProzedurenReanimationCodesOPS",
+      "description" : "Enthaelt alle OPS Procedure Codes für Reanimationsmaßnahmen",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ProzedurenReanimationCodesSCT.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ProzedurenReanimationCodesSCT"
+      },
+      "name" : "ProzedurenReanimationCodesSCT",
+      "description" : "Enthaelt alle SNOMED Procedure Codes für Reanimationsmaßnahmen",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Pulmonalarterieller-Blutdruck.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Pulmonalarterieller-Blutdruck"
+      },
+      "name" : "Pulmonalarterieller-Blutdruck",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Pulmonalarterieller-wedge-Blutdruck.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Pulmonalarterieller-wedge-Blutdruck"
+      },
+      "name" : "Pulmonalarterieller-wedge-Blutdruck",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Pulmonalvaskulaerer-Widerstandsindex.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Pulmonalvaskulaerer-Widerstandsindex"
+      },
+      "name" : "Pulmonalvaskulaerer-Widerstandsindex",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Puls.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Puls"
+      },
+      "name" : "Puls",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-ReanimationBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/ReanimationBeispiel"
+      },
+      "name" : "ReanimationBeispiel",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Rechtsatrialer-Druck.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Rechtsatrialer-Druck"
+      },
+      "name" : "Rechtsatrialer-Druck",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Rechtsventrikulaerer-Druck.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Rechtsventrikulaerer-Druck"
+      },
+      "name" : "Rechtsventrikulaerer-Druck",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Sauerstoffsaettigung-im-Arteriellen-Blut-durch-Pulsoxymetrie.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Sauerstoffsaettigung-im-Arteriellen-Blut-durch-Pulsoxymetrie"
+      },
+      "name" : "Sauerstoffsaettigung-im-Arteriellen-Blut-durch-Pulsoxymetrie",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Sauerstoffsaettigung-im-Blut-Postduktal-durch-Pulsoxymetrie.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Sauerstoffsaettigung-im-Blut-Postduktal-durch-Pulsoxymetrie"
+      },
+      "name" : "Sauerstoffsaettigung-im-Blut-Postduktal-durch-Pulsoxymetrie",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Sauerstoffsaettigung-im-Blut-Preduktal-durch-Pulsoxymetrie.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Sauerstoffsaettigung-im-Blut-Preduktal-durch-Pulsoxymetrie"
+      },
+      "name" : "Sauerstoffsaettigung-im-Blut-Preduktal-durch-Pulsoxymetrie",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-herzzeitvolumen.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-herzzeitvolumen"
+      },
+      "name" : "SD MII ICU Herzzeitvolumen",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des Herzzeitvolumens in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-ideales-koerpergewicht.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-ideales-koerpergewicht"
+      },
+      "name" : "SD MII ICU Ideales Koerpergewicht",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des idealen Körpergewichts in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-intrakranieller-druck-icp.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-intrakranieller-druck-icp"
+      },
+      "name" : "SD MII ICU Intrakranieller Druck ICP",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des intrakraniellen Drucks (ICP) in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpergewicht-percentil-altersabhaengig.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpergewicht-percentil-altersabhaengig"
+      },
+      "name" : "SD MII ICU Koerpergewicht Percentil Altersabhaengig",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des altersabhängigen Körpergewicht-Perzentils in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpergroesse-percentil-altersabhaengig.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpergroesse-percentil-altersabhaengig"
+      },
+      "name" : "SD MII ICU Koerpergroesse Percentil",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des altersabhängigen Körpergrößen-Perzentils in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerperkerntemperatur-stirn.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerperkerntemperatur-stirn"
+      },
+      "name" : "SD MII ICU Koerperkerntemperatur Stirn",
+      "description" : "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen an der Stirn in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-achsel.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-achsel"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Achsel",
+      "description" : "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen in der Achsel in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-atemwege.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-atemwege"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Atemwege",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung in den Atemwegen in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-blut.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-blut"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Blut",
+      "description" : "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten Körperkerntemperatur gemessen im Blut in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-brust.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-brust"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Brust",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung an der Brust in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-brustwirbelsaeule"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Brustwirbelsaeule",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung an der Brustwirbelsäule in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-gelenk.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-gelenk"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Gelenk",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung am Gelenk in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-generisch.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-generisch"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Generisch",
+      "description" : "Dieses Profil bietet eine abstrahierte Schicht zur Körpertemperaturmessung in der Akutmedizin. Es ist generisch im Sinne der Profil-Abstraktion, allerdings explizit nicht im Sinne einer KörperKERNtemperatur zu verwenden (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-halswirbelsaeule.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-halswirbelsaeule"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Halswirbelsaeule",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung an der Halswirbelsäule in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-harnblase.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-harnblase"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Harnblase",
+      "description" : "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten Körperkerntemperatur gemessen in der Harnblase in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-kern.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-kern"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Kern",
+      "description" : "Dieses Profil bietet eine generische Abbildung der geschätzten KörperKERNtemperatur in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-leiste.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-leiste"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Leiste",
+      "description" : "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen in der Leiste in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-lendenwirbelsaeule.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-lendenwirbelsaeule"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Lendenwirbelsaeule",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung im Bereich der Lendenwirbelsäule. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-myokard.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-myokard"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Myokard",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung im Myokard (Herzmuskel). Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-nasal.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-nasal"
+      },
+      "name" : "SD MII ICU Koerpertemperatur nasal",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung im Nasenbereich in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-nasen-rachen-raum"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Nasen-Rachen-Raum",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung im Nasen-Rachen-Raum in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-rektal.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-rektal"
+      },
+      "name" : "SD MII ICU Koerpertemperatur rektal",
+      "description" : "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen rektal in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-speiseroehre.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-speiseroehre"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Speiseroehre",
+      "description" : "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen in der Speiseröhre in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-stirn.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-stirn"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Stirn",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung an der Stirn in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-trommelfell.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-trommelfell"
+      },
+      "name" : "SD MII ICU Koerpertemperatur Trommelfell",
+      "description" : "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen im Trommelfell in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-unter-der-zunge.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-unter-der-zunge"
+      },
+      "name" : "SD MII ICU Koerpertemperatur unter der Zunge",
+      "description" : "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen unter der Zunge in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-koerpertemperatur-vaginal"
+      },
+      "name" : "SD MII ICU Koerpertemperatur vaginal",
+      "description" : "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen vaginal in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-linksatrialer-druck.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-linksatrialer-druck"
+      },
+      "name" : "SD MII ICU Linksatrialer Druck",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des linksatrialen Drucks in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-linksventrikulaerer-druck.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-linksventrikulaerer-druck"
+      },
+      "name" : "SD MII ICU Linksventrikulaerer Druck",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Drucks in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-linksventrikulaerer-herzindex.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-linksventrikulaerer-herzindex"
+      },
+      "name" : "SD MII ICU Linksventrikulaerer Herzindex",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Herzindex in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung"
+      },
+      "name" : "SD MII ICU Linksventrikulaerer Herzindex durch Indikatorverduennung",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Herzindex durch Indikatorverdünnung in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-linksventri-schlagvolumenindex-durch-indikatorverd.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-linksventri-schlagvolumenindex-durch-indikatorverd"
+      },
+      "name" : "SD MII ICU Linksventrikulaerer Schlagvolumenindex Durch Indikatorverduennung",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Schlagvolumenindex durch Indikatorverdünnung in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-lv-herzzeitvolumen-durch-indikator.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-lv-herzzeitvolumen-durch-indikator"
+      },
+      "name" : "SD MII ICU Linksventrikulaeres Herzzeitvolumen Durch Indikatorverduennung",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Herzzeitvolumens durch Indikatorverdünnung in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-linksventrikulaeres-schlagvolumen"
+      },
+      "name" : "SD MII ICU Linksventrikulaeres Schlagvolumen",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Schlagvolumens in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-linksventri-schlagvolumen-durch-indikatorverduennung.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-linksventri-schlagvolumen-durch-indikatorverduennung"
+      },
+      "name" : "SD MII ICU Linksventrikulaeres Schlagvolumen Durch Indikatorverduennung",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Schlagvolumens durch Indikatorverdünnung in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumenindex.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-linksventrikulaeres-schlagvolumenindex"
+      },
+      "name" : "SD MII ICU Linksventrikulaeres Schlagvolumenindex",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Schlagvolumenindex in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-monitoring-und-vitaldaten.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-monitoring-und-vitaldaten"
+      },
+      "name" : "SD MII ICU Monitoring und Vitaldaten",
+      "description" : "Dieses Profil dient als Abstraktionsprofil für verschiedene spezialisierte Beobachtungen in der Akutmedizin zur Abbildung von Monitoring- und Vitaldaten.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-pulmonalarterieller-blutdruck.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-pulmonalarterieller-blutdruck"
+      },
+      "name" : "SD MII ICU Pulmonalarterieller Blutdruck",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des pulmonalarteriellen Blutdrucks in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-pulmonalarterieller-wedge-druck.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-pulmonalarterieller-wedge-druck"
+      },
+      "name" : "SD MII ICU Pulmonalarterieller Wedge Druck",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des pulmonalarteriellen Wedge-Drucks in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-pulmonalvaskulaerer-widerstandsindex.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-pulmonalvaskulaerer-widerstandsindex"
+      },
+      "name" : "SD MII ICU Pulmonalvaskulaerer Widerstandsindex",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des pulmonalvaskulären Widerstandsindex in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-puls.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-puls"
+      },
+      "name" : "SD MII ICU Puls",
+      "description" : "Dieses Profil repräsentiert Pulsuntersuchungen die nicht den Zweck einer Herzfrequenzmessung haben, sondern die Pulsfrequenz als eigenständige Vitalfunktion erfassen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-rechtsatrialer-druck.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-rechtsatrialer-druck"
+      },
+      "name" : "SD MII ICU Rechtsatrialer Druck",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des rechtsatrialen Drucks in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-rechtsventrikulaerer-druck"
+      },
+      "name" : "SD MII ICU Rechtsventrikulaerer Druck",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des rechtsventrikulären Drucks in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie"
+      },
+      "name" : "SD MII ICU Sauerstoffsaettigung Im Arteriellen Blut Durch Pulsoxymetrie",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung der Sauerstoffsättigung im arteriellen Blut durch Pulsoxymetrie in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie"
+      },
+      "name" : "SD MII ICU Sauerstoffsaettigung Im Blut Postduktal Durch Pulsoxymetrie",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung der Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-o2saettigung-im-blut-preduktal-durch-pulsoxymetrie.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-o2saettigung-im-blut-preduktal-durch-pulsoxymetrie"
+      },
+      "name" : "SD MII ICU Sauerstoffsaettigung Im Blut Preduktal Durch Pulsoxymetrie",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung der Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-sonstige-pulsatile-druecke-generisch.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-sonstige-pulsatile-druecke-generisch"
+      },
+      "name" : "SD MII ICU Sonstige pulsatile Druecke Generisch",
+      "description" : "Dieses Profil bietet eine abstrahierte Schicht zur Abbildung sonstiger pulsatiler Drücke in der Akutmedizin. Es ist generisch im Sinne der Profil-Abstraktion, allerdings explizit nicht im Sinne einer Blutdruckmessung (siehe dafür Profile zu Blutdruck im generischen Modul Vitalparameter).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-systemischer-vaskulaerer-widerstandsindex.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-systemischer-vaskulaerer-widerstandsindex"
+      },
+      "name" : "SD MII ICU Systemischer Vaskulaerer Widerstandsindex",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des systemisch-vaskulären Widerstandsindex in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-sd-mii-icu-zentralvenoeser-blutdruck.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sd-mii-icu-zentralvenoeser-blutdruck"
+      },
+      "name" : "SD MII ICU Zentralvenoeser Blutdruck",
+      "description" : "Dieses Profil dient der spezialisierten Abbildung des zentralvenösen Blutdrucks in der Akutmedizin.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Location"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Location-StationICUStandortBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Location/StationICUStandortBeispiel"
+      },
+      "name" : "Station A",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Location"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Location-StationPediaICUStandortBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Location/StationPediaICUStandortBeispiel"
+      },
+      "name" : "Station A",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Location"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Location-StationStandortBeispiel.html"
+      }],
+      "reference" : {
+        "reference" : "Location/StationStandortBeispiel"
+      },
+      "name" : "Station A",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Systemischer-vaskulaerer-Widerstandsindex.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Systemischer-vaskulaerer-Widerstandsindex"
+      },
+      "name" : "Systemischer-vaskulaerer-Widerstandsindex",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-SZ1Nachstationaer.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/SZ1Nachstationaer"
+      },
+      "name" : "SZ1Nachstationaer",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-SZ1Patient.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/SZ1Patient"
+      },
+      "name" : "SZ1Patient",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-SZ1Stationaer.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/SZ1Stationaer"
+      },
+      "name" : "SZ1Stationaer",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-SZ1Vorstationaer.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/SZ1Vorstationaer"
+      },
+      "name" : "SZ1Vorstationaer",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-SZ2Encounter.html"
+      }],
+      "reference" : {
+        "reference" : "Encounter/SZ2Encounter"
+      },
+      "name" : "SZ2Encounter",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-SZ2Patient.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/SZ2Patient"
+      },
+      "name" : "SZ2Patient",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-vs-mii-icu-bodysite-observation-blutdruck.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/vs-mii-icu-bodysite-observation-blutdruck"
+      },
+      "name" : "VS MII ICU BodySite Observation Blutdruck",
+      "description" : "Dieses ValueSet enthält Codes für bodySites von Blutdrücken (pulsatilen Drücken).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-vs-mii-icu-bodysite-observation-monitoring-und-vitaldaten.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/vs-mii-icu-bodysite-observation-monitoring-und-vitaldaten"
+      },
+      "name" : "VS MII ICU BodySite Observation Monitoring und Vitaldaten",
+      "description" : "Dieses ValueSet enthält Codes für bodySites von Vitaldaten sowie Daten aus dem Patientenmonitoring.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-vs-mii-icu-code-monitoring-und-vitaldaten-iso11073.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-iso11073"
+      },
+      "name" : "VS MII ICU Code Monitoring und Vitaldaten [ISO11073]",
+      "description" : "Dieses ValueSet enthält Codes für Vitaldaten sowie Daten aus dem Patientenmonitoring.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-vs-mii-icu-code-monitoring-und-vitaldaten-loinc.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-loinc"
+      },
+      "name" : "VS MII ICU Code Monitoring und Vitaldaten [LOINC]",
+      "description" : "Dieses ValueSet enthält Codes für Vitaldaten sowie Daten aus dem Patientenmonitoring.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-vs-mii-icu-code-monitoring-und-vitaldaten-snomed.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-snomed"
+      },
+      "name" : "VS MII ICU Code Monitoring und Vitaldaten [sct]",
+      "description" : "Dieses ValueSet enthaelt Codes fuer Vitaldaten sowie Daten aus dem Patientenmonitoring.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-vs-mii-icu-method-observation-blutdruck.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/vs-mii-icu-method-observation-blutdruck"
+      },
+      "name" : "VS MII ICU Method Observation Blutdruck",
+      "description" : "Dieses ValueSet enthält Codes zur Angabe, ob ein Blutdruck invasiv oder nicht-invasiv gemessen ist.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-Zentralvenoeser-Blutdruck.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/Zentralvenoeser-Blutdruck"
+      },
+      "name" : "Zentralvenoeser-Blutdruck",
+      "exampleBoolean" : false
+    }],
+    "page" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+        "valueUrl" : "toc.html"
+      }],
+      "nameUrl" : "toc.html",
+      "title" : "Table of Contents",
+      "generation" : "html",
+      "page" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "index.html"
+        }],
+        "nameUrl" : "index.html",
+        "title" : "Einführung",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "Akteure.html"
+        }],
+        "nameUrl" : "Akteure.html",
+        "title" : "Akteure",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "Festlegungen.html"
+        }],
+        "nameUrl" : "Festlegungen.html",
+        "title" : "Festlegungen",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "ProzesseUndWorkflows.html"
+        }],
+        "nameUrl" : "ProzesseUndWorkflows.html",
+        "title" : "Prozesse und Workflows",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "ReleaseNotes.html"
+        }],
+        "nameUrl" : "ReleaseNotes.html",
+        "title" : "Release Notes",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "UseCases.html"
+        }],
+        "nameUrl" : "UseCases.html",
+        "title" : "Use Case - Übergang zwischen Akut- und Normalversorgung",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "artifacts-isik.html"
+        }],
+        "nameUrl" : "artifacts-isik.html",
+        "title" : "FHIR-Artefakte",
+        "generation" : "markdown"
+      }]
+    },
+    "parameter" : [{
+      "code" : "path-resource",
+      "value" : "input/capabilities"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/examples"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/extensions"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/models"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/operations"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/profiles"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/resources"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/vocabulary"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/maps"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/testing"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/history"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "fsh-generated/resources"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "template/config"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "input/images"
+    },
+    {
+      "code" : "path-tx-cache",
+      "value" : "input-cache/txcache"
+    }]
+  }
+}
+
+```

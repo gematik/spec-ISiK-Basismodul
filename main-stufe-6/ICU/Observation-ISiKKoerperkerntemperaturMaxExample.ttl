@@ -1,0 +1,123 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Observation/ISiKKoerperkerntemperaturMaxExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ISiKKoerperkerntemperaturMaxExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerperkerntemperatur" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerperkerntemperatur>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation ISiKKoerperkerntemperaturMaxExample</b></p><a name=\"ISiKKoerperkerntemperaturMaxExample\"> </a><a name=\"hcISiKKoerperkerntemperaturMaxExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKKoerperkerntemperatur.html\">ISiKKoerperkerntemperatur</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 8310-5}, {http://snomed.info/sct 276885007}, {urn:iso:std:iso:11073:10101 150364}, {urn:iso:std:iso:11073:10101 150368}, {http://loinc.org 8329-5}\">Körperkerntemperatur - Intensivmonitoring</span></p><p><b>subject</b>: <a href=\"Patient-PatientinNormal.html\">Anna Müller (official) Female, DoB: 1957-08-12 ( Medical record number)</a></p><p><b>effective</b>: 2024-01-15 16:45:00+0100</p><p><b>performer</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Practitioner/PractitionerWalterArzt\">Practitioner/PractitionerWalterArzt</a></p><p><b>value</b>: 42.5 °C<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeCel = 'Cel')</span></p><p><b>interpretation</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation H}\">High</span></p><p><b>note</b>: </p><blockquote><div><p>Hyperthermie - Ösophageale Kerntemperaturmessung bei maligner Hyperthermie</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 181245004}\">Entire esophagus</span></p><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 1461000205102}\">Digital thermometer</span></p><p><b>device</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Device/ExampleDevice\">Device/ExampleDevice</a></p></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "vital-signs" ] ;
+       fhir:Coding.display [ fhir:value "Vital Signs" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a loinc:8310-5 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "8310-5" ]
+     ], [
+       fhir:index 1 ;
+       a sct:276885007 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "276885007" ] ;
+       fhir:Coding.display [ fhir:value "Körperkerntemperatur" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ] ;
+       fhir:Coding.code [ fhir:value "150364" ] ;
+       fhir:Coding.display [ fhir:value "MDC_TEMP_BODY" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ] ;
+       fhir:Coding.code [ fhir:value "150368" ] ;
+       fhir:Coding.display [ fhir:value "MDC_TEMP_CORE" ]
+     ], [
+       fhir:index 4 ;
+       a loinc:8329-5 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "8329-5" ] ;
+       fhir:Coding.display [ fhir:value "Body temperature - Core" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Körperkerntemperatur - Intensivmonitoring" ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinNormal> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinNormal" ]
+  ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2024-01-15T16:45:00+01:00"^^xsd:dateTime] ;
+  fhir:Observation.performer [
+     fhir:index 0 ;
+     fhir:link <https://gematik.de/fhir/isik/Practitioner/PractitionerWalterArzt> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/PractitionerWalterArzt" ]
+  ] ;
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "42.5"^^xsd:decimal ] ;
+     fhir:Quantity.unit [ fhir:value "°C" ] ;
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+     fhir:Quantity.code [ fhir:value "Cel" ]
+  ] ;
+  fhir:Observation.interpretation [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation" ] ;
+       fhir:Coding.code [ fhir:value "H" ] ;
+       fhir:Coding.display [ fhir:value "High" ]
+     ]
+  ] ;
+  fhir:Observation.note [
+     fhir:index 0 ;
+     fhir:Annotation.text [ fhir:value "Hyperthermie - Ösophageale Kerntemperaturmessung bei maligner Hyperthermie" ]
+  ] ;
+  fhir:Observation.bodySite [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:181245004 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "181245004" ] ;
+       fhir:Coding.display [ fhir:value "Entire esophagus" ]
+     ]
+  ] ;
+  fhir:Observation.method [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:1461000205102 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "1461000205102" ] ;
+       fhir:Coding.display [ fhir:value "Digital thermometer" ]
+     ]
+  ] ;
+  fhir:Observation.device [
+     fhir:link <https://gematik.de/fhir/isik/Device/ExampleDevice> ;
+     fhir:Reference.reference [ fhir:value "Device/ExampleDevice" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Observation/ISiKKoerperkerntemperaturMaxExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

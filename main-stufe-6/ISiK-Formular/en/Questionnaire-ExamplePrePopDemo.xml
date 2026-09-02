@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Questionnaire xmlns="http://hl7.org/fhir">
+  <id value="ExamplePrePopDemo"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/>
+  </text>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">
+    <extension url="name">
+      <valueCoding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"/>
+        <code value="patient"/>
+      </valueCoding>
+    </extension>
+    <extension url="type">
+      <valueCode value="Patient"/>
+    </extension>
+    <extension url="description">
+      <valueString value="Patientenkontext"/>
+    </extension>
+  </extension>
+  <url value="https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopDemo"/>
+  <version value="6.0.0"/>
+  <name value="ExamplePrePopDemo"/>
+  <title value="Vorbelegung Demografischer Daten"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <subjectType value="Patient"/>
+  <date value="2026-09-02T11:31:15+00:00"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="### Beispiel-Questionnaire mit automatischer Vorbelegung von demografischen Patientendaten &#xA;Der Patientenkontext wird mittels der [SDC-LaunchContexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)-Extension hergestellt.  &#xA;Die Vorbelegung erfolgt über die [SDC-InitialExpression](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html)-Extension"/>
+  <item>
+    <linkId value="1"/>
+    <text value="Demografische Patientendaten"/>
+    <type value="group"/>
+    <required value="true"/>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion des ersten Vornamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name"/>
+          <language value="text/fhirpath"/>
+          <expression value="(%patient.name.where(use = 'official').given[0] | %patient.name[0].given[0]).first()"/>
+        </valueExpression>
+      </extension>
+      <linkId value="1.1"/>
+      <text value="Vorname:"/>
+      <type value="string"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Selektion des Nachnamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name"/>
+          <language value="text/fhirpath"/>
+          <expression value="(%patient.name.where(use = 'official').family | %patient.name[0].family).first()"/>
+        </valueExpression>
+      </extension>
+      <linkId value="1.2"/>
+      <text value="Nachname:"/>
+      <type value="string"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+        <valueExpression>
+          <description value="Versichertennnummer(KVID) des Patienten"/>
+          <language value="text/fhirpath"/>
+          <expression value="%patient.identifier.where(system='http://fhir.de/sid/gkv/kvid-10').value"/>
+        </valueExpression>
+      </extension>
+      <linkId value="1.4"/>
+      <text value="Versichertennummer:"/>
+      <type value="string"/>
+    </item>
+  </item>
+</Questionnaire>

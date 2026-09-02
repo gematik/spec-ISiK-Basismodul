@@ -1,0 +1,792 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Implementierungsleitfaden ISiK-Basismodul Stufe 2</title>
+
+        <link rel="icon" href="static/styles/common/favicon.ico" />
+
+        <script src="static/styles/common/jquery/jquery.min.js"></script>
+        <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="static/styles/common/main.min.css" />
+        <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" />
+
+        <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+        <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+        <link rel="stylesheet" href="static/project/ImplementationGuide/style/style.css?v=1d934c81421c400" />
+
+    </head>
+
+    <body>
+
+        <div id="ig-viewer">
+
+            <div class="ig-view-content">
+
+                <div id="ig-view-twolevelmenu">
+
+                    <div class="header" role="banner" aria-label="Header">
+                        
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                Implementierungsleitfaden ISiK-Basismodul Stufe 2
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                Release Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseMatrix.html">
+                                Release-Matrix
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Versicherungsverhaeltnis.html">
+                                            Versicherungsverh&#xE4;ltnis (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                    </div>
+
+                    <div class="content container" role="main" aria-label="Main content">
+                        
+
+    <div class="row">
+
+            <div class="col-md-6">
+                <ul class="nav nav-pills nav-stacked affix-top">
+                        <li>
+                            <a title="Motivation" href="#ImplementationGuide-markdown-ValueSet-ValueSet-Motivation">Motivation</a>
+                        </li>
+                        <li>
+                            <a title="Kompatibilit&#xE4;t" href="#ImplementationGuide-markdown-ValueSet-ValueSet-Kompatibilitaet">Kompatibilit&#xE4;t</a>
+                        </li>
+                        <li>
+                            <a title="Profil" href="#ImplementationGuide-markdown-ValueSet-ValueSet-Profil">Profil</a>
+                        </li>
+                        <li>
+                            <a title="Anmerkungen" href="#I-markdown-ValueSet-ValueSet-AnmerkungenZuDenMustSupportFeldern">Anmerkungen</a>
+                        </li>
+                        <li>
+                            <a title="Anmerkungen" href="#ImplementationGuide-markdown-ValueSet-ValueSet-Interaktionen">Anmerkungen</a>
+                        </li>
+                        <li>
+                            <a title="Beispiele" href="#ImplementationGuide-markdown-ValueSet-ValueSet-Beispiele">Beispiele</a>
+                        </li>
+                </ul>
+            </div>
+
+        <div class="col-md-18">
+
+            <div id="preview-content">
+
+                <h2 id="valueset-valueset">ValueSet <a href="http://hl7.org/fhir/valueset.html">(ValueSet)</a></h2>
+<hr />
+
+
+                        <div id="ImplementationGuide-markdown-ValueSet-ValueSet-Motivation">
+                            <h3 id="motivation">Motivation</h3>
+<p>ISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus- / Systeminterne Kodierungen.
+Mittels der Publizierung von ValueSets können Auswahllisten für externe Clients bereitgestellt werden, sodass diese Kodierungen ebenfalls anbieten können.</p>
+<hr />
+
+                        </div>
+                        <div id="ImplementationGuide-markdown-ValueSet-ValueSet-Kompatibilitaet">
+                            <h3 id="kompatibilitat">Kompatibilität</h3>
+<p>Zum Zeitpunkt der Veröffentlichung waren keine weiteren Profile in nationalen Spezifikationen für dieses Datenobjekt bekannt.</p>
+
+                        </div>
+                        <div id="ImplementationGuide-markdown-ValueSet-ValueSet-Profil">
+                            <h3 id="fhir-profil">FHIR-Profil</h3>
+<table class='table table-bordered scrollbar '><thead><tr><th>Name</th><th>Canonical</th></tr></thead><tbody><tr><td>ISiKValueSet</td><td><a target='_blank' href='https://simplifier.net/resolve?canonical=https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKValueSet&scope=IsiK@current'>https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKValueSet</a></td></tr>
+</tbody></table>
+<div id="55ccd252c7fd44959ac67f022a974a5a" data-level="1" class="stu3-treetable"><div class="treetable-wrapper hybrid"><div class="treetable-left-panel"><table class="treetable"><tr data-id="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class="collapsed constraints"><td class="profile"><span class="baseIcon resource"></span><span class="constraints">ValueSet</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td></td><td class="profile"><a title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-valueset.json" >ValueSet</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet</pre></p></div><span><b>Short description </b></span><p><span>A set of codes drawn from one or more code systems</span></p><span><b>Definition </b></span><div class="markdown"><p>A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between <a href="codesystem.html">CodeSystem</a> definitions and their use in <a href="terminologies.html">coded elements</a>.</p>
+</div><span><b>Data Type </b></span><p><a title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-valueset.json" >ValueSet</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>dom-2:</b>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br/><code>contained.contained.empty()</code></li><li class=""><b>dom-4:</b>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br/><code>contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</code></li><li class=""><b>dom-3:</b>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br/><code>contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</code></li><li class=""><b>dom-6:</b>A resource should have narrative for robust management<br/><code>text.`div`.exists()</code></li><li class=""><b>dom-5:</b>If a resource is contained in another resource, it SHALL NOT have a security label<br/><code>contained.meta.security.empty()</code></li><li class=""><b>vsd-0:</b>Name should be usable as an identifier for the module by machine processing applications such as code generation<br/><code>name.matches('[A-Z]([A-Za-z0-9_]){0,254}')</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>Entity. Role, or Act</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.id" data-id="baf57bc4-b440-43db-b4e5-55e2ae752c4e" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class="constraints"><td class="profile"><span class="baseIcon datatype"></span><span class="constraints">id</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><span title="True primitive, so no extensions or ids allowed">System.String</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.id</pre></p></div><span><b>Short description </b></span><p><span>Logical id of this artifact</span></p><span><b>Definition </b></span><div class="markdown"><p>The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The only time that a resource does not have an id is when it is being submitted to the server using a create operation.</p>
+</div><span><b>Data Type </b></span><p><span title="True primitive, so no extensions or ids allowed">System.String</span></p></td></tr><tr id="ValueSet.url" data-id="6fb235eb-e916-4eb3-8f93-f6e00ab03991" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">url</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-uri.json" >uri</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.url</pre></p></div><span><b>Short description </b></span><p><span>Canonical identifier for this value set, represented as a URI (globally unique)</span></p><span><b>Definition </b></span><div class="markdown"><p>An absolute URI that is used to identify this value set when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this value set is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the value set is stored on different servers.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Allows the value set to be referenced by a single globally unique identifier.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.</p>
+<p>The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in <a href="resource.html#versions">Technical and Business Versions</a>.</p>
+<p>In some cases, the resource can no longer be found at the stated url, but the url itself cannot change. Implementations can use the <a href="resource.html#meta">meta.source</a> element to indicate where the current master source of the resource can be found.</p>
+</div><span><b>Data Type </b></span><p><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-uri.json" >uri</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.url</li><li class=""><b>w5:</b>FiveWs.identifier</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.identifier" data-id="16fd761b-132b-4ec9-ab67-5507b23ebdac" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class=""><td class="profile"><span class="baseIcon datatype"></span><span>identifier</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Identifier
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Identifier.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-identifier.json" >Identifier</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.identifier</pre></p></div><span><b>Short description </b></span><p><span>Additional identifier for the value set (business identifier)</span></p><span><b>Definition </b></span><div class="markdown"><p>A formal identifier that is used to identify this value set when it is represented in other formats, or referenced in a specification, model, design or an instance.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Allows externally provided and/or usable business identifiers to be easily associated with the module.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this value set outside of FHIR, where it is not possible to use the logical URI.</p>
+</div><span><b>Data Type </b></span><p><a title="Identifier
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Identifier.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-identifier.json" >Identifier</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>v2:</b>CX / EI (occasionally, more often EI maps to a resource id or a URL)</li><li class=""><b>rim:</b>II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]</li><li class=""><b>servd:</b>Identifier</li><li class=""><b>workflow:</b>Definition.identifier</li><li class=""><b>w5:</b>FiveWs.identifier</li><li class=""><b>objimpl:</b>no-gen-base</li></ul></td></tr><tr id="ValueSet.version" data-id="b2fa879c-f002-4206-b5e9-ac82a2c039d5" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">version</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.version</pre></p></div><span><b>Short description </b></span><p><span>Business version of the value set</span></p><span><b>Definition </b></span><div class="markdown"><p>The identifier that is used to identify this version of the value set when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the value set author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There may be different value set instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the value set with the format [url]|[version].</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.version</li><li class=""><b>w5:</b>FiveWs.version</li></ul></td></tr><tr id="ValueSet.name" data-id="881d7939-e676-40e6-8a12-f42db26ef827" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">name</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.name</pre></p></div><span><b>Short description </b></span><p><span>Name for this value set (computer friendly)</span></p><span><b>Definition </b></span><div class="markdown"><p>A natural language name identifying the value set. This name should be usable as an identifier for the module by machine processing applications such as code generation.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Support human navigation and code generation.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.A name should be provided unless the value set is a contained resource (e.g. an anonymous value set in a profile). Most registries will require a name.</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.title" data-id="25129074-0c40-438e-bf50-674cf7bfad98" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class=""><td class="profile"><span class="baseIcon primitive"></span><span>title</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.title</pre></p></div><span><b>Short description </b></span><p><span>Name for this value set (human friendly)</span></p><span><b>Definition </b></span><div class="markdown"><p>A short, descriptive, user-friendly title for the value set.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.title</li></ul></td></tr><tr id="ValueSet.status" data-id="d7baacf7-d155-4c6a-be3b-b89bb2353136" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">status</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span> <span title="This element is a modifying element">?!</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.status</pre></p></div><span><b>Short description </b></span><p><span>draft | active | retired | unknown</span></p><span><b>Definition </b></span><div class="markdown"><p>The status of this value set. Enables tracking the life-cycle of the content. The status of the value set applies to the value set definition (ValueSet.compose) and the associated ValueSet metadata. Expansions do not have a state.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Allows filtering of value sets that are appropriate for use versus not.See also the <a href="extension-valueset-workflowstatus.html">valueset-workflowStatus</a> extension for additional status information related to the editorial process.</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Binding </b></span><p><p><span>The lifecycle status of an artifact.</span></p><a title="PublicationStatus
+hl7.fhir.r4.core 4.0.1
+ValueSet-publication-status.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-publication-status.json" >PublicationStatus</a><span> (</span><a title="To be conformant, instances of this element SHALL include a code from the specified valueset" href="http://hl7.org/fhir/r4/terminologies.html#required" >required</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.status</li><li class=""><b>w5:</b>FiveWs.status</li></ul></td></tr><tr id="ValueSet.experimental" data-id="9991d2b7-c8bf-442c-be07-f78a418492f7" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class=""><td class="profile"><span class="baseIcon primitive"></span><span>experimental</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.experimental</pre></p></div><span><b>Short description </b></span><p><span>For testing purposes, not real usage</span></p><span><b>Definition </b></span><div class="markdown"><p>A Boolean value to indicate that this value set is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Enables experimental content to be developed following the same lifecycle that would be used for a production-level value set.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Allows filtering of value sets that are appropriate for use versus not.</p>
+</div><span><b>Data Type </b></span><p><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.experimental</li><li class=""><b>w5:</b>FiveWs.class</li></ul></td></tr><tr id="ValueSet.date" data-id="a707ec20-b7b7-46e3-93f5-cebca1299322" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class=""><td class="profile"><span class="baseIcon primitive"></span><span>date</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="dateTime
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-dateTime.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-datetime.json" >dateTime</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.date</pre></p></div><span><b>Short description </b></span><p><span>Date last changed</span></p><span><b>Alternate names </b></span><p><span>Revision Date</span></p><span><b>Definition </b></span><div class="markdown"><p>The date (and optionally time) when the value set was created or revised (e.g. the 'content logical definition').</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the value set. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.</p>
+</div><span><b>Data Type </b></span><p><a title="dateTime
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-dateTime.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-datetime.json" >dateTime</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.date</li><li class=""><b>w5:</b>FiveWs.recorded</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.publisher" data-id="7c501be5-85ea-445e-9de2-bf2e63c99f2d" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class=""><td class="profile"><span class="baseIcon primitive"></span><span>publisher</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.publisher</pre></p></div><span><b>Short description </b></span><p><span>Name of the publisher (organization or individual)</span></p><span><b>Definition </b></span><div class="markdown"><p>The name of the organization or individual that published the value set.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Helps establish the &quot;authority/credibility&quot; of the value set.  May also allow for contact.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Usually an organization but may be an individual. The publisher (or steward) of the value set is the organization or individual primarily responsible for the maintenance and upkeep of the value set. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the value set. This item SHOULD be populated unless the information is available from context.</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.publisher</li><li class=""><b>w5:</b>FiveWs.witness</li></ul></td></tr><tr id="ValueSet.contact" data-id="b7f70940-397a-43f5-9185-cff4f0cdec69" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class=""><td class="profile"><span class="baseIcon datatype"></span><span>contact</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="ContactDetail
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ContactDetail.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-contactdetail.json" >ContactDetail</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.contact</pre></p></div><span><b>Short description </b></span><p><span>Contact details for the publisher</span></p><span><b>Definition </b></span><div class="markdown"><p>Contact details to assist a user in finding and communicating with the publisher.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>May be a web site, an email address, a telephone number, etc.</p>
+</div><span><b>Data Type </b></span><p><a title="ContactDetail
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ContactDetail.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-contactdetail.json" >ContactDetail</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.contact</li></ul></td></tr><tr id="ValueSet.description" data-id="56793066-862e-4c8a-9ebc-82add7f81982" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class=""><td class="profile"><span class="baseIcon primitive"></span><span>description</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="markdown
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-markdown.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-markdown.json" >markdown</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.description</pre></p></div><span><b>Short description </b></span><p><span>Natural language description of the value set</span></p><span><b>Alternate names </b></span><p><span>Scope</span><span>, </span><span>Purpose</span></p><span><b>Definition </b></span><div class="markdown"><p>A free text natural language description of the value set from a consumer's perspective. The textual description specifies the span of meanings for concepts to be included within the Value Set Expansion, and also may specify the intended use and limitations of the Value Set.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>This description can be used to capture details such as why the value set was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the value set as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the value set is presumed to be the predominant language in the place the value set was created).The description is not intended to describe the semantics of the Value Set - there are no intrinsic semantics separate from the codes contained in its expansion. The description should capture its intended use, which is needed for ensuring integrity for its use in models across future changes. A description should be provided unless the value set is a contained resource (e.g. an anonymous value set in a profile). Most registries will require a description.</p>
+</div><span><b>Data Type </b></span><p><a title="markdown
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-markdown.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-markdown.json" >markdown</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.description</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.useContext" data-id="83e4fc05-f5dc-4a38-86b2-e193d11defea" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class="collapsed constraints"><td class="profile"><span class="baseIcon datatype"></span><span class="constraints">useContext</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>*</span></td><td class="profile"><a title="UsageContext
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-UsageContext.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-usagecontext.json" >UsageContext</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.useContext</pre></p></div><span><b>Short description </b></span><p><span>The context that the content is intended to support</span></p><span><b>Definition </b></span><div class="markdown"><p>The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate value set instances.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Assist in searching for appropriate content.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.</p>
+</div><span><b>Data Type </b></span><p><a title="UsageContext
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-UsageContext.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-usagecontext.json" >UsageContext</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.useContext</li></ul></td></tr><tr id="ValueSet.useContext.code" data-id="abf82c1d-a4ce-46aa-a047-865fdd0113fc" data-parentId="83e4fc05-f5dc-4a38-86b2-e193d11defea" class="constraints"><td class="profile"><span class="baseIcon datatype"></span><span class="constraints">code</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="Coding
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coding.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-coding.json" >Coding</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><span><b>Element Id</b></span><div><p><pre>ValueSet.useContext.code</pre></p></div><span><b>Short description </b></span><p><span>Type of context being specified</span></p><span><b>Definition </b></span><div class="markdown"><p>A code that identifies the type of context being specified by this usage context.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Codes may be defined very casually in enumerations or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.</p>
+</div><span><b>Data Type </b></span><p><a title="Coding
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coding.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-coding.json" >Coding</a></p><span><b>Binding </b></span><p><p><span>A code that specifies a type of context being specified by a usage context.</span></p><a title="UsageContextType
+hl7.fhir.r4.core 4.0.1
+ValueSet-usage-context-type.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-usage-context-type.json" >UsageContextType</a><span> (</span><a title="To be conformant, instances of this element SHALL include a code from the specified value set if any of the codes within the value set can apply to the concept being communicated. If the valueset does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." href="http://hl7.org/fhir/r4/terminologies.html#extensible" >extensible</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span class="constraints"><b>Pattern </b></span><div>
+<p><pre class=" constraints">{
+  &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/usage-context-type&quot;,
+  &quot;code&quot;: &quot;focus&quot;
+}</pre></p></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>v2:</b>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6</li><li class=""><b>rim:</b>CV</li><li class=""><b>orim:</b>fhir:Coding rdfs:subClassOf dt:CDCoding</li></ul></td></tr><tr id="ValueSet.useContext.value[x]" data-id="f64d48ca-3cb7-4dfd-a9c4-12efc05c7bfe" data-parentId="83e4fc05-f5dc-4a38-86b2-e193d11defea" class="collapsed constraints"><td class="profile"><span class="baseIcon valueX"></span><span class="constraints">value[x]</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><span class="binding-label constraints">Binding</span></td><td class="details hidden"><span class="pin-control"></span><span><b>Element Id</b></span><div><p><pre>ValueSet.useContext.value[x]</pre></p></div><span><b>Short description </b></span><p><span>Value that defines the context</span></p><span><b>Definition </b></span><div class="markdown"><p>A value that defines the context specified in this context of use. The interpretation of the value is defined by the code.</p>
+</div><span class="constraints"><b>Binding </b></span><p><p><span class="constraints">One of the resource types defined as part of this version of FHIR.</span></p><a title="ResourceType
+hl7.fhir.r4.core 4.0.1
+ValueSet-resource-types.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-resource-types.json"  class="constraints">ResourceType</a><span class="constraints"> (</span><a title="To be conformant, instances of this element SHALL include a code from the specified valueset" href="http://hl7.org/fhir/r4/terminologies.html#required"  class="constraints">required</a><span class="constraints">)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.useContext.valueCodeableConcept" data-id="be778168-2125-4acb-838d-34cbc99ff226" data-parentId="f64d48ca-3cb7-4dfd-a9c4-12efc05c7bfe" class="constraints"><td class="profile"><span class="baseIcon datatype"></span><span class="constraints">valueCodeableConcept</span></td><td class="profile"></td><td></td><td class="profile"><a title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-codeableconcept.json"  class="constraints">CodeableConcept</a></td><td class="details hidden"><span class="pin-control"></span><span class="constraints"><b>Data Type </b></span><p><a title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-codeableconcept.json"  class="constraints">CodeableConcept</a></p></td></tr><tr id="ValueSet.jurisdiction" data-id="33fe803a-c160-4a3d-bcb2-5644d5faffd5" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class=""><td class="profile"><span class="baseIcon datatype"></span><span>jurisdiction</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-codeableconcept.json" >CodeableConcept</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.jurisdiction</pre></p></div><span><b>Short description </b></span><p><span>Intended jurisdiction for value set (if applicable)</span></p><span><b>Definition </b></span><div class="markdown"><p>A legal or geographic region in which the value set is intended to be used.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>It may be possible for the value set to be used in jurisdictions other than those for which it was originally designed or intended.</p>
+</div><span><b>Data Type </b></span><p><a title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-codeableconcept.json" >CodeableConcept</a></p><span><b>Binding </b></span><p><p><span>Countries and regions within which this artifact is targeted for use.</span></p><a title="Jurisdiction ValueSet
+hl7.fhir.r4.core 4.0.1
+ValueSet-jurisdiction.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-jurisdiction.json" >Jurisdiction ValueSet</a><span> (</span><a title="To be conformant, instances of this element SHALL include a code from the specified value set if any of the codes within the value set can apply to the concept being communicated. If the valueset does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." href="http://hl7.org/fhir/r4/terminologies.html#extensible" >extensible</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>v2:</b>CE/CNE/CWE</li><li class=""><b>rim:</b>CD</li><li class=""><b>orim:</b>fhir:CodeableConcept rdfs:subClassOf dt:CD</li><li class=""><b>workflow:</b>Definition.jurisdiction</li></ul></td></tr><tr id="ValueSet.immutable" data-id="ca1d066e-3282-4010-bd45-48a66f5bd66f" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class=""><td class="profile"><span class="baseIcon primitive"></span><span>immutable</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.immutable</pre></p></div><span><b>Short description </b></span><p><span>Indicates whether or not any change to the content logical definition may occur</span></p><span><b>Definition </b></span><div class="markdown"><p>If this is set to 'true', then no new versions of the content logical definition can be created.  Note: Other metadata might still change.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Normally immutability is set to 'false', which is the default assumption if it is not populated.  Note that the implication is that if this is set to 'true', there may be only one ValueSet version for this definition. Immutability tends to be set to 'true' in one of two cases: - Where the value set, by the nature of its usage, cannot change.  For example &quot;All specializations of ACT in ActClassCode&quot; - Where there's no safe way to express the &quot;Purpose&quot; such that someone else could safely make changes to the value set definition. Source workflow control must guarantee that the same URI always yields the same definition.</p>
+</div><span><b>Data Type </b></span><p><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.purpose" data-id="e63ac848-7f21-49fe-a7cb-b821a05e5bae" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class=""><td class="profile"><span class="baseIcon primitive"></span><span>purpose</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="markdown
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-markdown.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-markdown.json" >markdown</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.purpose</pre></p></div><span><b>Short description </b></span><p><span>Why this value set is defined</span></p><span><b>Definition </b></span><div class="markdown"><p>Explanation of why this value set is needed and why it has been designed as it has.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>This element does not describe the usage of the value set. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this value set.</p>
+</div><span><b>Data Type </b></span><p><a title="markdown
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-markdown.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-markdown.json" >markdown</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.purpose</li><li class=""><b>w5:</b>FiveWs.why[x]</li><li class=""><b>objimpl:</b>no-gen-base</li></ul></td></tr><tr id="ValueSet.copyright" data-id="eecd5416-581b-4220-aaf7-2eddfbcd7651" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class=""><td class="profile"><span class="baseIcon primitive"></span><span>copyright</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="markdown
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-markdown.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-markdown.json" >markdown</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.copyright</pre></p></div><span><b>Short description </b></span><p><span>Use and/or publishing restrictions</span></p><span><b>Alternate names </b></span><p><span>License</span><span>, </span><span>Restrictions</span></p><span><b>Definition </b></span><div class="markdown"><p>A copyright statement relating to the value set and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the value set.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Consumers must be able to determine any legal restrictions on the use of the value set and/or its content.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>nullFrequently, the copyright differs between the value set and the codes that are included. The copyright statement should clearly differentiate between these when required.</p>
+</div><span><b>Data Type </b></span><p><a title="markdown
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-markdown.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-markdown.json" >markdown</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.copyright</li><li class=""><b>objimpl:</b>no-gen-base</li></ul></td></tr><tr id="ValueSet.compose" data-id="6f1f60fd-9ce9-4d51-9af8-768a18166d8e" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class="collapsed"><td class="profile"><span class="baseIcon backboneElement"></span><span>compose</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose</pre></p></div><span><b>Short description </b></span><p><span>Content logical definition of the value set (CLD)</span></p><span><b>Alternate names </b></span><p><span>Content Logical Definition</span><span>, </span><span>CLD</span></p><span><b>Definition </b></span><div class="markdown"><p>A set of criteria that define the contents of the value set by including or excluding codes selected from the specified code system(s) that the value set draws from. This is also known as the Content Logical Definition (CLD).</p>
+</div><span><b>Data Type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.compose.lockedDate" data-id="c27ef4df-1eb7-4db3-ab8b-7e0a8ec304e3" data-parentId="6f1f60fd-9ce9-4d51-9af8-768a18166d8e" class=""><td class="profile"><span class="baseIcon primitive"></span><span>lockedDate</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="date
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-date.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-date.json" >date</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.lockedDate</pre></p></div><span><b>Short description </b></span><p><span>Fixed date for references with no specified version (transitive)</span></p><span><b>Definition </b></span><div class="markdown"><p>The Locked Date is  the effective date that is used to determine the version of all referenced Code Systems and Value Set Definitions included in the compose that are not already tied to a specific version.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>With a defined lockedDate the value set is considered &quot;Locked&quot;. Otherwise, the value set may have different expansions as underlying code systems and/or value sets evolve.  The interpretation of lockedDate is often dependent on the context - e.g. a SNOMED CT derived value set with a lockedDate will have a different expansion in USA than in UK.  If a value set specifies a version for include and exclude statements, and also specifies a locked date, the specified versions need to be available that date, or the value set will not be usable.</p>
+</div><span><b>Data Type </b></span><p><a title="date
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-date.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-date.json" >date</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>w5:</b>FiveWs.init</li></ul></td></tr><tr id="ValueSet.compose.inactive" data-id="f21dc944-cb64-4931-b1e7-567d9a80efeb" data-parentId="6f1f60fd-9ce9-4d51-9af8-768a18166d8e" class=""><td class="profile"><span class="baseIcon primitive"></span><span>inactive</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.inactive</pre></p></div><span><b>Short description </b></span><p><span>Whether inactive codes are in the value set</span></p><span><b>Definition </b></span><div class="markdown"><p>Whether inactive codes - codes that are not approved for current use - are in the value set. If inactive = true, inactive codes are to be included in the expansion, if inactive = false, the inactive codes will not be included in the expansion. If absent, the behavior is determined by the implementation, or by the applicable $expand parameters (but generally, inactive codes would be expected to be included).</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that in the FHIR terminology framework, &quot;deprecated&quot; does not mean inactive, but in some code systems, e.g. LOINC, &quot;deprecated&quot; does mean inactive. Code systems should define what codes are considered to be inactive. If this is not clearly defined (including in the FHIR code system resource), then all codes are assumed to be active.</p>
+<p>The Value Set Definition specification defines an ActiveOnly element, which is the reverse of this element e.g. (ValueSet.compose.inactive=FALSE) is the same as (VSD.ActiveOnly=TRUE).</p>
+</div><span><b>Data Type </b></span><p><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.compose.include" data-id="be6bb9e9-432d-403e-9e23-789657558b28" data-parentId="6f1f60fd-9ce9-4d51-9af8-768a18166d8e" class="collapsed"><td class="profile"><span class="baseIcon backboneElement"></span><span>include</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>1</span><span>..</span><span>*</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include</pre></p></div><span><b>Short description </b></span><p><span>Include one or more codes from a code system or other value set(s)</span></p><span><b>Definition </b></span><div class="markdown"><p>Include one or more codes from a code system or other value set(s).</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>All the conditions in an include must be true. If a system is listed, all the codes from the system are listed. If one or more filters are listed, all of the filters must apply. If one or more value sets are listed, the codes must be in all the value sets. E.g. each include is 'include all the codes that meet all these conditions'.</p>
+</div><span><b>Data Type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li><li class=""><b>vsd-2:</b>A value set with concepts or filters SHALL include a system<br/><code>(concept.exists() or filter.exists()) implies system.exists()</code></li><li class=""><b>vsd-3:</b>Cannot have both concept and filter<br/><code>concept.empty() or filter.empty()</code></li><li class=""><b>vsd-1:</b>A value set include/exclude SHALL have a value set or a system<br/><code>valueSet.exists() or system.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.compose.include.system" data-id="fbf7f2ad-cfd9-4c76-828b-dca74447d798" data-parentId="be6bb9e9-432d-403e-9e23-789657558b28" class=""><td class="profile"><span class="baseIcon primitive"></span><span>system</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-uri.json" >uri</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include.system</pre></p></div><span><b>Short description </b></span><p><span>The system the codes come from</span></p><span><b>Definition </b></span><div class="markdown"><p>An absolute URI which is the code system from which the selected codes come from.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>If there are no codes or filters, the entire code system is included. Note that the set of codes that are included may contain abstract codes. See ''Coding.system'' for further documentation about the correct value for the system element.</p>
+</div><span><b>Data Type </b></span><p><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-uri.json" >uri</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.compose.include.version" data-id="3668b70f-6673-4d2b-a620-764b04df2d4d" data-parentId="be6bb9e9-432d-403e-9e23-789657558b28" class=""><td class="profile"><span class="baseIcon primitive"></span><span>version</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include.version</pre></p></div><span><b>Short description </b></span><p><span>Specific version of the code system referred to</span></p><span><b>Definition </b></span><div class="markdown"><p>The version of the code system that the codes are selected from, or the special version '*' for all versions.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>This is used when selecting the descendants of a concept - they may change between versions. If no version is specified, then the exact contents of the value set might not be known until a context of use binds it to a particular version. The special value '*' means all versions; It is at server discretion regarding expansions and which versions must be supported.</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.compose.include.concept" data-id="2a69c3fa-9ea6-4ce8-b50c-9af9ae69e2a1" data-parentId="be6bb9e9-432d-403e-9e23-789657558b28" class="collapsed"><td class="profile"><span class="baseIcon backboneElement"></span><span>concept</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include.concept</pre></p></div><span><b>Short description </b></span><p><span>A concept defined in the system</span></p><span><b>Definition </b></span><div class="markdown"><p>Specifies a concept to be included or excluded.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The list of concepts is considered ordered, though the order might not have any particular significance. Typically, the order of an expansion follows that defined in the compose element.</p>
+</div><span><b>Data Type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.compose.include.concept.code" data-id="a510a474-9bf4-4dcf-ae45-6ee79a988c9d" data-parentId="2a69c3fa-9ea6-4ce8-b50c-9af9ae69e2a1" class=""><td class="profile"><span class="baseIcon primitive"></span><span>code</span></td><td class="profile"></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include.concept.code</pre></p></div><span><b>Short description </b></span><p><span>Code or expression from system</span></p><span><b>Definition </b></span><div class="markdown"><p>Specifies a code for the concept to be included or excluded.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Expressions are allowed if defined by the underlying code system.</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.compose.include.concept.display" data-id="725e4696-cbd1-4d6d-823b-650f793689b6" data-parentId="2a69c3fa-9ea6-4ce8-b50c-9af9ae69e2a1" class=""><td class="profile"><span class="baseIcon primitive"></span><span>display</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include.concept.display</pre></p></div><span><b>Short description </b></span><p><span>Text to display for this code for this value set in this valueset</span></p><span><b>Definition </b></span><div class="markdown"><p>The text to display to the user for this concept in the context of this valueset. If no display is provided, then applications using the value set use the display specified for the code by the system.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The value set resource allows for an alternative display to be specified for when this concept is used in this particular value set. See notes in the value set narrative about the correct use of this element.</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.compose.include.concept.designation" data-id="a148dace-6154-4c6f-8e78-ff264d0731d6" data-parentId="2a69c3fa-9ea6-4ce8-b50c-9af9ae69e2a1" class="collapsed"><td class="profile"><span class="baseIcon backboneElement"></span><span>designation</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include.concept.designation</pre></p></div><span><b>Short description </b></span><p><span>Additional representations for this concept</span></p><span><b>Definition </b></span><div class="markdown"><p>Additional representations for this concept when used in this value set - other languages, aliases, specialized purposes, used for particular purposes, etc.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Concepts have both a <code>display</code> and an array of <code>designation</code>. The display is equivalent to a special designation with an implied <code>designation.use</code> of &quot;primary code&quot; and a language equal to the <a href="resource.html#language">Resource Language</a>.</p>
+</div><span><b>Data Type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.compose.include.concept.designation.language" data-id="898979df-f7c8-4741-b555-dc70d77592ce" data-parentId="a148dace-6154-4c6f-8e78-ff264d0731d6" class=""><td class="profile"><span class="baseIcon primitive"></span><span>language</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include.concept.designation.language</pre></p></div><span><b>Short description </b></span><p><span>Human language of the designation</span></p><span><b>Definition </b></span><div class="markdown"><p>The language this designation is defined for.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>In the absence of a language, the resource language applies.</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Binding </b></span><p><p><span>A human language.</span></p><a title="CommonLanguages
+hl7.fhir.r4.core 4.0.1
+ValueSet-languages.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-languages.json" >CommonLanguages</a><span> (</span><a title="Instances are encouraged to draw from the specified codes for interoperability purposes but are not required to do so to be considered conformant." href="http://hl7.org/fhir/r4/terminologies.html#preferred" >preferred</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.compose.include.concept.designation.use" data-id="9f6c6d44-aff2-4744-a35e-0a992a5ef5d8" data-parentId="a148dace-6154-4c6f-8e78-ff264d0731d6" class=""><td class="profile"><span class="baseIcon datatype"></span><span>use</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="Coding
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coding.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-coding.json" >Coding</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include.concept.designation.use</pre></p></div><span><b>Short description </b></span><p><span>Types of uses of designations</span></p><span><b>Definition </b></span><div class="markdown"><p>A code that represents types of uses of designations.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>If no use is provided, the designation can be assumed to be suitable for general display to a human user.</p>
+</div><span><b>Data Type </b></span><p><a title="Coding
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coding.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-coding.json" >Coding</a></p><span><b>Binding </b></span><p><p><span>Details of how a designation would be used.</span></p><a title="DesignationUse
+hl7.fhir.r4.core 4.0.1
+ValueSet-designation-use.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-designation-use.json" >DesignationUse</a><span> (</span><a title="To be conformant, instances of this element SHALL include a code from the specified value set if any of the codes within the value set can apply to the concept being communicated. If the valueset does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." href="http://hl7.org/fhir/r4/terminologies.html#extensible" >extensible</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>v2:</b>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6</li><li class=""><b>rim:</b>CV</li><li class=""><b>orim:</b>fhir:Coding rdfs:subClassOf dt:CDCoding</li></ul></td></tr><tr id="ValueSet.compose.include.concept.designation.value" data-id="80fc2095-1a30-4cf7-8495-535cf4ae4ba8" data-parentId="a148dace-6154-4c6f-8e78-ff264d0731d6" class=""><td class="profile"><span class="baseIcon primitive"></span><span>value</span></td><td class="profile"></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include.concept.designation.value</pre></p></div><span><b>Short description </b></span><p><span>The text value for this designation</span></p><span><b>Definition </b></span><div class="markdown"><p>The text value for this designation.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.compose.include.filter" data-id="b7833368-08fe-4ff3-8fb5-f1326ee8f642" data-parentId="be6bb9e9-432d-403e-9e23-789657558b28" class="collapsed"><td class="profile"><span class="baseIcon backboneElement"></span><span>filter</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include.filter</pre></p></div><span><b>Short description </b></span><p><span>Select codes/concepts by their properties (including relationships)</span></p><span><b>Definition </b></span><div class="markdown"><p>Select concepts by specify a matching criterion based on the properties (including relationships) defined by the system, or on filters defined by the system. If multiple filters are specified, they SHALL all be true.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Selecting codes by specifying filters based on properties is only possible where the underlying code system defines appropriate properties. Note that in some cases, the underlying code system defines the logical concepts but not the literal codes for the concepts. In such cases, the literal definitions may be provided by a third party.</p>
+</div><span><b>Data Type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.compose.include.filter.property" data-id="f98644c9-89dd-4804-8fd8-1abe12660268" data-parentId="b7833368-08fe-4ff3-8fb5-f1326ee8f642" class=""><td class="profile"><span class="baseIcon primitive"></span><span>property</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include.filter.property</pre></p></div><span><b>Short description </b></span><p><span>A property/filter defined by the code system</span></p><span><b>Definition </b></span><div class="markdown"><p>A code that identifies a property or a filter defined in the code system.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.compose.include.filter.op" data-id="7f592518-53b0-428e-bd6a-31d96ccfc833" data-parentId="b7833368-08fe-4ff3-8fb5-f1326ee8f642" class=""><td class="profile"><span class="baseIcon primitive"></span><span>op</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include.filter.op</pre></p></div><span><b>Short description </b></span><p><span>= | is-a | descendent-of | is-not-a | regex | in | not-in | generalizes | exists</span></p><span><b>Definition </b></span><div class="markdown"><p>The kind of operation to perform as a part of the filter criteria.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>In case filter.property represents a property of the system, the operation applies to the selected property. In case filter.property represents a filter of the system, the operation SHALL match one of the CodeSystem.filter.operator values.</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Binding </b></span><p><p><span>The kind of operation to perform as a part of a property based filter.</span></p><a title="FilterOperator
+hl7.fhir.r4.core 4.0.1
+ValueSet-filter-operator.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-filter-operator.json" >FilterOperator</a><span> (</span><a title="To be conformant, instances of this element SHALL include a code from the specified valueset" href="http://hl7.org/fhir/r4/terminologies.html#required" >required</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.compose.include.filter.value" data-id="e0a631c8-0427-4319-98cc-417591998940" data-parentId="b7833368-08fe-4ff3-8fb5-f1326ee8f642" class=""><td class="profile"><span class="baseIcon primitive"></span><span>value</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include.filter.value</pre></p></div><span><b>Short description </b></span><p><span>Code from the system, or regex criteria, or boolean value for exists</span></p><span><b>Definition </b></span><div class="markdown"><p>The match value may be either a code defined by the system, or a string value, which is a regex match on the literal string of the property value  (if the filter represents a property defined in CodeSystem) or of the system filter value (if the filter represents a filter defined in CodeSystem) when the operation is 'regex', or one of the values (true and false), when the operation is 'exists'.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Use regex matching with care - full regex matching on every SNOMED CT term is prohibitive, for example.</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.compose.include.valueSet" data-id="c51b5d27-aa38-41df-a957-319aad6e9ae8" data-parentId="be6bb9e9-432d-403e-9e23-789657558b28" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueSet</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="canonical
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-canonical.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-canonical.json" >canonical</a><span>(</span><a title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-valueset.json" >ValueSet</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.include.valueSet</pre></p></div><span><b>Short description </b></span><p><span>Select the contents included in this value set</span></p><span><b>Definition </b></span><div class="markdown"><p>Selects the concepts found in this value set (based on its value set definition). This is an absolute URI that is a reference to ValueSet.url.  If multiple value sets are specified this includes the union of the contents of all of the referenced value sets.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The value set URI is either a logical reference to a defined value set such as a <a href="snomedct.html#implicit">SNOMED CT reference set</a>, or a direct reference to a value set definition using ValueSet.url. The reference might not refer to an actual FHIR ValueSet resource; in this case, whatever is referred to is an implicit definition of a value set that needs to be clear about how versions are resolved.</p>
+</div><span><b>Data Type </b></span><p><a title="canonical
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-canonical.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-canonical.json" >canonical</a><span>(</span><a title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-valueset.json" >ValueSet</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.compose.exclude" data-id="3d0cbb7e-60d6-4518-9918-5b57ec635990" data-parentId="6f1f60fd-9ce9-4d51-9af8-768a18166d8e" class=""><td class="profile"><span class="baseIcon nameReference"></span><span>exclude</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile">see (<a  href="#ValueSet.compose.include" >include</a>)</td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.compose.exclude</pre></p></div><span><b>Short description </b></span><p><span>Explicitly exclude codes from a code system or other value sets</span></p><span><b>Definition </b></span><div class="markdown"><p>Exclude one or more codes from the value set based on code system filters and/or other value sets.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Usually this is used to selectively exclude codes that were included by subsumption in the inclusions. Any display names specified for the codes are ignored.</p>
+</div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="ValueSet.expansion" data-id="95e1496b-46b8-4111-9682-0278f9826fb0" data-parentId="956fb793-a76e-4af8-9318-8a02c6a0f3c4" class="collapsed constraints"><td class="profile"><span class="baseIcon backboneElement"></span><span class="constraints">expansion</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion</pre></p></div><span><b>Short description </b></span><p><span>Used when the value set is &quot;expanded&quot;</span></p><span><b>Definition </b></span><div class="markdown"><p>A value set can also be &quot;expanded&quot;, where the value set is turned into a simple collection of enumerated codes. This element holds the expansion, if it has been performed.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Expansion is performed to produce a collection of codes that are ready to use for data entry or validation. Value set expansions are always considered to be stateless - they are a record of the set of codes in the value set at a point in time under a given set of conditions, and are not subject to ongoing maintenance.</p>
+<p>Expansion.parameter is  a simplified list of parameters - a subset of the features of the <a href="parameters.html">Parameters</a> resource.</p>
+</div><span><b>Data Type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.identifier" data-id="8ec65809-3687-4a21-ba84-10e8cf7377f8" data-parentId="95e1496b-46b8-4111-9682-0278f9826fb0" class=""><td class="profile"><span class="baseIcon primitive"></span><span>identifier</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-uri.json" >uri</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.identifier</pre></p></div><span><b>Short description </b></span><p><span>Identifies the value set expansion (business identifier)</span></p><span><b>Definition </b></span><div class="markdown"><p>An identifier that uniquely identifies this expansion of the valueset, based on a unique combination of the provided parameters, the system default parameters, and the underlying system code system versions etc. Systems may re-use the same identifier as long as those factors remain the same, and the expansion is the same, but are not required to do so. This is a business identifier.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Typically, this uri is a UUID (e.g. urn:uuid:8230ff20-c97a-4167-a59d-dc2cb9df16dd).</p>
+</div><span><b>Data Type </b></span><p><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-uri.json" >uri</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.timestamp" data-id="6a0c5de4-ae43-4f29-ba8c-e15e56519dae" data-parentId="95e1496b-46b8-4111-9682-0278f9826fb0" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">timestamp</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="dateTime
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-dateTime.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-datetime.json" >dateTime</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.timestamp</pre></p></div><span><b>Short description </b></span><p><span>Time ValueSet expansion happened</span></p><span><b>Definition </b></span><div class="markdown"><p>The time at which the expansion was produced by the expanding system.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>This SHOULD be a fully populated instant, but in some circumstances, value sets are expanded by hand, and the expansion is published without that precision.</p>
+</div><span><b>Data Type </b></span><p><a title="dateTime
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-dateTime.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-datetime.json" >dateTime</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.total" data-id="92c48bd1-aff9-42ea-ad67-6213ecb18e76" data-parentId="95e1496b-46b8-4111-9682-0278f9826fb0" class=""><td class="profile"><span class="baseIcon primitive"></span><span>total</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="integer
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-integer.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-integer.json" >integer</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.total</pre></p></div><span><b>Short description </b></span><p><span>Total number of codes in the expansion</span></p><span><b>Definition </b></span><div class="markdown"><p>The total number of concepts in the expansion. If the number of concept nodes in this resource is less than the stated number, then the server can return more using the offset parameter.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Paging only applies to flat expansions.</p>
+</div><span><b>Data Type </b></span><p><a title="integer
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-integer.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-integer.json" >integer</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.offset" data-id="5dd2e9bb-825f-4a58-9eb9-d56eb1228c40" data-parentId="95e1496b-46b8-4111-9682-0278f9826fb0" class=""><td class="profile"><span class="baseIcon primitive"></span><span>offset</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="integer
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-integer.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-integer.json" >integer</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.offset</pre></p></div><span><b>Short description </b></span><p><span>Offset at which this resource starts</span></p><span><b>Definition </b></span><div class="markdown"><p>If paging is being used, the offset at which this resource starts.  I.e. this resource is a partial view into the expansion. If paging is not being used, this element SHALL NOT be present.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Paging only applies to flat expansions. If a filter is applied, the count is the number of concepts that matched the filter, not the number of concepts in an unfiltered view of the expansion.</p>
+</div><span><b>Data Type </b></span><p><a title="integer
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-integer.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-integer.json" >integer</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.parameter" data-id="d659a7ca-f0d8-47ff-a630-4aae4647168f" data-parentId="95e1496b-46b8-4111-9682-0278f9826fb0" class="collapsed"><td class="profile"><span class="baseIcon backboneElement"></span><span>parameter</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.parameter</pre></p></div><span><b>Short description </b></span><p><span>Parameter that controlled the expansion process</span></p><span><b>Definition </b></span><div class="markdown"><p>A parameter that controlled the expansion process. These parameters may be used by users of expanded value sets to check whether the expansion is suitable for a particular purpose, or to pick the correct expansion.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The server decides which parameters to include here, but at a minimum, the list SHOULD include all of the parameters that affect the $expand operation. If the expansion will be persisted all of these parameters SHALL be included. If the codeSystem on the server has a specified version then this version SHALL be provided as a parameter in the expansion (note that not all code systems have a version).</p>
+</div><span><b>Data Type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.parameter.name" data-id="4bb4bc85-7ed4-4c69-8668-9bedf97a1fd9" data-parentId="d659a7ca-f0d8-47ff-a630-4aae4647168f" class=""><td class="profile"><span class="baseIcon primitive"></span><span>name</span></td><td class="profile"></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.parameter.name</pre></p></div><span><b>Short description </b></span><p><span>Name as assigned by the client or server</span></p><span><b>Definition </b></span><div class="markdown"><p>Name of the input parameter to the $expand operation; may be a server-assigned name for additional default or other server-supplied parameters used to control the expansion process.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The names are assigned at the discretion of the server.</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.parameter.value[x]" data-id="63de4e1d-18e8-4fdc-afde-71535f1df75f" data-parentId="d659a7ca-f0d8-47ff-a630-4aae4647168f" class="collapsed"><td class="profile"><span class="baseIcon valueX"></span><span>value[x]</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.parameter.value[x]</pre></p></div><span><b>Short description </b></span><p><span>Value of the named parameter</span></p><span><b>Definition </b></span><div class="markdown"><p>The value of the parameter.</p>
+</div><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.parameter.valueString" data-id="69189d77-32e6-42c3-bf21-b8316b23f31a" data-parentId="63de4e1d-18e8-4fdc-afde-71535f1df75f" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueString</span></td><td class="profile"></td><td></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p></td></tr><tr id="ValueSet.expansion.parameter.valueBoolean" data-id="13343c27-4ea3-4f24-a169-67b3c8716c15" data-parentId="63de4e1d-18e8-4fdc-afde-71535f1df75f" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueBoolean</span></td><td class="profile"></td><td></td><td class="profile"><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data Type </b></span><p><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></p></td></tr><tr id="ValueSet.expansion.parameter.valueInteger" data-id="7a1ef7cb-7dae-449b-ad69-2b293922a4ff" data-parentId="63de4e1d-18e8-4fdc-afde-71535f1df75f" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueInteger</span></td><td class="profile"></td><td></td><td class="profile"><a title="integer
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-integer.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-integer.json" >integer</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data Type </b></span><p><a title="integer
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-integer.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-integer.json" >integer</a></p></td></tr><tr id="ValueSet.expansion.parameter.valueDecimal" data-id="99e83fe9-668c-4fc5-9605-962cd0bacef9" data-parentId="63de4e1d-18e8-4fdc-afde-71535f1df75f" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueDecimal</span></td><td class="profile"></td><td></td><td class="profile"><a title="decimal
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-decimal.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-decimal.json" >decimal</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data Type </b></span><p><a title="decimal
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-decimal.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-decimal.json" >decimal</a></p></td></tr><tr id="ValueSet.expansion.parameter.valueUri" data-id="9f2aa722-179a-4ebe-84d8-6f96530a1a7f" data-parentId="63de4e1d-18e8-4fdc-afde-71535f1df75f" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueUri</span></td><td class="profile"></td><td></td><td class="profile"><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-uri.json" >uri</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data Type </b></span><p><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-uri.json" >uri</a></p></td></tr><tr id="ValueSet.expansion.parameter.valueCode" data-id="e451f733-64ee-4a8e-af45-790fb3f5286e" data-parentId="63de4e1d-18e8-4fdc-afde-71535f1df75f" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueCode</span></td><td class="profile"></td><td></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p></td></tr><tr id="ValueSet.expansion.parameter.valueDateTime" data-id="0f4b04b0-6fc1-4557-b44d-51655bb2cc69" data-parentId="63de4e1d-18e8-4fdc-afde-71535f1df75f" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueDateTime</span></td><td class="profile"></td><td></td><td class="profile"><a title="dateTime
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-dateTime.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-datetime.json" >dateTime</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data Type </b></span><p><a title="dateTime
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-dateTime.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-datetime.json" >dateTime</a></p></td></tr><tr id="ValueSet.expansion.contains" data-id="b2025cfe-c0a4-43c2-a46e-315aebfdff8e" data-parentId="95e1496b-46b8-4111-9682-0278f9826fb0" class="collapsed constraints"><td class="profile"><span class="baseIcon backboneElement"></span><span class="constraints">contains</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>*</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.contains</pre></p></div><span><b>Short description </b></span><p><span>Codes in the value set</span></p><span><b>Definition </b></span><div class="markdown"><p>The codes that are contained in the value set expansion.</p>
+</div><span><b>Data Type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li><li class=""><b>vsd-6:</b>SHALL have a code or a display<br/><code>code.exists() or display.exists()</code></li><li class=""><b>vsd-9:</b>Must have a code if not abstract<br/><code>code.exists() or abstract = true</code></li><li class=""><b>vsd-10:</b>Must have a system if a code is present<br/><code>code.empty() or system.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.contains.system" data-id="f29bb548-d250-424d-b1f7-45f9ea7b2f66" data-parentId="b2025cfe-c0a4-43c2-a46e-315aebfdff8e" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">system</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-uri.json" >uri</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.contains.system</pre></p></div><span><b>Short description </b></span><p><span>System value for the code</span></p><span><b>Definition </b></span><div class="markdown"><p>An absolute URI which is the code system in which the code for this item in the expansion is defined.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>see http://en.wikipedia.org/wiki/Uniform_resource_identifier</p>
+</div><span><b>Data Type </b></span><p><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-uri.json" >uri</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.contains.abstract" data-id="2c9cf125-ae95-41b1-a0dc-f844fd71ee9d" data-parentId="b2025cfe-c0a4-43c2-a46e-315aebfdff8e" class=""><td class="profile"><span class="baseIcon primitive"></span><span>abstract</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.contains.abstract</pre></p></div><span><b>Short description </b></span><p><span>If user cannot select this entry</span></p><span><b>Definition </b></span><div class="markdown"><p>If true, this entry is included in the expansion for navigational purposes, and the user cannot select the code directly as a proper value.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>This should not be understood to exclude its use for searching (e.g. by subsumption testing). The client should know whether it is appropriate for the user to select an abstract code or not.</p>
+</div><span><b>Data Type </b></span><p><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.contains.inactive" data-id="1b4c67cb-aa93-4c67-90df-ec61512963cb" data-parentId="b2025cfe-c0a4-43c2-a46e-315aebfdff8e" class=""><td class="profile"><span class="baseIcon primitive"></span><span>inactive</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.contains.inactive</pre></p></div><span><b>Short description </b></span><p><span>If concept is inactive in the code system</span></p><span><b>Definition </b></span><div class="markdown"><p>If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data. It might not be known or specified whether an concept is inactive (and it may depend on the context of use).</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>This should only have a value if the concept is inactive.</p>
+</div><span><b>Data Type </b></span><p><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.contains.version" data-id="9922de73-672a-4ced-a4a2-77bf61e6b966" data-parentId="b2025cfe-c0a4-43c2-a46e-315aebfdff8e" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">version</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.contains.version</pre></p></div><span><b>Short description </b></span><p><span>Version in which this code/display is defined</span></p><span><b>Definition </b></span><div class="markdown"><p>The version of the code system from this code was taken. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The exact value of the version string is specified by the system from which the code is derived.</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.contains.code" data-id="41ecb962-d911-458e-a4c8-19bcb62bb341" data-parentId="b2025cfe-c0a4-43c2-a46e-315aebfdff8e" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">code</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.contains.code</pre></p></div><span><b>Short description </b></span><p><span>Code - if blank, this is not a selectable code</span></p><span><b>Definition </b></span><div class="markdown"><p>The code for this item in the expansion hierarchy. If this code is missing the entry in the hierarchy is a place holder (abstract) and does not represent a valid code in the value set.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.contains.display" data-id="303ca336-b9bf-4467-8ca8-9b87a4c66aae" data-parentId="b2025cfe-c0a4-43c2-a46e-315aebfdff8e" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">display</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.contains.display</pre></p></div><span><b>Short description </b></span><p><span>User display for the concept</span></p><span><b>Definition </b></span><div class="markdown"><p>The recommended display for this item in the expansion.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="ValueSet.expansion.contains.designation" data-id="505bbfa9-efca-48d6-904a-99a506ee6ec4" data-parentId="b2025cfe-c0a4-43c2-a46e-315aebfdff8e" class=""><td class="profile"><span class="baseIcon nameReference"></span><span>designation</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile">see (<a  href="#http://hl7.org/fhir/StructureDefinition/ValueSet#ValueSet.compose.include.concept.designation" >designation</a>)</td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.contains.designation</pre></p></div><span><b>Short description </b></span><p><span>Additional representations for this item</span></p><span><b>Definition </b></span><div class="markdown"><p>Additional representations for this item - other languages, aliases, specialized purposes, used for particular purposes, etc. These are relevant when the conditions of the expansion do not fix to a single correct representation.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The designations provided must be based on the value set and code system definitions.</p>
+</div></td></tr><tr id="ValueSet.expansion.contains.contains" data-id="032ff63b-ca43-4a73-8bc9-51a9fa59f14d" data-parentId="b2025cfe-c0a4-43c2-a46e-315aebfdff8e" class=""><td class="profile"><span class="baseIcon nameReference"></span><span>contains</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile">see (<a  href="#http://hl7.org/fhir/StructureDefinition/ValueSet#ValueSet.expansion.contains" >contains</a>)</td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>ValueSet.expansion.contains.contains</pre></p></div><span><b>Short description </b></span><p><span>Codes contained under this entry</span></p><span><b>Definition </b></span><div class="markdown"><p>Other codes and entries contained under this entry in the hierarchy.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>If the expansion uses this element, there is  no implication about the logical relationship between them, and the  structure cannot be used for logical inferencing. The structure  exists to provide navigational assistance for helping human users to  locate codes in the expansion.</p>
+</div></td></tr></table></div><div class="treetable-right-panel"></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable55ccd252c7fd44959ac67f022a974a5a = new Stu3TreeTable(false);
+resourceTreeTable55ccd252c7fd44959ac67f022a974a5a.init("55ccd252c7fd44959ac67f022a974a5a");
+}
+})();
+</script>
+<hr />
+
+                        </div>
+                        <div id="I-markdown-ValueSet-ValueSet-AnmerkungenZuDenMustSupportFeldern">
+                            <h3 id="anmerkungen-zu-must-support-feldern">Anmerkungen zu Must-Support-Feldern</h3>
+<h3 id="valueset.url"><code>ValueSet.url</code></h3>
+<p><strong>Bedeutung:</strong> Eindeutige Url zur Identifizierung des ValueSets. Absolute Urls sind zu bevorzugen.</p>
+<p><strong>Hinweise:</strong> OIDs SOLLTEN als weitere Identifier des CodeSystems verwendet werden. In jedem Fall SOLLTE eine Canonical Url vergeben werden.</p>
+<h3 id="valueset.version"><code>ValueSet.version</code></h3>
+<p><strong>Bedeutung:</strong> Version des ValueSets</p>
+<p><strong>Hinweise:</strong> Jede Änderung des dazugehörigen CodeSystems MUSS eine Änderung in der Version des CodeSystems und ValueSets nach sich ziehen.</p>
+<h3 id="valueset.name"><code>ValueSet.name</code></h3>
+<p><strong>Bedeutung:</strong> Maschinenlesbarer Name des ValueSets</p>
+<p><strong>Hinweise:</strong> Der Constraint <a href="https://www.hl7.org/fhir/valueset.html#invs">vsd-0</a> ist hierbei zu beachten.</p>
+<h3 id="valueset.status"><code>ValueSet.status</code></h3>
+<p><strong>Bedeutung:</strong> Indikation, ob das ValueSet in aktiver Verwendung ist.</p>
+<p><strong>Hinweise:</strong> Alle in einem System möglichen Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte &quot;active&quot; und &quot;retired&quot;. Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.</p>
+<h3 id="valueset.usecontext"><code>ValueSet.useContext</code></h3>
+<p><strong>Bedeutung:</strong> Angabe für welches Datenelement das ValueSet relevant ist</p>
+<p><strong>Hinweise:</strong> Es muss mindestens ein useContext angegeben werden, in dem der Ressourcen-Typ kodiert wird, in dem das ValueSet in einem Element zur Verwendung kommt.</p>
+<h3 id="valueset.expansion"><code>ValueSet.expansion</code></h3>
+<p><strong>Bedeutung:</strong> Angabe der Konzepte aus denen sich das ValueSet zusammensetzt.</p>
+<p><strong>Hinweise:</strong> Mindestens MUSS ein Code und ein Anzeigetext spezifiziert werden.</p>
+<hr />
+
+                        </div>
+                        <div id="ImplementationGuide-markdown-ValueSet-ValueSet-Interaktionen">
+                            <h3 id="interaktionen">Interaktionen</h3>
+<p>Für die Ressource ValueSet MUSS die REST-Interaktion &quot;READ&quot; implementiert werden.</p>
+<p>Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination:</p>
+<ol>
+<li><p>Der Suchparameter &quot;_id&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/ValueSet?_id=103270</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;_id&quot; finden sich in der <a href="http://hl7.org/fhir/R4/search.html#all">FHIR-Basisspezifikation - Abschnitt &quot;Parameters for all resources&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;url&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/ValueSet?url=http://example.org/fhir/ValueSet/test</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;ValueSet.url&quot; finden sich in der <a href="https://www.hl7.org/fhir/search.html#uri">FHIR-Basisspezifikation - Abschnitt &quot;uri&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;name&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/ValueSet?name=TestValueSet</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;ValueSet.name&quot; finden sich in der <a href="http://hl7.org/fhir/R4/search.html#string">FHIR-Basisspezifikation - Abschnitt &quot;String Search&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;status&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/ValueSet?status=active</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;ValueSet.status&quot; finden sich in der <a href="http://hl7.org/fhir/R4/search.html#token">FHIR-Basisspezifikation - Abschnitt &quot;Token Search&quot;&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;version&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/ValueSet?version=1.0.0</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;ValueSet.version&quot; finden sich in der <a href="http://hl7.org/fhir/R4/search.html#token">FHIR-Basisspezifikation - Abschnitt &quot;Token Search&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;context-type-value&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/ValueSet?context-type-value=http://terminology.hl7.org/CodeSystem/usage-context-type|focus$http://hl7.org/fhir/resource-types|Encounter</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;CodeSystem.useContext&quot; finden sich in der <a href="https://www.hl7.org/fhir/search.html#composite">FHIR-Basisspezifikation - Abschnitt &quot;Composite Search Parameters&quot;</a>.</p>
+</li>
+</ol>
+<hr />
+
+                        </div>
+                        <div id="ImplementationGuide-markdown-ValueSet-ValueSet-Beispiele">
+                            <h3 id="beispiele">Beispiele</h3>
+<p>Valides Minimalbeispiel Patient:</p>
+<p><pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ValueSet</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKValueSetExample</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">meta</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">profile</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKValueSet</span><span class="string">&quot;</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">useContext</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">focus</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/usage-context-type</span><span class="string">&quot;</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">valueCodeableConcept</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Encounter</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/resource-types</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span>
+            <span class="brace">}</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">url</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://example.org/fhir/ValueSet/TestValueSet</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">version</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2.0.2</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">name</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">TestValueSet</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">status</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">expansion</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">timestamp</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2022-03-30</span><span class="string">&quot;</span><span class="symbol">,</span>
+        <span class="element">&quot;</span><span class="element">contains</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://example.org/fhir/CodeSystem/TestKatalog</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">version</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1.0.0</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">test</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">display</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Test</span><span class="string">&quot;</span>
+            <span class="brace">}</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span>
+<span class="brace">}</span></pre></pre></p>
+
+                        </div>
+
+            </div>
+
+        </div>
+    </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+                
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

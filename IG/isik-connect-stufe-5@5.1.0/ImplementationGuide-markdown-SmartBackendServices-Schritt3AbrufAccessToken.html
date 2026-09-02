@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Connect</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Connect
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                Release Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Akteure.html">
+                                Akteure
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen und Kompatibilit&#xE4;t <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen.html">
+                                            Festlegungen und Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Kontext Smart-on-FHIR <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Kontext.html">
+                                            Kontext Smart-on-FHIR
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKundSMART.html">
+                                            SMART on FHIR - App Launch
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-BackendServices.html">
+                                            SMART on FHIR - Backend Services
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen Connect <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance.html">
+                                            Festlegungen Connect
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance-ConformanceSmartCapabilities.html">
+                                            SMART Capabilities
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance-ConformanceScopesKontexte.html">
+                                            Scopes und Compartments
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKAutorisierung.html">
+                                            Autorisierung
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Anforderungsuebersicht.html">
+                                Anforderungs&#xFC;bersicht
+                            </a>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h1 id="schritt-3-abruf-access-token">Schritt 3: Abruf Access Token</h1>
+<p>SMART Backend Services gelten, wie in der Einleitung beschrieben, als Systeme, die Interaktionen ohne menschliche Anwender durchführen. Diese Interaktionen sind nicht an ein spezifisches Benutzerprofil gekoppelt und erfolgen ohne Authentifizierung über einen Login. Durch die Hinterlegung von Schlüsselinformationen aus Schritt 2 sichert der Ressourcen-Server ein Vertrauensverhältnis zwischen Backend Service und Ressourcen-Server zu. Dies bedeutet, dass ein Client ohne weiteren Zwischenschritt ein Access Token für den Ressourcen-Server am Autorisierungsserver anfragen kann. Dies erfolgt per <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-4.4">RFC6749 - Abschnitt 4.4 Client Credentials Grant</a>.</p>
+<hr />
+<h2 id="jwt-client-assertions">JWT Client Assertions</h2>
+<p>Bei der Generierung einer Client Assertion entsprechend der Vorgaben aus <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/client-confidential-asymmetric.html#authenticating-to-the-token-endpoint">SMART App Launch - 4.1.5 - Authenticating to the Token endpoint</a> ist zu beachten, dass der &quot;aud&quot;-Parameter die URL des Autorisierungsservers enthält und nicht die des Ressourcenservers. Entsprechend der Vorgaben der Kernspezifikation DARF der &quot;exp&quot; NICHT länger als fünf Minuten gewählt werden (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-040</a>). Der Autorisierungsserver MUSS für die sichere Authentifizierung des Clients die JWT Client Assertion validieren, siehe <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/client-confidential-asymmetric.html#signature-verification">SMART App Launch - 4.1.5.2.1 - Authenticating to the Token endpoint</a> (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-041</a>).</p>
+<p>Die Client Assertion ist nach der Signierung durch den Client als Teil eines <code>application/x-www-form-urlencoded</code>-Requests an den Token-Endpunkt des Autorisierungsserver zu übermitteln. Für weitere Hinweise siehe <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/backend-services.html#request-1">SMART App Launch - 3.6.1 - Authenticating to the Token endpoint</a>.</p>
+<hr />
+<h2 id="hinweise-zu-verwendeten-scopes">Hinweise zu verwendeten Scopes</h2>
+<p>Als Teil der Registierung des Clients SOLLTE festgelegt werden, welche Scopes der Client anfragen und verwenden darf. Da wäre des Token-Requests kein Benutzerkontext hergestellt werden kann, SOLLTEN nur &quot;system&quot;-Level Scopes verwendet werden. &quot;Patient&quot;- und &quot;User&quot;-Level Scopes KÖNNEN verwendet werden (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-042</a>). Hier bedarf es jedoch einen proprietären Austausch des Kontexts zwischen dem Client und dem Autorisierungsserver. Falls Scopes durch den Client angefragt werden, die nicht durch die Registrierung des Clients abgedeckt sind, MUSS dies durch den Autorisierungsserver abgewiesen werden (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-043</a>). Die erteilten Scopes MÜSSEN in der Antwort auf die Token-Annfrage als &quot;scope&quot;-Parameter durch den Autorisierungsserver an den Client übergeben werden (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-044</a>).</p>
+<hr />
+<h2 id="beispiel">Beispiel</h2>
+<p>Request:</p>
+<p>POST /token HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Host: server.example.com</p>
+<pre><code>grant_type=client_credentials&amp;
+scope=system/*.rs
+client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
+client_assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzM4NCJ9.eyJpc3MiOiJFeGFtcGxlIElzc3VlciIsImlhdCI6bnVsbCwiZXhwIjoxNjQzOTg2OTcwLCJhdWQiOiJodHRwczovL2V4YW1wbGUub3JnL2F1dGgvdG9rZW4iLCJzdWIiOiJUZXN0Q2xpZW50SWQiLCJqdGkiOiI3NmE1ZTA4Ni1lOWE3LTQ0ZmUtOTcyOC03MTIxNjE1YzYyOTEifQ.i_Hzfzuqquc7ouj0-CDxtddvsLxTr5RmcR-hlXYRFmAvxaAg6akf_EL6DAqRVLfW1u-FU9JJs015eTvtugYNNI0QPWdZVHJQ54TVIkVx8jsaf_RvbF3q4DpeiRdEXv1j34k_KrgNRTi6d1Rneem8qmTKIQRiWv1iYeNgENPHnL0SV69Pi7PoXr2s7JWFUO56HqWR0tmPweVm3aS24jeAaRGqISAbTPHuq-R8QVD7fMFqQBR_n6xSMCHUxZHBQDFg2c6leY8WlrwZUz9lJZnX5R76iHylfqZ-kAk38xHpnFtsmbF8YH4EUjYmSGT8SPn0y9RHKFI7LCm9p5DeVPPgYQ
+</code></pre>
+<p>Response:</p>
+<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
+{
+  <span style="color:#A31515;">&quot;token_type&quot;</span>: <span style="color:#A31515;">&quot;Bearer&quot;</span>,
+  <span style="color:#A31515;">&quot;scope&quot;</span>: <span style="color:#A31515;">&quot;system/*.rs&quot;</span>,
+  <span style="color:#A31515;">&quot;expires_in&quot;</span>: 3600,
+  <span style="color:#A31515;">&quot;access_token&quot;</span>: <span style="color:#A31515;">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZWVkX3BhdGllbnRfYmFubmVyIjp0cnVlLCJzbWFydF9zdHlsZV91cmwiOiJodHRwczovL3NtYXJ0LmFyZ28ucnVuLy9zbWFydC1zdHlsZS5qc29uIiwicGF0aWVudCI6Ijg3YTMzOWQwLThjYWUtNDE4ZS04OWM3LTg2NTFlNmFhYjNjNiIsInRva2VuX3R5cGUiOiJiZWFyZXIiLCJzY29wZSI6ImxhdW5jaC9wYXRpZW50IHBhdGllbnQvT2JzZXJ2YXRpb24ucnMgcGF0aWVudC9QYXRpZW50LnJzIiwiY2xpZW50X2lkIjoiZGVtb19hcHBfd2hhdGV2ZXIiLCJleHBpcmVzX2luIjozNjAwLCJpYXQiOjE2MzM1MzIwMTQsImV4cCI6MTYzMzUzNTYxNH0.PzNw23IZGtBfgpBtbIczthV2hGwanG_eyvthVS8mrG4&quot;</span>
+}
+
+</pre></div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationText> a fhir:Questionnaire ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleEntryValidationText"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ]
+  ] ;
+  fhir:Questionnaire.url [ fhir:value "https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationText"] ;
+  fhir:Questionnaire.version [ fhir:value "6.0.0"] ;
+  fhir:Questionnaire.name [ fhir:value "ExampleEntryValidationText"] ;
+  fhir:Questionnaire.title [ fhir:value "Validierung von Texten"] ;
+  fhir:Questionnaire.status [ fhir:value "draft"] ;
+  fhir:Questionnaire.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:Questionnaire.subjectType [
+     fhir:value "Patient" ;
+     fhir:index -1
+  ] ;
+  fhir:Questionnaire.date [ fhir:value "2026-09-02T11:31:15+00:00"^^xsd:dateTime] ;
+  fhir:Questionnaire.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:Questionnaire.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:Questionnaire.description [ fhir:value "### Beispiel-Questionnaire Validierung von Textfeldern\n* Limitierung der Mindest- und Maximalvorkommen einer wiederholbaren Gruppe mittels [questionnaire-minOccurs](https://hl7.org/fhir/R4/extension-questionnaire-minoccurs.html)-Extension und [questionnaire-maxOccurs](https://hl7.org/fhir/R4/extension-questionnaire-maxoccurs.html)-Extension\n* Limitierung der Eingabelänge mittels [minLength](https://hl7.org/fhir/R4/extension-minlength.html)-Extension"] ;
+  fhir:Questionnaire.item [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs" ] ;
+       fhir:Extension.valueInteger [ fhir:value "1"^^xsd:integer ]
+     ], [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs" ] ;
+       fhir:Extension.valueInteger [ fhir:value "2"^^xsd:integer ]
+     ] ;
+     fhir:Questionnaire.item.linkId [ fhir:value "1" ] ;
+     fhir:Questionnaire.item.text [ fhir:value "Ausweisdaten" ] ;
+     fhir:Questionnaire.item.type [ fhir:value "group" ] ;
+     fhir:Questionnaire.item.required [ fhir:value "true"^^xsd:boolean ] ;
+     fhir:Questionnaire.item.repeats [ fhir:value "true"^^xsd:boolean ] ;
+     fhir:Questionnaire.item.item [
+       fhir:index -1 ;
+       fhir:Questionnaire.item.linkId [ fhir:value "1.1" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Ausweistyp" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "choice" ] ;
+       fhir:Questionnaire.item.answerOption [
+         fhir:index -1 ;
+         fhir:Questionnaire.item.answerOption.valueString [ fhir:value "Personalausweis" ]
+       ], [
+         fhir:index -1 ;
+         fhir:Questionnaire.item.answerOption.valueString [ fhir:value "Reisepass" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/minLength" ] ;
+         fhir:Extension.valueInteger [ fhir:value "9"^^xsd:integer ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "1.2" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Ausweisnummer" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "string" ] ;
+       fhir:Questionnaire.item.maxLength [ fhir:value "9"^^xsd:integer ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationText.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

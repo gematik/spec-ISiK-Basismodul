@@ -1,0 +1,99 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/CodeSystem/subscription-notification-type> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "subscription-notification-type"] ;
+  fhir:Resource.meta [
+     fhir:Meta.lastUpdated [ fhir:value "2022-05-28T13:47:40.239+11:00"^^xsd:dateTime ] ;
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/shareablecodesystem" ;
+       fhir:index 0 ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/shareablecodesystem>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem subscription-notification-type</b></p><a name=\"subscription-notification-type\"> </a><a name=\"hcsubscription-notification-type\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Last updated: 2022-05-28 13:47:40+1100</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/R4/shareablecodesystem.html\">Shareable CodeSystem</a></p></div><p>This case-sensitive code system <code>http://hl7.org/fhir/subscription-notification-type</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">handshake<a name=\"subscription-notification-type-handshake\"> </a></td><td>Handshake</td><td>The status was generated as part of the setup or verification of a communications channel.</td></tr><tr><td style=\"white-space:nowrap\">heartbeat<a name=\"subscription-notification-type-heartbeat\"> </a></td><td>Heartbeat</td><td>The status was generated to perform a heartbeat notification to the subscriber.</td></tr><tr><td style=\"white-space:nowrap\">event-notification<a name=\"subscription-notification-type-event-notification\"> </a></td><td>Event Notification</td><td>The status was generated for an event to the subscriber.</td></tr><tr><td style=\"white-space:nowrap\">query-status<a name=\"subscription-notification-type-query-status\"> </a></td><td>Query Status</td><td>The status was generated in response to a status query/request.</td></tr><tr><td style=\"white-space:nowrap\">query-event<a name=\"subscription-notification-type-query-event\"> </a></td><td>Query Event</td><td>The status was generated in response to an event query/request.</td></tr></table></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg" ] ;
+     fhir:Extension.valueCode [ fhir:value "fhir" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status" ] ;
+     fhir:Extension.valueCode [ fhir:value "trial-use" ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm" ] ;
+     fhir:Extension.valueInteger [ fhir:value "0"^^xsd:integer ]
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "http://hl7.org/fhir/subscription-notification-type"] ;
+  fhir:CodeSystem.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ] ;
+     fhir:Identifier.value [ fhir:value "urn:oid:2.16.840.1.113883.4.642.1.1524" ]
+  ] ;
+  fhir:CodeSystem.version [ fhir:value "6.0.0"] ;
+  fhir:CodeSystem.name [ fhir:value "SubscriptionNotificationTypeCS"] ;
+  fhir:CodeSystem.title [ fhir:value "SubscriptionNotificationType"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2021-01-05T10:01:24+11:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:CodeSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "The type of notification represented by the status message."] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.valueSet [
+     fhir:value "http://hl7.org/fhir/ValueSet/subscription-notification-type" ;
+     fhir:link <http://hl7.org/fhir/ValueSet/subscription-notification-type>
+  ] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "5"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "handshake" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Handshake" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The status was generated as part of the setup or verification of a communications channel." ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "heartbeat" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Heartbeat" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The status was generated to perform a heartbeat notification to the subscriber." ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "event-notification" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Event Notification" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The status was generated for an event to the subscriber." ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "query-status" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Query Status" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The status was generated in response to a status query/request." ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.concept.code [ fhir:value "query-event" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Query Event" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The status was generated in response to an event query/request." ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/CodeSystem/subscription-notification-type.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

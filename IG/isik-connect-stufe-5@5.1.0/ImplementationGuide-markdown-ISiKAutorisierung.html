@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Connect</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Connect
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                Release Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Akteure.html">
+                                Akteure
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen und Kompatibilit&#xE4;t <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen.html">
+                                            Festlegungen und Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Kontext Smart-on-FHIR <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Kontext.html">
+                                            Kontext Smart-on-FHIR
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKundSMART.html">
+                                            SMART on FHIR - App Launch
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-BackendServices.html">
+                                            SMART on FHIR - Backend Services
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen Connect <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance.html">
+                                            Festlegungen Connect
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance-ConformanceSmartCapabilities.html">
+                                            SMART Capabilities
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance-ConformanceScopesKontexte.html">
+                                            Scopes und Compartments
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKAutorisierung.html">
+                                            Autorisierung
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Anforderungsuebersicht.html">
+                                Anforderungs&#xFC;bersicht
+                            </a>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h1 id="isik-connect-autorisierung">ISiK-Connect: Autorisierung</h1>
+<hr />
+<h3 id="normativ">Normativ</h3>
+<hr />
+<p>ISiK-Connect konkretisiert in der aktuellen Stufe die Anforderungen an eine Autorisierung zur Absicherung eines ISiK-konformen FHIR-Endpunkts. Die normativen Vorgaben beschränken sich zunächst auf Ressourcen-Server, die ein ISiK-relevantes FHIR RESTful API bereitstellen ('ISiK-Ressourcen-Server'), d. h. die auch bereits für andere Teile von ISiK bestätigungsrelevant sind. In zukünftigen Ausbaustufen werden weitere Bausteine zur Umsetzung eines vollständigen Autorisierungssystems sowie zu weiteren Themen der Konnektivität wie z. B. Protokollierung und Authentisierung spezifiziert.</p>
+<table class="regular">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hinweis an IT-Verantwortliche</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Ampel%20auf%20Rot_Blau_gematik.svg" alt="gematik logo" width="75"/></td>
+<td><strong>ISiK-Ressourcen-Server kein Standalone:</strong> Die beschriebenen Autorisierungsszenarien funktionieren nur, wenn der ISiK-Ressourcenserver entweder gleichzeitig die Anforderungen eines ISiK-Autorisierungsservers erfüllt oder an einen Autorisierungsserver gekoppelt ist, der ISiK-Anforderungen erfüllt (Rolle ISiK-Autorisierungsserver). Dies ist bei der Integration von lokalen Systemen (z.B. eines zentralen Autorisierungsservers zu beachten).</td>
+</tr>
+</tbody>
+</table>
+<h1 id="zugriffsrechte-und-compartments">Zugriffsrechte und Compartments</h1>
+<p>ISiK-Connect schreibt Mechanismen für den Austausch und die Kodierung von Autorisierungen fest. Die Autorisierungen selbst instanziieren im Krankenhaus vergebene Berechtigungen für einen Zugriff einer Person auf eine geschützte Ressource (z.B. &quot;Der zugreifende Nutzer darf Observation-Ressourcen des Patienten mit der ID 123 suchen und abrufen.&quot;). Autorisierungen werden in dem ISiK-Connect zugrunde liegenden Bild einer IT-Infrastruktur durch einen Autorisierungsserver im Ergebnis der Prüfung festgelegter Berechtigungen vergeben. Diese Berechtigungen wiederum leiten sich aus generellen Sicherheitsregeln des Krankenhauses, Rollendefinitionen, durch Patienten gegebene Einwilligungen und weiteren Vorgaben ab. Im ISiK zugrundeliegenden Bild erfolgt die Verwaltung von Berechtigungen über einen <em>Policy Administration Point</em>.</p>
+<p>ISiK-Connect nutzt für die Kodierung und Durchsetzung von Autorisierungen drei Konzepte aus FHIR bzw. <em>SMART on FHIR</em>:</p>
+<ul>
+<li>Kontext</li>
+<li><em>Compartment</em></li>
+<li><em>Scope</em></li>
+</ul>
+<p><em>Scopes</em> und <em>Compartements</em> sind Teil eines Kontexts und können zueinander in Bezug stehen.</p>
+<h2 id="kontexte">Kontexte</h2>
+<p>Jeder Zugriff auf eine geschützte Ressource erfolgt im Kontext eines Patienten, eines Behandlungsfalls oder einer anderen Ressource. Der Kontext wird vom aufrufenden Client &quot;mitgebracht&quot; und stellt den Bezugspunkt für alle anderen Berechtigungsinformationen dar. Aus Sicht des Clients stellt dieser Kontext den &quot;aktuellen Patienten&quot;, den &quot;aktuellen Fall&quot;, etc. dar.</p>
+<p>Beispiel: Der Nutzer hat in/aus der ISiK-Clientanwendung den Patienten &quot;123&quot; geöffnet und möchte nun Daten zu diesem Patienten verarbeiten, zu deren Abruf eine Autorisierung erforderlich ist. Der Zugriffskontext der Autorisierung ist der Patient &quot;123&quot;. Alle anwendbaren Zugriffsrechte (s.u.) beziehen sich auf den Patienten &quot;123&quot;. Das <em>Patient</em>-Compartment beschreibt, wie der ISiK-Ressourcen-Server validieren kann, dass eine Ressource (z. B. eine <em>Observation</em>) im Kontext des Patienten &quot;123&quot; steht.</p>
+<p>ISiK-konforme Ressourcenserver MÜSSEN die beim Aufruf eines RESTful API in einem Zugriffstoken empfangene Kontext- und Autorisierungsinformationen auswerten und anwenden können (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-005</a>).</p>
+<p>ISiK-Connect macht derzeitig keine Vorgabe, wie ein Client in einen bestimmten Kontext gestellt wird (<em>SMART on FHIR</em> sieht hierfür z. B. die auf der Seite <a href="ImplementationGuide-markdown-Kontext.html" title='ImplementationGuide/markdown/Kontext.md'>&quot;SMART App Launch&quot;</a> skizzierten Mechanismen eines <em>EHR Launch</em> bzw. eines <em>Standalone Launch</em> vor, bei dem ein Kontext als <em>Launch Context</em> an eine andere Anwendung übergeben/vererbt wird und dabei weiter eingeschränkt werden kann).</p>
+<h2 id="compartments"><em>Compartments</em></h2>
+<p>Autorisierungen können in FHIR an eine 'Fokus'-Ressource gebunden werden, z. B. eine 'Patient'-Ressource (&quot;Zugriff auf Daten zum Patienten 123&quot;). Um die 'Fokus'-Ressource herum gruppieren sich weitere Ressourcen, die mit dieser in einer Beziehung stehen, z. B. im Fall der 'Patient'-Ressource die dem Patienten zugeordneten Beobachtungen, Diagosen/Probleme, Termine, Behandlungspläne, etc. In FHIR werden diese Gruppierungen über Ressourcen vom Ressourcentyp <a href="https://hl7.org/fhir/R4/compartmentdefinition.html"><em>CompartmentDefinition</em></a> festgelegt. Diese definiert die Elemente einer Ressource, die die Bindung zu der 'Fokus'-Ressource herstellen.</p>
+<p>Beispiel: Für den Ressourcentyp <a href="https://hl7.org/fhir/R4/condition.html"><em>Condition</em></a> legt die <a href="https://hl7.org/fhir/R4/compartmentdefinition-patient.html"><em>CompartmentDefinition</em> der <em>Patient</em>-Ressource</a> die Elemente 'Condition.patient' und 'Condition.participant-actor' als verbindende Elemente fest. Eine Autorisierung für den Zugriff auf Patientendaten im Kontext des Patienten &quot;123&quot; umfasst damit grundsätzlich nur 'Condition'-Ressourcen, deren 'subject'- oder 'participant-actor'-Element auf den Patienten &quot;123&quot; verweist.</p>
+<p>ISiK-Ressourcen-Server MÜSSEN zumindest Autorisierungen mit Bezug zu der in FHIR definierten <em>Compartment</em>-Definition für 'Patient'-Ressourcen verarbeiten können (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-006</a>).</p>
+<h2 id="zugriffsrechte-auf-ressourcen">Zugriffsrechte auf Ressourcen</h2>
+<p>In dem von <em>SMART on FHIR</em> profilierten <em>OAuth2</em>-Standard legen sog. <em>Scopes</em> die spezifischen Aktionen und/oder Daten fest, auf die eine Client-Anwendung in Vertretung eines Benutzers zugreifen bzw. diese manipulieren kann. Z.B. kann ein <em>Scope</em> die Benutzerberechtigung zum Zugriff auf <em>Observation</em>-Ressourcen an eine Clientanwendung delegieren und diesem damit die Möglichkeit geben, 'Observation'-Ressourcen zu einem Patienten von einem ISiK-Ressourcen-Server abzurufen.</p>
+<p><em>Scopes</em> werden vom API-Anbieter - im Fall von ISiK dem ISiK-Ressourcen-Server - definiert und von dem zugreifenden Client während des Autorisierungsprozesses über den Autorisierungsserver angefordert. Sofern die Auswertung der anwendbaren Berechtigungsregeln durch den Autorisierungsserver die angeforderten <em>Scopes</em> bestätigt, wird dem Client ein Zugriffstoken (<em>Access Token</em>) ausgestellt, das die anwendbaren <em>Scopes</em> enthält. Der Client kann anschließend das Zugriffstoken verwenden, um für den berechtigten Nutzer im Rahmen der durch die <em>Scopes</em> bestätigten Rechtedelegation auf die geschützten Ressourcen eines ISiK-Ressourcenservers zuzugreifen.</p>
+<p>FHIR-Ressourcenservern MÜSSEN (ggf. im Zusammenspiel mit vorgelagerten <em>API Gateways</em> oder <em>Reverse Proxies</em>) die in SMART-on-FHIR definierte Syntax für die Bestätigung von <em>Scopes</em> verarbeiten und die mit den <em>Scopes</em> ausgedrücken Berechtigungsdelegationen zur Absicherung ihrer RESTful-Schnittstellen anwenden können (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-007</a>).</p>
+<h2 id="zusammenspiel-von-kontexten-compartments-und-zugriffsrechten-auf-ressourcen">Zusammenspiel von Kontexten, <em>Compartments</em> und Zugriffsrechten auf Ressourcen</h2>
+<p><em>Compartments</em> grenzen ab, auf welche mit einer 'Fokus'-Ressource gruppierten Ressourcen ein Client überhaupt zugreifen kann. Welche Ressource konkret den 'Fokus' darstellt, wird über den Kontext bestimmt. Über <em>Scopes</em> bestätigte Zugriffsrechte grenzen ein, auf welchen der mit der 'Fokus'-Ressource gruppierten Ressourcen der Client welche Operationen ausführen darf.</p>
+<p>Beispiel: Der aus Sicht des Clients aktuelle Patient ist der Patient &quot;123&quot;. Dieser ist hiermit auch der Kontext der Autorisierung. Die Kombination aus der <em>CompartmentDefinition</em> für die 'Patient'-Ressource und dem Zugriffsrecht 'patient/Observation.r' legt fest, dass der Client nur lesend und nur auf 'Observation'-Ressourcen zugreifen darf, die über 'Observation.subject' oder 'Observation.performer' dem Patienten &quot;123&quot; zugeordnet sind.</p>
+<h2 id="zugriffstoken-beispiel">Zugriffstoken: Beispiel</h2>
+<p>Zugriffstoken werden als Base64-kodierte <em>JSON Web Token (JWT)</em> ausgetauscht.</p>
+<p>Beispiel:</p>
+<pre><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50IjoiODdhMzM5ZDAtOGNhZS00MThlLTg5YzctODY1MWU2YWFiM2M2IiwidG9rZW5fdHlwZSI6ImJlYXJlciIsInNjb3BlIjoicGF0aWVudC9PYnNlcnZhdGlvbi5ycyBwYXRpZW50L1BhdGllbnQucnMiLCJjbGllbnRfaWQiOiJraHpnX3BvcnRhbCIsImlhdCI6MTY4MTQ1OTIwMCwiZXhwIjoxNjgxNDU5ODAwfQ.NyA2LO9u17mZRXz4yP6uUvibuhpjVo5uLslXo2U4DOA
+</code></pre>
+<p>Nach der Dekodierung werden die im Token gekapselten Autorisierungsinformationen erkennbar:</p>
+<pre><code>{
+  &quot;alg&quot;: &quot;HS256&quot;,
+  &quot;typ&quot;: &quot;JWT&quot;
+}
+{
+  &quot;patient&quot;: &quot;87a339d0-8cae-418e-89c7-8651e6aab3c6&quot;,
+  &quot;token_type&quot;: &quot;bearer&quot;,
+  &quot;scope&quot;: &quot;patient/Observation.rs patient/Patient.rs&quot;,
+  &quot;client_id&quot;: &quot;khzg_portal&quot;,
+  &quot;iat&quot;: 1681459200,
+  &quot;exp&quot;: 1681459800
+}
+</code></pre>
+<p>Das Zugriffstoken in dem Beispiel gewährt Lese- und Such-Zugriffe auf die 'Patient'-Ressource und 'Observation'-Ressourcen des Patienten mit der <em>id</em> '87a339d0-8cae-418e-89c7-8651e6aab3c6'. Das Token wurde am 14. April 2023 10:00 Uhr (Mitteleuropäische Sommerzeit) ausgestellt und ist ab diesem Zeitpunkt 10 Minuten lang gültig.</p>
+<h2 id="implementierungshinweise-fur-isik-ressourcenserver">Implementierungshinweise für ISiK-Ressourcenserver</h2>
+<p>Die oben genannten Anforderungen für einen ISiK-Ressourcenserver bedeuten nicht zwangsläufig, dass ein solcher Server stets einen eigenen Autorisierungsserver als Teil des Gesamtsystems besitzen muss. Es ist auch möglich, die Gültigkeit eines Tokens sowie die Informationen über die erlaubten Scopes und verwendeten Kontexte über <a href="https://datatracker.ietf.org/doc/html/rfc7662">OAuth 2.0 Token Introspection, per RFC 7662</a> zu erlangen. Auf Basis der Antwort des Autorisierungsservers kann der ISiK-Ressourcenserver über die Herausgabe von FHIR-Ressourcen an einen Client entscheiden. Dies impliziert, dass es möglich ist, einen ISiK-Ressourcenserver an einen (im Krankenhaus) zentralen Autorisierungsserver anzubinden.</p>
+<p>Für Implementierungsdetails siehe <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/token-introspection.html">SMART App Launch - Token Introspection</a>. Um die Anforderungen <code><a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-005</a></code> und <code><a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-007</a></code> umzusetzen, können ISiK-Ressourcenserver für jeden abgesicherten FHIR REST API-Aufruf die Token-Informationen an den Token Introspection Endpunkt weiterleiten, um die Validität des Tokens zu überprüfen sowie gleichzeitig die relevanten dekodierten Informationen zur Durchsetzung der Autorisierungseinschränkungen zu erhalten. Es sei darauf hingewiesen, dass diese Variante die einzige ist, um Tokens sofort benutzerseitig invalidieren zu können.</p>
+<p>Für den Fall, dass ein Autorisierungsserver ein JSON Web Token (JWT) ausstellt, kann ein Ressourcenserver die Gültigkeit des Tokens mittels der öffentlichen Schlüssel, welche durch den Autorisierungsserver in einem <code>.well-known/openid-configuration</code> Dokument via einer JWKS URI bereitgestellt werden, überprüfen. Siehe <a href="https://datatracker.ietf.org/doc/html/rfc8414#section-2">RFC 8414 – Authorization Server Metadata</a>.</p>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

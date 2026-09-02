@@ -1,0 +1,90 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Questionnaire/ExampleMdrRelevant> a fhir:Questionnaire ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleMdrRelevant"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ]
+  ] ;
+  fhir:DomainResource.modifierExtension [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKMpFormularExtension" ] ;
+     fhir:Extension.valueString [ fhir:value "SINNVOLLE ZWECKBESTIMMUNG HIER EINFÜGEN!" ]
+  ] ;
+  fhir:Questionnaire.url [ fhir:value "https://gematik.de/fhir/isik/Questionnaire/ExampleMdrRelevant"] ;
+  fhir:Questionnaire.version [ fhir:value "6.0.0"] ;
+  fhir:Questionnaire.name [ fhir:value "ExampleMdrRelevant"] ;
+  fhir:Questionnaire.title [ fhir:value "Formular aus einem Medizinprodukt"] ;
+  fhir:Questionnaire.status [ fhir:value "draft"] ;
+  fhir:Questionnaire.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:Questionnaire.subjectType [
+     fhir:value "Patient" ;
+     fhir:index -1
+  ] ;
+  fhir:Questionnaire.date [ fhir:value "2026-09-02T11:31:15+00:00"^^xsd:dateTime] ;
+  fhir:Questionnaire.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:Questionnaire.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:Questionnaire.description [ fhir:value "### Beispiel-Questionnaire, welches eine MDR-Relevanz ausweist\n* Angabe der MDR-Relevanz mittels [ISiKMDRRelevanzFormular](https://simplifier.net/isik-stufe-5/isikmdrrelevanzformularextension)-Extension\nDisclaimer: Dies ist ein simples fantasie Beispiel und hat keine medizinische Aussagekraft. Das erwartete Verhalten von Systemen, die mit diesem Questionnaire testen wäre, dass das Formular mit einer Fehlermeldung *nicht* rendert!"] ;
+  fhir:Questionnaire.item [
+     fhir:index -1 ;
+     fhir:Questionnaire.item.linkId [ fhir:value "1" ] ;
+     fhir:Questionnaire.item.text [ fhir:value "Fragen mit Entscheidungspfad, der MDR-relevant ist" ] ;
+     fhir:Questionnaire.item.type [ fhir:value "group" ] ;
+     fhir:Questionnaire.item.item [
+       fhir:index -1 ;
+       fhir:Questionnaire.item.linkId [ fhir:value "1.1" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Wie hoch ist dein systolischer Blutdruck (oberer Wert)?" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "integer" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Questionnaire.item.linkId [ fhir:value "1.1-Krank" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Du sollst zum Arzt!" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "display" ] ;
+       fhir:Questionnaire.item.enableWhen [
+         fhir:index -1 ;
+         fhir:Questionnaire.item.enableWhen.question [ fhir:value "1.1" ] ;
+         fhir:Questionnaire.item.enableWhen.operator [ fhir:value ">=" ] ;
+         fhir:Questionnaire.item.enableWhen.answerInteger [ fhir:value "90"^^xsd:integer ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Questionnaire.item.linkId [ fhir:value "1.1-Gesund" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Du sollst nicht zum Arzt!" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "display" ] ;
+       fhir:Questionnaire.item.enableWhen [
+         fhir:index -1 ;
+         fhir:Questionnaire.item.enableWhen.question [ fhir:value "1.1" ] ;
+         fhir:Questionnaire.item.enableWhen.operator [ fhir:value "<" ] ;
+         fhir:Questionnaire.item.enableWhen.answerInteger [ fhir:value "90"^^xsd:integer ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Questionnaire/ExampleMdrRelevant.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

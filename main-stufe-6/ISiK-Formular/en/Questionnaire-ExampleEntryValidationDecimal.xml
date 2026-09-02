@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Questionnaire xmlns="http://hl7.org/fhir">
+  <id value="ExampleEntryValidationDecimal"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/>
+  </text>
+  <url value="https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal"/>
+  <version value="6.0.0"/>
+  <name value="ExampleEntryValidationDecimal"/>
+  <title value="Validierung von Dezimalen"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <subjectType value="Patient"/>
+  <date value="2026-09-02T11:31:15+00:00"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="### Beispiel-Questionnaire Validierung von Dezimalwerten  &#xA;* Vorgabe des Eingabeformates mittels [entryFormat](https://hl7.org/fhir/R4/extension-entryformat.html)-Extension&#xA;* Limitierung der Dezimalstellen mittels [maxDecimalPlaces](https://hl7.org/fhir/R4/extension-maxdecimalplaces.html)-Extension&#xA;* Limitierung des Wertebereiches mittels [minValue](https://hl7.org/fhir/R4/extension-minvalue.html) &#xA;   und [maxValue](https://hl7.org/fhir/R4/extension-maxvalue.html)-Extension&#xA;* Vorgabe der anzugebenden Maßeinheit mittels [questionnaire-unit](https://hl7.org/fhir/R4/extension-questionnaire-unit.html)-Extension"/>
+  <item>
+    <linkId value="4"/>
+    <text value="Körpermaße"/>
+    <type value="group"/>
+    <required value="false"/>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-unit">
+        <valueCoding>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="kg"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/maxValue">
+        <valueDecimal value="300"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/minValue">
+        <valueDecimal value="20"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces">
+        <valueInteger value="1"/>
+      </extension>
+      <linkId value="4.1"/>
+      <text value="Körpergewicht in kg (muss zwischen 20 und 300kg liegen)"/>
+      <type value="decimal"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-unit">
+        <valueCoding>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="m"/>
+        </valueCoding>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/entryFormat">
+        <valueString value="x.xx"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/maxValue">
+        <valueDecimal value="2.5"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/minValue">
+        <valueDecimal value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces">
+        <valueInteger value="3"/>
+      </extension>
+      <linkId value="4.2"/>
+      <text value="Körpergröße in m (muss zwischen 1m und 2.50m liegen)"/>
+      <type value="decimal"/>
+    </item>
+  </item>
+</Questionnaire>

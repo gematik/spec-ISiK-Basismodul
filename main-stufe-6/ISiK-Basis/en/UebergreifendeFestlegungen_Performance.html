@@ -1,0 +1,570 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Performance - ISiK Basis Implementierungsleitfaden v6.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"10.10"}
+    h3,h4,h5,h6{--heading-prefix:"10.10"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="Motivation.html">Motivation</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Kontext und Use Cases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Abbildung-des-Konstrukts-Fall.html">Abbildung des Konstrukts &quot;Fall&quot;</a>
+      </li>
+      <li>
+        <a href="Datenuebermittlung-aus-Subsystemen.html">Datenübermittlung aus Subsystemen</a>
+      </li>
+      <li>
+        <a href="Erlaeuterung-Akteurs-und-Rollenmodell.html">Akteurs- und Rollenmodell</a>
+      </li>
+      <li>
+        <a href="Index_Beispielszenarien.html">Beispielszenarien</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebergreifendeFestlegungen_Methodik.html">Methodik</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">Bestätigungsrelevante Systeme</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation_Andere.html">Kompatibilität der gematik-Spezifikation Andere</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation_IHE.html">Kompatibilität der gematik-Spezifikation IHE</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation_HL7Europe.html">Kompatibilität der gematik-Spezifikation HL7 Europe</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Must-Support-Flags.html">Must-Support-Flags</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Repraesentationsformate.html">Repräsentationsformate</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Suchparameter.html">Suchparameter</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Rest.html">REST-API</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Performance.html">Performance</a>
+      </li>
+      <li>
+        <a href="Patient-Besuch-Kontext.html">Herstellung von Patienten- und Besuchskontext</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_UmgangFehlendeDaten.html">Umgang mit fehlenden Daten</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_FHIR_Artefakte.html">Umgang mit FHIR-Artefakten</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Basis Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0 - active
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='Index_Festlegungen.html'><b>Festlegungen</b></a></li><li><b>Performance</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Performance</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+
+<h3 id="performance-aspekte">Performance-Aspekte</h3>
+
+<p>Alle beteiligten Akteure (Server wie Clients) tragen eine (Teil-)Verantwortung für die Sicherstellung einer performanten REST-API. Zweck einer performanten REST-API ist, dass die typischen Arbeitsabläufe der jeweiligen Nutzer (z. B. Arzt, Pflege, Verwaltung) ohne wahrnehmbare Verzögerung durchgeführt werden können. Insbesondere dürfen für klinisch kritische Funktionen keine Wartezeiten entstehen, die eine zeitgerechte Patientenversorgung beeinträchtigen.</p>
+
+<p>Zur Sicherstellung dieser Performance-Bedarfe können in einem ersten Schritt die Antwortzeiten der REST-Endpunkte (Server) als Baseline geprüft werden - d. h. im Best-Case und unabhängig von Last-Anforderungen.
+Weitere Performance-Aspekte für Server zu Antwortzeiten unter Last, Lasten und Durchsatz sollten diesen Baseline Anforderungen folgen.</p>
+
+<p>Da zur Gewährleistung der Performance während der Entwicklung sowohl Client- als auch Server-Hersteller beitragen müssen, werden unten weitere Hinweise zur Client-Implementierung formuliert. Die folgenden Festlegungen gelten dagegen für Server.</p>
+
+<h4 id="performance-kategorien---zunächst-zur-antwortzeit-baseline">Performance-Kategorien - zunächst zur Antwortzeit (Baseline)</h4>
+<p>Die Performance-Kategorien und entsprechende Anforderungen beziehen sich zum jetzigen Zeitpunkt alle auf den Aspekt <strong>Antwortzeit als Baseline</strong>.</p>
+
+<p>Die Antwortzeit bezeichnet dabei einen Request/Reply-Zyklus zwischen einem Client und einem Server, der die Zeitspanne von der Absendung einer Anfrage durch den Client bis zum vollständigen Empfang der Antwort durch den Client in der Test-Umgebung umfasst und deckt sich damit weitgehend mit dem Konzept der Bearbeitungszeit wie <a href="https://gemspec.gematik.de/docs/gemSpec/gemSpec_Perf/latest/#2.1">hier</a> definiert. Dabei wird hier zusätzlich eine Antwortzeit ohne signifikante Lasteinwirkung angenommen.</p>
+
+<p><strong>Messmetriken für Antwortzeit</strong></p>
+
+<p>Für die Überprüfung der Performance-Anforderungen im Zertifizierungsverfahren gelten folgende Metriken:</p>
+
+<ul>
+  <li><strong>P95 (95. Perzentil):</strong> 95 % aller gemessenen Anfragen eines Messlaufs werden innerhalb dieses Zeitwerts vollständig beantwortet; die verbleibenden 5 % dürfen ihn überschreiten. P95 ist die <strong>maßgebliche Konformitätsmetrik</strong>: Die in den Performance-Kategorien (PK1–PK5) genannten Zeitschwellen (z. B. „unter einer Sekunde") müssen als <strong>P95-Wert</strong> eingehalten werden.</li>
+</ul>
+
+<p>Als kritisch (PK1 bis PK4) gelten REST-Abfragen, die von klinischen Nutzern in unmittelbar behandlungsrelevanten, zeitkritischen Situationen genutzt werden und deren Bereitstellung für den anfragenden Client nahezu zur Laufzeit stattfinden sollten.
+Daher sind hierfür sehr kurze Antwortzeiten ohne wahrnehmbare Verzögerung anzustreben.</p>
+
+<p>Für diese Performance-Kategorien gilt:</p>
+
+<ul>
+  <li><strong>PK1:</strong> Request-Anfrage von Ressourcen unter bekannter ID
+    <ul>
+      <li>Anforderung: <strong>"unter einer Sekunde"</strong>
+        <ul>
+          <li>Beispiel: <code class="language-plaintext highlighter-rouge">GET baseURL/Patient/89186842</code></li>
+          <li>Beispiel: <code class="language-plaintext highlighter-rouge">GET baseURL/Observation/67890</code></li>
+          <li>Beispiel: <code class="language-plaintext highlighter-rouge">GET baseURL/DocumentReference/54321</code>
+            <ul>
+              <li>oder : <code class="language-plaintext highlighter-rouge">baseURL/DocumentReference?_id=54321</code></li>
+            </ul>
+          </li>
+          <li>Ausnahme: DocumentReference-Ressource mit base64 kodiertem Attachment bzw. Binary</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>PK2:</strong> Suchanfragen zum Auffinden von Ressourcen auf Basis von weitestgehend eindeutigen Metadaten (z. B. .identifier und .birthdate) ohne _include und _revInclude, ohne Chaining.
+    <ul>
+      <li>Anforderung <strong>"unter einer Sekunde"</strong>
+        <ul>
+          <li>Beispielanfrage <code class="language-plaintext highlighter-rouge">baseURL/Patient?identifier=12345</code></li>
+          <li>Beispielanfrage <code class="language-plaintext highlighter-rouge">baseURL/Patient?birthdate=1982-01-13</code></li>
+          <li>Beispielanfrage - Medikationsliste der einzelnen Patienten für eine Station: <code class="language-plaintext highlighter-rouge">baseURL/MedicationRequest?patient=Patient/89186842</code></li>
+          <li>Ausnahme: DocumentReference-Ressource mit base64 kodiertem Attachment bzw. Binary</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>PK3:</strong> Suchanfragen zum Auffinden von Patienten-gebundenen Ressourcen (ohne _include und _revInclude ohne Chaining) unter der Annahme, dass <code class="language-plaintext highlighter-rouge">Patient.id</code> bekannt.
+    <ul>
+      <li>Anforderung: <strong>"unter 2 Sekunden"</strong>
+        <ul>
+          <li>Beispielanfrage: <code class="language-plaintext highlighter-rouge">baseURL/Condition?code=http://fhir.de/CodeSystem/bfarm/icd-10-gm|R10.0&amp;patient=89186842</code></li>
+          <li>Beispielanfrage: <code class="language-plaintext highlighter-rouge">baseURL/Condition?patient=Patient/89186842</code></li>
+          <li>Beispielanfrage: <code class="language-plaintext highlighter-rouge">baseURL/Observation?category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs&amp;patient=Patient/89186842</code></li>
+          <li>Ausnahme: DocumentReference-Ressource mit base64 kodiertem Attachment bzw. Binary</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>PK4:</strong> Suchanfragen auf Patient und Encounter unter der Annahme, dass <code class="language-plaintext highlighter-rouge">.identifier</code> unbekannt und dass ein sehr großer Ergebnisraum der Suchanfrage möglich ist.
+    <ul>
+      <li>Kontext: Listen- und Übersichtsabfragen (z.B. Patientenlisten, Falllisten)</li>
+      <li>Anforderung: <strong>"unter 5 Sekunden"</strong>
+        <ul>
+          <li>Beispielanfrage - alle Patienten mit dem Namen Müller: <code class="language-plaintext highlighter-rouge">baseURL/Patient?name=Müller</code></li>
+          <li>Beispielanfrage - alle Patienten auf der Station "123": - Patienten und Kontakte auf einer bestimmten Station mit einem aktiven Kontakt auf dieser Station</li>
+          <li>Beispielabruf: <code class="language-plaintext highlighter-rouge">GET baseURL/Encounter?location=Location/loc-hospital&amp;status=in-progress&amp;_include=Encounter:subject</code></li>
+          <li>Hinweis: Diese Abfrage kann ebenfalls in zwei Schritte unterteilt werden</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Als vorwiegend unkritisch gelten Abfragen (PK5 bis PK6), die z. B.</p>
+<ul>
+  <li>im Rahmen der Planungs- und Organisationsinformationen mit Bezug zu Patienten (z.B. Terminpläne, Belegungspläne),</li>
+  <li>Schreiboperationen, die nicht in der akuten Entscheidungssituation, sondern zeitnah im Verlauf erforderlich sind (z.B. Nachdokumentation),</li>
+  <li>die überwiegend für Verwaltung, Abrechnung, Controlling, Stammdatenpflege, Reporting oder technische Administration genutzt werden oder</li>
+  <li>Abfragen und Operationen zur Stammdatenpflege ohne unmittelbaren Behandlungskontext</li>
+</ul>
+
+<p>Für diese Performance-Kategorien sind längere Antwortzeiten grundsätzlich tolerierbar; bei zu erwartenden längeren Laufzeiten sind asynchrone Verfahren möglich.</p>
+
+<p>Für diese Performance-Kategorien gilt:</p>
+
+<ul>
+  <li><strong>PK5:</strong> weitere Suchanfragen bzw. Operationen.
+    <ul>
+      <li>Anforderung: <strong>"Unter 60 Sekunden"</strong>
+        <ul>
+          <li>Beispielanfrage - Prozeduren für eine Station: <code class="language-plaintext highlighter-rouge">baseURL/Procedure?encounter.location=Location/ward123</code></li>
+          <li>Beispielanfrage - Liste aller Stationen: <code class="language-plaintext highlighter-rouge">baseURL/Location?type=http://terminology.hl7.org/CodeSystem/location-physical-type|wa</code></li>
+          <li>Beispielanfrage - Niereninsuffizienz Screening mittels Serumkreatinin: <code class="language-plaintext highlighter-rouge">baseURL/Observation?code=http://loinc.org|2160-0&amp;combo-code-value-quantity=gt1.0|mg/dL</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>PK6:</strong> weitere Suchanfragen und Custom-Operation
+    <ul>
+      <li>Anforderung: <strong>nicht geprüft</strong>
+        <ul>
+          <li>Beispielanfrage - Alle verschriebenen bzw. verabreichten Medikamente (relevant bei auffälligen Medikationschargen): <code class="language-plaintext highlighter-rouge">baseURL/MedicationRequest</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Custom-Operationen mit modulspezifisch konkretisierten Anforderungen</strong> – Fachmodule KÖNNEN für einzelne Custom-Operationen engere Antwortzeit-Anforderungen festlegen, die die PK6-Einordnung im jeweiligen Kontext konkretisieren.
+    <ul>
+      <li>Beispiel - Operation zur Terminbuchung in ISiK Terminplanung: <code class="language-plaintext highlighter-rouge">baseURL/$book</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfahrens die entsprechenden Performance-Anforderungen (z.B. Antwortzeiten - ggf. unter Berücksichtigung der Perzentile -; aber vorerst keine Lasten, Durchsatz etc.)implementiert.</p>
+
+<h4 id="umgang-mit-kostspieligen-suchanfragen-too-costly">Umgang mit kostspieligen Suchanfragen (<code class="language-plaintext highlighter-rouge">too-costly</code>)</h4>
+
+<p>Bei patientenunabhängigen oder breit gefächerten Suchanfragen können potenziell sehr große Ergebnismengen entstehen, die Server erheblich belasten. Pagination SOLL als primäres Mittel eingesetzt werden, bevor ein Server eine Anfrage ablehnt. Reicht Pagination nicht aus, DARF ein Server eine <code class="language-plaintext highlighter-rouge">too-costly</code>-Antwort zurückgeben – jedoch nur im Rahmen der nachfolgend definierten Regeln.</p>
+
+<p><strong>Ressourcen-Volumenklassen</strong></p>
+
+<p>Ressourcentypen werden nach erwartetem Datenaufkommen klassifiziert. Daraus ergibt sich der garantiert zu beantwortende Suchumfang (Floor): Innerhalb dieses Suchumfangs MUSS ein Server ohne <code class="language-plaintext highlighter-rouge">too-costly</code> antworten.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Klasse</th>
+      <th>Ressourcen</th>
+      <th>Mindest-Suchumfang (Floor)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Hochvolumig</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">Observation</code>, <code class="language-plaintext highlighter-rouge">DeviceMetric</code>, <code class="language-plaintext highlighter-rouge">MedicationAdministration</code></td>
+      <td><code class="language-plaintext highlighter-rouge">_lastUpdated</code>/Datums-Fenster <strong>≤ 7 Tage</strong> ODER Pflicht-Begleitparameter (<code class="language-plaintext highlighter-rouge">patient</code>, <code class="language-plaintext highlighter-rouge">encounter</code> oder <code class="language-plaintext highlighter-rouge">category</code> mit Fenster)</td>
+    </tr>
+    <tr>
+      <td><strong>Mittelvolumig</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">AllergyIntolerance</code>, <code class="language-plaintext highlighter-rouge">Appointment</code>, <code class="language-plaintext highlighter-rouge">Composition</code>, <code class="language-plaintext highlighter-rouge">Condition</code>, <code class="language-plaintext highlighter-rouge">DiagnosticReport</code>, <code class="language-plaintext highlighter-rouge">DocumentReference</code>, <code class="language-plaintext highlighter-rouge">Encounter</code>, <code class="language-plaintext highlighter-rouge">List</code>, <code class="language-plaintext highlighter-rouge">MedicationRequest</code>, <code class="language-plaintext highlighter-rouge">MedicationStatement</code>, <code class="language-plaintext highlighter-rouge">Procedure</code>, <code class="language-plaintext highlighter-rouge">QuestionnaireResponse</code>, <code class="language-plaintext highlighter-rouge">RiskAssessment</code>, <code class="language-plaintext highlighter-rouge">Schedule</code>, <code class="language-plaintext highlighter-rouge">Slot</code></td>
+      <td>Fenster <strong>≤ 3 Monate</strong> ODER Pflicht-Begleitparameter (<code class="language-plaintext highlighter-rouge">patient</code> oder <code class="language-plaintext highlighter-rouge">encounter</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>Niedrigvolumig / Stammdaten</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">Account</code>, <code class="language-plaintext highlighter-rouge">Binary</code>, <code class="language-plaintext highlighter-rouge">Device</code>, <code class="language-plaintext highlighter-rouge">HealthcareService</code>, <code class="language-plaintext highlighter-rouge">Location</code>, <code class="language-plaintext highlighter-rouge">Medication</code>, <code class="language-plaintext highlighter-rouge">Organization</code>, <code class="language-plaintext highlighter-rouge">Patient</code>, <code class="language-plaintext highlighter-rouge">Practitioner</code>, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>, <code class="language-plaintext highlighter-rouge">Questionnaire</code>, <code class="language-plaintext highlighter-rouge">RelatedPerson</code></td>
+      <td>kein Fenster nötig (begrenzter Bestand; breite Patient-/Encounter-Suchen sind gemäß PK4 in ≤ 5 s zu beantworten)</td>
+    </tr>
+    <tr>
+      <td><strong>Infrastruktur</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">Bundle</code>, <code class="language-plaintext highlighter-rouge">CapabilityStatement</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">OperationDefinition</code>, <code class="language-plaintext highlighter-rouge">Parameters</code>, <code class="language-plaintext highlighter-rouge">SearchParameter</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
+      <td>nicht betroffen, <code class="language-plaintext highlighter-rouge">too-costly</code> nicht anwendbar</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Zusätzlich gilt unabhängig von Volumenklasse und Zeitfenster ein <strong>mengenbasiertes Fallback</strong>: Ein Server DARF <code class="language-plaintext highlighter-rouge">too-costly</code> zurückgeben, wenn eine Anfrage eine Ergebnismenge von mehr als <strong>10.000 Ressourcen</strong> erzeugen würde. Umgekehrt MUSS ein Server Anfragen bis einschließlich 10.000 Ressourcen beantworten und DARF unterhalb dieser Schwelle kein <code class="language-plaintext highlighter-rouge">too-costly</code> zurückgeben.</p>
+
+<p><strong>Zwei-Stufen-Modell (Floor/Ceiling)</strong></p>
+
+<ul>
+  <li><strong>Mindest-Suchumfang (Floor)</strong>: normativ durch ISiK festgelegt (Tabelle oben). Jeder Server MUSS innerhalb dieses Suchumfangs ohne <code class="language-plaintext highlighter-rouge">too-costly</code> antworten.</li>
+  <li><strong>Server-Ceiling</strong>: Server, die mehr leisten, DÜRFEN einen erweiterten Suchumfang unterstützen und SOLLEN ihre tatsächliche Grenze im CapabilityStatement deklarieren. <code class="language-plaintext highlighter-rouge">too-costly</code> ist nur für Anfragen außerhalb des vom Server deklarierten Suchumfangs zulässig.</li>
+</ul>
+
+<p><strong>Auslösekriterien</strong></p>
+
+<p>Ein Server DARF <code class="language-plaintext highlighter-rouge">too-costly</code> zurückgeben, wenn eine Anfrage den unterstützten Suchumfang überschreitet, insbesondere:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_lastUpdated</code> oder Datumsparameter ohne Patient-/Encounter-Bezug und mit einem Fenster oberhalb des Klassen-Floors (z. B. <code class="language-plaintext highlighter-rouge">baseURL/Observation?_lastUpdated=ge2020</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">Patient?address-country</code>, <code class="language-plaintext highlighter-rouge">Patient?gender</code>, <code class="language-plaintext highlighter-rouge">Patient?status</code> ohne identifizierenden Begleitparameter (<code class="language-plaintext highlighter-rouge">identifier</code>, <code class="language-plaintext highlighter-rouge">birthdate</code>, <code class="language-plaintext highlighter-rouge">name</code>)</li>
+  <li>Ressourcentyp-weite Abfragen hochvolumiger Ressourcen ohne jeglichen Filter</li>
+</ul>
+
+<p><strong>HTTP-Antwortformat</strong></p>
+
+<p>Rückgabe eines HTTP <code class="language-plaintext highlighter-rouge">400 Bad Request</code> mit einem <code class="language-plaintext highlighter-rouge">OperationOutcome</code>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">issue.severity</code> = <code class="language-plaintext highlighter-rouge">error</code></li>
+  <li><code class="language-plaintext highlighter-rouge">issue.code</code> = <code class="language-plaintext highlighter-rouge">too-costly</code></li>
+  <li><code class="language-plaintext highlighter-rouge">issue.diagnostics</code> SOLL einen menschenlesbaren Hinweis auf den überschrittenen Suchumfang enthalten (z. B. „Zeitfenster auf ≤ 7 Tage einschränken oder <code class="language-plaintext highlighter-rouge">patient</code> angeben").</li>
+</ul>
+
+<p><strong>CapabilityStatement-Deklaration</strong></p>
+
+<p>Server MÜSSEN für jeden Suchparameter, für den <code class="language-plaintext highlighter-rouge">too-costly</code> möglich ist, dies im CapabilityStatement dokumentieren. Server SOLLEN dabei den unterstützten Suchumfang angeben (<code class="language-plaintext highlighter-rouge">CapabilityStatement.rest.resource.searchParam.documentation</code>).</p>
+
+<p><strong>Client-Verhalten</strong></p>
+
+<p>Clients SOLLEN bei Empfang von <code class="language-plaintext highlighter-rouge">too-costly</code> die Anfrage mit engeren Filtern wiederholen, z. B. durch ein engeres Zeitfenster, einen zusätzlichen <code class="language-plaintext highlighter-rouge">patient</code>- oder <code class="language-plaintext highlighter-rouge">encounter</code>-Parameter oder den Einsatz von Pagination.</p>
+
+<h4 id="client-implementierung">Client-Implementierung</h4>
+
+<p>Auch Client-Hersteller tragen eine eigene Verantwortung bei der Gewährleistung der Performance für den Betrieb der definierten API-Schnittstelle.
+Dazu gehören insbesondere eine effiziente Abfragestrategie (z. B. Paging statt großer Ergebnismengen), fachlich sinnvolle Suchfilter (z. B. Zeiträume und Organisationseinheiten), die Vermeidung unnötiger Wiederholungsabfragen sowie die Nutzung geeigneter Caching- und Aktualisierungsmechanismen (z. B. ETag/If-None-Match). Ziel ist, nur die für den eigenen Anwendungsfall benötigten Daten in angemessener Zeit zu laden.</p>
+
+<p><strong>Beispiel</strong> für eine Vitalparameter-App (ein Patient) unter dem Szenario:
+Beim Öffnen der Patientenakte soll die App die zuletzt dokumentierten Vitalparameter (Puls, Blutdruck, Temperatur) schnell anzeigen und anschließend bei Bedarf den Zeitraum erweitern.</p>
+
+<p>Konkrete Umsetzung der Performance-Aspekte:</p>
+
+<ol>
+  <li>Effiziente Abfragestrategie (klein starten, dann erweitern)
+    <ul>
+      <li>Initial nur der klinisch relevante Kurzzeitbereich, z. B. letzte 24 Stunden.</li>
+      <li>Vorteil: schnelle Erstanzeige statt großer Datenmengen beim Start.</li>
+    </ul>
+  </li>
+  <li>Paging statt Gesamtliste
+    <ul>
+      <li>Ergebnisse seitenweise laden, z. B. 50 Werte pro Seite.</li>
+      <li>Bei Verlaufsgrafik weitere Seiten im Hintergrund im Voraus nachladen, z. B. wenn der Nutzer scrollt.</li>
+      <li>Vorteil: Anzeigezeit geringer im Frontend.</li>
+    </ul>
+  </li>
+  <li>Sinnvolle Suchfilter
+    <ul>
+      <li>Wo möglich Patient, Kategorie, relevante Codes und Zeitraum einschränken.</li>
+      <li>Vorteil: weniger irrelevante Daten und stabilere Performance.</li>
+    </ul>
+  </li>
+  <li>Vermeidung unnötiger Wiederholungsabfragen
+    <ul>
+      <li>Bereits geladene Seiten pro Patient und Zeitraum im Cache halten.</li>
+      <li>Wechselt der Nutzer zwischen Tabs, keine neue Anfrage, solange Daten noch gültig sind.</li>
+      <li>Such-/Filtereingaben mit kurzer Verzögerung (z. B. 300 ms Debounce), damit nicht jede Eingabe einen Request auslöst.</li>
+      <li>Nutzung des <code class="language-plaintext highlighter-rouge">_lastUpdated</code> Suchparameter, um nur neue oder aktualisierte Daten seit der letzten Abfrage zu erhalten.</li>
+    </ul>
+  </li>
+  <li>Caching und bedingte Aktualisierung (ETag/If-None-Match)
+    <ul>
+      <li>Nach erster Antwort ETag aus Header speichern.</li>
+      <li>Folgeaufruf mit If-None-Match senden.</li>
+      <li>Bei 304 Not Modified keine erneute Datenübertragung</li>
+      <li>Vorteil: weniger Netzlast bei häufigem Öffnen derselben Patientenkurve, UI bleibt schnell.</li>
+    </ul>
+  </li>
+  <li>Aktualisierungsstrategie für Live-Betrieb
+    <ul>
+      <li>Nicht dauerhaft neu laden, sondern über <a href="https://gemspec.gematik.de/ig/fhir/isik/subscriptions/latest">Subscriptions</a> intervallbasiert (z. B. alle 60 Sekunden) oder bei explizitem Nutzer-Refresh.</li>
+      <li>Nur den neuen Zeitraum nachladen, z. B. ab letztem bekannten Messzeitpunkt.</li>
+      <li>Vorteil: aktuelle Anzeige ohne unnötige Dauerlast.</li>
+    </ul>
+  </li>
+</ol>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  
+          Package basis#6.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Sep 2, 2026 11:32+0000">2026-09-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

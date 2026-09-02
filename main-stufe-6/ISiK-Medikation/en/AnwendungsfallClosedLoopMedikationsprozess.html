@@ -1,0 +1,471 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Anwendungsfall - Closed Loop Medikationsprozess - ISiK Medikation Implementierungsleitfaden v6.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"4"}
+    h3,h4,h5,h6{--heading-prefix:"4"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Use Cases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebersichtAnwendungsfaelle.html">Übersicht Anwendungsfälle (Use Cases)</a>
+      </li>
+      <li>
+        <a href="AnwendungsfallClosedLoopMedikationsprozess.html">Anwendungsfall - Closed Loop Medikationsprozess</a>
+      </li>
+      <li>
+        <a href="Bedarfsmedikation.html">Bedarfsmedikation</a>
+      </li>
+      <li>
+        <a href="Infusionen.html">Infusionen</a>
+      </li>
+      <li>
+        <a href="Informationsmodell.html">Informationsmodell</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Übergreifende Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebergreifendeFestlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+      <li>
+        <a href="Kompatibilitaet.html">Kompatibilität</a>
+      </li>
+      <li>
+        <a href="RestApi.html">REST-API</a>
+      </li>
+      <li>
+        <a href="AkteureUndInteraktionen.html">Akteure und Interaktionen</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Medikation Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0 - active
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Anwendungsfall - Closed Loop Medikationsprozess</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Anwendungsfall - Closed Loop Medikationsprozess</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#einführung" id="markdown-toc-einführung">Einführung</a></li>
+  <li><a href="#closed-loop-medikationsverordnungsprozess" id="markdown-toc-closed-loop-medikationsverordnungsprozess">Closed-Loop-Medikationsverordnungsprozess</a></li>
+  <li><a href="#unit-dose-system" id="markdown-toc-unit-dose-system">Unit-Dose-System</a></li>
+  <li><a href="#einordnung-in-die-fhir-spezifikation" id="markdown-toc-einordnung-in-die-fhir-spezifikation">Einordnung in die FHIR-Spezifikation</a></li>
+</ul>
+
+</div>
+
+<h3 id="einführung">Einführung</h3>
+
+<p>Die automatisierte Medikamentenvergabe im Krankenhaus stellt einen komplexen, sicherheitskritischen Prozess dar, an dem mehrere Berufsgruppen und Systeme beteiligt sind. Medikationsfehler zählen weltweit zu den häufigsten vermeidbaren unerwünschten Ereignissen im stationären Bereich und können schwerwiegende Folgen für Patientinnen und Patienten haben [<a href="https://www.who.int/initiatives/medication-without-harm">WHO, 2017</a>; <a href="https://www.ncbi.nlm.nih.gov/books/NBK519065/">Tariq et al., 2024</a>]. Die Digitalisierung und Automatisierung dieses Prozesses bietet ein großes Potenzial, solche Fehler systematisch zu verhindern [<a href="https://www.ncbi.nlm.nih.gov/books/NBK519065/">Tariq et al., 2024</a>].</p>
+
+<p>Dieser Abschnitt beschreibt zunächst das übergeordnete Konzept des <strong>Closed-Loop-Medikationsmanagements</strong> als Rahmenmodell für einen lückenlosen, digital gestützten Medikationskreislauf. Anschließend wird das <strong>Unit-Dose-System</strong> als eine der zentralen technischen und organisatorischen Säulen dieses Konzepts vertiefend erläutert. Da jedoch nicht alle Arzneimittelformen über das Unit-Dose-Verfahren bereitgestellt werden können – es eignet sich primär für feste Darreichungsformen wie Tabletten –, wird ergänzend der Bereitstellungsweg über einen stationsgebundenen <strong>Arzneischrank (Automated Dispensing Cabinet, ADC)</strong> beschrieben, der beispielsweise für Salben oder Cremes zum Einsatz kommt.</p>
+
+<h3 id="closed-loop-medikationsverordnungsprozess">Closed-Loop-Medikationsverordnungsprozess</h3>
+
+<h4 id="konzept-des-closed-loop">Konzept des Closed Loop</h4>
+
+<p>Der Begriff „Closed Loop Medication Management" (geschlossener Medikationskreislauf) beschreibt einen vollständig digitalisierten und medienbruchfreien Medikationsprozess innerhalb eines Krankenhauses. Ziel ist die lückenlose, elektronisch gestützte Kontrolle aller Schritte von der ärztlichen Verordnung bis zur dokumentierten Verabreichung am Patientenbett ohne manuelle Übertragungsschritte.</p>
+
+<p>Während ein „offener" Prozess häufig durch Medienbrüche (z. B. handschriftliche Verordnungen, mündliche Weitergabe) und fehlende automatische Prüfschritte gekennzeichnet ist, schließt der Closed Loop jeden dieser Brüche durch IT-gestützte Verifikation. Der Kreislauf gilt als „geschlossen", sobald die erfolgte Verabreichung elektronisch dokumentiert und mit der ursprünglichen Verordnung abgeglichen ist.</p>
+
+<h4 id="prozessstufen-im-closed-loop-verfahren">Prozessstufen im Closed-Loop-Verfahren</h4>
+
+<p>Der Closed-Loop-Medikationsprozess lässt sich in folgende Kernprozesse unterteilen:</p>
+
+<p><strong>1. Elektronische Verordnung (CPOE – Computerized Provider Order Entry)</strong></p>
+
+<p>Der Arzt erfasst die Medikamentenverordnung direkt in einem digitalen System (z. B. KIS, PDMS). Dabei wird die Verordnung unmittelbar durch klinische Entscheidungsunterstützungssysteme (CDSS) auf Dosierung, Kontraindikationen, Allergiepotenzial und Arzneimittelinteraktionen geprüft. Fehlerhafte oder riskante Verordnungen werden dem Arzt sofort gemeldet.</p>
+
+<p>Auf Basis der CDSS-geprüften Verordnung bestimmt das System den <strong>Bereitstellungsweg</strong>: Für feste Darreichungsformen (insbesondere Tabletten) wird der Prozess über den Unit-Dose-Pfad (Schritte 2 und 3a) fortgeführt; für nicht-feste Darreichungsformen (z. B. Salben) über den ADC-Pfad (Schritt 3b), der die apothekerliche Freigabe und zentrale Kommissionierung umgeht.</p>
+
+<p><strong>2. Apothekerische Prüfung und Freigabe</strong> <em>(Unit-Dose-Pfad)</em></p>
+
+<p>Die elektronisch übermittelte Verordnung wird in der Krankenhausapotheke pharmazeutisch geprüft. Nach Freigabe durch den Apotheker wird die Verordnung an das Kommissioniersystem weitergeleitet.</p>
+
+<p><strong>3. Arzneimittelbereitstellung</strong></p>
+
+<p>Je nach Darreichungsform des verordneten Medikaments erfolgt die Bereitstellung über einen von zwei Pfaden:</p>
+
+<p><strong>3a. Unit-Dose-Bereitstellung</strong> <em>(für feste Darreichungsformen, insbesondere Tabletten)</em></p>
+
+<p>Auf Basis der apothekerlich geprüften und freigegebenen Verordnung werden die Medikamente automatisiert kommissioniert. Das hierfür eingesetzte Verfahren wird als <strong>Unit-Dose-System</strong> bezeichnet: Jede Einzel-Dosis wird patientenindividuell verpackt und mit einem maschinenlesbaren Barcode versehen, der die eindeutige Verknüpfung zur zugehörigen Verordnung sicherstellt. Das Unit-Dose-System ist damit eine Schlüsselkomponente des Closed Loop und wird im folgenden Abschnitt vertiefend beschrieben.</p>
+
+<p><strong>3b. Entnahme aus dem Arzneischrank (ADC)</strong> <em>(für nicht-feste Darreichungsformen, z. B. Salben, Cremes)</em></p>
+
+<p>Arzneimittel, die nicht im Unit-Dose-Verfahren bereitgestellt werden können, werden stationär in einem <strong>automatisierten Arzneischrank (ADC – Automated Dispensing Cabinet)</strong> vorgehalten. Nach der Verordnung zeigt das ADC-System der Pflegefachkraft automatisch an, welche Medikamente für den jeweiligen Patienten zu entnehmen sind. Die Pflegefachkraft entnimmt das Medikament auf Basis dieser Anzeige direkt aus dem Schrank. Da für diese Darreichungsformen keine maschinenlesbare Einzel-Dosis-Verpackung vorliegt, entfällt der BCMA-Verifikationsschritt; die Verabreichung erfolgt direkt im Anschluss an die Entnahme.</p>
+
+<p><strong>4. Barcode-gestützte Verifikation bei der Verabreichung (BCMA – Barcode Medication Administration)</strong> <em>(Unit-Dose-Pfad)</em></p>
+
+<p>Unmittelbar vor der Verabreichung am Patientenbett scannt die Pflegefachkraft:</p>
+<ul>
+  <li>das Patientenarmband (Identifikation des Patienten), und</li>
+  <li>den Barcode der Arzneimitteldosis (Identifikation des Medikaments).</li>
+</ul>
+
+<p>Das System prüft in Echtzeit, ob das richtige Medikament in der richtigen Dosis zum richtigen Zeitpunkt für den richtigen Patienten verabreicht wird (Abgleich mit den sogenannten „5 Rs": <strong>R</strong>ichtiger Patient, <strong>R</strong>ichtiges Medikament, <strong>R</strong>ichtige Dosis, <strong>R</strong>ichtiger Applikationsweg, <strong>R</strong>ichtiger Zeitpunkt).</p>
+
+<p>Bei einer <strong>Abweichung</strong> – d. h. wenn die 5R-Prüfung nicht bestanden wird – wird die Verabreichung vom BCMA-System sofort gestoppt. Die Pflegefachkraft identifiziert anschließend, welches der 5 R versagt hat, und erstellt unabhängig vom weiteren Verlauf eine <strong>CIRS-Meldung</strong> (Critical Incident Reporting System), da auch behobene Abweichungen als Beinahe-Fehler meldepflichtig sind. Je nach Art der Abweichung erfolgt eine Eskalation:</p>
+
+<ul>
+  <li><strong>Medikationsproblem</strong> (falsches Medikament, falsche Dosis, falscher Applikationsweg): Die Pflegefachkraft kontaktiert die Apotheke und gibt das Medikament zurück.</li>
+  <li><strong>Verordnungsproblem</strong> (Patientenmismatch, Zeitpunktabweichung): Die Pflegefachkraft kontaktiert den zuständigen Arzt, damit die Verordnung im CPOE geprüft und ggf. angepasst wird.</li>
+</ul>
+
+<p>Nach der Eskalation wird der Abbruch im eMAR dokumentiert. Ist der Fehler behebbar (z. B. beschädigtes Barcode-Etikett, korrigierte Verordnung), startet die Pflegefachkraft den Scan-Vorgang vollständig neu – beginnend mit dem Patientenarmband. Ist der Fehler nicht behebbar, wird die Verabreichung endgültig gestoppt.</p>
+
+<p><strong>5. Elektronische Verabreichungsdokumentation (eMAR – electronic Medication Administration Record)</strong> <em>(beide Pfade)</em></p>
+
+<p>Nach der Verabreichung wird diese automatisch im elektronischen Medikationsverabreichungsprotokoll dokumentiert. Damit ist der Kreislauf „geschlossen". Die dokumentierte Verabreichung ist direkt mit der ursprünglichen ärztlichen Verordnung verknüpft und für alle beteiligten Berufsgruppen transparent einsehbar. Dieser Schritt gilt unabhängig vom gewählten Bereitstellungsweg – sowohl für den Unit-Dose-Pfad als auch für den ADC-Pfad. Das eMAR dokumentiert dabei nicht nur erfolgreiche Verabreichungen, sondern auch abgebrochene – inklusive Abbruchgrund – wenn im Unit-Dose-Pfad die 5R-Prüfung nicht bestanden wurde.</p>
+
+<h4 id="beteiligte-akteure">Beteiligte Akteure</h4>
+
+<p>Im Closed-Loop-Medikationsprozess sind typischerweise folgende Akteure beteiligt:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Akteur</th>
+      <th>Rolle im Prozess</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Arzt / CPOE-System</td>
+      <td>Erfassung und elektronische Übermittlung der Medikamentenverordnung</td>
+    </tr>
+    <tr>
+      <td>Klinisches Entscheidungsunterstützungssystem (CDSS)</td>
+      <td>Automatisierte Prüfung auf Interaktionen, Kontraindikationen und Dosierungsfehler</td>
+    </tr>
+    <tr>
+      <td>Krankenhausapotheke / Apotheker</td>
+      <td>Pharmazeutische Prüfung und Freigabe der Verordnung</td>
+    </tr>
+    <tr>
+      <td>Kommissionierroboter (Unit Dose)</td>
+      <td>Automatisierte, patientenindividuelle Bereitstellung von Arzneimitteln in fester Darreichungsform durch die Krankenhausapotheke <em>(Unit-Dose-Pfad)</em></td>
+    </tr>
+    <tr>
+      <td>Arzneischrank / ADC</td>
+      <td>Automatisierter Ausgabeschrank auf der Station; zeigt der Pflegefachkraft die patientenindividuelle Entnahmeliste für nicht-Unit-Dose-fähige Medikamente an <em>(ADC-Pfad)</em></td>
+    </tr>
+    <tr>
+      <td>Pflegefachkraft / BCMA-System</td>
+      <td>Verifikation am Patientenbett, Verabreichung und Dokumentation</td>
+    </tr>
+    <tr>
+      <td>eMAR / KIS</td>
+      <td>Lückenlose elektronische Dokumentation aller Verabreichungsschritte, inkl. Abbrüchen</td>
+    </tr>
+    <tr>
+      <td>CIRS / Fehlermeldesystem</td>
+      <td>Anonymisierte Erfassung von Beinahe-Fehlern und Medikationsabweichungen zur Qualitätssicherung</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="patientensicherheitspotenzial">Patientensicherheitspotenzial</h4>
+
+<p>Studien belegen, dass der vollständig implementierte Closed Loop die Rate klinisch relevanter Medikationsfehler substantiell reduziert. Insbesondere die Kombination aus CPOE, klinischer Entscheidungsunterstützung, Unit-Dose-Versorgung und BCMA adressiert die fehleranfälligsten Übergänge im Medikationskreislauf. Die lückenlose digitale Kette verhindert sowohl Transkriptionsfehler (z. B. beim händischen Übertragen von Verordnungen) als auch Verwechslungen bei der Verabreichung.</p>
+
+<h4 id="prozessdarstellung">Prozessdarstellung</h4>
+
+<p>Das nachfolgende BPMN-Diagramm stellt eine Variante des oben beschriebenen Prozesses dar. Es zeigt die zwei parallelen Bereitstellungspfade: den <strong>Unit-Dose-Pfad</strong> (über apothekerliche Prüfung, Kommissionierung und BCMA-Verifikation am Patientenbett) sowie den <strong>ADC-Pfad</strong> (direkt über den Arzneischrank auf der Station, ohne BCMA-Scan). In der Praxis können institutionsspezifische Abweichungen auftreten.</p>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="ClosedLoop-Medikationsprozess.svg" alt="Closed-Loop-Medikationsprozess" style="width: 100%;" />
+    </div>
+    <figcaption>Abbildung: Closed-Loop-Medikationsprozess</figcaption>
+</figure>
+
+<h3 id="unit-dose-system">Unit-Dose-System</h3>
+
+<h4 id="was-ist-das-unit-dose-system">Was ist das Unit-Dose-System?</h4>
+
+<p>Das Unit-Dose-System (auch: Unit-Dose-Versorgung) ist das im Closed-Loop-Prozess eingesetzte Verfahren zur automatisierten, patientenindividuellen Arzneimittelbereitstellung durch die Krankenhausapotheke (Prozessschritt 3a). Es beschreibt ein organisatorisches und technisches Konzept, bei dem jede einzelne Medikamentengabe (eine sogenannte Einzeldosis oder „Unit Dose") für jeden Patienten individuell zusammengestellt, verpackt und beschriftet bereitgestellt wird – in der Regel für einen definierten Versorgungszeitraum (typischerweise 24 Stunden).</p>
+
+<p>Das Unit-Dose-System eignet sich primär für <strong>feste Darreichungsformen</strong> wie Tabletten, Kapseln oder Dragees. Arzneimittel in nicht-fester Form (z. B. Salben, Cremes, Tropfen, Injektionslösungen) können in der Regel nicht über Unit-Dose-Automaten bereitgestellt werden und werden stattdessen über den <strong>Arzneischrank (ADC)</strong> auf der Station bereitgestellt (Prozessschritt 3b).</p>
+
+<p>Im Gegensatz zur klassischen Stationsbevorratung, bei der Medikamente in größeren Mengen auf der Station gelagert und von Pflegefachkräften dosiert abgeteilt werden, erfolgt beim Unit-Dose-System die Verpackung und Etikettierung einzelner Dosen durch die Krankenhausapotheke. Mit zunehmender Verbreitung automatisierter Kommissionierroboter (sog. Blister-Maschinen bzw. Unit-Dose-Roboter) wird dieser Prozess in modernen Apotheken vollständig maschinell unterstützt.</p>
+
+<h4 id="ablauf-des-unit-dose-prozesses">Ablauf des Unit-Dose-Prozesses</h4>
+
+<p>Der apothekenseitige Prozess innerhalb des Unit-Dose-Systems gliedert sich typischerweise in folgende Schritte:</p>
+
+<ol>
+  <li>
+    <p><strong>Entgegennahme der freigegebenen Verordnung:</strong> Die durch den Apotheker geprüfte und freigegebene Verordnung wird an das Kommissioniersystem der Apotheke übermittelt.</p>
+  </li>
+  <li>
+    <p><strong>Automatisierte Kommissionierung:</strong> Ein Apotheken-Roboter oder eine Unit-Dose-Maschine stellt auf Basis der freigegebenen Verordnung patientenindividuelle Medikamenten-Päckchen zusammen. Jedes Päckchen enthält genau eine Einzel-Dosis und ist mit Patientenname, Geburtsdatum, Einnahmezeit, Wirkstoff, Stärke und einem maschinenlesbaren Barcode bzw. Data-Matrix-Code eindeutig beschriftet.</p>
+  </li>
+  <li>
+    <p><strong>Transport auf die Station:</strong> Die so verpackten Einzeldosen werden zeitgerecht, häufig in patientenindividuellen Kassetten oder Schubladen auf die jeweilige Station transportiert.</p>
+  </li>
+  <li>
+    <p><strong>Übergabe an die Verifikation:</strong> Die bereitgestellten Unit-Dose-Päckchen werden von der Pflegefachkraft am Patientenbett per Barcode-Scan verifiziert (BCMA, Prozessschritt 4 des Closed Loop) und verabreicht.</p>
+  </li>
+</ol>
+
+<p>Die Erzeugung der Einzel-Dosen ist ein gesonderter Prozess, der zuvor ablaufen muss. Er wird in diesem IG nicht näher behandelt, da es sich hierbei eher um einen logistischen Prozess handelt, der nicht dem Scope von ISiK zugeordnet wird.</p>
+
+<h4 id="vorteile-des-unit-dose-systems">Vorteile des Unit-Dose-Systems</h4>
+
+<p>Das Unit-Dose-System bietet gegenüber traditionellen Verfahren wesentliche Vorteile:</p>
+
+<ul>
+  <li><strong>Erhöhte Patientensicherheit:</strong> Durch die eindeutige Beschriftung und maschinelle Zusammenstellung werden Verwechslungs- und Dosierungsfehler signifikant reduziert.</li>
+  <li><strong>Lückenlose Nachverfolgbarkeit:</strong> Jede ausgehändigte Einzel-Dosis ist rückverfolgbar, was die Transparenz des Medikationskreislaufs erhöht.</li>
+  <li><strong>Entlastung des Pflegepersonals:</strong> Das manuelle Stellen von Medikamenten entfällt, sodass Pflegefachkräfte mehr Zeit für direkte Patientenversorgung aufwenden können.</li>
+  <li><strong>Reduktion von Bestandsabweichungen:</strong> Überbestände und Ablaufdaten lassen sich besser kontrollieren.</li>
+</ul>
+
+<h3 id="einordnung-in-die-fhir-spezifikation">Einordnung in die FHIR-Spezifikation</h3>
+
+<p>Im Kontext beider Bereitstellungspfade (Unit Dose und ADC) sowie des Closed-Loop-Prozesses ergeben sich konkrete Anforderungen an den digitalen Datenaustausch zwischen den beteiligten Systemen (KIS, Apothekensystem, ADC-System, Pflegedokumentationssystem):</p>
+
+<ul>
+  <li>Die <strong>Medikationsverordnung</strong> (<code class="language-plaintext highlighter-rouge">MedicationRequest</code>) repräsentiert die ärztliche Verordnung im digitalen Prozess – unabhängig davon, über welchen Bereitstellungsweg das Medikament bereitgestellt wird.</li>
+  <li>Die <strong>Medikationsverabreichung</strong> (<code class="language-plaintext highlighter-rouge">MedicationAdministration</code>) dokumentiert die erfolgte Gabe am Patienten und schließt damit den Kreislauf. Beide Bereitstellungspfade (Unit Dose und ADC) führen zu einer <code class="language-plaintext highlighter-rouge">MedicationAdministration</code>-Ressource; inhaltlich werden sie nicht unterschieden. Eine abgebrochene Verabreichung infolge einer nicht bestandenen 5R-Prüfung (Unit-Dose-Pfad) wird als <code class="language-plaintext highlighter-rouge">MedicationAdministration</code> mit <code class="language-plaintext highlighter-rouge">status: stopped</code> und entsprechendem <code class="language-plaintext highlighter-rouge">statusReason</code> abgebildet.</li>
+</ul>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  
+          Package medikation#6.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Sep 2, 2026 11:32+0000">2026-09-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

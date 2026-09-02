@@ -1,0 +1,179 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Observation/Pulmonalarterieller-Blutdruck> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "Pulmonalarterieller-Blutdruck"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-pulmonalarterieller-blutdruck" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-pulmonalarterieller-blutdruck>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation Pulmonalarterieller-Blutdruck</b></p><a name=\"Pulmonalarterieller-Blutdruck\"> </a><a name=\"hcPulmonalarterieller-Blutdruck\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-sd-mii-icu-pulmonalarterieller-blutdruck.html\">SD MII ICU Pulmonalarterieller Blutdruck</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 75367002}, {http://snomed.info/sct 250767002}, {http://loinc.org 76284-9}, {urn:iso:std:iso:11073:10101 150044}\">Pulmonary artery pressure</span></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>effective</b>: 2019-12-23 09:30:10+0100</p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 81040000}\">Pulmonary artery structure</span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 8480-6}, {urn:iso:std:iso:11073:10101 150045}, {http://loinc.org 8440-0}, {http://snomed.info/sct 250768007}\">Systolic pulmonary arterial pressure</span></p><p><b>value</b>: 18 millimeter Mercury column<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 8462-4}, {urn:iso:std:iso:11073:10101 150046}, {http://loinc.org 8385-7}, {http://snomed.info/sct 250769004}\">Diastolic pulmonary arterial pressure</span></p><p><b>value</b>: 8 millimeter Mercury column<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 8478-0}, {urn:iso:std:iso:11073:10101 150047}, {http://loinc.org 8414-5}, {http://snomed.info/sct 250770003}\">Mean pulmonary arterial pressure</span></p><p><b>value</b>: 10 millimeter Mercury column<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "vital-signs" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:75367002 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "75367002" ]
+     ], [
+       fhir:index 1 ;
+       a sct:250767002 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "250767002" ] ;
+       fhir:Coding.display [ fhir:value "Pulmonary artery pressure" ]
+     ], [
+       fhir:index 2 ;
+       a loinc:76284-9 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "76284-9" ] ;
+       fhir:Coding.display [ fhir:value "Pulmonary artery Blood pressure" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ] ;
+       fhir:Coding.code [ fhir:value "150044" ] ;
+       fhir:Coding.display [ fhir:value "MDC_PRESS_BLD_ART_PULM" ]
+     ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2019-12-23T09:30:10+01:00"^^xsd:dateTime] ;
+  fhir:Observation.bodySite [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:81040000 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "81040000" ] ;
+       fhir:Coding.display [ fhir:value "Pulmonary artery structure" ]
+     ]
+  ] ;
+  fhir:Observation.component [
+     fhir:index 0 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:8480-6 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "8480-6" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ] ;
+         fhir:Coding.code [ fhir:value "150045" ] ;
+         fhir:Coding.display [ fhir:value "Systolic pulmonary arterial pressure" ]
+       ], [
+         fhir:index 2 ;
+         a loinc:8440-0 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "8440-0" ] ;
+         fhir:Coding.display [ fhir:value "Pulmonary artery Systolic blood pressure" ]
+       ], [
+         fhir:index 3 ;
+         a sct:250768007 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "250768007" ] ;
+         fhir:Coding.display [ fhir:value "Pulmonary artery systolic pressure" ]
+       ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "18"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "millimeter Mercury column" ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mm[Hg]" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:8462-4 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "8462-4" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ] ;
+         fhir:Coding.code [ fhir:value "150046" ] ;
+         fhir:Coding.display [ fhir:value "Diastolic pulmonary arterial pressure" ]
+       ], [
+         fhir:index 2 ;
+         a loinc:8385-7 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "8385-7" ] ;
+         fhir:Coding.display [ fhir:value "Pulmonary artery Diastolic blood pressure" ]
+       ], [
+         fhir:index 3 ;
+         a sct:250769004 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "250769004" ] ;
+         fhir:Coding.display [ fhir:value "Pulmonary artery diastolic pressure" ]
+       ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "8"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "millimeter Mercury column" ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mm[Hg]" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:8478-0 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "8478-0" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ] ;
+         fhir:Coding.code [ fhir:value "150047" ] ;
+         fhir:Coding.display [ fhir:value "Mean pulmonary arterial pressure" ]
+       ], [
+         fhir:index 2 ;
+         a loinc:8414-5 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "8414-5" ] ;
+         fhir:Coding.display [ fhir:value "Pulmonary artery Mean blood pressure" ]
+       ], [
+         fhir:index 3 ;
+         a sct:250770003 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "250770003" ] ;
+         fhir:Coding.display [ fhir:value "Pulmonary artery mean pressure" ]
+       ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "10"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "millimeter Mercury column" ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mm[Hg]" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Observation/Pulmonalarterieller-Blutdruck.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

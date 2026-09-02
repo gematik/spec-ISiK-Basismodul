@@ -1,0 +1,740 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden - ISiK ICU-Normalstation Workflow</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden - ISiK ICU-Normalstation Workflow
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-UseCases.html">
+                                Use Cases
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Akteure.html">
+                                Akteure
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ProzesseUndWorkflows.html">
+                                Prozesse und Workflows
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Festlegungen.html">
+                                Festlegungen
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalarterieller-wedge-druck.html">
+                                            SD_MII_ICU_Pulmonalarterieller_Wedge_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-blut-preduktal-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Preduktal_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Postduktal_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumenindex.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumenindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-schlagvolumenindex-durch-indikatorverd.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Schlagvolumenindex_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumen.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumen (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-schlagvolumen-durch-indikatorverduennung.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumen_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalvaskulaerer-widerstandsindex.html">
+                                            SD_MII_ICU_Pulmonalvaskulaerer_Widerstandsindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-systemischer-vaskulaerer-widerstandsindex.html">
+                                            SD_MII_ICU_Systemischer_Vaskulaerer_Widerstandsindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaerer-herzindex.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Herzindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-herzzeitvolumen.html">
+                                            SD_MII_ICU_Herzzeitvolumen (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Herzindex_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Herzzeitvolumen_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-zentralvenoeser-blutdruck.html">
+                                            SD_MII_ICU_Zentralvenoeser_Blutdruck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksatrialer-druck.html">
+                                            SD_MII_ICU_Linksatrialer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-rechtsatrialer-druck.html">
+                                            SD_MII_ICU_Rechtsatrialer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-rechtsventrikulaerer-druck.html">
+                                            SD_MII_ICU_Rechtsventrikulaerer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaerer-druck.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalarterieller-blutdruck.html">
+                                            SD_MII_ICU_Pulmonalarterieller_Blutdruck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-brustwirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Brustwirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-lendenwirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Lendenwirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-halswirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Halswirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-brust.html">
+                                            SD_MII_ICU_Koerpertemperatur_Brust (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-myokard.html">
+                                            SD_MII_ICU_Koerpertemperatur_Myokard (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-atemwege.html">
+                                            SD_MII_ICU_Koerpertemperatur_Atemwege (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-blut.html">
+                                            SD_MII_ICU_Koerpertemperatur_Blut (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-nasen-rachen-raum.html">
+                                            SD_MII_ICU_Koerpertemperatur_Nasen_Rachen_Raum (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-speiseroehre.html">
+                                            SD_MII_ICU_Koerpertemperatur_Speiseroehre (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-intrakranieller-druck-icp.html">
+                                            SD_MII_ICU_Intrakranieller_Druck_Icp (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpergewicht-percentil-altersabhaengig.html">
+                                            SD_MII_ICU_Koerpergewicht_Percentil_Altersabhaengig (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpergroesse-percentil-altersabhaengig.html">
+                                            SD_MII_ICU_Koerpergroesse_Percentil_Altersabhaengig (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-ideales-koerpergewicht.html">
+                                            SD_MII_ICU_Ideales_Koerpergewicht (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Arteriellen_Blut_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-puls.html">
+                                            SD_MII_ICU_Puls (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-kern.html">
+                                            SD_MII_ICU_Koerpertemperatur_Kern (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-gelenk.html">
+                                            SD_MII_ICU_Koerpertemperatur_Gelenk (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-stirn.html">
+                                            SD_MII_ICU_Koerpertemperatur_Stirn (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-nasal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Nasal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-leiste.html">
+                                            SD_MII_ICU_Koerpertemperatur_Leiste (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-achsel.html">
+                                            SD_MII_ICU_Koerpertemperatur_Achsel (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-unter-der-zunge.html">
+                                            SD_MII_ICU_Koerpertemperatur_Oral (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-vaginal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Vaginal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-harnblase.html">
+                                            SD_MII_ICU_Koerpertemperatur_Harnblase (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-rektal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Rektal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-trommelfell.html">
+                                            SD_MII_ICU_Koerpertemperatur_Trommelfell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#88063fd6-934f-4486-88c8-eb63e26a5ec0" aria-controls="88063fd6-934f-4486-88c8-eb63e26a5ec0" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#3099b3ad-9f58-4d33-b7b2-7346932f8ed7" aria-controls="3099b3ad-9f58-4d33-b7b2-7346932f8ed7" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#80abde1a-7168-4f42-a205-2878cb0f2df8" aria-controls="80abde1a-7168-4f42-a205-2878cb0f2df8" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#c30155a9-f95f-492d-8d37-9caa3774c839" aria-controls="c30155a9-f95f-492d-8d37-9caa3774c839" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="88063fd6-934f-4486-88c8-eb63e26a5ec0">
+    <div class="stu3-treetable" id="30ae9b7b54f64c20a530f69c516908a8" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="9020a979f6d84c2cb3f58166a4eab25f"><td class="instance"><span class="baseIcon primitive"></span><b>Observation</b></td></tr><tr class="collapsed" data-id="67cd6ec940ec424ab4a7508252c42f73" data-parentId="9020a979f6d84c2cb3f58166a4eab25f"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>Linksventrikulaeres-Schlagvolumen</span></td></tr><tr class="collapsed" data-id="2fde7ce84a2b47439f7e2344db730914" data-parentId="9020a979f6d84c2cb3f58166a4eab25f"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="b7595cc6212d40d59b3ef57fb415e8da" data-parentId="2fde7ce84a2b47439f7e2344db730914"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventrikulaeres-schlagvolumen</span></td></tr><tr class="collapsed" data-id="05e440ffddfe4c04b7b2dbb7c08199e7" data-parentId="9020a979f6d84c2cb3f58166a4eab25f"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="8f7b3055aa6746349a361d5126b2759c" data-parentId="9020a979f6d84c2cb3f58166a4eab25f"><td class="instance"><span class="baseIcon primitive"></span><b>category</b></td></tr><tr class="collapsed" data-id="cf15fdee4e1146728a2af39e64d02733" data-parentId="8f7b3055aa6746349a361d5126b2759c"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="e47ec59d611f4efe9ccdaf8ad7b8920a" data-parentId="cf15fdee4e1146728a2af39e64d02733"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/observation-category</span></td></tr><tr class="collapsed" data-id="f19988f33e2c45be95c16a7b82217cd2" data-parentId="cf15fdee4e1146728a2af39e64d02733"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>vital-signs</span></td></tr><tr class="collapsed" data-id="298dfed449bb47b29573a5c1c8275510" data-parentId="9020a979f6d84c2cb3f58166a4eab25f"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="463528f3fb374218875866a069407928" data-parentId="298dfed449bb47b29573a5c1c8275510"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="3ca1ded5cd394a0caf505667cac9db9c" data-parentId="463528f3fb374218875866a069407928"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="528874003099427c9dae8c4b3707a921" data-parentId="463528f3fb374218875866a069407928"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>90096001</span></td></tr><tr class="collapsed" data-id="815a2c00e80141bf9a3a82e257bda65e" data-parentId="463528f3fb374218875866a069407928"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Stroke volume</span></td></tr><tr class="collapsed" data-id="813fb7c090134f32be2551b57ab718b4" data-parentId="298dfed449bb47b29573a5c1c8275510"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="4170a7d0ae2842dfb2afaf7047f910f0" data-parentId="813fb7c090134f32be2551b57ab718b4"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="1a252897ebad47fea444068188694f67" data-parentId="813fb7c090134f32be2551b57ab718b4"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>20562-5</span></td></tr><tr class="collapsed" data-id="498807569e2443f2bcc5bacd05fcae5f" data-parentId="813fb7c090134f32be2551b57ab718b4"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Left ventricular Stroke volume</span></td></tr><tr class="collapsed" data-id="da59653b1c294c0f81b9372f47b3fe65" data-parentId="298dfed449bb47b29573a5c1c8275510"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="b478b51f394d462f85e45a700f59de20" data-parentId="da59653b1c294c0f81b9372f47b3fe65"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>urn:iso:std:iso:11073:10101</span></td></tr><tr class="collapsed" data-id="8c441befed5b4ec5ada823592a9ca3ff" data-parentId="da59653b1c294c0f81b9372f47b3fe65"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>150408</span></td></tr><tr class="collapsed" data-id="e148715f908946e09ff33561ff3784d6" data-parentId="da59653b1c294c0f81b9372f47b3fe65"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>MDC_VOL_BLD_VENT_LEFT_STROKE</span></td></tr><tr class="collapsed" data-id="15470f4f0e824b868774a612085d0d19" data-parentId="9020a979f6d84c2cb3f58166a4eab25f"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="346fe5aae9cd43179b831c9370eb561e" data-parentId="15470f4f0e824b868774a612085d0d19"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="08cf844845964c1fa662751e8ef35816" data-parentId="9020a979f6d84c2cb3f58166a4eab25f"><td class="instance"><span class="baseIcon primitive"></span><b>effective</b></td></tr><tr class="collapsed" data-id="039364446f4640cfbab4b7b628115328" data-parentId="08cf844845964c1fa662751e8ef35816"><td class="instance"><span class="baseIcon primitive"></span><b>start : </b><span>2019-12-23T09:30:10+01:00</span></td></tr><tr class="collapsed" data-id="d805952a33a742b2a862c8e2cf038fae" data-parentId="08cf844845964c1fa662751e8ef35816"><td class="instance"><span class="baseIcon primitive"></span><b>end : </b><span>2019-12-23T10:30:10+01:00</span></td></tr><tr class="collapsed" data-id="a902fcccef3446cdb035489c691e2d32" data-parentId="9020a979f6d84c2cb3f58166a4eab25f"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="f2844acaadfa46ed9b7b8973d06c6731" data-parentId="a902fcccef3446cdb035489c691e2d32"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>70</span></td></tr><tr class="collapsed" data-id="450f194788b04ca0b497930bf62fdf36" data-parentId="a902fcccef3446cdb035489c691e2d32"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>milliliter</span></td></tr><tr class="collapsed" data-id="3fbe32c7be6f4802a9c6fd6e80a5131c" data-parentId="a902fcccef3446cdb035489c691e2d32"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="0b434928e1dc41488883ec129f4b7833" data-parentId="a902fcccef3446cdb035489c691e2d32"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>mL</span></td></tr><tr class="collapsed" data-id="b492fb1bb3ba4334b15ff8b33fc56fac" data-parentId="9020a979f6d84c2cb3f58166a4eab25f"><td class="instance"><span class="baseIcon primitive"></span><b>bodySite</b></td></tr><tr class="collapsed" data-id="0124e67483a041d3b7cc35bd090e0df0" data-parentId="b492fb1bb3ba4334b15ff8b33fc56fac"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="58369d03055b4d8db8bfbd4a5aa2f0e7" data-parentId="0124e67483a041d3b7cc35bd090e0df0"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="225670879949436fb273ee6ff1a5514d" data-parentId="0124e67483a041d3b7cc35bd090e0df0"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>244385005</span></td></tr><tr class="collapsed" data-id="b8b22370b3fc4760966f5882815d64bf" data-parentId="0124e67483a041d3b7cc35bd090e0df0"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Entire left cardiac ventricle</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable30ae9b7b54f64c20a530f69c516908a8 = new InstanceTree();
+resourceTreeTable30ae9b7b54f64c20a530f69c516908a8.init("30ae9b7b54f64c20a530f69c516908a8");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="3099b3ad-9f58-4d33-b7b2-7346932f8ed7">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">Observation</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.id" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Linksventrikulaeres-Schlagvolumen</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.meta" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.meta.profile" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventrikulaeres-schlagvolumen</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.status" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.category" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">category</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.category.coding" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.category.coding.system" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.category.coding.code" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">vital-signs</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">category</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.system" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.code" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">90096001</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.display" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Stroke volume</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.system" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.code" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">20562-5</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.display" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Left ventricular Stroke volume</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.system" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.code" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">150408</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.display" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MDC_VOL_BLD_VENT_LEFT_STROKE</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.subject" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.subject.reference" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.effective" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">effectivePeriod</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.effective.start" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">start</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2019-12-23T09:30:10+01:00</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.effective.end" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">end</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2019-12-23T10:30:10+01:00</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">effectivePeriod</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.value" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">valueQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.value.value" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">70</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.value.unit" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">milliliter</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.value.system" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.value.code" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">mL</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueQuantity</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.bodySite" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">bodySite</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.bodySite.coding" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.bodySite.coding.system" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.bodySite.coding.code" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">244385005</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.bodySite.coding.display" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Entire left cardiac ventricle</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">bodySite</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Observation</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="80abde1a-7168-4f42-a205-2878cb0f2df8">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.resourceType" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.id" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Linksventrikulaeres-Schlagvolumen</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.meta" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.meta.profile" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventrikulaeres-schlagvolumen</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.category" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">category</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.category.coding" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.category.coding.code" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">vital-signs</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.category.coding.system" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.code" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">90096001</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.system" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.display" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Stroke volume</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.code" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">20562-5</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.system" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.display" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Left ventricular Stroke volume</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.code" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">150408</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.system" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.code.coding.display" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MDC_VOL_BLD_VENT_LEFT_STROKE</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.valueQuantity" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.valueQuantity.system" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.valueQuantity.code" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">mL</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.valueQuantity.unit" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">milliliter</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.valueQuantity.value" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">70</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.bodySite" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">bodySite</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.bodySite.coding" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.bodySite.coding.code" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">244385005</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.bodySite.coding.system" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.bodySite.coding.display" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Entire left cardiac ventricle</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.status" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.subject" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.subject.reference" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.effectivePeriod" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">effectivePeriod</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.effectivePeriod.start" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">start</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2019-12-23T09:30:10+01:00</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json#Observation.effectivePeriod.end" title="SD MII ICU Linksventrikulaeres Schlagvolumen
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-linksventrikulaeres-schlagvolumen.json" target="_blank">end</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2019-12-23T10:30:10+01:00</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="c30155a9-f95f-492d-8d37-9caa3774c839">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Observation-Linksventrikulaeres-Schlagvolumen.json'>Stroke volume</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

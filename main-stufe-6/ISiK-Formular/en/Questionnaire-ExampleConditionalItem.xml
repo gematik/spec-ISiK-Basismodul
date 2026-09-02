@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Questionnaire xmlns="http://hl7.org/fhir">
+  <id value="ExampleConditionalItem"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/>
+  </text>
+  <url value="https://gematik.de/fhir/isik/Questionnaire/ExampleConditionalItem"/>
+  <version value="6.0.0"/>
+  <name value="ExampleConditionalItem"/>
+  <title value="Bedingte Fragestellungen"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <subjectType value="Patient"/>
+  <date value="2026-09-02T11:31:15+00:00"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="### Beispiel-Questionnaire mit bedingten Fragestellungen/Items  &#xA;Die zweite Frage `Was ist denn los?` soll nur gestellt werden, &#xA;wenn die erste Frage `Wie geht's` mit `muss.` beantwortet wurde."/>
+  <item>
+    <linkId value="2"/>
+    <text value="Fragen mit EnableWhen-Bedingung"/>
+    <type value="group"/>
+    <item>
+      <linkId value="2.1"/>
+      <text value="Wie geht's?"/>
+      <type value="choice"/>
+      <answerOption>
+        <valueCoding>
+          <display value="gut."/>
+        </valueCoding>
+      </answerOption>
+      <answerOption>
+        <valueCoding>
+          <display value="geht."/>
+        </valueCoding>
+      </answerOption>
+      <answerOption>
+        <valueCoding>
+          <display value="muss."/>
+        </valueCoding>
+      </answerOption>
+    </item>
+    <item>
+      <linkId value="2.2"/>
+      <text value="Was ist denn los?"/>
+      <type value="choice"/>
+      <enableWhen>
+        <question value="2.1"/>
+        <operator value="="/>
+        <answerCoding>
+          <display value="muss."/>
+        </answerCoding>
+      </enableWhen>
+      <answerOption>
+        <valueCoding>
+          <display value="Nix."/>
+        </valueCoding>
+      </answerOption>
+      <answerOption>
+        <valueCoding>
+          <display value="Frag nicht!"/>
+        </valueCoding>
+      </answerOption>
+    </item>
+  </item>
+</Questionnaire>

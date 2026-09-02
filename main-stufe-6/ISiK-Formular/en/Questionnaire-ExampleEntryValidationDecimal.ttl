@@ -1,0 +1,113 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal> a fhir:Questionnaire ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleEntryValidationDecimal"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ]
+  ] ;
+  fhir:Questionnaire.url [ fhir:value "https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal"] ;
+  fhir:Questionnaire.version [ fhir:value "6.0.0"] ;
+  fhir:Questionnaire.name [ fhir:value "ExampleEntryValidationDecimal"] ;
+  fhir:Questionnaire.title [ fhir:value "Validierung von Dezimalen"] ;
+  fhir:Questionnaire.status [ fhir:value "draft"] ;
+  fhir:Questionnaire.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:Questionnaire.subjectType [
+     fhir:value "Patient" ;
+     fhir:index -1
+  ] ;
+  fhir:Questionnaire.date [ fhir:value "2026-09-02T11:31:15+00:00"^^xsd:dateTime] ;
+  fhir:Questionnaire.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:Questionnaire.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:Questionnaire.description [ fhir:value "### Beispiel-Questionnaire Validierung von Dezimalwerten  \n* Vorgabe des Eingabeformates mittels [entryFormat](https://hl7.org/fhir/R4/extension-entryformat.html)-Extension\n* Limitierung der Dezimalstellen mittels [maxDecimalPlaces](https://hl7.org/fhir/R4/extension-maxdecimalplaces.html)-Extension\n* Limitierung des Wertebereiches mittels [minValue](https://hl7.org/fhir/R4/extension-minvalue.html) \n   und [maxValue](https://hl7.org/fhir/R4/extension-maxvalue.html)-Extension\n* Vorgabe der anzugebenden Maßeinheit mittels [questionnaire-unit](https://hl7.org/fhir/R4/extension-questionnaire-unit.html)-Extension"] ;
+  fhir:Questionnaire.item [
+     fhir:index -1 ;
+     fhir:Questionnaire.item.linkId [ fhir:value "4" ] ;
+     fhir:Questionnaire.item.text [ fhir:value "Körpermaße" ] ;
+     fhir:Questionnaire.item.type [ fhir:value "group" ] ;
+     fhir:Questionnaire.item.required [ fhir:value "false"^^xsd:boolean ] ;
+     fhir:Questionnaire.item.item [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/questionnaire-unit" ] ;
+         fhir:Extension.valueCoding [
+           fhir:Coding.system [ fhir:value "http://unitsofmeasure.org" ] ;
+           fhir:Coding.code [ fhir:value "kg" ]
+         ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/maxValue" ] ;
+         fhir:Extension.valueDecimal [ fhir:value "300"^^xsd:decimal ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/minValue" ] ;
+         fhir:Extension.valueDecimal [ fhir:value "20"^^xsd:decimal ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces" ] ;
+         fhir:Extension.valueInteger [ fhir:value "1"^^xsd:integer ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "4.1" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Körpergewicht in kg (muss zwischen 20 und 300kg liegen)" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "decimal" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/questionnaire-unit" ] ;
+         fhir:Extension.valueCoding [
+           fhir:Coding.system [ fhir:value "http://unitsofmeasure.org" ] ;
+           fhir:Coding.code [ fhir:value "m" ]
+         ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/entryFormat" ] ;
+         fhir:Extension.valueString [ fhir:value "x.xx" ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/maxValue" ] ;
+         fhir:Extension.valueDecimal [ fhir:value "2.5"^^xsd:decimal ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/minValue" ] ;
+         fhir:Extension.valueDecimal [ fhir:value "1"^^xsd:decimal ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces" ] ;
+         fhir:Extension.valueInteger [ fhir:value "3"^^xsd:integer ]
+       ] ;
+       fhir:Questionnaire.item.linkId [ fhir:value "4.2" ] ;
+       fhir:Questionnaire.item.text [ fhir:value "Körpergröße in m (muss zwischen 1m und 2.50m liegen)" ] ;
+       fhir:Questionnaire.item.type [ fhir:value "decimal" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

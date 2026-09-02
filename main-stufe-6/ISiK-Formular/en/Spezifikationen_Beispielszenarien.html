@@ -1,0 +1,485 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Beispielszenarien - ISiK Formularmodul Implementation Guide v6.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li>
+    <a href="Ziele.html">Ziele</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spezifikationen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="FunktionenInteraktionen.html">Funktionen und Interaktionen</a>
+      </li>
+      <li>
+        <a href="Spezifikationen_Beispielszenarien.html">Beispielszenarien</a>
+      </li>
+      <li>
+        <a href="Spezifikationen_BestPractice.html">Best Practice für FormularDefinitionen</a>
+      </li>
+      <li>
+        <a href="Extensions.html">Extensions</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Festlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts-isik.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Formularmodul Implementation Guide<br />
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0 - ballot
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Beispielszenarien</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Beispielszenarien</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#szenario-meldung-an-ein-medizinisches-register-mit-dem-isik-formular-modul" id="markdown-toc-szenario-meldung-an-ein-medizinisches-register-mit-dem-isik-formular-modul">Szenario: Meldung an ein medizinisches Register mit dem ISiK-Formular-Modul</a></li>
+  <li><a href="#szenario-abfrage-von-informationen-bei-der-terminbuchung" id="markdown-toc-szenario-abfrage-von-informationen-bei-der-terminbuchung">Szenario: Abfrage von Informationen bei der Terminbuchung</a></li>
+  <li><a href="#szenario-ti-messenger-ti-m" id="markdown-toc-szenario-ti-messenger-ti-m">Szenario: TI-Messenger (TI-M)</a></li>
+</ul>
+
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Work in Progress</strong></th>
+      <th><strong>Unvollständige Inhalte</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="Betriebskoordination_Gruen_gematik.svg" width="40" /></td>
+      <td>Diese Seite ist unvollständig. Die Beispielszenarien werden aus Anregungen und UseCases der Nutzer dieser Spezifikation, sowie der Bedarfe aus anderen ISiK-Modulen heraus entwickelt. Vorschläge und Hinweise zur Weiterentwicklung können im  <a href="https://chat.fhir.org/#streams/287581/german.2Fisik">ISiK-Unterforum</a> des <a href="https://chat.fhir.org/">internationalen FHIR-Chats</a> gegeben werden. <strong>Bei der Anlage neuer Diskussionsthemen mit Bezug zu diesem Modul bitte das Präfix <code class="language-plaintext highlighter-rouge">[FORM]</code> verwenden!</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Kandidaten:</p>
+
+<ul>
+  <li>PROMS(Patient Reported Outcome Measures) der Medizininformatik-Initiative <a href="https://simplifier.net/guide/modul-pro-v2026">MII - Erweiterungsmodul PRO</a></li>
+</ul>
+
+<h3 id="szenario-meldung-an-ein-medizinisches-register-mit-dem-isik-formular-modul">Szenario: Meldung an ein medizinisches Register mit dem ISiK-Formular-Modul</h3>
+
+<p><strong>Kontext:</strong>
+Krankenhäuser sind verpflichtet, diverse Sachverhalte (z.B. meldepflichtige Erkrankungen) an medizinische Register zu melden (meldepflichtiger Sachverhalt).</p>
+
+<h4 id="möglicher-ablauf-mit-isik-formular-modul">Möglicher Ablauf mit ISiK-Formular-Modul</h4>
+
+<ol>
+  <li><strong>Auslöser im KIS</strong>
+    <ul>
+      <li>Bei medizinischen Dokumentation im Primärsystem (z. B. meldepflichtige Erkrankung, meldepflichtiges Implantat) erkennt das KIS automatisch den meldepflichtigen Sachverhalt.</li>
+    </ul>
+  </li>
+  <li><strong>Start des Formulars</strong>
+    <ul>
+      <li>Über das ISiK-Connect-/Formular-Modul wird ein <strong>webbasierter Formular-Renderer</strong> direkt aus dem Primärsystem gestartet – inkl. Patienten- und Fallkontext.</li>
+    </ul>
+  </li>
+  <li><strong>Vorbelegung der Daten</strong>
+    <ul>
+      <li>Das Formular wird automatisch mit melderelevanten, vorhandenen FHIR-Daten befüllt, z.B. :
+        <ul>
+          <li>Patientendaten</li>
+          <li>Diagnosen</li>
+          <li>Behandlungsinformationen</li>
+        </ul>
+      </li>
+      <li>Grundlage sind standardisierte FHIR-Ressourcen der ISiK-Module.</li>
+      <li>Nur die meldepflichtigen Elemente dieser Ressourcen werden in das Formular übernommen. Für die Register sind keine aus Datenschutzgründen restriktierten Profile mehr erforderlich und FHIR-Ressourcentypen müssen in den Primärsystemen nicht mehr mehrfach umgesetzt werden, um die unterschiedlichen Datenschutzvorgaben zu erfüllen.</li>
+    </ul>
+  </li>
+  <li><strong>Ergänzung durch medizinisches Personal</strong>
+    <ul>
+      <li>Ärzt:innen ergänzen registerrelevante Angaben.</li>
+      <li>Alle Eingaben können sofort anhand der im Questionnaire definierten Regeln geprüft werden</li>
+    </ul>
+  </li>
+  <li><strong>Strukturierte Speicherung</strong>
+    <ul>
+      <li>Die ausgefüllten Daten werden als strukturierter Datensatz (FHIR QuestionnaireResponse) zurück ins System geschrieben.</li>
+    </ul>
+  </li>
+  <li><strong>Weiterleitung an Register</strong>
+    <ul>
+      <li>Der Datensatz wird automatisiert an das externe medizinische Register übermittelt</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="vorteile-gegenüber-herkömmlichen-schnittstellen">Vorteile gegenüber herkömmlichen Schnittstellen</h4>
+
+<ul>
+  <li>Einheitliche Datenmodelle und APIs (REST/FHIR) statt individueller Schnittstellen</li>
+  <li>Reduziert Integrationsaufwand zwischen KIS und Registern</li>
+  <li>Formular wird direkt im klinischen Workflow gestartet (mit bereits etabliertem Patientenkontext)</li>
+  <li>Kein Medienbruch (z. B. kein externes Webportal nötig)</li>
+  <li>Nutzung vorhandener klinischer Daten (Diagnosen, Demografie etc.)</li>
+  <li>Reduktion manueller Eingaben</li>
+  <li>Erfüllung datenschutzrechtlicher Vorgaben (registerspezifisches "weglassen" von vorhandenen Informationen) ohne zusätzlichen Implementierungsaufwand</li>
+  <li>Nutzung von etablierten FHIR-Profilen und Terminologien (z. B. SNOMED CT)</li>
+  <li>Daten sind maschinenlesbar und validierbar</li>
+  <li>Gleiche Mechanik für verschiedene Registermeldungen</li>
+  <li>Formular-Definitionen können zentral gepflegt und verteilt werden</li>
+</ul>
+
+<h4 id="kurzfazit">Kurzfazit</h4>
+
+<p>FHIR-Questionnaires (insbesondere in Verbindung mit <strong>Structured Data Capture (SDC)</strong>) haben das Potential, Registermeldungen von einem <strong>isolierten, oft manuellen Prozess</strong> hin zu einem <strong>integrierten, standardisierten und automatisierten Workflow</strong> zu transformieren.
+Mit dem ISiK Formular-Modul wird die technische und Infrastrukturelle Grundlage geschaffen, um Registerprozesse auf dieser Basis umsetzen zu können.</p>
+
+<h3 id="szenario-abfrage-von-informationen-bei-der-terminbuchung">Szenario: Abfrage von Informationen bei der Terminbuchung</h3>
+
+<p><strong>Kontext:</strong>
+Bei der Buchung eines Termins über ein Patientenportal möchte das Krankenhaus vom Patienten zusätzliche, terminrelevante Informationen erheben – z. B. aktuelle Beschwerden, Vorerkrankungen, Medikationen oder Versicherungsangaben. Diese Angaben sollen strukturiert erfasst und zusammen mit der Terminbuchung an das Termin-Repository übermittelt werden.</p>
+
+<h4 id="möglicher-ablauf-mit-isik-formular-modul-1">Möglicher Ablauf mit ISiK-Formular-Modul</h4>
+
+<ol>
+  <li><strong>Slot-Auswahl durch den Patienten</strong>
+    <ul>
+      <li>Der Patient wählt im Patientenportal einen freien Termin aus. Das Portal kennt die Terminart (z. B. Fachrichtung, Dienstleistungstyp) anhand der Kalender- und Slot-Abfrage.</li>
+    </ul>
+  </li>
+  <li><strong>Ermittlung des passenden Fragebogens</strong>
+    <ul>
+      <li>Das Portal ermittelt anhand der Terminart das zugehörige <code class="language-plaintext highlighter-rouge">Questionnaire</code> aus dem Formular-Repository (z. B. Fragebogen zu aktuellen Beschwerden für allgemeinmedizinische Termine).</li>
+    </ul>
+  </li>
+  <li><strong>Anzeige des Formulars im Portal</strong>
+    <ul>
+      <li>Der <strong>Formular-Renderer</strong> stellt dem Patienten das Formular innerhalb des Portals dar. Vorhandene Patientendaten (z. B. Name, Geburtsdatum) können automatisch vorbelegt werden.</li>
+    </ul>
+  </li>
+  <li><strong>Ausfüllen durch den Patienten</strong>
+    <ul>
+      <li>Der Patient beantwortet die Fragen. Eingaben können anhand der im <code class="language-plaintext highlighter-rouge">Questionnaire</code> definierten Validierungsregeln sofort geprüft werden.</li>
+    </ul>
+  </li>
+  <li><strong>Übermittlung zusammen mit der Terminbuchung</strong>
+    <ul>
+      <li>Die ausgefüllten Antworten werden als <code class="language-plaintext highlighter-rouge">QuestionnaireResponse</code>-Ressource zusammen mit der <code class="language-plaintext highlighter-rouge">$book</code>-Operation über den Parameter <code class="language-plaintext highlighter-rouge">patientSubmittedInformation</code> an das Termin-Repository übermittelt.</li>
+      <li>Das Element <code class="language-plaintext highlighter-rouge">QuestionnaireResponse.questionnaire</code> SOLL befüllt sein, damit unterschiedlich strukturierte Antworten unterschieden und perspektivisch automatisiert verarbeitet werden können.</li>
+      <li>Das Element <code class="language-plaintext highlighter-rouge">QuestionnaireResponse.text</code> MUSS befüllt sein, damit die Inhalte durch das empfangende System unmittelbar dargestellt werden können.</li>
+    </ul>
+  </li>
+  <li><strong>Verarbeitung im Termin-Repository</strong>
+    <ul>
+      <li>Das Termin-Repository speichert die <code class="language-plaintext highlighter-rouge">QuestionnaireResponse</code> und stellt sie dem klinischen Personal vor dem Termin zur Verfügung. Eine automatisierte Weiterverarbeitung ist perspektivisch möglich.</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="vorteile-gegenüber-herkömmlichen-schnittstellen-1">Vorteile gegenüber herkömmlichen Schnittstellen</h4>
+
+<ul>
+  <li>Einheitlicher, standardisierter Mechanismus für verschiedene Terminarten ohne Anpassungen an der Spezifikation</li>
+  <li>Patientenangaben sind strukturiert, maschinenlesbar und validierbar (FHIR <code class="language-plaintext highlighter-rouge">QuestionnaireResponse</code>)</li>
+  <li>Kein Medienbruch: Erfassung und Übermittlung erfolgen innerhalb des Portals im gleichen Buchungsvorgang</li>
+  <li>Fragebögen können je nach Terminart oder Fachrichtung flexibel angepasst werden</li>
+  <li>Vorbelegung mit vorhandenen Patientendaten reduziert manuelle Eingaben</li>
+  <li>Fragebogen-Definitionen können zentral gepflegt und verteilt werden, aber auch im ersten Schritt lokal im Portal vorgehalten werden</li>
+  <li>Nutzung etablierter FHIR-Profile und Terminologien (z. B. SNOMED CT, LOINC)</li>
+  <li>Gleiche Mechanik für unterschiedliche Anwendungsfälle der Terminvorbereitung</li>
+</ul>
+
+<h4 id="kurzfazit-1">Kurzfazit</h4>
+
+<p>Die Kombination aus dem ISiK-Terminmodul (<code class="language-plaintext highlighter-rouge">$book</code>-Operation) und dem ISiK Formular-Modul (<code class="language-plaintext highlighter-rouge">QuestionnaireResponse</code>) ermöglicht es, die Terminbuchung und die Erhebung zusätzlicher Patientenangaben in einem einzigen, standardisierten Schritt zusammenzuführen. Patientenportale können so ohne individuelle Schnittstellenentwicklung terminartspezifische Fragebögen einsetzen und die Ergebnisse strukturiert ans Krankenhaus übermitteln.</p>
+
+<h3 id="szenario-ti-messenger-ti-m">Szenario: TI-Messenger (TI-M)</h3>
+
+<p>Das ISiK Formularmodul bietet neben der Integration in Krankenhausinfrastrukturen auch die Möglichkeit, Formulare über den TI-Messenger (TI-M) bereitzustellen. Das folgende Sequenzdiagramm zeigt den End-to-End-Ablauf der beteiligten Akteure und Interaktionen im Kontext des TI-Messengers.</p>
+
+<div style="width: 700px;">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="544.4152px" preserveAspectRatio="none" style="width:700px;height:544px;background:#FFFFFF;" version="1.1" viewBox="0 0 700 544" width="700.08px" zoomAndPan="magnify"><defs /><g><rect fill="#D3D3D3" height="535.0529" style="stroke:#181818;stroke-width:0.4118;" width="202.4899" x="0.8236" y="4.9417" /><text fill="#000000" font-family="sans-serif" font-size="10.7071" font-weight="bold" lengthAdjust="spacing" textLength="197.5482" x="3.2945" y="14.8803">Leistungserbringer Infrastruktur</text><rect fill="none" height="38.1055" style="stroke:#000000;stroke-width:1.2354;" width="401.4276" x="26.1541" y="118.8656" /><rect fill="none" height="72.807" style="stroke:#000000;stroke-width:1.2354;" width="453.8914" x="26.1541" y="384.6708" /><g><title>FormularDatenQuelle</title><rect fill="#000000" fill-opacity="0.00000" height="401.317" width="6.589" x="98.7741" y="70.1624" /><line style="stroke:#181818;stroke-width:0.4118;stroke-dasharray:5.0,5.0;" x1="101.9274" x2="101.9274" y1="70.1624" y2="471.4794" /></g><g><title>FormularDefinitionsVerwalter</title><rect fill="#000000" fill-opacity="0.00000" height="401.317" width="6.589" x="325.4857" y="70.1624" /><line style="stroke:#181818;stroke-width:0.4118;stroke-dasharray:5.0,5.0;" x1="327.99" x2="327.99" y1="70.1624" y2="471.4794" /></g><g><title>FormularRenderer</title><rect fill="#000000" fill-opacity="0.00000" height="401.317" width="6.589" x="521.9252" y="70.1624" /><line style="stroke:#181818;stroke-width:0.4118;stroke-dasharray:5.0,5.0;" x1="524.4174" x2="524.4174" y1="70.1624" y2="471.4794" /></g><g><title>Nutzer</title><rect fill="#000000" fill-opacity="0.00000" height="401.317" width="6.589" x="675.0637" y="70.1624" /><line style="stroke:#181818;stroke-width:0.4118;stroke-dasharray:5.0,5.0;" x1="678.1305" x2="678.1305" y1="70.1624" y2="471.4794" /></g><g class="participant participant-head" data-participant="FDQ"><rect fill="#E2E2F0" height="24.9532" rx="2.0591" ry="2.0591" style="stroke:#181818;stroke-width:0.4118;" width="135.3566" x="34.3903" y="44.3856" /><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="123.8259" x="40.1557" y="60.854">FormularDatenQuelle</text></g><g class="participant participant-tail" data-participant="FDQ"><rect fill="#E2E2F0" height="24.9532" rx="2.0591" ry="2.0591" style="stroke:#181818;stroke-width:0.4118;" width="135.3566" x="34.3903" y="470.6558" /><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="123.8259" x="40.1557" y="487.1243">FormularDatenQuelle</text></g><g class="participant participant-head" data-participant="FDV"><rect fill="#FFFFE0" height="65.2207" rx="2.0591" ry="2.0591" style="stroke:#181818;stroke-width:0.4118;" width="181.1304" x="238.215" y="4.1181" /><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="169.5997" x="243.9804" y="20.5866">FormularDefinitionsVerwalter</text><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="150.3949" x="253.5828" y="34.0091">FormularDatenVorbeleger</text><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="140.2774" x="258.6415" y="47.4315">FormularDatenExtraktor</text><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="93.0116" x="282.2745" y="60.854">(TI-M Pro Client)</text></g><g class="participant participant-tail" data-participant="FDV"><rect fill="#FFFFE0" height="65.2207" rx="2.0591" ry="2.0591" style="stroke:#181818;stroke-width:0.4118;" width="181.1304" x="238.215" y="470.6558" /><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="169.5997" x="243.9804" y="487.1243">FormularDefinitionsVerwalter</text><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="150.3949" x="253.5828" y="500.5468">FormularDatenVorbeleger</text><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="140.2774" x="258.6415" y="513.9693">FormularDatenExtraktor</text><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="93.0116" x="282.2745" y="527.3917">(TI-M Pro Client)</text></g><g class="participant participant-head" data-participant="FR"><rect fill="#90EE90" height="38.3757" rx="2.0591" ry="2.0591" style="stroke:#181818;stroke-width:0.4118;" width="116.9119" x="466.7637" y="30.9631" /><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="105.3812" x="472.5291" y="47.4315">FormularRenderer</text><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="96.1983" x="477.1205" y="60.854">(TI-M ePA Client)</text></g><g class="participant participant-tail" data-participant="FR"><rect fill="#90EE90" height="38.3757" rx="2.0591" ry="2.0591" style="stroke:#181818;stroke-width:0.4118;" width="116.9119" x="466.7637" y="470.6558" /><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="105.3812" x="472.5291" y="487.1243">FormularRenderer</text><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="96.1983" x="477.1205" y="500.5468">(TI-M ePA Client)</text></g><g class="participant participant-head" data-participant="USR"><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="38.3419" x="656.7163" y="67.443">Nutzer</text><ellipse cx="678.3582" cy="14.3233" fill="#E2E2F0" rx="6.589" ry="6.589" style="stroke:#181818;stroke-width:0.4118;" /><path d="M678.3582,20.9123 L678.3582,43.1502 M667.6511,27.5013 L689.0653,27.5013 M678.3582,43.1502 L667.6511,55.5045 M678.3582,43.1502 L689.0653,55.5045" fill="none" style="stroke:#181818;stroke-width:0.4118;" /></g><g class="participant participant-tail" data-participant="USR"><text fill="#000000" font-family="sans-serif" font-size="11.5307" lengthAdjust="spacing" textLength="38.3419" x="656.7163" y="481.3589">Nutzer</text><ellipse cx="678.3582" cy="491.0791" fill="#E2E2F0" rx="6.589" ry="6.589" style="stroke:#181818;stroke-width:0.4118;" /><path d="M678.3582,497.6681 L678.3582,519.9059 M667.6511,504.2571 L689.0653,504.2571 M678.3582,519.9059 L667.6511,532.2603 M678.3582,519.9059 L689.0653,532.2603" fill="none" style="stroke:#181818;stroke-width:0.4118;" /></g><g class="message" data-participant-1="FDV" data-participant-2="FDV"><line style="stroke:#181818;stroke-width:0.8236;" x1="328.7802" x2="363.3724" y1="95.8042" y2="95.8042" /><line style="stroke:#181818;stroke-width:0.8236;" x1="363.3724" x2="363.3724" y1="95.8042" y2="106.5113" /><line style="stroke:#181818;stroke-width:0.8236;" x1="329.6039" x2="363.3724" y1="106.5113" y2="106.5113" /><polygon fill="#181818" points="337.8401,103.2168,329.6039,106.5113,337.8401,109.8058,334.5456,106.5113" style="stroke:#181818;stroke-width:0.8236;" /><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="79.8119" x="334.5456" y="91.6317">Workflow-Start</text></g><path d="M26.1541,118.8656 L417.6757,118.8656 L417.6757,124.7404 L409.4394,132.9766 L26.1541,132.9766 L26.1541,118.8656" fill="#EEEEEE" style="stroke:#000000;stroke-width:1.2354;" /><rect fill="none" height="38.1055" style="stroke:#000000;stroke-width:1.2354;" width="401.4276" x="26.1541" y="118.8656" /><text fill="#000000" font-family="sans-serif" font-size="10.7071" font-weight="bold" lengthAdjust="spacing" textLength="354.4585" x="38.5084" y="129.6278">Nur bei Integration in die Leistungserbringer Infrastruktur</text><g class="message" data-participant-1="FDV" data-participant-2="FDQ"><polygon fill="#181818" points="111.1285,147.0876,102.8922,150.3821,111.1285,153.6766,107.834,150.3821" style="stroke:#181818;stroke-width:0.8236;" /><polygon fill="#181818" points="318.8967,147.0876,327.133,150.3821,318.8967,153.6766,322.1912,150.3821" style="stroke:#181818;stroke-width:0.8236;" /><line style="stroke:#181818;stroke-width:0.8236;" x1="106.1867" x2="323.8385" y1="150.3821" y2="150.3821" /><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="149.0316" x="116.0702" y="146.2097">FormularDatenVorbelegung</text></g><g class="message" data-participant-1="FDV" data-participant-2="FR"><polygon fill="#181818" points="515.3362,214.2386,523.5724,217.5331,515.3362,220.8276,518.6307,217.5331" style="stroke:#181818;stroke-width:0.8236;" /><line style="stroke:#181818;stroke-width:0.8236;" x1="328.7802" x2="520.2779" y1="217.5331" y2="217.5331" /><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="38.7714" x="334.5456" y="175.9695">Launch</text><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="147.5521" x="334.5456" y="188.4332">Versand FormularDefinition</text><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="165.7824" x="334.5456" y="200.897">und vorbef&#252;llte FormularDaten</text><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="149.5388" x="334.5456" y="213.3607">(TI-M spezifisches Protokoll)</text></g><g class="message" data-participant-1="FR" data-participant-2="FR"><line style="stroke:#181818;stroke-width:0.8236;" x1="525.2197" x2="559.8119" y1="253.9914" y2="253.9914" /><line style="stroke:#181818;stroke-width:0.8236;" x1="559.8119" x2="559.8119" y1="253.9914" y2="264.6985" /><line style="stroke:#181818;stroke-width:0.8236;" x1="526.0433" x2="559.8119" y1="264.6985" y2="264.6985" /><polygon fill="#181818" points="534.2795,261.404,526.0433,264.6985,534.2795,267.993,530.985,264.6985" style="stroke:#181818;stroke-width:0.8236;" /><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="124.4283" x="530.985" y="237.3552">FormularRendering mit</text><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="126.1745" x="530.985" y="249.8189">optionaler Vorbelegung</text></g><g class="message" data-participant-1="USR" data-participant-2="FR"><polygon fill="#181818" points="534.2795,285.3984,526.0433,288.6929,534.2795,291.9874,530.985,288.6929" style="stroke:#181818;stroke-width:0.8236;" /><line style="stroke:#181818;stroke-width:0.8236;" x1="529.3378" x2="677.5345" y1="288.6929" y2="288.6929" /><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="75.4673" x="539.2213" y="284.5205">Dateneingabe</text></g><g class="message" data-participant-1="FR" data-participant-2="FR"><line style="stroke:#181818;stroke-width:0.8236;" x1="525.2197" x2="559.8119" y1="312.6874" y2="312.6874" /><line style="stroke:#181818;stroke-width:0.8236;" x1="559.8119" x2="559.8119" y1="312.6874" y2="323.3945" /><line style="stroke:#181818;stroke-width:0.8236;" x1="526.0433" x2="559.8119" y1="323.3945" y2="323.3945" /><polygon fill="#181818" points="534.2795,320.1,526.0433,323.3945,534.2795,326.689,530.985,323.3945" style="stroke:#181818;stroke-width:0.8236;" /><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="141.6078" x="530.985" y="308.515">FormularDatenValidierung</text></g><g class="message" data-participant-1="FR" data-participant-2="FDV"><polygon fill="#181818" points="337.8401,369.022,329.6039,372.3165,337.8401,375.611,334.5456,372.3165" style="stroke:#181818;stroke-width:0.8236;" /><line style="stroke:#181818;stroke-width:0.8236;" x1="332.8983" x2="524.3961" y1="372.3165" y2="372.3165" /><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="176.6725" x="342.7818" y="343.2166">FormularDatenR&#252;ck&#252;bermittlung</text><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="128.0827" x="342.7818" y="355.6803">Versand FormularDaten</text><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="149.5388" x="342.7818" y="368.144">(TI-M spezifisches Protokoll)</text></g><path d="M26.1541,384.6708 L417.6757,384.6708 L417.6757,390.5456 L409.4394,398.7818 L26.1541,398.7818 L26.1541,384.6708" fill="#EEEEEE" style="stroke:#000000;stroke-width:1.2354;" /><rect fill="none" height="72.807" style="stroke:#000000;stroke-width:1.2354;" width="453.8914" x="26.1541" y="384.6708" /><text fill="#000000" font-family="sans-serif" font-size="10.7071" font-weight="bold" lengthAdjust="spacing" textLength="354.4585" x="38.5084" y="395.433">Nur bei Integration in die Leistungserbringer Infrastruktur</text><g class="message" data-participant-1="FDV" data-participant-2="FDV"><line style="stroke:#181818;stroke-width:0.8236;" x1="328.7802" x2="363.3724" y1="416.1873" y2="416.1873" /><line style="stroke:#181818;stroke-width:0.8236;" x1="363.3724" x2="363.3724" y1="416.1873" y2="426.8944" /><line style="stroke:#181818;stroke-width:0.8236;" x1="329.6039" x2="363.3724" y1="426.8944" y2="426.8944" /><polygon fill="#181818" points="337.8401,423.5999,329.6039,426.8944,337.8401,430.1889,334.5456,426.8944" style="stroke:#181818;stroke-width:0.8236;" /><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="135.6164" x="334.5456" y="412.0149">FormularDatenExtraktion</text></g><g class="message" data-participant-1="FDV" data-participant-2="FDQ"><polygon fill="#181818" points="111.1285,447.5944,102.8922,450.8889,111.1285,454.1834,107.834,450.8889" style="stroke:#181818;stroke-width:0.8236;" /><line style="stroke:#181818;stroke-width:0.8236;" x1="106.1867" x2="327.9566" y1="450.8889" y2="450.8889" /><text fill="#000000" font-family="sans-serif" font-size="10.7071" lengthAdjust="spacing" textLength="176.6725" x="116.0702" y="446.7165">FormularDatenR&#252;ck&#252;bermittlung</text></g></g></svg>
+</div>
+
+<h4 id="ablaufbeschreibung">Ablaufbeschreibung</h4>
+
+<ol>
+  <li><strong>Workflow-Start</strong> – Der TI-M Pro Client (in den Rollen FormularDefinitionsVerwalter, FormularDatenVorbeleger und FormularDatenExtraktor) initiiert den Prozess.</li>
+  <li><strong>Vorbelegung</strong> <em>(optional, nur bei Integration in Leistungserbringer-Infrastruktur)</em> – Der TI-M Pro Client ruft vorhandene Daten zur Vorbelegung des Formulars aus der FormularDatenQuelle (z. B. dem KIS) ab.</li>
+  <li><strong>Launch und Übermittlung</strong> – Der TI-M Pro Client sendet FormularDefinition (Questionnaire) und optional vorbefüllte FormularDaten über das TI-M-spezifische Protokoll an den FormularRenderer (TI-M ePA Client).</li>
+  <li><strong>FormularRendering</strong> – Der FormularRenderer stellt das Formular mit optionaler Vorbelegung dar.</li>
+  <li><strong>Dateneingabe</strong> – Der Nutzer gibt die erforderlichen Daten im Formular ein.</li>
+  <li><strong>Validierung</strong> – Die Eingaben werden anhand der im Questionnaire definierten Regeln geprüft.</li>
+  <li><strong>Rückübermittlung</strong> – Der FormularRenderer sendet die ausgefüllten FormularDaten (QuestionnaireResponse) über das TI-M-spezifische Protokoll an den TI-M Pro Client zurück.</li>
+  <li><strong>Extraktion und Rückschreiben</strong> <em>(optional, nur bei Integration in Leistungserbringer-Infrastruktur)</em> – Der TI-M Pro Client extrahiert die relevanten Daten aus der QuestionnaireResponse und schreibt sie in die FormularDatenQuelle zurück.</li>
+</ol>
+
+<h4 id="abgrenzung-der-isik-akteure-im-ti-m-kontext">Abgrenzung der ISiK-Akteure im TI-M-Kontext</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>ISiK-Akteur</th>
+      <th>Entsprechung im TI-M-Kontext</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FormularLauncher</td>
+      <td>Standalone-Komponente; wird durch das TI-M-interne Protokoll getriggert; der Patienten-Kontext wird dabei übergeben und kann in den <a href="StructureDefinition-ISiKFormularDaten.html">FormularDaten</a> genutzt werden</td>
+    </tr>
+    <tr>
+      <td>FormularDefinitionsVerwalter, FormularDatenVorbeleger, FormularDatenExtraktor</td>
+      <td>TI-M Pro Client</td>
+    </tr>
+    <tr>
+      <td>FormularRenderer</td>
+      <td>TI-M ePA Client</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Verantwortlichkeiten und Datenflüsse im TI-M-Kontext sind in der Vorabveröffentlichung <a href="https://gemspec.gematik.de/prereleases/Draft_gemF_TI-M_Strukturierte_Daten/gemF_TI-M_Strukturierte_Daten_V1.0.0_CC/">gemF_TI-M_Strukturierte_Daten</a> (Abschnitt 3.3) beschrieben. Stand 28.05.2026. In einer späteren TC wird der Link durch die finale Spezifikation ersetzt.</p>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  
+          Package formular#6.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Sep 2, 2026 11:31+0000">2026-09-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
