@@ -34,6 +34,7 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
   * ^short = "Analyse-Befund-Code"
   * ^definition = "**Begründung MS**: Der Analyse-Befund-Code ermöglicht die eindeutige Identifikation der Laboruntersuchung."
 * identifier[analyseBefundCode] ^patternIdentifier.type = $v2-0203#OBI
+  * ^comment = "**Begründung MS:** Der Analysebefundcode ist wichtig für die Zuordnung bzw. Identifikation einer Laboruntersuchung bei dem Austausch über eine Schnittstelle."
 * status MS
   * ^short = "Status der Laboruntersuchung"
   * ^comment = "**Begründung MS**: Der Status ist unerlässlich für die korrekte Interpretation einer Untersuchung. **WICHTIGER Hinweis für Implementierer**:  
@@ -51,7 +52,7 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
 * category[observation-category] = $cs-observation-category#laboratory
   * ^short = "Festlegung der Kategorie 'laboratory'"
   * ^comment = "**Begründung MS**: Pflicht-Slice zur Kennzeichnung als Laboruntersuchung."
-* category[laborbereich] from ISiKLaborbereichVS (required)
+* category[laborbereich] from ISiKLaborbereichVS (required) 
   * ^short = "Fachlicher Laborbereich"
   * ^comment = "Optionaler Slice zur weiteren Einordnung der Laboruntersuchung in einen LOINC-Fachbereich (z. B. Hematologie, Klinische Chemie). Die Fachbereiche Mikrobiologie, Humangenetik sowie Zytologie sind ausgeschlossen, da sie eine spezialisierte Abbildung mit differenzierter Terminologie und Struktur erfordern."
 * code MS
@@ -100,6 +101,8 @@ Der Wert von `Observation.effective[x]` ist aus den verfügbaren Zeitangaben zum
   * ^comment = "**Begründung Must Support**:
 Die EHDS Kombatiblität erfordert die Angabe von effective. Das Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen."
 * effectiveDateTime MS
+  * ^short = "Zeitpunkt der Untersuchung"
+  * ^comment = "**Begründung MS**: Analog zur Begründung für effective[x] ist der Zeitpunkt der Untersuchung für die klinische Relevanz, Verlaufsauswertungen und Entscheidungsunterstützung entscheidend."
 * performer 1.. MS
   * ^short = "Verantwortliche Person oder Organisation für die Untersuchung"
   * ^comment = "**Begründung MS**: Die durchführende Person oder Organisation ist für die Validität und Verantwortlichkeit des Befunds maßgeblich. 
@@ -122,7 +125,8 @@ Die EHDS Kombatiblität erfordert die Angabe von effective. Das Element effectiv
   * system = $cs-ucum
   * code 1.. MS
     * ^short = "UCUM-Code der Einheit"
-* valueCodeableConcept from $vs-results-coded-values-laboratory (preferred)
+* valueCodeableConcept   
+* valueCodeableConcept from $vs-results-coded-values-laboratory (preferred) 
   * ^short = "Kodierter Ergebniswert"
   * ^comment = "Slice für kodierte Ergebnisse (z.B. positiv/negativ). Das Binding auf das IPS-ValueSet dient der Sicherstellung der Kompatibilität mit IPS und EHDS, die beide dieses ValueSet verwenden."    
 * dataAbsentReason MS
