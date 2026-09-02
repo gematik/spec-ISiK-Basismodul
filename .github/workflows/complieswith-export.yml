@@ -29,7 +29,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || github.ref_name }}
 
@@ -42,7 +42,12 @@ jobs:
         run: node scripts/complieswith/uncomment-inserts.js
 
       - name: Run SUSHI
-        run: npx fsh-sushi Resources/ -s
+        uses: ./.github/actions/run-sushi-with-zts
+        with:
+          dir: Resources
+          accepted-download-conditions: ${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}
+          # this job has no global "sushi" binary, unlike the IG Publisher container image
+          sushi-command: npx fsh-sushi . -s
 
       - name: Filter validation targets
         run: node scripts/complieswith/filter-validation-targets.js
@@ -93,7 +98,7 @@ jobs:
 
       - name: Comment validation results on PR
         if: always() && github.event_name == 'pull_request'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           github-token: ${{ github.token }}
           script: |

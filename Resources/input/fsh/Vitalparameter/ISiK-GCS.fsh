@@ -101,7 +101,7 @@ Usage: #example
 * interpretation = $v3-ObservationInterpretation#N "Normal"
 * note.text = "Patient vollständig orientiert und kooperativ"
 * component[Verbal].code = $loinc#9270-0 "Glasgow coma score verbal"
-* component[Verbal].valueCodeableConcept = $loinc#LA6558-6 "Incomprehensible sounds"
+* component[Verbal].valueCodeableConcept = $loinc#LA6561-0 "Oriented"
 * component[Motor].code = $loinc#9268-4 "Glasgow coma score motor"
 * component[Motor].valueCodeableConcept = $loinc#LA6567-7 "Obeys commands"
 * component[Eye].code = $loinc#9267-6 "Glasgow coma score eye opening"
