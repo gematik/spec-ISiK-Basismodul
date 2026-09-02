@@ -113,7 +113,7 @@
         "id": "AllergyIntolerance.code",
         "path": "AllergyIntolerance.code",
         "short": "Benennung der Allergie/Unverträglichkeit",
-        "comment": "**Begründung Pflichtfeld:** Nur mit einer codierten oder textuell benannten Auslösersubstanz lässt sich die Allergie klinisch interpretieren und für Interaktionsprüfungen nutzen.",
+        "comment": "**Begründung Pflichtfeld:** Nur mit einer codierten oder textuell benannten Auslösersubstanz lässt sich die Allergie klinisch interpretieren und für Interaktionsprüfungen nutzen.\n\n  **Hinweis und Hintergrund:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `auslösende Substanz` im deutschen Gesundheitswesen erarbeitet und diese ist an dieser Stelle eingebunden worden. Da die Vollständigkeit des ValueSets im ISiK-Kontext nicht garantiert werden kann, ist es mit 'extensible' eingebunden.",
         "min": 1,
         "mustSupport": true
       },
@@ -146,7 +146,11 @@
             ]
           }
         ],
-        "mustSupport": true
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Substance_SNOMED_CT"
+        }
       },
       {
         "id": "AllergyIntolerance.code.coding:ask",
@@ -400,7 +404,7 @@
         "id": "AllergyIntolerance.reaction",
         "path": "AllergyIntolerance.reaction",
         "short": "Unerwünschte Reaktion",
-        "comment": "**Begründung MS:** Die beobachtete Reaktion ist für die klinische Bewertung der Gefährdung essenziell und Grundlage für Entscheidungshilfen.",
+        "comment": "**Begründung MS:** Die beobachtete Reaktion ist für die klinische Bewertung der Gefährdung essenziell und Grundlage für Entscheidungshilfen.\n\n  **Hinweis und Hintergrund:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `Allergiemanifestationen` im deutschen Gesundheitswesen erarbeitet und dies ist an dieser Stelle eingebunden worden. Da die Vollständigkeit des ValueSets im ISiK-Kontext nicht garantiert werden kann und die Änderung nach möglichem Zertifizierungs-Beginn erfolgt, ist es mit 'preferred' eingebunden.",
         "mustSupport": true
       },
       {
@@ -437,7 +441,11 @@
             ]
           }
         ],
-        "mustSupport": true
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT"
+        }
       },
       {
         "id": "AllergyIntolerance.reaction.manifestation.text",

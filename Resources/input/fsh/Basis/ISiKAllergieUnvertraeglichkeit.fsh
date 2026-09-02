@@ -56,7 +56,9 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
   * ^comment = "**Begründung MS:** Die Kritikalität beschreibt das erwartete Risiko bei erneuter Exposition und dient der Priorisierung von Warnhinweisen."
 * code 1.. MS
   * ^short = "Benennung der Allergie/Unverträglichkeit"
-  * ^comment = "**Begründung Pflichtfeld:** Nur mit einer codierten oder textuell benannten Auslösersubstanz lässt sich die Allergie klinisch interpretieren und für Interaktionsprüfungen nutzen."
+  * ^comment = "**Begründung Pflichtfeld:** Nur mit einer codierten oder textuell benannten Auslösersubstanz lässt sich die Allergie klinisch interpretieren und für Interaktionsprüfungen nutzen.
+
+  **Hinweis und Hintergrund:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `auslösende Substanz` im deutschen Gesundheitswesen erarbeitet und diese ist an dieser Stelle eingebunden worden. Da die Vollständigkeit des ValueSets im ISiK-Kontext nicht garantiert werden kann, ist es mit 'extensible' eingebunden."
   * coding MS
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "system"
@@ -65,8 +67,9 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
       snomed-ct 1..1 MS and
       ask 0..1 MS and
       atc 0..1 MS
-  * coding[snomed-ct] MS
+  * coding[snomed-ct] MS 
   * coding[snomed-ct] only ISiKSnomedCTCoding
+  * coding[snomed-ct] from $KBV_VS_Base_Allergien-ausloesende-Substanz (preferred)
   * coding[ask] MS
   * coding[ask] only CodingASK
     * system MS
@@ -129,7 +132,9 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
   * text MS
 * reaction MS
   * ^short = "Unerwünschte Reaktion"
-  * ^comment = "**Begründung MS:** Die beobachtete Reaktion ist für die klinische Bewertung der Gefährdung essenziell und Grundlage für Entscheidungshilfen."
+  * ^comment = "**Begründung MS:** Die beobachtete Reaktion ist für die klinische Bewertung der Gefährdung essenziell und Grundlage für Entscheidungshilfen.
+
+  **Hinweis und Hintergrund:** Die mio42 GmbH hat gemeinsam mit dem BfArM ein ValueSet für die `Allergiemanifestationen` im deutschen Gesundheitswesen erarbeitet und dies ist an dieser Stelle eingebunden worden. Da die Vollständigkeit des ValueSets im ISiK-Kontext nicht garantiert werden kann und die Änderung nach möglichem Zertifizierungs-Beginn erfolgt, ist es mit 'preferred' eingebunden."
   * manifestation MS
     * ^short = "Manifestation der Reaktion"
     * coding MS
@@ -138,8 +143,9 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
       * ^slicing.rules = #open
     * coding contains
         snomed-ct 0..1 MS
-    * coding[snomed-ct] MS
+    * coding[snomed-ct] MS 
     * coding[snomed-ct] only ISiKSnomedCTCoding
+    * coding[snomed-ct] from $KBV_VS_Base_Allergien-Manifestation (preferred)
     * text MS
   * severity MS
     * ^short = "Schweregrad der Reaktion"
