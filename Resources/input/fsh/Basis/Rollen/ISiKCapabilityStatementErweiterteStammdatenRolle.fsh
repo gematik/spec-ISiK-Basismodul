@@ -28,7 +28,6 @@ Diese Rolle stellt erweiterte Interaktionen zur Abfrage von Stammdaten bereit.
       * documentation = 
         "**Beispiel:**    
         `GET [base]/Patient?name=Erika`    
-        `GET [base]/Patient?name=Erika`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  " 
 
