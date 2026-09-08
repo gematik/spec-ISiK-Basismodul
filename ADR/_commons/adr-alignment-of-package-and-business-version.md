@@ -19,7 +19,7 @@ Es ist daher zu entscheiden, ob der Gleichlauf von Paketversion und Business-Ver
 
 Randbedingungen und Annahmen:
 
-- Werkzeugkette: SUSHI bzw. der IG Publisher setzen die Business-Version standardmäßig auf die Paketversion, sofern keine explizite Version je Ressource gepflegt wird. Eine ressourcenspezifische Versionierung erfordert manuelle Pflege je Ressource sowie einen definierten Prozess, wann eine Version zu erhöhen ist.
+- Toolchain: SUSHI bzw. der IG Publisher setzen die Business-Version standardmäßig auf die Paketversion, sofern keine explizite Version je Ressource gepflegt wird. Eine ressourcenspezifische Versionierung erfordert manuelle Pflege je Ressource sowie einen definierten Prozess, wann eine Version zu erhöhen ist.
 - Die ISiK-Spezifikation legt für CodeSystems bestätigungsrelevanter Systeme selbst ein inhaltsgetriebenes Versionsverständnis zugrunde (Profil `ISiKCodeSystem`): "Jede Änderung des CodeSystems MUSS eine Änderung in der Version des CodeSystems und gebundenen ValueSets nach sich ziehen." Daraus folgt umgekehrt nicht, dass jede Paketänderung eine neue Business-Version erfordert.
 - Die Entscheidung steht im Zusammenhang mit der Überlegung, Terminologieressourcen in ein eigenes Terminologie-Paket auszulagern (PTDATA-2240). Auch bei getrennter Paketierung stellt sich die Frage nach dem Verhältnis von Paketversion und Business-Version erneut.
 - Abweichende Business-Versionen wirken sich ggf. auf versionierte Bindings/Canonicals, die Validierung sowie das Verhalten von Terminologieservern (z.B. bei der Expansion von ValueSets) aus.
@@ -31,7 +31,7 @@ Die Business-Version aller Terminologieressourcen wird weiterhin zentral auf die
 
 - PRO:
   - Kein zusätzlicher Pflegeaufwand; keine Prozessänderung notwendig.
-  - Entspricht dem Default der Werkzeugkette (SUSHI/IG Publisher); keine Sondermechanik.
+  - Entspricht dem Default der Toolchain (SUSHI/IG Publisher); keine Sondermechanik.
   - Aus der Business-Version ist unmittelbar ablesbar, mit welchem Release die Ressource ausgeliefert wurde; durchgängig konsistente versionierte Canonicals innerhalb der Spezifikation.
   - Kein Risiko, eine Versionserhöhung nach inhaltlicher Änderung zu vergessen.
 - CON:
@@ -50,14 +50,14 @@ Terminologieressourcen (CodeSystems, ValueSets) werden aus dem zentralen Version
 - CON:
   - Manuelle Pflege je Ressource; erfordert einen definierten Prozess (wann major/minor/patch?) und Disziplin im Review.
   - Fehlerrisiko: Eine inhaltliche Änderung ohne Versionserhöhung wäre schwerwiegender als der Status quo (stille Änderung unter gleicher Version). Dieses Risiko lässt sich durch einen automatisierten Versions-/Inhaltsabgleich in der CI weitgehend abfangen (siehe unten); es entfällt dadurch aber nicht vollständig, da die Einstufung der Änderung (major/minor/patch) eine Review-Entscheidung bleibt.
-  - Gemischte Versionsstände innerhalb eines Pakets (Profile auf Paketversion, Terminologie mit eigenen Versionen) können verwirren, insbesondere bei versionierten Bindings.
+  - Gemischte Versionsstände innerhalb eines Pakets (Profile auf Paketversion, Terminologie mit eigenen Versionen) können verwirren.
   - Aus der Business-Version ist nicht mehr ablesbar, zu welchem Release die Ressource gehört.
 
 ### Option 3: Auslagerung in ein eigenes Terminologie-Paket
 Terminologieressourcen werden in ein separates Paket mit eigener Release-Kadenz ausgelagert (vgl. PTDATA-2240); ein Release des Terminologie-Pakets erfolgt nur bei inhaltlichen Änderungen. Der Gleichlauf kann innerhalb dieses Pakets bestehen bleiben.
 
 - PRO:
-  - Der Gleichlauf bleibt werkzeugunterstützt und pflegearm, gewinnt aber Bedeutung zurück: Eine neue Paketversion impliziert eine inhaltliche Änderung der Terminologie.
+  - Der Gleichlauf bleibt toolunterstützt und pflegearm, gewinnt aber Bedeutung zurück: Eine neue Paketversion impliziert eine inhaltliche Änderung der Terminologie.
   - Unabhängiger Lebenszyklus: Spezifikations-Releases (Rebuilds, redaktionelle Änderungen) berühren die Terminologieversionen nicht mehr.
   - Wiederverwendbarkeit der Terminologie über ISiK-Module hinweg und durch Dritte; etabliertes Vorbild mit `de.gematik.terminology`.
 - CON:
@@ -90,7 +90,7 @@ Unabhängig von der Wahl zwischen Option 2 und Option 3 kann eine zusätzliche C
   - Der ermittelte Diff liefert die Liste der inhaltlich geänderten Terminologieressourcen maschinell und stellt damit das Ergebnis von Option 4 als Nebenprodukt bereit (Release Notes).
   - Macht die Anforderung aus `ISiKCodeSystem` ("Jede Änderung des CodeSystems MUSS eine Änderung in der Version [...] nach sich ziehen") erstmals maschinell prüfbar.
 - CON:
-  - Zusätzliches, selbst gepflegtes Werkzeug in der Pipeline; insbesondere die Normalisierungsregeln müssen bei Änderungen der Werkzeugkette (z.B. neue IG-Publisher-Version) nachgezogen werden. Unvollständige Normalisierung führt zu Fehlalarmen und damit zur Abstumpfung gegenüber der Prüfung.
+  - Zusätzliches, selbst gepflegtes Werkzeug in der Pipeline; insbesondere die Normalisierungsregeln müssen bei Änderungen der Toolchain (z.B. neue IG-Publisher-Version) nachgezogen werden. Unvollständige Normalisierung führt zu Fehlalarmen und damit zur Abstumpfung gegenüber der Prüfung.
   - Die Prüfung erkennt nur, *dass* eine Versionserhöhung erforderlich ist, nicht *welche* Stufe (major/minor/patch) angemessen ist; die SemVer-Einstufung bleibt eine Review-Entscheidung. Eine heuristische Klassifikation (z.B. entfernter oder inhaltlich geänderter Code ⇒ mindestens minor) wäre als Ausbaustufe denkbar.
   - Setzt einen stabil erreichbaren Referenzstand des letzten Releases voraus (Registry-Zugriff bzw. archivierte Paketstände).
 
