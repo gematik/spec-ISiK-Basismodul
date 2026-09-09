@@ -13,7 +13,7 @@ Description: "Dieses Profil dient der spezialisierten Abbildung der Sauerstoffs�
   * coding[IEEE-11073] 1..1
   * coding[IEEE-11073] = $IEEE11073#150324
   * coding contains loinc-fhir-core 1..1 MS
-  * coding[loinc-fhir-core] = $loinc#2708-6
+  * coding[loinc-fhir-core] = $loinc#2708-6 // Sauerstoffs채ttigung in arteriellem Blut
     * ^short = "Magic Loinc Value Sauerstoffs채ttigung"
     * ^comment = "**Begr체ndung Pflichtfeld:** Die Angabe des magic Loinc Wertes f체r die Sauerstoffs채ttigung ist laut FHIR-Core-Spezifikation verpflichtend."
     * system 1.. MS

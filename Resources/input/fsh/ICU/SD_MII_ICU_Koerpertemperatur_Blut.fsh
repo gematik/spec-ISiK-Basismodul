@@ -10,7 +10,7 @@ Description: "Dieses Profil bietet eine spezialisierte Abbildung der geschätzte
   * coding[snomed] 1..1
   * coding[snomed] = $sct#1222808002 //"Core body temperature measured in blood"
   * coding[specific-loinc] 1..1
-  * coding[specific-loinc] = $loinc#60834-9 // "Blood temperature"
+  * coding[specific-loinc] = $loinc#60834-9 // "Körpertemperatur - gemessen im Blut"
   * coding[specific-IEEE-11073] 1..1
   * coding[specific-IEEE-11073] = $IEEE11073#188436
 

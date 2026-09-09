@@ -79,3 +79,16 @@ Deletes the temporary `fhir-packages` artifact after the workflow run.
 
 Resolves the previous successful workflow run head SHA on the current branch and
 exposes it as `last_success_sha` output for later change detection.
+
+## ZTS packages (kbv.all.terminology.*)
+
+Fetching FHIR packages only available via the BfArM Zentraler
+Terminologieserver (ZTS) is done by the composite
+action [`.github/actions/run-sushi-with-zts`](../../.github/actions/run-sushi-with-zts/action.yml),
+used by `ig-publisher.yml` in place of a plain
+`sushi`/`npx fsh-sushi` call. See the action's own inputs for
+configuration (in particular the `ZTS_ACCEPTED_DOWNLOAD_CONDITIONS` repository
+Actions variable, without which SUSHI cannot resolve ZTS-only packages such as
+`kbv.all.terminology.allergyintolerance`).
+- `sushi-wrap.sh` is fetched fresh on every run instead of vendored into this
+  repo, so upstream fixes from gematik apply automatically.
