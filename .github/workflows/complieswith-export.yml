@@ -42,7 +42,12 @@ jobs:
         run: node scripts/complieswith/uncomment-inserts.js
 
       - name: Run SUSHI
-        run: npx fsh-sushi Resources/ -s
+        uses: ./.github/actions/run-sushi-with-zts
+        with:
+          dir: Resources
+          accepted-download-conditions: ${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}
+          # this job has no global "sushi" binary, unlike the IG Publisher container image
+          sushi-command: npx fsh-sushi . -s
 
       - name: Filter validation targets
         run: node scripts/complieswith/filter-validation-targets.js

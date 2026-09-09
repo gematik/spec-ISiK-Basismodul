@@ -15,6 +15,7 @@ Description: "Das Datenobjekte ISiKTermin repräsentiert einen gebuchten Termin,
 * insert CommonElements
 * extension MS
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Appointment.replaces named replaces 0..1 MS
+* extension[replaces]
   * ^comment = "Begründung zum Must Support: Termineabsagen sollten verkettbar sein, da am originalen Termin noch weitere Informationen hängen können."
 * status MS
   * ^short = "Der Status des Termins"
@@ -81,16 +82,21 @@ Begründung zu Kardinalität und Must Support: Die teilnehmenden Patienten eines
 
 Begründung zu Kardinalität und Must Support: Die teilnehmenden Personen mit einem Gesundheitsberuf eines Termins sind entscheidend und müssen daher implementiert werden (MS), allerdings sind sie nicht zwingend erforderlich (0..*), da die Übernahme auch durch eine Behandlungseinheit erfolgen kann."
 * participant contains AkteurMedizinischeBehandlungseinheit 0.. MS
+* participant[AkteurMedizinischeBehandlungseinheit]
+  * ^comment = "Im ISIK-Kontext MUSS die referenzierte HealthcareService-Ressource konform zum [ISiKMedizinischeBehandlungseinheit](https://gematik.de/fhir/isik/StructureDefinition/ISiKMedizinischeBehandlungseinheit) des Basismoduls sein.
+  **Begründung MS**: Über die Angabe einer medizinischen Behandlungseinheit, kann dem Termin eine spezifische Dienstleistung zugeordnet werden. "
 * participant[AkteurMedizinischeBehandlungseinheit].actor only Reference(HealthcareService)
 * participant[AkteurMedizinischeBehandlungseinheit].actor MS
 * participant[AkteurMedizinischeBehandlungseinheit].actor.reference 1..1 MS
 * specialty MS
   * ^comment = "Optionale Angabe aller Fachbereiche aus denen ein oder mehrere Akteure für die Durchführung des Termins benötigt werden. 
   
-  Begründung zu Kardinalität und Must Support: KANN auch anhand des Kalenders, in dem ein Termin gebucht wird, ermittelt werden.
-  Die Angabe der Fachbereiche ist optional (0..*), muss jedoch implementiert werden (MS), um die Spezialisierung hinsichtlich der zugeordneten Behandlungseinheit des Termins eindeutig zu definieren und eine korrekte Zuordnung zu gewährleisten.
-  "
+    **Begründung MS**: KANN auch anhand des Kalenders, in dem ein Termin gebucht wird, ermittelt werden.
+  Die Angabe der Fachbereiche ist optional (0..*), muss jedoch implementiert werden (MS), um die Spezialisierung hinsichtlich der zugeordneten Behandlungseinheit des Termins eindeutig zu definieren und eine korrekte Zuordnung zu gewährleisten.  "
 * participant contains Angehoeriger 0.. MS
+* participant[Angehoeriger]
+  * ^comment = "Im ISIK-Kontext MUSS die referenzierte RelatedPerson-Ressource konform zum [ISiKAngehoeriger](https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger) des Basismoduls sein.
+  **Begründung MS**: Die Angabe eines Angehörigen ist optional, da in vielen Fällen die Referenzierung des Patienten ausreichend ist. Bei Terminen, die durch einen Angehörigen gebucht/verwaltet werden, ist es jedoch wichtig, dass diese Information an das Termin-Repository übermittelt werden kann."
 * participant[Angehoeriger].actor only Reference(RelatedPerson)
 * participant[Angehoeriger].actor MS
 * participant[Angehoeriger].actor.reference 1..1 MS

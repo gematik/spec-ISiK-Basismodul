@@ -29,6 +29,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs
 * code = $loinc#29463-7 "Körpergewicht"
 * code.coding[snomed] = $sct#27113001 "Körpergewicht"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#188736 "MDC_MASS_BODY_ACTUAL"
 * code.text = "Körpergewicht"
 * subject = Reference(PatientinMusterfrau)
@@ -53,13 +54,15 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#29463-7 "Körpergewicht"
 * code.coding[snomed] = $sct#27113001 "Körpergewicht"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#188736 "MDC_MASS_BODY_ACTUAL"
 * code.text = "Körpergewicht - Bettwaage"
 * subject = Reference(PatientinNormal)
 * effectiveDateTime = "2024-01-15T08:00:00+01:00"
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 185 'kg' "kilogram"
-* method = $sct#786458005 "Selbst angegebenes übliches Körpergewicht"
+//TODO: bed scale ist ein physikalisches Objekt, also Device. Nicht optimal, aber in SCT gibt es kein eigenes Konzept für Bettwaage als Methode
+* method = $sct#466289007 "Bed scale"
 * bodySite = $sct#38266002 "Gesamter Körper als Ganzes"
 * note.text = "Gewichtsmessung mit kalibrierten Bettwaage bei bettlägerigem Patienten"
 * device = Reference(ExampleDevice)

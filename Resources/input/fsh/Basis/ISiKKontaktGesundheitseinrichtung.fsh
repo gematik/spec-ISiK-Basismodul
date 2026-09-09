@@ -170,6 +170,8 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
       * ^short = "Code"
       * ^comment = "vorstationaer | nachstationaer | begleitperson | tagesklinik | +"
 * serviceType 0..1 MS
+  * ^short = "Fachabteilungsschlüssel"
+  * ^comment = "**Begründung MS:** Der Fachabteilungsschlüssel ist ein häufig verwendetes Suchkriterium und sollte daher als logische Referenz (`serviceType`) hinterlegt werden."
   * coding 1.. MS
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "$this"
