@@ -117,6 +117,10 @@ Der Einrichtungskontakt weiterhin zulässig bleibt, aber nicht mehr als zentrale
 
 **Option C**
 
+Der Einrichtungskontakt normativ festgelegt wird (ggf. als eigenständiges Profil).
+
+**Option D**
+
 Langfristig alternative Modellierungsansätze verfolgt werden sollen.
 
 #### Bedeutung für die weitere Arbeit
