@@ -1,0 +1,66 @@
+# ISiKUnterbrechungRehaVS - ISiK Medikation Implementierungsleitfaden v6.0.0
+
+ISiK Medikation Implementierungsleitfaden
+
+Version 6.0.0 - active 
+
+* [**Table of Contents**](toc.md)
+* [**Artefakte**](artifacts.md)
+* **ISiKUnterbrechungRehaVS**
+
+## ValueSet: 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/isik/ValueSet/ISiKUnterbrechungReha | *Version*:6.0.0 |
+| Active as of 2026-07-01 | *Computable Name*:ISiKUnterbrechungRehaVS |
+
+ 
+ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung. 
+
+ **References** 
+
+* [ExtensionISiKRehaEntlassung](StructureDefinition-ExtensionISiKRehaEntlassung.md)
+
+### Logical Definition (CLD)
+
+ 
+
+### Expansion
+
+-------
+
+ [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ValueSet",
+  "id" : "ISiKUnterbrechungReha",
+  "language" : "de-DE",
+  "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKUnterbrechungReha",
+  "version" : "6.0.0",
+  "name" : "ISiKUnterbrechungRehaVS",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-07-01",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    }]
+  }],
+  "description" : "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung.",
+  "compose" : {
+    "include" : [{
+      "system" : "https://gematik.de/fhir/isik/CodeSystem/ISiKUnterbrechungRehaCS"
+    }]
+  }
+}
+
+```

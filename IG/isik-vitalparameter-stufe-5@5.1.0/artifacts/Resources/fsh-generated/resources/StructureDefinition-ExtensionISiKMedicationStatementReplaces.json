@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ExtensionISiKMedicationStatementReplaces",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedicationStatementReplaces",
+  "version": "5.1.0",
+  "name": "ExtensionISiKMedicationStatementReplaces",
+  "title": "ISiK MedicationStatementReplaces",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-10-23",
+  "publisher": "gematik GmbH",
+  "description": "Mit dieser Erweiterung kann festgelegt werden, welche vorherige Medikation durch die aktuelle Verordnung ersetzt wird. Sie erleichtert die Nachverfolgung von Therapieänderungen, sorgt für Transparenz im Medikationsprozess.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "MedicationStatement"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedicationStatementReplaces"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/MedicationStatement"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x].reference",
+        "path": "Extension.value[x].reference",
+        "min": 1
+      }
+    ]
+  }
+}

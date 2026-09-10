@@ -1,0 +1,74 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Location/isik-station-anaesthesie> a fhir:Location ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "isik-station-anaesthesie"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Location isik-station-anaesthesie</b></p><a name=\"isik-station-anaesthesie\"> </a><a name=\"hcisik-station-anaesthesie\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKStandort.html\">ISiKStandort</a></p></div><p><b>identifier</b>: <code>http://fhir.de/sid/dkgev/standortnummer</code>/ANEITS</p><p><b>operationalStatus</b>: <a href=\"http://terminology.hl7.org/7.3.0/CodeSystem-v2-0116.html#v2-0116-O\">bedStatus: O</a> (belegt)</p><p><b>name</b>: Intensivstation Anaesthesie</p><p><b>mode</b>: Instance</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode ICU}\">Intensive care unit</span></p><p><b>address</b>: Krankenhausstraße 123 Musterstadt 12345 </p><p><b>physicalType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type wa}\">Ward</span></p><p><b>managingOrganization</b>: <a href=\"Organization-KrankenhausOrganisationBeispiel.html\">Organization Uniklinik Entenhausen</a></p><p><b>partOf</b>: <a href=\"Location-KrankenhausStandortBeispiel.html\">Location Krankenhaus Standort</a></p></div>"
+  ] ;
+  fhir:Location.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "http://fhir.de/sid/dkgev/standortnummer" ] ;
+     fhir:Identifier.value [ fhir:value "ANEITS" ]
+  ] ;
+  fhir:Location.operationalStatus [
+     fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0116" ] ;
+     fhir:Coding.code [ fhir:value "O" ] ;
+     fhir:Coding.display [ fhir:value "belegt" ]
+  ] ;
+  fhir:Location.name [ fhir:value "Intensivstation Anaesthesie"] ;
+  fhir:Location.mode [ fhir:value "instance"] ;
+  fhir:Location.type [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ] ;
+       fhir:Coding.code [ fhir:value "ICU" ] ;
+       fhir:Coding.display [ fhir:value "Intensive care unit" ]
+     ]
+  ] ;
+  fhir:Location.address [
+     fhir:Address.line [
+       fhir:value "Krankenhausstraße 123" ;
+       fhir:index 0
+     ] ;
+     fhir:Address.city [ fhir:value "Musterstadt" ] ;
+     fhir:Address.postalCode [ fhir:value "12345" ]
+  ] ;
+  fhir:Location.physicalType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/location-physical-type" ] ;
+       fhir:Coding.code [ fhir:value "wa" ] ;
+       fhir:Coding.display [ fhir:value "Ward" ]
+     ]
+  ] ;
+  fhir:Location.managingOrganization [
+     fhir:link <https://gematik.de/fhir/isik/Organization/KrankenhausOrganisationBeispiel> ;
+     fhir:Reference.reference [ fhir:value "Organization/KrankenhausOrganisationBeispiel" ]
+  ] ;
+  fhir:Location.partOf [
+     fhir:link <https://gematik.de/fhir/isik/Location/KrankenhausStandortBeispiel> ;
+     fhir:Reference.reference [ fhir:value "Location/KrankenhausStandortBeispiel" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Location/isik-station-anaesthesie.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

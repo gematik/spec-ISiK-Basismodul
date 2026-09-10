@@ -1,0 +1,849 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Medikation</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Medikation
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-UebersichtAnwendungsfaelle.html">
+                                            &#xDC;bersicht Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Informationsmodell.html">
+                                            Informationsmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-AMTS.html">
+                                            AMTS
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-RestApi.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-AkteureUndInteraktionen.html">
+                                            Akteure und Interaktionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Medikament.html">
+                                            ISiKMedikament (Medication)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsVerordnung.html">
+                                            ISiKMedikationsVerordnung (MedicationRequest)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsInformation.html">
+                                            ISiKMedikationsInformation (MedicationStatement)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsListe.html">
+                                            ISiKMedikationsListe (List)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsVerabreichung.html">
+                                            ISiKMedikationsVerabreichung (MedicationAdministration)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_AMTSBewertung.html">
+                                            ISiKAMTSBewertung (RiskAssessment)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationTransaction.html">
+                                            ISiKMedikationTransaction (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationTransactionResponse.html">
+                                            ISiKMedikationTransactionResponse (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<h2 id="exampleisikmedikationsliste">ExampleISiKMedikationsListe</h2>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#9ef9b611-d96a-4b64-9910-b4d41feb73c1" aria-controls="9ef9b611-d96a-4b64-9910-b4d41feb73c1" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#9a89ba46-d182-4d1d-9b72-2c66b43418e6" aria-controls="9a89ba46-d182-4d1d-9b72-2c66b43418e6" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#91c92058-3ec9-45cd-a24d-02e47385e280" aria-controls="91c92058-3ec9-45cd-a24d-02e47385e280" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#ef231021-f8c1-4c20-8c40-58122eee5e06" aria-controls="ef231021-f8c1-4c20-8c40-58122eee5e06" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="9ef9b611-d96a-4b64-9910-b4d41feb73c1">
+    <div class="stu3-treetable" id="678ca19cf5174f6fa6b9d64908f2827f" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="c9ed15d35d7a42ecb0116ade424d6fcc"><td class="instance"><span class="baseIcon primitive"></span><b>List</b></td></tr><tr class="collapsed" data-id="b23d9ccb3b284bd8a53fbc369a887e2b" data-parentId="c9ed15d35d7a42ecb0116ade424d6fcc"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ExampleISiKMedikationsListe</span></td></tr><tr class="collapsed" data-id="bb711d11a1d64d7a96037f504b8659f7" data-parentId="c9ed15d35d7a42ecb0116ade424d6fcc"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="e843f1f79cfc4c5bbbb5a2e6bdaed61e" data-parentId="bb711d11a1d64d7a96037f504b8659f7"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe</span></td></tr><tr class="collapsed" data-id="8d5a24ac7c8e4b7ca1f0feeabcc1b122" data-parentId="c9ed15d35d7a42ecb0116ade424d6fcc"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>current</span></td></tr><tr class="collapsed" data-id="b181c4bbcb6a4f058d4f308f2cbcc4d7" data-parentId="c9ed15d35d7a42ecb0116ade424d6fcc"><td class="instance"><span class="baseIcon primitive"></span><b>mode : </b><span>working</span></td></tr><tr class="collapsed" data-id="8cf68d43fcb3469895f34984c529e0af" data-parentId="c9ed15d35d7a42ecb0116ade424d6fcc"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="1617478011514746844d09f55529eac7" data-parentId="8cf68d43fcb3469895f34984c529e0af"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="612db8fd4ec744979c5fcb761709ccd9" data-parentId="1617478011514746844d09f55529eac7"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/list-example-use-codes</span></td></tr><tr class="collapsed" data-id="cbe2bda4d0994f75892add043a1defca" data-parentId="1617478011514746844d09f55529eac7"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>medications</span></td></tr><tr class="collapsed" data-id="19c298130f584726bebfbaa28ef12ea8" data-parentId="c9ed15d35d7a42ecb0116ade424d6fcc"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="cd0c7e23898548bcba4058a4c0ef4c0b" data-parentId="19c298130f584726bebfbaa28ef12ea8"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="a16c8c16fc9a4bf989ed8840329cdaa0" data-parentId="c9ed15d35d7a42ecb0116ade424d6fcc"><td class="instance"><span class="baseIcon primitive"></span><b>encounter</b></td></tr><tr class="collapsed" data-id="8a1bb066b6934e51b739e58e990ebd03" data-parentId="a16c8c16fc9a4bf989ed8840329cdaa0"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Encounter/Fachabteilungskontakt</span></td></tr><tr class="collapsed" data-id="f5388388d44846be91f1fa5f24ac7b58" data-parentId="c9ed15d35d7a42ecb0116ade424d6fcc"><td class="instance"><span class="baseIcon primitive"></span><b>date : </b><span>2021-07-04</span></td></tr><tr class="collapsed" data-id="15670f74e37142b7a876201fa8efa041" data-parentId="c9ed15d35d7a42ecb0116ade424d6fcc"><td class="instance"><span class="baseIcon primitive"></span><b>entry</b></td></tr><tr class="collapsed" data-id="247198ad41f74ff2a3df6d728a4a6bfc" data-parentId="15670f74e37142b7a876201fa8efa041"><td class="instance"><span class="baseIcon primitive"></span><b>date : </b><span>2021-07-01</span></td></tr><tr class="collapsed" data-id="6ed47614bd9e429cb3933ce29a95da77" data-parentId="15670f74e37142b7a876201fa8efa041"><td class="instance"><span class="baseIcon primitive"></span><b>item</b></td></tr><tr class="collapsed" data-id="620ccfbc37b24754ad4675ee987ed8e0" data-parentId="6ed47614bd9e429cb3933ce29a95da77"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>MedicationStatement/ExampleISiKMedikationsInformation1</span></td></tr><tr class="collapsed" data-id="954b7bf9c2e8444caf7c2dc99b18aa27" data-parentId="c9ed15d35d7a42ecb0116ade424d6fcc"><td class="instance"><span class="baseIcon primitive"></span><b>entry</b></td></tr><tr class="collapsed" data-id="bfe9d60f18e74ec0a82eb6539695b112" data-parentId="954b7bf9c2e8444caf7c2dc99b18aa27"><td class="instance"><span class="baseIcon primitive"></span><b>date : </b><span>2021-07-04</span></td></tr><tr class="collapsed" data-id="8ff2e7ed41974a30ac23d12afb2e0b73" data-parentId="954b7bf9c2e8444caf7c2dc99b18aa27"><td class="instance"><span class="baseIcon primitive"></span><b>item</b></td></tr><tr class="collapsed" data-id="7726e8759e9a411aa304f7638efe53d1" data-parentId="8ff2e7ed41974a30ac23d12afb2e0b73"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>MedicationStatement/ExampleISiKMedikationsInformation2</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable678ca19cf5174f6fa6b9d64908f2827f = new InstanceTree();
+resourceTreeTable678ca19cf5174f6fa6b9d64908f2827f.init("678ca19cf5174f6fa6b9d64908f2827f");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="9a89ba46-d182-4d1d-9b72-2c66b43418e6">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">List</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.id" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ExampleISiKMedikationsListe</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.meta" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.meta.profile" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.status" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">current</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.mode" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">mode</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">working</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code.coding" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code.coding.system" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/list-example-use-codes</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code.coding.code" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">medications</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.subject" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.subject.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.encounter" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">encounter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.encounter.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">encounter</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2021-07-04</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">entry</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2021-07-01</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MedicationStatement/ExampleISiKMedikationsInformation1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">entry</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">entry</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2021-07-04</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MedicationStatement/ExampleISiKMedikationsInformation2</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">entry</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">List</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="91c92058-3ec9-45cd-a24d-02e47385e280">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.resourceType" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">List</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.id" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExampleISiKMedikationsListe</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.meta" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.meta.profile" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code.coding" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code.coding.system" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/list-example-use-codes</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code.coding.code" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">medications</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.status" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">current</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.mode" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">mode</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">working</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.subject" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.subject.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.encounter" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">encounter</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.encounter.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2021-07-04</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">entry</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2021-07-01</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MedicationStatement/ExampleISiKMedikationsInformation1</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2021-07-04</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MedicationStatement/ExampleISiKMedikationsInformation2</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="ef231021-f8c1-4c20-8c40-58122eee5e06">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/List-ExampleISiKMedikationsListe.json'>ExampleISiKMedikationsListe</a>
+</div>
+  </div>
+</div>
+<h2 id="exampleisikmedikationslisteparkinson">ExampleISiKMedikationsListeParkinson</h2>
+<p>Beispiel für eine Medikationsliste zur Behandlung von Morbus Parkinson (vgl. auch die vollständige Darstellung unter <div class='error'>Command 'pagelink' could not render: Page not found.</div>):</p>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#c9caaac3-9e08-4600-9f39-22bf03f84489" aria-controls="c9caaac3-9e08-4600-9f39-22bf03f84489" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#33e0eaca-7ce9-4608-ae60-4ea4d35d1811" aria-controls="33e0eaca-7ce9-4608-ae60-4ea4d35d1811" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#028748a7-523b-421b-ac9a-22773dcb13cf" aria-controls="028748a7-523b-421b-ac9a-22773dcb13cf" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#50b26171-9b0b-43b7-bbab-1aa6f3281c91" aria-controls="50b26171-9b0b-43b7-bbab-1aa6f3281c91" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="c9caaac3-9e08-4600-9f39-22bf03f84489">
+    <div class="stu3-treetable" id="9cd59b92c92e4accbd1f7e909e8ca69c" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="0c622939f1294a819012e40dd238a470"><td class="instance"><span class="baseIcon primitive"></span><b>List</b></td></tr><tr class="collapsed" data-id="4576f5855ee441c5a89c8126ea36097b" data-parentId="0c622939f1294a819012e40dd238a470"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ExampleISiKMedikationsListeParkinson</span></td></tr><tr class="collapsed" data-id="80fa3ab5e7fa44a5b379b994541bf893" data-parentId="0c622939f1294a819012e40dd238a470"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="2a41fab6a6e04552ada0af2d1f994fd1" data-parentId="80fa3ab5e7fa44a5b379b994541bf893"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe</span></td></tr><tr class="collapsed" data-id="51cdfe3c31c344a49313c33f244a04ea" data-parentId="0c622939f1294a819012e40dd238a470"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>current</span></td></tr><tr class="collapsed" data-id="86fcae3d4cfc4342bacb536d485c6bb8" data-parentId="0c622939f1294a819012e40dd238a470"><td class="instance"><span class="baseIcon primitive"></span><b>mode : </b><span>working</span></td></tr><tr class="collapsed" data-id="dc2035fdf66c4efcb8e2b48eb398b542" data-parentId="0c622939f1294a819012e40dd238a470"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="7cf31efb5e3e441b81064917da6ecb27" data-parentId="dc2035fdf66c4efcb8e2b48eb398b542"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="649e5a8be2604f2ab5f5057f7f6245dc" data-parentId="7cf31efb5e3e441b81064917da6ecb27"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/list-example-use-codes</span></td></tr><tr class="collapsed" data-id="dc884b32818641d9b1de29cfe310cf82" data-parentId="7cf31efb5e3e441b81064917da6ecb27"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>medications</span></td></tr><tr class="collapsed" data-id="971063d6bee64ec3b01652485ffb5e44" data-parentId="0c622939f1294a819012e40dd238a470"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="9c30e9d1cdb9428099b80b7206f18cd7" data-parentId="971063d6bee64ec3b01652485ffb5e44"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="af8d60ff12fa445d8eec15535d3155aa" data-parentId="0c622939f1294a819012e40dd238a470"><td class="instance"><span class="baseIcon primitive"></span><b>encounter</b></td></tr><tr class="collapsed" data-id="46a34aa8acf3472bb58af8b9a4e3d050" data-parentId="af8d60ff12fa445d8eec15535d3155aa"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Encounter/Fachabteilungskontakt</span></td></tr><tr class="collapsed" data-id="552057c43b4e4125ae3f6d87306ae255" data-parentId="0c622939f1294a819012e40dd238a470"><td class="instance"><span class="baseIcon primitive"></span><b>date : </b><span>2024-02-20</span></td></tr><tr class="collapsed" data-id="6cb3413a66ae4e1d804572aae8de7ca2" data-parentId="0c622939f1294a819012e40dd238a470"><td class="instance"><span class="baseIcon primitive"></span><b>entry</b></td></tr><tr class="collapsed" data-id="f5b8e4217a904d55a89ec32d975501eb" data-parentId="6cb3413a66ae4e1d804572aae8de7ca2"><td class="instance"><span class="baseIcon primitive"></span><b>date : </b><span>2024-02-20</span></td></tr><tr class="collapsed" data-id="196de507bd2c440ca2a8281f0a25dea9" data-parentId="6cb3413a66ae4e1d804572aae8de7ca2"><td class="instance"><span class="baseIcon primitive"></span><b>item</b></td></tr><tr class="collapsed" data-id="56beaf9e68eb4d1ebffc570197a20b2f" data-parentId="196de507bd2c440ca2a8281f0a25dea9"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>MedicationStatement/ExampleISiKMedikationsInformationParkinson1</span></td></tr><tr class="collapsed" data-id="f9fcbbc05e18446682ce854778673f79" data-parentId="0c622939f1294a819012e40dd238a470"><td class="instance"><span class="baseIcon primitive"></span><b>entry</b></td></tr><tr class="collapsed" data-id="e106b1498fc14ae18242595e9cc4cac7" data-parentId="f9fcbbc05e18446682ce854778673f79"><td class="instance"><span class="baseIcon primitive"></span><b>date : </b><span>2024-02-20</span></td></tr><tr class="collapsed" data-id="8e275dc954ca4acd84444b4ac7cc4a66" data-parentId="f9fcbbc05e18446682ce854778673f79"><td class="instance"><span class="baseIcon primitive"></span><b>item</b></td></tr><tr class="collapsed" data-id="e156696b009e4d00a39adfb3d8bf8d89" data-parentId="8e275dc954ca4acd84444b4ac7cc4a66"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>MedicationStatement/ExampleISiKMedikationsInformationParkinson2</span></td></tr><tr class="collapsed" data-id="276023f291a5431ab0acbf17c48efca1" data-parentId="0c622939f1294a819012e40dd238a470"><td class="instance"><span class="baseIcon primitive"></span><b>entry</b></td></tr><tr class="collapsed" data-id="c180433f2b6146b9bc42d8af5a7c2c0e" data-parentId="276023f291a5431ab0acbf17c48efca1"><td class="instance"><span class="baseIcon primitive"></span><b>date : </b><span>2024-02-20</span></td></tr><tr class="collapsed" data-id="685011263c944de68d2315f8dd7c9609" data-parentId="276023f291a5431ab0acbf17c48efca1"><td class="instance"><span class="baseIcon primitive"></span><b>item</b></td></tr><tr class="collapsed" data-id="a7a9472660964830869efa252d63160e" data-parentId="685011263c944de68d2315f8dd7c9609"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>MedicationStatement/ExampleISiKMedikationsInformationParkinson3</span></td></tr><tr class="collapsed" data-id="e19987293e30443ba1a137ac32a9b227" data-parentId="0c622939f1294a819012e40dd238a470"><td class="instance"><span class="baseIcon primitive"></span><b>entry</b></td></tr><tr class="collapsed" data-id="14cbba60ad0c4c7ebafb7157595adaaa" data-parentId="e19987293e30443ba1a137ac32a9b227"><td class="instance"><span class="baseIcon primitive"></span><b>date : </b><span>2024-02-20</span></td></tr><tr class="collapsed" data-id="c27c78937ea24333981d94dd67310881" data-parentId="e19987293e30443ba1a137ac32a9b227"><td class="instance"><span class="baseIcon primitive"></span><b>item</b></td></tr><tr class="collapsed" data-id="fdbc6b291b6f43229c2b221aa9c08e6a" data-parentId="c27c78937ea24333981d94dd67310881"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>MedicationStatement/ExampleISiKMedikationsInformationParkinson4</span></td></tr><tr class="collapsed" data-id="a4e7872fe9794ccd90363dc0d12d639e" data-parentId="0c622939f1294a819012e40dd238a470"><td class="instance"><span class="baseIcon primitive"></span><b>entry</b></td></tr><tr class="collapsed" data-id="6a626367405b450bb93e8ed3c7a82af8" data-parentId="a4e7872fe9794ccd90363dc0d12d639e"><td class="instance"><span class="baseIcon primitive"></span><b>date : </b><span>2024-02-20</span></td></tr><tr class="collapsed" data-id="037ae8b16386472a9cecae29eff52b6f" data-parentId="a4e7872fe9794ccd90363dc0d12d639e"><td class="instance"><span class="baseIcon primitive"></span><b>item</b></td></tr><tr class="collapsed" data-id="96fc81152abe404b9c10bbbe4893dde5" data-parentId="037ae8b16386472a9cecae29eff52b6f"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>MedicationStatement/ExampleISiKMedikationsInformationParkinson5</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable9cd59b92c92e4accbd1f7e909e8ca69c = new InstanceTree();
+resourceTreeTable9cd59b92c92e4accbd1f7e909e8ca69c.init("9cd59b92c92e4accbd1f7e909e8ca69c");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="33e0eaca-7ce9-4608-ae60-4ea4d35d1811">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">List</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.id" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ExampleISiKMedikationsListeParkinson</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.meta" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.meta.profile" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.status" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">current</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.mode" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">mode</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">working</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code.coding" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code.coding.system" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/list-example-use-codes</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code.coding.code" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">medications</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.subject" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.subject.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.encounter" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">encounter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.encounter.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">encounter</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-02-20</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">entry</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-02-20</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MedicationStatement/ExampleISiKMedikationsInformationParkinson1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">entry</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">entry</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-02-20</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MedicationStatement/ExampleISiKMedikationsInformationParkinson2</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">entry</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">entry</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-02-20</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MedicationStatement/ExampleISiKMedikationsInformationParkinson3</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">entry</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">entry</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-02-20</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MedicationStatement/ExampleISiKMedikationsInformationParkinson4</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">entry</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">entry</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-02-20</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MedicationStatement/ExampleISiKMedikationsInformationParkinson5</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">entry</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">List</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="028748a7-523b-421b-ac9a-22773dcb13cf">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.resourceType" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">List</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.id" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExampleISiKMedikationsListeParkinson</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.meta" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.meta.profile" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code.coding" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code.coding.system" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/list-example-use-codes</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.code.coding.code" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">medications</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.status" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">current</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.mode" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">mode</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">working</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.subject" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.subject.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.encounter" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">encounter</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.encounter.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-02-20</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">entry</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-02-20</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MedicationStatement/ExampleISiKMedikationsInformationParkinson1</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-02-20</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MedicationStatement/ExampleISiKMedikationsInformationParkinson2</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-02-20</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MedicationStatement/ExampleISiKMedikationsInformationParkinson3</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-02-20</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MedicationStatement/ExampleISiKMedikationsInformationParkinson4</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.date" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-02-20</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationsListe.json#List.entry.item.reference" title="ISiK Medikationsliste
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationsListe.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MedicationStatement/ExampleISiKMedikationsInformationParkinson5</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="50b26171-9b0b-43b7-bbab-1aa6f3281c91">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/List-ExampleISiKMedikationsListeParkinson.json'>ExampleISiKMedikationsListeParkinson</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

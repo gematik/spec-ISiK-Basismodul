@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Medikation</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Medikation
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-UebersichtAnwendungsfaelle.html">
+                                            &#xDC;bersicht Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Informationsmodell.html">
+                                            Informationsmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-AMTS.html">
+                                            AMTS
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-RestApi.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-AkteureUndInteraktionen.html">
+                                            Akteure und Interaktionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Medikament.html">
+                                            ISiKMedikament (Medication)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsVerordnung.html">
+                                            ISiKMedikationsVerordnung (MedicationRequest)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsInformation.html">
+                                            ISiKMedikationsInformation (MedicationStatement)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsListe.html">
+                                            ISiKMedikationsListe (List)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsVerabreichung.html">
+                                            ISiKMedikationsVerabreichung (MedicationAdministration)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_AMTSBewertung.html">
+                                            ISiKAMTSBewertung (RiskAssessment)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationTransaction.html">
+                                            ISiKMedikationTransaction (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationTransactionResponse.html">
+                                            ISiKMedikationTransactionResponse (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+        <div class="col-md-6">
+            <ul class="nav nav-pills nav-stacked affix-top">
+                    <li>
+                        <a title="CodeSystem: ISiKMedikationsartCS" href="#ISiKMedikationsartCS">CodeSystem: ISiKMedikationsartCS</a>
+                    </li>
+                    <li>
+                        <a title="ValueSet: SctRouteOfAdministration" href="#ValueSet-SctRouteOfAdministration">ValueSet: SctRouteOfAdministration</a>
+                    </li>
+                    <li>
+                        <a title="ValueSet: ISiKMedikationsartVS" href="#ValueSet-ISiKMedikationsartVS">ValueSet: ISiKMedikationsartVS</a>
+                    </li>
+                    <li>
+                        <a title="ValueSet: MedikationsListeListModeVS" href="#ValueSet-MedikationsListeListModeVS">ValueSet: MedikationsListeListModeVS</a>
+                    </li>
+            </ul>
+        </div>
+
+    <div class="col-md-18">
+
+        <div id="preview-content">
+
+            <h2 id="page-title">Terminologien</h2>
+
+
+                    <div id="ISiKMedikationsartCS">
+                        <h2 id="link"><a  href='artifacts/package/CodeSystem-ISiKMedikationsartCS.json'>ISiKMedikationsartCS</a></h2>
+<p>ISiK Therapiearten für Medikation</p>
+<h3 id="metadaten">Metadaten</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Beschreibung</b></th><td><p>ISiK Therapiearten für Medikation</p>
+</td><tr><th><b>CanonicalURL</b></th><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS'>https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS</a></td><tr><th><b>Status</b></th><td>active</td><tr><th><b>Version</b></th><td>5.0.0</td><tr><th><b>Herausgeber</b></th><td>gematik GmbH</td></table>
+<h3 id="inhalt">Inhalt</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#6642d0a2-82e1-4b6b-a5c6-d629bc900dc2" aria-controls="6642d0a2-82e1-4b6b-a5c6-d629bc900dc2" role="tab" data-toggle="tab">Darstellung</a>
+</li><li role="presentation" class="">
+    <a href="#1f438bb4-31be-417b-a2b8-320aeea201d5" aria-controls="1f438bb4-31be-417b-a2b8-320aeea201d5" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#abc7f279-a1b7-449e-96b9-4489f7fc1a0d" aria-controls="abc7f279-a1b7-449e-96b9-4489f7fc1a0d" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#75979860-6d9c-4252-8c9b-0389d81c29e4" aria-controls="75979860-6d9c-4252-8c9b-0389d81c29e4" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="6642d0a2-82e1-4b6b-a5c6-d629bc900dc2">
+    <table  class='table table-bordered fql-table'><thead><tr><th>Code</th><th>Anzeigetext</th></tr></thead><tbody><tr><td>akut</td><td>Akutmedikation</td></tr>
+<tr><td>dauer</td><td>Dauermedikation</td></tr>
+</tbody></table>
+
+</div><div role="tabpanel" class="tab-pane " id="1f438bb4-31be-417b-a2b8-320aeea201d5">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">CodeSystem</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.id" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKMedikationsartCS</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.url" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">url</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.version" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">5.0.0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.name" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKMedikationsartCS</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.title" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">title</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiK Medikationsart</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.status" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.experimental" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">experimental</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.date" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2025-06-26</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.publisher" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">publisher</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">gematik GmbH</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.description" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiK Therapiearten f&#252;r Medikation</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.caseSensitive" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">caseSensitive</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.content" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">content</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">complete</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.count" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">count</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">akut</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Akutmedikation</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">dauer</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Dauermedikation</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">CodeSystem</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="abc7f279-a1b7-449e-96b9-4489f7fc1a0d">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.resourceType" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">CodeSystem</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.status" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.content" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">content</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">complete</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.name" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKMedikationsartCS</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.id" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKMedikationsartCS</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.title" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">title</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiK Medikationsart</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.description" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">description</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiK Therapiearten f&#252;r Medikation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.version" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">5.0.0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.url" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">akut</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Akutmedikation</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">dauer</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Dauermedikation</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.experimental" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">experimental</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.publisher" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">publisher</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">gematik GmbH</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.date" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2025-06-26</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.caseSensitive" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">caseSensitive</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.count" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">count</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">2</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="75979860-6d9c-4252-8c9b-0389d81c29e4">
+    <a  href='artifacts/package/CodeSystem-ISiKMedikationsartCS.json'>ISiKMedikationsartCS</a>
+</div>
+  </div>
+</div>
+
+                    </div>
+                    <div id="ValueSet-SctRouteOfAdministration">
+                        <h2 id="link"><a  href='artifacts/package/ValueSet-SctRouteOfAdministration.json'>SctRouteOfAdministration</a></h2>
+<p>Enthaelt alle SNOMED CT Administrationsarten</p>
+<h3 id="metadaten">Metadaten</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Beschreibung</b></th><td><p>Enthaelt alle SNOMED CT Administrationsarten</p>
+</td><tr><th><b>CanonicalURL</b></th><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/ValueSet/SctRouteOfAdministration'>https://gematik.de/fhir/isik/ValueSet/SctRouteOfAdministration</a></td><tr><th><b>Status</b></th><td>active</td><tr><th><b>Version</b></th><td>5.0.0</td><tr><th><b>Herausgeber</b></th><td>gematik GmbH</td></table>
+<h3 id="inhalt">Inhalt</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#f3ab01d5-f13a-43df-a515-0f8dd17bef3f" aria-controls="f3ab01d5-f13a-43df-a515-0f8dd17bef3f" role="tab" data-toggle="tab">Darstellung</a>
+</li><li role="presentation" class="">
+    <a href="#fa4f77ae-62e4-4dc6-bf89-ba270807ebb8" aria-controls="fa4f77ae-62e4-4dc6-bf89-ba270807ebb8" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#9e6b2c6b-85d4-4e9d-b3a8-b2542fe06e4c" aria-controls="9e6b2c6b-85d4-4e9d-b3a8-b2542fe06e4c" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#d3d8cb0d-7e88-45d5-9aaa-44d271833024" aria-controls="d3d8cb0d-7e88-45d5-9aaa-44d271833024" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="f3ab01d5-f13a-43df-a515-0f8dd17bef3f">
+    <p>Enthaelt alle SNOMED CT Administrationsarten</p>
+<p>Dieses ValueSet wird verwendet in folgenden Profilen:</p>
+<p><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation'>https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation</a>, <a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung'>https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung</a>, <a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung'>https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung</a></p>
+
+</div><div role="tabpanel" class="tab-pane " id="fa4f77ae-62e4-4dc6-bf89-ba270807ebb8">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">ValueSet</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.id" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">SctRouteOfAdministration</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.url" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">url</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/ValueSet/SctRouteOfAdministration</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.version" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">5.0.0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.name" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">SctRouteOfAdministration</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.status" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.experimental" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">experimental</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.date" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2025-06-26</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.publisher" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">publisher</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">gematik GmbH</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.description" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Enthaelt alle SNOMED CT Administrationsarten</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">compose</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">include</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.system" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.filter" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">filter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.filter.property" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">property</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">concept</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.filter.op" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">op</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">is-a</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.filter.value" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">284009009</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">filter</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">include</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">compose</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">ValueSet</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="9e6b2c6b-85d4-4e9d-b3a8-b2542fe06e4c">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.resourceType" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ValueSet</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.status" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.name" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">SctRouteOfAdministration</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.id" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">SctRouteOfAdministration</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.description" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">description</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Enthaelt alle SNOMED CT Administrationsarten</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.version" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">5.0.0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.url" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/ValueSet/SctRouteOfAdministration</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.experimental" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">experimental</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.publisher" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">publisher</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">gematik GmbH</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.date" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2025-06-26</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">compose</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">include</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.system" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.filter" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">filter</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.filter.property" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">property</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">concept</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.filter.op" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">op</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">is-a</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.filter.value" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">284009009</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="d3d8cb0d-7e88-45d5-9aaa-44d271833024">
+    <a  href='artifacts/package/ValueSet-SctRouteOfAdministration.json'>SctRouteOfAdministration</a>
+</div>
+  </div>
+</div>
+<hr />
+
+                    </div>
+                    <div id="ValueSet-ISiKMedikationsartVS">
+                        <h2 id="link"><a  href='artifacts/package/ValueSet-ISiKMedikationsartVS.json'>ISiKMedikationsartVS</a></h2>
+<p>ISiK Therapiearten für Medikation</p>
+<h3 id="metadaten">Metadaten</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Beschreibung</b></th><td><p>ISiK Therapiearten für Medikation</p>
+</td><tr><th><b>CanonicalURL</b></th><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/ValueSet/ISiKMedikationsartVS'>https://gematik.de/fhir/isik/ValueSet/ISiKMedikationsartVS</a></td><tr><th><b>Status</b></th><td>active</td><tr><th><b>Version</b></th><td>5.0.0</td><tr><th><b>Herausgeber</b></th><td>gematik GmbH</td></table>
+<h3 id="inhalt">Inhalt</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#d84f6a91-dad4-4240-8c7c-6aee84fcbc5e" aria-controls="d84f6a91-dad4-4240-8c7c-6aee84fcbc5e" role="tab" data-toggle="tab">Darstellung</a>
+</li><li role="presentation" class="">
+    <a href="#c21bcf2b-f709-46ea-b32b-4f93d67c1a3e" aria-controls="c21bcf2b-f709-46ea-b32b-4f93d67c1a3e" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#0e7cb0d6-5291-4b06-b2e9-19edff110953" aria-controls="0e7cb0d6-5291-4b06-b2e9-19edff110953" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#a570388a-d4cf-423d-ad5a-67703a1a44fa" aria-controls="a570388a-d4cf-423d-ad5a-67703a1a44fa" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="d84f6a91-dad4-4240-8c7c-6aee84fcbc5e">
+    <p>ISiK Therapiearten für Medikation</p>
+<p>Dieses ValueSet wird verwendet in folgenden Profilen:</p>
+<p><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedikationsart'>https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedikationsart</a></p>
+
+</div><div role="tabpanel" class="tab-pane " id="c21bcf2b-f709-46ea-b32b-4f93d67c1a3e">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">ValueSet</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.id" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKMedikationsartVS</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.url" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">url</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/ValueSet/ISiKMedikationsartVS</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.version" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">5.0.0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.name" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKMedikationsartVS</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.status" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.experimental" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">experimental</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.date" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2025-06-26</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.publisher" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">publisher</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">gematik GmbH</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.description" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiK Therapiearten f&#252;r Medikation</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">compose</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">include</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.system" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">include</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">compose</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">ValueSet</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="0e7cb0d6-5291-4b06-b2e9-19edff110953">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.resourceType" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ValueSet</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.status" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.name" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKMedikationsartVS</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.id" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKMedikationsartVS</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.description" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">description</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiK Therapiearten f&#252;r Medikation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.version" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">5.0.0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.url" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/ValueSet/ISiKMedikationsartVS</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.experimental" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">experimental</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.publisher" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">publisher</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">gematik GmbH</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.date" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2025-06-26</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">compose</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">include</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.system" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="a570388a-d4cf-423d-ad5a-67703a1a44fa">
+    <a  href='artifacts/package/ValueSet-ISiKMedikationsartVS.json'>ISiKMedikationsartVS</a>
+</div>
+  </div>
+</div>
+<hr />
+
+                    </div>
+                    <div id="ValueSet-MedikationsListeListModeVS">
+                        <h2 id="link"><a  href='artifacts/package/ValueSet-MedikationsListeListModeVS.json'>MedikationsListeListModeVS</a></h2>
+<p>Erlaubte ListModes der ISiK MedikationsListe</p>
+<h3 id="metadaten">Metadaten</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Beschreibung</b></th><td><p>Erlaubte ListModes der ISiK MedikationsListe</p>
+</td><tr><th><b>CanonicalURL</b></th><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/ValueSet/MedikationsListeListModeVS'>https://gematik.de/fhir/isik/ValueSet/MedikationsListeListModeVS</a></td><tr><th><b>Status</b></th><td>active</td><tr><th><b>Version</b></th><td>5.0.0</td><tr><th><b>Herausgeber</b></th><td>gematik GmbH</td></table>
+<h3 id="inhalt">Inhalt</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#a488555e-7322-4267-87e9-b2bfdd1a3101" aria-controls="a488555e-7322-4267-87e9-b2bfdd1a3101" role="tab" data-toggle="tab">Darstellung</a>
+</li><li role="presentation" class="">
+    <a href="#e52f8f73-4fe4-4a87-a220-3b426b18adce" aria-controls="e52f8f73-4fe4-4a87-a220-3b426b18adce" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#063b7dc5-59e8-4816-95cb-f99774027594" aria-controls="063b7dc5-59e8-4816-95cb-f99774027594" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#2ad3d2c0-1dcd-40a1-8d8f-59f3250f512f" aria-controls="2ad3d2c0-1dcd-40a1-8d8f-59f3250f512f" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="a488555e-7322-4267-87e9-b2bfdd1a3101">
+    <p>Erlaubte ListModes der ISiK MedikationsListe</p>
+<p>Dieses ValueSet wird verwendet in folgenden Profilen:</p>
+<p><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe'>https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe</a></p>
+
+</div><div role="tabpanel" class="tab-pane " id="e52f8f73-4fe4-4a87-a220-3b426b18adce">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">ValueSet</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.id" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MedikationsListeListModeVS</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.url" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">url</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/ValueSet/MedikationsListeListModeVS</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.version" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">5.0.0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.name" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MedikationsListeListModeVS</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.title" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">title</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Medikationslisten-Modes</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.status" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.experimental" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">experimental</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.date" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2025-06-26</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.publisher" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">publisher</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">gematik GmbH</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.description" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Erlaubte ListModes der ISiK MedikationsListe</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">compose</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">include</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.system" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/list-mode</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.concept" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.concept.code" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">working</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.concept" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.concept.code" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">snapshot</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">include</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">compose</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">ValueSet</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="063b7dc5-59e8-4816-95cb-f99774027594">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.resourceType" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ValueSet</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.status" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.name" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MedikationsListeListModeVS</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.id" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MedikationsListeListModeVS</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.title" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">title</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Medikationslisten-Modes</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.description" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">description</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Erlaubte ListModes der ISiK MedikationsListe</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.version" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">5.0.0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.url" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/ValueSet/MedikationsListeListModeVS</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.experimental" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">experimental</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.publisher" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">publisher</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">gematik GmbH</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.date" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2025-06-26</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">compose</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">include</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.system" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/list-mode</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.concept" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">concept</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.concept.code" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">working</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.concept.code" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">snapshot</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="2ad3d2c0-1dcd-40a1-8d8f-59f3250f512f">
+    <a  href='artifacts/package/ValueSet-MedikationsListeListModeVS.json'>MedikationsListeListModeVS</a>
+</div>
+  </div>
+</div>
+<hr />
+
+                    </div>
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

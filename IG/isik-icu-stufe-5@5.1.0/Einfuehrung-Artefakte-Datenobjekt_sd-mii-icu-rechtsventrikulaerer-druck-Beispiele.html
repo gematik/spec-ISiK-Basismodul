@@ -1,0 +1,1168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden - ISiK ICU-Normalstation Workflow</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden - ISiK ICU-Normalstation Workflow
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-UseCases.html">
+                                Use Cases
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Akteure.html">
+                                Akteure
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ProzesseUndWorkflows.html">
+                                Prozesse und Workflows
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Festlegungen.html">
+                                Festlegungen
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalarterieller-wedge-druck.html">
+                                            SD_MII_ICU_Pulmonalarterieller_Wedge_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-blut-preduktal-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Preduktal_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Postduktal_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumenindex.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumenindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-schlagvolumenindex-durch-indikatorverd.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Schlagvolumenindex_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumen.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumen (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-schlagvolumen-durch-indikatorverduennung.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumen_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalvaskulaerer-widerstandsindex.html">
+                                            SD_MII_ICU_Pulmonalvaskulaerer_Widerstandsindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-systemischer-vaskulaerer-widerstandsindex.html">
+                                            SD_MII_ICU_Systemischer_Vaskulaerer_Widerstandsindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaerer-herzindex.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Herzindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-herzzeitvolumen.html">
+                                            SD_MII_ICU_Herzzeitvolumen (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Herzindex_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Herzzeitvolumen_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-zentralvenoeser-blutdruck.html">
+                                            SD_MII_ICU_Zentralvenoeser_Blutdruck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksatrialer-druck.html">
+                                            SD_MII_ICU_Linksatrialer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-rechtsatrialer-druck.html">
+                                            SD_MII_ICU_Rechtsatrialer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-rechtsventrikulaerer-druck.html">
+                                            SD_MII_ICU_Rechtsventrikulaerer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaerer-druck.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalarterieller-blutdruck.html">
+                                            SD_MII_ICU_Pulmonalarterieller_Blutdruck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-brustwirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Brustwirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-lendenwirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Lendenwirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-halswirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Halswirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-brust.html">
+                                            SD_MII_ICU_Koerpertemperatur_Brust (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-myokard.html">
+                                            SD_MII_ICU_Koerpertemperatur_Myokard (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-atemwege.html">
+                                            SD_MII_ICU_Koerpertemperatur_Atemwege (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-blut.html">
+                                            SD_MII_ICU_Koerpertemperatur_Blut (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-nasen-rachen-raum.html">
+                                            SD_MII_ICU_Koerpertemperatur_Nasen_Rachen_Raum (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-speiseroehre.html">
+                                            SD_MII_ICU_Koerpertemperatur_Speiseroehre (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-intrakranieller-druck-icp.html">
+                                            SD_MII_ICU_Intrakranieller_Druck_Icp (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpergewicht-percentil-altersabhaengig.html">
+                                            SD_MII_ICU_Koerpergewicht_Percentil_Altersabhaengig (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpergroesse-percentil-altersabhaengig.html">
+                                            SD_MII_ICU_Koerpergroesse_Percentil_Altersabhaengig (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-ideales-koerpergewicht.html">
+                                            SD_MII_ICU_Ideales_Koerpergewicht (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Arteriellen_Blut_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-puls.html">
+                                            SD_MII_ICU_Puls (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-kern.html">
+                                            SD_MII_ICU_Koerpertemperatur_Kern (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-gelenk.html">
+                                            SD_MII_ICU_Koerpertemperatur_Gelenk (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-stirn.html">
+                                            SD_MII_ICU_Koerpertemperatur_Stirn (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-nasal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Nasal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-leiste.html">
+                                            SD_MII_ICU_Koerpertemperatur_Leiste (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-achsel.html">
+                                            SD_MII_ICU_Koerpertemperatur_Achsel (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-unter-der-zunge.html">
+                                            SD_MII_ICU_Koerpertemperatur_Oral (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-vaginal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Vaginal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-harnblase.html">
+                                            SD_MII_ICU_Koerpertemperatur_Harnblase (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-rektal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Rektal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-trommelfell.html">
+                                            SD_MII_ICU_Koerpertemperatur_Trommelfell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#bb3c3131-a97a-4c7d-b67f-af63d05d5ca1" aria-controls="bb3c3131-a97a-4c7d-b67f-af63d05d5ca1" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#f100ccc6-9f73-4296-860d-fb07d3aa729d" aria-controls="f100ccc6-9f73-4296-860d-fb07d3aa729d" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#8f44f0ef-354e-443f-af27-f58b30b57429" aria-controls="8f44f0ef-354e-443f-af27-f58b30b57429" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#c18fc345-3b9e-4989-99c0-2ffdc2ac0ba9" aria-controls="c18fc345-3b9e-4989-99c0-2ffdc2ac0ba9" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="bb3c3131-a97a-4c7d-b67f-af63d05d5ca1">
+    <div class="stu3-treetable" id="4590bdb4de0849cb812f49cfde1bc203" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="ae941fbe4c154121bb61e634faf77128"><td class="instance"><span class="baseIcon primitive"></span><b>Observation</b></td></tr><tr class="collapsed" data-id="e191f2cedc144e3d88171791460e665e" data-parentId="ae941fbe4c154121bb61e634faf77128"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>Rechtsventrikulaerer-Druck</span></td></tr><tr class="collapsed" data-id="6080f470d223416db1c30c791a0c84c9" data-parentId="ae941fbe4c154121bb61e634faf77128"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="29fe0894afe244f6a96bf6e557a767d0" data-parentId="6080f470d223416db1c30c791a0c84c9"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-rechtsventrikulaerer-druck</span></td></tr><tr class="collapsed" data-id="abdbdd5d7e304230804218d0d146efdc" data-parentId="ae941fbe4c154121bb61e634faf77128"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="0bc1c107cdac440eae76800a7344dcd8" data-parentId="ae941fbe4c154121bb61e634faf77128"><td class="instance"><span class="baseIcon primitive"></span><b>category</b></td></tr><tr class="collapsed" data-id="bcaa26e59c844cca946ffb5a0ce916f1" data-parentId="0bc1c107cdac440eae76800a7344dcd8"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="30972293504a404daa30f5195520dc90" data-parentId="bcaa26e59c844cca946ffb5a0ce916f1"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/observation-category</span></td></tr><tr class="collapsed" data-id="7d3954ca85b24a0b80ffdc5bc606820e" data-parentId="bcaa26e59c844cca946ffb5a0ce916f1"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>vital-signs</span></td></tr><tr class="collapsed" data-id="1ab08eeb583943ba831fdd524e1515f9" data-parentId="ae941fbe4c154121bb61e634faf77128"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="227b05be46424029984913fb1a99815f" data-parentId="1ab08eeb583943ba831fdd524e1515f9"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="936a82e099534e9eb23cb7df19c29d34" data-parentId="227b05be46424029984913fb1a99815f"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="4e0d00eb4480444590343ba7820bdf0a" data-parentId="227b05be46424029984913fb1a99815f"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>75367002</span></td></tr><tr class="collapsed" data-id="914b6acdb18c42afa5ef9e9b6f4fddc4" data-parentId="1ab08eeb583943ba831fdd524e1515f9"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="0c9c078b6a404b11a7105582d1ca2903" data-parentId="914b6acdb18c42afa5ef9e9b6f4fddc4"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="a17b59ebb0d44648b89f84cba8223a24" data-parentId="914b6acdb18c42afa5ef9e9b6f4fddc4"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>276756009</span></td></tr><tr class="collapsed" data-id="0419426c2c584cd6a9e98ad287fc15fb" data-parentId="914b6acdb18c42afa5ef9e9b6f4fddc4"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Right ventricular pressure</span></td></tr><tr class="collapsed" data-id="abdb839028e94fdf87a99729f46e423e" data-parentId="1ab08eeb583943ba831fdd524e1515f9"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="4bb96593288f49d99ca1afa876fcd920" data-parentId="abdb839028e94fdf87a99729f46e423e"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>urn:iso:std:iso:11073:10101</span></td></tr><tr class="collapsed" data-id="afe943ace9b746b9b5f5cde6303a3366" data-parentId="abdb839028e94fdf87a99729f46e423e"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>150104</span></td></tr><tr class="collapsed" data-id="a6aedf1c708d43cd89a087224e03a462" data-parentId="abdb839028e94fdf87a99729f46e423e"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>MDC_PRESS_BLD_VENT_RIGHT</span></td></tr><tr class="collapsed" data-id="109dd6f5adae4c2ea109148ab85d9671" data-parentId="ae941fbe4c154121bb61e634faf77128"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="d7a3d3e4014a429db625ce281537676b" data-parentId="109dd6f5adae4c2ea109148ab85d9671"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="4dda9ff300e64ea6aee0e897558d5c4d" data-parentId="ae941fbe4c154121bb61e634faf77128"><td class="instance"><span class="baseIcon primitive"></span><b>effective : </b><span>2019-12-23T09:30:10+01:00</span></td></tr><tr class="collapsed" data-id="d23cfba5c0e64ea887689ede38249920" data-parentId="ae941fbe4c154121bb61e634faf77128"><td class="instance"><span class="baseIcon primitive"></span><b>bodySite</b></td></tr><tr class="collapsed" data-id="2adfa512f65846568014bac7d7e3152a" data-parentId="d23cfba5c0e64ea887689ede38249920"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="68f59d5db323423eb950b0bc70c3f030" data-parentId="2adfa512f65846568014bac7d7e3152a"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="517d132ef38845aaa07bd87aefcbcb72" data-parentId="2adfa512f65846568014bac7d7e3152a"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>53085002</span></td></tr><tr class="collapsed" data-id="2d17051b5612475ebee0e04c4cfa7a97" data-parentId="2adfa512f65846568014bac7d7e3152a"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Right cardiac ventricular structure</span></td></tr><tr class="collapsed" data-id="0069b8ca983a4abaac4eb46a13f2c6ce" data-parentId="ae941fbe4c154121bb61e634faf77128"><td class="instance"><span class="baseIcon primitive"></span><b>component</b></td></tr><tr class="collapsed" data-id="4a95af3b00bb43a89b3a9ecde45674e6" data-parentId="0069b8ca983a4abaac4eb46a13f2c6ce"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="9a59c367d20741bb8d92a580b5a1dd5a" data-parentId="4a95af3b00bb43a89b3a9ecde45674e6"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="5e9546a0c669410697e38472fa3936af" data-parentId="9a59c367d20741bb8d92a580b5a1dd5a"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="e0102cd2ee7e48d3a45cce58c34f6df1" data-parentId="9a59c367d20741bb8d92a580b5a1dd5a"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>8478-0</span></td></tr><tr class="collapsed" data-id="e09d63cd27344aa5bdec1c254bcdd80a" data-parentId="4a95af3b00bb43a89b3a9ecde45674e6"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="b224313b961f4987a0cb38988c7eb20d" data-parentId="e09d63cd27344aa5bdec1c254bcdd80a"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>urn:iso:std:iso:11073:10101</span></td></tr><tr class="collapsed" data-id="8377f83847574d049ba96aca7b1982c7" data-parentId="e09d63cd27344aa5bdec1c254bcdd80a"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>150107</span></td></tr><tr class="collapsed" data-id="b681e976f98b44248dad68893d26264b" data-parentId="e09d63cd27344aa5bdec1c254bcdd80a"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Mean right ventricular pressure</span></td></tr><tr class="collapsed" data-id="fe4731fcf58c4df584b2c425b8c07244" data-parentId="4a95af3b00bb43a89b3a9ecde45674e6"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="c8ad9fb81a4e419b8f2fc2aded92712f" data-parentId="fe4731fcf58c4df584b2c425b8c07244"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="55e5036e940e48e79da452aacbc438d7" data-parentId="fe4731fcf58c4df584b2c425b8c07244"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>8406-1</span></td></tr><tr class="collapsed" data-id="b16d0d4590b440d4b3c62dc31f159ebb" data-parentId="fe4731fcf58c4df584b2c425b8c07244"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Right ventricular Intrachamber mean pressure</span></td></tr><tr class="collapsed" data-id="8c17d2b6917943729d0362b26156b9db" data-parentId="0069b8ca983a4abaac4eb46a13f2c6ce"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="de6bc1b517654227bb47239fe2912594" data-parentId="8c17d2b6917943729d0362b26156b9db"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>10</span></td></tr><tr class="collapsed" data-id="21afcca384cc4ee1a8df796b9c478130" data-parentId="8c17d2b6917943729d0362b26156b9db"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>millimeter Mercury column</span></td></tr><tr class="collapsed" data-id="9fec70e634ad46719b5131ecdebb1a95" data-parentId="8c17d2b6917943729d0362b26156b9db"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="89f3307fca524a0aab7114c02def8312" data-parentId="8c17d2b6917943729d0362b26156b9db"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>mm[Hg]</span></td></tr><tr class="collapsed" data-id="7e6b577477624728b8531058bb8802df" data-parentId="ae941fbe4c154121bb61e634faf77128"><td class="instance"><span class="baseIcon primitive"></span><b>component</b></td></tr><tr class="collapsed" data-id="3e1479b09ffa4df29cf316004e2a7437" data-parentId="7e6b577477624728b8531058bb8802df"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="d85cfe3e7435495c9683989ff6752ecd" data-parentId="3e1479b09ffa4df29cf316004e2a7437"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="e92690578f2447d88bce6582edefa657" data-parentId="d85cfe3e7435495c9683989ff6752ecd"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="2bf63c6e47724f6dba1f96ca1f1444c5" data-parentId="d85cfe3e7435495c9683989ff6752ecd"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>8480-6</span></td></tr><tr class="collapsed" data-id="fa1dfe23047a44fc89fa2a3b285c10aa" data-parentId="3e1479b09ffa4df29cf316004e2a7437"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="d6581b4ae3b24a70aa9ced28e24ef644" data-parentId="fa1dfe23047a44fc89fa2a3b285c10aa"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>urn:iso:std:iso:11073:10101</span></td></tr><tr class="collapsed" data-id="4bb588d1cdb94568847599adf3109768" data-parentId="fa1dfe23047a44fc89fa2a3b285c10aa"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>150105</span></td></tr><tr class="collapsed" data-id="fd1631bf88194d509bf8a17c9fb17734" data-parentId="fa1dfe23047a44fc89fa2a3b285c10aa"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Systolic right ventricular pressure</span></td></tr><tr class="collapsed" data-id="9f841b7073db49528a14e46868ce032e" data-parentId="3e1479b09ffa4df29cf316004e2a7437"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="b50dc3192934471bb960b1d90bb8d9b4" data-parentId="9f841b7073db49528a14e46868ce032e"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="0655ed5ccc4341be9dd34970aeb22879" data-parentId="9f841b7073db49528a14e46868ce032e"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>8432-7</span></td></tr><tr class="collapsed" data-id="3c42feeb5dca4f6d83cced89ee6ed8e3" data-parentId="9f841b7073db49528a14e46868ce032e"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Right ventricular Intrachamber systolic pressure</span></td></tr><tr class="collapsed" data-id="b4e3846e3e654cf68162908083714770" data-parentId="3e1479b09ffa4df29cf316004e2a7437"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="9ea27c0597a24ddf8111559ee5225f64" data-parentId="b4e3846e3e654cf68162908083714770"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="dfd03159de094b99bad8e7729dcdeb05" data-parentId="b4e3846e3e654cf68162908083714770"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>276772001</span></td></tr><tr class="collapsed" data-id="9820bfd89a0a4ef89b336773d0cfa6e8" data-parentId="b4e3846e3e654cf68162908083714770"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Right ventricular systolic pressure</span></td></tr><tr class="collapsed" data-id="fff5ecb049e744c8b9e74739304dde77" data-parentId="7e6b577477624728b8531058bb8802df"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="b304e70cd383479ba78fb9dd685c2f32" data-parentId="fff5ecb049e744c8b9e74739304dde77"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>25</span></td></tr><tr class="collapsed" data-id="4bb564d4bd514a89afca9446b19d62e5" data-parentId="fff5ecb049e744c8b9e74739304dde77"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>millimeter Mercury column</span></td></tr><tr class="collapsed" data-id="a04db0a923bb4b62834c1f4819f1aa91" data-parentId="fff5ecb049e744c8b9e74739304dde77"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="a4c87562da244b4788d40148a4bb47b4" data-parentId="fff5ecb049e744c8b9e74739304dde77"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>mm[Hg]</span></td></tr><tr class="collapsed" data-id="de2a5869b1764043bca11831ef61180d" data-parentId="ae941fbe4c154121bb61e634faf77128"><td class="instance"><span class="baseIcon primitive"></span><b>component</b></td></tr><tr class="collapsed" data-id="2155cc1d10bc43759e7b929ba177c381" data-parentId="de2a5869b1764043bca11831ef61180d"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="51d37b7d32294f10bfc0e8c5be12da91" data-parentId="2155cc1d10bc43759e7b929ba177c381"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="07323b405fb442cab8f41590f54e9ecb" data-parentId="51d37b7d32294f10bfc0e8c5be12da91"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="c9457f3265c64aa0851c069b6a3c07de" data-parentId="51d37b7d32294f10bfc0e8c5be12da91"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>8462-4</span></td></tr><tr class="collapsed" data-id="6a51908219b14349b02772b0cd51b95e" data-parentId="2155cc1d10bc43759e7b929ba177c381"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="cf75b502074244cfbf98ea2a8acb053a" data-parentId="6a51908219b14349b02772b0cd51b95e"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>urn:iso:std:iso:11073:10101</span></td></tr><tr class="collapsed" data-id="b761903d17294a8e8bcac17ef301e485" data-parentId="6a51908219b14349b02772b0cd51b95e"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>150106</span></td></tr><tr class="collapsed" data-id="3983feb800af46958a609ad508a53ce0" data-parentId="6a51908219b14349b02772b0cd51b95e"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Diastolic right ventricular pressure</span></td></tr><tr class="collapsed" data-id="5b8b6dfb0b6e4cf5a76f7cf33e4ecc64" data-parentId="2155cc1d10bc43759e7b929ba177c381"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="6f9fb0f7fb9c4152828fa4d6942fa970" data-parentId="5b8b6dfb0b6e4cf5a76f7cf33e4ecc64"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="1a8674b1bf514632a81223603fefb92d" data-parentId="5b8b6dfb0b6e4cf5a76f7cf33e4ecc64"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>8377-4</span></td></tr><tr class="collapsed" data-id="83b5dc6cbf0446b18c9be5976644c91a" data-parentId="5b8b6dfb0b6e4cf5a76f7cf33e4ecc64"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Right ventricular Intrachamber diastolic pressure</span></td></tr><tr class="collapsed" data-id="b25a9263d22541daab9ea34b68cca860" data-parentId="2155cc1d10bc43759e7b929ba177c381"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="5276edc63aa7457cbe64d194961e4460" data-parentId="b25a9263d22541daab9ea34b68cca860"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="dcb42c2ce8b648bf94cab3062cc9075b" data-parentId="b25a9263d22541daab9ea34b68cca860"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>276773006</span></td></tr><tr class="collapsed" data-id="a1f71b60b4cc42cab8b74d8011065547" data-parentId="b25a9263d22541daab9ea34b68cca860"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Right ventricular diastolic pressure</span></td></tr><tr class="collapsed" data-id="e577e70f7f1043eb84c5259fee7387f6" data-parentId="de2a5869b1764043bca11831ef61180d"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="3d9170b568354f8ca6dfdc88c4b883f7" data-parentId="e577e70f7f1043eb84c5259fee7387f6"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>5</span></td></tr><tr class="collapsed" data-id="55f8d565fde346deadb83fc94395e82c" data-parentId="e577e70f7f1043eb84c5259fee7387f6"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>millimeter Mercury column</span></td></tr><tr class="collapsed" data-id="a25105e85b17470d9e0cc8d5714ff908" data-parentId="e577e70f7f1043eb84c5259fee7387f6"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="664b6661c49c4640af1a8f9d83f840ec" data-parentId="e577e70f7f1043eb84c5259fee7387f6"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>mm[Hg]</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable4590bdb4de0849cb812f49cfde1bc203 = new InstanceTree();
+resourceTreeTable4590bdb4de0849cb812f49cfde1bc203.init("4590bdb4de0849cb812f49cfde1bc203");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="f100ccc6-9f73-4296-860d-fb07d3aa729d">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">Observation</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.id" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Rechtsventrikulaerer-Druck</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.meta" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.meta.profile" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-rechtsventrikulaerer-druck</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.status" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.category" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">category</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.category.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.category.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.category.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">vital-signs</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">category</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">75367002</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">276756009</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Right ventricular pressure</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">150104</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MDC_PRESS_BLD_VENT_RIGHT</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.subject" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.subject.reference" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.effective" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">effectiveDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2019-12-23T09:30:10+01:00</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.bodySite" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">bodySite</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.bodySite.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.bodySite.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.bodySite.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">53085002</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.bodySite.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Right cardiac ventricular structure</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">bodySite</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">component</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">8478-0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">150107</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Mean right ventricular pressure</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">8406-1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Right ventricular Intrachamber mean pressure</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">valueQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value.value" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">10</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value.unit" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">millimeter Mercury column</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">mm[Hg]</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueQuantity</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">component</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">component</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">8480-6</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">150105</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Systolic right ventricular pressure</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">8432-7</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Right ventricular Intrachamber systolic pressure</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">276772001</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Right ventricular systolic pressure</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">valueQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value.value" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">25</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value.unit" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">millimeter Mercury column</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">mm[Hg]</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueQuantity</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">component</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">component</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">8462-4</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">150106</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Diastolic right ventricular pressure</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">8377-4</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Right ventricular Intrachamber diastolic pressure</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">276773006</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Right ventricular diastolic pressure</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">valueQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value.value" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">5</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value.unit" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">millimeter Mercury column</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.value.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">mm[Hg]</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueQuantity</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">component</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Observation</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="8f44f0ef-354e-443f-af27-f58b30b57429">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.resourceType" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.id" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Rechtsventrikulaerer-Druck</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.meta" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.meta.profile" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-rechtsventrikulaerer-druck</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">75367002</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">276756009</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Right ventricular pressure</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">150104</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MDC_PRESS_BLD_VENT_RIGHT</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.category" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">category</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.category.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.category.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">vital-signs</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.category.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">component</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8478-0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">150107</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Mean right ventricular pressure</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8406-1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Right ventricular Intrachamber mean pressure</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">mm[Hg]</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity.unit" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">millimeter Mercury column</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity.value" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">10</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8480-6</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">150105</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Systolic right ventricular pressure</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8432-7</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Right ventricular Intrachamber systolic pressure</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">276772001</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Right ventricular systolic pressure</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">mm[Hg]</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity.unit" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">millimeter Mercury column</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity.value" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">25</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8462-4</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">150106</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Diastolic right ventricular pressure</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8377-4</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Right ventricular Intrachamber diastolic pressure</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">276773006</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.code.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Right ventricular diastolic pressure</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">mm[Hg]</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity.unit" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">millimeter Mercury column</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.component.valueQuantity.value" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">5</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.bodySite" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">bodySite</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.bodySite.coding" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.bodySite.coding.code" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">53085002</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.bodySite.coding.system" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.bodySite.coding.display" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Right cardiac ventricular structure</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.status" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.subject" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.subject.reference" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json#Observation.effectiveDateTime" title="SD MII ICU Rechtsventrikulaerer Druck
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.json" target="_blank">effectiveDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2019-12-23T09:30:10+01:00</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="c18fc345-3b9e-4989-99c0-2ffdc2ac0ba9">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Observation-Rechtsventrikulaerer-Druck.json'>Right ventricular pressure</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

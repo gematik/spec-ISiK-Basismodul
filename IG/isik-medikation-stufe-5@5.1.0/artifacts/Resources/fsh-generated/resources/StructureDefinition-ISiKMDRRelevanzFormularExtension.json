@@ -1,0 +1,62 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKMDRRelevanzFormularExtension",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMDRRelevanzFormularExtension",
+  "version": "5.1.0",
+  "name": "ISiKMDRRelevanzFormularExtension",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-10-23",
+  "publisher": "gematik GmbH",
+  "description": "Mit der Extension wird die Medizinprodukt-Relevanz angegeben. Ist die Extension nicht vorhanden, ist nichts in Richtung der MDR zu beachten. Sobald sie vorhanden ist, müssen ggf. Voraussetzung zur Befüllung oder Anzeige erfüllt sein. Im aktuellen Rahmen des Moduls sind diese aber nicht weiter spezifizert.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "Questionnaire",
+      "type": "element"
+    },
+    {
+      "expression": "QuestionnaireResponse",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "isModifier": true,
+        "isModifierReason": "Ist in dieser Extension nicht der Code 'none' gesetzt, muss die Anzeige rechtlich geprüft werden, weil der FormularDefinitionErsteller eine Relevanz im Rahmen der MDR identifiziert hat."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMDRRelevanzFormularExtension"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ISiKMDRRelevanzFormularVS"
+        }
+      }
+    ]
+  }
+}

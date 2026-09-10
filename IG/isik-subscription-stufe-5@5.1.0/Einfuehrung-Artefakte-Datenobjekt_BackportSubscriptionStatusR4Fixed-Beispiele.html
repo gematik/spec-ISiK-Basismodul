@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Subscriptions</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Subscriptions
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Spezifikation <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation.html">
+                                            Spezifikation
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Patientenzusammenf&#xFC;hrung.html">
+                                            Patientenzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Fallzusammenf&#xFC;hrung.html">
+                                            Fallzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-UseCases.html">
+                                            Weitere UseCases
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Akteure.html">
+                                            Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-FunktionenInteraktionen.html">
+                                            Funktionen und Interaktionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Festlegungen.html">
+                                Festlegungen
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Subscription.html">
+                                            ISiKSubscription (Subscription)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_BackportSubscriptionStatusR4Fixed.html">
+                                            BackportSubscriptionStatusR4Fixed (Parameters)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_BackportSubscriptionNotificationR4Fixed.html">
+                                            BackportSubscriptionNotificationR4Fixed (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#ae910b91-8f18-4e9a-98fd-bb9022fbbef0" aria-controls="ae910b91-8f18-4e9a-98fd-bb9022fbbef0" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#179e94a5-b4cc-4f8a-94db-4d1a9aa5f3d7" aria-controls="179e94a5-b4cc-4f8a-94db-4d1a9aa5f3d7" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#2852cbab-a53a-4786-9c64-f11699f167a5" aria-controls="2852cbab-a53a-4786-9c64-f11699f167a5" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#04bffab4-df70-44c3-85f0-6de147b93b60" aria-controls="04bffab4-df70-44c3-85f0-6de147b93b60" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="ae910b91-8f18-4e9a-98fd-bb9022fbbef0">
+    <div class="stu3-treetable" id="23f2265d43b94a94a95ceea12acbf7dc" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="66d32ea83ef84b908204daa4ed75cc92"><td class="instance"><span class="baseIcon primitive"></span><b>Parameters</b></td></tr><tr class="collapsed" data-id="47bc43e609f7451f8a7e42c6dd87164f" data-parentId="66d32ea83ef84b908204daa4ed75cc92"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ISiKSubscriptionStatusExample</span></td></tr><tr class="collapsed" data-id="15cef9f621074bcc8c0b592c3bf16c6e" data-parentId="66d32ea83ef84b908204daa4ed75cc92"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="32d5527c2f7f420a921f815bcdbc9e56" data-parentId="15cef9f621074bcc8c0b592c3bf16c6e"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscriptionStatus</span></td></tr><tr class="collapsed" data-id="68e85cb90a144d0a8751bf63ef63b7e6" data-parentId="66d32ea83ef84b908204daa4ed75cc92"><td class="instance"><span class="baseIcon primitive"></span><b>parameter</b></td></tr><tr class="collapsed" data-id="d94738ac01a1430b890a34276b6282fd" data-parentId="68e85cb90a144d0a8751bf63ef63b7e6"><td class="instance"><span class="baseIcon primitive"></span><b>name : </b><span>subscription</span></td></tr><tr class="collapsed" data-id="61450688c49a4abfa934beba2a82ccc7" data-parentId="68e85cb90a144d0a8751bf63ef63b7e6"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="77fdbd12e9bd4342ae503bef36e4995d" data-parentId="61450688c49a4abfa934beba2a82ccc7"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Subscription/1</span></td></tr><tr class="collapsed" data-id="5ff75a4155e448dabdcac9a26253c06d" data-parentId="66d32ea83ef84b908204daa4ed75cc92"><td class="instance"><span class="baseIcon primitive"></span><b>parameter</b></td></tr><tr class="collapsed" data-id="3272e8a0dcb14f5ca6e386c61fb89599" data-parentId="5ff75a4155e448dabdcac9a26253c06d"><td class="instance"><span class="baseIcon primitive"></span><b>name : </b><span>status</span></td></tr><tr class="collapsed" data-id="bdcac9ce97c54a1eb2949b2704f1b31b" data-parentId="5ff75a4155e448dabdcac9a26253c06d"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>active</span></td></tr><tr class="collapsed" data-id="b755ec61104f4c9cb4348cce348d9fd7" data-parentId="66d32ea83ef84b908204daa4ed75cc92"><td class="instance"><span class="baseIcon primitive"></span><b>parameter</b></td></tr><tr class="collapsed" data-id="a7c03c2a67534f2f84ba2170c00d2e19" data-parentId="b755ec61104f4c9cb4348cce348d9fd7"><td class="instance"><span class="baseIcon primitive"></span><b>name : </b><span>type</span></td></tr><tr class="collapsed" data-id="37384fc15a9541b0b82cf97567cb3e38" data-parentId="b755ec61104f4c9cb4348cce348d9fd7"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>event-notification</span></td></tr><tr class="collapsed" data-id="58bca9ab3a2b44629052e754a9e3a591" data-parentId="66d32ea83ef84b908204daa4ed75cc92"><td class="instance"><span class="baseIcon primitive"></span><b>parameter</b></td></tr><tr class="collapsed" data-id="c2e9708af23f48c1a217663f7c89f86a" data-parentId="58bca9ab3a2b44629052e754a9e3a591"><td class="instance"><span class="baseIcon primitive"></span><b>name : </b><span>topic</span></td></tr><tr class="collapsed" data-id="4b7d4579e8cf4f93bf87018554a91736" data-parentId="58bca9ab3a2b44629052e754a9e3a591"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge</span></td></tr><tr class="collapsed" data-id="61cb632f7f164634aca62e16ce9eaf82" data-parentId="66d32ea83ef84b908204daa4ed75cc92"><td class="instance"><span class="baseIcon primitive"></span><b>parameter</b></td></tr><tr class="collapsed" data-id="cbb7384b7d414dc8b5b155108049359d" data-parentId="61cb632f7f164634aca62e16ce9eaf82"><td class="instance"><span class="baseIcon primitive"></span><b>name : </b><span>events-since-subscription-start</span></td></tr><tr class="collapsed" data-id="d4d799276cae4411b506c508c164c8dc" data-parentId="61cb632f7f164634aca62e16ce9eaf82"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>1</span></td></tr><tr class="collapsed" data-id="ec31393e472e4b248b837b3dad5dd452" data-parentId="66d32ea83ef84b908204daa4ed75cc92"><td class="instance"><span class="baseIcon primitive"></span><b>parameter</b></td></tr><tr class="collapsed" data-id="5f83aef638d34b82b746c11ae3de976a" data-parentId="ec31393e472e4b248b837b3dad5dd452"><td class="instance"><span class="baseIcon primitive"></span><b>name : </b><span>notification-event</span></td></tr><tr class="collapsed" data-id="944360ab30ba4882b10672bb95e74675" data-parentId="ec31393e472e4b248b837b3dad5dd452"><td class="instance"><span class="baseIcon primitive"></span><b>part</b></td></tr><tr class="collapsed" data-id="9db90995e7134efa87e2536379b925bb" data-parentId="944360ab30ba4882b10672bb95e74675"><td class="instance"><span class="baseIcon primitive"></span><b>name : </b><span>event-number</span></td></tr><tr class="collapsed" data-id="ecc449a5304e4160bccf38cfd7928820" data-parentId="944360ab30ba4882b10672bb95e74675"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>1</span></td></tr><tr class="collapsed" data-id="14fe4e0b3e304bc58341c8ccee4111e2" data-parentId="ec31393e472e4b248b837b3dad5dd452"><td class="instance"><span class="baseIcon primitive"></span><b>part</b></td></tr><tr class="collapsed" data-id="b4301c03bc274a5fb47ab3f22767a82b" data-parentId="14fe4e0b3e304bc58341c8ccee4111e2"><td class="instance"><span class="baseIcon primitive"></span><b>name : </b><span>timestamp</span></td></tr><tr class="collapsed" data-id="14737c889e2c447eb54a81e4d8a2d2b2" data-parentId="14fe4e0b3e304bc58341c8ccee4111e2"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>2024-02-22T18:30:05+01:00</span></td></tr><tr class="collapsed" data-id="bd68cce3bcfd4fa4bf4bdcbfcfcb4522" data-parentId="ec31393e472e4b248b837b3dad5dd452"><td class="instance"><span class="baseIcon primitive"></span><b>part</b></td></tr><tr class="collapsed" data-id="65516126a06f407094579bb64d0d5fb0" data-parentId="bd68cce3bcfd4fa4bf4bdcbfcfcb4522"><td class="instance"><span class="baseIcon primitive"></span><b>name : </b><span>focus</span></td></tr><tr class="collapsed" data-id="e2a5687f68a443849801c5a14469f3b5" data-parentId="bd68cce3bcfd4fa4bf4bdcbfcfcb4522"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="625985c85ccd484ca5fe23a51888bb53" data-parentId="e2a5687f68a443849801c5a14469f3b5"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/DorisQuelle</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable23f2265d43b94a94a95ceea12acbf7dc = new InstanceTree();
+resourceTreeTable23f2265d43b94a94a95ceea12acbf7dc.init("23f2265d43b94a94a95ceea12acbf7dc");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="179e94a5-b4cc-4f8a-94db-4d1a9aa5f3d7">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters" title="ISiK Subscription Status" target="_blank">Parameters</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.id" title="ISiK Subscription Status" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKSubscriptionStatusExample</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.meta" title="ISiK Subscription Status" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.meta.profile" title="ISiK Subscription Status" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscriptionStatus</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter" title="ISiK Subscription Status" target="_blank">parameter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.name" title="ISiK Subscription Status" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">subscription</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.value" title="ISiK Subscription Status" target="_blank">valueReference</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.value.reference" title="ISiK Subscription Status" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Subscription/1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueReference</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">parameter</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter" title="ISiK Subscription Status" target="_blank">parameter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.name" title="ISiK Subscription Status" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">status</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.value" title="ISiK Subscription Status" target="_blank">valueCode</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">parameter</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter" title="ISiK Subscription Status" target="_blank">parameter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.name" title="ISiK Subscription Status" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">type</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.value" title="ISiK Subscription Status" target="_blank">valueCode</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">event-notification</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">parameter</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter" title="ISiK Subscription Status" target="_blank">parameter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.name" title="ISiK Subscription Status" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">topic</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.value" title="ISiK Subscription Status" target="_blank">valueCanonical</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">parameter</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter" title="ISiK Subscription Status" target="_blank">parameter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.name" title="ISiK Subscription Status" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">events-since-subscription-start</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.value" title="ISiK Subscription Status" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">parameter</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter" title="ISiK Subscription Status" target="_blank">parameter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.name" title="ISiK Subscription Status" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">notification-event</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part" title="ISiK Subscription Status" target="_blank">part</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part.name" title="ISiK Subscription Status" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">event-number</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part.value" title="ISiK Subscription Status" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">part</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part" title="ISiK Subscription Status" target="_blank">part</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part.name" title="ISiK Subscription Status" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">timestamp</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part.value" title="ISiK Subscription Status" target="_blank">valueInstant</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-02-22T18:30:05+01:00</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">part</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part" title="ISiK Subscription Status" target="_blank">part</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part.name" title="ISiK Subscription Status" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">focus</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part.value" title="ISiK Subscription Status" target="_blank">valueReference</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part.value.reference" title="ISiK Subscription Status" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/DorisQuelle</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueReference</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">part</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">parameter</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Parameters</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="2852cbab-a53a-4786-9c64-f11699f167a5">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.resourceType" title="ISiK Subscription Status" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Parameters</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.id" title="ISiK Subscription Status" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKSubscriptionStatusExample</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.meta" title="ISiK Subscription Status" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.meta.profile" title="ISiK Subscription Status" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscriptionStatus</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter" title="ISiK Subscription Status" target="_blank">parameter</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.name" title="ISiK Subscription Status" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">subscription</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.valueReference" title="ISiK Subscription Status" target="_blank">valueReference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.valueReference.reference" title="ISiK Subscription Status" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Subscription/1</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.name" title="ISiK Subscription Status" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">status</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.valueCode" title="ISiK Subscription Status" target="_blank">valueCode</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.name" title="ISiK Subscription Status" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">type</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.valueCode" title="ISiK Subscription Status" target="_blank">valueCode</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">event-notification</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.name" title="ISiK Subscription Status" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">topic</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.valueCanonical" title="ISiK Subscription Status" target="_blank">valueCanonical</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.name" title="ISiK Subscription Status" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">events-since-subscription-start</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.valueString" title="ISiK Subscription Status" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part" title="ISiK Subscription Status" target="_blank">part</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part.name" title="ISiK Subscription Status" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">event-number</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part.valueString" title="ISiK Subscription Status" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part.name" title="ISiK Subscription Status" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">timestamp</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part.valueInstant" title="ISiK Subscription Status" target="_blank">valueInstant</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-02-22T18:30:05+01:00</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part.name" title="ISiK Subscription Status" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">focus</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part.valueReference" title="ISiK Subscription Status" target="_blank">valueReference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.part.valueReference.reference" title="ISiK Subscription Status" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/DorisQuelle</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKSubscriptionStatus.json#Parameters.parameter.name" title="ISiK Subscription Status" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">notification-event</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="04bffab4-df70-44c3-85f0-6de147b93b60">
+    <a  href='artifacts/Resources/fsh-generated/resources/Parameters-ISiKSubscriptionStatusExample.json'>ISiKSubscriptionStatusExample</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

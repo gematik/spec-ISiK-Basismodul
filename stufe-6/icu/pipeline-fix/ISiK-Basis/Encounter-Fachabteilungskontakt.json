@@ -1,0 +1,149 @@
+{
+  "resourceType" : "Encounter",
+  "id" : "Fachabteilungskontakt",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter Fachabteilungskontakt</b></p><a name=\"Fachabteilungskontakt\"> </a><a name=\"hcFachabteilungskontakt\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKKontaktGesundheitseinrichtung.html\">ISiKKontaktGesundheitseinrichtung</a></p></div><blockquote><p><b>ExtensionAufnahmegrund</b></p><ul><li>ErsteUndZweiteStelle: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/AufnahmegrundErsteUndZweiteStelle#AufnahmegrundErsteUndZweiteStelle-01\">CodeSystemAufnahmegrundErsteUndZweiteStelle: 01</a> (Krankenhausbehandlung, vollstationär)</li><li>DritteStelle: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/AufnahmegrundDritteStelle#AufnahmegrundDritteStelle-0\">AufnahmegrundDritteStelle: 0</a> (Anderes)</li><li>VierteStelle: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle#AufnahmegrundVierteStelle-1\">AufnahmegrundVierteStelle: 1</a> (Normalfall)</li></ul></blockquote><p><b>identifier</b>: Visit number/0123456789</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.1/CodeSystem-v3-ActCode.html#v3-ActCode-IMP\">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}\">Abteilungskontakt</span>, <span title=\"Codes:{http://fhir.de/CodeSystem/kontaktart-de operation}\">Operation</span></p><p><b>serviceType</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel 0100}\">Innere Medizin</span></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung\u00a0(use:\u00a0secondary,\u00a0))</a></p><p><b>period</b>: 2021-02-12 --&gt; 2021-02-13</p><h3>Diagnoses</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Condition</b></td><td><b>Use</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Condition-BehandlungsDiagnoseFreitext.html\">Condition </a></td><td><span title=\"Codes:{http://fhir.de/CodeSystem/KontaktDiagnoseProzedur treatment-diagnosis}\">Behandlungsrelevante Diagnosen</span></td></tr></table><p><b>account</b>: <a href=\"Account-AbrechnungsfallDRG.html\">Account: extension = ; identifier = Account number; status = active; type = inpatient encounter</a></p><h3>Hospitalizations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>AdmitSource</b></td><td><b>DischargeDisposition</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass E}\">Einweisung durch einen Arzt</span></td><td><span title=\"Codes:\"></span></td></tr></table><h3>Locations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Location</b></td><td><b>Status</b></td><td><b>PhysicalType</b></td></tr><tr><td style=\"display: none\">*</td><td>Bettenstellplatz 123 (Identifier: <code>https://test.krankenhaus.de/fhir/sid/locationid</code>/123)</td><td>Active</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type bd}\">Bed</span></td></tr></table><p><b>serviceProvider</b>: Fachabteilung XYZ (Identifier: <code>https://test.krankenhaus.de/fhir/sid/fachabteilungsid</code>/XYZ)</p></div>"
+  },
+  "extension" : [{
+    "extension" : [{
+      "url" : "ErsteUndZweiteStelle",
+      "valueCoding" : {
+        "system" : "http://fhir.de/CodeSystem/dkgev/AufnahmegrundErsteUndZweiteStelle",
+        "code" : "01",
+        "display" : "Krankenhausbehandlung, vollstationär"
+      }
+    },
+    {
+      "url" : "DritteStelle",
+      "valueCoding" : {
+        "system" : "http://fhir.de/CodeSystem/dkgev/AufnahmegrundDritteStelle",
+        "code" : "0",
+        "display" : "Anderes"
+      }
+    },
+    {
+      "url" : "VierteStelle",
+      "valueCoding" : {
+        "system" : "http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle",
+        "code" : "1",
+        "display" : "Normalfall"
+      }
+    }],
+    "url" : "http://fhir.de/StructureDefinition/Aufnahmegrund"
+  }],
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "VN"
+      }]
+    },
+    "system" : "https://test.krankenhaus.de/fhir/sid/besuchsnummer",
+    "value" : "0123456789"
+  }],
+  "status" : "finished",
+  "class" : {
+    "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code" : "IMP"
+  },
+  "type" : [{
+    "coding" : [{
+      "system" : "http://fhir.de/CodeSystem/Kontaktebene",
+      "code" : "abteilungskontakt"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://fhir.de/CodeSystem/kontaktart-de",
+      "code" : "operation"
+    }]
+  }],
+  "serviceType" : {
+    "coding" : [{
+      "system" : "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel",
+      "code" : "0100"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientinMusterfrau"
+  },
+  "period" : {
+    "start" : "2021-02-12",
+    "end" : "2021-02-13"
+  },
+  "diagnosis" : [{
+    "condition" : {
+      "reference" : "Condition/BehandlungsDiagnoseFreitext"
+    },
+    "use" : {
+      "coding" : [{
+        "system" : "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur",
+        "code" : "treatment-diagnosis"
+      }]
+    }
+  }],
+  "account" : [{
+    "reference" : "Account/AbrechnungsfallDRG",
+    "identifier" : {
+      "system" : "https://test.krankenhaus.de/fhir/sid/fallnummer",
+      "value" : "XZY"
+    }
+  }],
+  "hospitalization" : {
+    "admitSource" : {
+      "coding" : [{
+        "system" : "http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass",
+        "code" : "E"
+      }]
+    },
+    "dischargeDisposition" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "ErsteUndZweiteStelle",
+          "valueCoding" : {
+            "system" : "http://fhir.de/CodeSystem/dkgev/EntlassungsgrundErsteUndZweiteStelle",
+            "code" : "01",
+            "display" : "Behandlung regulär beendet"
+          }
+        },
+        {
+          "url" : "DritteStelle",
+          "valueCoding" : {
+            "system" : "http://fhir.de/CodeSystem/dkgev/EntlassungsgrundDritteStelle",
+            "code" : "1",
+            "display" : "arbeitsfähig entlassen"
+          }
+        }],
+        "url" : "http://fhir.de/StructureDefinition/Entlassungsgrund"
+      }]
+    }
+  },
+  "location" : [{
+    "location" : {
+      "identifier" : {
+        "system" : "https://test.krankenhaus.de/fhir/sid/locationid",
+        "value" : "123"
+      },
+      "display" : "Bettenstellplatz 123"
+    },
+    "status" : "active",
+    "physicalType" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code" : "bd",
+        "display" : "Bed"
+      }]
+    }
+  }],
+  "serviceProvider" : {
+    "identifier" : {
+      "system" : "https://test.krankenhaus.de/fhir/sid/fachabteilungsid",
+      "value" : "XYZ"
+    },
+    "display" : "Fachabteilung XYZ"
+  }
+}

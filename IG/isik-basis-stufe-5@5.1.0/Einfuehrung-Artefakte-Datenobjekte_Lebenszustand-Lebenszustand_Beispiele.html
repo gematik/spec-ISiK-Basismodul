@@ -1,0 +1,1658 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Kontext und Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Kontext und Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Erlaeuterung-Akteurs-und-Rollenmodell.html">
+                                            Akteurs- und Rollenmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_UmgangFehlendeDaten.html">
+                                            Umgang mit fehlenden Daten
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungverhaeltnis-sonstige-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis sonstige (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_BerichtBundle.html">
+                                            Bericht aus Subsystemen (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="beispiele">Beispiele</h2>
+<h3 id="schwangerschaftsstatus">Schwangerschaftsstatus</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#ddab5c91-4742-4324-8683-1b154222881f" aria-controls="ddab5c91-4742-4324-8683-1b154222881f" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#f225fe91-e2f5-4314-ad42-9be79212f053" aria-controls="f225fe91-e2f5-4314-ad42-9be79212f053" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#c5d257d2-d017-454f-ab3e-8bb41c8d1dc5" aria-controls="c5d257d2-d017-454f-ab3e-8bb41c8d1dc5" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#937231ff-a6b5-44a2-94a4-b941d8abe8b7" aria-controls="937231ff-a6b5-44a2-94a4-b941d8abe8b7" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="ddab5c91-4742-4324-8683-1b154222881f">
+    <div class="stu3-treetable" id="de389ffa2c894bdf86dd4908eb10f3b5" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="b583de0dcf2c4cc3af9e8918740d3120"><td class="instance"><span class="baseIcon primitive"></span><b>Observation</b></td></tr><tr class="collapsed" data-id="d641a750b528496fa24a257f2189d0d4" data-parentId="b583de0dcf2c4cc3af9e8918740d3120"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ISiKSchwangerschaftsstatusBeispiel</span></td></tr><tr class="collapsed" data-id="f500b905a523489ea4dee43b31d9d327" data-parentId="b583de0dcf2c4cc3af9e8918740d3120"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="0402ce38482c4596b6817226d66e6584" data-parentId="f500b905a523489ea4dee43b31d9d327"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus</span></td></tr><tr class="collapsed" data-id="b05b2c8fb1b84d1daf78e8d29638f2ed" data-parentId="b583de0dcf2c4cc3af9e8918740d3120"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="ba8cefb57e934b3b89a486145583c543" data-parentId="b583de0dcf2c4cc3af9e8918740d3120"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="da376d1c40174bdcbb36db97af454e5e" data-parentId="ba8cefb57e934b3b89a486145583c543"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="39def1044707412398d7c3a1b0852410" data-parentId="da376d1c40174bdcbb36db97af454e5e"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="5dc913c9bc5b4a788148093cc3d1d56d" data-parentId="da376d1c40174bdcbb36db97af454e5e"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>2.77</span></td></tr><tr class="collapsed" data-id="e2f395646e154e4ebb42ed71eb3b9f35" data-parentId="da376d1c40174bdcbb36db97af454e5e"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>82810-3</span></td></tr><tr class="collapsed" data-id="7d6bd2b447e14c64911c203952b9756d" data-parentId="da376d1c40174bdcbb36db97af454e5e"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Pregnancy status</span></td></tr><tr class="collapsed" data-id="c4ea78a97aa94f8c9fe283c2bb4ea120" data-parentId="b583de0dcf2c4cc3af9e8918740d3120"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="05a43c9e572e443996cb2e2dcfdeedb1" data-parentId="c4ea78a97aa94f8c9fe283c2bb4ea120"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="0ebb9ad95b474a95afaa480c05ca0615" data-parentId="b583de0dcf2c4cc3af9e8918740d3120"><td class="instance"><span class="baseIcon primitive"></span><b>encounter</b></td></tr><tr class="collapsed" data-id="fe18b22518f94efb9a5dbd4336c1f24c" data-parentId="0ebb9ad95b474a95afaa480c05ca0615"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Encounter/Fachabteilungskontakt</span></td></tr><tr class="collapsed" data-id="36534e6d49c84f1daa33d0baf1531a2b" data-parentId="b583de0dcf2c4cc3af9e8918740d3120"><td class="instance"><span class="baseIcon primitive"></span><b>effective : </b><span>2024-01-01</span></td></tr><tr class="collapsed" data-id="45d5f85fde144f49ad8fb3789f6713eb" data-parentId="b583de0dcf2c4cc3af9e8918740d3120"><td class="instance"><span class="baseIcon primitive"></span><b>performer</b></td></tr><tr class="collapsed" data-id="64b12e2202dc40e7851f238447219435" data-parentId="45d5f85fde144f49ad8fb3789f6713eb"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Practitioner/PractitionerWalterArzt</span></td></tr><tr class="collapsed" data-id="422fa86b40b54be098f4eb0e2b61326c" data-parentId="b583de0dcf2c4cc3af9e8918740d3120"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="51595b37af13455cb8ed3ab35eec0179" data-parentId="422fa86b40b54be098f4eb0e2b61326c"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="5152eef2a3b3421c9daa57b0906404af" data-parentId="51595b37af13455cb8ed3ab35eec0179"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="c66d05920c4948c9a563521be4c8dbf3" data-parentId="51595b37af13455cb8ed3ab35eec0179"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>2.77</span></td></tr><tr class="collapsed" data-id="d2e13744b62d4234a8b17a304ee97adb" data-parentId="51595b37af13455cb8ed3ab35eec0179"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>LA15173-0</span></td></tr><tr class="collapsed" data-id="5c2354e951b2418abe386ddb4f7b7e9d" data-parentId="51595b37af13455cb8ed3ab35eec0179"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Pregnant</span></td></tr><tr class="collapsed" data-id="42743696ed1f470cabad0f2a364a065a" data-parentId="b583de0dcf2c4cc3af9e8918740d3120"><td class="instance"><span class="baseIcon primitive"></span><b>hasMember</b></td></tr><tr class="collapsed" data-id="099e8ef8b57143eda26a48d5a6083bb9" data-parentId="42743696ed1f470cabad0f2a364a065a"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Observation/ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTablede389ffa2c894bdf86dd4908eb10f3b5 = new InstanceTree();
+resourceTreeTablede389ffa2c894bdf86dd4908eb10f3b5.init("de389ffa2c894bdf86dd4908eb10f3b5");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="f225fe91-e2f5-4314-ad42-9be79212f053">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">Observation</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.id" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKSchwangerschaftsstatusBeispiel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.meta" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.meta.profile" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.status" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.code" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.code.coding" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.code.coding.system" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.code.coding.version" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2.77</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.code.coding.code" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">82810-3</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.code.coding.display" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Pregnancy status</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.subject" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.subject.reference" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.encounter" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">encounter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.encounter.reference" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">encounter</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.effective" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">effectiveDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-01-01</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.performer" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">performer</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.performer.reference" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Practitioner/PractitionerWalterArzt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">performer</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.value" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">valueCodeableConcept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.value.coding" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.value.coding.system" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.value.coding.version" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2.77</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.value.coding.code" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">LA15173-0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.value.coding.display" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Pregnant</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCodeableConcept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.hasMember" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">hasMember</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.hasMember.reference" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Observation/ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">hasMember</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Observation</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="c5d257d2-d017-454f-ab3e-8bb41c8d1dc5">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.resourceType" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.id" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKSchwangerschaftsstatusBeispiel</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.meta" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.meta.profile" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.code" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.code.coding" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.code.coding.code" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">82810-3</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.code.coding.system" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.code.coding.display" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Pregnancy status</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.code.coding.version" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2.77</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.status" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.subject" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.subject.reference" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.effectiveDateTime" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">effectiveDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-01-01</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.valueCodeableConcept" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">valueCodeableConcept</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.valueCodeableConcept.coding" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.valueCodeableConcept.coding.code" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">LA15173-0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.valueCodeableConcept.coding.system" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.valueCodeableConcept.coding.display" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Pregnant</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.valueCodeableConcept.coding.version" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2.77</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.hasMember" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">hasMember</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.hasMember.reference" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation/ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.encounter" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">encounter</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.encounter.reference" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.performer" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">performer</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftsstatus.json#Observation.performer.reference" title="ISiK Schwangerschaftsstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftsstatus.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Practitioner/PractitionerWalterArzt</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="937231ff-a6b5-44a2-94a4-b941d8abe8b7">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Observation-ISiKSchwangerschaftsstatusBeispiel.json'>Pregnancy status</a>
+</div>
+  </div>
+</div>
+<h3 id="erwarteter-entbindungstermin">Erwarteter Entbindungstermin</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#461d7e3d-0355-45b2-89cb-eb9c8d2dae81" aria-controls="461d7e3d-0355-45b2-89cb-eb9c8d2dae81" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#a735ab67-3a8a-47f1-9a53-24b7c275dc61" aria-controls="a735ab67-3a8a-47f1-9a53-24b7c275dc61" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#b66aacc0-617c-4cd2-bb46-0a9dae803ea3" aria-controls="b66aacc0-617c-4cd2-bb46-0a9dae803ea3" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#90a98f9e-9504-4fc6-a836-b498665cb652" aria-controls="90a98f9e-9504-4fc6-a836-b498665cb652" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="461d7e3d-0355-45b2-89cb-eb9c8d2dae81">
+    <div class="stu3-treetable" id="528624d120664517b45a78af9051fcd8" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="938dcb10135d4ebcb3e423066c7c122a"><td class="instance"><span class="baseIcon primitive"></span><b>Observation</b></td></tr><tr class="collapsed" data-id="352ca603abb04d73b8fd7d4625121594" data-parentId="938dcb10135d4ebcb3e423066c7c122a"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel</span></td></tr><tr class="collapsed" data-id="cee3977a20cf4dd2a019e00c2cb9a573" data-parentId="938dcb10135d4ebcb3e423066c7c122a"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="b6273aefb9704d8ebde4842da5b9d899" data-parentId="cee3977a20cf4dd2a019e00c2cb9a573"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin</span></td></tr><tr class="collapsed" data-id="8f2ebfe09a2f4b828e0de430bc07f73c" data-parentId="938dcb10135d4ebcb3e423066c7c122a"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="3a675cb0614f408c86e5cbbde28a5c87" data-parentId="938dcb10135d4ebcb3e423066c7c122a"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="5c34edb08ab64f3c9b45040e88524356" data-parentId="3a675cb0614f408c86e5cbbde28a5c87"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="e8f310e646b943b5b3f6a7d170be4d59" data-parentId="5c34edb08ab64f3c9b45040e88524356"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="52b4e083f60845419836f18f92e82a3e" data-parentId="5c34edb08ab64f3c9b45040e88524356"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>2.77</span></td></tr><tr class="collapsed" data-id="ef4f4313a3974f86b83331d97929486c" data-parentId="5c34edb08ab64f3c9b45040e88524356"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>11779-6</span></td></tr><tr class="collapsed" data-id="8ff0e0ca82944408b721470235d35335" data-parentId="5c34edb08ab64f3c9b45040e88524356"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Delivery date Estimated from last menstrual period</span></td></tr><tr class="collapsed" data-id="8a0a7c248b434c34b50e100f7cbf8b5e" data-parentId="938dcb10135d4ebcb3e423066c7c122a"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="27bdad2e2b584c519c99544e64bec91b" data-parentId="8a0a7c248b434c34b50e100f7cbf8b5e"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="b6a2cd466fc345d3a5edf2ed43599b0f" data-parentId="938dcb10135d4ebcb3e423066c7c122a"><td class="instance"><span class="baseIcon primitive"></span><b>encounter</b></td></tr><tr class="collapsed" data-id="3668eb33afac4db8b35950af212cd57e" data-parentId="b6a2cd466fc345d3a5edf2ed43599b0f"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Encounter/Fachabteilungskontakt</span></td></tr><tr class="collapsed" data-id="a32d1cf916b543979b7e4fa8e436dff7" data-parentId="938dcb10135d4ebcb3e423066c7c122a"><td class="instance"><span class="baseIcon primitive"></span><b>effective : </b><span>2024-01-01</span></td></tr><tr class="collapsed" data-id="39603e1a4a804ad1935e04a801492c3c" data-parentId="938dcb10135d4ebcb3e423066c7c122a"><td class="instance"><span class="baseIcon primitive"></span><b>performer</b></td></tr><tr class="collapsed" data-id="17c49c5ed83a4343b72ad91f108990d4" data-parentId="39603e1a4a804ad1935e04a801492c3c"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Practitioner/PractitionerWalterArzt</span></td></tr><tr class="collapsed" data-id="8c361ba0983248a2ad9af45a9199ef47" data-parentId="938dcb10135d4ebcb3e423066c7c122a"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>2024-08-01</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable528624d120664517b45a78af9051fcd8 = new InstanceTree();
+resourceTreeTable528624d120664517b45a78af9051fcd8.init("528624d120664517b45a78af9051fcd8");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="a735ab67-3a8a-47f1-9a53-24b7c275dc61">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">Observation</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.id" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.meta" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.meta.profile" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.status" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.code" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.code.coding" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.code.coding.system" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.code.coding.version" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2.77</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.code.coding.code" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">11779-6</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.code.coding.display" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Delivery date Estimated from last menstrual period</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.subject" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.subject.reference" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.encounter" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">encounter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.encounter.reference" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">encounter</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.effective" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">effectiveDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-01-01</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.performer" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">performer</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.performer.reference" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Practitioner/PractitionerWalterArzt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">performer</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.value" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">valueDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-08-01</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Observation</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="b66aacc0-617c-4cd2-bb46-0a9dae803ea3">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.resourceType" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.id" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.meta" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.meta.profile" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.code" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.code.coding" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.code.coding.system" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.code.coding.code" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">11779-6</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.code.coding.display" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Delivery date Estimated from last menstrual period</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.code.coding.version" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2.77</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.status" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.subject" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.subject.reference" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.effectiveDateTime" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">effectiveDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-01-01</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.valueDateTime" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">valueDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-08-01</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.encounter" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">encounter</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.encounter.reference" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.performer" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">performer</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json#Observation.performer.reference" title="ISiK Schwangerschaft - Erwarteter Entbindungstermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Practitioner/PractitionerWalterArzt</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="90a98f9e-9504-4fc6-a836-b498665cb652">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Observation-ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel.json'>Delivery date Estimated from last menstrual period</a>
+</div>
+  </div>
+</div>
+<h3 id="alkoholabusus">Alkoholabusus</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#360e653b-dd44-4331-99f8-7105bf48cb27" aria-controls="360e653b-dd44-4331-99f8-7105bf48cb27" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#54b13982-f4fc-449a-a084-73832bb98bab" aria-controls="54b13982-f4fc-449a-a084-73832bb98bab" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#a7af4312-323a-4b71-9313-7a2c88694723" aria-controls="a7af4312-323a-4b71-9313-7a2c88694723" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#45fa1d32-537b-41c2-bc49-783033327ddb" aria-controls="45fa1d32-537b-41c2-bc49-783033327ddb" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="360e653b-dd44-4331-99f8-7105bf48cb27">
+    <div class="stu3-treetable" id="5a7246bc888b4635b0feee536ba473d9" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="80b2eb2a5a61471dacea63d3848dbfc9"><td class="instance"><span class="baseIcon primitive"></span><b>Observation</b></td></tr><tr class="collapsed" data-id="71fb14311eff4f2e8d39051a9711db1f" data-parentId="80b2eb2a5a61471dacea63d3848dbfc9"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ISiKAlkoholAbususBeispiel</span></td></tr><tr class="collapsed" data-id="b15fb6d03f9549f8a7bf60ad386e4b05" data-parentId="80b2eb2a5a61471dacea63d3848dbfc9"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="31638ec2ea6c4bf8beba78aab24663dd" data-parentId="b15fb6d03f9549f8a7bf60ad386e4b05"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus</span></td></tr><tr class="collapsed" data-id="4943bb451d2548f08b146b947eea4220" data-parentId="80b2eb2a5a61471dacea63d3848dbfc9"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="20dbe74619fc47568440f8e2c6061aa0" data-parentId="80b2eb2a5a61471dacea63d3848dbfc9"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="ad40535e80664465bcf7160381006831" data-parentId="20dbe74619fc47568440f8e2c6061aa0"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="e4bcf73c56f440e4bf5a50f1dccca502" data-parentId="ad40535e80664465bcf7160381006831"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="67f2ad26a08e4535974ed8af9dc71a37" data-parentId="ad40535e80664465bcf7160381006831"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>http://snomed.info/sct/11000274103/version/20231115</span></td></tr><tr class="collapsed" data-id="d1b3a3fc9d1645a6ba62769d21b0543f" data-parentId="ad40535e80664465bcf7160381006831"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>15167005</span></td></tr><tr class="collapsed" data-id="4aee221c7ea74efe89c9c794a3214977" data-parentId="ad40535e80664465bcf7160381006831"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Sch&#228;dlicher Gebrauch von Alkohol</span></td></tr><tr class="collapsed" data-id="8325b43dd60d4ec193100309eadff27b" data-parentId="20dbe74619fc47568440f8e2c6061aa0"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="ce399e15ca6143ec91655dde53d82e2b" data-parentId="8325b43dd60d4ec193100309eadff27b"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="0dff584982364a89a3b716255e78889e" data-parentId="8325b43dd60d4ec193100309eadff27b"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>2.77</span></td></tr><tr class="collapsed" data-id="136f48b685304db7b98f44f50bbf9a3f" data-parentId="8325b43dd60d4ec193100309eadff27b"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>74043-1</span></td></tr><tr class="collapsed" data-id="c0f562466ba54ca187e0e46d44efd72b" data-parentId="8325b43dd60d4ec193100309eadff27b"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Alcohol use disorder</span></td></tr><tr class="collapsed" data-id="4945f240995849f68f30af08b14500fe" data-parentId="80b2eb2a5a61471dacea63d3848dbfc9"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="71f23a1e909d436d8b5c64666e51f590" data-parentId="4945f240995849f68f30af08b14500fe"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="e209a6a94b144b7f815001f2bf5e2e62" data-parentId="80b2eb2a5a61471dacea63d3848dbfc9"><td class="instance"><span class="baseIcon primitive"></span><b>encounter</b></td></tr><tr class="collapsed" data-id="55e3112c2c424ae58f51b2eaa7312c6e" data-parentId="e209a6a94b144b7f815001f2bf5e2e62"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Encounter/Fachabteilungskontakt</span></td></tr><tr class="collapsed" data-id="22e7b49cb23d416e99656013d9705cee" data-parentId="80b2eb2a5a61471dacea63d3848dbfc9"><td class="instance"><span class="baseIcon primitive"></span><b>effective : </b><span>2024-01-01</span></td></tr><tr class="collapsed" data-id="28fa75a1da9a4046a04919c6471dd449" data-parentId="80b2eb2a5a61471dacea63d3848dbfc9"><td class="instance"><span class="baseIcon primitive"></span><b>performer</b></td></tr><tr class="collapsed" data-id="7d117f1244584267968017b1d203de25" data-parentId="28fa75a1da9a4046a04919c6471dd449"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Practitioner/PractitionerWalterArzt</span></td></tr><tr class="collapsed" data-id="580067ab10654c449093b2008a76f025" data-parentId="80b2eb2a5a61471dacea63d3848dbfc9"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="e7c22f5cee784b2c87e71a1d99f36b5a" data-parentId="580067ab10654c449093b2008a76f025"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="3c72ee3f8fa842ada5059a433ba28d80" data-parentId="e7c22f5cee784b2c87e71a1d99f36b5a"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/v2-0532</span></td></tr><tr class="collapsed" data-id="f9709c1221ab48179660ff3bf262cbbb" data-parentId="e7c22f5cee784b2c87e71a1d99f36b5a"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>Y</span></td></tr><tr class="collapsed" data-id="1a44cc9dbb924f4cbd8dd1b0155d0c67" data-parentId="e7c22f5cee784b2c87e71a1d99f36b5a"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Yes</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable5a7246bc888b4635b0feee536ba473d9 = new InstanceTree();
+resourceTreeTable5a7246bc888b4635b0feee536ba473d9.init("5a7246bc888b4635b0feee536ba473d9");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="54b13982-f4fc-449a-a084-73832bb98bab">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">Observation</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.id" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKAlkoholAbususBeispiel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.meta" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.meta.profile" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.status" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.system" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.version" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct/11000274103/version/20231115</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.code" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">15167005</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.display" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Sch&#228;dlicher Gebrauch von Alkohol</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.system" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.version" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2.77</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.code" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">74043-1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.display" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Alcohol use disorder</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.subject" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.subject.reference" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.encounter" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">encounter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.encounter.reference" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">encounter</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.effective" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">effectiveDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-01-01</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.performer" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">performer</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.performer.reference" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Practitioner/PractitionerWalterArzt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">performer</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.value" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">valueCodeableConcept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.value.coding" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.value.coding.system" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0532</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.value.coding.code" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Y</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.value.coding.display" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Yes</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCodeableConcept</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Observation</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="a7af4312-323a-4b71-9313-7a2c88694723">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.resourceType" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.id" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKAlkoholAbususBeispiel</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.meta" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.meta.profile" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.code" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">15167005</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.system" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.display" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Sch&#228;dlicher Gebrauch von Alkohol</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.version" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct/11000274103/version/20231115</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.system" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.code" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">74043-1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.display" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Alcohol use disorder</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.code.coding.version" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2.77</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.performer" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">performer</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.performer.reference" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Practitioner/PractitionerWalterArzt</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.status" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.subject" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.subject.reference" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.effectiveDateTime" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">effectiveDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-01-01</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.valueCodeableConcept" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">valueCodeableConcept</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.valueCodeableConcept.coding" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.valueCodeableConcept.coding.code" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Y</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.valueCodeableConcept.coding.system" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0532</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.valueCodeableConcept.coding.display" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Yes</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.encounter" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">encounter</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKAlkoholAbusus.json#Observation.encounter.reference" title="ISiK Alkohol Abusus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKAlkoholAbusus.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="45fa1d32-537b-41c2-bc49-783033327ddb">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Observation-ISiKAlkoholAbususBeispiel.json'>Schädlicher Gebrauch von Alkohol</a>
+</div>
+  </div>
+</div>
+<h3 id="raucherstatus">Raucherstatus</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#8e2dbbde-47d6-4ff2-8cdd-48a18969b40f" aria-controls="8e2dbbde-47d6-4ff2-8cdd-48a18969b40f" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#0e76e832-4529-4cc9-b885-204d215364f1" aria-controls="0e76e832-4529-4cc9-b885-204d215364f1" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#d4a5fad7-fd6c-448e-a8ea-671de6451aa4" aria-controls="d4a5fad7-fd6c-448e-a8ea-671de6451aa4" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#3ce63648-5129-4af9-8451-5c63be184dc9" aria-controls="3ce63648-5129-4af9-8451-5c63be184dc9" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="8e2dbbde-47d6-4ff2-8cdd-48a18969b40f">
+    <div class="stu3-treetable" id="ab7eb84d351444c58680b89e3d37c0ce" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="c2c81725764a4958982d05012a2c449b"><td class="instance"><span class="baseIcon primitive"></span><b>Observation</b></td></tr><tr class="collapsed" data-id="a86fd4033cab42db93ad56444814e4cd" data-parentId="c2c81725764a4958982d05012a2c449b"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ISiKRaucherStatusBeispiel</span></td></tr><tr class="collapsed" data-id="b173c040946147d9b3bdc473087a229d" data-parentId="c2c81725764a4958982d05012a2c449b"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="8e24be99bcd84c5e95b6437233b5c897" data-parentId="b173c040946147d9b3bdc473087a229d"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus</span></td></tr><tr class="collapsed" data-id="8b5d131939db417e90d542f607e4e0dd" data-parentId="c2c81725764a4958982d05012a2c449b"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="0172e1a05b5341b7bc536f63aba86463" data-parentId="c2c81725764a4958982d05012a2c449b"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="56ad78ba71fd4670b0fe760c72eee32c" data-parentId="0172e1a05b5341b7bc536f63aba86463"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="d1d52c63117546e59380129fa6330629" data-parentId="56ad78ba71fd4670b0fe760c72eee32c"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="0a2d19894384493f9e20bfbdf6d3de37" data-parentId="56ad78ba71fd4670b0fe760c72eee32c"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>http://snomed.info/sct/11000274103/version/20231115</span></td></tr><tr class="collapsed" data-id="0308fc81d41c47b281f93457ee4dc3e6" data-parentId="56ad78ba71fd4670b0fe760c72eee32c"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>77176002</span></td></tr><tr class="collapsed" data-id="3021100338e94534bd1c962c18d7e237" data-parentId="56ad78ba71fd4670b0fe760c72eee32c"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Smoker</span></td></tr><tr class="collapsed" data-id="4e94947503e54fd4b55ab69a5ab8f0cf" data-parentId="0172e1a05b5341b7bc536f63aba86463"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="f1a412cc316e4c2594ae0d6efeca57e8" data-parentId="4e94947503e54fd4b55ab69a5ab8f0cf"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="a1a273e191414c58bf086e0a83fb6d41" data-parentId="4e94947503e54fd4b55ab69a5ab8f0cf"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>2.77</span></td></tr><tr class="collapsed" data-id="5b5f5734b06f4bc1ad686b620b88c6f0" data-parentId="4e94947503e54fd4b55ab69a5ab8f0cf"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>72166-2</span></td></tr><tr class="collapsed" data-id="2d40bb6f29b248a4a125d881fa4d4746" data-parentId="4e94947503e54fd4b55ab69a5ab8f0cf"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Tobacco smoking status</span></td></tr><tr class="collapsed" data-id="06121eeb690d447d8c1adb9e10757d86" data-parentId="c2c81725764a4958982d05012a2c449b"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="bc835e1ae8c74e66980601eff15d31f0" data-parentId="06121eeb690d447d8c1adb9e10757d86"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="ccf83dc7674b4683a2a17b86e0d1877a" data-parentId="c2c81725764a4958982d05012a2c449b"><td class="instance"><span class="baseIcon primitive"></span><b>encounter</b></td></tr><tr class="collapsed" data-id="56bdd56ea3ad419eb9bb981d1fd0f164" data-parentId="ccf83dc7674b4683a2a17b86e0d1877a"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Encounter/Fachabteilungskontakt</span></td></tr><tr class="collapsed" data-id="26abdffad42b4935804abaa5339657fb" data-parentId="c2c81725764a4958982d05012a2c449b"><td class="instance"><span class="baseIcon primitive"></span><b>effective : </b><span>2024-01-01</span></td></tr><tr class="collapsed" data-id="82620b97e8364d128b3b65188b1c9cf7" data-parentId="c2c81725764a4958982d05012a2c449b"><td class="instance"><span class="baseIcon primitive"></span><b>performer</b></td></tr><tr class="collapsed" data-id="10e0de825d1842b0940adaa46ab1b48b" data-parentId="82620b97e8364d128b3b65188b1c9cf7"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Practitioner/PractitionerWalterArzt</span></td></tr><tr class="collapsed" data-id="d21ae4a21eda4b63adea0711ac6fd22d" data-parentId="c2c81725764a4958982d05012a2c449b"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="9b4eede6ebc540c29b955f4fc39d0cbf" data-parentId="d21ae4a21eda4b63adea0711ac6fd22d"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="cc604c18a6f94180bf2b09f3630aa169" data-parentId="9b4eede6ebc540c29b955f4fc39d0cbf"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="c4ffa7cce1114f14a2f51e4c0ac64a34" data-parentId="9b4eede6ebc540c29b955f4fc39d0cbf"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>2.77</span></td></tr><tr class="collapsed" data-id="e6cc2de0baab4c82a564b768853e513d" data-parentId="9b4eede6ebc540c29b955f4fc39d0cbf"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>LA15920-4</span></td></tr><tr class="collapsed" data-id="76a9c8e914e448cea13c5c12a1f3b1de" data-parentId="9b4eede6ebc540c29b955f4fc39d0cbf"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Former smoker</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTableab7eb84d351444c58680b89e3d37c0ce = new InstanceTree();
+resourceTreeTableab7eb84d351444c58680b89e3d37c0ce.init("ab7eb84d351444c58680b89e3d37c0ce");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="0e76e832-4529-4cc9-b885-204d215364f1">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">Observation</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.id" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKRaucherStatusBeispiel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.meta" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.meta.profile" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.status" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.system" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.version" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct/11000274103/version/20231115</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.code" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">77176002</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.display" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Smoker</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.system" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.version" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2.77</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.code" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">72166-2</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.display" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Tobacco smoking status</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.subject" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.subject.reference" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.encounter" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">encounter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.encounter.reference" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">encounter</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.effective" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">effectiveDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-01-01</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.performer" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">performer</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.performer.reference" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Practitioner/PractitionerWalterArzt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">performer</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.value" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">valueCodeableConcept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.value.coding" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.value.coding.system" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.value.coding.version" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2.77</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.value.coding.code" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">LA15920-4</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.value.coding.display" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Former smoker</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCodeableConcept</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Observation</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="d4a5fad7-fd6c-448e-a8ea-671de6451aa4">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.resourceType" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.id" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKRaucherStatusBeispiel</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.meta" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.meta.profile" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.code" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">77176002</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.system" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.display" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Smoker</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.version" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct/11000274103/version/20231115</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.system" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.code" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">72166-2</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.display" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Tobacco smoking status</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.code.coding.version" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2.77</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.performer" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">performer</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.performer.reference" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Practitioner/PractitionerWalterArzt</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.status" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.subject" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.subject.reference" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.effectiveDateTime" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">effectiveDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-01-01</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.valueCodeableConcept" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">valueCodeableConcept</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.valueCodeableConcept.coding" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.valueCodeableConcept.coding.code" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">LA15920-4</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.valueCodeableConcept.coding.system" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.valueCodeableConcept.coding.display" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Former smoker</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.valueCodeableConcept.coding.version" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2.77</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.encounter" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">encounter</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKRaucherStatus.json#Observation.encounter.reference" title="ISiK Raucherstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKRaucherStatus.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="3ce63648-5129-4af9-8451-5c63be184dc9">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Observation-ISiKRaucherStatusBeispiel.json'>Smoker</a>
+</div>
+  </div>
+</div>
+<h3 id="stillstatus">Stillstatus</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#e1d90169-df91-475d-a401-d21742076b30" aria-controls="e1d90169-df91-475d-a401-d21742076b30" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#ea31c222-3f0c-43e3-b4dc-b63dc12f2a13" aria-controls="ea31c222-3f0c-43e3-b4dc-b63dc12f2a13" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#740eeb34-6d2c-4f92-be28-56499ceac1bc" aria-controls="740eeb34-6d2c-4f92-be28-56499ceac1bc" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#57a4fc09-0be6-46db-8559-05731ddc6771" aria-controls="57a4fc09-0be6-46db-8559-05731ddc6771" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="e1d90169-df91-475d-a401-d21742076b30">
+    <div class="stu3-treetable" id="88d63e73ccb24bbb971c98470164329b" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="3506ca6201224f538184770ea5e41681"><td class="instance"><span class="baseIcon primitive"></span><b>Observation</b></td></tr><tr class="collapsed" data-id="aa992479e9364c8194afb77db5400f33" data-parentId="3506ca6201224f538184770ea5e41681"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ISiKStillstatusBeispiel</span></td></tr><tr class="collapsed" data-id="e2401909e8a9489fba042397e7577326" data-parentId="3506ca6201224f538184770ea5e41681"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="b93e2a2c4ae643a5a7e808982595e59b" data-parentId="e2401909e8a9489fba042397e7577326"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus</span></td></tr><tr class="collapsed" data-id="7e7cf5ab62854f02bc7682ade54c2ac1" data-parentId="3506ca6201224f538184770ea5e41681"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="5461853fd6914d9195787edbee614d94" data-parentId="3506ca6201224f538184770ea5e41681"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="7152d4a243454d7fa247d05bc4411f4c" data-parentId="5461853fd6914d9195787edbee614d94"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="71ea7cac37a243adbef049a0e4511bf7" data-parentId="7152d4a243454d7fa247d05bc4411f4c"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="be425df843ba4d1695b5e0c2e3f8b486" data-parentId="7152d4a243454d7fa247d05bc4411f4c"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>http://snomed.info/sct/11000274103/version/20231115</span></td></tr><tr class="collapsed" data-id="40a59f8afd8a4bff806898ef51dba1fc" data-parentId="7152d4a243454d7fa247d05bc4411f4c"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>413712001</span></td></tr><tr class="collapsed" data-id="2566e0cb601448f0a595f797098fc8f0" data-parentId="7152d4a243454d7fa247d05bc4411f4c"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Breastfeeding (mother)</span></td></tr><tr class="collapsed" data-id="a000b2bff9b24cd1adec57b375c0609d" data-parentId="5461853fd6914d9195787edbee614d94"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="479c680f00c54c03bb610ada2161c5cc" data-parentId="a000b2bff9b24cd1adec57b375c0609d"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="cfd84f7be7ed44eaaaa139c8c58786ab" data-parentId="a000b2bff9b24cd1adec57b375c0609d"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>2.77</span></td></tr><tr class="collapsed" data-id="f7a8570254204158b70e1efe3a49b192" data-parentId="a000b2bff9b24cd1adec57b375c0609d"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>63895-7</span></td></tr><tr class="collapsed" data-id="2f8dfadcc2524da0b36b2d3b264f3102" data-parentId="a000b2bff9b24cd1adec57b375c0609d"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Breastfeeding status</span></td></tr><tr class="collapsed" data-id="3036ef9e8124485897e5596ded2163ca" data-parentId="3506ca6201224f538184770ea5e41681"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="5c8cebf065404db0b4f13ba2a8d7529c" data-parentId="3036ef9e8124485897e5596ded2163ca"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="96c79c8fbac64a0b9512a7fa852fa7bb" data-parentId="3506ca6201224f538184770ea5e41681"><td class="instance"><span class="baseIcon primitive"></span><b>encounter</b></td></tr><tr class="collapsed" data-id="86615ed5e823417f9d346bbbbc1b66a7" data-parentId="96c79c8fbac64a0b9512a7fa852fa7bb"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Encounter/Fachabteilungskontakt</span></td></tr><tr class="collapsed" data-id="b18cc77a2b184cc8a3b66f6eddc07b93" data-parentId="3506ca6201224f538184770ea5e41681"><td class="instance"><span class="baseIcon primitive"></span><b>effective : </b><span>2024-01-01</span></td></tr><tr class="collapsed" data-id="8f00d1454bda4fb78eff0483ceb5cb7a" data-parentId="3506ca6201224f538184770ea5e41681"><td class="instance"><span class="baseIcon primitive"></span><b>performer</b></td></tr><tr class="collapsed" data-id="0516501b33f04db7bc914db3c912dbff" data-parentId="8f00d1454bda4fb78eff0483ceb5cb7a"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Practitioner/PractitionerWalterArzt</span></td></tr><tr class="collapsed" data-id="f84204b6a93446fcb90e3587ee9f272e" data-parentId="3506ca6201224f538184770ea5e41681"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="3c5f0653b2514fee98ff537448e1c20b" data-parentId="f84204b6a93446fcb90e3587ee9f272e"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="7d7514694e4540be8e88253576c1928e" data-parentId="3c5f0653b2514fee98ff537448e1c20b"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="2fff6c5c14e146c3b52dbe49ff748555" data-parentId="3c5f0653b2514fee98ff537448e1c20b"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>LA29252-6</span></td></tr><tr class="collapsed" data-id="0d47162ec221465f99f07a70b705e04f" data-parentId="3c5f0653b2514fee98ff537448e1c20b"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Currently breastfeeding</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable88d63e73ccb24bbb971c98470164329b = new InstanceTree();
+resourceTreeTable88d63e73ccb24bbb971c98470164329b.init("88d63e73ccb24bbb971c98470164329b");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="ea31c222-3f0c-43e3-b4dc-b63dc12f2a13">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">Observation</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.id" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKStillstatusBeispiel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.meta" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.meta.profile" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.status" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.system" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.version" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct/11000274103/version/20231115</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.code" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">413712001</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.display" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Breastfeeding (mother)</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.system" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.version" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2.77</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.code" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">63895-7</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.display" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Breastfeeding status</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.subject" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.subject.reference" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.encounter" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">encounter</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.encounter.reference" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">encounter</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.effective" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">effectiveDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-01-01</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.performer" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">performer</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.performer.reference" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Practitioner/PractitionerWalterArzt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">performer</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.value" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">valueCodeableConcept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.value.coding" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.value.coding.system" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.value.coding.code" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">LA29252-6</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.value.coding.display" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Currently breastfeeding</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCodeableConcept</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Observation</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="740eeb34-6d2c-4f92-be28-56499ceac1bc">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.resourceType" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.id" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKStillstatusBeispiel</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.meta" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.meta.profile" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.code" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">413712001</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.system" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.display" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Breastfeeding (mother)</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.version" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct/11000274103/version/20231115</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.system" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.code" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">63895-7</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.display" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Breastfeeding status</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.code.coding.version" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2.77</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.performer" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">performer</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.performer.reference" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Practitioner/PractitionerWalterArzt</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.status" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.subject" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.subject.reference" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.effectiveDateTime" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">effectiveDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-01-01</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.valueCodeableConcept" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">valueCodeableConcept</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.valueCodeableConcept.coding" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.valueCodeableConcept.coding.code" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">LA29252-6</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.valueCodeableConcept.coding.system" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.valueCodeableConcept.coding.display" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Currently breastfeeding</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.encounter" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">encounter</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKStillstatus.json#Observation.encounter.reference" title="ISiKStillstatus
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKStillstatus.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="57a4fc09-0be6-46db-8559-05731ddc6771">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Observation-ISiKStillstatusBeispiel.json'>Breastfeeding (mother)</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

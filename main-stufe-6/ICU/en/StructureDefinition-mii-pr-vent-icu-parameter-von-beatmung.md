@@ -1,0 +1,370 @@
+# MII PR ICU Parameter von Beatmung - ISiK ICU v6.0.0
+
+ISiK ICU
+
+Version 6.0.0 - active 
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII PR ICU Parameter von Beatmung**
+
+## Resource Profile: MII PR ICU Parameter von Beatmung 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/mii-pr-vent-icu-parameter-von-beatmung | *Version*:6.0.0 |
+| Active as of 2026-07-01 | *Computable Name*:MII_PR_ICU_Parameter_Von_Beatmung |
+
+ 
+Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026 
+
+**Usages:**
+
+* Derived from this Profile: [MII PR ICU Spontane Atemfrequenz Beatmet](StructureDefinition-mii-pr-icu-vent-spontane-atemfrequenz-beatmet.md), [MII PR ICU Spontanes Atemzugvolumen](StructureDefinition-mii-pr-icu-vent-spontanes-atemzugvolumen.md) and [MII PR ICU Unterstuezungsdruck Beatmung](StructureDefinition-mii-pr-icu-vent-unterstuezungsdruck-beatmung.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/icu|current/StructureDefinition/StructureDefinition-mii-pr-vent-icu-parameter-von-beatmung.json)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots, and their representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](../StructureDefinition-mii-pr-vent-icu-parameter-von-beatmung.csv), [Excel](../StructureDefinition-mii-pr-vent-icu-parameter-von-beatmung.xlsx), [Schematron](../StructureDefinition-mii-pr-vent-icu-parameter-von-beatmung.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "mii-pr-vent-icu-parameter-von-beatmung",
+  "url" : "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-vent-icu-parameter-von-beatmung",
+  "version" : "6.0.0",
+  "name" : "MII_PR_ICU_Parameter_Von_Beatmung",
+  "title" : "MII PR ICU Parameter von Beatmung",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-07-01",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.gematik.de"
+    }]
+  }],
+  "description" : "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "sct-concept",
+    "uri" : "http://snomed.info/conceptdomain",
+    "name" : "SNOMED CT Concept Domain Binding"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "sct-attr",
+    "uri" : "http://snomed.org/attributebinding",
+    "name" : "SNOMED CT Attribute Binding"
+  }],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Observation",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "Observation",
+      "path" : "Observation",
+      "constraint" : [{
+        "key" : "isik-obs-3",
+        "severity" : "error",
+        "human" : "Either subject XOR encounter exists",
+        "expression" : "encounter.exists() xor subject.exists()",
+        "source" : "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-vent-icu-parameter-von-beatmung"
+      },
+      {
+        "key" : "isik-obs-4",
+        "severity" : "error",
+        "human" : "If there is no component or hasMember element then either a value[x] or a data absent reason must be present",
+        "expression" : "(component.empty() and hasMember.empty()) implies (dataAbsentReason.exists() or value.exists())",
+        "source" : "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-vent-icu-parameter-von-beatmung"
+      }]
+    },
+    {
+      "id" : "Observation.identifier",
+      "path" : "Observation.identifier",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.partOf",
+      "path" : "Observation.partOf",
+      "short" : "Observation belongs to a specific extracorporeal procedure.",
+      "definition" : "Dasjenige extrakorporale Verfahren, im Rahmen dessen der vorliegende Parameter (die Daten dieser Observation-Ressource) erhoben wurden.",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Procedure"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.status",
+      "path" : "Observation.status",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category",
+      "path" : "Observation.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-category-procedure-beatmung-snomed"
+      }
+    },
+    {
+      "id" : "Observation.category.coding",
+      "path" : "Observation.category.coding",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category.coding.system",
+      "path" : "Observation.category.coding.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.category.coding.code",
+      "path" : "Observation.category.coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.code",
+      "path" : "Observation.code",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.code.coding",
+      "path" : "Observation.code.coding",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.code.coding:sct",
+      "path" : "Observation.code.coding",
+      "sliceName" : "sct",
+      "min" : 0,
+      "max" : "*",
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-snomed"
+      }
+    },
+    {
+      "id" : "Observation.code.coding:sct.system",
+      "path" : "Observation.code.coding.system",
+      "min" : 1,
+      "patternUri" : "http://snomed.info/sct",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.code.coding:sct.code",
+      "path" : "Observation.code.coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.code.coding:sct.display",
+      "path" : "Observation.code.coding.display",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.code.coding:loinc",
+      "path" : "Observation.code.coding",
+      "sliceName" : "loinc",
+      "min" : 0,
+      "max" : "*",
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-loinc"
+      }
+    },
+    {
+      "id" : "Observation.code.coding:loinc.system",
+      "path" : "Observation.code.coding.system",
+      "min" : 1,
+      "patternUri" : "http://loinc.org",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.code.coding:loinc.code",
+      "path" : "Observation.code.coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.code.coding:loinc.display",
+      "path" : "Observation.code.coding.display",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.code.coding:IEEE-11073",
+      "path" : "Observation.code.coding",
+      "sliceName" : "IEEE-11073",
+      "min" : 0,
+      "max" : "*",
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-loinc-iso11073"
+      }
+    },
+    {
+      "id" : "Observation.code.coding:IEEE-11073.system",
+      "path" : "Observation.code.coding.system",
+      "min" : 1,
+      "patternUri" : "urn:iso:std:iso:11073:10101",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.code.coding:IEEE-11073.code",
+      "path" : "Observation.code.coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.subject",
+      "path" : "Observation.subject",
+      "min" : 1,
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Patient",
+        "http://hl7.org/fhir/StructureDefinition/Device"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.encounter",
+      "path" : "Observation.encounter",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.effective[x]",
+      "path" : "Observation.effective[x]",
+      "type" : [{
+        "code" : "dateTime"
+      },
+      {
+        "code" : "Period"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.issued",
+      "path" : "Observation.issued",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.performer",
+      "path" : "Observation.performer",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Practitioner",
+        "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+        "http://hl7.org/fhir/StructureDefinition/Organization",
+        "http://hl7.org/fhir/StructureDefinition/CareTeam"]
+      }]
+    },
+    {
+      "id" : "Observation.value[x]",
+      "path" : "Observation.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "Quantity"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.value[x].unit",
+      "path" : "Observation.value[x].unit",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.value[x].system",
+      "path" : "Observation.value[x].system",
+      "patternUri" : "http://unitsofmeasure.org"
+    },
+    {
+      "id" : "Observation.value[x].code",
+      "path" : "Observation.value[x].code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.dataAbsentReason",
+      "path" : "Observation.dataAbsentReason",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.bodySite",
+      "path" : "Observation.bodySite",
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-body-site-observation-beatmung"
+      }
+    },
+    {
+      "id" : "Observation.device",
+      "path" : "Observation.device",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-vent-dm-eingestellte-gemessene-parameter-beatmung"]
+      }],
+      "mustSupport" : true
+    }]
+  }
+}
+
+```

@@ -1,0 +1,303 @@
+# ISiK CapabilityStatement VitalSign Standard Source Rolle - ISiK Vitalparameter Implementierungsleitfaden v6.0.0
+
+ISiK Vitalparameter Implementierungsleitfaden
+
+Version 6.0.0 - active 
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **ISiK CapabilityStatement VitalSign Standard Source Rolle**
+
+## CapabilityStatement: ISiK CapabilityStatement VitalSign Standard Source Rolle 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignStandardSourceRolle | *Version*:6.0.0 |
+| Active as of 2026-07-01 | *Computable Name*:ISiKCapabilityStatementVitalSignStandardSource Rolle |
+
+ 
+Dieses CapabilityStatement beschreibt alle Interaktionen, die ein System unterstützen MUSS, welches diese Rolle implementiert. 
+Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet. 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "ISiKCapabilityStatementVitalSignStandardSourceRolle",
+  "url" : "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignStandardSourceRolle",
+  "version" : "6.0.0",
+  "name" : "ISiKCapabilityStatementVitalSignStandardSource Rolle",
+  "title" : "ISiK CapabilityStatement VitalSign Standard Source Rolle",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-07-01",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    }]
+  }],
+  "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+  "purpose" : "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen, die ein ISiK-konformes System unterstützen muss, um das Bestätigungsverfahren für das Modul Vitalparameter zu bestehen.\n  \n**HISTORIE:**    \n\n*Historie*: mit der Version 4.0.2 des IG ICU-Normalstation-Workflow wurde das vorliegende CapabilityStatement im Sinne einer eigenständigen Rolle extrahiert (die Funktionalität bleibt dabei unverändert).\n\n\n**Version 4.0.1**\n\n* `change` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist.   \n* `change` Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter `patient` und `encounter`, da diese für ISiK-Zwecke ausreichend sind.  \n\n",
+  "kind" : "requirements",
+  "fhirVersion" : "4.0.1",
+  "format" : ["application/fhir+xml", "application/fhir+json"],
+  "rest" : [{
+    "mode" : "server",
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Observation",
+      "supportedProfile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKAtemfrequenz",
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell",
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKHerzfrequenz",
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht",
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergroesse",
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerperkerntemperatur",
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKKopfumfang",
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKSauerstoffsaettigungArteriell",
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKGCS",
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKEKG"],
+      "_supportedProfile" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }]
+      }],
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "**Beispiel:**\n        `GET [base]/[Resourcetype]?_id=103270`\n        **Anwendungshinweis:**\n        Der Parameter `_id` wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource\n        anhand der `id`  die `READ`-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,\n        um den Abruf einer Ressource bspw. mit einem `_include` weiterer Ressourcen zu verbinden,\n        z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:\n        `GET [base]/Encounter?_id=103270&_include=Encounter:patient`\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).\n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_count",
+        "type" : "number",
+        "documentation" : "**Beispiel:**\n        `GET [base]/[Resourcetype]?_count=100`\n        **Anwendungshinweis:**\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Page Count](https://www.hl7.org/fhir/R4/search.html#count).  "
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "**Beispiel:** Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben\n        `GET [base]/Patient?_has:Observation:patient:code=1234-5`\n        **Beispiel:** Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde\n        `GET [base]/Encounter?_has:Condition:encounter:code=A12.3`\n        **Anwendungshinweis:**\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has).  "
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdated=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "**Beispiel:**\n        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`\n        **Anwendungshinweis:**\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)\n        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "category",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Observation-category",
+        "type" : "token",
+        "documentation" : "**Beispiel:**\n    `GET [base]/Observation?category=vital-signs`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "status",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Observation-status",
+        "type" : "token",
+        "documentation" : "**Beispiel:**\n    `GET [base]/Observation?status=final`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "date",
+        "definition" : "http://hl7.org/fhir/SearchParameter/clinical-date",
+        "type" : "date",
+        "documentation" : "**Beispiel:**\n    `GET [base]/Observation?date=ge2020-01-14&date=le2020-12-31`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).\n    Bei der Formulierung der Suche sollten die Vorgaben aus der Definition der\n    [Such-Prefixe](https://hl7.org/fhir/R4/search.html#prefix)\n    - und hier insbesondere die Unterschiede zwischen `lt` und `eb` bzw. `gt` und `sa` - beachtet werden."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "code",
+        "definition" : "http://hl7.org/fhir/SearchParameter/clinical-code",
+        "type" : "token",
+        "documentation" : "**Beispiel:**\n    `GET [base]/Observation?code=http://loinc.org|85354-9`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "patient",
+        "definition" : "http://hl7.org/fhir/SearchParameter/clinical-patient",
+        "type" : "reference",
+        "documentation" : "**Beispiel:**\n    `GET [base]/Observation?patient=Patient/123`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "subject",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Observation-subject",
+        "type" : "reference",
+        "documentation" : "**Beispiel:**\n    `GET [base]/Observation?subject=Patient/123`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).\n    Für die Suche nach Patienten SOLL der Parameter `patient` bevorzugt werden."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "encounter",
+        "definition" : "http://hl7.org/fhir/SearchParameter/clinical-encounter",
+        "type" : "reference",
+        "documentation" : "**Beispiel:**\n    `GET [base]/Observation?encounter=Encounter/456`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "code-value-quantity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Observation-code-value-quantity",
+        "type" : "composite",
+        "documentation" : "**Beispiel:**\n    `GET [base]/Observation?code-value-quantity=http://loinc.org|29463-7$gt50`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).\n    Kombinierter Suchparameter für Code und Messwert einer einfachen Observation."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "combo-code",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Observation-combo-code",
+        "type" : "token",
+        "documentation" : "**Beispiel:**\n    `GET [base]/Observation?combo-code=http://loinc.org|85354-9`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).\n    Durchsucht sowohl `Observation.code` als auch `Observation.component.code`."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "combo-code-value-quantity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Observation-combo-code-value-quantity",
+        "type" : "composite",
+        "documentation" : "**Beispiel:**\n    `GET [base]/Observation?combo-code-value-quantity=http://loinc.org|8480-6$gt100`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).\n    Kombinierter Suchparameter für Code und Messwert, der sowohl Haupt-Observation als auch Komponenten einschließt."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "component-code",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Observation-component-code",
+        "type" : "token",
+        "documentation" : "**Beispiel:**\n    `GET [base]/Observation?component-code=http://loinc.org|8480-6`\n    **Anwendungshinweis:**\n    Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).\n    Durchsucht ausschließlich `Observation.component.code`."
+      }]
+    }]
+  }]
+}
+
+```

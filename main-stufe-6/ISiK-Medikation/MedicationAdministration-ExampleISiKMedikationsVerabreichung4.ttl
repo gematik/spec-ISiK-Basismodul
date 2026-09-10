@@ -1,0 +1,91 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/MedicationAdministration/ExampleISiKMedikationsVerabreichung4> a fhir:MedicationAdministration ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleISiKMedikationsVerabreichung4"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationAdministration ExampleISiKMedikationsVerabreichung4</b></p><a name=\"ExampleISiKMedikationsVerabreichung4\"> </a><a name=\"hcExampleISiKMedikationsVerabreichung4\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKMedikationsVerabreichung.html\">ISiKMedikationsVerabreichung</a></p></div><p><b>status</b>: Completed</p><p><b>medication</b>: <a href=\"Medication-ExampleISiKMedikament2.html\">Medication </a></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>context</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Encounter/FachabteilungskontaktMinimal\">Encounter/FachabteilungskontaktMinimal</a></p><p><b>effective</b>: 2021-07-01</p><p><b>note</b>: </p><blockquote><div><p>Testnotiz</p>\n</div></blockquote><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td><td><b>Site</b></td><td><b>Route</b></td><td><b>Dose</b></td><td><b>Rate[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>1L Infusion mit Rate 50ml/h</td><td><span title=\"Codes:{http://snomed.info/sct 6073002}\">Structure of ligament of left superior vena cava</span></td><td><span title=\"Codes:{http://standardterms.edqm.eu 20045000}\">Intravenous use</span></td><td>1000 mL<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemL = 'mL')</span></td><td>50 mL<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemL = 'mL')</span>/1 h<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeh = 'h')</span></td></tr></table></div>"
+  ] ;
+  fhir:MedicationAdministration.status [ fhir:value "completed"] ;
+  fhir:MedicationAdministration.medicationReference [
+     fhir:link <https://gematik.de/fhir/isik/Medication/ExampleISiKMedikament2> ;
+     fhir:Reference.reference [ fhir:value "Medication/ExampleISiKMedikament2" ]
+  ] ;
+  fhir:MedicationAdministration.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:MedicationAdministration.context [
+     fhir:link <https://gematik.de/fhir/isik/Encounter/FachabteilungskontaktMinimal> ;
+     fhir:Reference.reference [ fhir:value "Encounter/FachabteilungskontaktMinimal" ] ;
+     fhir:Reference.identifier [
+       fhir:Identifier.value [ fhir:value "0123456789" ]
+     ]
+  ] ;
+  fhir:MedicationAdministration.effectiveDateTime [ fhir:value "2021-07-01"^^xsd:date] ;
+  fhir:MedicationAdministration.note [
+     fhir:index 0 ;
+     fhir:Annotation.text [ fhir:value "Testnotiz" ]
+  ] ;
+  fhir:MedicationAdministration.dosage [
+     fhir:MedicationAdministration.dosage.text [ fhir:value "1L Infusion mit Rate 50ml/h" ] ;
+     fhir:MedicationAdministration.dosage.site [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a sct:6073002 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "6073002" ] ;
+         fhir:Coding.display [ fhir:value "Structure of ligament of left superior vena cava" ]
+       ]
+     ] ;
+     fhir:MedicationAdministration.dosage.route [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://standardterms.edqm.eu" ] ;
+         fhir:Coding.code [ fhir:value "20045000" ] ;
+         fhir:Coding.display [ fhir:value "Intravenous use" ]
+       ]
+     ] ;
+     fhir:MedicationAdministration.dosage.dose [
+       fhir:Quantity.value [ fhir:value "1000"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "mL" ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mL" ]
+     ] ;
+     fhir:MedicationAdministration.dosage.rateRatio [
+       fhir:Ratio.numerator [
+         fhir:Quantity.value [ fhir:value "50"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "mL" ] ;
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+         fhir:Quantity.code [ fhir:value "mL" ]
+       ] ;
+       fhir:Ratio.denominator [
+         fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "h" ] ;
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+         fhir:Quantity.code [ fhir:value "h" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/MedicationAdministration/ExampleISiKMedikationsVerabreichung4.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

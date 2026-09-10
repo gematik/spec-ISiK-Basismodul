@@ -1,0 +1,37 @@
+# Motivation - ISiK Basis Implementierungsleitfaden v6.0.0
+
+ISiK Basis Implementierungsleitfaden
+
+Version 6.0.0 - active 
+
+* [**Table of Contents**](toc.md)
+* **Motivation**
+
+## Motivation
+
+Mit ISiK („Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus“) verfolgt die gematik das Ziel, eine standardisierte Grundlage für den interoperablen Austausch von Gesundheitsdaten innerhalb von Krankenhäusern zu schaffen. Dabei adressiert ISiK nicht einen einzelnen fachlichen Prozess, sondern eine Vielzahl unterschiedlicher Versorgungsszenarien, die durch verschiedene Module der Spezifikation abgedeckt werden. Hierzu zählen unter anderem administrative, klinische, organisatorische und prozessbezogene Anwendungsfälle wie Terminplanung, Dokumentenaustausch, Medikation, Vitalparameter, Workflow-Unterstützung oder intensivmedizinische Szenarien.
+
+Die ISiK-Module definieren dabei keinen vollständigen End-to-End-Prozess eines Krankenhausinformationssystems. Stattdessen spezifizieren sie gezielt interoperable digitale Interaktionen zwischen Systemen, die in unterschiedlichen Versorgungssituationen wiederverwendbar sind. Der Fokus liegt auf standardisierten Zugriffsmöglichkeiten auf relevante Informationen und Funktionen, sodass unterschiedliche Systeme miteinander kombiniert werden können. Das hier vorliegende "Basismodul" bildet die medizinische und infrastrukturelle Grundlage, auf der die weiteren Module aufbauen und definierte wiederverwendbare Artefakte, die modulübergrreifend genutzt werden.
+
+### Reaktiver Datenaustausch im Krankenhaus
+
+Der aktuell in Krankenhäusern vorherrschende Integrationsansatz nach dem Standard HL7 Version 2 (HL7v2) sieht vor, dass fachdomänenspezifische Systeme Nachrichten versenden, sobald für andere Systeme interessante Ereignisse eintreten. Beim Anlegen einer Diagnose in einem System für medizinische Dokumentation wird beispielsweise eine entsprechende Nachricht versendet, die vom Abrechnungssystem konsumiert und in der Rechnungslegung berücksichtigt wird. Für diesen Ansatz ist es nötig, dass die konsumierenden Systeme direkt auf die für sie passenden Nachrichten reagieren können. Leider werden dieselben Inhalte in verschiedenen Krankenhäusern oft unterschiedlich in HL7v2-Nachrichten kodiert. Darum wird häufig ein Kommunikationsserver verwendet, der die krankenhausspezifischen Nachrichten in ein Format übersetzt, dass die konsumierenden Systeme verarbeiten können. Erst wenn diese Übersetzung der HL7v2 Nachrichten eingerichtet ist, können Daten zwischen den Systemen ausgetauscht werden.
+
+Daraus ergeben sich einige relevante Nachteile:
+
+1. Es ist nur eine im Voraus definierte Datenverarbeitung möglich. Es müssen Verarbeitungsregeln im Kommunikationsserver festgelegt werden, die empfangene HL7v2-Nachrichten zur Weiterverarbeitung in ein geeignetes Format überführen.
+1. Es können keine HL7v2-Nachrichten genutzt werden, die vor Aktivierung der Verarbeitungsregeln im Krankenhaus versandt wurden. Damit bleibt ein großer Teil der verfügbaren Daten des Krankenhauses ungenutzt.
+1. Gerade große Krankenhäuser müssen tausende dieser Verarbeitungsregeln verwalten. Dies erschwert den Überblick und nicht mehr benötigte Regeln belasten den Kommunikationsserver.
+
+Daher hat der Gesetzgeber im Patientendaten-Schutzgesetz (PDSG) der gematik den Auftrag erteilt, offene und standardisierte Schnittstellen zu spezifizieren, die über den reaktiven Datenaustausch hinaus einen bedarfsgerechten Datenaustausch ermöglichen. Die Einhaltung dieser Spezifikation wird in dem ISiK Bestätigungsverfahren geprüft. Die Beschreibung des Bestätigungsverfahrens ist nicht Inhalt dieses Implementierungsleitfadens und ist im Fachportal der gematik beschrieben ([https://fachportal.gematik.de/informationen-fuer/isik/bestaetigungsverfahren-isik](https://fachportal.gematik.de/informationen-fuer/isik/bestaetigungsverfahren-isik)).
+
+### Bedarfsgerechter Datenaustausch im Krankenhaus
+
+Um die oben skizzierten Nachteile zu vermeiden, wird in diesem Leitfaden ein bedarfsgerechter Datenaustausch im Krankenhaus spezifiziert. Benötigte Daten werden zum gewünschten Zeitpunkt im nötigen Umfang angefragt und zur Verfügung gestellt. So sind prinzipiell alle Daten eines Krankenhauses nutzbar, auch wenn sie lange vor dem Bedarf zur Nachnutzung erhoben wurden. Es müssen keine statischen Verarbeitungsregeln in einer Drittsoftware - dem Kommunikationsserver - verwaltet werden. Diese Art des bedarfsgerechten Datenaustausches wird in ISiK durch den internationalen HL7-Standard FHIR realisiert. Verwendet wird dabei die in Deutschland vorwiegend genutzte FHIR Version R4. Dabei folgt die Kommunikation dem Architekturstil Representational State Transfer (REST), auf dem auch wesentliche Teile der Kommunikation im Internet und mit mobilen Geräten im Besonderen basieren.
+
+### Anwendungsfälle und Interaktionen
+
+ISiK verfolgt bewusst nicht das Ziel, sämtliche zukünftigen Anwendungsszenarien vollständig vorab zu definieren. Zu enge fachliche Vorgaben würden die Einführung interoperabler Schnittstellen erschweren und Innovationen behindern. Stattdessen konzentriert sich ISiK auf solche Interaktionen, bei denen Standardisierung einen besonders hohen Nutzen erzeugt – beispielsweise weil sie in vielen Szenarien wiederverwendet werden können oder weil sie bislang aufwändige manuelle oder proprietäre Integrationen erfordern.
+
+Ein wesentliches Merkmal der ISiK-Spezifikation ist dabei die versorgungs- und patientenorientierte Ausrichtung. Viele Interaktionen erfolgen im Kontext eines Patienten sowie eines konkreten Versorgungskontakts (Encounter). Dadurch wird sichergestellt, dass Informationen systemübergreifend in einem konsistenten fachlichen Kontext verfügbar sind und unterschiedliche Anwendungen auf derselben interoperablen Grundlage aufbauen können.
+

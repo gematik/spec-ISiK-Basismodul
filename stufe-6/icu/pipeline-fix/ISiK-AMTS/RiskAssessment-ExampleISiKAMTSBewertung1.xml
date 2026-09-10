@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RiskAssessment xmlns="http://hl7.org/fhir">
+  <id value="ExampleISiKAMTSBewertung1"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKAMTSBewertung"/>
+  </meta>
+  <text>
+    <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">Beispiel für eine AMTS Risikobewertung.</div>
+  </text>
+  <status value="final"/>
+  <code>
+    <text value="AMTS Risikobewertung"/>
+  </code>
+  <subject>
+    <reference value="Patient/PatientinMusterfrau"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/Fachabteilungskontakt"/>
+  </encounter>
+  <occurrenceDateTime value="2024-02-20T13:14:32+01:00"/>
+  <condition>
+    <reference value="Condition/BehandlungsDiagnoseFreitext"/>
+  </condition>
+  <reasonReference>
+    <reference value="DocumentReference/AnamnesebogenScan123456"/>
+  </reasonReference>
+  <basis>
+    <reference value="Observation/Koerpergewicht7777"/>
+  </basis>
+  <prediction>
+    <outcome>
+      <text value="Niereninsuffizienz"/>
+    </outcome>
+    <qualitativeRisk>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/risk-probability"/>
+        <code value="high"/>
+      </coding>
+    </qualitativeRisk>
+  </prediction>
+  <mitigation value="Substitution der Stalevo Dauermedikation"/>
+  <note>
+    <text value="Abklärung in der Frühbesprechung am 21.02.2024"/>
+  </note>
+</RiskAssessment>

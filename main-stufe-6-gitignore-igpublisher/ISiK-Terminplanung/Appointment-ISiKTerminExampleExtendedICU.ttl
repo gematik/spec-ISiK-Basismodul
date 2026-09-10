@@ -1,0 +1,90 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Appointment/ISiKTerminExampleExtendedICU> a fhir:Appointment ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ISiKTerminExampleExtendedICU"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin>
+     ] ) ;
+     fhir:tag ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/common-meta-tag-de"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/common-meta-tag-de>
+       ] ;
+       fhir:code [ fhir:v "external" ]
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Appointment ISiKTerminExampleExtendedICU</b></p><a name=\"ISiKTerminExampleExtendedICU\"> </a><a name=\"hcISiKTerminExampleExtendedICU\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKTermin.html\">ISiKTermin</a></p><p style=\"margin-bottom: 0px\">Tag: External (Details: CS Basisprofil Common Meta Tag DE code external = 'External')</p></div><p><b>status</b>: Proposed</p><p><b>serviceType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/service-type 174}\">Intensive Care Medicine</span></p><p><b>specialty</b>: <span title=\"Codes:{http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen INTM}, {http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert 3600}\">Intensivmedizin</span></p><p><b>priority</b>: <code>ISiKTerminPriorityExtension: </code><span title=\"Codes:{http://snomed.info/sct 25876001}\">Emergency</span></p><p><b>start</b>: 2022-12-10 09:00:00+0000</p><p><b>end</b>: 2022-12-10 09:30:00+0000</p><p><b>slot</b>: <a href=\"Slot-ISiKTerminblockExample.html\">Slot: status = busy; start = 2022-12-10 09:00:00+0000; end = 2022-12-10 11:00:00+0000</a></p><h3>Participants</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td><td><b>Status</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Patient/ISiKPatientTest\">Test Patient</a></td><td>Accepted</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "proposed"] ; # 
+  fhir:serviceType ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/service-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/service-type>
+       ] ;
+       fhir:code [ fhir:v "174" ]
+     ] )
+  ] ) ; # 
+  fhir:specialty ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen"^^xsd:anyURI ;
+         fhir:l <http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen>
+       ] ;
+       fhir:code [ fhir:v "INTM" ]
+     ] [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert>
+       ] ;
+       fhir:code [ fhir:v "3600" ]
+     ] )
+  ] ) ; # 
+  fhir:priority [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           a sct:25876001 ;
+           fhir:system [
+             fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+             fhir:l <http://snomed.info/sct>
+           ] ;
+           fhir:code [ fhir:v "25876001" ]
+         ] )
+       ]
+     ] )
+  ] ; # 
+  fhir:start [ fhir:v "2022-12-10T09:00:00Z"^^xsd:dateTime] ; # 
+  fhir:end [ fhir:v "2022-12-10T09:30:00Z"^^xsd:dateTime] ; # 
+  fhir:slot ( [
+     fhir:l <https://gematik.de/fhir/isik/Slot/ISiKTerminblockExample> ;
+     fhir:reference [ fhir:v "Slot/ISiKTerminblockExample" ]
+  ] ) ; # 
+  fhir:participant ( [
+     fhir:actor [
+       fhir:l <https://gematik.de/fhir/isik/Patient/ISiKPatientTest> ;
+       fhir:reference [ fhir:v "Patient/ISiKPatientTest" ] ;
+       fhir:display [ fhir:v "Test Patient" ]
+     ] ;
+     fhir:status [ fhir:v "accepted" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,918 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Formular-Modul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Formular-Modul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Ziele.html">
+                                Ziele
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Spezifikation <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation.html">
+                                            Spezifikation
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-AkteureOrdner.html">
+                                            Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-FunktionenInteraktionen.html">
+                                            Funktionen und Interaktionen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-BestPractice.html">
+                                            Best Practice f&#xFC;r FormularDefinitionen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Begriffsdefinitionen.html">
+                                            Begriffsdefinitionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t zu SDC
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-FormularDefinition.html">
+                                            FormularDefinition
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-FormularDaten.html">
+                                            FormularDaten
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Beispiele.html">
+                                            Beispiele
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h1 id="page-title">Extensions</h1>
+<h2 id="questionnaire-extensions">Questionnaire Extensions</h2>
+<p>Für die verschiedenen Interaktionen werden verschiedene Extensions unterstützt. Im Folgenden sind pro Interaktion  alle Extensions aufgelistet, die in der aktuellen Ausbaustufen des ISiK-Formular-Moduls zum Einsatz kommen.</p>
+<h3 id="core-extensions-questionnaire">Core Extensions (Questionnaire)</h3>
+<table class="regular">
+<thead>
+<tr>
+<th>Rolle</th>
+<th>Extension Name</th>
+<th>Context</th>
+<th>Beschreibung</th>
+<th>Relevanz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FormularRendering</td>
+<td><a href="https://hl7.org/fhir/R4/extension-entryformat.html">entryFormat</a></td>
+<td>Questionnaire.item</td>
+<td>Definiert das Eingabeformat für ein Item</td>
+<td>SOLL</td>
+</tr>
+<tr>
+<td>FormularDatenValidierung</td>
+<td><a href="https://hl7.org/fhir/R4/extension-maxdecimalplaces.html">maxDecimalPlaces</a></td>
+<td>Questionnaire.item</td>
+<td>Begrenzt die Anzahl der Dezimalstellen</td>
+<td>SOLL</td>
+</tr>
+<tr>
+<td>FormularDatenValidierung</td>
+<td><a href="https://hl7.org/fhir/R4/extension-maxvalue.html">maxValue</a></td>
+<td>Questionnaire.item</td>
+<td>Setzt einen maximalen Wert für numerische Eingaben</td>
+<td>SOLL</td>
+</tr>
+<tr>
+<td>FormularDatenValidierung</td>
+<td><a href="https://hl7.org/fhir/R4/extension-minlength.html">minLength</a></td>
+<td>Questionnaire.item</td>
+<td>Definiert die Mindestlänge für Texteingaben</td>
+<td>SOLL</td>
+</tr>
+<tr>
+<td>FormularDatenValidierung</td>
+<td><a href="https://hl7.org/fhir/R4/extension-minvalue.html">minValue</a></td>
+<td>Questionnaire.item</td>
+<td>Setzt einen minimalen Wert für numerische Eingaben</td>
+<td>SOLL</td>
+</tr>
+<tr>
+<td>FormularRendering</td>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-maxoccurs.html">questionnaire-maxOccurs</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Definiert maximale Vorkommen eines Items</td>
+<td>SOLL</td>
+</tr>
+<tr>
+<td>FormularRendering</td>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-minoccurs.html">questionnaire-minOccurs</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Definiert minimale Vorkommen eines Items</td>
+<td>SOLL</td>
+</tr>
+<tr>
+<td>FormularRendering</td>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-unit.html">questionnaire-unit</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Definiert die Einheit für numerische Werte</td>
+<td>SOLL</td>
+</tr>
+<tr>
+<td>FormularDatenValidierung</td>
+<td><a href="https://hl7.org/fhir/R4/extension-regex.html">regex</a></td>
+<td>Questionnaire.item</td>
+<td>Fügt reguläre Ausdrücke für Validierung hinzu <br> Die Extension ist in zukünftigen Versionen deprecated. Aus dem Grund wird die Extension targetConstraint empfohlen zu nutzen.</td>
+<td>KANN</td>
+</tr>
+<tr>
+<td>FormularDatenValidierung</td>
+<td><a href="http://hl7.org/fhir/StructureDefinition/targetConstraint">targetConstraint</a></td>
+<td>Questionnaire.item</td>
+<td>Fügt reguläre Ausdrücke für Validierung hinzu</td>
+<td>SOLL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="core-extensions-questionnaireresponse">Core Extensions (QuestionnaireResponse)</h3>
+<table class="regular">
+<thead>
+<tr>
+<th>Rolle</th>
+<th>Extension Name</th>
+<th>Context</th>
+<th>Beschreibung</th>
+<th>Relevanz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FormularRendering</td>
+<td><a href="http://hl7.org/fhir/StructureDefinition/display">Name des Questionnaire</a></td>
+<td>QuestionnaireResponse.questionnaire</td>
+<td>Gibt den Namen des Questionnaire an, damit dieser im Falle des fehlenden Zugriff auf die Questionnaire Ressource mit angegeben werden kann</td>
+<td>SOLL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="core-extendion-questionnaire-und-questionnaireresponse">Core Extendion (Questionnaire und QuestionnaireResponse)</h3>
+<table class="regular">
+<thead>
+<tr>
+<th>Rolle</th>
+<th>Extension Name</th>
+<th>Context</th>
+<th>Beschreibung</th>
+<th>Relevanz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FormularRendering</td>
+<td><a href="https://gematik.de/fhir/isik/StructureDefinition/ISiKMDRRelevanzFormularExtension">Medizin-produkt Kontext</a></td>
+<td>QuestionnaireResponse, Questionnaire</td>
+<td>Mit der Extension wird die Medizinprodukt-Relevanz angegeben. Ist die Extension nicht vorhanden, ist nichts in Richtung der MDR zu beachten. Sobald sie vorhanden ist, müssen ggf. Voraussetzung zur Befüllung oder Anzeige erfüllt sein. Im aktuellen Rahmen des Moduls sind diese aber nicht weiter spezifiziert. <br><img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="20"/> Hier freuen wir uns über Feedback.</td>
+<td>SOLL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sdc-extensions-questionnaire">SDC Extensions (Questionnaire)</h3>
+<table class="regular">
+<thead>
+<tr>
+<th>Rolle</th>
+<th>SDC-Modul</th>
+<th>Extension Name</th>
+<th>Context</th>
+<th>Beschreibung</th>
+<th>Relevanz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FormularDatenExtraktion</td>
+<td>Data Extraction</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationExtract.html">Extract Observation</a></td>
+<td>Questionnaire.item</td>
+<td>Gibt an, dass der beobachtungsbasierte Ansatz verwendet werden soll</td>
+<td>SOLL</td>
+</tr>
+<tr>
+<td>FormularDatenExtraktion</td>
+<td>Data Extraction</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observation-extract-category.html">Extract Observation - Category</a></td>
+<td>Questionnaire.item</td>
+<td>Gibt die Observation.category-Werte an, die in extrahierten Beobachtungen erscheinen sollen</td>
+<td>SOLL</td>
+</tr>
+<tr>
+<td>FormularDatenVorbelegung</td>
+<td>Form Behavior</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html">Initial Expression</a></td>
+<td>Questionnaire.item</td>
+<td>Anfangswert für eine Frageantwort, der durch einen ausgewerteten Ausdruck bestimmt wird</td>
+<td>SOLL</td>
+</tr>
+<tr>
+<td>FormularRendering</td>
+<td>Form Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html">Launch Contexts</a></td>
+<td>Questionnaire</td>
+<td>Ressourcen, die Kontext für die Formularverarbeitungslogik bereitstellen</td>
+<td>SOLL</td>
+</tr>
+<tr>
+<td>FormularDatenVorbelegung</td>
+<td>Form Population</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationLinkPeriod.html">Obervation link period</a></td>
+<td>Questionnaire.item</td>
+<td>Gibt den Zeitraum an, in dem nach passenden Beobachtungen gesucht werden soll</td>
+<td>SOLL</td>
+</tr>
+</tbody>
+</table>
+<h2 id="extensions-out-of-scope">Extensions Out-of-scope</h2>
+<table class="regular">
+<thead>
+<tr>
+<th>Hinweis</th>
+<th>Out-Of-Scope Extensions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/></td>
+<td>Die folgenden Extensions sind im Rahmen des Moduls out-of-scope und sollten nicht genutzt werden. Falls Extensions für einen bestimmten Use Case benötigt werden, soll bitte im <a href="https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.2C.20VITAL.2C.20MED.5D.20Herstellung.20von.20Patienten-.20und.20Fallkontext">Chat</a> ein Feedback zu hinterlassen werden. Abhängig von der Rückmeldung kann diese Extension in späteren Releases verbindlich gemacht werden.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="core-extensions-questionnaire-1">Core Extensions (Questionnaire)</h3>
+<table class="regular">
+<thead>
+<tr>
+<th>Extension Name</th>
+<th>Context</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-11179-permitted-value-conceptmap.html">11179-permitted-value-conceptmap</a></td>
+<td>Questionnaire.item.answerValueSet</td>
+<td>Verknüpft erlaubte Werte mit einer ConceptMap</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-11179-permitted-value-valueset.html">11179-permitted-value-valueset</a></td>
+<td>Questionnaire.item.answerValueSet</td>
+<td>Verknüpft erlaubte Werte mit einem ValueSet</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-designnote.html">designNote</a></td>
+<td>Questionnaire, Questionnaire.item, Questionnaire.item.item</td>
+<td>Fügt Designnotizen für Entwickler hinzu</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-maxsize.html">maxSize</a></td>
+<td>Questionnaire.item</td>
+<td>Definiert die maximale Größe für Dateianhänge</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-mimetype.html">mimeType</a></td>
+<td>Questionnaire.item</td>
+<td>Spezifiziert den MIME-Typ für Dateianhänge</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-ordinalvalue.html">ordinalValue</a></td>
+<td>Questionnaire.item.answerOption</td>
+<td>Fügt ordinale Werte zu Antwortoptionen hinzu</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-basetype.html">questionnaire-baseType</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Definiert den Basistyp für ein Item</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-choiceorientation.html">questionnaire-choiceOrientation</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Bestimmt die Ausrichtung von Auswahlmöglichkeiten</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-constraint.html">questionnaire-constraint</a></td>
+<td>Questionnaire, Questionnaire.item, Questionnaire.item.item</td>
+<td>Fügt Einschränkungen für Antworten hinzu</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-displaycategory.html">questionnaire-displayCategory</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Definiert die Anzeigekategorie eines Items</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-fhirtype.html">questionnaire-fhirType</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Spezifiziert den FHIR-Datentyp</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-hidden.html">questionnaire-hidden</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Ermöglicht das Ausblenden von Items</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-itemcontrol.html">questionnaire-itemControl</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Kontrolliert die Darstellung von Items</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-optionexclusive.html">questionnaire-optionExclusive</a></td>
+<td>Questionnaire.item.answerOption</td>
+<td>Markiert eine Antwortoption als exklusiv</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-optionprefix.html">questionnaire-optionPrefix</a></td>
+<td>Questionnaire.item.answerOption</td>
+<td>Fügt Präfixe zu Antwortoptionen hinzu</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-referencefilter.html">questionnaire-referenceFilter</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Filtert Referenzauswahlmöglichkeiten</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-referenceprofile.html">questionnaire-referenceProfile</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Definiert das Profil für Referenzen</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-referenceresource.html">questionnaire-referenceResource</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Spezifiziert den Ressourcentyp für Referenzen</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-signaturerequired.html">questionnaire-signatureRequired</a></td>
+<td>Questionnaire, Questionnaire.item, Questionnaire.item.item</td>
+<td>Erfordert eine elektronische Unterschrift</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-sliderstepvalue.html">questionnaire-sliderStepValue</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Definiert Schrittwerte für Slider</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-supportlink.html">questionnaire-supportLink</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Fügt Hilfelinks zu Items hinzu</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-unitoption.html">questionnaire-unitOption</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Bietet Einheitenauswahlmöglichkeiten</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-unitvalueset.html">questionnaire-unitValueSet</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Verknüpft Einheiten mit einem ValueSet</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaire-usagemode.html">questionnaire-usageMode</a></td>
+<td>Questionnaire.item, Questionnaire.item.item</td>
+<td>Definiert den Verwendungsmodus eines Items</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-replaces.html">replaces</a></td>
+<td>Questionnaire</td>
+<td>Gibt an, welche Ressource diese ersetzt</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-variable.html">variable</a></td>
+<td>Questionnaire, Questionnaire.item, Questionnaire.item.item</td>
+<td>Definiert Variablen für dynamische Inhalte</td>
+</tr>
+</tbody>
+</table>
+<h3 id="core-extension-questionnaireresponse">Core Extension (QuestionnaireResponse)</h3>
+<table class="regular">
+<thead>
+<tr>
+<th>Extension Name</th>
+<th>Context</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaireresponse-author.html">questionnaireresponse-author</a></td>
+<td>QuestionnaireResponse.item, QuestionnaireResponse.item.item</td>
+<td>Gibt den Autor einer Antwort oder eines Antwort-Elements an</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaireresponse-completionmode.html">questionnaireresponse-completionMode</a></td>
+<td>QuestionnaireResponse</td>
+<td>Definiert den Modus, in dem der Fragebogen abgeschlossen wurde</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaireresponse-reason.html">questionnaireresponse-reason</a></td>
+<td>QuestionnaireResponse</td>
+<td>Gibt den Grund für die Erstellung oder Änderung der Antwort an</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaireresponse-reviewer.html">questionnaireresponse-reviewer</a></td>
+<td>QuestionnaireResponse</td>
+<td>Identifiziert die Person, die die Antwort überprüft hat</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-questionnaireresponse-signature.html">questionnaireresponse-signature</a></td>
+<td>QuestionnaireResponse, QuestionnaireResponse.item, QuestionnaireResponse.item.item</td>
+<td>Enthält die digitale Signatur für die Antwort oder ein Antwort-Element</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-workflow-episodeofcare.html">workflow-episodeOfCare</a></td>
+<td>QuestionnaireResponse</td>
+<td>Verknüpft die Antwort mit einer Episode der Versorgung</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-workflow-researchstudy.html">workflow-researchStudy</a></td>
+<td>QuestionnaireResponse</td>
+<td>Verknüpft die Antwort mit einer Forschungsstudie</td>
+</tr>
+<tr>
+<td><a href="https://hl7.org/fhir/R4/extension-resource-pertainstogoal.html">resource-pertainsToGoal</a></td>
+<td>pertainsToGoal</td>
+<td>Zeigt an, dass die Antwort mit einem bestimmten Ziel verbunden ist</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sdc-extensions">SDC Extensions</h3>
+<table class="regular">
+<thead>
+<tr>
+<th>Modul</th>
+<th>Extension Name</th>
+<th>Context</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Answer Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-contextExpression.html">Answer Context Expression</a></td>
+<td>Questionnaire.item</td>
+<td>Eine FHIR-Abfrage, die ein oder mehrere Ressourcen zurückgibt, die dem Benutzer als Kontext für die Beantwortung einer Frage angezeigt werden können</td>
+</tr>
+<tr>
+<td>Answer Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-answerExpression.html">Answer Expression</a></td>
+<td>Questionnaire.item</td>
+<td>Ein Ausdruck (FHIRPath, CQL oder FHIR-Abfrage), der eine Liste zulässiger Antworten für ein Frageelement liefert</td>
+</tr>
+<tr>
+<td>Answer Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-answerOptionsToggleExpression.html">Answer Options Toggle Expression</a></td>
+<td>Questionnaire.item</td>
+<td>Ein komplexer Ausdruck, der eine Liste der erlaubten Optionen bereitstellt, die basierend auf der Auswertung eines bereitgestellten Ausdrucks aktiviert oder deaktiviert werden sollen</td>
+</tr>
+<tr>
+<td>Answer Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-candidateExpression.html">Candidate Answers Expression</a></td>
+<td>Questionnaire.item</td>
+<td>Ein FHIRPath- oder CQL-Ausdruck oder eine FHIR-Abfrage, die eine Liste von Antwortvorschlägen liefert</td>
+</tr>
+<tr>
+<td>Data Extraction</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-extractAllocateId.html">Extract - Allocate new uuid</a></td>
+<td>Questionnaire.item</td>
+<td>Weist eine neue UUID in einer benannten Variable für die Extraktion zu</td>
+</tr>
+<tr>
+<td>Data Extraction</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-definitionExtract.html">Extract Definition</a></td>
+<td>Questionnaire.item</td>
+<td>Gibt den Ressourcentyp/das Profil für die definitionsbasierte Extraktion einer Ressource an</td>
+</tr>
+<tr>
+<td>Data Extraction</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-definitionExtractValue.html">Extract Definition - Extract value</a></td>
+<td>Questionnaire.item</td>
+<td>Stellt einen festen Wert oder einen auszuwertenden Ausdruck bereit</td>
+</tr>
+<tr>
+<td>Data Extraction</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-itemExtractionContext.html">Extract Definition - Resource (legacy)</a></td>
+<td>Questionnaire.item</td>
+<td>Gibt eine Abfrage oder einen anderen Ausdruck an, der die zu extrahierende Ressource identifiziert (veraltet)</td>
+</tr>
+<tr>
+<td>Data Extraction</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-targetStructureMap.html">Extract StructureMap - Target structure map</a></td>
+<td>Questionnaire</td>
+<td>StructureMaps, die QuestionnaireResponses dieses Fragebogens als 'Quelle' haben</td>
+</tr>
+<tr>
+<td>Data Extraction</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-templateExtractBundle.html">Extract Template - Bundle</a></td>
+<td>Questionnaire.item</td>
+<td>Gibt einen Verweis auf eine enthaltene Transaktionsbündel-Ressourcenvorlage an</td>
+</tr>
+<tr>
+<td>Data Extraction</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-templateExtractContext.html">Extract Template - Context</a></td>
+<td>Questionnaire.item</td>
+<td>Erstellt Mapping-Kontext für das Ersetzen von Vorlageninhalt basierend auf einem FHIRPath-Ausdruck</td>
+</tr>
+<tr>
+<td>Data Extraction</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-templateExtractValue.html">Extract Template - Extract value</a></td>
+<td>Questionnaire.item</td>
+<td>Stellt einen Ausdruck bereit, um Werte zu evaluieren, die im gegebenen Vorlagenextraktionskontext ersetzt werden sollen</td>
+</tr>
+<tr>
+<td>Data Extraction</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-templateExtract.html">Extract Template - Resource</a></td>
+<td>Questionnaire.item</td>
+<td>Gibt einen Verweis auf eine enthaltene Ressourcenvorlage an</td>
+</tr>
+<tr>
+<td>Display Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-choiceColumn.html">Choice column</a></td>
+<td>Questionnaire.item</td>
+<td>Bietet Richtlinien für die Darstellung von mehrspaltige Auswahlmöglichkeiten</td>
+</tr>
+<tr>
+<td>Display Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-collapsible.html">Collapsible</a></td>
+<td>Questionnaire.item</td>
+<td>Zeigt an, dass die untergeordneten Elemente eines Elements in zusammenklappbarer Form angezeigt werden</td>
+</tr>
+<tr>
+<td>Display Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-entryMode.html">Entry mode</a></td>
+<td>Questionnaire.item</td>
+<td>Eine Angabe, wie der Benutzer bei der Vervollständigung einer QuestionnaireResponse zur Eingabe von Antworten aufgefordert werden soll</td>
+</tr>
+<tr>
+<td>Display Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-itemAnswerMedia.html">Item Answer Media</a></td>
+<td>Questionnaire.item</td>
+<td>Medien, die als Begleitung zu einer bestimmten Antwortoption gerendert/verfügbar gemacht werden sollen</td>
+</tr>
+<tr>
+<td>Display Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-itemMedia.html">Item Media</a></td>
+<td>Questionnaire.item</td>
+<td>Medien, die begleitend zur gestellten Frage oder Gruppe gerendert/verfügbar gemacht werden sollen</td>
+</tr>
+<tr>
+<td>Display Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-keyboard.html">Keyboard Type Extension</a></td>
+<td>Questionnaire.item</td>
+<td>Gibt für String- oder Text-Elemente den 'Tastaturtyp' an, der von der Benutzeroberfläche verwendet werden soll</td>
+</tr>
+<tr>
+<td>Display Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-openLabel.html">Label for 'open' items</a></td>
+<td>Questionnaire.item</td>
+<td>Der Beschriftungstext, der neben Freitext- und/oder nicht eingeschränkten Typwerten für ein 'offenes' Auswahlelement angezeigt werden soll</td>
+</tr>
+<tr>
+<td>Display Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-columnCount.html">Number of columns for child item layout</a></td>
+<td>Questionnaire.item</td>
+<td>Gibt die Anzahl der Spalten an, über die die Auswahlmöglichkeiten organisiert werden sollen</td>
+</tr>
+<tr>
+<td>Display Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-optionalDisplay.html">Optional Display?</a></td>
+<td>Questionnaire.item</td>
+<td>Wenn auf true gesetzt, kann das System das Element optional anzeigen</td>
+</tr>
+<tr>
+<td>Display Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-rendering-criticalExtension.html">Rendering Critical Extension</a></td>
+<td>Questionnaire</td>
+<td>Zeigt eine Extension an, die vom darstellenden System unterstützt werden muss</td>
+</tr>
+<tr>
+<td>Display Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-shortText.html">Short Text</a></td>
+<td>Questionnaire.item</td>
+<td>Stellt einen kurzen Text für ein Element bereit</td>
+</tr>
+<tr>
+<td>Display Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-width.html">Width of column</a></td>
+<td>Questionnaire.item</td>
+<td>Gibt die Breite der Spalte für diese Frage an</td>
+</tr>
+<tr>
+<td>Form Behavior</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-calculatedExpression.html">Calculated Expression</a></td>
+<td>Questionnaire.item</td>
+<td>Berechneter Wert für eine Frageantwort, der durch einen ausgewerteten Ausdruck bestimmt wird</td>
+</tr>
+<tr>
+<td>Form Behavior</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-enableWhenExpression.html">Enable when expression</a></td>
+<td>Questionnaire.item</td>
+<td>Ein Ausdruck, der einen booleschen Wert zurückgibt, ob das Element aktiviert werden soll</td>
+</tr>
+<tr>
+<td>Form Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-unitSupplementalSystem.html">Code system for other units</a></td>
+<td>Questionnaire.item</td>
+<td>Gibt das Codesystem an, aus dem zusätzliche Einheiten stammen sollen</td>
+</tr>
+<tr>
+<td>Form Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-endpoint.html">Endpoint</a></td>
+<td>Questionnaire</td>
+<td>Die Basis-URL für den/die Server, an die mit diesem Fragebogen verbundene Antworten gesendet werden sollen</td>
+</tr>
+<tr>
+<td>Form Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaireresponse-isSubject.html">Is subject (response)?</a></td>
+<td>QuestionnaireResponse.item</td>
+<td>Zeigt an, dass das Element ein anderes Subjekt für diese Gruppe angibt</td>
+</tr>
+<tr>
+<td>Form Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-isSubject.html">Is subject?</a></td>
+<td>Questionnaire.item</td>
+<td>Zeigt an, dass das Element ein anderes Subjekt für die Gruppe in einer Antwort festlegt</td>
+</tr>
+<tr>
+<td>Form Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-lookupQuestionnaire.html">Lookup questionnaire</a></td>
+<td>Questionnaire.item</td>
+<td>Für Referenz-Elemente kann der Fragebogen angegeben werden, der bei der Erstellung der Zielinstanz verwendet werden soll</td>
+</tr>
+<tr>
+<td>Form Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-performerType.html">Performer type</a></td>
+<td>Questionnaire</td>
+<td>Gibt die Arten von Ressourcen an, die Antworten auf einen Fragebogen aufzeichnen können</td>
+</tr>
+<tr>
+<td>Form Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-preferredTerminologyServer.html">Preferred Terminology Server</a></td>
+<td>Questionnaire</td>
+<td>Gibt die Terminologieserver an, die die Wertesets verarbeiten können</td>
+</tr>
+<tr>
+<td>Form Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-questionnaireAdaptive.html">Questionnaire Adaptive</a></td>
+<td>Questionnaire</td>
+<td>Zeigt an, ob ein Fragebogen adaptiv ist</td>
+</tr>
+<tr>
+<td>Form Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-servicerequest-questionnaire.html">ServiceRequest Questionnaire</a></td>
+<td>ServiceRequest</td>
+<td>Identifiziert einen Fragebogen, der ausgefüllt werden soll</td>
+</tr>
+<tr>
+<td>Form Control</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-unitOpen.html">Units open?</a></td>
+<td>Questionnaire.item</td>
+<td>Gibt an, ob die Liste der unterstützten Einheiten erschöpfend ist</td>
+</tr>
+<tr>
+<td>Form Population</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-itemPopulationContext.html">Item population context</a></td>
+<td>Questionnaire.item</td>
+<td>Gibt eine Abfrage an, die die Ressource identifiziert, die zur Vorausfüllung verwendet werden soll</td>
+</tr>
+<tr>
+<td>Form Population</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-sourceQueries.html">Source queries for population mapping</a></td>
+<td>Questionnaire</td>
+<td>Ein Batch-Bundle mit Abfragen zur Bereitstellung von Quelldaten</td>
+</tr>
+<tr>
+<td>Form Population</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-sourceStructureMap.html">Source structure map</a></td>
+<td>Questionnaire</td>
+<td>StructureMaps, die QuestionnaireResponses für diesen Fragebogen als 'Ziel' produzieren</td>
+</tr>
+<tr>
+<td>Form Validation</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-maxQuantity.html">Max quantity</a></td>
+<td>Questionnaire.item</td>
+<td>Die inklusive obere Grenze für den Bereich der zulässigen Werte für eine Frage vom Typ 'quantity'</td>
+</tr>
+<tr>
+<td>Form Validation</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-minQuantity.html">Min quantity</a></td>
+<td>Questionnaire.item</td>
+<td>Die inklusive untere Grenze für den Bereich der zulässigen Werte für eine Frage vom Typ 'quantity'</td>
+</tr>
+<tr>
+<td>Modular Forms</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-assembleContext.html">Assemble Context extension</a></td>
+<td>Questionnaire</td>
+<td>Diese Extension, die in einem Unter-Fragebogen verwendet wird, gibt eine FHIRPath-Variable an, die im Kontext vorhanden sein muss, wenn auf den Unter-Fragebogen verwiesen wird</td>
+</tr>
+<tr>
+<td>Modular Forms</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-assembledFrom.html">Assembled From Questionnaire</a></td>
+<td>Questionnaire</td>
+<td>Diese Extension erscheint im Root eines zusammengestellten Fragebogens und identifiziert die Unter-Fragebögen (einschließlich Version), die im Rahmen des Assembly-Prozesses verwendet wurden</td>
+</tr>
+<tr>
+<td>Modular Forms</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-assemble-expectation.html">Assembly Expectations for Questionnaire</a></td>
+<td>Questionnaire</td>
+<td>Gibt an, dass dieser Fragebogen Erwartungen in Bezug auf die Zusammenstellung hat</td>
+</tr>
+<tr>
+<td>Modular Forms</td>
+<td><a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-subQuestionnaire.html">Sub-questionnaire</a></td>
+<td>Questionnaire.item</td>
+<td>Zeigt an, dass das Anzeigelement durch den referenzierten Fragebogen ersetzt werden soll</td>
+</tr>
+</tbody>
+</table>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

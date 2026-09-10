@@ -1,0 +1,70 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Composition/CompositionExampleBlutdruck> a fhir:Composition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "CompositionExampleBlutdruck"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Familienname:Fürstin von Musterfrau</p><p>Geburtsdatum:1964-08-12</p><p>PID:TestPID</p><p>Bericht-Status:final</p><p>Bericht-Typ:Berichtzusammenfassung / Document Summary</p><p>Datum:03.05.2022</p><p>Titel:Blutdruckmessung vom 3.5.2022</p><p>Autor:Gerät XY, Fa. Z, Modell T</p></div>"
+  ] ;
+  fhir:Composition.identifier [
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "FILL" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "https://fhir.krankenhaus.example/sid/system-a/berichtnummer" ] ;
+     fhir:Identifier.value [ fhir:value "0123456789" ]
+  ] ;
+  fhir:Composition.status [ fhir:value "final"] ;
+  fhir:Composition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://dvmd.de/fhir/CodeSystem/kdl" ] ;
+       fhir:Coding.code [ fhir:value "AD010112" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Kurzbericht" ]
+  ] ;
+  fhir:Composition.subject [
+     fhir:Reference.reference [ fhir:value "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345" ]
+  ] ;
+  fhir:Composition.encounter [
+     fhir:Reference.reference [ fhir:value "urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765" ]
+  ] ;
+  fhir:Composition.date [ fhir:value "2022-05-03"^^xsd:date] ;
+  fhir:Composition.author [
+     fhir:index 0 ;
+     fhir:Reference.type [ fhir:value "Device" ] ;
+     fhir:Reference.display [ fhir:value "Gerät XY, Fa. Z, Modell T" ]
+  ] ;
+  fhir:Composition.title [ fhir:value "Blutdruckmessung vom 3.5.2022"] ;
+  fhir:Composition.section [
+     fhir:index 0 ;
+     fhir:Composition.section.title [ fhir:value "Messung" ] ;
+     fhir:Composition.section.text [
+       fhir:Narrative.status [ fhir:value "generated" ] ;
+       fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tr><td><b>Systolisch</b></td><td><b>Diastolisch</b></td><td><b>Einheit</b></td><td><b>Uhrzeit</b></td></tr><tr><td>140</td><td>110</td><td>mmHG</td><td>17:15h</td></tr></table></div>"
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Composition/CompositionExampleBlutdruck.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

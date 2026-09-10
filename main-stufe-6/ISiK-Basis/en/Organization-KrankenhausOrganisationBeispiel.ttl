@@ -1,0 +1,44 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Organization/KrankenhausOrganisationBeispiel> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "KrankenhausOrganisationBeispiel"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization KrankenhausOrganisationBeispiel</b></p><a name=\"KrankenhausOrganisationBeispiel\"> </a><a name=\"hcKrankenhausOrganisationBeispiel\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKOrganisation.html\">ISiKOrganisation</a></p></div><p><b>identifier</b>: ArgeIkIknr/260120196, <code>https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR</code>/345678975, <code>https://gematik.de/fhir/sid/telematik-id</code>/15-Hello-World</p><p><b>name</b>: Uniklinik Entenhausen</p></div>"
+  ] ;
+  fhir:Organization.identifier [
+     fhir:index -1 ;
+     fhir:Identifier.system [ fhir:value "http://fhir.de/sid/arge-ik/iknr" ] ;
+     fhir:Identifier.value [ fhir:value "260120196" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Identifier.system [ fhir:value "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR" ] ;
+     fhir:Identifier.value [ fhir:value "345678975" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+     fhir:Identifier.value [ fhir:value "15-Hello-World" ]
+  ] ;
+  fhir:Organization.name [ fhir:value "Uniklinik Entenhausen"] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Organization/KrankenhausOrganisationBeispiel.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,1116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Formular-Modul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Formular-Modul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Ziele.html">
+                                Ziele
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Spezifikation <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation.html">
+                                            Spezifikation
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-AkteureOrdner.html">
+                                            Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-FunktionenInteraktionen.html">
+                                            Funktionen und Interaktionen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-BestPractice.html">
+                                            Best Practice f&#xFC;r FormularDefinitionen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Begriffsdefinitionen.html">
+                                            Begriffsdefinitionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t zu SDC
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-FormularDefinition.html">
+                                            FormularDefinition
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-FormularDaten.html">
+                                            FormularDaten
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Beispiele.html">
+                                            Beispiele
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="page-title">Beispiel: Observation-basierte Extraction bei quantitativen Angaben</h2>
+<h3 id="metadaten">Metadaten</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Name</b></th><td>ExampleExtractWithUnit</td><tr><th><b>URL</b></th><td><a target='_blank' href='/resolve?&scope=project:isik-stufe-5&canonical=https://gematik.de/fhir/isik/Questionnaire/ExampleExtractWithUnit'>https://gematik.de/fhir/isik/Questionnaire/ExampleExtractWithUnit</a></td><tr><th><b>Beschreibung</b></th><td><h3>Beispiel-Questionnaire mit Observation Based Extraction von Dezimalwerten mit Maßeinheiten</h3>
+<ul>
+<li>Vorgabe der anzugebenden Maßeinheit mittels <a href="https://hl7.org/fhir/R4/extension-questionnaire-unit.html">questionnaire-unit</a>-Extension</li>
+<li>Annotation zur Extraktion mittels <a href="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract">observationExtract</a></li>
+<li>Annotation zum Setzen der category bei Extraktion mittels <a href="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract-category">observationExtractCategory</a></li>
+</ul>
+</td></table>
+<h3 id="gerendertes-formular">Gerendertes Formular</h3>
+<p>Beim Klicken auf &quot;Zeige QR + Observations&quot; werden Sie auf eine externe Seite weitergeleitet, auf der die durch Sie in der Demo eingegebenen Werte als QuestionnaireResonse und extragierte Observations dargestellt werden.</p>
+<iframe src="https://gematik.github.io/poc-isik-formular/?base=https://fhir.simplifier.net/isik-stufe-5/&id=ExampleExtractWithUnit&minimal=withbuttons" style="width:100%; height:400px; border:none; display:block;"></iframe>
+<h3 id="globale-extensions">Globale Extensions</h3>
+<table  class='table table-bordered fql-table'><thead><tr><th>ID</th><th>Text</th><th>Type</th><th>Subextensions</th></tr></thead><tbody><tr><td>4</td><td>Körpermaße</td><td>group</td><td><table ><thead><tr></tr></thead><tbody></tbody></table></td></tr>
+<tr><td>4.1</td><td>Körpergewicht in kg</td><td>decimal</td><td><table ><thead><tr><th>URL</th><th>Wert</th></tr></thead><tbody><tr><td><a target='_blank' href='/resolve?&scope=project:isik-stufe-5&canonical=http://hl7.org/fhir/StructureDefinition/questionnaire-unit'>http://hl7.org/fhir/StructureDefinition/questionnaire-unit</a></td><td>kg</td></tr>
+<tr><td><a target='_blank' href='/resolve?&scope=project:isik-stufe-5&canonical=http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract'>http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract</a></td><td>True</td></tr>
+<tr><td><a target='_blank' href='/resolve?&scope=project:isik-stufe-5&canonical=http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category'>http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category</a></td><td>System: http://terminology.hl7.org/CodeSystem/observation-category<br>Code: vital-signs</td></tr>
+</tbody></table></td></tr>
+<tr><td>4.2</td><td>Körpergröße in cm</td><td>decimal</td><td><table ><thead><tr><th>URL</th><th>Wert</th></tr></thead><tbody><tr><td><a target='_blank' href='/resolve?&scope=project:isik-stufe-5&canonical=http://hl7.org/fhir/StructureDefinition/questionnaire-unit'>http://hl7.org/fhir/StructureDefinition/questionnaire-unit</a></td><td>cm</td></tr>
+<tr><td><a target='_blank' href='/resolve?&scope=project:isik-stufe-5&canonical=http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract'>http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract</a></td><td>True</td></tr>
+<tr><td><a target='_blank' href='/resolve?&scope=project:isik-stufe-5&canonical=http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category'>http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category</a></td><td>System: http://terminology.hl7.org/CodeSystem/observation-category<br>Code: vital-signs</td></tr>
+</tbody></table></td></tr>
+</tbody></table>
+<h3 id="extrahierte-ressourcen">Extrahierte Ressourcen</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#e105163f-3fea-4dbb-89e5-62a54b18f6b6" aria-controls="e105163f-3fea-4dbb-89e5-62a54b18f6b6" role="tab" data-toggle="tab">QuestionnaireResponse</a>
+</li><li role="presentation" class="">
+    <a href="#75de326f-bf58-451f-a018-9eedc550f139" aria-controls="75de326f-bf58-451f-a018-9eedc550f139" role="tab" data-toggle="tab">Observation - Körpergröße</a>
+</li><li role="presentation" class="">
+    <a href="#5efae867-8760-4a8f-92d1-3d4c5848aa36" aria-controls="5efae867-8760-4a8f-92d1-3d4c5848aa36" role="tab" data-toggle="tab">Observation - Körpergewicht</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="e105163f-3fea-4dbb-89e5-62a54b18f6b6">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.resourceType" title="ToDo" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">QuestionnaireResponse</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.id" title="ToDo" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExampleExtractWithUnitResponse</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.meta" title="ToDo" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.meta.profile" title="ToDo" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.questionnaire" title="ToDo" target="_blank">questionnaire</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/Questionnaire/ExampleExtractWithUnit</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse._questionnaire" title="ToDo" target="_blank">_questionnaire</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse._questionnaire.extension" title="ToDo" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse._questionnaire.extension.url" title="ToDo" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/display</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse._questionnaire.extension.valueString" title="ToDo" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Validierung von Dezimalen</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.status" title="ToDo" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">completed</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.subject" title="ToDo" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.subject.reference" title="ToDo" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMinimal</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.author" title="ToDo" target="_blank">author</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.author.reference" title="ToDo" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMinimal</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.authored" title="ToDo" target="_blank">authored</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2025-08-22</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item" title="ToDo" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.linkId" title="ToDo" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.text" title="ToDo" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">K&#246;rperma&#223;e</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item" title="ToDo" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.linkId" title="ToDo" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4.1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.text" title="ToDo" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">K&#246;rpergewicht in kg</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.answer" title="ToDo" target="_blank">answer</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.answer.valueDecimal" title="ToDo" target="_blank">valueDecimal</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">66</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.linkId" title="ToDo" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4.2</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.text" title="ToDo" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">K&#246;rpergr&#246;&#223;e in cm</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.answer" title="ToDo" target="_blank">answer</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.answer.valueDecimal" title="ToDo" target="_blank">valueDecimal</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">166</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="75de326f-bf58-451f-a018-9eedc550f139">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.resourceType" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.id" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExtractedObservationKoerpergroesse</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.meta" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.meta.profile" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergroesse</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.category" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">category</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.category.coding" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.category.coding.system" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.category.coding.code" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">vital-signs</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.code" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.code.coding" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.code.coding.system" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.code.coding.code" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8302-2</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.valueQuantity" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.valueQuantity.system" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.valueQuantity.value" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">166</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.valueQuantity.code" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">cm</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.valueQuantity.unit" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">cm</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.status" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.subject" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.subject.reference" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMinimal</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.effectiveDateTime" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">effectiveDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2025-08-22</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.derivedFrom" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">derivedFrom</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergroesse.json#Observation.derivedFrom.reference" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber die K&#246;rpergr&#246;&#223;e eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung der K&#246;rpergr&#246;&#223;e ist essenziell f&#252;r die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird die K&#246;rpergr&#246;&#223;e mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation." target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">QuestionnaireResponse/ExampleExtractWithUnitResponse</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="5efae867-8760-4a8f-92d1-3d4c5848aa36">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.resourceType" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.id" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExtractedObservationKoerpergewicht</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.meta" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.meta.profile" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.category" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">category</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.category.coding" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.category.coding.system" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.category.coding.code" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">vital-signs</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.code" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.system" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.code" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">29463-7</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.valueQuantity" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.valueQuantity.system" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.valueQuantity.value" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">166</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.valueQuantity.code" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">kg</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.valueQuantity.unit" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">kg</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.status" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.subject" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.subject.reference" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMinimal</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.effectiveDateTime" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">effectiveDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2025-08-22</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.derivedFrom" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">derivedFrom</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKKoerpergewicht.json#Observation.derivedFrom.reference" title="Dieses Profil spezifiziert die Minimalanforderungen f&#252;r die Bereitstellung von Informationen &#252;ber das K&#246;rpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gem&#228;&#223; den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).
+### Motivation
+Die Erfassung und &#220;berwachung des K&#246;rpergewichts ist essenziell f&#252;r die Beurteilung des Ern&#228;hrungszustands, die &#220;berwachung von Ver&#228;nderungen im Rahmen der Therapie sowie die Unterst&#252;tzung klinischer Entscheidungen in der Patientenversorgung.
+
+In FHIR wird das K&#246;rpergewicht mit der Observation-Ressource repr&#228;sentiert.
+
+### Kompatibilit&#228;t
+Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation." target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">QuestionnaireResponse/ExampleExtractWithUnitResponse</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div>
+  </div>
+</div>
+<h3 id="quellcode">Quellcode</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#008fd136-ec3a-4ad7-98e9-538afe0b1f30" aria-controls="008fd136-ec3a-4ad7-98e9-538afe0b1f30" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#086b697c-70d1-4980-ac1a-0f043a03a1d3" aria-controls="086b697c-70d1-4980-ac1a-0f043a03a1d3" role="tab" data-toggle="tab">JSON</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="008fd136-ec3a-4ad7-98e9-538afe0b1f30">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire" title="Questionnaire" target="_blank">Questionnaire</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.id" title="Questionnaire" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ExampleExtractWithUnit</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.meta" title="Questionnaire" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.meta.profile" title="Questionnaire" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.url" title="Questionnaire" target="_blank">url</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/Questionnaire/ExampleExtractWithUnit</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.version" title="Questionnaire" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">0.1.0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.name" title="Questionnaire" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ExampleExtractWithUnit</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.title" title="Questionnaire" target="_blank">title</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Observation Based Extraction bei quantitativen Angaben</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.status" title="Questionnaire" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">draft</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.experimental" title="Questionnaire" target="_blank">experimental</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.subjectType" title="Questionnaire" target="_blank">subjectType</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.publisher" title="Questionnaire" target="_blank">publisher</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Gematik GmbH</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.description" title="Questionnaire" target="_blank">description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">### Beispiel-Questionnaire mit Observation Based Extraction von Dezimalwerten mit Ma&#223;einheiten  \n  * Vorgabe der anzugebenden Ma&#223;einheit mittels [questionnaire-unit](https://hl7.org/fhir/R4/extension-questionnaire-unit.html)-Extension\n  * Annotation zur Extraktion mittels [observationExtract](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract)\n  * Annotation zum Setzen der category bei Extraktion mittels [observationExtractCategory](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract-category)</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item" title="Questionnaire" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.linkId" title="Questionnaire" target="_blank">linkId</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">4</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.text" title="Questionnaire" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">K&#246;rperma&#223;e</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.type" title="Questionnaire" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">group</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.required" title="Questionnaire" target="_blank">required</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item" title="Questionnaire" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/questionnaire-unit</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueCoding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.system" title="Questionnaire" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.code" title="Questionnaire" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">kg</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCoding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueBoolean</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueCodeableConcept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.coding" title="Questionnaire" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.coding.system" title="Questionnaire" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.coding.code" title="Questionnaire" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">vital-signs</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCodeableConcept</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.linkId" title="Questionnaire" target="_blank">linkId</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">4.1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.code" title="Questionnaire" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.code.system" title="Questionnaire" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.code.code" title="Questionnaire" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">29463-7</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.text" title="Questionnaire" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">K&#246;rpergewicht in kg</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.type" title="Questionnaire" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">decimal</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item" title="Questionnaire" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/questionnaire-unit</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueCoding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.system" title="Questionnaire" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.code" title="Questionnaire" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">cm</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCoding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueBoolean</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueCodeableConcept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.coding" title="Questionnaire" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.coding.system" title="Questionnaire" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.coding.code" title="Questionnaire" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">vital-signs</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCodeableConcept</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.linkId" title="Questionnaire" target="_blank">linkId</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">4.2</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.code" title="Questionnaire" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.code.system" title="Questionnaire" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.code.code" title="Questionnaire" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">8302-2</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.text" title="Questionnaire" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">K&#246;rpergr&#246;&#223;e in cm</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.type" title="Questionnaire" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">decimal</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Questionnaire</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="086b697c-70d1-4980-ac1a-0f043a03a1d3">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.resourceType" title="Questionnaire" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Questionnaire</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.id" title="Questionnaire" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExampleExtractWithUnit</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.meta" title="Questionnaire" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.meta.profile" title="Questionnaire" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.subjectType" title="Questionnaire" target="_blank">subjectType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">Patient</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.name" title="Questionnaire" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExampleExtractWithUnit</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.version" title="Questionnaire" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">0.1.0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/Questionnaire/ExampleExtractWithUnit</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.status" title="Questionnaire" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">draft</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.experimental" title="Questionnaire" target="_blank">experimental</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.publisher" title="Questionnaire" target="_blank">publisher</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Gematik GmbH</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.title" title="Questionnaire" target="_blank">title</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation Based Extraction bei quantitativen Angaben</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.description" title="Questionnaire" target="_blank">description</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">### Beispiel-Questionnaire mit Observation Based Extraction von Dezimalwerten mit Ma&#223;einheiten  \n  * Vorgabe der anzugebenden Ma&#223;einheit mittels [questionnaire-unit](https://hl7.org/fhir/R4/extension-questionnaire-unit.html)-Extension\n  * Annotation zur Extraktion mittels [observationExtract](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract)\n  * Annotation zum Setzen der category bei Extraktion mittels [observationExtractCategory](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract-category)</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item" title="Questionnaire" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.type" title="Questionnaire" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">group</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.required" title="Questionnaire" target="_blank">required</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.linkId" title="Questionnaire" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.text" title="Questionnaire" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">K&#246;rperma&#223;e</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item" title="Questionnaire" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/questionnaire-unit</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCoding" title="Questionnaire" target="_blank">valueCoding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCoding.code" title="Questionnaire" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">kg</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCoding.system" title="Questionnaire" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueBoolean" title="Questionnaire" target="_blank">valueBoolean</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCodeableConcept" title="Questionnaire" target="_blank">valueCodeableConcept</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCodeableConcept.coding" title="Questionnaire" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCodeableConcept.coding.code" title="Questionnaire" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">vital-signs</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCodeableConcept.coding.system" title="Questionnaire" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.code" title="Questionnaire" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.code.code" title="Questionnaire" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">29463-7</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.code.system" title="Questionnaire" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.linkId" title="Questionnaire" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4.1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.text" title="Questionnaire" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">K&#246;rpergewicht in kg</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.type" title="Questionnaire" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">decimal</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/questionnaire-unit</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCoding" title="Questionnaire" target="_blank">valueCoding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCoding.code" title="Questionnaire" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">cm</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCoding.system" title="Questionnaire" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueBoolean" title="Questionnaire" target="_blank">valueBoolean</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCodeableConcept" title="Questionnaire" target="_blank">valueCodeableConcept</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCodeableConcept.coding" title="Questionnaire" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCodeableConcept.coding.code" title="Questionnaire" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">vital-signs</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCodeableConcept.coding.system" title="Questionnaire" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.code" title="Questionnaire" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.code.code" title="Questionnaire" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8302-2</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.code.system" title="Questionnaire" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.linkId" title="Questionnaire" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4.2</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.text" title="Questionnaire" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">K&#246;rpergr&#246;&#223;e in cm</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.type" title="Questionnaire" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">decimal</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-loinc-iso11073> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-vs-icu-code-observation-beatmung-loinc-iso11073"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet mii-vs-icu-code-observation-beatmung-loinc-iso11073</b></p><a name=\"mii-vs-icu-code-observation-beatmung-loinc-iso11073\"> </a><a name=\"hcmii-vs-icu-code-observation-beatmung-loinc-iso11073\"> </a><ul><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-mdc.html\"><code>urn:iso:std:iso:11073:10101</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>150656</td><td>Oxygenation Ratio</td></tr><tr><td>151586</td><td>Ventilation rate</td></tr><tr><td>152498</td><td>Unassisted spontaneous breath rate; respiration rate</td></tr><tr><td>152490</td><td>Total respiratory rate; total breath rate</td></tr><tr><td>16929632</td><td>Inspiratory time setting</td></tr><tr><td>151832</td><td>Ratio inspiration expiration time</td></tr><tr><td>16929196</td><td>Tidal volume setting</td></tr><tr><td>151980</td><td>Ventilation tidal volume</td></tr><tr><td>152004</td><td>Ventilation inspiratory minute volume</td></tr><tr><td>16929860</td><td>High pressure hold time setting Ventilator</td></tr><tr><td>16929864</td><td>Low pressure hold time setting Ventilator</td></tr><tr><td>151948</td><td>Ventilation inspiratory flow</td></tr><tr><td>151944</td><td>Ventilation expiratory flow</td></tr><tr><td>153132</td><td>Expired oxygen concentration (or partial pressure) in airway gas</td></tr><tr><td>151975</td><td>Mean pressure Respiratory system airway --on ventilator</td></tr><tr><td>151973</td><td>Pressure.max Respiratory system airway --on ventilator</td></tr><tr><td>151692</td><td>Thoracic compliance</td></tr><tr><td>151976</td><td>Applied PEEP</td></tr><tr><td>152720</td><td>Inspiratory airway pressure relative to PEEP or BAP</td></tr><tr><td>151708</td><td>End tidal carbon dioxide concentration (or partial pressure) in airway gas</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-loinc-iso11073"] ;
+  fhir:ValueSet.version [ fhir:value "6.0.0"] ;
+  fhir:ValueSet.name [ fhir:value "MII_VS_ICU_Code_Observation_Beatmung_ISO11073"] ;
+  fhir:ValueSet.title [ fhir:value "MII VS ICU Code Observation Beatmung ISO11073"] ;
+  fhir:ValueSet.status [ fhir:value "active"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-07-01"^^xsd:date] ;
+  fhir:ValueSet.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:ValueSet.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.gematik.de" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Dieses ValueSet enthält Codes für die im Kontext einer Beatmung verwendeten Parameter.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026"] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "urn:iso:std:iso:11073:10101" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "150656" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Oxygenation Ratio" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "151586" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Ventilation rate" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "152498" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Unassisted spontaneous breath rate; respiration rate" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "152490" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Total respiratory rate; total breath rate" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "16929632" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Inspiratory time setting" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "151832" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Ratio inspiration expiration time" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "16929196" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Tidal volume setting" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "151980" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Ventilation tidal volume" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "152004" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Ventilation inspiratory minute volume" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "16929860" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "High pressure hold time setting Ventilator" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "16929864" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Low pressure hold time setting Ventilator" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "151948" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Ventilation inspiratory flow" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "151944" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Ventilation expiratory flow" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "153132" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Expired oxygen concentration (or partial pressure) in airway gas" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "151975" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Mean pressure Respiratory system airway --on ventilator" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "151973" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Pressure.max Respiratory system airway --on ventilator" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "151692" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Thoracic compliance" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "151976" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Applied PEEP" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "152720" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Inspiratory airway pressure relative to PEEP or BAP" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "151708" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "End tidal carbon dioxide concentration (or partial pressure) in airway gas" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-beatmung-loinc-iso11073.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

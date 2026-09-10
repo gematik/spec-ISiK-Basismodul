@@ -1,0 +1,60 @@
+{
+  "resourceType" : "Account",
+  "id" : "SZ2DRGFall",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Account SZ2DRGFall</b></p><a name=\"SZ2DRGFall\"> </a><a name=\"hcSZ2DRGFall\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKAbrechnungsfall.html\">ISiKAbrechnungsfall</a></p></div><blockquote><p><b>Fallbezogene Abrechnungsrelevanz von Diagnosen und Prozeduren</b></p><ul><li>Use: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#KontaktDiagnoseProzedur-hospital-main-diagnosis\">KontaktDiagnoseProzedur: hospital-main-diagnosis</a> (Krankenhaus Hauptdiagnose)</li><li>Referenz: <a href=\"Condition-SZ2Primaerdiagnose.html\">Condition Diabetes mellitus, Typ 1: Mit Augenkomplikationen: Nicht als entgleist bezeichnet</a></li></ul></blockquote><p><b>identifier</b>: Account number/22222222222</p><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode IMP}\">inpatient encounter</span></p><p><b>subject</b>: <a href=\"Patient-SZ2Patient.html\">Friedlinde Musterfrau (official) Female, DoB: 1924-01-01 ( Medical record number)</a></p><h3>Coverages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td/><td><a href=\"Coverage-SZ2VersicherungGesetzlich.html\">Coverage: status = active; type = gesetzliche Krankenversicherung</a></td></tr></table></div>"
+  },
+  "extension" : [{
+    "extension" : [{
+      "url" : "Use",
+      "valueCoding" : {
+        "system" : "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur",
+        "code" : "hospital-main-diagnosis"
+      }
+    },
+    {
+      "url" : "Referenz",
+      "valueReference" : {
+        "reference" : "Condition/SZ2Primaerdiagnose"
+      }
+    }],
+    "url" : "http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur"
+  }],
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "AN"
+      }]
+    },
+    "system" : "http://beispiel-krankenhaus.de/sid/fallnummern",
+    "value" : "22222222222"
+  }],
+  "status" : "active",
+  "type" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "IMP"
+    }]
+  },
+  "subject" : [{
+    "reference" : "Patient/SZ2Patient"
+  }],
+  "coverage" : [{
+    "extension" : [{
+      "url" : "http://fhir.de/StructureDefinition/ExtensionAbrechnungsart",
+      "valueCoding" : {
+        "system" : "http://fhir.de/CodeSystem/dkgev/Abrechnungsart",
+        "code" : "DRG",
+        "display" : "Diagnosebezogene Fallgruppen"
+      }
+    }],
+    "coverage" : {
+      "reference" : "Coverage/SZ2VersicherungGesetzlich"
+    }
+  }]
+}

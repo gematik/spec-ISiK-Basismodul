@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden - ISiK ICU-Normalstation Workflow</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden - ISiK ICU-Normalstation Workflow
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-UseCases.html">
+                                Use Cases
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Akteure.html">
+                                Akteure
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ProzesseUndWorkflows.html">
+                                Prozesse und Workflows
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Festlegungen.html">
+                                Festlegungen
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalarterieller-wedge-druck.html">
+                                            SD_MII_ICU_Pulmonalarterieller_Wedge_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-blut-preduktal-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Preduktal_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Postduktal_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumenindex.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumenindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-schlagvolumenindex-durch-indikatorverd.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Schlagvolumenindex_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumen.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumen (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-schlagvolumen-durch-indikatorverduennung.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumen_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalvaskulaerer-widerstandsindex.html">
+                                            SD_MII_ICU_Pulmonalvaskulaerer_Widerstandsindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-systemischer-vaskulaerer-widerstandsindex.html">
+                                            SD_MII_ICU_Systemischer_Vaskulaerer_Widerstandsindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaerer-herzindex.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Herzindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-herzzeitvolumen.html">
+                                            SD_MII_ICU_Herzzeitvolumen (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Herzindex_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Herzzeitvolumen_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-zentralvenoeser-blutdruck.html">
+                                            SD_MII_ICU_Zentralvenoeser_Blutdruck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksatrialer-druck.html">
+                                            SD_MII_ICU_Linksatrialer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-rechtsatrialer-druck.html">
+                                            SD_MII_ICU_Rechtsatrialer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-rechtsventrikulaerer-druck.html">
+                                            SD_MII_ICU_Rechtsventrikulaerer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaerer-druck.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalarterieller-blutdruck.html">
+                                            SD_MII_ICU_Pulmonalarterieller_Blutdruck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-brustwirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Brustwirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-lendenwirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Lendenwirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-halswirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Halswirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-brust.html">
+                                            SD_MII_ICU_Koerpertemperatur_Brust (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-myokard.html">
+                                            SD_MII_ICU_Koerpertemperatur_Myokard (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-atemwege.html">
+                                            SD_MII_ICU_Koerpertemperatur_Atemwege (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-blut.html">
+                                            SD_MII_ICU_Koerpertemperatur_Blut (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-nasen-rachen-raum.html">
+                                            SD_MII_ICU_Koerpertemperatur_Nasen_Rachen_Raum (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-speiseroehre.html">
+                                            SD_MII_ICU_Koerpertemperatur_Speiseroehre (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-intrakranieller-druck-icp.html">
+                                            SD_MII_ICU_Intrakranieller_Druck_Icp (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpergewicht-percentil-altersabhaengig.html">
+                                            SD_MII_ICU_Koerpergewicht_Percentil_Altersabhaengig (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpergroesse-percentil-altersabhaengig.html">
+                                            SD_MII_ICU_Koerpergroesse_Percentil_Altersabhaengig (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-ideales-koerpergewicht.html">
+                                            SD_MII_ICU_Ideales_Koerpergewicht (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Arteriellen_Blut_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-puls.html">
+                                            SD_MII_ICU_Puls (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-kern.html">
+                                            SD_MII_ICU_Koerpertemperatur_Kern (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-gelenk.html">
+                                            SD_MII_ICU_Koerpertemperatur_Gelenk (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-stirn.html">
+                                            SD_MII_ICU_Koerpertemperatur_Stirn (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-nasal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Nasal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-leiste.html">
+                                            SD_MII_ICU_Koerpertemperatur_Leiste (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-achsel.html">
+                                            SD_MII_ICU_Koerpertemperatur_Achsel (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-unter-der-zunge.html">
+                                            SD_MII_ICU_Koerpertemperatur_Oral (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-vaginal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Vaginal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-harnblase.html">
+                                            SD_MII_ICU_Koerpertemperatur_Harnblase (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-rektal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Rektal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-trommelfell.html">
+                                            SD_MII_ICU_Koerpertemperatur_Trommelfell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#a0c2e7d4-5e8d-49e9-98ae-fc04937e71d0" aria-controls="a0c2e7d4-5e8d-49e9-98ae-fc04937e71d0" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#37f9b271-da77-43f1-8db7-cd67aa4479d9" aria-controls="37f9b271-da77-43f1-8db7-cd67aa4479d9" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#ec770b37-4cd9-4176-9062-e293d00366a0" aria-controls="ec770b37-4cd9-4176-9062-e293d00366a0" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#6621ba32-71a4-44e8-b685-8fe095434866" aria-controls="6621ba32-71a4-44e8-b685-8fe095434866" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="a0c2e7d4-5e8d-49e9-98ae-fc04937e71d0">
+    <div class="stu3-treetable" id="34b6574fb8ab4b12aecfb7001370dc53" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="d7d956b0bad044c2b6c6bebf47b868df"><td class="instance"><span class="baseIcon primitive"></span><b>Observation</b></td></tr><tr class="collapsed" data-id="922c65a1ea4e4b0e969bde5e06cd50d7" data-parentId="d7d956b0bad044c2b6c6bebf47b868df"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>Koerpertemperatur-vaginal</span></td></tr><tr class="collapsed" data-id="23878fc088b040c0bb909fe42906e641" data-parentId="d7d956b0bad044c2b6c6bebf47b868df"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="19ec028ab1e549aeb848be5093789061" data-parentId="23878fc088b040c0bb909fe42906e641"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-vaginal</span></td></tr><tr class="collapsed" data-id="589f2c67bb2f4e429b4e97265e26f1e7" data-parentId="d7d956b0bad044c2b6c6bebf47b868df"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="f37b23fb899f41f2b3b8c4829af57438" data-parentId="d7d956b0bad044c2b6c6bebf47b868df"><td class="instance"><span class="baseIcon primitive"></span><b>category</b></td></tr><tr class="collapsed" data-id="d7ae7eee879e4ee5aeaede307868a4d8" data-parentId="f37b23fb899f41f2b3b8c4829af57438"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="66ea41893a974a1ab431fd6b76b6fd96" data-parentId="d7ae7eee879e4ee5aeaede307868a4d8"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/observation-category</span></td></tr><tr class="collapsed" data-id="3bef66fa05734c5bb6bd9a3624401614" data-parentId="d7ae7eee879e4ee5aeaede307868a4d8"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>vital-signs</span></td></tr><tr class="collapsed" data-id="bcc7bc99586d4c208bf9c2acfde1bcb0" data-parentId="d7d956b0bad044c2b6c6bebf47b868df"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="fb54622371564f55abaa093722a528c4" data-parentId="bcc7bc99586d4c208bf9c2acfde1bcb0"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="937d6649ff964dfbbd642bbe1fd1547a" data-parentId="fb54622371564f55abaa093722a528c4"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="ece2bb1c1bd146adb822bad518ec566b" data-parentId="fb54622371564f55abaa093722a528c4"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>8310-5</span></td></tr><tr class="collapsed" data-id="f6a6a39f078a4a4e96d36ca1b4fbf8f5" data-parentId="bcc7bc99586d4c208bf9c2acfde1bcb0"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="71796fd2466d462ebce663a5c717bae6" data-parentId="f6a6a39f078a4a4e96d36ca1b4fbf8f5"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="99bb39493cbc413fa81c3ff524d6814c" data-parentId="f6a6a39f078a4a4e96d36ca1b4fbf8f5"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>364246006</span></td></tr><tr class="collapsed" data-id="769d95e57a1b4ec7a7a6da189ae805d9" data-parentId="f6a6a39f078a4a4e96d36ca1b4fbf8f5"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Core body temperature measured vaginally</span></td></tr><tr class="collapsed" data-id="3df1b82fdb4e4154962e062d7f8b26f6" data-parentId="bcc7bc99586d4c208bf9c2acfde1bcb0"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="842a86c31b1c4dcfbb123f675d3537b5" data-parentId="3df1b82fdb4e4154962e062d7f8b26f6"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="d3b3bfb2f92549f1bcf2adc28ff5489b" data-parentId="3df1b82fdb4e4154962e062d7f8b26f6"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>8329-5</span></td></tr><tr class="collapsed" data-id="79ebd6070411401db2e941e2af61782d" data-parentId="d7d956b0bad044c2b6c6bebf47b868df"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="828f1acc7498425b92052776e0b29f8c" data-parentId="79ebd6070411401db2e941e2af61782d"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="c543a57e997b44eb98395df7fb2ee540" data-parentId="d7d956b0bad044c2b6c6bebf47b868df"><td class="instance"><span class="baseIcon primitive"></span><b>effective</b></td></tr><tr class="collapsed" data-id="49bc98d2bd9c4c3c8a8c5b5f91659b8f" data-parentId="c543a57e997b44eb98395df7fb2ee540"><td class="instance"><span class="baseIcon primitive"></span><b>start : </b><span>2019-12-23T09:30:10+01:00</span></td></tr><tr class="collapsed" data-id="a26dfe2809d042a89d1075473d6425bd" data-parentId="c543a57e997b44eb98395df7fb2ee540"><td class="instance"><span class="baseIcon primitive"></span><b>end : </b><span>2019-12-23T10:30:10+01:00</span></td></tr><tr class="collapsed" data-id="bb1c3427bc0f4d34a9a00481477b4a6b" data-parentId="d7d956b0bad044c2b6c6bebf47b868df"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="79f6aea7a6884fbf97f4d3973cdd43f9" data-parentId="bb1c3427bc0f4d34a9a00481477b4a6b"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>37</span></td></tr><tr class="collapsed" data-id="16d3c2482b2148f3b628e8b22088362f" data-parentId="bb1c3427bc0f4d34a9a00481477b4a6b"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>degree Celsius</span></td></tr><tr class="collapsed" data-id="bd38293605ef4dd0b0ee2bb19838a587" data-parentId="bb1c3427bc0f4d34a9a00481477b4a6b"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="87981bfe13c4407ca884bfd142423d87" data-parentId="bb1c3427bc0f4d34a9a00481477b4a6b"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>Cel</span></td></tr><tr class="collapsed" data-id="c5e1d004af454c3c81bf720f4d1f80a1" data-parentId="d7d956b0bad044c2b6c6bebf47b868df"><td class="instance"><span class="baseIcon primitive"></span><b>bodySite</b></td></tr><tr class="collapsed" data-id="5803bb501e124d83af4b40b78b3f5304" data-parentId="c5e1d004af454c3c81bf720f4d1f80a1"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="3df5aa97877d4075971ee37bb516d2fa" data-parentId="5803bb501e124d83af4b40b78b3f5304"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="9b54b90d40dd4df38ec8ed47a51d4c44" data-parentId="5803bb501e124d83af4b40b78b3f5304"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>76784001</span></td></tr><tr class="collapsed" data-id="873ff72d684b4ea7800997856c082674" data-parentId="5803bb501e124d83af4b40b78b3f5304"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Vaginal structure (body structure)</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable34b6574fb8ab4b12aecfb7001370dc53 = new InstanceTree();
+resourceTreeTable34b6574fb8ab4b12aecfb7001370dc53.init("34b6574fb8ab4b12aecfb7001370dc53");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="37f9b271-da77-43f1-8db7-cd67aa4479d9">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">Observation</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.id" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Koerpertemperatur-vaginal</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.meta" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.meta.profile" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-vaginal</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.status" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.category" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">category</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.category.coding" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.category.coding.system" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.category.coding.code" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">vital-signs</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">category</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">8310-5</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">364246006</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding.display" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Core body temperature measured vaginally</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">8329-5</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.subject" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.subject.reference" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.effective" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">effectivePeriod</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.effective.start" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">start</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2019-12-23T09:30:10+01:00</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.effective.end" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">end</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2019-12-23T10:30:10+01:00</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">effectivePeriod</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.value" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">valueQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.value.value" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">37</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.value.unit" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">degree Celsius</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.value.system" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.value.code" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Cel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueQuantity</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.bodySite" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">bodySite</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.bodySite.coding" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.bodySite.coding.system" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.bodySite.coding.code" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">76784001</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.bodySite.coding.display" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Vaginal structure (body structure)</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">bodySite</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Observation</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="ec770b37-4cd9-4176-9062-e293d00366a0">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.resourceType" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.id" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Koerpertemperatur-vaginal</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.meta" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.meta.profile" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-vaginal</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.category" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">category</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.category.coding" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.category.coding.system" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.category.coding.code" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">vital-signs</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8310-5</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">364246006</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding.display" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Core body temperature measured vaginally</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8329-5</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.valueQuantity" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.valueQuantity.system" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.valueQuantity.code" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Cel</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.valueQuantity.value" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">37</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.valueQuantity.unit" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">degree Celsius</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.bodySite" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">bodySite</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.bodySite.coding" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.bodySite.coding.code" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">76784001</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.bodySite.coding.system" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.bodySite.coding.display" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Vaginal structure (body structure)</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.status" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.subject" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.subject.reference" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.effectivePeriod" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">effectivePeriod</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.effectivePeriod.start" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">start</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2019-12-23T09:30:10+01:00</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json#Observation.effectivePeriod.end" title="SD MII ICU Koerpertemperatur vaginal
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-vaginal.json" target="_blank">end</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2019-12-23T10:30:10+01:00</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="6621ba32-71a4-44e8-b685-8fe095434866">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Observation-Koerpertemperatur-vaginal.json'>Core body temperature measured vaginally</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

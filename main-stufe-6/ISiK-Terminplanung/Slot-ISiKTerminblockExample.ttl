@@ -1,0 +1,36 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Slot/ISiKTerminblockExample> a fhir:Slot ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ISiKTerminblockExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Slot ISiKTerminblockExample</b></p><a name=\"ISiKTerminblockExample\"> </a><a name=\"hcISiKTerminblockExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKTerminblock.html\">ISiKTerminblock</a></p></div><p><b>schedule</b>: <a href=\"Schedule-ISiKKalenderExample.html\">Schedule: serviceType = General Practice; specialty = Allgemeinmedizin</a></p><p><b>status</b>: Busy</p><p><b>start</b>: 2022-12-10 09:00:00+0000</p><p><b>end</b>: 2022-12-10 11:00:00+0000</p></div>"
+  ] ;
+  fhir:Slot.schedule [
+     fhir:link <https://gematik.de/fhir/isik/Schedule/ISiKKalenderExample> ;
+     fhir:Reference.reference [ fhir:value "Schedule/ISiKKalenderExample" ]
+  ] ;
+  fhir:Slot.status [ fhir:value "busy"] ;
+  fhir:Slot.start [ fhir:value "2022-12-10T09:00:00Z"^^xsd:dateTime] ;
+  fhir:Slot.end [ fhir:value "2022-12-10T11:00:00Z"^^xsd:dateTime] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Slot/ISiKTerminblockExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
