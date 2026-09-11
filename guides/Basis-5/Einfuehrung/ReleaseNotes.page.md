@@ -24,6 +24,7 @@ Die Tags werden folgendermaßen verwendet:
 Datum: tbd.
 
 * `improve` Einbinden der Allergie-ValueSets nach Publikation auf Zentralem Terminologie-Server im Profil ISiKAllergieUnvertraeglichkeit https://github.com/gematik/spec-ISiK-Basismodul/pull/1313
+* `documentation` Klarstellung zur Quelle der Telematik-ID https://github.com/gematik/spec-ISiK-Basismodul/pull/
 
 ## Version 5.1.3
 
