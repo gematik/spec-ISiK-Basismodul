@@ -108,7 +108,7 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 * identifier[TelematikID] only $identifer-TelematikID
   * ^short = "Telematik-ID"
   * ^patternIdentifier.system = $identifer-TelematikID-system
-  * ^comment = "Motivation Must Support: Jede Organisation, die über eine Telematik-ID verfügt, soll dadurch eindeutig identifiziert werden können."
+  * ^comment = "Motivation Must Support: Jede Organisation, die über eine Telematik-ID (über eine SMC-B) verfügt, soll dadurch eindeutig identifiziert werden können."
 /*
 * identifier[KIMAdresse] only $GEM_PR_KIM_AdressIdentifier
 * identifier[KIMAdresse].type 0..1
