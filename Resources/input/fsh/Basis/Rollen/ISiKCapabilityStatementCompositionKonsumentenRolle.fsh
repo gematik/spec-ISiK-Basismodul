@@ -8,7 +8,7 @@ Usage: #definition
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * purpose = "
 CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementCompositionKonsumentenRolle&quot;.
-Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitung von ISiKBerichtBundles.
+Diese Rolle beschreibt verpflichtende Interaktionen zum Entgegennahme und der Verarbeitung von ISiKBerichtBundles.
 "
 
 * document

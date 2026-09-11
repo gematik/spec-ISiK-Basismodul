@@ -79,10 +79,22 @@ Diese Rolle beschreibt Interaktionen zum Abruf und der Verarbeitung grundlegende
       * type = #token
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Patient?birthdate=1964-12-08`    
+        `GET [base]/Patient?gender=female`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  
         Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend." 
+    // Überschreibt die Dokumentation des ersten Suchparameters aus CommonSearchParameters (_id)
+    // Hinweis: Muss NACH allen searchParam[+]-Regeln dieser Ressource stehen,
+    // da ein numerischer Index den Soft-Index-Zähler zurücksetzt.
+    * searchParam[0].documentation = 
+      "**Beispiel:**    
+      `GET [base]/Patient?_id=103270`    
+      **Anwendungshinweis:**   
+      Der Parameter `_id` wird selten alleinstehend verwendet, da sich zum Abruf eines Patienten 
+      anhand der `id` die `READ`-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden, 
+      um den Abruf einer Ressource bspw. mit einem `_include` weiterer Ressourcen zu verbinden.   
+      Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).  
+      Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
 
   * resource[+]
     * type = #Encounter
@@ -167,7 +179,7 @@ Diese Rolle beschreibt Interaktionen zum Abruf und der Verarbeitung grundlegende
       * type = #date
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Encounter?date=lt2020-26-10`    
+        `GET [base]/Encounter?date=lt2020-10-26`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  
         Bei der Formulierung der Suche sollten die Vorgaben aus der Definition der 
@@ -180,7 +192,7 @@ Diese Rolle beschreibt Interaktionen zum Abruf und der Verarbeitung grundlegende
       * type = #date
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Encounter?end-date=lt2020-26-10`    
+        `GET [base]/Encounter?date-start=lt2020-10-26`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  
         Bei diesem Suchparameter handelt es sich um eine Präadoption 
@@ -192,7 +204,7 @@ Diese Rolle beschreibt Interaktionen zum Abruf und der Verarbeitung grundlegende
       * type = #date
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Encounter?end-date=lt2020-26-10`    
+        `GET [base]/Encounter?end-date=lt2020-10-26`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  
         Bei diesem Suchparameter handelt es sich um eine Präadoption 
