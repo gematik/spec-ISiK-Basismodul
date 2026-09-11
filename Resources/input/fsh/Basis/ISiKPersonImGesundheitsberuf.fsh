@@ -46,7 +46,7 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
 * identifier[TelematikId] only IdentifierTelematikId
   * ^short = "Telematik-ID"
   * ^patternIdentifier.type = $v2-0203#PRN
-  * ^comment = "**Begründung MS:** Zur Verknüpfung der Patient Instanz mit Diensten der Telematik Infrastruktur SOLL die ID mit angegeben sein."
+  * ^comment = "**Begründung MS:** Zur Verknüpfung der Practitioner Instanz mit Diensten der Telematik Infrastruktur SOLL die ID des HBA mit angegeben sein."
   * type 1..
 * identifier[Mitarbeiterkennzeichen]
   * ^short = "Mitarbeiterkennzeichen"
