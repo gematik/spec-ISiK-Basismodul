@@ -83,6 +83,18 @@ Diese Rolle beschreibt Interaktionen zum Abruf und der Verarbeitung grundlegende
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  
         Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend." 
+    // Überschreibt die Dokumentation des ersten Suchparameters aus CommonSearchParameters (_id)
+    // Hinweis: Muss NACH allen searchParam[+]-Regeln dieser Ressource stehen,
+    // da ein numerischer Index den Soft-Index-Zähler zurücksetzt.
+    * searchParam[0].documentation = 
+      "**Beispiel:**    
+      `GET [base]/Patient?_id=103270`    
+      **Anwendungshinweis:**   
+      Der Parameter `_id` wird selten alleinstehend verwendet, da sich zum Abruf eines Patienten 
+      anhand der `id` die `READ`-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden, 
+      um den Abruf einer Ressource bspw. mit einem `_include` weiterer Ressourcen zu verbinden.   
+      Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).  
+      Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
 
   * resource[+]
     * type = #Encounter

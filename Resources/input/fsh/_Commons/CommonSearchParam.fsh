@@ -14,7 +14,7 @@ RuleSet: CommonSearchParameters
         z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:
         `GET [base]/Encounter?_id=103270&_include=Encounter:patient`
         Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).
-        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
+       "
 * searchParam[+]
   * insert CapabilityStatementExpectationExt(SHALL)
   * name = "_count"
