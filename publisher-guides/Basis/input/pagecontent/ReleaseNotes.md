@@ -13,6 +13,7 @@ Tags werden folgendermaßen verwendet:
 Datum: tbd.
 
 * `improve` Einbinden der Allergie-ValueSets nach Publikation auf Zentralem Terminologie-Server im Profil ISiKAllergieUnvertraeglichkeit <https://github.com/gematik/spec-ISiK-Basismodul/pull/1312>
+* `documentation` Verbesserung fehlerhafter Beispiele innerhalb der Suchparameterdefinition in den CapabilityStatements https://github.com/gematik/spec-ISiK-Basismodul/pull/1324
 
 
 ### Version 6.0.0
