@@ -12,3 +12,22 @@ SHALL/MUSS drückt in ISiK entsprechend eine notwendig zu erfüllende Anforderun
 MAY/KANN drückt in ISiK eine freiwillig zu erfüllende Anforderung aus. Die Anforderung wird über einen Test abgedeckt, dessen Ergebnis ist jedoch nicht maßgeblich für die Zertifizierung eines Systems gegen das betreffende Modul.
 Bei erfolgreichem Durchlaufen eines Tests zu einer freiwilligen Anforderung, erscheint das Ergebnis im Testbericht.
 
+## Verbindlichkeit in CapabilityStatements
+
+Da die FHIR-Kernspezifikation nur englischsprachige Schlüsselwörter kennt, wird die Verbindlichkeit in CapabilityStatements über Extension-Codes ausgedrückt. Die folgende Tabelle stellt den Zusammenhang zu den oben eingeführten deutschen Schlüsselwörtern her:
+
+| Deutsches Schlüsselwort | RFC2119    | Code in CapabilityStatements                |
+|--------------------------|-----------|----------------------------------------------|
+| MUSS                     | SHALL     | `SHALL`                                       |
+| SOLL                     | SHOULD    | `SHOULD`                                      |
+| KANN                     | MAY       | `MAY`                                         |
+| SOLL NICHT               | SHOULD NOT| `SHOULD-NOT`                                  |
+| DARF NICHT               | SHALL NOT | *(in CapabilityStatements nicht verwendet)*   |
+
+Zwei Extensions transportieren diese Codes an unterschiedlichen Stellen:
+
+- Die **CapabilityStatement-Expectation-Extension** kennzeichnet einzelne Interaktionen/Profile *innerhalb* eines Rollen-CapabilityStatements. Da dort jede Anforderung entweder verpflichtend oder freiwillig ist, werden nur `SHALL` und `MAY` verwendet.
+- Die **CapabilityStatement-Imports-Expectation-Extension** kennzeichnet importierte *Rollen* innerhalb eines Akteur-CapabilityStatements. Hier kommen alle vier Codes zum Einsatz, um auch abgestufte Empfehlungen zwischen Rollen auszudrücken.
+
+In den tabellarischen Darstellungen der CapabilityStatements erscheint ausschließlich die englische Code-Fassung; die deutsche Entsprechung ist obiger Tabelle zu entnehmen.
+
