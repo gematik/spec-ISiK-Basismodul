@@ -95,7 +95,7 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
         "**Beispiel:**    
         `GET [base]/ValueSet?context-type-value=http://terminology.hl7.org/CodeSystem/usage-context-type|focus$http://hl7.org/fhir/resource-types|Encounter`    
         **Anwendungshinweis:**  
-        Mit dieser Abfrage können hausinterne Kataloge anhand des Ressource-Typs ermittelt werden. Diese Informationen sind u.a. relevant im Kontext von:  
+        Mit dieser Abfrage können hausinterne Kataloge anhand des Ressourcentyps ermittelt werden. Diese Informationen sind u.a. relevant im Kontext von:  
         * Hausinternen Prozeduren/Diagnosen-Codes
         * Kodierung von Encounter-Informationen (z.B. Wahlleistungen, Orttypen)  
         Use Cases im Zusammenhang:    
