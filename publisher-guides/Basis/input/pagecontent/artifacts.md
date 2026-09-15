@@ -40,6 +40,11 @@ Das CapabilityStatement mit der Kennzeichnung "Expanded" dient der direkten Übe
 {% include artifacts-table-generator-isik.html resourceType="SearchParameter" %}
 <div><figcaption><strong>Tabelle:</strong> Suchparameter</figcaption></div>
 
+#### Operationen
+
+{% include artifacts-table-generator-isik.html ressourceType="Operations" %}
+<div><figcaption><strong>Tabelle:</strong> Operationen</figcaption></div>
+
 ### Terminologien
 
 #### Value Sets

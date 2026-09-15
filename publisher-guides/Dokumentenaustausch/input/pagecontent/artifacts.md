@@ -39,6 +39,11 @@ Darüber hinaus gelten die [übergreifenden Festlegungen zu FHIR-Artefakten aus 
 {% include artifacts-table-generator-isik.html resourceType="StructureDefinition" filterKind="resource" showType=true sortByType=true %}
 <div><figcaption><strong>Tabelle:</strong> Ressourcen-Profile</figcaption></div>
 
+#### Operationen
+
+{% include artifacts-table-generator-isik.html ressourceType="Operations" %}
+<div><figcaption><strong>Tabelle:</strong> Operationen</figcaption></div>
+
 ### Terminologien
 
 #### Value Sets
