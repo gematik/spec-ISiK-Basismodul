@@ -2,7 +2,7 @@
 
 Datum: 2026-09-07  
 
-Status: Vorgeschlagen  
+Status: Angenommen  
 
 Ticket: PTDATA-2240
 
@@ -95,16 +95,19 @@ Unabhängig von der Wahl zwischen Option 2 und Option 3 kann eine zusätzliche C
   - Setzt einen stabil erreichbaren Referenzstand des letzten Releases voraus (Registry-Zugriff bzw. archivierte Paketstände).
 
 ## Entscheidung
-[//]: # (
-<Konzise Beschreibung der getroffenen Entscheidung.  
-Was wird getan / wie wird es gelöst?>
-)
+Keine der oben beschriebenen Optionen wird derzeit umgesetzt. Der Gleichlauf von Paketversion und Business-Version (Status quo, Option 1) bleibt vorerst bestehen.
+
+Ausschlaggebend ist die spezifische Release-Kadenz von ISiK: Anders als bei kontinuierlich weiterentwickelten Terminologiepaketen erfolgt bei ISiK nur einmal jährlich ein großes, potenziell breaking Update in Form einer neuen Stufe. Zwar können auch innerhalb einer Stufe noch inhaltliche Änderungen an Terminologieressourcen auftreten (z.B. redaktionelle Korrekturen zwischen Releases). Auf die Implementierenden hat ISiK jedoch nur zum Zeitpunkt der Zertifizierung tatsächlich Einfluss: Der jeweils zertifizierte Stand einer Stufe ist für Hersteller maßgeblich, nachträgliche Änderungen innerhalb derselben Stufe entfalten für bereits zertifizierte oder in Zertifizierung befindliche Implementierungen praktisch keine Wirkung mehr. Eine feingranulare, inhaltsbasierte Versionierung (Option 2 oder 3) würde also primär Änderungen sichtbar machen, die für die eigentliche Zielgruppe ohnehin folgenlos bleiben. Der mit diesen Optionen verbundene zusätzliche Pflege- und Prozessaufwand steht damit in keinem angemessenen Verhältnis zum Nutzen.
+
+## Ausblick
+Unabhängig von dieser Entscheidung wird ISiK voraussichtlich ein eigenes Terminologie-Paket veröffentlichen. Ziel ist dabei nicht primär eine entkoppelte Versionierung im Sinne von Option 3, sondern die Möglichkeit, dieses Terminologie-Paket auf einem Terminologieserver zu veröffentlichen. Sollte sich im Zuge dessen die jährliche Release-Kadenz oder die inhaltliche Änderungsfrequenz der Terminologieressourcen ändern, ist diese Entscheidung zu revidieren.
 
 ## Konsequenzen
-[//]: # (
-<Positive und negative Auswirkungen der Entscheidung.  
-Auswirkungen auf Qualitätseigenschaften, Kosten, Risiken, Betrieb, Wartung.>
-)
+- Der bestehende Mechanismus (RuleSet `Meta`, `^version = $ISIKVersion`) bleibt unverändert; es entsteht kein zusätzlicher Pflegeaufwand und keine Prozessänderung.
+- Die in der Kommentierung benannte semantische Unschärfe (Versionserhöhung ohne inhaltliche Änderung) bleibt bestehen, wird angesichts der jährlichen Release-Kadenz aber als hinnehmbar bewertet.
+- Terminologieserver und validierende Systeme behandeln inhaltlich unveränderte Terminologieressourcen weiterhin einmal jährlich als neue Version (Re-Import, erneute Expansion) – bei nur einem Release pro Jahr ist dieser Zusatzaufwand gering.
+- Die unter "Flankierende Maßnahme" beschriebene CI-Prüfung wird nicht umgesetzt, da sie nur im Zusammenhang mit Option 2 oder 3 einen Mehrwert bietet.
+- Mit der geplanten Auslagerung in ein eigenes Terminologie-Paket (siehe Ausblick) ist diese Entscheidung erneut zu prüfen, sobald ein konkretes Konzept für die Terminologieserver-Veröffentlichung vorliegt.
 
 ## Anhänge (optional)
 [//]: # (
