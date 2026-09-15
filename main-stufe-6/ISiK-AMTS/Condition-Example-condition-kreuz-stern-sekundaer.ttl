@@ -1,0 +1,86 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Condition/Example-condition-kreuz-stern-sekundaer> a fhir:Condition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "Example-condition-kreuz-stern-sekundaer"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Condition Example-condition-kreuz-stern-sekundaer</b></p><a name=\"Example-condition-kreuz-stern-sekundaer\"> </a><a name=\"hcExample-condition-kreuz-stern-sekundaer\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKDiagnose.html\">ISiKDiagnose</a></p></div><p><b>Condition Related</b>: <a href=\"Condition-Example-condition-kreuz-stern-primaer.html\">Condition Diabetes mellitus, Typ 1: Mit Augenkomplikationen: Nicht als entgleist bezeichnet</a></p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>code</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/icd-10-gm H36.0}\">Retinopathia diabetica</span></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 1290031003}\">Structure of left eye proper</span></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>encounter</b>: <a href=\"Encounter-Fachabteilungskontakt.html\">Encounter: extension = ; identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt,Operation; serviceType = Innere Medizin; period = 2021-02-12 --&gt; 2021-02-13</a></p><p><b>recordedDate</b>: 2021-05-24</p><p><b>note</b>: </p><blockquote><div><p>Beispiel für eine Anmerkung</p>\n</div></blockquote></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/condition-related" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <https://gematik.de/fhir/isik/Condition/Example-condition-kreuz-stern-primaer> ;
+       fhir:Reference.reference [ fhir:value "Condition/Example-condition-kreuz-stern-primaer" ]
+     ]
+  ] ;
+  fhir:Condition.clinicalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ;
+       fhir:Coding.code [ fhir:value "active" ]
+     ]
+  ] ;
+  fhir:Condition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen" ] ;
+         fhir:Extension.valueCoding [
+           fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen" ] ;
+           fhir:Coding.code [ fhir:value "*" ]
+         ]
+       ] ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/bfarm/icd-10-gm" ] ;
+       fhir:Coding.version [ fhir:value "2024" ] ;
+       fhir:Coding.code [ fhir:value "H36.0" ] ;
+       fhir:Coding.display [ fhir:value "Retinopathia diabetica" ]
+     ]
+  ] ;
+  fhir:Condition.bodySite [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:1290031003 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000274103/version/20251115" ] ;
+       fhir:Coding.code [ fhir:value "1290031003" ] ;
+       fhir:Coding.display [ fhir:value "Structure of left eye proper" ]
+     ]
+  ] ;
+  fhir:Condition.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:Condition.encounter [
+     fhir:link <https://gematik.de/fhir/isik/Encounter/Fachabteilungskontakt> ;
+     fhir:Reference.reference [ fhir:value "Encounter/Fachabteilungskontakt" ]
+  ] ;
+  fhir:Condition.recordedDate [ fhir:value "2021-05-24"^^xsd:date] ;
+  fhir:Condition.note [
+     fhir:index 0 ;
+     fhir:Annotation.text [ fhir:value "Beispiel für eine Anmerkung" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Condition/Example-condition-kreuz-stern-sekundaer.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

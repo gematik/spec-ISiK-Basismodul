@@ -1,0 +1,66 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "ExampleEntryValidationText",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"
+    ]
+  },
+  "subjectType": [
+    "Patient"
+  ],
+  "name": "ExampleEntryValidationText",
+  "version": "0.1.0",
+  "url": "https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationText",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Gematik GmbH",
+  "title": "Validierung von Texten",
+  "description": "### Beispiel-Questionnaire Validierung von Textfeldern\n* Limitierung der Mindest- und Maximalvorkommen einer wiederholbaren Gruppe mittels [questionnaire-minOccurs](https://hl7.org/fhir/R4/extension-questionnaire-minoccurs.html)-Extension und [questionnaire-maxOccurs](https://hl7.org/fhir/R4/extension-questionnaire-maxoccurs.html)-Extension\n* Limitierung der Eingabelänge mittels [minLength](https://hl7.org/fhir/R4/extension-minlength.html)-Extension",
+  "item": [
+    {
+      "type": "group",
+      "required": true,
+      "linkId": "1",
+      "text": "Ausweisdaten",
+      "repeats": true,
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+          "valueInteger": 2
+        }
+      ],
+      "item": [
+        {
+          "linkId": "1.1",
+          "text": "Ausweistyp",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Personalausweis"
+            },
+            {
+              "valueString": "Reisepass"
+            }
+          ]
+        },
+        {
+          "linkId": "1.2",
+          "text": "Ausweisnummer",
+          "type": "string",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/minLength",
+              "valueInteger": 9
+            }
+          ],
+          "maxLength": 9
+        }
+      ]
+    }
+  ]
+}

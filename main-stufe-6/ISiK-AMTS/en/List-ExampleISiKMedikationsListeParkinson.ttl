@@ -1,0 +1,84 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/List/ExampleISiKMedikationsListeParkinson> a fhir:List ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleISiKMedikationsListeParkinson"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: List ExampleISiKMedikationsListeParkinson</b></p><a name=\"ExampleISiKMedikationsListeParkinson\"> </a><a name=\"hcExampleISiKMedikationsListeParkinson\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKMedikationsListe.html\">ISiK Medikationsliste</a></p></div><table class=\"clstu\"><tr><td>Date: 2024-02-20 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medication List </td></tr><tr><td>Subject: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a>Encounter: <a href=\"Encounter-Fachabteilungskontakt.html\">Encounter: extension = ; identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt,Operation; serviceType = Innere Medizin; period = 2021-02-12 --&gt; 2021-02-13</a></td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td><td>Date</td></tr><tr><td><a href=\"MedicationStatement-ExampleISiKMedikationsInformationParkinson1.html\">MedicationStatement: status = active; medication[x] = Stalevo® 100 mg/25 mg/200 mg; effective[x] = 2024-02-20 --&gt; (ongoing); dateAsserted = 2024-02-20</a></td><td>2024-02-20</td></tr><tr><td><a href=\"MedicationStatement-ExampleISiKMedikationsInformationParkinson2.html\">MedicationStatement: status = active; medication[x] = Quetiapin HEXAL® 50 mg; effective[x] = 2024-02-20 --&gt; (ongoing); dateAsserted = 2024-02-20</a></td><td>2024-02-20</td></tr><tr><td><a href=\"MedicationStatement-ExampleISiKMedikationsInformationParkinson3.html\">MedicationStatement: status = active; medication[x] = Madopar® 125 mg; effective[x] = 2024-02-20 --&gt; (ongoing); dateAsserted = 2024-02-20</a></td><td>2024-02-20</td></tr><tr><td><a href=\"MedicationStatement-ExampleISiKMedikationsInformationParkinson4.html\">MedicationStatement: status = active; medication[x] = Entacapon HEC 200 mg; effective[x] = 2024-02-20 --&gt; (ongoing); dateAsserted = 2024-02-20</a></td><td>2024-02-20</td></tr><tr><td><a href=\"MedicationStatement-ExampleISiKMedikationsInformationParkinson5.html\">MedicationStatement: status = active; medication[x] = LevoCarb 200/50 ret - 1 A Pharma®; effective[x] = 2024-02-20 --&gt; (ongoing); dateAsserted = 2024-02-20</a></td><td>2024-02-20</td></tr></table></div>"
+  ] ;
+  fhir:List.status [ fhir:value "current"] ;
+  fhir:List.mode [ fhir:value "working"] ;
+  fhir:List.code [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/list-example-use-codes" ] ;
+       fhir:Coding.code [ fhir:value "medications" ]
+     ]
+  ] ;
+  fhir:List.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:List.encounter [
+     fhir:link <https://gematik.de/fhir/isik/Encounter/Fachabteilungskontakt> ;
+     fhir:Reference.reference [ fhir:value "Encounter/Fachabteilungskontakt" ]
+  ] ;
+  fhir:List.date [ fhir:value "2024-02-20"^^xsd:date] ;
+  fhir:List.entry [
+     fhir:index -1 ;
+     fhir:List.entry.date [ fhir:value "2024-02-20"^^xsd:date ] ;
+     fhir:List.entry.item [
+       fhir:link <https://gematik.de/fhir/isik/MedicationStatement/ExampleISiKMedikationsInformationParkinson1> ;
+       fhir:Reference.reference [ fhir:value "MedicationStatement/ExampleISiKMedikationsInformationParkinson1" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:List.entry.date [ fhir:value "2024-02-20"^^xsd:date ] ;
+     fhir:List.entry.item [
+       fhir:link <https://gematik.de/fhir/isik/MedicationStatement/ExampleISiKMedikationsInformationParkinson2> ;
+       fhir:Reference.reference [ fhir:value "MedicationStatement/ExampleISiKMedikationsInformationParkinson2" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:List.entry.date [ fhir:value "2024-02-20"^^xsd:date ] ;
+     fhir:List.entry.item [
+       fhir:link <https://gematik.de/fhir/isik/MedicationStatement/ExampleISiKMedikationsInformationParkinson3> ;
+       fhir:Reference.reference [ fhir:value "MedicationStatement/ExampleISiKMedikationsInformationParkinson3" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:List.entry.date [ fhir:value "2024-02-20"^^xsd:date ] ;
+     fhir:List.entry.item [
+       fhir:link <https://gematik.de/fhir/isik/MedicationStatement/ExampleISiKMedikationsInformationParkinson4> ;
+       fhir:Reference.reference [ fhir:value "MedicationStatement/ExampleISiKMedikationsInformationParkinson4" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:List.entry.date [ fhir:value "2024-02-20"^^xsd:date ] ;
+     fhir:List.entry.item [
+       fhir:link <https://gematik.de/fhir/isik/MedicationStatement/ExampleISiKMedikationsInformationParkinson5> ;
+       fhir:Reference.reference [ fhir:value "MedicationStatement/ExampleISiKMedikationsInformationParkinson5" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/List/ExampleISiKMedikationsListeParkinson.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

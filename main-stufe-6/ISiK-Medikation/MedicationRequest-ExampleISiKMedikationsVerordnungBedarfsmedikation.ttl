@@ -1,0 +1,104 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/MedicationRequest/ExampleISiKMedikationsVerordnungBedarfsmedikation> a fhir:MedicationRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleISiKMedikationsVerordnungBedarfsmedikation"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest ExampleISiKMedikationsVerordnungBedarfsmedikation</b></p><a name=\"ExampleISiKMedikationsVerordnungBedarfsmedikation\"> </a><a name=\"hcExampleISiKMedikationsVerordnungBedarfsmedikation\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKMedikationsVerordnung.html\">ISiKMedikationsVerordnung</a></p></div><p><b>ISiK Medikationsart</b>: <a href=\"CodeSystem-ISiKMedikationsartCS.html#ISiKMedikationsartCS-akut\">ISiK Medikationsart: akut</a> (Akutmedikation)</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>medication</b>: <a href=\"Medication-ExampleISiKMedikament1.html\">Medication Acetylcystein</a></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>encounter</b>: <a href=\"Encounter-Fachabteilungskontakt.html\">Encounter: extension = ; identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt,Operation; serviceType = Innere Medizin; period = 2021-02-12 --&gt; 2021-02-13</a></p><p><b>authoredOn</b>: 2026-04-24</p><p><b>requester</b>: <a href=\"Practitioner-PractitionerWalterArzt.html\">Practitioner Walter Arzt(official)</a></p><blockquote><p><b>dosageInstruction</b></p><p><b>Dosage AsNeededFor</b>: <span title=\"Codes:{http://snomed.info/sct 76948002}\">Starke Schmerzen</span></p><p><b>Dosage AsNeededFor</b>: <span title=\"Codes:{http://snomed.info/sct 50415004}\">Moderate Schmerzen</span></p><p><b>timing</b>: Once per 6 hours</p><p><b>asNeeded</b>: true</p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>1 Tablette<span style=\"background: LightGoldenRodYellow\"> (Details: standardterms.edqm.eu  code15054000 = 'Tablet')</span></td></tr></table></blockquote></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedikationsart" ] ;
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS" ] ;
+       fhir:Coding.code [ fhir:value "akut" ]
+     ]
+  ] ;
+  fhir:MedicationRequest.status [ fhir:value "active"] ;
+  fhir:MedicationRequest.intent [ fhir:value "order"] ;
+  fhir:MedicationRequest.medicationReference [
+     fhir:link <https://gematik.de/fhir/isik/Medication/ExampleISiKMedikament1> ;
+     fhir:Reference.reference [ fhir:value "Medication/ExampleISiKMedikament1" ]
+  ] ;
+  fhir:MedicationRequest.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:MedicationRequest.encounter [
+     fhir:link <https://gematik.de/fhir/isik/Encounter/Fachabteilungskontakt> ;
+     fhir:Reference.reference [ fhir:value "Encounter/Fachabteilungskontakt" ]
+  ] ;
+  fhir:MedicationRequest.authoredOn [ fhir:value "2026-04-24"^^xsd:date] ;
+  fhir:MedicationRequest.requester [
+     fhir:link <https://gematik.de/fhir/isik/Practitioner/PractitionerWalterArzt> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/PractitionerWalterArzt" ]
+  ] ;
+  fhir:MedicationRequest.dosageInstruction [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           a sct:76948002 ;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+           fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000274103/version/20251115" ] ;
+           fhir:Coding.code [ fhir:value "76948002" ] ;
+           fhir:Coding.display [ fhir:value "Starke Schmerzen" ]
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           a sct:50415004 ;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+           fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000274103/version/20251115" ] ;
+           fhir:Coding.code [ fhir:value "50415004" ] ;
+           fhir:Coding.display [ fhir:value "Moderate Schmerzen" ]
+         ]
+       ]
+     ] ;
+     fhir:Dosage.timing [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+         fhir:Timing.repeat.period [ fhir:value "6"^^xsd:decimal ] ;
+         fhir:Timing.repeat.periodUnit [ fhir:value "h" ]
+       ]
+     ] ;
+     fhir:Dosage.asNeededBoolean [ fhir:value "true"^^xsd:boolean ] ;
+     fhir:Dosage.doseAndRate [
+       fhir:index 0 ;
+       fhir:Dosage.doseAndRate.doseQuantity [
+         fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "Tablette" ] ;
+         fhir:Quantity.system [ fhir:value "http://standardterms.edqm.eu" ] ;
+         fhir:Quantity.code [ fhir:value "15054000" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/MedicationRequest/ExampleISiKMedikationsVerordnungBedarfsmedikation.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

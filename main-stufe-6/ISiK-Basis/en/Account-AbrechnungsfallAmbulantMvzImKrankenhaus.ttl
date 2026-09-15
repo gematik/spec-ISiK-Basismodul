@@ -1,0 +1,90 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Account/AbrechnungsfallAmbulantMvzImKrankenhaus> a fhir:Account ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "AbrechnungsfallAmbulantMvzImKrankenhaus"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfallAmbulant" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfallAmbulant>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Account AbrechnungsfallAmbulantMvzImKrankenhaus</b></p><a name=\"AbrechnungsfallAmbulantMvzImKrankenhaus\"> </a><a name=\"hcAbrechnungsfallAmbulantMvzImKrankenhaus\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKAbrechnungsfallAmbulant.html\">ISiKAbrechnungsfallAmbulant</a></p></div><p><b>Fallbezogene Abrechnungsrelevanz von Diagnosen und Prozeduren</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Condition/DiagnoseSelteneErkrankung\">Condition/DiagnoseSelteneErkrankung</a></p><p><b>identifier</b>: Account number/0123456789, ASN/987654310</p><p><b>status</b>: Active</p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>servicePeriod</b>: 2024-01-01 08:00:00+0100 --&gt; 2024-01-01 12:00:00+0100</p><h3>Coverages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td/><td><a href=\"Coverage-CoverageGesetzlich.html\">Coverage: status = active; type = gesetzliche Krankenversicherung</a></td></tr></table><p><b>owner</b>: Hochschulambulanz für irgendetwas Dr. Musterfrau</p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKExtensionAbrechnungsDiagnoseProzedurAmbulant" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <https://gematik.de/fhir/isik/Condition/DiagnoseSelteneErkrankung> ;
+       fhir:Reference.reference [ fhir:value "Condition/DiagnoseSelteneErkrankung" ]
+     ]
+  ] ;
+  fhir:Account.identifier [
+     fhir:index -1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "AN" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "https://test.krankenhaus.de/fhir/sid/abrechnungsnummer" ] ;
+     fhir:Identifier.value [ fhir:value "0123456789" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://gematik.de/fhir/isik/CodeSystem/ISiKIdentifierTypeErweiterungCS" ] ;
+         fhir:Coding.code [ fhir:value "ASN" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "https://test.krankenhaus.de/fhir/sid/scheinnummer" ] ;
+     fhir:Identifier.value [ fhir:value "987654310" ]
+  ] ;
+  fhir:Account.status [ fhir:value "active"] ;
+  fhir:Account.subject [
+     fhir:index -1 ;
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:Account.servicePeriod [
+     fhir:Period.start [ fhir:value "2024-01-01T08:00:00+01:00"^^xsd:dateTime ] ;
+     fhir:Period.end [ fhir:value "2024-01-01T12:00:00+01:00"^^xsd:dateTime ]
+  ] ;
+  fhir:Account.coverage [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/ExtensionAbrechnungsart" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/dkgev/Abrechnungsart" ] ;
+         fhir:Coding.code [ fhir:value "HSA" ] ;
+         fhir:Coding.display [ fhir:value "Hochschulambulanz" ]
+       ]
+     ] ;
+     fhir:Account.coverage.coverage [
+       fhir:link <https://gematik.de/fhir/isik/Coverage/CoverageGesetzlich> ;
+       fhir:Reference.reference [ fhir:value "Coverage/CoverageGesetzlich" ]
+     ]
+  ] ;
+  fhir:Account.owner [
+     fhir:Reference.display [ fhir:value "Hochschulambulanz für irgendetwas Dr. Musterfrau" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Account/AbrechnungsfallAmbulantMvzImKrankenhaus.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

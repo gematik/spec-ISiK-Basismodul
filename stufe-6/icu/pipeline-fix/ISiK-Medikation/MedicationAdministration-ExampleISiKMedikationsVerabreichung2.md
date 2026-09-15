@@ -1,0 +1,37 @@
+# Resource ExampleISiKMedikationsVerabreichung2
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "MedicationAdministration",
+  "id" : "ExampleISiKMedikationsVerabreichung2",
+  "meta" : {
+    "profile" : [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung"
+    ]
+  },
+  "status" : "completed",
+  "medicationReference" : {
+    "reference" : "Medication/ExampleISiKMedikament9"
+  },
+  "subject" : {
+    "reference" : "Patient/PatientinMusterfrau"
+  },
+  "context" : {
+    "reference" : "Encounter/FachabteilungskontaktMinimal"
+  },
+  "effectiveDateTime" : "2024-01-22",
+  "dosage" : {
+    "dose" : {
+      "value" : 1,
+      "unit" : "Beutel",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  }
+}
+
+```

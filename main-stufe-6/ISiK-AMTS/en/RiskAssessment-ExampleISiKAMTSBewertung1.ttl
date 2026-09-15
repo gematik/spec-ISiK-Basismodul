@@ -1,0 +1,75 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/RiskAssessment/ExampleISiKAMTSBewertung1> a fhir:RiskAssessment ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleISiKAMTSBewertung1"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKAMTSBewertung" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKAMTSBewertung>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "additional" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Beispiel für eine AMTS Risikobewertung.</div>"
+  ] ;
+  fhir:RiskAssessment.status [ fhir:value "final"] ;
+  fhir:RiskAssessment.code [
+     fhir:CodeableConcept.text [ fhir:value "AMTS Risikobewertung" ]
+  ] ;
+  fhir:RiskAssessment.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:RiskAssessment.encounter [
+     fhir:link <https://gematik.de/fhir/isik/Encounter/Fachabteilungskontakt> ;
+     fhir:Reference.reference [ fhir:value "Encounter/Fachabteilungskontakt" ]
+  ] ;
+  fhir:RiskAssessment.occurrenceDateTime [ fhir:value "2024-02-20T13:14:32+01:00"^^xsd:dateTime] ;
+  fhir:RiskAssessment.condition [
+     fhir:link <https://gematik.de/fhir/isik/Condition/BehandlungsDiagnoseFreitext> ;
+     fhir:Reference.reference [ fhir:value "Condition/BehandlungsDiagnoseFreitext" ]
+  ] ;
+  fhir:RiskAssessment.reasonReference [
+     fhir:index -1 ;
+     fhir:link <https://gematik.de/fhir/isik/DocumentReference/AnamnesebogenScan123456> ;
+     fhir:Reference.reference [ fhir:value "DocumentReference/AnamnesebogenScan123456" ]
+  ] ;
+  fhir:RiskAssessment.basis [
+     fhir:index -1 ;
+     fhir:link <https://gematik.de/fhir/isik/Observation/Koerpergewicht7777> ;
+     fhir:Reference.reference [ fhir:value "Observation/Koerpergewicht7777" ]
+  ] ;
+  fhir:RiskAssessment.prediction [
+     fhir:index -1 ;
+     fhir:RiskAssessment.prediction.outcome [
+       fhir:CodeableConcept.text [ fhir:value "Niereninsuffizienz" ]
+     ] ;
+     fhir:RiskAssessment.prediction.qualitativeRisk [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/risk-probability" ] ;
+         fhir:Coding.code [ fhir:value "high" ]
+       ]
+     ]
+  ] ;
+  fhir:RiskAssessment.mitigation [ fhir:value "Substitution der Stalevo Dauermedikation"] ;
+  fhir:RiskAssessment.note [
+     fhir:index -1 ;
+     fhir:Annotation.text [ fhir:value "Abklärung in der Frühbesprechung am 21.02.2024" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/RiskAssessment/ExampleISiKAMTSBewertung1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

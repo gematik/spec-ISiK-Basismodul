@@ -1,0 +1,51 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/ValueSet/ISiKEncounterTypeErweiterungVS> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ISiKEncounterTypeErweiterungVS"] ;
+  fhir:Resource.language [ fhir:value "de-DE"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xml:lang=\"de-DE\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"de-DE\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet ISiKEncounterTypeErweiterungVS</b></p><a name=\"ISiKEncounterTypeErweiterungVS\"> </a><a name=\"hcISiKEncounterTypeErweiterungVS\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: de-DE</p></div><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/kontaktart-de\"><code>http://fhir.de/CodeSystem/kontaktart-de</code></a><span title=\"Version is explicitly stated to be 1.6.0\"> version ?1.6.0</span></li><li>Include all codes defined in <a href=\"CodeSystem-ISiKEncounterTypeErweiterungCS.html\"><code>https://gematik.de/fhir/isik/CodeSystem/ISiKEncounterTypeErweiterungCS</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?6.0.0</span></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://gematik.de/fhir/isik/ValueSet/ISiKEncounterTypeErweiterungVS"] ;
+  fhir:ValueSet.version [ fhir:value "6.0.0"] ;
+  fhir:ValueSet.name [ fhir:value "ISiKEncounterTypeErweiterungVS"] ;
+  fhir:ValueSet.title [ fhir:value "ISiKEncounterTypeErweiterungVS"] ;
+  fhir:ValueSet.status [ fhir:value "active"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-07-01"^^xsd:date] ;
+  fhir:ValueSet.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.gematik.de" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen."] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://fhir.de/CodeSystem/kontaktart-de" ] ;
+       fhir:ValueSet.compose.include.version [ fhir:value "1.6.0" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://gematik.de/fhir/isik/CodeSystem/ISiKEncounterTypeErweiterungCS" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/ValueSet/ISiKEncounterTypeErweiterungVS.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

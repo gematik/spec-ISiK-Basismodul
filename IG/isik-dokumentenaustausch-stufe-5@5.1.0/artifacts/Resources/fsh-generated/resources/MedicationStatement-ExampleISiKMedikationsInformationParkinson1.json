@@ -1,0 +1,59 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "ExampleISiKMedikationsInformationParkinson1",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation"
+    ]
+  },
+  "dosage": [
+    {
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "system": "http://unitsofmeasure.org",
+            "value": 1,
+            "unit": "Tbl.",
+            "code": "1"
+          }
+        }
+      ],
+      "timing": {
+        "repeat": {
+          "timeOfDay": [
+            "18:00:00"
+          ]
+        }
+      }
+    }
+  ],
+  "text": {
+    "status": "additional",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Beispiel für Parkinson-Medikation mit Medikament1</div>"
+  },
+  "status": "active",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "00003056",
+        "system": "http://fhir.de/CodeSystem/ifa/pzn",
+        "display": "Stalevo® 100 mg/25 mg/200 mg"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/PatientinMusterfrau"
+  },
+  "context": {
+    "reference": "Encounter/Fachabteilungskontakt"
+  },
+  "effectivePeriod": {
+    "start": "2024-02-20"
+  },
+  "dateAsserted": "2024-02-20",
+  "reasonReference": [
+    {
+      "reference": "Condition/DiagnoseParkinson"
+    }
+  ]
+}

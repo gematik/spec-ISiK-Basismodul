@@ -1,0 +1,61 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/RelatedPerson/ISiKAngehoerigerMustermann> a fhir:RelatedPerson ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ISiKAngehoerigerMustermann"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: RelatedPerson ISiKAngehoerigerMustermann</b></p><a name=\"ISiKAngehoerigerMustermann\"> </a><a name=\"hcISiKAngehoerigerMustermann\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKAngehoeriger.html\">ISiKAngehoeriger</a></p></div><p><b>patient</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>relationship</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode DAUC}\">daughter</span></p><p><b>name</b>: Maxine Mustermann (Official)</p><p><b>address</b>: Milchstr. 42 Beispielstadt 78143 DE </p></div>"
+  ] ;
+  fhir:RelatedPerson.patient [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:RelatedPerson.relationship [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ] ;
+       fhir:Coding.code [ fhir:value "DAUC" ]
+     ]
+  ] ;
+  fhir:RelatedPerson.name [
+     fhir:index 0 ;
+     fhir:HumanName.use [ fhir:value "official" ] ;
+     fhir:HumanName.family [ fhir:value "Mustermann" ] ;
+     fhir:HumanName.given [
+       fhir:value "Maxine" ;
+       fhir:index 0
+     ]
+  ] ;
+  fhir:RelatedPerson.address [
+     fhir:index 0 ;
+     fhir:Address.type [ fhir:value "both" ] ;
+     fhir:Address.line [
+       fhir:value "Milchstr. 42" ;
+       fhir:index 0
+     ] ;
+     fhir:Address.city [ fhir:value "Beispielstadt" ] ;
+     fhir:Address.postalCode [ fhir:value "78143" ] ;
+     fhir:Address.country [ fhir:value "DE" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/RelatedPerson/ISiKAngehoerigerMustermann.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,83 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Medication/ExampleISiKMedikament2> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleISiKMedikament2"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "additional" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Beispiel für eine Infusionslösung</div>"
+  ] ;
+  fhir:Medication.code [
+     fhir:CodeableConcept.text [ fhir:value "Infusion bestehend aus 85mg Doxorubicin aufgelöst zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionslösung" ]
+  ] ;
+  fhir:Medication.status [ fhir:value "active"] ;
+  fhir:Medication.form [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://standardterms.edqm.eu" ] ;
+       fhir:Coding.code [ fhir:value "11210000" ] ;
+       fhir:Coding.display [ fhir:value "Solution for infusion" ]
+     ]
+  ] ;
+  fhir:Medication.ingredient [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/WirkstofftypEX" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/WirkstofftypCS" ] ;
+         fhir:Coding.code [ fhir:value "IN" ]
+       ]
+     ] ;
+     fhir:Medication.ingredient.itemCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/bfarm/atc" ] ;
+         fhir:Coding.version [ fhir:value "2024" ] ;
+         fhir:Coding.code [ fhir:value "L01DB01" ] ;
+         fhir:Coding.display [ fhir:value "Doxorubicin" ]
+       ]
+     ] ;
+     fhir:Medication.ingredient.isActive [ fhir:value "true"^^xsd:boolean ] ;
+     fhir:Medication.ingredient.strength [
+       fhir:Ratio.numerator [
+         fhir:Quantity.value [ fhir:value "85"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "mg" ] ;
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+         fhir:Quantity.code [ fhir:value "mg" ]
+       ] ;
+       fhir:Ratio.denominator [
+         fhir:Quantity.value [ fhir:value "250"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "Milliliter" ] ;
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+         fhir:Quantity.code [ fhir:value "mL" ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Medication.ingredient.itemReference [
+       fhir:link <https://gematik.de/fhir/isik/Medication/7f27cb8d-940b-43fd-ab8b-fee5b7a9b060> ;
+       fhir:Reference.reference [ fhir:value "Medication/7f27cb8d-940b-43fd-ab8b-fee5b7a9b060" ]
+     ] ;
+     fhir:Medication.ingredient.isActive [ fhir:value "true"^^xsd:boolean ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Medication/ExampleISiKMedikament2.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

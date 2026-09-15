@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden - ISiK ICU-Normalstation Workflow</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden - ISiK ICU-Normalstation Workflow
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-UseCases.html">
+                                Use Cases
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Akteure.html">
+                                Akteure
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ProzesseUndWorkflows.html">
+                                Prozesse und Workflows
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Festlegungen.html">
+                                Festlegungen
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalarterieller-wedge-druck.html">
+                                            SD_MII_ICU_Pulmonalarterieller_Wedge_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-blut-preduktal-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Preduktal_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Postduktal_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumenindex.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumenindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-schlagvolumenindex-durch-indikatorverd.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Schlagvolumenindex_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumen.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumen (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-schlagvolumen-durch-indikatorverduennung.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumen_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalvaskulaerer-widerstandsindex.html">
+                                            SD_MII_ICU_Pulmonalvaskulaerer_Widerstandsindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-systemischer-vaskulaerer-widerstandsindex.html">
+                                            SD_MII_ICU_Systemischer_Vaskulaerer_Widerstandsindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaerer-herzindex.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Herzindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-herzzeitvolumen.html">
+                                            SD_MII_ICU_Herzzeitvolumen (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Herzindex_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Herzzeitvolumen_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-zentralvenoeser-blutdruck.html">
+                                            SD_MII_ICU_Zentralvenoeser_Blutdruck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksatrialer-druck.html">
+                                            SD_MII_ICU_Linksatrialer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-rechtsatrialer-druck.html">
+                                            SD_MII_ICU_Rechtsatrialer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-rechtsventrikulaerer-druck.html">
+                                            SD_MII_ICU_Rechtsventrikulaerer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaerer-druck.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalarterieller-blutdruck.html">
+                                            SD_MII_ICU_Pulmonalarterieller_Blutdruck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-brustwirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Brustwirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-lendenwirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Lendenwirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-halswirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Halswirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-brust.html">
+                                            SD_MII_ICU_Koerpertemperatur_Brust (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-myokard.html">
+                                            SD_MII_ICU_Koerpertemperatur_Myokard (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-atemwege.html">
+                                            SD_MII_ICU_Koerpertemperatur_Atemwege (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-blut.html">
+                                            SD_MII_ICU_Koerpertemperatur_Blut (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-nasen-rachen-raum.html">
+                                            SD_MII_ICU_Koerpertemperatur_Nasen_Rachen_Raum (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-speiseroehre.html">
+                                            SD_MII_ICU_Koerpertemperatur_Speiseroehre (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-intrakranieller-druck-icp.html">
+                                            SD_MII_ICU_Intrakranieller_Druck_Icp (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpergewicht-percentil-altersabhaengig.html">
+                                            SD_MII_ICU_Koerpergewicht_Percentil_Altersabhaengig (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpergroesse-percentil-altersabhaengig.html">
+                                            SD_MII_ICU_Koerpergroesse_Percentil_Altersabhaengig (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-ideales-koerpergewicht.html">
+                                            SD_MII_ICU_Ideales_Koerpergewicht (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Arteriellen_Blut_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-puls.html">
+                                            SD_MII_ICU_Puls (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-kern.html">
+                                            SD_MII_ICU_Koerpertemperatur_Kern (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-gelenk.html">
+                                            SD_MII_ICU_Koerpertemperatur_Gelenk (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-stirn.html">
+                                            SD_MII_ICU_Koerpertemperatur_Stirn (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-nasal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Nasal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-leiste.html">
+                                            SD_MII_ICU_Koerpertemperatur_Leiste (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-achsel.html">
+                                            SD_MII_ICU_Koerpertemperatur_Achsel (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-unter-der-zunge.html">
+                                            SD_MII_ICU_Koerpertemperatur_Oral (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-vaginal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Vaginal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-harnblase.html">
+                                            SD_MII_ICU_Koerpertemperatur_Harnblase (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-rektal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Rektal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-trommelfell.html">
+                                            SD_MII_ICU_Koerpertemperatur_Trommelfell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h1 id="use-cases">Use Cases</h1>
+<h2 id="use-cases-ubergang-zwischen-akut-und-normalversorgung">Use Cases - Übergang zwischen Akut- und Normalversorgung</h2>
+<p>Es gibt zahlreiche Use Cases rund um den Überleitungsprozess zwischen einer Intensiv- und einer Normalstation  (bidirektional) innerhalb eines Krankenhauses. Neben illustrierenden User Stories wird an dieser Stelle auch eine Workflow-Perspektive eingenommen.</p>
+<p>Zum jetzigen Stand kann die Spezifikation keine umfassende Abdeckung eines Überleitungsprozesses vorweisen. Vielmehr wird die Überleitung zwischen Intensiv- und Normalversorgung (bidirektional) auf der Ebene eines Informations- und Daten-Workflows abgebildet; d.h. der Fokus liegt auf der Kommunikation relevanter Daten aus Normalversorgung (KIS) und Intensivversorgung (PDMS) zwischen den entsprechenden Systemen.</p>
+<h3 id="werte-aus-kis-und-pdms">Werte aus KIS und PDMS</h3>
+<p>Datenquellen für die hier betrachteten Fälle sind KIS und PDMS.
+Einige Use Stories, die diesen Kontext illustrieren sind folgende:</p>
+<p><strong>UC-VIT-ICU-NORM-001</strong>: Eine Ärztin fragt während einer Kontroll-Maßnahme in der normal-stationären Kontrolle nachträglich Daten zur Herzfrequenz eines Patienten über ein KIS mit der Funktion einer elektronische Kurve ab (momentan liegt die Herzfrequenz bei 90 Schlägen pro Minute). Der Zweck besteht darin, sicherzustellen, dass die Herzfrequenz des Patienten im Vergleich zu den Werten aus der Intensivstation im Normalbereich liegt. Die Daten stammen aus einem intensiv-stationären Aufenthalt, den der Patient aufgrund einer supraventrikulären Tachykardie durchlaufen hat.</p>
+<p>Hintergrund: fachlich wäre hier auch eine Blutdruckabfrage relevant - auch diese soll auf entsprechende Weise abgefragt werden können.</p>
+<p><strong>UC-VIT-ICU-NORM-002</strong>: Während der intensivmedizinischen Behandlung nutzt eine Ärztin das PDMS-Frontend, um rückblickend Blutdruckwerte aus dem vorherigen Aufenthalt auf der Normalstation abzurufen. Ziel ist es, den Beginn der Urosepsis besser einzugrenzen. Auf Normalstation war der Patient Aufgrund eines Harnwegs-Infektes.</p>
+<p><strong>UC-VIT-ICU-NORM-003</strong>: Eine Medizinische Fachangestellte (MFA) sendet vor der Überleitung in die Intensivstation Daten aus dem normalstationären Aufenthalt an ein PDMS-Frontend. Ausgelöst wird der Versand per Button im KIS-Frontend. Relevant sind dabei Daten zum Blutdruck, damit der Beginn der Urosepsis später in der Intensivversrogung zeitlich feststellbar ist. Auf Normalstation war der Patient Aufgrund eines Harnwegs-Infektes.</p>
+<h3 id="laborwerte">Laborwerte</h3>
+<p>Einige Werte, die für den geschilderten Kontext relevant sind, stammen aus einem Labor Informations System (LIS). Hierzu illustrierend:</p>
+<p><strong>UC-VIT-ICU-NORM-LAB-001</strong>: Während einer Kontrolle auf der Normalstation nutzt eine Ärztin das KIS mit elektronischer Kurvenansicht, um rückblickend Serumkreatininwerte eines Patienten einzusehen. Ziel ist es, die Stabilität der Nierenfunktion über die glomeruläre Filtrationsrate abzusichern. Die Daten stammen aus einem intensiv-stationären Aufenthalt, den der Patient aufgrund eines akuten Nierenversagens durchlaufen hat.</p>
+<p>Vorannahmen zur User Story: Das PDMS verfügt über eine Historie der Serumkreatininwerte, da es die Labordaten (aus einem LIS stammend) persistiert. Das PDMS verfügt auch über eine Schnittstelle für READ-Interaktionen entsprechend der ISIK Festlegung.</p>
+<p>Hintergrund zur Konfiguration: Das KIS agiert hier als Client und das PDMS als Server.
+Da in der Praxis ein LIS, das mit PDMS integriert ist, i.d.R. auch mit einem KIS integriert ist, kann die Abfrage von Labordaten mit intensivmedizinischem Bezug aus dem KIS auch direkt erfolgen.</p>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

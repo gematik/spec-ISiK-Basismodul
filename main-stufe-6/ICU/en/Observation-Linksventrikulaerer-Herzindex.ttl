@@ -1,0 +1,84 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Observation/Linksventrikulaerer-Herzindex> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "Linksventrikulaerer-Herzindex"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventrikulaerer-herzindex" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventrikulaerer-herzindex>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation Linksventrikulaerer-Herzindex</b></p><a name=\"Linksventrikulaerer-Herzindex\"> </a><a name=\"hcLinksventrikulaerer-Herzindex\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-sd-mii-icu-linksventrikulaerer-herzindex.html\">SD MII ICU Linksventrikulaerer Herzindex</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 54993008}, {http://loinc.org 75919-1}, {urn:iso:std:iso:11073:10101 149772}\">Cardiac index</span></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>effective</b>: 2019-12-23 09:30:10+0100 --&gt; 2019-12-23 10:30:10+0100</p><p><b>value</b>: 3 liter per minute and square meter<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeL/min/m2 = 'L/min/m2')</span></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 87878005}\">Left cardiac ventricular structure</span></p></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "vital-signs" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a sct:54993008 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "54993008" ] ;
+       fhir:Coding.display [ fhir:value "Cardiac index" ]
+     ], [
+       fhir:index -1 ;
+       a loinc:75919-1 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "75919-1" ] ;
+       fhir:Coding.display [ fhir:value "Left ventricular Cardiac index" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ] ;
+       fhir:Coding.code [ fhir:value "149772" ] ;
+       fhir:Coding.display [ fhir:value "Cardiac index" ]
+     ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:Observation.effectivePeriod [
+     fhir:Period.start [ fhir:value "2019-12-23T09:30:10+01:00"^^xsd:dateTime ] ;
+     fhir:Period.end [ fhir:value "2019-12-23T10:30:10+01:00"^^xsd:dateTime ]
+  ] ;
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "3"^^xsd:decimal ] ;
+     fhir:Quantity.unit [ fhir:value "liter per minute and square meter" ] ;
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+     fhir:Quantity.code [ fhir:value "L/min/m2" ]
+  ] ;
+  fhir:Observation.bodySite [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a sct:87878005 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "87878005" ] ;
+       fhir:Coding.display [ fhir:value "Left cardiac ventricular structure" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Observation/Linksventrikulaerer-Herzindex.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

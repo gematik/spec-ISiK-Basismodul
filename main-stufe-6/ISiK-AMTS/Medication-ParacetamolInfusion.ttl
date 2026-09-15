@@ -1,0 +1,103 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Medication/ParacetamolInfusion> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ParacetamolInfusion"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "additional" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div><p><b>Motivation:</b> Dieses Beispiel zeigt, wie Rezepturen als ISiK-Medikation in FHIR R4 abgebildet werden können. Es demonstriert die Kombination eines Wirkstoffs mit einer Trägerlösung.</p><p><b>Medikament:</b> Paracetamol 10 mg/ml in Glukose 5 %</p><p><b>Form:</b> Infusionslösung</p><p><b>Wirkstoffe:</b></p><ul><li><b>Paracetamol:</b> 10 mg/ml (aktiv)</li><li><b>Glukose 5 %:</b> Trägerlösung (inaktiv)</li></ul><p><b>Gesamtmenge:</b> 100 ml (entspricht 1000 mg Paracetamol)</p><p><b>Hinweis:</b> Rezepturen bestehen aus mehreren Bestandteilen. Dieses Beispiel zeigt, wie man sie mit <code>Medication.ingredient</code> korrekt modelliert.</p></div></div>"
+  ] ;
+  fhir:Medication.code [
+     fhir:CodeableConcept.text [ fhir:value "Paracetamol 10 mg/ml in Glukose 5 %" ]
+  ] ;
+  fhir:Medication.status [ fhir:value "active"] ;
+  fhir:Medication.form [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://standardterms.edqm.eu" ] ;
+       fhir:Coding.code [ fhir:value "11210000" ] ;
+       fhir:Coding.display [ fhir:value "Solution for infusion" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Infusionslösung" ]
+  ] ;
+  fhir:Medication.amount [
+     fhir:Ratio.numerator [
+       fhir:Quantity.value [ fhir:value "100"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "mL" ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mL" ]
+     ] ;
+     fhir:Ratio.denominator [
+       fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "Beutel" ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "1" ]
+     ]
+  ] ;
+  fhir:Medication.ingredient [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/WirkstofftypEX" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/WirkstofftypCS" ] ;
+         fhir:Coding.code [ fhir:value "IN" ]
+       ]
+     ] ;
+     fhir:Medication.ingredient.itemCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/bfarm/atc" ] ;
+         fhir:Coding.version [ fhir:value "2024" ] ;
+         fhir:Coding.code [ fhir:value "N02BE01" ] ;
+         fhir:Coding.display [ fhir:value "Paracetamol" ]
+       ] ;
+       fhir:CodeableConcept.text [ fhir:value "Paracetamol" ]
+     ] ;
+     fhir:Medication.ingredient.isActive [ fhir:value "true"^^xsd:boolean ] ;
+     fhir:Medication.ingredient.strength [
+       fhir:Ratio.numerator [
+         fhir:Quantity.value [ fhir:value "10"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "mg" ] ;
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+         fhir:Quantity.code [ fhir:value "mg" ]
+       ] ;
+       fhir:Ratio.denominator [
+         fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "mL" ] ;
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+         fhir:Quantity.code [ fhir:value "mL" ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Medication.ingredient.itemCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/ifa/pzn" ] ;
+         fhir:Coding.code [ fhir:value "03710676" ] ;
+         fhir:Coding.display [ fhir:value "Ecoflac® plus Glucose 5 % (100 ml)" ]
+       ]
+     ] ;
+     fhir:Medication.ingredient.isActive [ fhir:value "false"^^xsd:boolean ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Medication/ParacetamolInfusion.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

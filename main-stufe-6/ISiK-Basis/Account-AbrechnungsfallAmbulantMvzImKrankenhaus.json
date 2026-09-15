@@ -1,0 +1,61 @@
+{
+  "resourceType" : "Account",
+  "id" : "AbrechnungsfallAmbulantMvzImKrankenhaus",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfallAmbulant"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Account AbrechnungsfallAmbulantMvzImKrankenhaus</b></p><a name=\"AbrechnungsfallAmbulantMvzImKrankenhaus\"> </a><a name=\"hcAbrechnungsfallAmbulantMvzImKrankenhaus\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKAbrechnungsfallAmbulant.html\">ISiKAbrechnungsfallAmbulant</a></p></div><p><b>Fallbezogene Abrechnungsrelevanz von Diagnosen und Prozeduren</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Condition/DiagnoseSelteneErkrankung\">Condition/DiagnoseSelteneErkrankung</a></p><p><b>identifier</b>: Account number/0123456789, ASN/987654310</p><p><b>status</b>: Active</p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung\u00a0(use:\u00a0secondary,\u00a0))</a></p><p><b>servicePeriod</b>: 2024-01-01 08:00:00+0100 --&gt; 2024-01-01 12:00:00+0100</p><h3>Coverages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td/><td><a href=\"Coverage-CoverageGesetzlich.html\">Coverage: status = active; type = gesetzliche Krankenversicherung</a></td></tr></table><p><b>owner</b>: Hochschulambulanz für irgendetwas Dr. Musterfrau</p></div>"
+  },
+  "extension" : [{
+    "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKExtensionAbrechnungsDiagnoseProzedurAmbulant",
+    "valueReference" : {
+      "reference" : "Condition/DiagnoseSelteneErkrankung"
+    }
+  }],
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "AN"
+      }]
+    },
+    "system" : "https://test.krankenhaus.de/fhir/sid/abrechnungsnummer",
+    "value" : "0123456789"
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "https://gematik.de/fhir/isik/CodeSystem/ISiKIdentifierTypeErweiterungCS",
+        "code" : "ASN"
+      }]
+    },
+    "system" : "https://test.krankenhaus.de/fhir/sid/scheinnummer",
+    "value" : "987654310"
+  }],
+  "status" : "active",
+  "subject" : [{
+    "reference" : "Patient/PatientinMusterfrau"
+  }],
+  "servicePeriod" : {
+    "start" : "2024-01-01T08:00:00+01:00",
+    "end" : "2024-01-01T12:00:00+01:00"
+  },
+  "coverage" : [{
+    "extension" : [{
+      "url" : "http://fhir.de/StructureDefinition/ExtensionAbrechnungsart",
+      "valueCoding" : {
+        "system" : "http://fhir.de/CodeSystem/dkgev/Abrechnungsart",
+        "code" : "HSA",
+        "display" : "Hochschulambulanz"
+      }
+    }],
+    "coverage" : {
+      "reference" : "Coverage/CoverageGesetzlich"
+    }
+  }],
+  "owner" : {
+    "display" : "Hochschulambulanz für irgendetwas Dr. Musterfrau"
+  }
+}

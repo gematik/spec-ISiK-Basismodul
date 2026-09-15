@@ -1,0 +1,75 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/MedicationStatement/ExampleISiKMedikationsInformationParkinson1> a fhir:MedicationStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleISiKMedikationsInformationParkinson1"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "additional" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Beispiel für Parkinson-Medikation mit Medikament1</div>"
+  ] ;
+  fhir:MedicationStatement.status [ fhir:value "active"] ;
+  fhir:MedicationStatement.medicationCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/ifa/pzn" ] ;
+       fhir:Coding.code [ fhir:value "00003056" ] ;
+       fhir:Coding.display [ fhir:value "Stalevo® 100 mg/25 mg/200 mg" ]
+     ]
+  ] ;
+  fhir:MedicationStatement.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:MedicationStatement.context [
+     fhir:link <https://gematik.de/fhir/isik/Encounter/FachabteilungskontaktMinimal> ;
+     fhir:Reference.reference [ fhir:value "Encounter/FachabteilungskontaktMinimal" ]
+  ] ;
+  fhir:MedicationStatement.effectivePeriod [
+     fhir:Period.start [ fhir:value "2024-02-20"^^xsd:date ]
+  ] ;
+  fhir:MedicationStatement.dateAsserted [ fhir:value "2024-02-20"^^xsd:date] ;
+  fhir:MedicationStatement.reasonReference [
+     fhir:index 0 ;
+     fhir:link <https://gematik.de/fhir/isik/Condition/DiagnoseParkinson> ;
+     fhir:Reference.reference [ fhir:value "Condition/DiagnoseParkinson" ]
+  ] ;
+  fhir:MedicationStatement.dosage [
+     fhir:index 0 ;
+     fhir:Dosage.timing [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.timeOfDay [
+           fhir:value "18:00:00"^^xsd:time ;
+           fhir:index 0
+         ]
+       ]
+     ] ;
+     fhir:Dosage.doseAndRate [
+       fhir:index 0 ;
+       fhir:Dosage.doseAndRate.doseQuantity [
+         fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "Tbl." ] ;
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+         fhir:Quantity.code [ fhir:value "1" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/MedicationStatement/ExampleISiKMedikationsInformationParkinson1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

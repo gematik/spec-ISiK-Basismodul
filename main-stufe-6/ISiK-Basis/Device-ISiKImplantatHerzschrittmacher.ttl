@@ -1,0 +1,58 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Device/ISiKImplantatHerzschrittmacher> a fhir:Device ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ISiKImplantatHerzschrittmacher"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKImplantat" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKImplantat>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Device ISiKImplantatHerzschrittmacher</b></p><a name=\"ISiKImplantatHerzschrittmacher\"> </a><a name=\"hcISiKImplantatHerzschrittmacher\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKImplantat.html\">ISiKImplantat</a></p></div><h3>UdiCarriers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>DeviceIdentifier</b></td><td><b>CarrierHRF</b></td></tr><tr><td style=\"display: none\">*</td><td>00380740006918</td><td>(01)00380740006918(11)230615(21)SN-2024-00471</td></tr></table><p><b>status</b>: Active</p><p><b>manufacturer</b>: Medtronic GmbH</p><p><b>manufactureDate</b>: 2023-06-15</p><p><b>serialNumber</b>: SN-2024-00471</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Evoque DR</td><td>Manufacturer name</td></tr></table><p><b>modelNumber</b>: EV-DR-01</p><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 14106009}\">Herzschrittmacher</span></p><p><b>patient</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p></div>"
+  ] ;
+  fhir:Device.udiCarrier [
+     fhir:index 0 ;
+     fhir:Device.udiCarrier.deviceIdentifier [ fhir:value "00380740006918" ] ;
+     fhir:Device.udiCarrier.carrierHRF [ fhir:value "(01)00380740006918(11)230615(21)SN-2024-00471" ]
+  ] ;
+  fhir:Device.status [ fhir:value "active"] ;
+  fhir:Device.manufacturer [ fhir:value "Medtronic GmbH"] ;
+  fhir:Device.manufactureDate [ fhir:value "2023-06-15"^^xsd:date] ;
+  fhir:Device.serialNumber [ fhir:value "SN-2024-00471"] ;
+  fhir:Device.deviceName [
+     fhir:index 0 ;
+     fhir:Device.deviceName.name [ fhir:value "Evoque DR" ] ;
+     fhir:Device.deviceName.type [ fhir:value "manufacturer-name" ]
+  ] ;
+  fhir:Device.modelNumber [ fhir:value "EV-DR-01"] ;
+  fhir:Device.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:14106009 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "14106009" ] ;
+       fhir:Coding.display [ fhir:value "Herzschrittmacher" ]
+     ]
+  ] ;
+  fhir:Device.patient [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Device/ISiKImplantatHerzschrittmacher.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

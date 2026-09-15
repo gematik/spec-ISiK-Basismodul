@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden - ISiK ICU-Normalstation Workflow</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden - ISiK ICU-Normalstation Workflow
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-UseCases.html">
+                                Use Cases
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Akteure.html">
+                                Akteure
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ProzesseUndWorkflows.html">
+                                Prozesse und Workflows
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Festlegungen.html">
+                                Festlegungen
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalarterieller-wedge-druck.html">
+                                            SD_MII_ICU_Pulmonalarterieller_Wedge_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-blut-preduktal-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Preduktal_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Postduktal_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumenindex.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumenindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-schlagvolumenindex-durch-indikatorverd.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Schlagvolumenindex_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumen.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumen (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-schlagvolumen-durch-indikatorverduennung.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumen_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalvaskulaerer-widerstandsindex.html">
+                                            SD_MII_ICU_Pulmonalvaskulaerer_Widerstandsindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-systemischer-vaskulaerer-widerstandsindex.html">
+                                            SD_MII_ICU_Systemischer_Vaskulaerer_Widerstandsindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaerer-herzindex.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Herzindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-herzzeitvolumen.html">
+                                            SD_MII_ICU_Herzzeitvolumen (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Herzindex_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Herzzeitvolumen_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-zentralvenoeser-blutdruck.html">
+                                            SD_MII_ICU_Zentralvenoeser_Blutdruck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksatrialer-druck.html">
+                                            SD_MII_ICU_Linksatrialer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-rechtsatrialer-druck.html">
+                                            SD_MII_ICU_Rechtsatrialer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-rechtsventrikulaerer-druck.html">
+                                            SD_MII_ICU_Rechtsventrikulaerer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaerer-druck.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalarterieller-blutdruck.html">
+                                            SD_MII_ICU_Pulmonalarterieller_Blutdruck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-brustwirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Brustwirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-lendenwirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Lendenwirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-halswirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Halswirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-brust.html">
+                                            SD_MII_ICU_Koerpertemperatur_Brust (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-myokard.html">
+                                            SD_MII_ICU_Koerpertemperatur_Myokard (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-atemwege.html">
+                                            SD_MII_ICU_Koerpertemperatur_Atemwege (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-blut.html">
+                                            SD_MII_ICU_Koerpertemperatur_Blut (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-nasen-rachen-raum.html">
+                                            SD_MII_ICU_Koerpertemperatur_Nasen_Rachen_Raum (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-speiseroehre.html">
+                                            SD_MII_ICU_Koerpertemperatur_Speiseroehre (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-intrakranieller-druck-icp.html">
+                                            SD_MII_ICU_Intrakranieller_Druck_Icp (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpergewicht-percentil-altersabhaengig.html">
+                                            SD_MII_ICU_Koerpergewicht_Percentil_Altersabhaengig (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpergroesse-percentil-altersabhaengig.html">
+                                            SD_MII_ICU_Koerpergroesse_Percentil_Altersabhaengig (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-ideales-koerpergewicht.html">
+                                            SD_MII_ICU_Ideales_Koerpergewicht (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Arteriellen_Blut_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-puls.html">
+                                            SD_MII_ICU_Puls (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-kern.html">
+                                            SD_MII_ICU_Koerpertemperatur_Kern (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-gelenk.html">
+                                            SD_MII_ICU_Koerpertemperatur_Gelenk (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-stirn.html">
+                                            SD_MII_ICU_Koerpertemperatur_Stirn (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-nasal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Nasal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-leiste.html">
+                                            SD_MII_ICU_Koerpertemperatur_Leiste (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-achsel.html">
+                                            SD_MII_ICU_Koerpertemperatur_Achsel (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-unter-der-zunge.html">
+                                            SD_MII_ICU_Koerpertemperatur_Oral (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-vaginal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Vaginal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-harnblase.html">
+                                            SD_MII_ICU_Koerpertemperatur_Harnblase (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-rektal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Rektal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-trommelfell.html">
+                                            SD_MII_ICU_Koerpertemperatur_Trommelfell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="link"><a  href='artifacts/package/ValueSet-vs-mii-icu-method-observation-blutdruck.json'>VS_MII_ICU_Method_Observation_Blutdruck</a></h2>
+<p>Dieses ValueSet enthält Codes zur Angabe, ob ein Blutdruck invasiv oder nicht-invasiv gemessen ist.</p>
+<h3 id="metadaten">Metadaten</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Beschreibung</b></th><td><p>Dieses ValueSet enthält Codes zur Angabe, ob ein Blutdruck invasiv oder nicht-invasiv gemessen ist.</p>
+</td><tr><th><b>CanonicalURL</b></th><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/ValueSet/vs-mii-icu-method-observation-blutdruck'>https://gematik.de/fhir/isik/ValueSet/vs-mii-icu-method-observation-blutdruck</a></td><tr><th><b>Status</b></th><td>active</td><tr><th><b>Version</b></th><td>5.0.0</td><tr><th><b>Herausgeber</b></th><td>gematik GmbH</td></table>
+<h3 id="inhalt">Inhalt</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#fe6bc901-c7f1-43fc-833b-24ddd13184ba" aria-controls="fe6bc901-c7f1-43fc-833b-24ddd13184ba" role="tab" data-toggle="tab">Darstellung</a>
+</li><li role="presentation" class="">
+    <a href="#f6f962cb-7e65-492c-8b70-955d6aa9d994" aria-controls="f6f962cb-7e65-492c-8b70-955d6aa9d994" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#345c82ee-8c37-4a08-8d23-b8bfe85d2716" aria-controls="345c82ee-8c37-4a08-8d23-b8bfe85d2716" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#36cd6dc9-318b-4830-9a51-2a6dd899244d" aria-controls="36cd6dc9-318b-4830-9a51-2a6dd899244d" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="fe6bc901-c7f1-43fc-833b-24ddd13184ba">
+    <p>Dieses ValueSet enthält Codes zur Angabe, ob ein Blutdruck invasiv oder nicht-invasiv gemessen ist.</p>
+<p>Dieses ValueSet wird verwendet in folgenden Profilen:</p>
+<p><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-sonstige-pulsatile-druecke-generisch'>https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-sonstige-pulsatile-druecke-generisch</a></p>
+
+</div><div role="tabpanel" class="tab-pane " id="f6f962cb-7e65-492c-8b70-955d6aa9d994">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">ValueSet</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.id" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">vs-mii-icu-method-observation-blutdruck</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.url" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">url</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/ValueSet/vs-mii-icu-method-observation-blutdruck</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.version" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">5.0.0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.name" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">VS_MII_ICU_Method_Observation_Blutdruck</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.title" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">title</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">VS MII ICU Method Observation Blutdruck</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.status" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.experimental" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">experimental</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.date" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2025-06-26</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.publisher" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">publisher</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">gematik GmbH</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.description" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Dieses ValueSet enth&#228;lt Codes zur Angabe, ob ein Blutdruck invasiv oder nicht-invasiv gemessen ist.</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">compose</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">include</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.system" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.concept" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.concept.code" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">10179008</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.concept" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.concept.code" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">22762002</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">include</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">compose</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">ValueSet</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="345c82ee-8c37-4a08-8d23-b8bfe85d2716">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.resourceType" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ValueSet</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.status" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.name" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">VS_MII_ICU_Method_Observation_Blutdruck</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.id" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">vs-mii-icu-method-observation-blutdruck</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.title" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">title</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">VS MII ICU Method Observation Blutdruck</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.description" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">description</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Dieses ValueSet enth&#228;lt Codes zur Angabe, ob ein Blutdruck invasiv oder nicht-invasiv gemessen ist.</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.version" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">5.0.0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.url" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/ValueSet/vs-mii-icu-method-observation-blutdruck</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.experimental" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">experimental</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.publisher" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">publisher</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">gematik GmbH</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.date" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2025-06-26</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">compose</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">include</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.system" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.concept" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">concept</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.concept.code" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">10179008</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ValueSet.json#ValueSet.compose.include.concept.code" title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">22762002</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="36cd6dc9-318b-4830-9a51-2a6dd899244d">
+    <a  href='artifacts/package/ValueSet-vs-mii-icu-method-observation-blutdruck.json'>VS_MII_ICU_Method_Observation_Blutdruck</a>
+</div>
+  </div>
+</div>
+<hr />
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

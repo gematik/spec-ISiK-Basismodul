@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Subscriptions</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Subscriptions
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Spezifikation <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation.html">
+                                            Spezifikation
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Patientenzusammenf&#xFC;hrung.html">
+                                            Patientenzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Fallzusammenf&#xFC;hrung.html">
+                                            Fallzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-UseCases.html">
+                                            Weitere UseCases
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Akteure.html">
+                                            Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-FunktionenInteraktionen.html">
+                                            Funktionen und Interaktionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Festlegungen.html">
+                                Festlegungen
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Subscription.html">
+                                            ISiKSubscription (Subscription)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_BackportSubscriptionStatusR4Fixed.html">
+                                            BackportSubscriptionStatusR4Fixed (Parameters)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_BackportSubscriptionNotificationR4Fixed.html">
+                                            BackportSubscriptionNotificationR4Fixed (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="anmerkungen-zu-must-support-feldern">Anmerkungen zu Must-Support-Feldern</h3>
+<table  class='table table-bordered fql-table'><thead><tr><th>Feldname</th><th>Kurzbeschreibung</th><th>Hinweise</th></tr></thead><tbody><tr><td>Subscription.id</td><td>serverseitige, interne ID des Datensatzes</td><td><p><strong>bedingtes Pflichtfeld/bedingtes MS:</strong> Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine <code>id</code> verfügen.
+Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine <code>id</code>verfügen.</p>
+</td></tr>
+<tr><td>Subscription.status</td><td>Status</td><td><p><strong>Bedeutung:</strong> Der Status der Subscription, der den Serverstatus der Subscription angibt.
+Neue Subscriptions werden immer mit dem Status <code>requested</code> an den Server übergeben.
+Der Server ändert im Anschluss den Status auf <code>active</code> oder im Fehlerfall auf <code>error</code>.</p>
+</td></tr>
+<tr><td>Subscription.reason</td><td>Grund der Subscription</td><td><p><strong>Bedeutung:</strong> Beschreibung wieso diese Subscription erstellt wurde.</p>
+</td></tr>
+<tr><td>Subscription.criteria.extension:filterCriteria.value[x]</td><td></td><td></td></tr>
+<tr><td>Subscription.channel</td><td>Kommunikationskanal</td><td><p><strong>Bedeutung:</strong> Kommunikationskanal über den die Subscription Benachrichtigungen gesendet werden sollen.</p>
+</td></tr>
+<tr><td>Subscription.channel.extension:heartbeatPeriod</td><td>Heartbeat-Intervall</td><td><p><strong>Bedeutung:</strong> Intervall in dem der Server prüft, ob der Kommunikationskanal noch aktiv ist.</p>
+</td></tr>
+<tr><td>Subscription.channel.extension:heartbeatPeriod.value[x]</td><td></td><td></td></tr>
+<tr><td>Subscription.channel.type</td><td>Typ des Kommunikationskanals</td><td><p><strong>Bedeutung:</strong> Der Typ des Kommunikationskanals, über den Subscription-Benachrichtigungen gesendet werden sollen.<br />
+In ISiK MUSS der Wert <code>rest-hook</code> unterstützt werden, weitere Werte KÖNNEN unterstützt werden.</p>
+</td></tr>
+<tr><td>Subscription.channel.endpoint</td><td>Endpunkt</td><td><p><strong>Bedeutung:</strong> Adresse des Kommunikationskanals/ Endpunkts, an den Subscription-Benachrichtigungen gesendet werden sollen. Dies ist nur für rest-hook Subscriptions relevant.</p>
+</td></tr>
+<tr><td>Subscription.channel.payload</td><td>Format der Nutzdaten</td><td><p><strong>Bedeutung:</strong> Format in dem Subscription Notifications versendet werden sollen (JSON oder XML).</p>
+</td></tr>
+<tr><td>Subscription.channel.header</td><td>Falls eine REST-Enpunkt einen Authorization-Header benötigt, kann dieser hier gesetzt werden</td><td><p><strong>Bedeutung:</strong> http-Header welcher dazu genutzt werden kann einen Authorization-header zu setzen. Dies ist nur für rest-hook Subscriptions relevant.<br />
+<strong>Hinweise:</strong> ACHTUNG: dieses Datenfeld muss bei READ-Interaktionen maskiert werden! Siehe <a href="https://hl7.org/fhir/R4/subscription.html">R4 Subscriptions</a></p>
+</td></tr>
+</tbody></table>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
