@@ -12,3 +12,22 @@ Fehlt eine akzeptable Begründung, gilt die Nichterfüllung einer SHOULD‑Anfor
 MAY/KANN drückt in ISiK eine freiwillig zu erfüllende Anforderung aus. Die Anforderung wird über einen Test abgedeckt, dessen Ergebnis ist jedoch nicht maßgeblich für die Zertifizierung eines Systems gegen das betreffende Modul.
 Bei erfolgreichem Durchlaufen eines Tests zu einer freiwilligen Anforderung erscheint das Ergebnis im Testbericht.
 
+### Verbindlichkeit in CapabilityStatements
+
+Da die FHIR-Kernspezifikation nur englischsprachige Schlüsselwörter kennt, wird die Verbindlichkeit in CapabilityStatements über Extension-Codes ausgedrückt. Die folgende Tabelle stellt den Zusammenhang zu den oben eingeführten deutschen Schlüsselwörtern her:
+
+| Deutsches Schlüsselwort | RFC2119    | Code in CapabilityStatements                |
+|--------------------------|-----------|----------------------------------------------|
+| MUSS                     | SHALL     | `SHALL`                                       |
+| SOLL                     | SHOULD    | `SHOULD`                                      |
+| KANN                     | MAY       | `MAY`                                         |
+| SOLL NICHT               | SHOULD NOT| `SHOULD-NOT`                                  |
+| DARF NICHT               | SHALL NOT | *(in CapabilityStatements nicht verwendet)*   |
+
+Zwei Extensions transportieren diese Codes an unterschiedlichen Stellen:
+
+- Die **CapabilityStatement-Imports-Expectation-Extension** kennzeichnet importierte *Rollen* innerhalb eines Akteur-CapabilityStatements. 
+- Die **CapabilityStatement-Expectation-Extension** kennzeichnet einzelne Interaktionen/Profile *innerhalb* eines Rollen-CapabilityStatements.
+
+In den tabellarischen Darstellungen der CapabilityStatements erscheint ausschließlich die englische Code-Fassung; die deutsche Entsprechung ist obiger Tabelle zu entnehmen.
+
