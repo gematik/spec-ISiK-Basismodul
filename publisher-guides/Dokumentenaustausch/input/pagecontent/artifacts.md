@@ -41,7 +41,7 @@ Darüber hinaus gelten die [übergreifenden Festlegungen zu FHIR-Artefakten aus 
 
 #### Operationen
 
-{% include artifacts-table-generator-isik.html ressourceType="OperationDefinition" %}
+{% include artifacts-table-generator-isik.html resourceType="OperationDefinition" %}
 <div><figcaption><strong>Tabelle:</strong> Operationen</figcaption></div>
 
 ### Terminologien

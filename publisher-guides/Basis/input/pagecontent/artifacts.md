@@ -42,7 +42,7 @@ Das CapabilityStatement mit der Kennzeichnung "Expanded" dient der direkten Übe
 
 #### Operationen
 
-{% include artifacts-table-generator-isik.html ressourceType="Operations" %}
+{% include artifacts-table-generator-isik.html resourceType="OperationDefinition" %}
 <div><figcaption><strong>Tabelle:</strong> Operationen</figcaption></div>
 
 ### Terminologien
