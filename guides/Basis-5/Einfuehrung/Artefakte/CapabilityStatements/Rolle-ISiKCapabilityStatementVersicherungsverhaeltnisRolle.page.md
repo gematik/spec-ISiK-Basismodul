@@ -98,7 +98,7 @@ where
     url = %canonical
 for rest.resource
 select
-RessourcenTyp: type,
+Ressourcentyp: type,
 join operation
 {
      Name: name,
@@ -144,10 +144,10 @@ where
     url = %canonical
 for rest.resource
 select
-RessourcenTyp: type,
+Ressourcentyp: type,
 join searchParam
 {
-     SuchParameter: name,
+     Suchparameter: name,
      Type: token,
      Verbindlichkeit: extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value,
      Hinweise: documentation,
@@ -164,7 +164,7 @@ where
 for rest.resource
 select
 {
-     RessourcenTyp: type,
+     Ressourcentyp: type,
      for searchInclude select Include: %context + ' (' + extension.value + ')',
      for searchRevInclude select RevInclude: %context + ' (' + extension.value + ')'
 }
