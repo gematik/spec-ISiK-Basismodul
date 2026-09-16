@@ -90,7 +90,7 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
       * type = #date
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Procedure?date=lt2020-26-10`    
+        `GET [base]/Procedure?date=lt2020-10-26`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  "
     * searchInclude = "Procedure:patient"
