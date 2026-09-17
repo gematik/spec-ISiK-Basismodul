@@ -1,0 +1,186 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Encounter/Fachabteilungskontakt> a fhir:Encounter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "Fachabteilungskontakt"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter Fachabteilungskontakt</b></p><a name=\"Fachabteilungskontakt\"> </a><a name=\"hcFachabteilungskontakt\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKKontaktGesundheitseinrichtung.html\">ISiKKontaktGesundheitseinrichtung</a></p></div><blockquote><p><b>ExtensionAufnahmegrund</b></p><ul><li>ErsteUndZweiteStelle: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/AufnahmegrundErsteUndZweiteStelle#AufnahmegrundErsteUndZweiteStelle-01\">CodeSystemAufnahmegrundErsteUndZweiteStelle: 01</a> (Krankenhausbehandlung, vollstationär)</li><li>DritteStelle: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/AufnahmegrundDritteStelle#AufnahmegrundDritteStelle-0\">AufnahmegrundDritteStelle: 0</a> (Anderes)</li><li>VierteStelle: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle#AufnahmegrundVierteStelle-1\">AufnahmegrundVierteStelle: 1</a> (Normalfall)</li></ul></blockquote><p><b>identifier</b>: Visit number/0123456789</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP\">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}\">Abteilungskontakt</span>, <span title=\"Codes:{http://fhir.de/CodeSystem/kontaktart-de operation}\">Operation</span></p><p><b>serviceType</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel 0100}\">Innere Medizin</span></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>period</b>: 2021-02-12 --&gt; 2021-02-13</p><h3>Diagnoses</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Condition</b></td><td><b>Use</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Condition-BehandlungsDiagnoseFreitext.html\">Condition </a></td><td><span title=\"Codes:{http://fhir.de/CodeSystem/KontaktDiagnoseProzedur treatment-diagnosis}\">Behandlungsrelevante Diagnosen</span></td></tr></table><p><b>account</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Account/AbrechnungsfallDRG\">Account/AbrechnungsfallDRG</a></p><h3>Hospitalizations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>AdmitSource</b></td><td><b>DischargeDisposition</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass E}\">Einweisung durch einen Arzt</span></td><td><span title=\"Codes:\"></span></td></tr></table><h3>Locations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Location</b></td><td><b>Status</b></td><td><b>PhysicalType</b></td></tr><tr><td style=\"display: none\">*</td><td>Bettenstellplatz 123 (Identifier: <code>https://test.krankenhaus.de/fhir/sid/locationid</code>/123)</td><td>Active</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type bd}\">Bed</span></td></tr></table><p><b>serviceProvider</b>: Fachabteilung XYZ (Identifier: <code>https://test.krankenhaus.de/fhir/sid/fachabteilungsid</code>/XYZ)</p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "ErsteUndZweiteStelle" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/dkgev/AufnahmegrundErsteUndZweiteStelle" ] ;
+         fhir:Coding.code [ fhir:value "01" ] ;
+         fhir:Coding.display [ fhir:value "Krankenhausbehandlung, vollstationär" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "DritteStelle" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/dkgev/AufnahmegrundDritteStelle" ] ;
+         fhir:Coding.code [ fhir:value "0" ] ;
+         fhir:Coding.display [ fhir:value "Anderes" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "VierteStelle" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/dkgev/AufnahmegrundVierteStelle" ] ;
+         fhir:Coding.code [ fhir:value "1" ] ;
+         fhir:Coding.display [ fhir:value "Normalfall" ]
+       ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/Aufnahmegrund" ]
+  ] ;
+  fhir:Encounter.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "VN" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "https://test.krankenhaus.de/fhir/sid/besuchsnummer" ] ;
+     fhir:Identifier.value [ fhir:value "0123456789" ]
+  ] ;
+  fhir:Encounter.status [ fhir:value "finished"] ;
+  fhir:Encounter.class [
+     fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ] ;
+     fhir:Coding.code [ fhir:value "IMP" ]
+  ] ;
+  fhir:Encounter.type [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/Kontaktebene" ] ;
+       fhir:Coding.code [ fhir:value "abteilungskontakt" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/kontaktart-de" ] ;
+       fhir:Coding.code [ fhir:value "operation" ]
+     ]
+  ] ;
+  fhir:Encounter.serviceType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel" ] ;
+       fhir:Coding.code [ fhir:value "0100" ]
+     ]
+  ] ;
+  fhir:Encounter.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:Encounter.period [
+     fhir:Period.start [ fhir:value "2021-02-12"^^xsd:date ] ;
+     fhir:Period.end [ fhir:value "2021-02-13"^^xsd:date ]
+  ] ;
+  fhir:Encounter.diagnosis [
+     fhir:index 0 ;
+     fhir:Encounter.diagnosis.condition [
+       fhir:link <https://gematik.de/fhir/isik/Condition/BehandlungsDiagnoseFreitext> ;
+       fhir:Reference.reference [ fhir:value "Condition/BehandlungsDiagnoseFreitext" ]
+     ] ;
+     fhir:Encounter.diagnosis.use [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur" ] ;
+         fhir:Coding.code [ fhir:value "treatment-diagnosis" ]
+       ]
+     ]
+  ] ;
+  fhir:Encounter.account [
+     fhir:index 0 ;
+     fhir:link <https://gematik.de/fhir/isik/Account/AbrechnungsfallDRG> ;
+     fhir:Reference.reference [ fhir:value "Account/AbrechnungsfallDRG" ] ;
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://test.krankenhaus.de/fhir/sid/fallnummer" ] ;
+       fhir:Identifier.value [ fhir:value "XZY" ]
+     ]
+  ] ;
+  fhir:Encounter.hospitalization [
+     fhir:Encounter.hospitalization.admitSource [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass" ] ;
+         fhir:Coding.code [ fhir:value "E" ]
+       ]
+     ] ;
+     fhir:Encounter.hospitalization.dischargeDisposition [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "ErsteUndZweiteStelle" ] ;
+           fhir:Extension.valueCoding [
+             fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/dkgev/EntlassungsgrundErsteUndZweiteStelle" ] ;
+             fhir:Coding.code [ fhir:value "01" ] ;
+             fhir:Coding.display [ fhir:value "Behandlung regulär beendet" ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "DritteStelle" ] ;
+           fhir:Extension.valueCoding [
+             fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/dkgev/EntlassungsgrundDritteStelle" ] ;
+             fhir:Coding.code [ fhir:value "1" ] ;
+             fhir:Coding.display [ fhir:value "arbeitsfähig entlassen" ]
+           ]
+         ] ;
+         fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/Entlassungsgrund" ]
+       ]
+     ]
+  ] ;
+  fhir:Encounter.location [
+     fhir:index 0 ;
+     fhir:Encounter.location.location [
+       fhir:Reference.identifier [
+         fhir:Identifier.system [ fhir:value "https://test.krankenhaus.de/fhir/sid/locationid" ] ;
+         fhir:Identifier.value [ fhir:value "123" ]
+       ] ;
+       fhir:Reference.display [ fhir:value "Bettenstellplatz 123" ]
+     ] ;
+     fhir:Encounter.location.status [ fhir:value "active" ] ;
+     fhir:Encounter.location.physicalType [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/location-physical-type" ] ;
+         fhir:Coding.code [ fhir:value "bd" ] ;
+         fhir:Coding.display [ fhir:value "Bed" ]
+       ]
+     ]
+  ] ;
+  fhir:Encounter.serviceProvider [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://test.krankenhaus.de/fhir/sid/fachabteilungsid" ] ;
+       fhir:Identifier.value [ fhir:value "XYZ" ]
+     ] ;
+     fhir:Reference.display [ fhir:value "Fachabteilung XYZ" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Encounter/Fachabteilungskontakt.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

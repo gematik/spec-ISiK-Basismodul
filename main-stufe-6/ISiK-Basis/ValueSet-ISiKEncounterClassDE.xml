@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="ISiKEncounterClassDE"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet ISiKEncounterClassDE</b></p><a name="ISiKEncounterClassDE"> </a><a name="hcISiKEncounterClassDE"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Import all the codes that are contained in <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/ValueSet/EncounterClassDE">EncounterClassDE</a></li><li>Include these codes as defined in <a href="http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActCode.html"><code>http://terminology.hl7.org/CodeSystem/v3-ActCode</code></a><span title="Version is explicitly stated to be 11.0.0"> version &#x1F4CD;11.0.0</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActCode.html#v3-ActCode-ACUTE">ACUTE</a></td><td>inpatient acute</td><td>An acute inpatient encounter.</td></tr><tr><td><a href="http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActCode.html#v3-ActCode-NONAC">NONAC</a></td><td>inpatient non-acute</td><td>Any category of inpatient encounter except 'acute'</td></tr><tr><td><a href="http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActCode.html#v3-ActCode-OBSENC">OBSENC</a></td><td>observation encounter</td><td>An encounter where the patient usually will start in different encounter, such as one in the emergency department (EMER) but then transition to this type of encounter because they require a significant period of treatment and monitoring to determine whether or not their condition warrants an inpatient admission or discharge. In the majority of cases the decision about admission or discharge will occur within a time period determined by local, regional or national regulation, often between 24 and 48 hours.</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://gematik.de/fhir/isik/ValueSet/ISiKEncounterClassDE"/>
+  <version value="6.0.0"/>
+  <name value="ISiKEncounterClassDE"/>
+  <title value="ISiKEncounterClassDE"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-07-01"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Erweitert das ValueSet EncounterClassDE der Deutschen Basisprofile um die Codes ACUTE, NONAC und OBSENC aus dem HL7 v3 ActCode System zur Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR). Ein Issue zur Aufnahme dieser Codes in EncounterClassDE wurde bei den Deutschen Basisprofilen eingereicht."/>
+  <compose>
+    <include>
+      <valueSet value="http://fhir.de/ValueSet/EncounterClassDE"/>
+    </include>
+    <include>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+      <version value="11.0.0"/>
+      <concept>
+        <code value="ACUTE"/>
+        <display value="inpatient acute"/>
+      </concept>
+      <concept>
+        <code value="NONAC"/>
+        <display value="inpatient non-acute"/>
+      </concept>
+      <concept>
+        <code value="OBSENC"/>
+        <display value="observation encounter"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Composition xmlns="http://hl7.org/fhir">
+  <id value="CompositionExampleBlutdruck"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Familienname:Fürstin von Musterfrau</p><p>Geburtsdatum:1964-08-12</p><p>PID:TestPID</p><p>Bericht-Status:final</p><p>Bericht-Typ:Berichtzusammenfassung / Document Summary</p><p>Datum:03.05.2022</p><p>Titel:Blutdruckmessung vom 3.5.2022</p><p>Autor:Gerät XY, Fa. Z, Modell T</p></div>
+  </text>
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="FILL"/>
+      </coding>
+    </type>
+    <system value="https://fhir.krankenhaus.example/sid/system-a/berichtnummer"/>
+    <value value="0123456789"/>
+  </identifier>
+  <status value="final"/>
+  <type>
+    <coding>
+      <system value="http://dvmd.de/fhir/CodeSystem/kdl"/>
+      <code value="AD010112"/>
+    </coding>
+    <text value="Kurzbericht"/>
+  </type>
+  <subject>
+    <reference value="urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"/>
+  </subject>
+  <encounter>
+    <reference value="urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765"/>
+  </encounter>
+  <date value="2022-05-03"/>
+  <author>
+    <type value="Device"/>
+    <display value="Gerät XY, Fa. Z, Modell T"/>
+  </author>
+  <title value="Blutdruckmessung vom 3.5.2022"/>
+  <section>
+    <title value="Messung"/>
+    <text>
+      <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><table><tr><td><b>Systolisch</b></td><td><b>Diastolisch</b></td><td><b>Einheit</b></td><td><b>Uhrzeit</b></td></tr><tr><td>140</td><td>110</td><td>mmHG</td><td>17:15h</td></tr></table></div>
+    </text>
+  </section>
+</Composition>

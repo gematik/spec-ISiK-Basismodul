@@ -1,0 +1,64 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Patient/DorisZiel> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "DorisZiel"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient DorisZiel</b></p><a name=\"DorisZiel\"> </a><a name=\"hcDorisZiel\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKPatient.html\">ISiKPatient</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Doris Duplikat (official) Female, DoB: 1964-08-12 ( Medical record number)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td colspan=\"3\">true</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">Krankenversichertennummer/A123456789</td></tr></table></div>"
+  ] ;
+  fhir:Patient.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "MR" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "https://fhir.krankenhaus.example/sid/PID" ] ;
+     fhir:Identifier.value [ fhir:value "123456" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/identifier-type-de-basis" ] ;
+         fhir:Coding.code [ fhir:value "KVZ10" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+     fhir:Identifier.value [ fhir:value "A123456789" ]
+  ] ;
+  fhir:Patient.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:Patient.name [
+     fhir:index 0 ;
+     fhir:HumanName.use [ fhir:value "official" ] ;
+     fhir:HumanName.family [ fhir:value "Duplikat" ] ;
+     fhir:HumanName.given [
+       fhir:value "Doris" ;
+       fhir:index 0
+     ]
+  ] ;
+  fhir:Patient.gender [ fhir:value "female"] ;
+  fhir:Patient.birthDate [ fhir:value "1964-08-12"^^xsd:date] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Patient/DorisZiel.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

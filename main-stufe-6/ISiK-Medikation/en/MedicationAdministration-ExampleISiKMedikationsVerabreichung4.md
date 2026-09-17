@@ -1,0 +1,106 @@
+# ExampleISiKMedikationsVerabreichung4 - ISiK Medikation Implementierungsleitfaden v6.0.0
+
+ISiK Medikation Implementierungsleitfaden
+
+Version 6.0.0 - active 
+
+* [**Table of Contents**](toc.md)
+* [**Artefakte**](artifacts.md)
+* **ExampleISiKMedikationsVerabreichung4**
+
+## MedicationAdministration: ExampleISiKMedikationsVerabreichung4
+
+Profile: [ISiKMedikationsVerabreichung](StructureDefinition-ISiKMedikationsVerabreichung.md)
+
+**status**: Completed
+
+**medication**: [Medication ](Medication-ExampleISiKMedikament2.md)
+
+**subject**: [Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))](Patient-PatientinMusterfrau.md)
+
+**context**: [Encounter/FachabteilungskontaktMinimal](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&canonical=http://fhir.org/packages/de.basisprofil.r4/Encounter/FachabteilungskontaktMinimal)
+
+**effective**: 2021-07-01
+
+**note**: 
+
+> 
+
+Testnotiz
+
+
+### Dosages
+
+| | | | | | |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| - | **Text** | **Site** | **Route** | **Dose** | **Rate[x]** |
+| * | 1L Infusion mit Rate 50ml/h | Structure of ligament of left superior vena cava | Intravenous use | 1000 mL (Details: UCUM codemL = 'mL') | 50 mL (Details: UCUM codemL = 'mL')/1 h (Details: UCUM codeh = 'h') |
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "MedicationAdministration",
+  "id" : "ExampleISiKMedikationsVerabreichung4",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung"]
+  },
+  "status" : "completed",
+  "medicationReference" : {
+    "reference" : "Medication/ExampleISiKMedikament2"
+  },
+  "subject" : {
+    "reference" : "Patient/PatientinMusterfrau"
+  },
+  "context" : {
+    "reference" : "Encounter/FachabteilungskontaktMinimal",
+    "identifier" : {
+      "value" : "0123456789"
+    }
+  },
+  "effectiveDateTime" : "2021-07-01",
+  "note" : [{
+    "text" : "Testnotiz"
+  }],
+  "dosage" : {
+    "text" : "1L Infusion mit Rate 50ml/h",
+    "site" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "6073002",
+        "display" : "Structure of ligament of left superior vena cava"
+      }]
+    },
+    "route" : {
+      "coding" : [{
+        "system" : "http://standardterms.edqm.eu",
+        "code" : "20045000",
+        "display" : "Intravenous use"
+      }]
+    },
+    "dose" : {
+      "value" : 1000,
+      "unit" : "mL",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mL"
+    },
+    "rateRatio" : {
+      "numerator" : {
+        "value" : 50,
+        "unit" : "mL",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mL"
+      },
+      "denominator" : {
+        "value" : 1,
+        "unit" : "h",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "h"
+      }
+    }
+  }
+}
+
+```

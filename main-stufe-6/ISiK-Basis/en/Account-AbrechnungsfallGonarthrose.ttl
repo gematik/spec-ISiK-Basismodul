@@ -1,0 +1,48 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Account/AbrechnungsfallGonarthrose> a fhir:Account ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "AbrechnungsfallGonarthrose"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Account AbrechnungsfallGonarthrose</b></p><a name=\"AbrechnungsfallGonarthrose\"> </a><a name=\"hcAbrechnungsfallGonarthrose\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKAbrechnungsfall.html\">ISiKAbrechnungsfall</a></p></div><p><b>identifier</b>: Account number/1234567891</p><p><b>status</b>: Active</p><p><b>subject</b>: <a href=\"Patient-PatientinNormal.html\">Anna Müller (official) Female, DoB: 1957-08-12 ( Medical record number)</a></p></div>"
+  ] ;
+  fhir:Account.identifier [
+     fhir:index -1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "AN" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "https://test.krankenhaus.de/fhir/sid/abrechnungsnummer" ] ;
+     fhir:Identifier.value [ fhir:value "1234567891" ]
+  ] ;
+  fhir:Account.status [ fhir:value "active"] ;
+  fhir:Account.subject [
+     fhir:index -1 ;
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinNormal> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinNormal" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Account/AbrechnungsfallGonarthrose.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

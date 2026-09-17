@@ -1,0 +1,184 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Patient/IsikPatientTemplate> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "IsikPatientTemplate"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient IsikPatientTemplate</b></p><a name=\"IsikPatientTemplate\"> </a><a name=\"hcIsikPatientTemplate\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKPatient.html\">ISiKPatient</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">null(official) Unknown, DoB:  ( Medical record number)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td colspan=\"3\">true</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">Krankenversichertennummer/?ngen-9?</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li>ph: -unknown-</li><li>null null null DE </li></ul></td></tr></table></div>"
+  ] ;
+  fhir:Patient.identifier [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext" ] ;
+       fhir:Extension.valueString [ fhir:value "item.where(linkId = 'patientId')" ]
+     ] ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "MR" ]
+       ]
+     ] ;
+     fhir:Identifier.system [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue" ] ;
+         fhir:Extension.valueString [ fhir:value "item.where(linkId = 'patientId-system').answer.value" ]
+       ]
+     ] ;
+     fhir:Identifier.value [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue" ] ;
+         fhir:Extension.valueString [ fhir:value "item.where(linkId = 'patientId-value').answer.value" ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/identifier-type-de-basis" ] ;
+         fhir:Coding.code [ fhir:value "KVZ10" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+     fhir:Identifier.value [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue" ] ;
+         fhir:Extension.valueString [ fhir:value "item.where(linkId = 'versichertenId').answer.value" ]
+       ]
+     ]
+  ] ;
+  fhir:Patient.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:Patient.name [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext" ] ;
+       fhir:Extension.valueString [ fhir:value "item.where(linkId = 'name')" ]
+     ] ;
+     fhir:HumanName.use [ fhir:value "official" ] ;
+     fhir:HumanName.text [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue" ] ;
+         fhir:Extension.valueString [ fhir:value "item.where(linkId = 'given' or linkId = 'family').answer.value.join(' ')" ]
+       ]
+     ] ;
+     fhir:HumanName.family [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue" ] ;
+         fhir:Extension.valueString [ fhir:value "item.where(linkId = 'family').answer.value.first()" ]
+       ]
+     ] ;
+     fhir:HumanName.given [
+       fhir:index 0 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue" ] ;
+         fhir:Extension.valueString [ fhir:value "item.where(linkId = 'given').answer.value.first()" ]
+       ]
+     ]
+  ] ;
+  fhir:Patient.telecom [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext" ] ;
+       fhir:Extension.valueString [ fhir:value "item.where(linkId = 'telecom')" ]
+     ] ;
+     fhir:ContactPoint.system [
+       fhir:value "phone" ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue" ] ;
+         fhir:Extension.valueString [ fhir:value "item.where(linkId = 'telecom-system').answer.value" ]
+       ]
+     ] ;
+     fhir:ContactPoint.value [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue" ] ;
+         fhir:Extension.valueString [ fhir:value "item.where(linkId = 'telecom-value').answer.value" ]
+       ]
+     ]
+  ] ;
+  fhir:Patient.gender [
+     fhir:value "unknown" ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue" ] ;
+       fhir:Extension.valueString [ fhir:value "item.where(linkId = 'gender').answer.value.first().code" ]
+     ]
+  ] ;
+  fhir:Patient.birthDate [
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue" ] ;
+       fhir:Extension.valueString [ fhir:value "item.where(linkId = 'birthDate').answer.value.first()" ]
+     ]
+  ] ;
+  fhir:Patient.address [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext" ] ;
+       fhir:Extension.valueString [ fhir:value "item.where(linkId = 'address')" ]
+     ] ;
+     fhir:Address.type [ fhir:value "both" ] ;
+     fhir:Address.line [
+       fhir:index 0 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue" ] ;
+         fhir:Extension.valueString [ fhir:value "item.where(linkId = 'address-line').answer.value" ]
+       ]
+     ] ;
+     fhir:Address.city [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue" ] ;
+         fhir:Extension.valueString [ fhir:value "item.where(linkId = 'address-city').answer.value.first()" ]
+       ]
+     ] ;
+     fhir:Address.postalCode [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue" ] ;
+         fhir:Extension.valueString [ fhir:value "item.where(linkId = 'address-postalCode').answer.value.first()" ]
+       ]
+     ] ;
+     fhir:Address.country [
+       fhir:value "DE" ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue" ] ;
+         fhir:Extension.valueString [ fhir:value "item.where(linkId = 'address-country').answer.value.first()" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Patient/IsikPatientTemplate.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

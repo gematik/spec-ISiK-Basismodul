@@ -1,0 +1,126 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Practitioner/PractitionerWalterArzt> a fhir:Practitioner ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "PractitionerWalterArzt"] ;
+  fhir:Resource.meta [
+     fhir:Meta.source [ fhir:value "http://krankenhaus.de" ] ;
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Practitioner PractitionerWalterArzt</b></p><a name=\"PractitionerWalterArzt\"> </a><a name=\"hcPractitionerWalterArzt\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Information Source: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://krankenhaus.de\">http://krankenhaus.de</a></p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKPersonImGesundheitsberuf.html\">ISiKPersonImGesundheitsberuf</a></p></div><p><b>identifier</b>: Lifelong physician number/123456789, Doctor number/123456789123456</p><p><b>active</b>: true</p><p><b>name</b>: Walter Arzt(Official), Gross(Name changed for Marriage)</p><p><b>address</b>: Schmiedegasse 16 Potsdam 14469 DE </p><p><b>gender</b>: Male</p><p><b>birthDate</b>: Absent because : masked</p><h3>Qualifications</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://snomed.info/sct 309343006}\">Physician (occupation)</span></td></tr></table></div>"
+  ] ;
+  fhir:Practitioner.identifier [
+     fhir:index -1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "LANR" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR" ] ;
+     fhir:Identifier.value [ fhir:value "123456789" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "DN" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "http://fhir.de/sid/bundesaerztekammer/efn" ] ;
+     fhir:Identifier.value [ fhir:value "123456789123456" ]
+  ] ;
+  fhir:Practitioner.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:Practitioner.name [
+     fhir:index -1 ;
+     fhir:HumanName.use [ fhir:value "official" ] ;
+     fhir:HumanName.text [ fhir:value "Walter Arzt" ] ;
+     fhir:HumanName.family [
+       fhir:value "Arzt" ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/humanname-own-name" ] ;
+         fhir:Extension.valueString [ fhir:value "Arzt" ]
+       ]
+     ] ;
+     fhir:HumanName.given [
+       fhir:value "Walter" ;
+       fhir:index -1
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:HumanName.use [ fhir:value "maiden" ] ;
+     fhir:HumanName.text [ fhir:value "Gross" ] ;
+     fhir:HumanName.family [
+       fhir:value "Gross" ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/humanname-own-name" ] ;
+         fhir:Extension.valueString [ fhir:value "Gross" ]
+       ]
+     ]
+  ] ;
+  fhir:Practitioner.address [
+     fhir:index -1 ;
+     fhir:Address.type [ fhir:value "both" ] ;
+     fhir:Address.line [
+       fhir:value "Schmiedegasse 16" ;
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber" ] ;
+         fhir:Extension.valueString [ fhir:value "16" ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName" ] ;
+         fhir:Extension.valueString [ fhir:value "Schmiedegasse" ]
+       ]
+     ] ;
+     fhir:Address.city [ fhir:value "Potsdam" ] ;
+     fhir:Address.postalCode [ fhir:value "14469" ] ;
+     fhir:Address.country [ fhir:value "DE" ]
+  ] ;
+  fhir:Practitioner.gender [ fhir:value "male"] ;
+  fhir:Practitioner.birthDate [
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/data-absent-reason" ] ;
+       fhir:Extension.valueCode [ fhir:value "masked" ]
+     ]
+  ] ;
+  fhir:Practitioner.qualification [
+     fhir:index -1 ;
+     fhir:Practitioner.qualification.code [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         a sct:309343006 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/900000000000207008/version/20200131" ] ;
+         fhir:Coding.code [ fhir:value "309343006" ] ;
+         fhir:Coding.display [ fhir:value "Physician (occupation)" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Practitioner/PractitionerWalterArzt.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

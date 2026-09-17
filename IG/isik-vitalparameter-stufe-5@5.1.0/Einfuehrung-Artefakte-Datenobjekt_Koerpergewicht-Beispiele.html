@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden - ISiK-Vitalparameter</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden - ISiK-Vitalparameter
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende UseCases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases.html">
+                                            &#xDC;bergreifende UseCases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases-AMTS.html">
+                                            AMTS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases-Intensivversorgung.html">
+                                            Intensivversorgung
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-InteraktionenAkteure.html">
+                                            Interaktionen und Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Signaldaten.html">
+                                            Signaldaten
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-RestApi.html">
+                                            RestApi
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Atemfrequenz.html">
+                                            ISiKAtemfrequenz (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_BlutdruckSystemischArteriell.html">
+                                            ISiKBlutdruckSystemischArteriell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Herzfrequenz.html">
+                                            ISiKHerzfrequenz (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpergewicht.html">
+                                            ISiKKoerpergewicht (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpergroesse.html">
+                                            ISiKKoerpergroesse (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpertemperatur.html">
+                                            ISiKKoerpertemperatur (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Kopfumfang.html">
+                                            ISiKKopfumfang (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_SauerstoffsaettigungArteriell.html">
+                                            ISiKSauerstoffsaettigungArteriell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_GCS.html">
+                                            ISiKGCS (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_EKG.html">
+                                            ISiKEKG (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#5231c545-8a4a-4d03-b796-2a1cd44d1103" aria-controls="5231c545-8a4a-4d03-b796-2a1cd44d1103" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#5f250cc5-aefb-4c91-919d-6f5b73b8fa54" aria-controls="5f250cc5-aefb-4c91-919d-6f5b73b8fa54" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#979abb2b-0175-4d34-8d2a-c69548e487be" aria-controls="979abb2b-0175-4d34-8d2a-c69548e487be" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#49961f1e-126c-4626-bb89-fc3794ea9275" aria-controls="49961f1e-126c-4626-bb89-fc3794ea9275" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="5231c545-8a4a-4d03-b796-2a1cd44d1103">
+    <div class="stu3-treetable" id="b24f2514bad64c1e950b529b519e0861" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="86b2097a8798446197283a3c5ecb1ef9"><td class="instance"><span class="baseIcon primitive"></span><b>Observation</b></td></tr><tr class="collapsed" data-id="79b564eeef3749beacfd83c2b47b2f9b" data-parentId="86b2097a8798446197283a3c5ecb1ef9"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ISiKKoerpergewichtExample</span></td></tr><tr class="collapsed" data-id="be9740c3b2b84291995aefe634216bbf" data-parentId="86b2097a8798446197283a3c5ecb1ef9"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="4454051b62034d088cb647aa70d8ddb4" data-parentId="be9740c3b2b84291995aefe634216bbf"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht</span></td></tr><tr class="collapsed" data-id="f9c8aff0b406454a988a067ab7eaaccd" data-parentId="86b2097a8798446197283a3c5ecb1ef9"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="5a6315b2e9334c7dbf5413eda4451c1c" data-parentId="86b2097a8798446197283a3c5ecb1ef9"><td class="instance"><span class="baseIcon primitive"></span><b>category</b></td></tr><tr class="collapsed" data-id="2135448ddb8a45bb87eaaa6b131bbfbc" data-parentId="5a6315b2e9334c7dbf5413eda4451c1c"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="2b74ba5bc60347e59b687954f28e173b" data-parentId="2135448ddb8a45bb87eaaa6b131bbfbc"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/observation-category</span></td></tr><tr class="collapsed" data-id="ceafd97b052e45dea734dafab1ef7400" data-parentId="2135448ddb8a45bb87eaaa6b131bbfbc"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>vital-signs</span></td></tr><tr class="collapsed" data-id="f7553e4f982c43079ccbe7f8839f776b" data-parentId="86b2097a8798446197283a3c5ecb1ef9"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="56cbefef7d4d40ccb43d64cfefaf57f8" data-parentId="f7553e4f982c43079ccbe7f8839f776b"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="5b37bb57fbcf42b499feb8e0e47ccebd" data-parentId="56cbefef7d4d40ccb43d64cfefaf57f8"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="551f37805814482b80458257e9a53a0e" data-parentId="56cbefef7d4d40ccb43d64cfefaf57f8"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>29463-7</span></td></tr><tr class="collapsed" data-id="65cf6fb0c1274c9ba891f8d1777fa55c" data-parentId="56cbefef7d4d40ccb43d64cfefaf57f8"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Body weight</span></td></tr><tr class="collapsed" data-id="28953568175c49a5991aec882dc0d937" data-parentId="f7553e4f982c43079ccbe7f8839f776b"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="4fd0e43de7254c52b9bc4321dbf7b790" data-parentId="28953568175c49a5991aec882dc0d937"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="1d248915312f4d7c87bda54b3f180a4b" data-parentId="28953568175c49a5991aec882dc0d937"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>27113001</span></td></tr><tr class="collapsed" data-id="5b2851497c524a1ea871935758c9f1fc" data-parentId="28953568175c49a5991aec882dc0d937"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Body weight</span></td></tr><tr class="collapsed" data-id="9f56c78e7b17435e95c3d0595fec315e" data-parentId="f7553e4f982c43079ccbe7f8839f776b"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="830b511a311f4105b231f080af8bfecc" data-parentId="9f56c78e7b17435e95c3d0595fec315e"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>urn:iso:std:iso:11073:10101</span></td></tr><tr class="collapsed" data-id="d385f329a77a44cc8c28766039243c3d" data-parentId="9f56c78e7b17435e95c3d0595fec315e"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>188736</span></td></tr><tr class="collapsed" data-id="0e96c9552e4f413888c0bfae66b4c035" data-parentId="9f56c78e7b17435e95c3d0595fec315e"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>MDC_MASS_BODY_ACTUAL</span></td></tr><tr class="collapsed" data-id="dc8ccf34d77747a6ad1fcacd709eb7bc" data-parentId="f7553e4f982c43079ccbe7f8839f776b"><td class="instance"><span class="baseIcon primitive"></span><b>text : </b><span>K&#246;rpergewicht</span></td></tr><tr class="collapsed" data-id="50cb0831f6a641e892ffd793b9d7ade4" data-parentId="86b2097a8798446197283a3c5ecb1ef9"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="80fdf904603b45eb9eaea61a611b5d86" data-parentId="50cb0831f6a641e892ffd793b9d7ade4"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="08273ae7573e4150a8704b0739b62ee0" data-parentId="86b2097a8798446197283a3c5ecb1ef9"><td class="instance"><span class="baseIcon primitive"></span><b>effective : </b><span>2020-10-11</span></td></tr><tr class="collapsed" data-id="2215961dcda4487f8f19a94737efc4f9" data-parentId="86b2097a8798446197283a3c5ecb1ef9"><td class="instance"><span class="baseIcon primitive"></span><b>performer</b></td></tr><tr class="collapsed" data-id="d83cbf3b7ef24025963930f98c789379" data-parentId="2215961dcda4487f8f19a94737efc4f9"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Practitioner/DrMustermann</span></td></tr><tr class="collapsed" data-id="6662387821df420988347b7d51f7a45a" data-parentId="86b2097a8798446197283a3c5ecb1ef9"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="e01d001a5a774bbca93b03c47e505d2f" data-parentId="6662387821df420988347b7d51f7a45a"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>79</span></td></tr><tr class="collapsed" data-id="b3eccf74d6f04928a43e267cd3c78c8c" data-parentId="6662387821df420988347b7d51f7a45a"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>kilogram</span></td></tr><tr class="collapsed" data-id="de49ff373bb3486884c6012f91642db9" data-parentId="6662387821df420988347b7d51f7a45a"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="47a9538efe06463da3443d1047ef98a3" data-parentId="6662387821df420988347b7d51f7a45a"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>kg</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTableb24f2514bad64c1e950b529b519e0861 = new InstanceTree();
+resourceTreeTableb24f2514bad64c1e950b529b519e0861.init("b24f2514bad64c1e950b529b519e0861");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="5f250cc5-aefb-4c91-919d-6f5b73b8fa54">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">Observation</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.id" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKKoerpergewichtExample</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.meta" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.meta.profile" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.status" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.category" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">category</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.category.coding" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.category.coding.system" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.category.coding.code" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">vital-signs</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">category</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.system" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.code" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">29463-7</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.display" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Body weight</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.system" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.code" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">27113001</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.display" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Body weight</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.system" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.code" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">188736</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.display" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MDC_MASS_BODY_ACTUAL</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.text" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">K&#246;rpergewicht</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.subject" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.subject.reference" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.effective" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">effectiveDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2020-10-11</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.performer" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">performer</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.performer.reference" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Practitioner/DrMustermann</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">performer</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.value" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">valueQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.value.value" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">79</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.value.unit" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">kilogram</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.value.system" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.value.code" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">kg</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueQuantity</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Observation</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="979abb2b-0175-4d34-8d2a-c69548e487be">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.resourceType" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.id" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKKoerpergewichtExample</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.meta" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.meta.profile" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.category" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">category</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.category.coding" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.category.coding.system" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.category.coding.code" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">vital-signs</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.system" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.code" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">29463-7</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.display" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Body weight</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.system" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.code" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">27113001</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.display" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Body weight</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.code" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">188736</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.system" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.coding.display" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MDC_MASS_BODY_ACTUAL</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.code.text" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">K&#246;rpergewicht</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.valueQuantity" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.valueQuantity.system" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.valueQuantity.value" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">79</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.valueQuantity.code" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">kg</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.valueQuantity.unit" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">kilogram</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.status" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.subject" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.subject.reference" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.effectiveDateTime" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">effectiveDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2020-10-11</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.performer" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">performer</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKKoerpergewicht.json#Observation.performer.reference" title="ISiKKoerpergewicht
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKKoerpergewicht.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Practitioner/DrMustermann</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="49961f1e-126c-4626-bb89-fc3794ea9275">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Observation-ISiKKoerpergewichtExample.json'>Körpergewicht</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
