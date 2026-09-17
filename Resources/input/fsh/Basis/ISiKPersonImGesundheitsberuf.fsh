@@ -96,7 +96,7 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-  * ^comment = "Zur Unterscheidung von Postfach- und Straßenadressen, zur getrennten Angabe von Straßenname und Hausnummer sowie zur Angabe von Stadtteilen können Implementierungen die im German Address Base Profile (http://fhir.de/StructureDefinition/address-de-basis) beschriebenen Erweiterungen unterstützen.\r\nDiese Differenzierungen sind im Rahmen dieser Spezifikation jedoch nicht verpflichtend."
+  * ^comment = "Zur Unterscheidung von Postfach- und Straßenadressen, zur getrennten Angabe von Straßenname und Hausnummer sowie zur Angabe von Stadtteilen können Implementierungen die im deutschen Basisprofil zur Addresse (http://fhir.de/StructureDefinition/address-de-basis) beschriebenen Erweiterungen unterstützen.\r\nDiese Differenzierungen sind im Rahmen dieser Spezifikation jedoch nicht verpflichtend."
 * address contains
     Strassenanschrift 0..* MS and
     Postfach 0..* MS
