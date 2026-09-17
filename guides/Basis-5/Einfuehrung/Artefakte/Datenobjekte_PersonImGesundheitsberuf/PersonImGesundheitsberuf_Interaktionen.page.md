@@ -3,7 +3,7 @@ topic: markdown-PersonImGesundheitsberuf-PersonImGesundheitsberuf-Interaktionen
 ---
 ### Interaktionen
 
-Für die Ressource Practitioner MUSS die REST-Interaktion "READ" implementiert werden.
+Für die Ressource Practitioner MÜSSEN die REST-Interaktionen "READ" und "SEARCH" (search-type) implementiert werden.
 
 Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination:
 
