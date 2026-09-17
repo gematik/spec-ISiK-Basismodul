@@ -1,7 +1,7 @@
 Profile: ISiKPersonImGesundheitsberuf
 Parent: Practitioner
 Id: ISiKPersonImGesundheitsberuf
-Description: "Dieses Profil ermöglicht die Nutzung von Personen, die in Gesundheitsberufen tätig sind, in ISiK-Szenarien.
+Description: "Dieses Profil ermöglicht die Abbildung von Personen, die in Gesundheitsberufen tätig sind, in ISiK-Szenarien.
 **Motivation**: Das Profil ISIKPersonImGesundheitsberuf bildet Personen ab, die als medizinische Leistungserbringer oder Fachexperten tätig sind. In den ISiK-FHIR-Profilen können PersonImGesundheitsberuf bspw. als Ausführende einer Prozedur auftreten, im Element `performer` der Procedure-Ressource, oder als Person, die eine Diagnose stellt, im Element `asserter` der Condition-Ressource.
 
 In FHIR werden PersonImGesundheitsberuf mit der [`Practitioner`](https://hl7.org/fhir/R4/practitioner.html)-Ressource
