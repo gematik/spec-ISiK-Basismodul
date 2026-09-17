@@ -8,7 +8,7 @@
   "experimental": false,
   "date": "2026-07-01",
   "publisher": "gematik GmbH",
-  "description": "Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen tätigen Personen in ISiK Szenarien.\n**Motivation**: Das Profil ISIKPersonImGesundheitsberuf bildet alle denkbaren medizinischen Leistungserbringer und Fachexperten  ab. In den ISiK-FHIR-Profilen können PersonImGesundheitsberuf bspw. als Ausführende einer Prozedur auftreten, im Element `performer` der Procedure Ressource, oder als die Person, die eine Diagnose stellt, im Element `asserter` der Condition Ressource.\n\nIn FHIR werden PersonImGesundheitsberuf mit der [`Practitioner`](https://hl7.org/fhir/R4/practitioner.html)-Ressource\n repräsentiert.  \n Für das Profil ISIKPersonImGesundheitsberuf wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPersonImGesundheitsberuf valide sind, auch valide sind gegen:\n* [Profil KBV_PR_Base_Practitioner der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner). \n* [Profil HiGHmed_IC_Practitioner, MI Initiative - HiGHmed Use Case Infection Control der  Medizininformatik Initiative ](https://simplifier.net/medizininformatikinitiative-highmed-ic/highmed-ic-practitioner)\n\nGegen folgende Profile ist das Profil ISiKPersonImGesundheitsberuf unmittelbar kompatibel:\n\n* [Profil TIPractitioner der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-practitioner)  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+  "description": "Dieses Profil ermöglicht die Nutzung von Personen, die in Gesundheitsberufen tätig sind, in ISiK-Szenarien.\n**Motivation**: Das Profil ISIKPersonImGesundheitsberuf bildet Personen ab, die als medizinische Leistungserbringer oder Fachexperten tätig sind. In den ISiK-FHIR-Profilen können PersonImGesundheitsberuf bspw. als Ausführende einer Prozedur auftreten, im Element `performer` der Procedure-Ressource, oder als Person, die eine Diagnose stellt, im Element `asserter` der Condition-Ressource.\n\nIn FHIR werden PersonImGesundheitsberuf mit der [`Practitioner`](https://hl7.org/fhir/R4/practitioner.html)-Ressource\n repräsentiert.\n Für das Profil ISIKPersonImGesundheitsberuf wird Kompatibilität mit den folgenden Profilen angestrebt. Es kann jedoch nicht sichergestellt werden, dass Instanzen, die gegen ISIKPersonImGesundheitsberuf valide sind, auch gegen diese Profile validieren:\n* [Profil KBV_PR_Base_Practitioner der KBV-Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner).\n* [Profil HiGHmed_IC_Practitioner, Medizininformatik-Initiative - HiGHmed Use Case Infection Control der  Medizininformatik-Initiative ](https://simplifier.net/medizininformatikinitiative-highmed-ic/highmed-ic-practitioner)\n\nGegen folgende Profile ist das Profil ISiKPersonImGesundheitsberuf unmittelbar kompatibel:\n\n* [Profil TIPractitioner der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-practitioner)  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -110,7 +110,7 @@
         "path": "Practitioner.identifier",
         "sliceName": "EFN",
         "short": "Einheitliche Fortbildungsnummer für Ärzte in Deutschland",
-        "comment": "In bestimmten KIS wird keine EFN geführt, da diese aus Compliance-Gründen getrennt in HR-Systemen vorgehalten wird (Hinweis kam von Stakeholder), daher soll der entsprechende Test im Test-System mit \"warningOnly\" ausgegeben werden.",
+        "comment": "In einzelnen KIS wird keine EFN geführt, da sie aus Compliance-Gründen ausschließlich in HR-Systemen vorgehalten wird. Eine fehlende EFN soll im Testsystem daher als warningOnly bewertet werden.",
         "min": 0,
         "max": "1",
         "type": [
@@ -143,7 +143,7 @@
         "path": "Practitioner.identifier",
         "sliceName": "TelematikId",
         "short": "Telematik-ID",
-        "comment": "**Begründung MS:** Zur Verknüpfung der Practitioner Instanz mit Diensten der Telematik Infrastruktur SOLL die ID des HBA mit angegeben sein.",
+        "comment": "**Begründung MS:** Zur Verknüpfung der Practitioner-Instanz mit Diensten der Telematikinfrastruktur SOLL die Telematik-ID des HBA angegeben werden.",
         "min": 0,
         "max": "1",
         "type": [
@@ -228,7 +228,7 @@
         "path": "Practitioner.name",
         "sliceName": "Name",
         "short": "Vollständiger Name",
-        "comment": "Der Name des Arztes MUSS in konkreten Anwendungen angezeigt werden können. Es MUSS nach dem Namen des Arztes gesucht werden können.",
+        "comment": "Der Name der Person im Gesundheitsberuf MUSS in konkreten Anwendungen angezeigt werden können. Es MUSS möglich sein, nach diesem Namen zu suchen.",
         "min": 1,
         "max": "1",
         "type": [
@@ -257,7 +257,7 @@
         "id": "Practitioner.name:Name.family",
         "path": "Practitioner.name.family",
         "short": "Nachname",
-        "comment": "Vollständiger Nachname bzw. Familienname der Person, einschließlich Vor- und Zusätze.  \n      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind.",
+        "comment": "Vollständiger Nachname bzw. Familienname der Person, einschließlich Namensvorsätze und -zusätze.\n      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind.",
         "min": 1,
         "mustSupport": true
       },
@@ -272,13 +272,15 @@
         "id": "Practitioner.name:Name.prefix",
         "path": "Practitioner.name.prefix",
         "short": "Präfix",
-        "comment": "Präfix, z.B. akademischer Titel od. militärischer Rang",
+        "comment": "Präfix, z. B. akademischer Titel oder militärischer Rang",
         "mustSupport": true
       },
       {
         "id": "Practitioner.name:Geburtsname",
         "path": "Practitioner.name",
         "sliceName": "Geburtsname",
+        "short": "Geburtsname",
+        "comment": "Ist der Geburtsname der Person im Gesundheitsberuf bekannt und weicht er vom aktuellen Namen ab, KANN er zusätzlich angegeben werden.",
         "min": 0,
         "max": "1",
         "type": [
@@ -337,7 +339,7 @@
           ],
           "rules": "open"
         },
-        "comment": "In order to differentiate between post box addresses and physical addresses, street names and house numbers, and to add city district names, vendors can opt to support the extensions as suggested in the German Address Base Profile http://fhir.de/StructureDefinition/address-de-basis.\r\nSuch differentiations are however not required within the scope of this specification.",
+        "comment": "Zur Unterscheidung von Postfach- und Straßenadressen, zur getrennten Angabe von Straßenname und Hausnummer sowie zur Angabe von Stadtteilen können Implementierungen die im German Address Base Profile (http://fhir.de/StructureDefinition/address-de-basis) beschriebenen Erweiterungen unterstützen.\r\nDiese Differenzierungen sind im Rahmen dieser Spezifikation jedoch nicht verpflichtend.",
         "mustSupport": true
       },
       {
@@ -345,7 +347,7 @@
         "path": "Practitioner.address",
         "sliceName": "Strassenanschrift",
         "short": "Straßenanschrift",
-        "comment": "Ist die Adresse bekannt, unter der ein Arzt erreichbar ist, MUSS sie bereitgestellt werden. Diese kann zur Unterscheidung von Personen herangezogen werden. Die Ausdifferenzierung der Adresse in die Adressbestandteile erfolgt in Hinblick auf eine einheitliche Verwendung von Adressen.",
+        "comment": "Ist eine Adresse bekannt, unter der die Person im Gesundheitsberuf erreichbar ist, MUSS sie bereitgestellt werden. Diese kann zur Unterscheidung von Personen herangezogen werden. Die Ausdifferenzierung der Adresse in die Adressbestandteile erfolgt in Hinblick auf eine einheitliche Verwendung von Adressen.",
         "min": 0,
         "max": "*",
         "type": [
@@ -426,7 +428,7 @@
         "path": "Practitioner.address",
         "sliceName": "Postfach",
         "short": "Postfachanschrift",
-        "comment": "Ist die Postfachadresse bekannt, unter der ein Arzt erreichbar ist, MUSS sie bereitgestellt werden. Diese kann zur Unterscheidung von Personen herangezogen werden. Die Ausdifferenzierung der Adresse in die Adressbestandteile erfolgt in Hinblick auf eine einheitliche Verwendung von Adressen.",
+        "comment": "Ist eine Adresse bekannt, unter der die Person im Gesundheitsberuf erreichbar ist, MUSS sie bereitgestellt werden. Diese kann zur Unterscheidung von Personen herangezogen werden. Die Ausdifferenzierung der Adresse in die Adressbestandteile erfolgt in Hinblick auf eine einheitliche Verwendung von Adressen.",
         "min": 0,
         "max": "*",
         "type": [
@@ -499,8 +501,8 @@
       {
         "id": "Practitioner.gender",
         "path": "Practitioner.gender",
-        "short": "Ist das Geschlecht des Arztes bekannt, MUSS es bereitgestellt werden. Eine korrekte Kodierung des Geschlechtseintrags 'divers' MUSS per GenderOtherDE-Extension unterstüzt werden.",
-        "comment": "Geschlecht der Person",
+        "short": "Administratives Geschlecht",
+        "comment": "Ist das Geschlecht der Person im Gesundheitsberuf bekannt, MUSS es bereitgestellt werden. Für die Angabe 'divers' ist in Practitioner.gender der FHIR-Code `other` zu verwenden. Die administrative deutsche Differenzierung erfolgt ergänzend über die GenderOtherDE-Extension.",
         "mustSupport": true
       },
       {
