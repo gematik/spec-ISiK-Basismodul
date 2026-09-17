@@ -1,16 +1,16 @@
 Profile: ISiKPersonImGesundheitsberuf
 Parent: Practitioner
 Id: ISiKPersonImGesundheitsberuf
-Description: "Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen tätigen Personen in ISiK Szenarien.
+Description: "Dieses Profil ermöglicht die Nutzung von Personen, die in Gesundheitsberufen tätig sind, in ISiK-Szenarien.
 ### Motivation
 
-Das Profil ISIKPersonImGesundheitsberuf bildet alle denkbaren medizinischen Leistungserbringer und Fachexperten  ab. In den ISiK-FHIR-Profilen können PersonImGesundheitsberuf bspw. als Ausführende einer Prozedur auftreten, im Element `performer` der Procedure Ressource, oder als die Person, die eine Diagnose stellt, im Element `asserter` der Condition Ressource.
+Das Profil ISIKPersonImGesundheitsberuf bildet Personen ab, die als medizinische Leistungserbringer oder Fachexperten tätig sind. In den ISiK-FHIR-Profilen können PersonImGesundheitsberuf bspw. als Ausführende einer Prozedur auftreten, im Element `performer` der Procedure-Ressource, oder als Person, die eine Diagnose stellt, im Element `asserter` der Condition-Ressource.
 
 In FHIR werden PersonImGesundheitsberuf mit der [`Practitioner`](https://hl7.org/fhir/R4/practitioner.html)-Ressource
- repräsentiert.  
- Für das Profil ISIKPersonImGesundheitsberuf wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPersonImGesundheitsberuf valide sind, auch valide sind gegen:
-* [Profil KBV_PR_Base_Practitioner der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner). 
-* [Profil HiGHmed_IC_Practitioner, MI Initiative - HiGHmed Use Case Infection Control der  Medizininformatik Initiative ](https://simplifier.net/medizininformatikinitiative-highmed-ic/highmed-ic-practitioner)
+ repräsentiert.
+ Für das Profil ISIKPersonImGesundheitsberuf wird Kompatibilität mit den folgenden Profilen angestrebt. Es kann jedoch nicht sichergestellt werden, dass Instanzen, die gegen ISIKPersonImGesundheitsberuf valide sind, auch gegen diese Profile validieren:
+* [Profil KBV_PR_Base_Practitioner der KBV-Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner).
+* [Profil HiGHmed_IC_Practitioner, Medizininformatik-Initiative - HiGHmed Use Case Infection Control der  Medizininformatik-Initiative ](https://simplifier.net/medizininformatikinitiative-highmed-ic/highmed-ic-practitioner)
 * [Profil TIPractitioner der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-practitioner)  
 
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
@@ -41,12 +41,12 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * ^short = "Einheitliche Fortbildungsnummer für Ärzte in Deutschland"
   * ^patternIdentifier.type = $v2-0203#DN
   * type 1..
-  * ^comment = "In bestimmten KIS wird keine EFN geführt, da diese aus Compliance-Gründen getrennt in HR-Systemen vorgehalten wird (Hinweis kam von Stakeholder), daher soll der entsprechende Test im Test-System mit \"warningOnly\" ausgegeben werden." 
+  * ^comment = "In einzelnen KIS wird keine EFN geführt, da sie aus Compliance-Gründen ausschließlich in HR-Systemen vorgehalten wird. Eine fehlende EFN soll im Testsystem daher als warningOnly bewertet werden."
   // Dennoch soll das MS im Profil enthalten sein: das war laut gefyra eine KBV-Anforderung [Stand 9.12.2022].
 * identifier[TelematikId] only IdentifierTelematikId
   * ^short = "Telematik-ID"
   * ^patternIdentifier.type = $v2-0203#PRN
-  * ^comment = "**Begründung MS:** Zur Verknüpfung der Practitioner Instanz mit Diensten der Telematik Infrastruktur SOLL die ID des HBA mit angegeben sein."
+  * ^comment = "**Begründung MS:** Zur Verknüpfung der Practitioner-Instanz mit Diensten der Telematikinfrastruktur SOLL die Telematik-ID angegeben werden."
   * type 1..
 * identifier[Mitarbeiterkennzeichen]
   * ^short = "Mitarbeiterkennzeichen"
@@ -63,7 +63,7 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
     Geburtsname 0..1
 * name[Name] only HumannameDeBasis
   * ^short = "Vollständiger Name"
-  * ^comment = "Der Name des Arztes MUSS in konkreten Anwendungen angezeigt werden können. Es MUSS nach dem Namen des Arztes gesucht werden können."
+  * ^comment = "Der Name der Person im Gesundheitsberuf MUSS in konkreten Anwendungen angezeigt werden können. Es MUSS möglich sein, nach diesem Namen zu suchen."
   * ^patternHumanName.use = #official
   * use 1.. MS
     * ^short = "Verwendungszweck"
@@ -72,7 +72,7 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * use = #official (exactly)
   * family 1.. MS
     * ^short = "Nachname"
-    * ^comment = "Vollständiger Nachname bzw. Familienname der Person, einschließlich Vor- und Zusätze.  
+    * ^comment = "Vollständiger Nachname bzw. Familienname der Person, einschließlich Namensvorsätze und -zusätze.
       **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind."   
   * given 1.. MS
     * ^short = "Vorname"
@@ -80,8 +80,10 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
       **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind."   
   * prefix MS
     * ^short = "Präfix"
-    * ^comment = "Präfix, z.B. akademischer Titel od. militärischer Rang"   
+    * ^comment = "Präfix, z. B. akademischer Titel oder militärischer Rang"
 * name[Geburtsname] only HumannameDeBasis
+  * ^short = "Geburtsname"
+  * ^comment = "Ist der Geburtsname der Person im Gesundheitsberuf bekannt und weicht er vom aktuellen Namen ab, KANN er zusätzlich angegeben werden."
   * ^patternHumanName.use = #maiden
   * use 1.. MS
   * use = #maiden (exactly)
@@ -94,13 +96,13 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-  * ^comment = "In order to differentiate between post box addresses and physical addresses, street names and house numbers, and to add city district names, vendors can opt to support the extensions as suggested in the German Address Base Profile http://fhir.de/StructureDefinition/address-de-basis.\r\nSuch differentiations are however not required within the scope of this specification."
+  * ^comment = "Zur Unterscheidung von Postfach- und Straßenadressen, zur getrennten Angabe von Straßenname und Hausnummer sowie zur Angabe von Stadtteilen können Implementierungen die im German Address Base Profile (http://fhir.de/StructureDefinition/address-de-basis) beschriebenen Erweiterungen unterstützen.\r\nDiese Differenzierungen sind im Rahmen dieser Spezifikation jedoch nicht verpflichtend."
 * address contains
     Strassenanschrift 0..* MS and
     Postfach 0..* MS
 * address[Postfach] only AddressDeBasis
   * ^short = "Postfachanschrift"
-  * ^comment = "Ist die Postfachadresse bekannt, unter der ein Arzt erreichbar ist, MUSS sie bereitgestellt werden. Diese kann zur Unterscheidung von Personen herangezogen werden. Die Ausdifferenzierung der Adresse in die Adressbestandteile erfolgt in Hinblick auf eine einheitliche Verwendung von Adressen."
+  * ^comment = "Ist eine Adresse bekannt, unter der die Person im Gesundheitsberuf erreichbar ist, MUSS sie bereitgestellt werden. Diese kann zur Unterscheidung von Personen herangezogen werden. Die Ausdifferenzierung der Adresse in die Adressbestandteile erfolgt in Hinblick auf eine einheitliche Verwendung von Adressen."
   * ^patternAddress.type = #postal
   * type 1.. MS
   * line 1.. MS
@@ -113,7 +115,7 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * country 1.. MS
 * address[Strassenanschrift] only AddressDeBasis
   * ^short = "Straßenanschrift"
-  * ^comment = "Ist die Adresse bekannt, unter der ein Arzt erreichbar ist, MUSS sie bereitgestellt werden. Diese kann zur Unterscheidung von Personen herangezogen werden. Die Ausdifferenzierung der Adresse in die Adressbestandteile erfolgt in Hinblick auf eine einheitliche Verwendung von Adressen."
+  * ^comment = "Ist eine Adresse bekannt, unter der die Person im Gesundheitsberuf erreichbar ist, MUSS sie bereitgestellt werden. Diese kann zur Unterscheidung von Personen herangezogen werden. Die Ausdifferenzierung der Adresse in die Adressbestandteile erfolgt in Hinblick auf eine einheitliche Verwendung von Adressen."
   * extension[Stadtteil] MS
   * ^patternAddress.type = #both
   * type 1.. MS
@@ -126,9 +128,8 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * postalCode 1.. MS
   * country 1.. MS
 * gender MS
-  * ^comment = "Geschlecht der Person"
   * ^short = "Administratives Geschlecht"
-  * ^short = "Ist das Geschlecht des Arztes bekannt, MUSS es bereitgestellt werden. Eine korrekte Kodierung des Geschlechtseintrags 'divers' MUSS per GenderOtherDE-Extension unterstüzt werden."
+  * ^comment = "Ist das Geschlecht der Person im Gesundheitsberuf bekannt, MUSS es bereitgestellt werden. Für die Angabe 'divers' ist in Practitioner.gender der FHIR-Code `other` zu verwenden. Die administrative deutsche Differenzierung erfolgt ergänzend über die GenderOtherDE-Extension."
   * extension contains GenderOtherDE named Geschlecht-Administrativ 0..1 MS
   * extension[Geschlecht-Administrativ].value[x] MS
 //Achtung, VZD weicht hier ab: https://simplifier.net/vzd-fhir-directory/practitionerqualificationvs

@@ -4,7 +4,7 @@ topic: PersonImGesundheitsberuf-Beispiele
 
 ## {{page-title}}
 
-### Valides Minimalbeispiel:
+### Valides Beispiel:
 
 <tabs>
     <tab title="Übersicht">      
