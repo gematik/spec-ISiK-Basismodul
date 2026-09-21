@@ -1,7 +1,7 @@
 Profile: ISiKPersonImGesundheitsberuf
 Parent: Practitioner
 Id: ISiKPersonImGesundheitsberuf
-Description: "Dieses Profil ermöglicht die Nutzung von Personen, die in Gesundheitsberufen tätig sind, in ISiK-Szenarien.
+Description: "Dieses Profil ermöglicht die Abbildung von Personen, die in Gesundheitsberufen tätig sind, in ISiK-Szenarien.
 ### Motivation
 
 Das Profil ISIKPersonImGesundheitsberuf bildet Personen ab, die als medizinische Leistungserbringer oder Fachexperten tätig sind. In den ISiK-FHIR-Profilen können PersonImGesundheitsberuf bspw. als Ausführende einer Prozedur auftreten, im Element `performer` der Procedure-Ressource, oder als Person, die eine Diagnose stellt, im Element `asserter` der Condition-Ressource.
@@ -46,7 +46,7 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
 * identifier[TelematikId] only IdentifierTelematikId
   * ^short = "Telematik-ID"
   * ^patternIdentifier.type = $v2-0203#PRN
-  * ^comment = "**Begründung MS:** Zur Verknüpfung der Practitioner-Instanz mit Diensten der Telematikinfrastruktur SOLL die Telematik-ID angegeben werden."
+  * ^comment = "**Begründung MS:** Zur Verknüpfung der Practitioner-Instanz mit Diensten der Telematikinfrastruktur SOLL die Telematik-ID des HBA angegeben werden."
   * type 1..
 * identifier[Mitarbeiterkennzeichen]
   * ^short = "Mitarbeiterkennzeichen"
@@ -96,7 +96,7 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-  * ^comment = "Zur Unterscheidung von Postfach- und Straßenadressen, zur getrennten Angabe von Straßenname und Hausnummer sowie zur Angabe von Stadtteilen können Implementierungen die im German Address Base Profile (http://fhir.de/StructureDefinition/address-de-basis) beschriebenen Erweiterungen unterstützen.\r\nDiese Differenzierungen sind im Rahmen dieser Spezifikation jedoch nicht verpflichtend."
+  * ^comment = "Zur Unterscheidung von Postfach- und Straßenadressen, zur getrennten Angabe von Straßenname und Hausnummer sowie zur Angabe von Stadtteilen können Implementierungen die im deutschen Basisprofil zur Addresse (http://fhir.de/StructureDefinition/address-de-basis) beschriebenen Erweiterungen unterstützen.\r\nDiese Differenzierungen sind im Rahmen dieser Spezifikation jedoch nicht verpflichtend."
 * address contains
     Strassenanschrift 0..* MS and
     Postfach 0..* MS
