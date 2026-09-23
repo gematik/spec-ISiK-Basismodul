@@ -272,7 +272,7 @@ Komponenten:
 - Hinweis: Schwangerschaftsbedingte Veraenderungen (Navikularzellen), kein Anhalt fuer Dysplasie.
 - Hinweis: Zytologische Beurteilung durch Zytologieassistentin, aerztliche Freigabe.
 - Hinweis: DRG: Ohne DRG-Relevanz.
-- Hinweis: Krebsfrueherkennung Zervix-Karzinom (Ko-Test): Ko-Testung im Rahmen des organisierten Screenings (Alter >= 35 nicht erreicht, Ko-Test wegen HPV-Nachweis 2023 empfohlen); Voruntersuchung 2023-06-15, Gruppe II-a; Z.n. laparoskopischer Ovarialzystenentfernung 2019-03-12 (benigne); Anamnese laut Patientin.
+- Hinweis: Krebsfrueherkennung Zervix-Karzinom (Ko-Test): Muster 39 elektronisch; Anamnese laut Patientin.
 
 **11. HPV-High-Risk-Test (14 Typen)**
 
@@ -455,7 +455,7 @@ Patient: Dr. Salome Vita Freifrau von Wohlauf; Einsender: Dr. med. Heribert Topp
 - Hinweis zu Blutgruppenzugehoerigkeit: RhD negativ: Anti-D-Prophylaxe (300 ug) in SSW 28 durchfuehren; AKS-Kontrolle vorher. (Termin 2026-09-21: Anti-D-Prophylaxe SSW 28)
 - Hinweis zu Tumor: Benigner Befund. Hautkrebs-Screening turnusgemaess in 2 Jahren empfohlen. (Termin 2028-09-10: Hautkrebs-Screening)
 - Hinweis zu Befund: Wiedervorstellung zur Anti-D-Prophylaxe in SSW 28. Meldung nach KFRG: Krebsfrueherkennungsdaten (Muster 39) an die zentrale Stelle uebermittelt - Befund unauffaellig. (Termin 2026-09-21: Anti-D-Prophylaxe)
-- Tumor: Melanozytaerer Naevus, Compound-Typ, benigne (ICD-O 8760/0), Grading G0, Diagnosejahr 2026, Lokalisation Haut Unterarm links, volar; Laesion 6 x 4 mm, Exzidat 12 x 8 x 3 mm, hellbraun, homogen; Infiltration keine (auf Epidermis/obere Dermis beschraenkt); Exzision und Eingang 2026-09-08; kein DRG-Bezug (ambulante Exzision); vollstaendig im Gesunden exzidiert, kein Anhalt fuer Malignitaet (Probe GW01).
+- Tumor: Probe: GW01; Befund: Melanozytaerer Naevus, Compound-Typ, benigne (ICD-O 8760/0); Grading: G0; Klassifikation: 0; Diagnosejahr: 2026; Lokalisation: Haut Unterarm links, volar; Groesse: 6 x 4 mm; Groesse: Exzidat 12 x 8 x 3 mm; Beschaffenheit: hellbraun, homogen; Infiltration: keine (auf Epidermis/obere Dermis beschraenkt); Therapiebeginn: 2026-09-08; Therapieende: 2026-09-08; DRG-Bezug: Kein DRG-Bezug (ambulante Exzision).; 0. Vollstaendig im Gesunden exzidiert, kein Anhalt fuer Malignitaet.
 
 ### Weitere Angaben
 

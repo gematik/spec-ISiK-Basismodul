@@ -181,7 +181,7 @@ Patient: Julia Weber; Einsender: Dr. med. Heribert Topp-Gluecklich; Labor: Dr. R
 
 0 verknuepfte Ressource(n)
 
-- Tumor: V.a. Chorionkarzinom (Blasenmole nicht ausgeschlossen), Diagnosejahr 2026, Uterus Staging ausstehend, Tumorboard Gynaeko-Onkologie angemeldet. (Probe SE01)
+- Tumor: Probe: SE01; Befund: V.a. Chorionkarzinom (Blasenmole nicht ausgeschlossen); Diagnosejahr: 2026; Lokalisation: Uterus. Staging ausstehend, Tumorboard Gynaeko-Onkologie angemeldet.
 
 ### Weitere Angaben
 

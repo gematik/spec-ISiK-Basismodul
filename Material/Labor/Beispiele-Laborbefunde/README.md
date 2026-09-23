@@ -21,6 +21,7 @@ Implementierungen und als Diskussionsgrundlage für die Profile des Moduls Labor
 | `Laborbefund_*.bundle.json` | je Befund ein Document-Bundle nach `ISiKBerichtBundle` |
 | `Laborbefund_*.md` | Markdown-Ansicht des jeweiligen Bundles (generiert) |
 | [`terminology/`](terminology/) | lokale `CodeSystem`s des fiktiven Labors (Untersuchungs-Codes, Antibiotika) für die Validierung |
+| [`ldt2isik.py`](ldt2isik.py) | Konverter, der aus Laborbefunden im Format LDT 3.2.19 (Satzart 8205) die ISiK-Bundles erzeugt (Python 3, ohne Abhängigkeiten); siehe [Herkunft und Erzeugung](#herkunft-und-erzeugung) |
 | [`bundle2md.py`](bundle2md.py) | erzeugt die Markdown-Ansichten und die Übersichtstabelle unten (Python 3, ohne Abhängigkeiten) |
 | [`validate.sh`](validate.sh) | validiert alle Bundles mit dem HL7 FHIR Validator gegen die ISiK-Profile |
 | [`packages/`](packages/) | ISiK-Pakete Basismodul 6.0.0 und Labor 6.0.0 vom IG-Build main-stufe-6 (Stand 17.09.2026), gegen die validiert wurde |
@@ -62,6 +63,44 @@ ist die Praxis Dr. Topp-Glücklich (BSNR 398212400), Labor ist das Labor Dr. Mü
 (BSNR 270719100). Die Namensräume der lokalen Identifier und Codes
 (`https://labor-testdaten.example/...`) sind Platzhalter. Umlaute sind in den Bundles
 transliteriert (ue, ae, ss).
+
+## Herkunft und Erzeugung
+
+Die Bundles wurden mit [`ldt2isik.py`](ldt2isik.py) aus synthetischen Laborbefunden im
+Format LDT 3.2.19 (Labordatenkommunikation der KBV, Satzart 8205) erzeugt. Die
+LDT-Quelldateien sind nicht Teil dieses Verzeichnisses; der Konverter ist enthalten, um die
+Abbildung nachvollziehbar zu machen und eigene LDT-Befunde in ISiK-Bundles zu überführen.
+
+```bash
+python3 ldt2isik.py --out isik-fhir [--rename ALT=NEU ...] BEFUND.ldt ...
+```
+
+Ohne Dateiangabe konvertiert der Konverter alle `*.ldt` des aktuellen Verzeichnisses mit
+Satzart 8205. Die Ressourcen-IDs werden deterministisch (UUIDv5) aus dem Namen der
+Eingabedatei und dem LDT-Schlüssel gebildet; `--rename` ändert nur den Namen der
+Ausgabedatei. Die lokalen Codes aller Eingabedateien werden vorab eingesammelt und als
+`CodeSystem` nach `terminology/` geschrieben. Die LOINC-Zuordnung lokaler Test-Idents
+steht in der Tabelle `IDENT_LOINC` im Konverter.
+
+| LDT3-Objekt | FHIR-Ressource |
+|---|---|
+| Satz 8205 Befund | `Bundle` (document), `Composition`, `DiagnosticReport`, `ServiceRequest` (Auftragsnummern, Nachforderung) |
+| Obj_0045 Patient, Obj_0047 Person, Obj_0007 Anschrift | `Patient` |
+| Obj_0022 Einsender, Obj_0014 Arzt, Obj_0019 Betriebsstätte | `Practitioner`, `Organization` des Einsenders |
+| Obj_0036 Laborkennung, Obj_0019 Betriebsstätte (Satz 8220) | `Organization`, `Practitioner` des Labors |
+| Obj_0027 Veranlassungsgrund, Obj_0100 Diagnose | `Condition` (ICD-10-GM, Diagnosesicherheit, Seitenlokalisation) |
+| Obj_0037 Material | `Specimen` |
+| Obj_0060 Klinische Chemie, Obj_0061 Mikrobiologie (mit Obj_0011 Antibiogramm, Obj_0072 BAK), Obj_0062/0063/0073 Zytologie und Sonstige, Obj_0055 Blutgruppe | `Observation` (ISiKLaboruntersuchung) |
+| Obj_0026 Fehlermeldung/Aufmerksamkeit | `note` an der betroffenen Ressource und Abschnitt „Hinweise" der Composition |
+| Obj_0010 Anhang | `DocumentReference`, `DiagnosticReport.presentedForm` |
+| Obj_0050 Schwangerschaft, Obj_0069 Körperkenngrößen, Obj_0070/0071 Medikation | `Observation` (Schwangerschaft, Vitalzeichen), `MedicationStatement` |
+| Obj_0056 Tumor, Obj_0034 Krebsfrüherkennung | nur als Text (Hinweise/notes) |
+| Obj_0040 Mutterschaft, Obj_0058 Abrechnung | nicht abgebildet |
+
+Abweichungen der Bundles von der reinen Konverterausgabe: Die Quelle von
+`Vollabdeckung_Gesund` verwendet die ICD-10-GM-Kategorien Z34, Z02 und Z71 (siehe
+[Validierung](#validierung)), und in diesem Bundle wurden zwei Hinweise zum Testdatensatz
+selbst sowie zwei technische Formulierungen in Hinweistexten redaktionell entfernt.
 
 ## Aufbau der Bundles
 
