@@ -17,6 +17,8 @@ Grundsätzlich wird als Terminblock eine für einen Termin buchbare Zeiteinheit 
 
 Als Termin-Repository werden alle Systeme definiert, die Informationen zu verfügbaren Termineinheiten von Ressourcen (vgl. zuvor genannte Definition) vorhalten und die dafür vereinbarten Termine als führendes System verwalten. In diesem Sinne ist ein Termin-Repository als ein zentraler Terminplanungs-Server zu verstehen.
 
+Termin-Repositories sind somit die terminführenden Systeme: In ihnen werden die Kalender (Schedules) und die darin buchbaren Terminblöcke (Slots) sowie die zugehörigen Akteure (z.B. Personen im Gesundheitswesen, Räume, Geräte) verwaltet. Ein Termin-Repository ist damit die maßgebliche Quelle ("Source of Truth") für Kalender, Terminblöcke und Termine und besitzt die Hoheit über die Verfügbarkeit der relevanten Ressourcen. Ob ein System die Rolle eines Termin-Repositorys einnimmt, lässt sich im Wesentlichen daran erkennen, wo die Kalender, die Terminblöcke und die zugehörigen Akteure verwaltet werden (vgl. {{pagelink:guides/Terminplanung-5/Einfuehrung/UseCases/Architekturoptionen.page.md, text:Architekturoptionen}}).
+
 Das Termin-Repository kann intern in ein Repository für die Termine und ein separates Repository für die buchbaren Terminblöcke (Terminblock Repository) geteilt werden.
 
 **Beispielsysteme:**
@@ -33,9 +35,12 @@ In diesem Modul gilt für den Akteur Termin-Repository das entsprechende {{pagel
 
 Als Termin-Requestor (in Anlehnung an die IHE Terminologie auch als Termin Source zu bezeichnen) werden alle Systeme definiert, die zur Erhebung, Erfassung, Anpassung oder Veränderung von Termininformationen dienen. Ein Termin-Requestor verfügt über keine permanente Persistierung der verarbeiteten Informationen. Der Termin-Requestor übernimmt die Koordination der Schnittstellenaufrufe, um einen Termin zu buchen. 
 
+Auch ein Termin-Repository kann gegenüber einem weiteren Termin-Repository die Rolle des Termin-Requestors einnehmen, z.B. um die bei ihm gebuchten Termine in das weitere Termin-Repository zu spiegeln (vgl. {{pagelink:Interaktionen, text:Interaktionen}} sowie {{pagelink:guides/Terminplanung-5/Einfuehrung/UseCases/Architekturoptionen.page.md, text:Architekturoptionen}}).
+
 **Beispielsysteme:**
 
 * Patientenportal im Falle, dass ein externes System das terminführende System ist
+* Buchungsoberfläche für Mitarbeitende, z.B. im KIS oder im Patientenportal, über die Termine in den Kalendern des terminführenden Systems gebucht werden
 
 ### Termin-Consumer
 
