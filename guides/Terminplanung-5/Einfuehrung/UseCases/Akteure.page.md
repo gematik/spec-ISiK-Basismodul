@@ -5,7 +5,7 @@ topic: Akteure
 
 ## {{page-title}}
 
-Innerhalb des ISiK Moduls Terminplanung kann ein beteiligtes System verschiedene Rollen einnehmen und somit unterschiedliche Aufgaben innerhalb der im Abschnitt {{pagelink:Interaktionen}} definierten Arbeitsabläufe übernehmen. Im Weiteren werden diese Rollen mithilfe der Definition von Akteuren formalisiert, sodass eine Zuordnung von relevanten Interaktionen zum jeweiligen Akteur erfolgen kann.
+Innerhalb des ISiK Moduls Terminplanung kann ein beteiligtes System verschiedene Rollen einnehmen und somit unterschiedliche Aufgaben innerhalb der im Abschnitt {{pagelink:Interaktionen}} definierten Arbeitsabläufe übernehmen. Im Weiteren werden diese Rollen mithilfe der Definition von Akteuren formalisiert, sodass eine Zuordnung von relevanten Interaktionen zum jeweiligen Akteur erfolgen kann. Ein System kann dabei auch mehrere Rollen gleichzeitig einnehmen; die Festlegungen einer Akteursdefinition gelten in diesem Fall jeweils nur für die entsprechende Rolle.
 
 Allein für den Akteur Termin-Repository gelten normative Festlegungen für die Implementierung einer Schnittstelle.
 
@@ -33,9 +33,9 @@ In diesem Modul gilt für den Akteur Termin-Repository das entsprechende {{pagel
 
 **Definition:**
 
-Als Termin-Requestor (in Anlehnung an die IHE Terminologie auch als Termin Source zu bezeichnen) werden alle Systeme definiert, die zur Erhebung, Erfassung, Anpassung oder Veränderung von Termininformationen dienen. Ein Termin-Requestor verfügt über keine permanente Persistierung der verarbeiteten Informationen. Der Termin-Requestor übernimmt die Koordination der Schnittstellenaufrufe, um einen Termin zu buchen. 
+Als Termin-Requestor (in Anlehnung an die IHE Terminologie auch als Termin Source zu bezeichnen) werden alle Systeme definiert, die zur Erhebung, Erfassung, Anpassung oder Veränderung von Termininformationen dienen. In seiner Funktion als Termin-Requestor persistiert ein System die verarbeiteten Termininformationen nicht permanent als führendes System; die Hoheit über die Termine verbleibt beim adressierten Termin-Repository. Ein reiner Termin-Requestor (d.h. ein System, das keine weitere Rolle einnimmt) verfügt über keine permanente Persistierung der verarbeiteten Informationen. Der Termin-Requestor übernimmt die Koordination der Schnittstellenaufrufe, um einen Termin zu buchen. 
 
-Auch ein Termin-Repository kann gegenüber einem weiteren Termin-Repository die Rolle des Termin-Requestors einnehmen, z.B. um die bei ihm gebuchten Termine in das weitere Termin-Repository zu spiegeln (vgl. {{pagelink:Interaktionen, text:Interaktionen}} sowie {{pagelink:guides/Terminplanung-5/Einfuehrung/UseCases/Architekturoptionen.page.md, text:Architekturoptionen}}).
+Auch ein Termin-Repository kann gegenüber einem weiteren Termin-Repository die Rolle des Termin-Requestors einnehmen, z.B. um die bei ihm gebuchten Termine in das weitere Termin-Repository zu spiegeln (vgl. {{pagelink:Interaktionen, text:Interaktionen}} sowie {{pagelink:guides/Terminplanung-5/Einfuehrung/UseCases/Architekturoptionen.page.md, text:Architekturoptionen}}). Die dauerhafte Persistierung der eigenen Termine erfolgt dabei in seiner Rolle als Termin-Repository; in seiner Rolle als Termin-Requestor gegenüber dem weiteren Termin-Repository gilt es für die dort geführten Termine nicht als führendes System.
 
 **Beispielsysteme:**
 
