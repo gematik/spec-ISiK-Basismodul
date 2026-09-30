@@ -40,7 +40,6 @@ Auch ein Termin-Repository kann gegenüber einem weiteren Termin-Repository die 
 **Beispielsysteme:**
 
 * Patientenportal im Falle, dass ein externes System das terminführende System ist
-* Buchungsoberfläche für Mitarbeitende, z.B. im KIS oder im Patientenportal, über die Termine in den Kalendern des terminführenden Systems gebucht werden
 
 ### Termin-Consumer
 
