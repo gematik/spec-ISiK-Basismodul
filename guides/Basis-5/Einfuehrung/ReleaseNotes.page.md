@@ -27,6 +27,7 @@ Datum: tbd.
 * `documentation` Zusammenführung der Festlegungen zur Methodik <https://github.com/gematik/spec-ISiK-Basismodul/pull/1330>
 * `documentation` Verbesserung fehlerhafter Beispiele innerhalb der Suchparameterdefinition in den CapabilityStatements https://github.com/gematik/spec-ISiK-Basismodul/pull/1323
 * `documentation` Klarstellung zur Quelle der Telematik-ID https://github.com/gematik/spec-ISiK-Basismodul/pull/1328 
+* `documentation` Korrektur der geforderten Interaktionen für den Practitioner https://github.com/gematik/spec-ISiK-Basismodul/pull/1333 
 
 ## Version 5.1.3
 
