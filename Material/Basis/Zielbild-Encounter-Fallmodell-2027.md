@@ -70,6 +70,7 @@ Account und Encounter bleiben die zentralen Konzepte des Fallmodells.
 
 Einführung eines EpisodeOfCare-Profils als zusätzliches fachliches Konzept zur Abbildung medizinischer Zusammenhänge jenseits des Abrechnungsfalls.
 
+
 #### Ziel bis April 2027
 
 Es soll entschieden werden,
@@ -77,6 +78,15 @@ Es soll entschieden werden,
 - ob EpisodeOfCare Bestandteil des ISiK-Zielmodells werden soll,
 - welche fachliche Rolle EpisodeOfCare einnimmt,
 - welche Beziehungen zu Encounter, Account und Diagnosen spezifiziert werden müssen.
+
+#### Ergebnis
+
+Basierend auf Diskussionen mit der Industrie, Krankenhäusern und der MII wurde die Entscheidung getroffen, die EpisodeOfCare zunächst nicht in ISiK Aufzunehmen. 
+
+Gründe:
+
+- Die Strukturierung nach Versorgungsepisoden wird in KH aktuell nicht gelebt
+- Es gibt keine Bedarfsmeldung von Seiten der Hersteller oder Krankenhäuser
 
 ### 2. Rolle des Einrichtungskontakts
 
