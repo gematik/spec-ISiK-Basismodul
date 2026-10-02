@@ -99,8 +99,27 @@ jobs:
       - name: Comment validation results on PR
         if: always() && github.event_name == 'pull_request'
         uses: actions/github-script@v9
+        env:
+          VALIDATOR_OUTCOME: ${{ steps.java_validator.outcome }}
         with:
           github-token: ${{ github.token }}
           script: |
             const run = require('./scripts/complieswith/update-pr-comment.js');
             await run({ github, context, core });
+
+      # The validator step uses continue-on-error so that artifacts and the PR comment are always produced.
+      # This step propagates its result to the job status afterwards.
+      - name: Fail job on CompliesWith errors
+        if: always() && steps.java_validator.outcome == 'failure'
+        shell: bash
+        run: |
+          count=0
+          if [ -f validation-details.json ]; then
+            count=$(node -e "const r = require('./validation-details.json'); console.log(Array.isArray(r.entries) ? r.entries.length : 0)")
+          fi
+          if [ "$count" -gt 0 ]; then
+            echo "::error title=CompliesWith::${count} CompliesWith-Fehler gefunden. Details im PR-Kommentar bzw. im Artefakt complieswith-export-validation-results."
+          else
+            echo "::error title=CompliesWith::Validator-Lauf fehlgeschlagen (Outcome: ${{ steps.java_validator.outcome }}), ohne dass CompliesWith-Fehler ausgewertet werden konnten. Bitte Log des Steps 'Run Java validator for CompliesWith' prüfen."
+          fi
+          exit 1

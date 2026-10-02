@@ -53,6 +53,7 @@ Es wurde weder eine auswertbare \`validation-details.json\` noch ein \`validatio
   }
   const targets = collectExpectedCompliesWithTargets('Resources');
   const failedTargets = new Set(entries.map((entry) => entry.comparedProfile).filter(Boolean));
+  const resultUnknown = entries.length === 0 && process.env.VALIDATOR_OUTCOME === 'failure';
 
   let body = `${marker}
 ### CompliesWith validation
@@ -66,9 +67,15 @@ Rohlog: ${fs.existsSync(rawLogPath) ? 'vorhanden und als Artefakt hochgeladen.' 
   if (targets.length > 0) {
     body += '\n### CompliesWith Status\n\n';
     body += targets
-      .map((target) => `- ${escapeInline(target)} ${failedTargets.has(target) ? '❌' : '✅'}`)
+      .map((target) => `- ${escapeInline(target)} ${resultUnknown ? '❔' : failedTargets.has(target) ? '❌' : '✅'}`)
       .join('\n');
     body += '\n';
+  }
+
+  if (resultUnknown) {
+    body += '\n:warning: Der Validator-Lauf ist fehlgeschlagen, es konnten aber keine CompliesWith-Fehler ausgewertet werden. Das Ergebnis ist daher nicht aussagekräftig – bitte den Workflow-Run prüfen.\n';
+    await upsertComment({ github, owner, repo, issueNumber: pr.number, marker, body, core });
+    return;
   }
 
   if (entries.length === 0) {
