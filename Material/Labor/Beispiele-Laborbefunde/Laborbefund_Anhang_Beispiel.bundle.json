@@ -1,0 +1,933 @@
+{
+  "resourceType": "Bundle",
+  "id": "d65cb6ea-0002-5c9f-971c-d2d4b07a8888",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"
+    ]
+  },
+  "identifier": {
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code": "FILL"
+        }
+      ]
+    },
+    "system": "https://labor-testdaten.example/labor/270719100/sid/befund-bundle",
+    "value": "BL26-100499"
+  },
+  "type": "document",
+  "timestamp": "2026-08-13T14:30:00+02:00",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:edc94ee4-d44c-5883-81b8-b55d1992b182",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "edc94ee4-d44c-5883-81b8-b55d1992b182",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"
+          ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Laborbefund BL26-100499 vom 2026-08-13</b></p><p>Patient: Bernd Beispiel; Einsender: Dr. med. Heribert Topp-Gluecklich; Labor: Dr. Richard Mueller</p></div>"
+        },
+        "identifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "FILL"
+              }
+            ]
+          },
+          "system": "https://labor-testdaten.example/labor/270719100/sid/befund-id",
+          "value": "BL26-100499"
+        },
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://dvmd.de/fhir/CodeSystem/kdl",
+              "code": "LB120107",
+              "display": "Laborbefund"
+            },
+            {
+              "system": "http://ihe-d.de/CodeSystems/IHEXDStypeCode",
+              "code": "BEFU",
+              "display": "Ergebnisse Diagnostik"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "11502-2",
+              "display": "Laboratory report"
+            }
+          ],
+          "text": "Laborbefund"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://ihe-d.de/CodeSystems/IHEXDSclassCode",
+                "code": "LAB",
+                "display": "Laborergebnisse"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:bca8650c-e1a3-57c2-bd1d-bff8f848fb7d"
+        },
+        "encounter": {
+          "reference": "urn:uuid:467fec34-41ec-5d44-8045-4e4f88dc80ef"
+        },
+        "date": "2026-08-13T14:30:00+02:00",
+        "author": [
+          {
+            "reference": "urn:uuid:1a0595f3-9061-59ca-8d57-52ea3c3b1dcc",
+            "display": "Dr. Richard Mueller"
+          },
+          {
+            "reference": "urn:uuid:58cf286b-30bc-5335-bddb-77406a8acd02",
+            "display": "Labor Mueller"
+          }
+        ],
+        "title": "Laborbefund BL26-100499 vom 2026-08-13",
+        "custodian": {
+          "reference": "urn:uuid:58cf286b-30bc-5335-bddb-77406a8acd02"
+        },
+        "section": [
+          {
+            "title": "Laborergebnisse",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "26436-6",
+                  "display": "Laboratory studies (set)"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><thead><tr><th>Untersuchung</th><th>Ergebnis</th><th>Einheit</th><th>Bewertung</th><th>Referenzbereich</th></tr></thead><tbody><tr><td>C-reaktives Protein</td><td>12</td><td>mg/l</td><td>H</td><td> - 5</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:34a32495-bc2b-5968-9ec8-96ddf6f74a4b"
+              },
+              {
+                "reference": "urn:uuid:0fb7aa35-2948-572e-a774-63b75bd3eac1"
+              }
+            ]
+          },
+          {
+            "title": "Diagnosen / Veranlassungsgrund",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>R70.0 Verlaufskontrolle Entzuendungsparameter</li></ul></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:19f4cc8a-8aa8-5360-94c3-be90d0a0fb09"
+              }
+            ]
+          },
+          {
+            "title": "Probenmaterial",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>SE01: Serum (2026-08-13T08:10:00+02:00)</li></ul></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:d56a6164-957b-59c6-8ffe-1e37b170801f"
+              },
+              {
+                "reference": "urn:uuid:de30a4cb-f694-5a29-98f1-24f0bea4b00c"
+              }
+            ]
+          },
+          {
+            "title": "Anhaenge",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>anh-bi-0 - Beispielanlage zum Test des Downloads</li></ul></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:c2ca6680-7ccb-5beb-8beb-ea25d5bd2dd5"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:58cf286b-30bc-5335-bddb-77406a8acd02",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "58cf286b-30bc-5335-bddb-77406a8acd02",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Labor Mueller | BSNR: 270719100</p></div>"
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "BSNR"
+                }
+              ]
+            },
+            "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR",
+            "value": "270719100"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov",
+                "display": "Healthcare Provider"
+              }
+            ]
+          }
+        ],
+        "name": "Labor Mueller",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "02211456546",
+            "use": "work"
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Ottostr. 2"
+            ],
+            "city": "Koeln",
+            "postalCode": "50859",
+            "country": "DE",
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Ottostr."
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "2"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:1a0595f3-9061-59ca-8d57-52ea3c3b1dcc",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "1a0595f3-9061-59ca-8d57-52ea3c3b1dcc",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Dr. Richard Mueller | EN: MUELLE</p></div>"
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "EN"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/labor/270719100/sid/mitarbeiter",
+            "value": "MUELLE"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Mueller",
+            "given": [
+              "Richard"
+            ],
+            "prefix": [
+              "Dr."
+            ],
+            "text": "Dr. Richard Mueller"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c1a489df-839c-5d23-a9fa-427ab9ae65a7",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "c1a489df-839c-5d23-a9fa-427ab9ae65a7",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Praxis Dr. med. Heribert Topp-Gluecklich | BSNR: 398212400</p></div>"
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "BSNR"
+                }
+              ]
+            },
+            "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR",
+            "value": "398212400"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov",
+                "display": "Healthcare Provider"
+              }
+            ]
+          }
+        ],
+        "name": "Praxis Dr. med. Heribert Topp-Gluecklich",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "061511111111",
+            "use": "work"
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterstr. 1"
+            ],
+            "city": "Darmstadt",
+            "postalCode": "64297",
+            "country": "DE",
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterstr."
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:dd355e7c-ce70-5b3a-869c-37a1a06085dd",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "dd355e7c-ce70-5b3a-869c-37a1a06085dd",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Dr. med. Heribert Topp-Gluecklich | LANR: 776299002</p></div>"
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "LANR"
+                }
+              ]
+            },
+            "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR",
+            "value": "776299002"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Topp-Gluecklich",
+            "given": [
+              "Heribert"
+            ],
+            "prefix": [
+              "Dr. med."
+            ],
+            "text": "Dr. med. Heribert Topp-Gluecklich"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:bca8650c-e1a3-57c2-bd1d-bff8f848fb7d",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "bca8650c-e1a3-57c2-bd1d-bff8f848fb7d",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Bernd Beispiel | geb. 1975-02-14 | male | MR: P1099 | KVZ10: B234567895</p></div>"
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "MR"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/praxis/398212400/sid/patienten-id",
+            "value": "P1099"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code": "KVZ10"
+                }
+              ]
+            },
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "B234567895"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "use": "official",
+            "family": "Beispiel",
+            "given": [
+              "Bernd"
+            ],
+            "text": "Bernd Beispiel"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1975-02-14",
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Anlagenweg 10"
+            ],
+            "city": "Berlin",
+            "postalCode": "10117",
+            "country": "DE",
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Anlagenweg"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "10"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:467fec34-41ec-5d44-8045-4e4f88dc80ef",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "467fec34-41ec-5d44-8045-4e4f88dc80ef",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ambulanter Kontakt | 2026-08-13</p></div>"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "urn:uuid:bca8650c-e1a3-57c2-bd1d-bff8f848fb7d"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "urn:uuid:dd355e7c-ce70-5b3a-869c-37a1a06085dd",
+              "display": "Dr. med. Heribert Topp-Gluecklich"
+            }
+          }
+        ],
+        "serviceProvider": {
+          "reference": "urn:uuid:c1a489df-839c-5d23-a9fa-427ab9ae65a7"
+        },
+        "period": {
+          "start": "2026-08-13"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:19f4cc8a-8aa8-5360-94c3-be90d0a0fb09",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "19f4cc8a-8aa8-5360-94c3-be90d0a0fb09",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>R70.0 | Verlaufskontrolle Entzuendungsparameter | Diagnose vom 2026-08-13</p></div>"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+              "version": "2026",
+              "code": "R70.0",
+              "extension": [
+                {
+                  "url": "http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit",
+                  "valueCoding": {
+                    "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT",
+                    "code": "G"
+                  }
+                }
+              ]
+            }
+          ],
+          "text": "Verlaufskontrolle Entzuendungsparameter"
+        },
+        "subject": {
+          "reference": "urn:uuid:bca8650c-e1a3-57c2-bd1d-bff8f848fb7d"
+        },
+        "encounter": {
+          "reference": "urn:uuid:467fec34-41ec-5d44-8045-4e4f88dc80ef"
+        },
+        "recordedDate": "2026-08-13",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de30a4cb-f694-5a29-98f1-24f0bea4b00c",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "de30a4cb-f694-5a29-98f1-24f0bea4b00c",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Probe SE01 | Serum | 2026-08-13T08:10:00+02:00</p></div>"
+        },
+        "status": "available",
+        "identifier": [
+          {
+            "system": "https://labor-testdaten.example/labor/270719100/sid/probe-id",
+            "value": "SE01"
+          }
+        ],
+        "type": {
+          "text": "Serum",
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "119364003",
+              "display": "Serum specimen"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:bca8650c-e1a3-57c2-bd1d-bff8f848fb7d"
+        },
+        "collection": {
+          "collectedDateTime": "2026-08-13T08:10:00+02:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d56a6164-957b-59c6-8ffe-1e37b170801f",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "d56a6164-957b-59c6-8ffe-1e37b170801f",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Laborauftrag | PLAC: A2026-0099 | FILL: L26-100499</p></div>"
+        },
+        "status": "completed",
+        "intent": "order",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "108252007",
+                "display": "Laboratory procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26436-6",
+              "display": "Laboratory studies (set)"
+            }
+          ],
+          "text": "Laboruntersuchung"
+        },
+        "subject": {
+          "reference": "urn:uuid:bca8650c-e1a3-57c2-bd1d-bff8f848fb7d"
+        },
+        "encounter": {
+          "reference": "urn:uuid:467fec34-41ec-5d44-8045-4e4f88dc80ef"
+        },
+        "requester": {
+          "reference": "urn:uuid:dd355e7c-ce70-5b3a-869c-37a1a06085dd",
+          "display": "Dr. med. Heribert Topp-Gluecklich"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:58cf286b-30bc-5335-bddb-77406a8acd02"
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PLAC"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/praxis/398212400/sid/auftragsnummer",
+            "value": "A2026-0099"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "FILL"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/labor/270719100/sid/auftragsnummer",
+            "value": "L26-100499"
+          }
+        ],
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:19f4cc8a-8aa8-5360-94c3-be90d0a0fb09"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0fb7aa35-2948-572e-a774-63b75bd3eac1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "0fb7aa35-2948-572e-a774-63b75bd3eac1",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>C-reaktives Protein | 12 mg/l | H | 2026-08-13T14:30:00+02:00 | final</p></div>"
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "OBI"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/labor/270719100/sid/ergebnis-id",
+            "value": "BL26-100499-E0001"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "18719-5",
+                "display": "Chemistry studies (set)"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1988-5",
+              "display": "C reactive protein [Mass/volume] in Serum or Plasma"
+            },
+            {
+              "system": "https://labor-testdaten.example/labor/270719100/CodeSystem/test-ident",
+              "code": "CRP",
+              "display": "C-reaktives Protein"
+            }
+          ],
+          "text": "C-reaktives Protein"
+        },
+        "subject": {
+          "reference": "urn:uuid:bca8650c-e1a3-57c2-bd1d-bff8f848fb7d"
+        },
+        "encounter": {
+          "reference": "urn:uuid:467fec34-41ec-5d44-8045-4e4f88dc80ef"
+        },
+        "effectiveDateTime": "2026-08-13T14:30:00+02:00",
+        "issued": "2026-08-13T14:30:00+02:00",
+        "performer": [
+          {
+            "reference": "urn:uuid:1a0595f3-9061-59ca-8d57-52ea3c3b1dcc",
+            "display": "Dr. Richard Mueller"
+          },
+          {
+            "reference": "urn:uuid:58cf286b-30bc-5335-bddb-77406a8acd02"
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:de30a4cb-f694-5a29-98f1-24f0bea4b00c"
+        },
+        "valueQuantity": {
+          "value": 12,
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/L",
+          "unit": "mg/l"
+        },
+        "referenceRange": [
+          {
+            "high": {
+              "value": 5,
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/L",
+              "unit": "mg/l"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ]
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c2ca6680-7ccb-5beb-8beb-ea25d5bd2dd5",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "c2ca6680-7ccb-5beb-8beb-ea25d5bd2dd5",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Anhang | application/pdf | Beispielanlage zum Test des Downloads</p></div>"
+        },
+        "status": "current",
+        "subject": {
+          "reference": "urn:uuid:bca8650c-e1a3-57c2-bd1d-bff8f848fb7d"
+        },
+        "date": "2026-08-13T14:30:00+02:00",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "application/pdf",
+              "data": "JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCjIgMCBvYmo8PC9UeXBlL1BhZ2VzL0tpZHNbMyAwIFJdL0NvdW50IDE+PmVuZG9iagozIDAgb2JqPDwvVHlwZS9QYWdlL1BhcmVudCAyIDAgUi9NZWRpYUJveFswIDAgNTk1IDg0Ml0vQ29udGVudHMgNCAwIFIvUmVzb3VyY2VzPDwvRm9udDw8L0YxIDUgMCBSPj4+Pj4+ZW5kb2JqCjQgMCBvYmo8PC9MZW5ndGggNjA+PnN0cmVhbQpCVCAvRjEgMjQgVGYgNzIgNzcwIFRkIChMRFQgQW5oYW5nIFRlc3QpIFRqIEVUCmVuZHN0cmVhbQplbmRvYmoKNSAwIG9iajw8L1R5cGUvRm9udC9TdWJ0eXBlL1R5cGUxL0Jhc2VGb250L0hlbHZldGljYT4+ZW5kb2JqCnRyYWlsZXI8PC9Sb290IDEgMCBSPj4KJSVFT0YK"
+            }
+          }
+        ],
+        "description": "Beispielanlage zum Test des Downloads"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:34a32495-bc2b-5968-9ec8-96ddf6f74a4b",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "34a32495-bc2b-5968-9ec8-96ddf6f74a4b",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Laborbefund | BL26-100499 | 2026-08-13T14:30:00+02:00 | 1 Ergebnisse</p></div>"
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "FILL"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/labor/270719100/sid/befund-id",
+            "value": "BL26-100499"
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:d56a6164-957b-59c6-8ffe-1e37b170801f"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "LAB",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11502-2",
+              "display": "Laboratory report"
+            }
+          ],
+          "text": "Laborbefund"
+        },
+        "subject": {
+          "reference": "urn:uuid:bca8650c-e1a3-57c2-bd1d-bff8f848fb7d"
+        },
+        "encounter": {
+          "reference": "urn:uuid:467fec34-41ec-5d44-8045-4e4f88dc80ef"
+        },
+        "effectiveDateTime": "2026-08-13T14:30:00+02:00",
+        "issued": "2026-08-13T14:30:00+02:00",
+        "performer": [
+          {
+            "reference": "urn:uuid:58cf286b-30bc-5335-bddb-77406a8acd02"
+          },
+          {
+            "reference": "urn:uuid:1a0595f3-9061-59ca-8d57-52ea3c3b1dcc",
+            "display": "Dr. Richard Mueller"
+          }
+        ],
+        "resultsInterpreter": [
+          {
+            "reference": "urn:uuid:1a0595f3-9061-59ca-8d57-52ea3c3b1dcc",
+            "display": "Dr. Richard Mueller"
+          }
+        ],
+        "specimen": [
+          {
+            "reference": "urn:uuid:de30a4cb-f694-5a29-98f1-24f0bea4b00c"
+          }
+        ],
+        "result": [
+          {
+            "reference": "urn:uuid:0fb7aa35-2948-572e-a774-63b75bd3eac1"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "application/pdf",
+            "data": "JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCjIgMCBvYmo8PC9UeXBlL1BhZ2VzL0tpZHNbMyAwIFJdL0NvdW50IDE+PmVuZG9iagozIDAgb2JqPDwvVHlwZS9QYWdlL1BhcmVudCAyIDAgUi9NZWRpYUJveFswIDAgNTk1IDg0Ml0vQ29udGVudHMgNCAwIFIvUmVzb3VyY2VzPDwvRm9udDw8L0YxIDUgMCBSPj4+Pj4+ZW5kb2JqCjQgMCBvYmo8PC9MZW5ndGggNjA+PnN0cmVhbQpCVCAvRjEgMjQgVGYgNzIgNzcwIFRkIChMRFQgQW5oYW5nIFRlc3QpIFRqIEVUCmVuZHN0cmVhbQplbmRvYmoKNSAwIG9iajw8L1R5cGUvRm9udC9TdWJ0eXBlL1R5cGUxL0Jhc2VGb250L0hlbHZldGljYT4+ZW5kb2JqCnRyYWlsZXI8PC9Sb290IDEgMCBSPj4KJSVFT0YK"
+          }
+        ]
+      }
+    }
+  ]
+}
