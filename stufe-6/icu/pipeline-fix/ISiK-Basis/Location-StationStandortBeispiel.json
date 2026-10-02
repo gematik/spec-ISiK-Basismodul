@@ -1,0 +1,54 @@
+{
+  "resourceType" : "Location",
+  "id" : "StationStandortBeispiel",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Location StationStandortBeispiel</b></p><a name=\"StationStandortBeispiel\"> </a><a name=\"hcStationStandortBeispiel\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKStandort.html\">ISiKStandort</a></p></div><p><b>identifier</b>: <code>http://fhir.de/sid/dkgev/standortnummer</code>/123456</p><p><b>operationalStatus</b>: <a href=\"http://terminology.hl7.org/7.0.1/CodeSystem-v2-0116.html#v2-0116-O\">bedStatus: O</a> (Occupied)</p><p><b>name</b>: Station A</p><p><b>mode</b>: Instance</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode _LocationIdentifiedEntityRoleCode}\">LocationIdentifiedEntityRoleCode</span></p><p><b>address</b>: Krankenhausstraße 123 Musterstadt 12345 </p><p><b>physicalType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type wa}\">Ward</span></p><h3>Positions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Longitude</b></td><td><b>Latitude</b></td></tr><tr><td style=\"display: none\">*</td><td>13.405</td><td>52.52</td></tr></table><p><b>managingOrganization</b>: <a href=\"Organization-AbteilungAllgemeinchirurgieOrganisationBeispiel.html\">Organization Allgemeinchirurgie</a></p><blockquote><p><b>hoursOfOperation</b></p><p><b>daysOfWeek</b>: Friday</p><p><b>allDay</b>: true</p></blockquote><blockquote><p><b>hoursOfOperation</b></p><p><b>daysOfWeek</b>: Sunday</p></blockquote></div>"
+  },
+  "identifier" : [{
+    "system" : "http://fhir.de/sid/dkgev/standortnummer",
+    "value" : "123456"
+  }],
+  "operationalStatus" : {
+    "system" : "http://terminology.hl7.org/CodeSystem/v2-0116",
+    "code" : "O",
+    "display" : "Occupied"
+  },
+  "name" : "Station A",
+  "mode" : "instance",
+  "type" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+      "code" : "_LocationIdentifiedEntityRoleCode"
+    }]
+  }],
+  "address" : {
+    "line" : ["Krankenhausstraße 123"],
+    "city" : "Musterstadt",
+    "postalCode" : "12345"
+  },
+  "physicalType" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
+      "code" : "wa",
+      "display" : "Ward"
+    }]
+  },
+  "position" : {
+    "longitude" : 13.405,
+    "latitude" : 52.52
+  },
+  "managingOrganization" : {
+    "reference" : "Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel"
+  },
+  "hoursOfOperation" : [{
+    "daysOfWeek" : ["fri"],
+    "allDay" : true
+  },
+  {
+    "daysOfWeek" : ["sun"]
+  }]
+}

@@ -1,0 +1,1102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden - ISiK-Vitalparameter</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden - ISiK-Vitalparameter
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende UseCases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases.html">
+                                            &#xDC;bergreifende UseCases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases-AMTS.html">
+                                            AMTS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases-Intensivversorgung.html">
+                                            Intensivversorgung
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-InteraktionenAkteure.html">
+                                            Interaktionen und Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Signaldaten.html">
+                                            Signaldaten
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-RestApi.html">
+                                            RestApi
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Atemfrequenz.html">
+                                            ISiKAtemfrequenz (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_BlutdruckSystemischArteriell.html">
+                                            ISiKBlutdruckSystemischArteriell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Herzfrequenz.html">
+                                            ISiKHerzfrequenz (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpergewicht.html">
+                                            ISiKKoerpergewicht (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpergroesse.html">
+                                            ISiKKoerpergroesse (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpertemperatur.html">
+                                            ISiKKoerpertemperatur (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Kopfumfang.html">
+                                            ISiKKopfumfang (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_SauerstoffsaettigungArteriell.html">
+                                            ISiKSauerstoffsaettigungArteriell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_GCS.html">
+                                            ISiKGCS (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_EKG.html">
+                                            ISiKEKG (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#74bdb7ab-5ec4-4f2e-9f31-82e341b33b06" aria-controls="74bdb7ab-5ec4-4f2e-9f31-82e341b33b06" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#86c07886-f5a5-49b7-8b7f-427ae453f722" aria-controls="86c07886-f5a5-49b7-8b7f-427ae453f722" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#53e7d4a3-836e-4063-9476-187a98c7ddb0" aria-controls="53e7d4a3-836e-4063-9476-187a98c7ddb0" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#d2ce64df-4c3e-4d1a-b980-bb12bd82ee74" aria-controls="d2ce64df-4c3e-4d1a-b980-bb12bd82ee74" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="74bdb7ab-5ec4-4f2e-9f31-82e341b33b06">
+    <div class="stu3-treetable" id="636a1652f76b47049477a9f07cfaed17" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="41298ddd37814defb5f578ee10a82e86"><td class="instance"><span class="baseIcon primitive"></span><b>Observation</b></td></tr><tr class="collapsed" data-id="b3549082b32e41d4981341ba0d70e7a6" data-parentId="41298ddd37814defb5f578ee10a82e86"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ISiKBlutdruckSystemischArteriellExample</span></td></tr><tr class="collapsed" data-id="26ae5b1289f24297b8a85b110a0f44df" data-parentId="41298ddd37814defb5f578ee10a82e86"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="f87539a816e647f29750f76893850dcd" data-parentId="26ae5b1289f24297b8a85b110a0f44df"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell</span></td></tr><tr class="collapsed" data-id="8e19e76631a646179be399bc2fbdc106" data-parentId="41298ddd37814defb5f578ee10a82e86"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="8bc3370afb394d269136920316b0bb09" data-parentId="41298ddd37814defb5f578ee10a82e86"><td class="instance"><span class="baseIcon primitive"></span><b>category</b></td></tr><tr class="collapsed" data-id="79c660fbc8d3486387b21564fddcc082" data-parentId="8bc3370afb394d269136920316b0bb09"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="d07b1a017f324a14ad15a7a56a2bbc92" data-parentId="79c660fbc8d3486387b21564fddcc082"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/observation-category</span></td></tr><tr class="collapsed" data-id="0538611c21b34c66b1a2144f67ae94e8" data-parentId="79c660fbc8d3486387b21564fddcc082"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>vital-signs</span></td></tr><tr class="collapsed" data-id="2fd59ce5913846008ff68e62accf2a33" data-parentId="79c660fbc8d3486387b21564fddcc082"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Vital Signs</span></td></tr><tr class="collapsed" data-id="ee399ede3b2744c2b076f32be846cf1b" data-parentId="41298ddd37814defb5f578ee10a82e86"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="e237801fc1dc4ba087c2b24f9ec5127e" data-parentId="ee399ede3b2744c2b076f32be846cf1b"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="d2c572189caa4d649935c50fda8bff61" data-parentId="e237801fc1dc4ba087c2b24f9ec5127e"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="685b42988bd346bca518d8e408cf1ebc" data-parentId="e237801fc1dc4ba087c2b24f9ec5127e"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>85354-9</span></td></tr><tr class="collapsed" data-id="ba00257909b44156affa15f2d78f0628" data-parentId="e237801fc1dc4ba087c2b24f9ec5127e"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Blood pressure panel with all children optional</span></td></tr><tr class="collapsed" data-id="e5346a47ed2e4ff1a09f6edc5617042b" data-parentId="ee399ede3b2744c2b076f32be846cf1b"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="faf9406d37d145a4ae5ecc03a7e54171" data-parentId="e5346a47ed2e4ff1a09f6edc5617042b"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="282dec17256f4bca99906a4e974369d6" data-parentId="e5346a47ed2e4ff1a09f6edc5617042b"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>75367002</span></td></tr><tr class="collapsed" data-id="bbc7ef0d88c74942a0f50a7d1b2786bc" data-parentId="e5346a47ed2e4ff1a09f6edc5617042b"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Blood pressure</span></td></tr><tr class="collapsed" data-id="443028f04ad4456194620282186bbd31" data-parentId="ee399ede3b2744c2b076f32be846cf1b"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="2397300d8ffa4bd6b17142f1cb7eef8c" data-parentId="443028f04ad4456194620282186bbd31"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>urn:iso:std:iso:11073:10101</span></td></tr><tr class="collapsed" data-id="d7d40d11db3d42eea2b48b9bf07a0295" data-parentId="443028f04ad4456194620282186bbd31"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>150016</span></td></tr><tr class="collapsed" data-id="d02d7b897726402ca1e1dcd830c2368e" data-parentId="443028f04ad4456194620282186bbd31"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>MDC_PRESS_BLD</span></td></tr><tr class="collapsed" data-id="f541555e62004ca793319986a5a749d5" data-parentId="ee399ede3b2744c2b076f32be846cf1b"><td class="instance"><span class="baseIcon primitive"></span><b>text : </b><span>Systolischer und Diastolischer Blutdruck</span></td></tr><tr class="collapsed" data-id="ddf9e63be29e4e59851d9de78c2480a7" data-parentId="41298ddd37814defb5f578ee10a82e86"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="93ab220df19e441b8c341205ae6706ea" data-parentId="ddf9e63be29e4e59851d9de78c2480a7"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="0d26b870512c484f8190f668ed9d0241" data-parentId="41298ddd37814defb5f578ee10a82e86"><td class="instance"><span class="baseIcon primitive"></span><b>effective : </b><span>2012-09-17</span></td></tr><tr class="collapsed" data-id="f88729b3ef44496e99c5b69aa3a73fdc" data-parentId="41298ddd37814defb5f578ee10a82e86"><td class="instance"><span class="baseIcon primitive"></span><b>performer</b></td></tr><tr class="collapsed" data-id="d3be9d53f78f40bbbe1930cce86474e2" data-parentId="f88729b3ef44496e99c5b69aa3a73fdc"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Practitioner/example</span></td></tr><tr class="collapsed" data-id="07124b7ea21140c2940e140e80093f74" data-parentId="41298ddd37814defb5f578ee10a82e86"><td class="instance"><span class="baseIcon primitive"></span><b>interpretation</b></td></tr><tr class="collapsed" data-id="f6bca6b1914245ccb238ca9787fc244b" data-parentId="07124b7ea21140c2940e140e80093f74"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="056ff2a990bc47e0af907d2f8ea0444d" data-parentId="f6bca6b1914245ccb238ca9787fc244b"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation</span></td></tr><tr class="collapsed" data-id="88445a5d594f4392afe1484b17362b8c" data-parentId="f6bca6b1914245ccb238ca9787fc244b"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>L</span></td></tr><tr class="collapsed" data-id="f017dc258dc9494289563b7a2aca6d73" data-parentId="f6bca6b1914245ccb238ca9787fc244b"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>low</span></td></tr><tr class="collapsed" data-id="93c67ff8c1e345bdb163686e7a0677d6" data-parentId="07124b7ea21140c2940e140e80093f74"><td class="instance"><span class="baseIcon primitive"></span><b>text : </b><span>Below low normal</span></td></tr><tr class="collapsed" data-id="addfdc45bfb845c08480b442d2c3e38b" data-parentId="41298ddd37814defb5f578ee10a82e86"><td class="instance"><span class="baseIcon primitive"></span><b>bodySite</b></td></tr><tr class="collapsed" data-id="ebe5167310bb43f6ab988f2eb0eae537" data-parentId="addfdc45bfb845c08480b442d2c3e38b"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="b4dc797cac8c4245921f1a0482542182" data-parentId="ebe5167310bb43f6ab988f2eb0eae537"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="2322c218cef04c62affa5f9f94064558" data-parentId="ebe5167310bb43f6ab988f2eb0eae537"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>368209003</span></td></tr><tr class="collapsed" data-id="09f968f76711463a956abd9154e552c3" data-parentId="ebe5167310bb43f6ab988f2eb0eae537"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Right arm</span></td></tr><tr class="collapsed" data-id="0f0b6102c0d2465299069af5a2b00e27" data-parentId="41298ddd37814defb5f578ee10a82e86"><td class="instance"><span class="baseIcon primitive"></span><b>component</b></td></tr><tr class="collapsed" data-id="d9660a4c53da4ea99c69846010f3640a" data-parentId="0f0b6102c0d2465299069af5a2b00e27"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="b526c23e8c8d4b1895c464583875c088" data-parentId="d9660a4c53da4ea99c69846010f3640a"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="4ecb7e1c66174b4388368e185fe2a6b7" data-parentId="b526c23e8c8d4b1895c464583875c088"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>urn:iso:std:iso:11073:10101</span></td></tr><tr class="collapsed" data-id="51b93062fcc644b992fca149ad0716a9" data-parentId="b526c23e8c8d4b1895c464583875c088"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>150017</span></td></tr><tr class="collapsed" data-id="cda950408b7c47b6a41a627b67cb9a00" data-parentId="b526c23e8c8d4b1895c464583875c088"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>MDC_PRESS_BLD_SYS</span></td></tr><tr class="collapsed" data-id="c1acde1b2fc441ce84c2cf29fb5e852f" data-parentId="d9660a4c53da4ea99c69846010f3640a"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="ad3c89e5698348a5b899a71a510bc37a" data-parentId="c1acde1b2fc441ce84c2cf29fb5e852f"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="26c52c6627ed496d90257b3eda7c624f" data-parentId="c1acde1b2fc441ce84c2cf29fb5e852f"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>http://snomed.info/sct/11000274103</span></td></tr><tr class="collapsed" data-id="f3c9b79a5d7441b295d89ace8f7c5c56" data-parentId="c1acde1b2fc441ce84c2cf29fb5e852f"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>271649006</span></td></tr><tr class="collapsed" data-id="c607d3af044a483884eaa8ae90515388" data-parentId="c1acde1b2fc441ce84c2cf29fb5e852f"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Systolischer Blutdruck</span></td></tr><tr class="collapsed" data-id="ba819b952f6e42ea8fae90880f389f7d" data-parentId="d9660a4c53da4ea99c69846010f3640a"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="130f9d4c774f4b21a598c3a543e25470" data-parentId="ba819b952f6e42ea8fae90880f389f7d"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="80e1f6780e074daaa5fcb2ca4759f926" data-parentId="ba819b952f6e42ea8fae90880f389f7d"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>8480-6</span></td></tr><tr class="collapsed" data-id="19f156987b1b44688f63e35c76ae6cdc" data-parentId="0f0b6102c0d2465299069af5a2b00e27"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="dd829e3029274557b200197667c98be1" data-parentId="19f156987b1b44688f63e35c76ae6cdc"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>107</span></td></tr><tr class="collapsed" data-id="bb1d6650971d455f84ae908ea550701f" data-parentId="19f156987b1b44688f63e35c76ae6cdc"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>mmHg</span></td></tr><tr class="collapsed" data-id="ef4bbbb6394448e38c709203ebbeebf2" data-parentId="19f156987b1b44688f63e35c76ae6cdc"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="f118b38bac524ee5af24645453c51aa9" data-parentId="19f156987b1b44688f63e35c76ae6cdc"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>mm[Hg]</span></td></tr><tr class="collapsed" data-id="30a908a0995f4e598a4189da452b4eb0" data-parentId="41298ddd37814defb5f578ee10a82e86"><td class="instance"><span class="baseIcon primitive"></span><b>component</b></td></tr><tr class="collapsed" data-id="c6372b41d40e41ae89bf16f45cf41c51" data-parentId="30a908a0995f4e598a4189da452b4eb0"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="2926481cfbd94e389190e43608a9e619" data-parentId="c6372b41d40e41ae89bf16f45cf41c51"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="cf77000d0e9c4647b3863fb9e71c9af7" data-parentId="2926481cfbd94e389190e43608a9e619"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>urn:iso:std:iso:11073:10101</span></td></tr><tr class="collapsed" data-id="81a90fd9ce614fd7ab1f0d1359f4c68d" data-parentId="2926481cfbd94e389190e43608a9e619"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>150018</span></td></tr><tr class="collapsed" data-id="dda7d77e81f14d7f9f52439bd632061c" data-parentId="2926481cfbd94e389190e43608a9e619"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>MDC_PRESS_BLD_DIA</span></td></tr><tr class="collapsed" data-id="1ca5a91e0d2044259c834da2d39e99f7" data-parentId="c6372b41d40e41ae89bf16f45cf41c51"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="fff5f9da2f554066b623cb1281d27693" data-parentId="1ca5a91e0d2044259c834da2d39e99f7"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="2103e2c989d44d1fad8d7039ab6e459a" data-parentId="1ca5a91e0d2044259c834da2d39e99f7"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>http://snomed.info/sct/11000274103</span></td></tr><tr class="collapsed" data-id="88266ee730144486af7f7e27160c1ab4" data-parentId="1ca5a91e0d2044259c834da2d39e99f7"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>271650006</span></td></tr><tr class="collapsed" data-id="71fd843170ca488a9c6e3fc918c9dd2d" data-parentId="1ca5a91e0d2044259c834da2d39e99f7"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Diastolischer Blutdruck</span></td></tr><tr class="collapsed" data-id="8103f4bc12aa47679386f29c850a9c6e" data-parentId="c6372b41d40e41ae89bf16f45cf41c51"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="c07452dd27f545a9a6460f68b6128b7e" data-parentId="8103f4bc12aa47679386f29c850a9c6e"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="f6a12e29c3774cd7b6497d76f2bab6e8" data-parentId="8103f4bc12aa47679386f29c850a9c6e"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>8462-4</span></td></tr><tr class="collapsed" data-id="4788d1f888fe4fd8939db1d20d870df9" data-parentId="30a908a0995f4e598a4189da452b4eb0"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="40898a44b2794b4c8df9650c37bf2055" data-parentId="4788d1f888fe4fd8939db1d20d870df9"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>60</span></td></tr><tr class="collapsed" data-id="a24a709a38f447ffad63b4fc00801c65" data-parentId="4788d1f888fe4fd8939db1d20d870df9"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>mmHg</span></td></tr><tr class="collapsed" data-id="2a06126c185d4a43833f776ce126beea" data-parentId="4788d1f888fe4fd8939db1d20d870df9"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="eea9732c1eea48e9bb5e6364aa5c2366" data-parentId="4788d1f888fe4fd8939db1d20d870df9"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>mm[Hg]</span></td></tr><tr class="collapsed" data-id="01cc73b402314a32ab0865662d37cfd1" data-parentId="41298ddd37814defb5f578ee10a82e86"><td class="instance"><span class="baseIcon primitive"></span><b>component</b></td></tr><tr class="collapsed" data-id="35c937044344440298e3c44fd6d311a4" data-parentId="01cc73b402314a32ab0865662d37cfd1"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="0d77ab434b974eb2b4bb68ceda42c6e4" data-parentId="35c937044344440298e3c44fd6d311a4"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="987b3478f3df4911ba8aa2df18ad64f4" data-parentId="0d77ab434b974eb2b4bb68ceda42c6e4"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>urn:iso:std:iso:11073:10101</span></td></tr><tr class="collapsed" data-id="b028fa9c45d84cfcaf6008c59ca7adfd" data-parentId="0d77ab434b974eb2b4bb68ceda42c6e4"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>150019</span></td></tr><tr class="collapsed" data-id="3c145e431d084b8994ea1ea220ce3bf7" data-parentId="0d77ab434b974eb2b4bb68ceda42c6e4"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>MDC_PRESS_BLD_MEAN</span></td></tr><tr class="collapsed" data-id="4009cf94771a47fe9c83c03655f52ea8" data-parentId="35c937044344440298e3c44fd6d311a4"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="d1e15e2b43324160a4b37cc9833fc935" data-parentId="4009cf94771a47fe9c83c03655f52ea8"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="c5a9dd64cdd345e48370362ca7800880" data-parentId="4009cf94771a47fe9c83c03655f52ea8"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>http://snomed.info/sct/11000274103</span></td></tr><tr class="collapsed" data-id="0c85a5a0b16a4719879e169706578415" data-parentId="4009cf94771a47fe9c83c03655f52ea8"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>6797001</span></td></tr><tr class="collapsed" data-id="8a41d340a1474e9b85b00dc44832cda8" data-parentId="4009cf94771a47fe9c83c03655f52ea8"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Mittlerer arterieller Druck</span></td></tr><tr class="collapsed" data-id="5d1d2130bd3c4c278ca90ef675929356" data-parentId="35c937044344440298e3c44fd6d311a4"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="77206cfa6dc14416b43d5ef90d15b270" data-parentId="5d1d2130bd3c4c278ca90ef675929356"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="2fc90cfb1c4b43c2aec503f439e3eea1" data-parentId="5d1d2130bd3c4c278ca90ef675929356"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>8478-0</span></td></tr><tr class="collapsed" data-id="28ba0042c47247508dfe0df333a875bc" data-parentId="01cc73b402314a32ab0865662d37cfd1"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="e415e7ce6da44a098164dcb1f2dca84d" data-parentId="28ba0042c47247508dfe0df333a875bc"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>80</span></td></tr><tr class="collapsed" data-id="aa25844e65c94c7586b0623370f1ff9d" data-parentId="28ba0042c47247508dfe0df333a875bc"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>mmHg</span></td></tr><tr class="collapsed" data-id="3e7a46cf93e34391ad4b3df789ec700f" data-parentId="28ba0042c47247508dfe0df333a875bc"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="19cd7c7c2d674c7f9edc9aff9b3f5114" data-parentId="28ba0042c47247508dfe0df333a875bc"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>mm[Hg]</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable636a1652f76b47049477a9f07cfaed17 = new InstanceTree();
+resourceTreeTable636a1652f76b47049477a9f07cfaed17.init("636a1652f76b47049477a9f07cfaed17");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="86c07886-f5a5-49b7-8b7f-427ae453f722">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">Observation</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.id" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKBlutdruckSystemischArteriellExample</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.meta" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.meta.profile" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.status" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.category" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">category</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.category.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.category.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.category.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">vital-signs</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.category.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Vital Signs</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">category</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">85354-9</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Blood pressure panel with all children optional</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">75367002</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Blood pressure</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">150016</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MDC_PRESS_BLD</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.text" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Systolischer und Diastolischer Blutdruck</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.subject" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.subject.reference" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.effective" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">effectiveDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2012-09-17</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.performer" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">performer</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.performer.reference" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Practitioner/example</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">performer</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.interpretation" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">interpretation</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.interpretation.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.interpretation.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.interpretation.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">L</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.interpretation.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">low</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.interpretation.text" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Below low normal</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">interpretation</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.bodySite" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">bodySite</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.bodySite.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.bodySite.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.bodySite.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">368209003</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.bodySite.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Right arm</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">bodySite</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">component</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">150017</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MDC_PRESS_BLD_SYS</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.version" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct/11000274103</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">271649006</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Systolischer Blutdruck</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">8480-6</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">valueQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value.value" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">107</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value.unit" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">mmHg</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">mm[Hg]</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueQuantity</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">component</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">component</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">150018</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MDC_PRESS_BLD_DIA</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.version" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct/11000274103</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">271650006</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Diastolischer Blutdruck</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">8462-4</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">valueQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value.value" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">60</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value.unit" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">mmHg</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">mm[Hg]</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueQuantity</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">component</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">component</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">150019</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MDC_PRESS_BLD_MEAN</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.version" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct/11000274103</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">6797001</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Mittlerer arterieller Druck</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">8478-0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">valueQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value.value" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">80</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value.unit" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">mmHg</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.value.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">mm[Hg]</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueQuantity</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">component</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Observation</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="53e7d4a3-836e-4063-9476-187a98c7ddb0">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.resourceType" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.id" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKBlutdruckSystemischArteriellExample</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.meta" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.meta.profile" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.category" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">category</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.category.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.category.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.category.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">vital-signs</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.category.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Vital Signs</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">85354-9</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Blood pressure panel with all children optional</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">75367002</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Blood pressure</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">150016</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MDC_PRESS_BLD</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.code.text" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Systolischer und Diastolischer Blutdruck</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">component</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">150017</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MDC_PRESS_BLD_SYS</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">271649006</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Systolischer Blutdruck</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.version" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct/11000274103</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8480-6</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">mm[Hg]</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity.value" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">107</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity.unit" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">mmHg</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">150018</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MDC_PRESS_BLD_DIA</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">271650006</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Diastolischer Blutdruck</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.version" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct/11000274103</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8462-4</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">mm[Hg]</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity.value" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">60</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity.unit" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">mmHg</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">150019</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MDC_PRESS_BLD_MEAN</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">6797001</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Mittlerer arterieller Druck</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.version" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct/11000274103</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.code.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8478-0</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">mm[Hg]</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity.value" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">80</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.component.valueQuantity.unit" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">mmHg</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.status" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.subject" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.subject.reference" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.effectiveDateTime" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">effectiveDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2012-09-17</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.performer" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">performer</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.performer.reference" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Practitioner/example</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.interpretation" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">interpretation</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.interpretation.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.interpretation.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">L</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.interpretation.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.interpretation.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">low</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.interpretation.text" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Below low normal</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.bodySite" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">bodySite</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.bodySite.coding" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.bodySite.coding.code" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">368209003</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.bodySite.coding.system" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKBlutdruckSystemischArteriell.json#Observation.bodySite.coding.display" title="ISiKBlutdruckSystemischArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKBlutdruckSystemischArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Right arm</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="d2ce64df-4c3e-4d1a-b980-bb12bd82ee74">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Observation-ISiKBlutdruckSystemischArteriellExample.json'>Systolischer und Diastolischer Blutdruck</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

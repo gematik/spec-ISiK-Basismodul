@@ -1,0 +1,981 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Medikation</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Medikation
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-UebersichtAnwendungsfaelle.html">
+                                            &#xDC;bersicht Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Informationsmodell.html">
+                                            Informationsmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-AMTS.html">
+                                            AMTS
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-RestApi.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-AkteureUndInteraktionen.html">
+                                            Akteure und Interaktionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Medikament.html">
+                                            ISiKMedikament (Medication)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsVerordnung.html">
+                                            ISiKMedikationsVerordnung (MedicationRequest)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsInformation.html">
+                                            ISiKMedikationsInformation (MedicationStatement)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsListe.html">
+                                            ISiKMedikationsListe (List)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsVerabreichung.html">
+                                            ISiKMedikationsVerabreichung (MedicationAdministration)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_AMTSBewertung.html">
+                                            ISiKAMTSBewertung (RiskAssessment)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationTransaction.html">
+                                            ISiKMedikationTransaction (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationTransactionResponse.html">
+                                            ISiKMedikationTransactionResponse (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="link"><a  href='artifacts/package/StructureDefinition-ISiKMedikationTransaction.json'>ISiK Medikation Transactionbundle</a></h2>
+<p>Hinweis: Die Regeln aus dem Modul <a href="https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung">ISiK Basis Stufe 5</a> für die Verarbeitung Document-Bundles, treffen hier nicht zu, da es sich um den Bundle-Typ Transaction handelt.</p>
+<p>Dieses Profil definiert die Transaktions-Bundles im Rahmen von ISiK-Medikations-Szenarien.</p>
+<h3 id="metadaten">Metadaten</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Canonical</b></th><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationTransaction'>https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationTransaction</a></td><tr><th><b>Status</b></th><td>active</td><tr><th><b>Version</b></th><td>5.0.0</td><tr><th><b>Basis</b></th><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/StructureDefinition/Bundle'>http://hl7.org/fhir/StructureDefinition/Bundle</a></td></table>
+<h3 id="inhalt">Inhalt</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#55d7af2f-e62e-4405-9358-b1c09627ee61" aria-controls="55d7af2f-e62e-4405-9358-b1c09627ee61" role="tab" data-toggle="tab">Darstellung</a>
+</li><li role="presentation" class="">
+    <a href="#f291a1a1-63b4-42f9-9d1c-aaea0326ddb3" aria-controls="f291a1a1-63b4-42f9-9d1c-aaea0326ddb3" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#ca9b9b20-c1db-420d-a844-50552b1b842b" aria-controls="ca9b9b20-c1db-420d-a844-50552b1b842b" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#86089751-7d7e-4fd9-8bd7-55c408e4de9c" aria-controls="86089751-7d7e-4fd9-8bd7-55c408e4de9c" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="55d7af2f-e62e-4405-9358-b1c09627ee61">
+    <div class="stu3-treetable" id="1ef7e78b0df1431d90cb63fc4b89a801" data-level="1"><div class="treetable-buttons"><div class="tree-control"><button class="tree-button" title="Show changes compared to parent resource" data-mode="diff">diff</button><button class="tree-button" title="Show combination of diff and snap" data-mode="hybrid">hybrid</button><button class="tree-button active" title="Show available resource elements" data-mode="snapshot">snap</button></div><div class="tree-settings"><button class="tree-button" id="ShowCommonResourceElements" title="Show common resource elements" data-settings="ShowCommonResourceElements">show common</button></div></div><div class="treetable-wrapper snapshot"><div class="treetable-left-panel"><table class="treetable"><tr class="collapsed constraints" data-id="40f0fb34a1aa4542a0772c27b957a715"><td class="profile"><span class="baseIcon resource" title="Resource"></span><span class="constraints" title="ISiKMedikationTransaction is the name of the resource
+Bundle is the type of the resource
+Bundle is the name of the parent resource"><b>ISiKMedikationTransaction</b><span class="constraints"> (</span><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Bundle.json" title="Bundle
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Bundle.json" target="_blank" class="constraints">Bundle</a><span class="constraints">)</span></span></td><td class="profile"><span class="invariant" title="This element has or is affected by constraints">C</span></td><td></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Bundle.json" title="Bundle
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Bundle.json" target="_blank">Bundle</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle</pre><span><b>Short description</b></span><p><span>Contains a collection of resources</span></p><span><b>Definition</b></span><div class="markdown"><p>A container for a collection of resources.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Bundle.json" title="Bundle
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Bundle.json" target="_blank">Bundle</a></p><span><b>Constraints</b></span><ul><li><b>bdl-1: </b>total only when a search or history<br/><code>total.empty() or (type = &#39;searchset&#39;) or (type = &#39;history&#39;)</code></li><li><b>bdl-2: </b>entry.search only when a search<br/><code>entry.search.empty() or (type = &#39;searchset&#39;)</code></li><li><b>bdl-3: </b>entry.request mandatory for batch/transaction/history, otherwise prohibited<br/><code>entry.all(request.exists() = (%resource.type = &#39;batch&#39; or %resource.type = &#39;transaction&#39; or %resource.type = &#39;history&#39;))</code></li><li><b>bdl-4: </b>entry.response mandatory for batch-response/transaction-response/history, otherwise prohibited<br/><code>entry.all(response.exists() = (%resource.type = &#39;batch-response&#39; or %resource.type = &#39;transaction-response&#39; or %resource.type = &#39;history&#39;))</code></li><li><b>bdl-7: </b>FullUrl must be unique in a bundle, or else entries with the same fullUrl must have different meta.versionId (except in history bundles)<br/><code>(type = &#39;history&#39;) or entry.where(fullUrl.exists()).select(fullUrl&amp;resource.meta.versionId).isDistinct()</code></li><li><b>bdl-9: </b>A document must have an identifier with a system and a value<br/><code>type = &#39;document&#39; implies (identifier.system.exists() and identifier.value.exists())</code></li><li><b>bdl-10: </b>A document must have a date<br/><code>type = &#39;document&#39; implies (timestamp.hasValue())</code></li><li><b>bdl-11: </b>A document must have a Composition as the first resource<br/><code>type = &#39;document&#39; implies entry.first().resource.is(Composition)</code></li><li><b>bdl-12: </b>A message must have a MessageHeader as the first resource<br/><code>type = &#39;message&#39; implies entry.first().resource.is(MessageHeader)</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>Entity. Role, or Act</li><li><b>v2: </b>N/A</li><li><b>rim: </b>N/A</li><li><b>cda: </b>ClinicalDocument, if bundle.type = document</li></ul></td></tr><tr class="common" id="Bundle.id" data-id="49835965167b45d5a593c352a979e394" data-parentId="40f0fb34a1aa4542a0772c27b957a715"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.id</pre><span><b>Short description</b></span><p><span>Logical id of this artifact</span></p><span><b>Definition</b></span><div class="markdown"><p>The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>The only time that a resource does not have an id is when it is being submitted to the server using a create operation.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></p></td></tr><tr class="common" id="Bundle.meta" data-id="9b982d8797844216a9b6a3674781dc63" data-parentId="40f0fb34a1aa4542a0772c27b957a715"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>meta</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Meta.json" title="Meta
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Meta.json" target="_blank">Meta</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.meta</pre><span><b>Short description</b></span><p><span>Metadata about the resource</span></p><span><b>Definition</b></span><div class="markdown"><p>The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Meta.json" title="Meta
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Meta.json" target="_blank">Meta</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="common" id="Bundle.implicitRules" data-id="982c36becb634858b9c5653001ee4f98" data-parentId="40f0fb34a1aa4542a0772c27b957a715"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>implicitRules</span></td><td class="profile"><span title="This element is included in summaries">Σ</span> <span title="This element is a modifier element">?!</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" target="_blank">uri</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.implicitRules</pre><span><b>Short description</b></span><p><span>A set of rules under which this content was created</span></p><span><b>Definition</b></span><div class="markdown"><p>A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it's narrative along with other profiles, value sets, etc.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" target="_blank">uri</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="common" id="Bundle.language" data-id="58a395c54af74e4dbb433614921bc0a9" data-parentId="40f0fb34a1aa4542a0772c27b957a715"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>language</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" target="_blank">code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.language</pre><span><b>Short description</b></span><p><span>Language of the resource content</span></p><span><b>Definition</b></span><div class="markdown"><p>The base language in which the resource is written.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource. Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" target="_blank">code</a></p><span><b>Binding</b></span><div class="markdown"><p>A human language.</p>
+</div><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-languages.json" title="CommonLanguages
+hl7.fhir.r4.core 4.0.1
+ValueSet-languages.json" target="_blank">CommonLanguages</a><span> (</span><a href="http://hl7.org/fhir/r4/terminologies.html#preferred" title="Instances are encouraged to draw from the specified codes for interoperability purposes but are not required to do so to be considered conformant.">preferred</a><span>)</span></p><span><b>Binding extensions</b></span><table><colgroup><col class="w-auto"/><col/></colgroup><tbody><tr class="noconstraints"><th class="nowrap"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-elementdefinition-maxValueSet.json" title="maxValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-elementdefinition-maxValueSet.json" target="_blank">maxValueSet</a></th><td><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-all-languages.json" title="AllLanguages
+hl7.fhir.r4.core 4.0.1
+ValueSet-all-languages.json" target="_blank">AllLanguages</a></td></tr></tbody></table><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr id="Bundle.identifier" data-id="94f71fa1d10843d484694cb2783d569a" data-parentId="40f0fb34a1aa4542a0772c27b957a715"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>identifier</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Identifier.json" title="Identifier
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Identifier.json" target="_blank">Identifier</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.identifier</pre><span><b>Short description</b></span><p><span>Persistent identifier for the bundle</span></p><span><b>Definition</b></span><div class="markdown"><p>A persistent identifier for the bundle that won't change as a bundle is copied from server to server.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>Persistent identity generally only matters for batches of type Document, Message, and Collection. It would not normally be populated for search and history results and servers ignore Bundle.identifier when processing batches and transactions. For Documents  the .identifier SHALL be populated such that the .identifier is globally unique.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Identifier.json" title="Identifier
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Identifier.json" target="_blank">Identifier</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>w5: </b>FiveWs.identifier</li><li><b>cda: </b>ClinicalDocument.id</li></ul></td></tr><tr class="constraints" id="Bundle.type" data-id="b069cffe078e45bd8aa7ee4aa4cde3e5" data-parentId="40f0fb34a1aa4542a0772c27b957a715"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">type</span></td><td class="profile"><span class="mustsupport constraints" title="This element must be supported">S</span> <span title="This element is included in summaries">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" target="_blank">code</a><span class="binding-label">Binding</span><span class="fixed-label constraints">Fixed Value</span></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><pre>Bundle.type</pre><span class="constraints"><b>Short description</b></span><p><span class="constraints">Type des Bundles</span></p><span><b>Definition</b></span><div class="markdown"><p>Indicates the purpose of this bundle - how it is intended to be used.</p>
+</div><span class="constraints"><b>Comments</b></span><div class="markdown constraints"><p>fix: transaction</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" target="_blank">code</a></p><span><b>Binding</b></span><div class="markdown"><p>Indicates the purpose of a bundle - how it is intended to be used.</p>
+</div><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-bundle-type.json" title="BundleType
+hl7.fhir.r4.core 4.0.1
+ValueSet-bundle-type.json" target="_blank">BundleType</a><span> (</span><a href="http://hl7.org/fhir/r4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a><span>)</span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span class="constraints"><b>Fixed value</b></span><pre class="constraints">transaction</pre><span><b>Mappings</b></span><ul><li><b>w5: </b>FiveWs.class</li></ul></td></tr><tr id="Bundle.timestamp" data-id="742f9748331749e58ecc48fb9a69ebe1" data-parentId="40f0fb34a1aa4542a0772c27b957a715"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>timestamp</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-instant.json" title="instant
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-instant.json" target="_blank">instant</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.timestamp</pre><span><b>Short description</b></span><p><span>When the bundle was assembled</span></p><span><b>Definition</b></span><div class="markdown"><p>The date/time that the bundle was assembled - i.e. when the resources were placed in the bundle.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>For many bundles, the timestamp is equal to .meta.lastUpdated, because they are not stored (e.g. search results). When a bundle is placed in a persistent store, .meta.lastUpdated will be usually be changed by the server. When the bundle is a message, a middleware agent altering the message (even if not stored) SHOULD update .meta.lastUpdated. .timestamp is used to track the original time of the Bundle, and SHOULD be populated.</p>
+<p>Usage:</p>
+<ul>
+<li>document : the date the document was created. Note: the composition may predate the document, or be associated with multiple documents. The date of the composition - the authoring time - may be earlier than the document assembly time</li>
+<li>message : the date that the content of the message was assembled. This date is not changed by middleware engines unless they add additional data that changes the meaning of the time of the message</li>
+<li>history : the date that the history was assembled. This time would be used as the _since time to ask for subsequent updates</li>
+<li>searchset : the time that the search set was assembled. Note that different pages MAY have different timestamps but need not. Having different timestamps does not imply that subsequent pages will represent or include changes made since the initial query</li>
+<li>transaction | transaction-response | batch | batch-response | collection : no particular assigned meaning</li>
+</ul>
+<p>The timestamp value should be greater than the lastUpdated and other timestamps in the resources in the bundle, and it should be equal or earlier than the .meta.lastUpdated on the Bundle itself.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-instant.json" title="instant
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-instant.json" target="_blank">instant</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul><span><b>Mappings</b></span><ul><li><b>w5: </b>FiveWs.init</li><li><b>cda: </b>ClinicalDocument.effectiveTime</li></ul></td></tr><tr id="Bundle.total" data-id="f25403bc5d2d4a8c8f30051ef46a39a9" data-parentId="40f0fb34a1aa4542a0772c27b957a715"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>total</span></td><td class="profile"><span title="This element is included in summaries">Σ</span> <span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-unsignedInt.json" title="unsignedInt
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-unsignedInt.json" target="_blank">unsignedInt</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.total</pre><span><b>Short description</b></span><p><span>If search, the total number of matches</span></p><span><b>Definition</b></span><div class="markdown"><p>If a set of search matches, this is the total number of entries of type 'match' across all pages in the search.  It does not include search.mode = 'include' or 'outcome' entries and it does not provide a count of the number of entries in the Bundle.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>Only used if the bundle is a search result set. The total does not include resources such as OperationOutcome and included resources, only the total number of matching resources.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-unsignedInt.json" title="unsignedInt
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-unsignedInt.json" target="_blank">unsignedInt</a></p><span><b>Conditions</b></span><p><span>The cardinality or value of this element may be affected by these constraints: </span><span><b>bdl-1</b></span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="collapsed" id="Bundle.link" data-id="e561d1603bd147eb8e61aed762b08a52" data-parentId="40f0fb34a1aa4542a0772c27b957a715"><td class="profile"><span class="baseIcon backboneElement" title="Element"></span><span>link</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" target="_blank">BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.link</pre><span><b>Short description</b></span><p><span>Links related to this Bundle</span></p><span><b>Definition</b></span><div class="markdown"><p>A series of links that provide context to this bundle.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>Both Bundle.link and Bundle.entry.link are defined to support providing additional context when Bundles are used (e.g. <a href="http://en.wikipedia.org/wiki/HATEOAS">HATEOAS</a>).</p>
+<p>Bundle.entry.link corresponds to links found in the HTTP header if the resource in the entry was <a href="http.html#read">read</a> directly.</p>
+<p>This specification defines some specific uses of Bundle.link for <a href="search.html#conformance">searching</a> and <a href="http.html#paging">paging</a>, but no specific uses for Bundle.entry.link, and no defined function in a transaction - the meaning is implementation specific.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" target="_blank">BackboneElement</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="common" id="Bundle.link.id" data-id="9df928b43f184abd9fd10067f9eeb4f5" data-parentId="e561d1603bd147eb8e61aed762b08a52"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.link.id</pre><span><b>Short description</b></span><p><span>Unique id for inter-element referencing</span></p><span><b>Definition</b></span><div class="markdown"><p>Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common" id="Bundle.link.extension" data-id="3e42f21f711c44c4ad0e60bc9da48b4b" data-parentId="e561d1603bd147eb8e61aed762b08a52"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span>extension</span></td><td class="profile"><span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.link.extension</pre><span><b>Short description</b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names</b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition</b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br/><code>extension.exists() != value.exists()</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common" id="Bundle.link.modifierExtension" data-id="5ebea0125d15419bb374155427c9c414" data-parentId="e561d1603bd147eb8e61aed762b08a52"><td class="profile"><span class="baseIcon modifierExtension" title="Modifier Extension"></span><span>modifierExtension</span></td><td class="profile"><span title="This element is included in summaries">Σ</span> <span title="This element is a modifier element">?!</span> <span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.link.modifierExtension</pre><span><b>Short description</b></span><p><span>Extensions that cannot be ignored even if unrecognized</span></p><span><b>Alternate names</b></span><p><span>extensions</span><span>, </span><span>user content</span><span>, </span><span>modifiers</span></p><span><b>Definition</b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+<p>Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).</p>
+</div><span><b>Requirements</b></span><div class="markdown"><p>Modifier extensions allow for extensions that <em>cannot</em> be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the <a href="extensibility.html#modifierExtension">definition of modifier extensions</a>.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br/><code>extension.exists() != value.exists()</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>N/A</li></ul></td></tr><tr id="Bundle.link.relation" data-id="5c9dfa1993c3450182db6279f063a14e" data-parentId="e561d1603bd147eb8e61aed762b08a52"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>relation</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.link.relation</pre><span><b>Short description</b></span><p><span>See http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1</span></p><span><b>Definition</b></span><div class="markdown"><p>A name which details the functional use for this link - see <a href="http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1">http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1</a>.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr id="Bundle.link.url" data-id="4367e63472904a74a7aecfac2add343c" data-parentId="e561d1603bd147eb8e61aed762b08a52"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>url</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" target="_blank">uri</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.link.url</pre><span><b>Short description</b></span><p><span>Reference details for the link</span></p><span><b>Definition</b></span><div class="markdown"><p>The reference details for the link.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" target="_blank">uri</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="collapsed constraints" id="Bundle.entry" data-id="ff144a179492414f9854216ec6dfbbbd" data-parentId="40f0fb34a1aa4542a0772c27b957a715"><td class="profile"><span class="baseIcon backboneElement" title="Element"></span><span class="constraints">entry</span></td><td class="profile"><span class="mustsupport constraints" title="This element must be supported">S</span> <span title="This element is included in summaries">Σ</span> <span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" target="_blank">BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><pre>Bundle.entry</pre><span class="constraints"><b>Short description</b></span><p><span class="constraints">Der einzelne Eintrag zur Interaktion</span></p><span><b>Definition</b></span><div class="markdown"><p>An entry in a bundle resource - will either contain a resource or information about a resource (transactions and history only).</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" target="_blank">BackboneElement</a></p><span><b>Constraints</b></span><ul><li><b>bdl-5: </b>must be a resource unless there&#39;s a request or response<br/><code>resource.exists() or request.exists() or response.exists()</code></li><li><b>bdl-8: </b>fullUrl cannot be a version specific reference<br/><code>fullUrl.contains(&#39;/_history/&#39;).not()</code></li><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="common" id="Bundle.entry.id" data-id="ac008fc3da22421398e7f8fbd64d895f" data-parentId="ff144a179492414f9854216ec6dfbbbd"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.entry.id</pre><span><b>Short description</b></span><p><span>Unique id for inter-element referencing</span></p><span><b>Definition</b></span><div class="markdown"><p>Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common" id="Bundle.entry.extension" data-id="bbea1c25aa194c278790416310652fa3" data-parentId="ff144a179492414f9854216ec6dfbbbd"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span>extension</span></td><td class="profile"><span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.entry.extension</pre><span><b>Short description</b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names</b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition</b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br/><code>extension.exists() != value.exists()</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common" id="Bundle.entry.modifierExtension" data-id="8542ce79e70c4f1a93e2b7105c0eb1cd" data-parentId="ff144a179492414f9854216ec6dfbbbd"><td class="profile"><span class="baseIcon modifierExtension" title="Modifier Extension"></span><span>modifierExtension</span></td><td class="profile"><span title="This element is included in summaries">Σ</span> <span title="This element is a modifier element">?!</span> <span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.entry.modifierExtension</pre><span><b>Short description</b></span><p><span>Extensions that cannot be ignored even if unrecognized</span></p><span><b>Alternate names</b></span><p><span>extensions</span><span>, </span><span>user content</span><span>, </span><span>modifiers</span></p><span><b>Definition</b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+<p>Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).</p>
+</div><span><b>Requirements</b></span><div class="markdown"><p>Modifier extensions allow for extensions that <em>cannot</em> be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the <a href="extensibility.html#modifierExtension">definition of modifier extensions</a>.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br/><code>extension.exists() != value.exists()</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>N/A</li></ul></td></tr><tr class="striped constraints" id="Bundle.entry.link" data-id="e59948d205ef4ec5af98bfd564b38c9c" data-parentId="ff144a179492414f9854216ec6dfbbbd"><td class="profile"><span class="baseIcon nameReference" title="Reference to another Element"></span><span class="constraints">link</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span class="constraints">..</span><span class="constraints">0</span></td><td class="profile">see (<a href="#http://hl7.org/fhir/StructureDefinition/Bundle#Bundle.link">link</a>)</td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.entry.link</pre><span><b>Short description</b></span><p><span>Links related to this entry</span></p><span><b>Definition</b></span><div class="markdown"><p>A series of links that provide context to this entry.</p>
+</div><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="constraints" id="Bundle.entry.fullUrl" data-id="b3e95c35592f4c699753eca05184ca0e" data-parentId="ff144a179492414f9854216ec6dfbbbd"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">fullUrl</span></td><td class="profile"><span class="mustsupport constraints" title="This element must be supported">S</span> <span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" target="_blank">uri</a></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><pre>Bundle.entry.fullUrl</pre><span class="constraints"><b>Short description</b></span><p><span class="constraints">vollst&#228;ndige URL der Ressource</span></p><span><b>Definition</b></span><div class="markdown"><p>The Absolute URL for the resource.  The fullUrl SHALL NOT disagree with the id in the resource - i.e. if the fullUrl is not a urn:uuid, the URL shall be version-independent URL consistent with the Resource.id. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that:</p>
+<ul>
+<li>fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)</li>
+<li>Results from operations might involve resources that are not identified.</li>
+</ul>
+</div><span class="constraints"><b>Comments</b></span><div class="markdown constraints"><p>auch die Verwendung von UUIDs in der Form ';urn:uuid:.....' ist möglich.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" target="_blank">uri</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="constraints" id="Bundle.entry.resource" data-id="5d335f653e91434eb13d07a8a997726b" data-parentId="ff144a179492414f9854216ec6dfbbbd"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span class="constraints">resource</span></td><td class="profile"><span class="mustsupport constraints" title="This element must be supported">S</span> <span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Resource.json" title="Resource
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Resource.json" target="_blank">Resource</a></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><pre>Bundle.entry.resource</pre><span class="constraints"><b>Short description</b></span><p><span class="constraints">Die Ressourcen-Instanz der Interaktion</span></p><span><b>Definition</b></span><div class="markdown"><p>The Resource for the entry. The purpose/meaning of the resource is determined by the Bundle.type.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Resource.json" title="Resource
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Resource.json" target="_blank">Resource</a></p></td></tr><tr class="collapsed striped constraints" id="Bundle.entry.search" data-id="55ef21ff7e254828895f4060ee382b11" data-parentId="ff144a179492414f9854216ec6dfbbbd"><td class="profile"><span class="baseIcon backboneElement" title="Element"></span><span class="constraints">search</span></td><td class="profile"><span title="This element is included in summaries">Σ</span> <span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span>0</span><span class="constraints">..</span><span class="constraints">0</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" target="_blank">BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.entry.search</pre><span><b>Short description</b></span><p><span>Search related information</span></p><span><b>Definition</b></span><div class="markdown"><p>Information about the search process that lead to the creation of this entry.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" target="_blank">BackboneElement</a></p><span><b>Conditions</b></span><p><span>The cardinality or value of this element may be affected by these constraints: </span><span><b>bdl-2</b></span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="collapsed constraints" id="Bundle.entry.request" data-id="c86d1fbc22b2470e942fe56988175fb1" data-parentId="ff144a179492414f9854216ec6dfbbbd"><td class="profile"><span class="baseIcon backboneElement" title="Element"></span><span class="constraints">request</span></td><td class="profile"><span class="mustsupport constraints" title="This element must be supported">S</span> <span title="This element is included in summaries">Σ</span> <span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" target="_blank">BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><pre>Bundle.entry.request</pre><span class="constraints"><b>Short description</b></span><p><span class="constraints">HTTP-Request innerhalb der Transaktion</span></p><span><b>Definition</b></span><div class="markdown"><p>Additional information about how this entry should be processed as part of a transaction or batch.  For history, it shows how the entry was processed to create the version contained in the entry.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" target="_blank">BackboneElement</a></p><span><b>Conditions</b></span><p><span>The cardinality or value of this element may be affected by these constraints: </span><span><b>bdl-3</b></span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="common" id="Bundle.entry.request.id" data-id="44411c0ca770427e98d17de4479ea14b" data-parentId="c86d1fbc22b2470e942fe56988175fb1"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.entry.request.id</pre><span><b>Short description</b></span><p><span>Unique id for inter-element referencing</span></p><span><b>Definition</b></span><div class="markdown"><p>Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common" id="Bundle.entry.request.extension" data-id="d58d6cc8786945499b26fd370321a976" data-parentId="c86d1fbc22b2470e942fe56988175fb1"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span>extension</span></td><td class="profile"><span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.entry.request.extension</pre><span><b>Short description</b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names</b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition</b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br/><code>extension.exists() != value.exists()</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common" id="Bundle.entry.request.modifierExtension" data-id="c7829f95407045b8be4a5001e583b2e3" data-parentId="c86d1fbc22b2470e942fe56988175fb1"><td class="profile"><span class="baseIcon modifierExtension" title="Modifier Extension"></span><span>modifierExtension</span></td><td class="profile"><span title="This element is included in summaries">Σ</span> <span title="This element is a modifier element">?!</span> <span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.entry.request.modifierExtension</pre><span><b>Short description</b></span><p><span>Extensions that cannot be ignored even if unrecognized</span></p><span><b>Alternate names</b></span><p><span>extensions</span><span>, </span><span>user content</span><span>, </span><span>modifiers</span></p><span><b>Definition</b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+<p>Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).</p>
+</div><span><b>Requirements</b></span><div class="markdown"><p>Modifier extensions allow for extensions that <em>cannot</em> be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the <a href="extensibility.html#modifierExtension">definition of modifier extensions</a>.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" target="_blank">Extension</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br/><code>extension.exists() != value.exists()</code></li></ul><span><b>Mappings</b></span><ul><li><b>rim: </b>N/A</li></ul></td></tr><tr class="constraints" id="Bundle.entry.request.method" data-id="47f3ccdcf8054ecb8529dcaf8511bcac" data-parentId="c86d1fbc22b2470e942fe56988175fb1"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">method</span></td><td class="profile"><span class="mustsupport constraints" title="This element must be supported">S</span> <span title="This element is included in summaries">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" target="_blank">code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><pre>Bundle.entry.request.method</pre><span class="constraints"><b>Short description</b></span><p><span class="constraints">HTTP-Verb</span></p><span><b>Definition</b></span><div class="markdown"><p>In a transaction or batch, this is the HTTP action to be executed for this entry. In a history bundle, this indicates the HTTP action that occurred.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" target="_blank">code</a></p><span><b>Binding</b></span><div class="markdown"><p>HTTP verbs (in the HTTP command line). See <a href="https://tools.ietf.org/html/rfc7231">HTTP rfc</a> for details.</p>
+</div><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-http-verb.json" title="HTTPVerb
+hl7.fhir.r4.core 4.0.1
+ValueSet-http-verb.json" target="_blank">HTTPVerb</a><span> (</span><a href="http://hl7.org/fhir/r4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a><span>)</span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="constraints" id="Bundle.entry.request.url" data-id="23b42802fd964c48b10f9b5a6af7a83e" data-parentId="c86d1fbc22b2470e942fe56988175fb1"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">url</span></td><td class="profile"><span class="mustsupport constraints" title="This element must be supported">S</span> <span title="This element is included in summaries">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" target="_blank">uri</a></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><pre>Bundle.entry.request.url</pre><span class="constraints"><b>Short description</b></span><p><span class="constraints">Request-URL</span></p><span><b>Definition</b></span><div class="markdown"><p>The URL for this entry, relative to the root (the address to which the request is posted).</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>E.g. for a Patient Create, the method would be &quot;POST&quot; and the URL would be &quot;Patient&quot;. For a Patient Update, the method would be PUT and the URL would be &quot;Patient/[id]&quot;.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" target="_blank">uri</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr id="Bundle.entry.request.ifNoneMatch" data-id="2d44958eca05465899b195403978f1e7" data-parentId="c86d1fbc22b2470e942fe56988175fb1"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>ifNoneMatch</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.entry.request.ifNoneMatch</pre><span><b>Short description</b></span><p><span>For managing cache currency</span></p><span><b>Definition</b></span><div class="markdown"><p>If the ETag values match, return a 304 Not Modified status. See the API documentation for <a href="http.html#cread">&quot;Conditional Read&quot;</a>.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr id="Bundle.entry.request.ifModifiedSince" data-id="9d98bb4c7cd74a30a6ebf98a0151600f" data-parentId="c86d1fbc22b2470e942fe56988175fb1"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>ifModifiedSince</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-instant.json" title="instant
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-instant.json" target="_blank">instant</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.entry.request.ifModifiedSince</pre><span><b>Short description</b></span><p><span>For managing cache currency</span></p><span><b>Definition</b></span><div class="markdown"><p>Only perform the operation if the last updated date matches. See the API documentation for <a href="http.html#cread">&quot;Conditional Read&quot;</a>.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-instant.json" title="instant
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-instant.json" target="_blank">instant</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr id="Bundle.entry.request.ifMatch" data-id="399e39bed1b44cec96dcd00e3d99dd6a" data-parentId="c86d1fbc22b2470e942fe56988175fb1"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>ifMatch</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.entry.request.ifMatch</pre><span><b>Short description</b></span><p><span>For managing update contention</span></p><span><b>Definition</b></span><div class="markdown"><p>Only perform the operation if the Etag value matches. For more information, see the API section <a href="http.html#concurrency">&quot;Managing Resource Contention&quot;</a>.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr id="Bundle.entry.request.ifNoneExist" data-id="6a9d6e1305a941c685d59ca4d6110b1d" data-parentId="c86d1fbc22b2470e942fe56988175fb1"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>ifNoneExist</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.entry.request.ifNoneExist</pre><span><b>Short description</b></span><p><span>For conditional creates</span></p><span><b>Definition</b></span><div class="markdown"><p>Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for <a href="http.html#ccreate">&quot;Conditional Create&quot;</a>. This is just the query portion of the URL - what follows the &quot;?&quot; (not including the &quot;?&quot;).</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" target="_blank">string</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr class="collapsed striped constraints" id="Bundle.entry.response" data-id="d3a5e51d5b6b46a8bbc7f92564994967" data-parentId="ff144a179492414f9854216ec6dfbbbd"><td class="profile"><span class="baseIcon backboneElement" title="Element"></span><span class="constraints">response</span></td><td class="profile"><span title="This element is included in summaries">Σ</span> <span class="invariant" title="This element has or is affected by constraints">C</span></td><td class="profile"><span>0</span><span class="constraints">..</span><span class="constraints">0</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" target="_blank">BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.entry.response</pre><span><b>Short description</b></span><p><span>Results of execution (transaction/batch/history)</span></p><span><b>Definition</b></span><div class="markdown"><p>Indicates the results of processing the corresponding 'request' entry in the batch or transaction being responded to or what the results of an operation where when returning history.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" target="_blank">BackboneElement</a></p><span><b>Conditions</b></span><p><span>The cardinality or value of this element may be affected by these constraints: </span><span><b>bdl-4</b></span></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr><tr id="Bundle.signature" data-id="77520ddb8bf349fe8154bef613f38763" data-parentId="40f0fb34a1aa4542a0772c27b957a715"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>signature</span></td><td class="profile"><span title="This element is included in summaries">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Signature.json" title="Signature
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Signature.json" target="_blank">Signature</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><pre>Bundle.signature</pre><span><b>Short description</b></span><p><span>Digital Signature</span></p><span><b>Definition</b></span><div class="markdown"><p>Digital Signature - base64 encoded. XML-DSig or a JWT.</p>
+</div><span><b>Requirements</b></span><div class="markdown"><p>A Signature holds an electronic representation of a signature and its supporting context in a FHIR accessible form. The signature may either be a cryptographic type (XML DigSig or a JWS), which is able to provide non-repudiation proof, or it may be a graphical image that represents a signature or a signature process. This element allows capturing signatures on documents, messages, transactions or even search responses, to support content-authentication, non-repudiation or other business cases. This is primarily relevant where the bundle may travel through multiple hops or via other mechanisms where HTTPS non-repudiation is insufficient.</p>
+</div><span><b>Comments</b></span><div class="markdown"><p>The signature could be created by the &quot;author&quot; of the bundle or by the originating device.   Requirements around inclusion of a signature, verification of signatures and treatment of signed/non-signed bundles is implementation-environment specific.</p>
+</div><span><b>Data type</b></span><p><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Signature.json" title="Signature
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Signature.json" target="_blank">Signature</a></p><span><b>Constraints</b></span><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></td></tr></table></div><div class="treetable-right-panel"></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable1ef7e78b0df1431d90cb63fc4b89a801 = new Stu3TreeTable(false);
+resourceTreeTable1ef7e78b0df1431d90cb63fc4b89a801.init("1ef7e78b0df1431d90cb63fc4b89a801");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="f291a1a1-63b4-42f9-9d1c-aaea0326ddb3">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">StructureDefinition</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKMedikationTransaction</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.url" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">url</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationTransaction</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.version" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">5.0.0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.name" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKMedikationTransaction</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.title" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">title</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiK Medikation Transactionbundle</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.status" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.experimental" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">experimental</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.date" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2025-06-26</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.publisher" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">publisher</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">gematik GmbH</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.description" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Dieses Profil definiert die Transaktions-Bundles im Rahmen von ISiK-Medikations-Szenarien.</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.fhirVersion" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">fhirVersion</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">4.0.1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.kind" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">kind</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">resource</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.abstract" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">abstract</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.type" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.baseDefinition" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">baseDefinition</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/Bundle</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.derivation" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">derivation</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">constraint</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">differential</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.type</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.type</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.short" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">short</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Type des Bundles</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.comment" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">comment</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">fix: transaction</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.fixed" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">fixedCode</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">transaction</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.short" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">short</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Der einzelne Eintrag zur Interaktion</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.min" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">min</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.link</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.link</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.max" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">max</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.fullUrl</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.fullUrl</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.short" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">short</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">vollst&#228;ndige URL der Ressource</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.comment" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">comment</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">auch die Verwendung von UUIDs in der Form &#39;;urn:uuid:.....&#39; ist m&#246;glich.</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.resource</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.resource</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.short" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">short</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Die Ressourcen-Instanz der Interaktion</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.search</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.search</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.max" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">max</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.request</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.request</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.short" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">short</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">HTTP-Request innerhalb der Transaktion</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.min" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">min</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.request.method</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.request.method</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.short" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">short</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">HTTP-Verb</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.request.url</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.request.url</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.short" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">short</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Request-URL</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.response</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bundle.entry.response</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.max" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">max</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">differential</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">StructureDefinition</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="ca9b9b20-c1db-420d-a844-50552b1b842b">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.resourceType" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">StructureDefinition</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKMedikationTransaction</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.url" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationTransaction</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.version" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">5.0.0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.name" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKMedikationTransaction</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.title" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">title</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiK Medikation Transactionbundle</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.status" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.experimental" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">experimental</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.date" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2025-06-26</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.publisher" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">publisher</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">gematik GmbH</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.description" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">description</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Dieses Profil definiert die Transaktions-Bundles im Rahmen von ISiK-Medikations-Szenarien.</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.fhirVersion" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">fhirVersion</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4.0.1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.kind" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">kind</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">resource</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.abstract" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">abstract</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.type" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.baseDefinition" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">baseDefinition</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/Bundle</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.derivation" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">derivation</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">constraint</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">differential</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">element</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.type</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.type</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.short" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">short</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Type des Bundles</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.comment" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">comment</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">fix: transaction</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.fixedCode" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">fixedCode</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">transaction</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.short" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">short</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Der einzelne Eintrag zur Interaktion</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.min" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">min</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">1</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.link</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.link</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.max" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">max</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">0</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.fullUrl</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.fullUrl</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.short" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">short</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">vollst&#228;ndige URL der Ressource</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.comment" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">comment</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">auch die Verwendung von UUIDs in der Form &#39;;urn:uuid:.....&#39; ist m&#246;glich.</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.resource</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.resource</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.short" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">short</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Die Ressourcen-Instanz der Interaktion</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.search</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.search</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.max" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">max</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">0</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.request</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.request</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.short" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">short</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">HTTP-Request innerhalb der Transaktion</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.min" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">min</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">1</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.request.method</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.request.method</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.short" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">short</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">HTTP-Verb</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.request.url</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.request.url</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.short" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">short</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Request-URL</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">mustSupport</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.id" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.response</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">path</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle.entry.response</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.max" title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" target="_blank">max</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">0</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="86089751-7d7e-4fd9-8bd7-55c408e4de9c">
+    <a  href='artifacts/package/StructureDefinition-ISiKMedikationTransaction.json'>ISiK Medikation Transactionbundle</a>
+</div>
+  </div>
+</div>
+<h3 id="constraintsinvarianten">Constraints/Invarianten</h3>
+<h3 id="terminology-bindings">Terminology-Bindings</h3>
+<!--### Mappings
+
+-->
+<p>Transaction-Bundles werden nicht persistiert, sondern ausschließlich im Kontext von FHIR-Transaktionen verwendet, vgl. <a href="https://www.hl7.org/fhir/R4/http.html#transaction">FHIR RESTful API - Batch/Transaction</a>.</p>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

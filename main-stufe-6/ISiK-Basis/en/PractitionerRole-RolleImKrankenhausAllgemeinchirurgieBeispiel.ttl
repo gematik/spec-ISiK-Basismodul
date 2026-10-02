@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/PractitionerRole/RolleImKrankenhausAllgemeinchirurgieBeispiel> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "RolleImKrankenhausAllgemeinchirurgieBeispiel"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKRolleImKrankenhaus" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKRolleImKrankenhaus>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole RolleImKrankenhausAllgemeinchirurgieBeispiel</b></p><a name=\"RolleImKrankenhausAllgemeinchirurgieBeispiel\"> </a><a name=\"hcRolleImKrankenhausAllgemeinchirurgieBeispiel\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKRolleImKrankenhaus.html\">ISiKRolleImKrankenhaus</a></p></div><p><b>active</b>: true</p><p><b>practitioner</b>: <a href=\"Practitioner-PractitionerWalterArzt.html\">Practitioner Walter Arzt(official)</a></p><p><b>organization</b>: <a href=\"Organization-AbteilungAllgemeinchirurgieOrganisationBeispiel.html\">Organization Allgemeinchirurgie</a></p><p><b>code</b>: <span title=\"Codes:{https://fhir.kbv.de/CodeSystem/KBV_CS_Base_Role_Care FA}\">Fachärzt:in</span></p><p><b>specialty</b>: <span title=\"Codes:{http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen ALLG}, {http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert 1500}\">Allgemeinmedizin</span></p></div>"
+  ] ;
+  fhir:PractitionerRole.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:PractitionerRole.practitioner [
+     fhir:link <https://gematik.de/fhir/isik/Practitioner/PractitionerWalterArzt> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/PractitionerWalterArzt" ]
+  ] ;
+  fhir:PractitionerRole.organization [
+     fhir:link <https://gematik.de/fhir/isik/Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel> ;
+     fhir:Reference.reference [ fhir:value "Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel" ]
+  ] ;
+  fhir:PractitionerRole.code [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_Base_Role_Care" ] ;
+       fhir:Coding.code [ fhir:value "FA" ] ;
+       fhir:Coding.display [ fhir:value "Fachärzt:in" ]
+     ]
+  ] ;
+  fhir:PractitionerRole.specialty [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen" ] ;
+       fhir:Coding.code [ fhir:value "ALLG" ] ;
+       fhir:Coding.display [ fhir:value "Allgemeinmedizin" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert" ] ;
+       fhir:Coding.code [ fhir:value "1500" ] ;
+       fhir:Coding.display [ fhir:value "Allgemeine Chirurgie" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/PractitionerRole/RolleImKrankenhausAllgemeinchirurgieBeispiel.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

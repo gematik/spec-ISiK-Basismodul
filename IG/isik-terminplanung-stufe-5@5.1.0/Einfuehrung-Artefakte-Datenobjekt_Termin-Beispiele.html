@@ -1,0 +1,961 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Terminplanung</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Terminplanung
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Akteure.html">
+                                            Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Interaktionen.html">
+                                            Interaktionen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Prozesse.html">
+                                            Prozesse
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Informationsmodell.html">
+                                            Informationsmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Architekturoptionen.html">
+                                            Architekturoptionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Operations.html">
+                                            Operation: $book
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Kalender.html">
+                                            ISiKKalender (Schedule)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Terminblock.html">
+                                            ISiKTerminblock (Slot)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Termin.html">
+                                            ISiKTermin (Appointment)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedizinischeBehandlungseinheit.html">
+                                            ISiKMedizinischeBehandlungseinheit (HealthcareService)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#e14e10a0-2e23-40b4-876f-3035f53f128f" aria-controls="e14e10a0-2e23-40b4-876f-3035f53f128f" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#cedb96d6-2451-4428-af47-98b40d8a8ebb" aria-controls="cedb96d6-2451-4428-af47-98b40d8a8ebb" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#a3b6d978-ac56-4b74-a0f0-b9d530520449" aria-controls="a3b6d978-ac56-4b74-a0f0-b9d530520449" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#f6310a3c-cc34-44af-88e4-9c66857a7acd" aria-controls="f6310a3c-cc34-44af-88e4-9c66857a7acd" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="e14e10a0-2e23-40b4-876f-3035f53f128f">
+    <div class="stu3-treetable" id="330af40207744b3088c47faea34c751a" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="3acd0462aef04a6bac75cc38d7bb487d"><td class="instance"><span class="baseIcon primitive"></span><b>Appointment</b></td></tr><tr class="collapsed" data-id="48e4f60ea0cd4475b0930a4430dfafcc" data-parentId="3acd0462aef04a6bac75cc38d7bb487d"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ISiKTerminExample</span></td></tr><tr class="collapsed" data-id="b08ed808beb741599992a7c51ba85ee0" data-parentId="3acd0462aef04a6bac75cc38d7bb487d"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="7e9c595ddeba4a869646efb2339ad588" data-parentId="b08ed808beb741599992a7c51ba85ee0"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin</span></td></tr><tr class="collapsed" data-id="86f9cc3427ff4b6cadcb633545d2a875" data-parentId="b08ed808beb741599992a7c51ba85ee0"><td class="instance"><span class="baseIcon primitive"></span><b>tag</b></td></tr><tr class="collapsed" data-id="7d0aaba952f940cfbb583dd5f1d0e6e3" data-parentId="86f9cc3427ff4b6cadcb633545d2a875"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/CodeSystem/common-meta-tag-de</span></td></tr><tr class="collapsed" data-id="f1fa24dffcf24b70983b1761bdf90883" data-parentId="86f9cc3427ff4b6cadcb633545d2a875"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>external</span></td></tr><tr class="collapsed" data-id="3c91c68501c248928fdfb190ffa1c325" data-parentId="3acd0462aef04a6bac75cc38d7bb487d"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>proposed</span></td></tr><tr class="collapsed" data-id="4c654e386a604864b32ba82db48a25de" data-parentId="3acd0462aef04a6bac75cc38d7bb487d"><td class="instance"><span class="baseIcon primitive"></span><b>serviceType</b></td></tr><tr class="collapsed" data-id="1f145b3894794335a556c85cbc5e4135" data-parentId="4c654e386a604864b32ba82db48a25de"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="3bc82aa67f884e94a5f3657258913bd6" data-parentId="1f145b3894794335a556c85cbc5e4135"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/service-type</span></td></tr><tr class="collapsed" data-id="b7cd3298bd4540b4b7362e16784afed9" data-parentId="1f145b3894794335a556c85cbc5e4135"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>124</span></td></tr><tr class="collapsed" data-id="16757372e99440cd923736f4af97ddb9" data-parentId="3acd0462aef04a6bac75cc38d7bb487d"><td class="instance"><span class="baseIcon primitive"></span><b>specialty</b></td></tr><tr class="collapsed" data-id="2828c3256ce347d9a9abfd61ce91f762" data-parentId="16757372e99440cd923736f4af97ddb9"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="b982f484b2394ea59fbf30fbca01feca" data-parentId="2828c3256ce347d9a9abfd61ce91f762"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen</span></td></tr><tr class="collapsed" data-id="9b874a5feaa84b6484f40e566ba9c6e5" data-parentId="2828c3256ce347d9a9abfd61ce91f762"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>ALLG</span></td></tr><tr class="collapsed" data-id="e3d2f6bb180444ef90582a513bdcdeb2" data-parentId="3acd0462aef04a6bac75cc38d7bb487d"><td class="instance"><span class="baseIcon primitive"></span><b>priority</b></td></tr><tr class="collapsed" data-id="0f222ac4c31542b39124552291a37e35" data-parentId="e3d2f6bb180444ef90582a513bdcdeb2"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="df5dfffc74cb466ab24e9e71fe0b2235" data-parentId="0f222ac4c31542b39124552291a37e35"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension</span></td></tr><tr class="collapsed" data-id="6c55332edef74df6ad4d9fa2fabd0f64" data-parentId="0f222ac4c31542b39124552291a37e35"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="0da5c368ca0d48adae22a6e4513861e7" data-parentId="6c55332edef74df6ad4d9fa2fabd0f64"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="b4611af0ccbb44e6a3e1a22a32f5c765" data-parentId="0da5c368ca0d48adae22a6e4513861e7"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="0b7cae6d48c9450982134ab8b9ad5caf" data-parentId="0da5c368ca0d48adae22a6e4513861e7"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>25876001</span></td></tr><tr class="collapsed" data-id="fdf09d2ca00e4ebb96d3aaffa7fd808a" data-parentId="3acd0462aef04a6bac75cc38d7bb487d"><td class="instance"><span class="baseIcon primitive"></span><b>start : </b><span>2022-12-10T09:00:00+00:00</span></td></tr><tr class="collapsed" data-id="7ad09866397b4f83928e110fb924c0c0" data-parentId="3acd0462aef04a6bac75cc38d7bb487d"><td class="instance"><span class="baseIcon primitive"></span><b>end : </b><span>2022-12-10T11:00:00+00:00</span></td></tr><tr class="collapsed" data-id="0daed46266384761ab0e51314a6c8e2f" data-parentId="3acd0462aef04a6bac75cc38d7bb487d"><td class="instance"><span class="baseIcon primitive"></span><b>slot</b></td></tr><tr class="collapsed" data-id="8b752a9357204a1a90c4f71d654c10bb" data-parentId="0daed46266384761ab0e51314a6c8e2f"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Slot/ISiKTerminblockExample</span></td></tr><tr class="collapsed" data-id="6e6acb36685e435ebb9cdc0784c9b282" data-parentId="3acd0462aef04a6bac75cc38d7bb487d"><td class="instance"><span class="baseIcon primitive"></span><b>participant</b></td></tr><tr class="collapsed" data-id="ffcc5e985fdb4465b5491c2da98ca743" data-parentId="6e6acb36685e435ebb9cdc0784c9b282"><td class="instance"><span class="baseIcon primitive"></span><b>actor</b></td></tr><tr class="collapsed" data-id="3cbb882ddaf041e287f2d7fb0b9ce7d2" data-parentId="ffcc5e985fdb4465b5491c2da98ca743"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/ISiKPatientTest</span></td></tr><tr class="collapsed" data-id="055c11be08b643e4b0e8e2e0dc4b68e7" data-parentId="ffcc5e985fdb4465b5491c2da98ca743"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Test Patient</span></td></tr><tr class="collapsed" data-id="67381d2289e84fbc8d67095abf1a73cc" data-parentId="6e6acb36685e435ebb9cdc0784c9b282"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>accepted</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable330af40207744b3088c47faea34c751a = new InstanceTree();
+resourceTreeTable330af40207744b3088c47faea34c751a.init("330af40207744b3088c47faea34c751a");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="cedb96d6-2451-4428-af47-98b40d8a8ebb">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">Appointment</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.id" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKTerminExample</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.profile" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.tag" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">tag</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.tag.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/CodeSystem/common-meta-tag-de</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.tag.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">external</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">tag</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.status" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">proposed</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">serviceType</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType.coding" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType.coding.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/service-type</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType.coding.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">124</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">serviceType</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">specialty</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ALLG</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">specialty</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.priority" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">priority</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.priority.extension" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.priority.extension.value" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">valueCodeableConcept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.priority.extension.value.coding" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.priority.extension.value.coding.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.priority.extension.value.coding.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">25876001</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCodeableConcept</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">priority</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.start" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">start</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2022-12-10T09:00:00Z</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.end" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">end</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2022-12-10T11:00:00Z</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.slot" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">slot</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.slot.reference" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot/ISiKTerminblockExample</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">slot</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">participant</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.actor" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">actor</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.actor.reference" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/ISiKPatientTest</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.actor.display" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Test Patient</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">actor</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.status" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">accepted</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">participant</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Appointment</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="a3b6d978-ac56-4b74-a0f0-b9d530520449">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.resourceType" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Appointment</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.id" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKTerminExample</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.tag" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">tag</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.tag.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">external</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.tag.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/common-meta-tag-de</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.profile" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.status" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">proposed</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.start" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">start</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2022-12-10T09:00:00Z</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.end" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">end</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2022-12-10T11:00:00Z</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.slot" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">slot</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.slot.reference" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot/ISiKTerminblockExample</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">serviceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType.coding" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType.coding.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">124</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType.coding.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/service-type</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">specialty</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ALLG</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">participant</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.actor" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">actor</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.actor.display" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Test Patient</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.actor.reference" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/ISiKPatientTest</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.status" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">accepted</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment._priority" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">_priority</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment._priority.extension" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment._priority.extension.url" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment._priority.extension.valueCodeableConcept" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">valueCodeableConcept</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment._priority.extension.valueCodeableConcept.coding" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment._priority.extension.valueCodeableConcept.coding.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">25876001</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment._priority.extension.valueCodeableConcept.coding.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="f6310a3c-cc34-44af-88e4-9c66857a7acd">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Appointment-ISiKTerminExample.json'>ISiKTerminExample</a>
+</div>
+  </div>
+</div>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#ab89ac1b-3c4a-4748-8c0d-2afcae67ca7b" aria-controls="ab89ac1b-3c4a-4748-8c0d-2afcae67ca7b" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#3fb16a12-0f43-4921-8c95-a872f7ecc575" aria-controls="3fb16a12-0f43-4921-8c95-a872f7ecc575" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#0cf7ea9f-aa19-467d-9778-55e5c447110d" aria-controls="0cf7ea9f-aa19-467d-9778-55e5c447110d" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#f6afe43b-73f0-4a49-9be6-a4bf247cd752" aria-controls="f6afe43b-73f0-4a49-9be6-a4bf247cd752" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="ab89ac1b-3c4a-4748-8c0d-2afcae67ca7b">
+    <div class="stu3-treetable" id="c5de061de6fe426c89bc290a36911420" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="9f9bf34d193f4a328be12a34fe8bed07"><td class="instance"><span class="baseIcon primitive"></span><b>Appointment</b></td></tr><tr class="collapsed" data-id="e0d15e0a3b9a451291b6b973dcd2fb67" data-parentId="9f9bf34d193f4a328be12a34fe8bed07"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ISiKTerminExampleExtendedICU</span></td></tr><tr class="collapsed" data-id="20ba8d7539984229aa8406d28b4a01c2" data-parentId="9f9bf34d193f4a328be12a34fe8bed07"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="9debc8cff43d4ac3b79d39ba2e9a41de" data-parentId="20ba8d7539984229aa8406d28b4a01c2"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin</span></td></tr><tr class="collapsed" data-id="6f324a5334c4410691552d8781e82287" data-parentId="20ba8d7539984229aa8406d28b4a01c2"><td class="instance"><span class="baseIcon primitive"></span><b>tag</b></td></tr><tr class="collapsed" data-id="478bda317cf64c61a2d107c752286a16" data-parentId="6f324a5334c4410691552d8781e82287"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/CodeSystem/common-meta-tag-de</span></td></tr><tr class="collapsed" data-id="bb5e8c17da3b459382a0721313834208" data-parentId="6f324a5334c4410691552d8781e82287"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>external</span></td></tr><tr class="collapsed" data-id="9b4fa441c7324711b68fecaf296acc73" data-parentId="9f9bf34d193f4a328be12a34fe8bed07"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>proposed</span></td></tr><tr class="collapsed" data-id="5610434867794145bb9f87ac155868c1" data-parentId="9f9bf34d193f4a328be12a34fe8bed07"><td class="instance"><span class="baseIcon primitive"></span><b>serviceType</b></td></tr><tr class="collapsed" data-id="adea039b93b04dc08c73bcb7944e3bce" data-parentId="5610434867794145bb9f87ac155868c1"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="ca00cc35a494407a97fef068cbe6f518" data-parentId="adea039b93b04dc08c73bcb7944e3bce"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/service-type</span></td></tr><tr class="collapsed" data-id="6cea795a8380417cb3a693ffea86e6da" data-parentId="adea039b93b04dc08c73bcb7944e3bce"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>174</span></td></tr><tr class="collapsed" data-id="d59989bacc724b279f25fb635d1fe1cc" data-parentId="9f9bf34d193f4a328be12a34fe8bed07"><td class="instance"><span class="baseIcon primitive"></span><b>specialty</b></td></tr><tr class="collapsed" data-id="6bd475d84dd342cd802a7e8d7a0cd4c0" data-parentId="d59989bacc724b279f25fb635d1fe1cc"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="a38d1ee8df5c4c1492d41d4a0ffd77b9" data-parentId="6bd475d84dd342cd802a7e8d7a0cd4c0"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen</span></td></tr><tr class="collapsed" data-id="708f0240feea4b0da9e3971e2e94ee7c" data-parentId="6bd475d84dd342cd802a7e8d7a0cd4c0"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>INTM</span></td></tr><tr class="collapsed" data-id="5e67142f0ea54e1dbb496cc997f465df" data-parentId="d59989bacc724b279f25fb635d1fe1cc"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="c513f6429c8b44618c5a2155324bf4f8" data-parentId="5e67142f0ea54e1dbb496cc997f465df"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert</span></td></tr><tr class="collapsed" data-id="c901f3aefecb4e2692d5a5c768988d25" data-parentId="5e67142f0ea54e1dbb496cc997f465df"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>3600</span></td></tr><tr class="collapsed" data-id="e804a60543244922bcfd91a24298b57e" data-parentId="9f9bf34d193f4a328be12a34fe8bed07"><td class="instance"><span class="baseIcon primitive"></span><b>priority</b></td></tr><tr class="collapsed" data-id="6655769916d442d7898892b4bbf559e6" data-parentId="e804a60543244922bcfd91a24298b57e"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="027198a67bf14c74a4fc348ec9a2df4a" data-parentId="6655769916d442d7898892b4bbf559e6"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension</span></td></tr><tr class="collapsed" data-id="db7a19241d454f6ca7da7889021dddc9" data-parentId="6655769916d442d7898892b4bbf559e6"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="93c2bf9c980f4fe996c2290d32fceb51" data-parentId="db7a19241d454f6ca7da7889021dddc9"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="40ae82c1da2c4e2bbfd4db5f6b7c3564" data-parentId="93c2bf9c980f4fe996c2290d32fceb51"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="81eac7685e334e1aaad77fd38459e5d0" data-parentId="93c2bf9c980f4fe996c2290d32fceb51"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>25876001</span></td></tr><tr class="collapsed" data-id="c8ba5d1fdeab46349c6516409c9be3ac" data-parentId="9f9bf34d193f4a328be12a34fe8bed07"><td class="instance"><span class="baseIcon primitive"></span><b>start : </b><span>2022-12-10T09:00:00+00:00</span></td></tr><tr class="collapsed" data-id="d8657683764a489985be1ec9fc869fea" data-parentId="9f9bf34d193f4a328be12a34fe8bed07"><td class="instance"><span class="baseIcon primitive"></span><b>end : </b><span>2022-12-10T09:30:00+00:00</span></td></tr><tr class="collapsed" data-id="8b9bf176b8a64a7193a9dd36064e9c20" data-parentId="9f9bf34d193f4a328be12a34fe8bed07"><td class="instance"><span class="baseIcon primitive"></span><b>slot</b></td></tr><tr class="collapsed" data-id="98364c63dbe04a97a00f641a3066aa8e" data-parentId="8b9bf176b8a64a7193a9dd36064e9c20"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Slot/ISiKTerminblockExample</span></td></tr><tr class="collapsed" data-id="6664973250724791a122d926c5482578" data-parentId="9f9bf34d193f4a328be12a34fe8bed07"><td class="instance"><span class="baseIcon primitive"></span><b>participant</b></td></tr><tr class="collapsed" data-id="f15d5323845546458e97b5ff106d44ed" data-parentId="6664973250724791a122d926c5482578"><td class="instance"><span class="baseIcon primitive"></span><b>actor</b></td></tr><tr class="collapsed" data-id="224275b645cf4173862670aa498db5d8" data-parentId="f15d5323845546458e97b5ff106d44ed"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/ISiKPatientTest</span></td></tr><tr class="collapsed" data-id="ab6459e12b6847a4917bffdbb06aed5f" data-parentId="f15d5323845546458e97b5ff106d44ed"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Test Patient</span></td></tr><tr class="collapsed" data-id="9ebc53a11ba248d3a1c9823377d7b864" data-parentId="6664973250724791a122d926c5482578"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>accepted</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTablec5de061de6fe426c89bc290a36911420 = new InstanceTree();
+resourceTreeTablec5de061de6fe426c89bc290a36911420.init("c5de061de6fe426c89bc290a36911420");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="3fb16a12-0f43-4921-8c95-a872f7ecc575">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">Appointment</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.id" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKTerminExampleExtendedICU</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.profile" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.tag" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">tag</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.tag.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/CodeSystem/common-meta-tag-de</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.tag.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">external</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">tag</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.status" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">proposed</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">serviceType</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType.coding" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType.coding.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/service-type</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType.coding.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">174</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">serviceType</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">specialty</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">INTM</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">3600</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">specialty</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.priority" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">priority</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.priority.extension" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.priority.extension.value" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">valueCodeableConcept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.priority.extension.value.coding" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.priority.extension.value.coding.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.priority.extension.value.coding.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">25876001</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCodeableConcept</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">priority</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.start" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">start</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2022-12-10T09:00:00Z</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.end" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">end</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2022-12-10T09:30:00Z</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.slot" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">slot</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.slot.reference" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot/ISiKTerminblockExample</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">slot</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">participant</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.actor" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">actor</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.actor.reference" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/ISiKPatientTest</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.actor.display" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Test Patient</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">actor</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.status" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">accepted</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">participant</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Appointment</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="0cf7ea9f-aa19-467d-9778-55e5c447110d">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.resourceType" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Appointment</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.id" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKTerminExampleExtendedICU</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.tag" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">tag</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.tag.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">external</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.tag.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/common-meta-tag-de</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.meta.profile" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.status" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">proposed</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.start" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">start</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2022-12-10T09:00:00Z</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.end" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">end</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2022-12-10T09:30:00Z</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.slot" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">slot</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.slot.reference" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot/ISiKTerminblockExample</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">serviceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType.coding" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType.coding.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">174</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.serviceType.coding.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/service-type</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">specialty</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">INTM</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">3600</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.specialty.coding.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">participant</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.actor" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">actor</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.actor.display" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Test Patient</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.actor.reference" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/ISiKPatientTest</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment.participant.status" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">accepted</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment._priority" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">_priority</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment._priority.extension" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment._priority.extension.url" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment._priority.extension.valueCodeableConcept" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">valueCodeableConcept</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment._priority.extension.valueCodeableConcept.coding" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment._priority.extension.valueCodeableConcept.coding.code" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">25876001</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKTermin.json#Appointment._priority.extension.valueCodeableConcept.coding.system" title="ISiKTermin
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKTermin.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="f6afe43b-73f0-4a49-9be6-a4bf247cd752">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Appointment-ISiKTerminExampleExtendedICU.json'>ISiKTerminExampleExtendedICU</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+# Funktionen und Interaktionen - ISiK Formularmodul Implementation Guide v6.0.0
+
+ISiK Formularmodul Implementation Guide
+
+Version 6.0.0 - ballot 
+
+* [**Table of Contents**](toc.md)
+* **Funktionen und Interaktionen**
+
+## Funktionen und Interaktionen
+
+### Launch eines Formular-Renderers
+
+Der Aufruf eines Formular-Renderes kann mit verschiedenen Methoden erfolgen.
+
+#### Fremdaufruf
+
+Die Methode des Fremdaufrufes versucht eine Brückentechnologie bereitzustellen, die es heutigen Anwendungssystemen, die noch nicht über eine SMART-Launch-Funktionalität verfügen, dennoch mit einfachsten Mitteln einen Formular-Renderer integrieren zu können. Der Fremdaufruf ist jedoch bewusst nur rudimentär definiert, da mittelfristig die Umstellung auf den SMART-App-Launch dringendst empfohlen wird.
+
+Beim Fremdaufruf muss sichergestellt sein, dass ein adäquater Sicherheitsmechanismus zum Einsatz kommt, damit der Aufruf nicht bestehende Berechtigungsstrukturen außer Kraft setzt.
+
+Die vorgeschlagenen Übergabe-Parameter sind:
+
+* [obligatorisch] Patientennummer (gängig PID; Identifier am [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient)) 
+* Ist für die Herstellung eines passenden Launch-Context nach SDC unabdingbar
+ 
+* [optional] Abrechnungsnummer (gängig Fallnummer; Identifier am [ISiKAbrechnungsfall](https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall)) 
+* Mit der Abrechnungsnummer kann eingeschränkt werden, welche Encounter für die Extraktion von Daten ausgewählt werden können. Der richtige Encounter muss gemäß der Beschreibungen in [ISiK Basis Stufe 6: Herstellung von Patient- und Encounterkontext](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/Patient-Besuch-Kontext.html) manuell gewahlt werden
+ 
+* [optional] Aufnahmenummer (Identifier am [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung)) 
+* Mit der Aufnahmenummer kann der richtige Encounter bereits mit übergeben werden
+ 
+* [optional] Canonical der [FormularDefinition](StructureDefinition-ISiKFormularDefinition.md) 
+* Mittels der Canonical einer [FormularDefinition](StructureDefinition-ISiKFormularDefinition.md) kann der richtige Fragebogen schon vorausgewählt werden
+ 
+* [obliagtorisch] URL des FHIR-Endpunktes, der für die Ermittlung von Daten zur Vorbelegung sowie die Rückübermittlung der [FormularDaten](StructureDefinition-ISiKFormularDaten.md) verwendet werden soll.
+
+#### SMART-App-Launch
+
+Der standardisierte Aufruf einer beliebigen webbbasierten Applikation aus einem klinischen Primärsystem heraus wird im Modul ISiK-Connect beschrieben und sollte für den Aufruf eines Formular-Renderers mit Übergabe eines Benutzer-, Patienten- und Encounterkontextes präferiert zum Einsatz kommen.
+
+#### Stand-Alone-Launch
+
+Beim Stand-Alone Launch startet der Benutzer den Formular-Renderer ohne Kontext. Der Patienten- und Encounter-Kontext wird im Formular-Renderer gemäß der Beschreibungen in [ISiK Basis Stufe 6: Herstellung von Patient- und Encounterkontext](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/Patient-Besuch-Kontext.html) vom Anwender manuell getroffen.
+
+Beim Stand-Alone-Launch muss sichergestellt sein, dass ein adäquater Sicherheitsmechanismus zum Einsatz kommt, damit bestehende Berechtigungsstrukturen nicht außer Kraft gesetzt werden.
+
+### Interaktion: FormularRendering
+
+Die Interaktion FormularRendering beschreibt die Darstellung einer [FormularDefinition](StructureDefinition-ISiKFormularDefinition.md) in einem [FormularRenderer](Akteure.md#formularrenderer) und die damit verbundenen Interaktionen mit dem Anwender, um die entsprechenden [FormularDaten](StructureDefinition-ISiKFormularDaten.md) zu erheben. Dabei sind alle "In-Scope"-Extensions auf der Seite [Extensions](Extensions.md) zu interpretieren und entsprechend darzustellen. Ebenso sind die folgenden Interaktionen zu beachten, sofern sie nicht in einen eigenen Akteur augelagert sind. Ist die FormularDatenVorbelegung ausgelagert, so sollte beim FormularRendering ein QuestionnaireResponse entgegen genommen werden können, der im Rahmen der Vorbelegunmg erstellt wurde und die entsprechenden Daten bereits enthält, damit diese im Formular dargestellt werden können.
+
+### Interaktion: FormularDefinitionsVerwaltung
+
+Die Interaktion FormularDefinitionsVerwaltung dient der Bereitstellung von FormularDefinitionen. In der ersten Ausbaustufe dieses Moduls wird diese Funktionalität als integraler Bestandteil von FormularRenderern angenommen. Perspektivisch sollten [FormularRenderer](Akteure.md#formularrenderer) jedoch in der Lage sein, auch auf externe Quellen, die als FormularDefinitionBereitsteller agieren, zugreifen zu können, beispielsweise auf nationale Formular-Verzeichnisse oder Formulardefintionen, die vom aufrufenden System (FormularLauncher) bereitgestellt werden.
+
+### Interaktion: FormularDatenVorbelegung
+
+Ein FormularRenderer prüft eine [FormularDefinition](StructureDefinition-ISiKFormularDefinition.md) auf entsprechende Annotationen für die automatische Vorbelegung. Dies kann entweder mittels der [Expression based population](https://build.fhir.org/ig/HL7/sdc/populate.html#exp-pop)
+ oder der [Observation based prepopulation](https://build.fhir.org/ig/HL7/sdc/populate.html#obs-pop) geschehen.
+
+Die folgenden Core und SDC Extensions sind für die Vorbelegung in dieser Stufe relevant. Unter [Extensions](Extensions.md) sind mehr Informationen dazu zu finden.
+
+* [Launch Contexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)
+* [Initial Expression](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html)
+* [Obervation link period](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationLinkPeriod.html)
+
+### Funktion: FormularDatenValidierung
+
+Bei der Formulardatenvalidierung handelt es sich formal nicht um eine **Inter**aktion, da diese derzeit als eine Aktion angenommen wird, die vom [FormularRenderer](Akteure.md#formularrenderer) eigenständig ausgeführt wird. Gemäß FHIR-Spezifikation ist die Validierung jedoch auch als ein Service mittels der $validate-Operation implementierbar.
+
+In künftigen Ausbaustufen des ISiK-Formular-Moduls ist auch eine Einbindung [externer Validierungs-Services](https://hl7.org/fhir/R4/validation.html#op) denkbar. Daher wird diese Funktion bereits in dieser Stufe als **potentielle** Interaktion betrachtet.
+
+Die Datenextraktion wird in dieser Stufe zunächst ausschließlich von [FormularRenderer](Akteure.md#formularrenderer) implementiert. Hierbei ist zu beachten, dass [FormularDaten](StructureDefinition-ISiKFormularDaten.md) **nicht** gegen ein QuestionnaireResponse-Profil zu validieren sind, sondern gegen die zugrundeliegende [FormularDefinition](StructureDefinition-ISiKFormularDefinition.md).
+
+| | |
+| :--- | :--- |
+| ![](Ampel_auf_Rot_Blau_gematik.svg) | Die Validierung von QuestionnaireResponse-Ressourcen gegen Questionnaires wird nicht von allen Validatoren unterstützt! |
+
+Die folgenden Core und SDC Extensions sind für die Validierung in dieser Stufe relevant. Unter [Extensions](Extensions.md) sind mehr Informationen dazu zu finden.
+
+* [maxDecimalPlaces](https://hl7.org/fhir/R4/extension-maxdecimalplaces.html)
+* [maxValue](https://hl7.org/fhir/R4/extension-maxvalue.html)
+* [minLength](https://hl7.org/fhir/R4/extension-minlength.html)
+* [minValue](https://hl7.org/fhir/R4/extension-minvalue.html)
+* [regex](https://hl7.org/fhir/R4/extension-regex.html)
+
+### Interaktion: FormularDatenExtraktion
+
+Bei der Formulardatenextraktion handelt es sich formal nicht um eine **Inter**aktion, da diese derzeit als eine Aktion angenommen wird, die vom [FormularRenderer](Akteure.md#formularrenderer) eigenständig ausgeführt wird. Gemäß SDC-Spezifikation ist die FormularDaten-Extraktion jedoch auch als ein Service mittels der $extract-Operation implementierbar.
+
+In künftigen Ausbaustufen des ISiK-Formular-Moduls ist auch eine Einbindung [externer Extractions-Services](https://build.fhir.org/ig/HL7/sdc/extraction.html#extraction-service) denkbar. Daher wird diese Funktion bereits in dieser Stufe als **potentielle** Interaktion betrachtet.
+
+Die Datenextraktion wird in dieser Stufe zunächst ausschließlich von [FormularRenderer](Akteure.md#formularrenderer) implementiert und beschränkt sich auf die Methoden
+
+* [Observation based extraction](https://build.fhir.org/ig/HL7/sdc/extraction.html#observation-based-extraction)
+* [Template based extraction](https://build.fhir.org/ig/HL7/sdc/en/extraction.html#template-based-extraction)
+
+Die folgenden Core und SDC Extensions sind für die Extraktion in dieser Stufe relevant. Unter [Extensions](Extensions.md) sind mehr Informationen dazu zu finden.
+
+* [Launch Contexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)
+* [Extract Observation](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationExtract.html)
+* [Extract Observation - Category](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observation-extract-category.html)
+* [Extract Template - Bundle](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-templateExtractBundle.html)
+* [Extract Template - Resource](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-templateExtract.html)
+* [Extract Template - Context](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-templateExtractContext.html)
+* [Extract Template - Extract value](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-templateExtractValue.html)
+
+### Interaktion: FormularDaten-Rückübermittlung
+
+Die Rückübermittlung von [FormularDaten](StructureDefinition-ISiKFormularDaten.md) erfolgt gemäß den Festlegungen in [ISiK Basis Stufe 6: Datenübermittlung aus Subsystemen](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Datenuebermittlung-aus-Subsystemen.html)
+
+Das Bundle für die Rückübermittlung MUSS folgendem Profil entsprechen: [FormularDatenRueckuebermittlungBundle](StructureDefinition-FormularDatenRueckuebermittlungBundle.md)
+
+Dieses Bundle enthält neben den üblichen Bestandteilen eines ISiKBerichtBundles (Composition, Patient, Encounter) zusätzlich:
+
+* [FormularDefinition](StructureDefinition-ISiKFormularDefinition.md) (0..1) - die Referenz auf die FormularDefinition, die der Rückübermittlung zugrunde liegt (optional, falls bereits im Zielsystem vorhanden)
+* [FormularDaten](StructureDefinition-ISiKFormularDaten.md) (1..1) - das ausgefüllte Questionnaire in Form einer QuestionnaireResponse
+* FormularDatenExtrakt (..*) - die extrahierten Daten aus dem Formular (z.B. Observations bei observation-based extraction)
+
+**Hinweis zur menschenlesbaren Repräsentation:** In der aktuellen Ausbaustufe ist es von zentraler Bedeutung, dass das Narrative (Composition.text und Composition.section.text) vollständig und korrekt ausgefüllt wird. Alle im Formular ausgefüllten Informationen MÜSSEN in der menschenlesbaren Repräsentation sichtbar sein, da Primärsysteme derzeit lediglich verpflichtet sind, diese anzuzeigen.
+
+**Hinweis zu strukturierten Daten:** Primärsysteme müssen in der aktuellen Stufe die strukturierten Anteile (FormularDaten und FormularDatenExtrakt) nicht übernehmen. Es wird jedoch empfohlen, das vollständige Bundle zu persistieren, sodass zu einem späteren Zeitpunkt, wenn eine Übernahme einzelner strukturierter Daten möglich ist, diese auch rückwirkend erfolgen kann.
+
+Weitere Details zu Interaktionen und Verarbeitung finden sich in [ISiK Basis: Datenübermittlung aus Subsystemen](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UseCasesAnwendung/Daten%C3%BCbermittlung-aus-Subsystemen.page.md).
+
+#### Übbermittlung von FormularDaten außerhalb der "Datenübermittlung aus Subsystemen"
+
+In bestimmten Anwendungsfällen kann es erforderlich sein, die Rückübermittlung von FormularDaten auch außerhalb der in ISiK Basis Stufe-6 beschriebenen "Datenübermittlung aus Subsystemen" durchzuführen. In diesem Fall ist die Nutzung von `QuestionnaireResponse.text` erforderlich, um eine menschenlesbare Repräsentation der Daten zu übermitteln.
+

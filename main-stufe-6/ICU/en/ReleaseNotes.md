@@ -1,0 +1,110 @@
+# Release Notes - ISiK ICU v6.0.0
+
+ISiK ICU
+
+Version 6.0.0 - active 
+
+* [**Table of Contents**](toc.md)
+* **Release Notes**
+
+## Release Notes
+
+Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
+
+* Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+
+### Version 6.0.0
+
+Datum: 01.07.2026
+
+* `fix` Profil `SD_MII_ICU_Intrakranieller_Druck_Icp` ist nicht mehr Bestandteil der `ICUSourceMinimalRolle` und bleibt nur noch in der `ICUSourceExtendedRolle` verpflichtend (Lockerung der Anforderungen an Systeme) [https://github.com/gematik/spec-ISiK-Basismodul/pull/1269](https://github.com/gematik/spec-ISiK-Basismodul/pull/1269)
+* `fix` Hinzufügen eines Codes zu den ValueSets `VS_MII_ICU_Code_Monitoring_und_Vitaldaten_SNOMED` und `VS_MII_ICU_Code_Monitoring_und_Vitaldaten_LOINC` [https://github.com/gematik/spec-ISiK-Basismodul/pull/1253](https://github.com/gematik/spec-ISiK-Basismodul/pull/1253)
+* `improve` Update der Dependency auf die neue Basisprofile-DE version 1.6.0 für alle Module [https://github.com/gematik/spec-ISiK-Basismodul/pull/1272](https://github.com/gematik/spec-ISiK-Basismodul/pull/1272)
+
+Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+
+### Version 6.0.0-rc1 (Benehmensherstellung)
+
+Datum: 10.06.2026
+
+* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung [https://github.com/gematik/spec-ISiK-Basismodul/pull/1190](https://github.com/gematik/spec-ISiK-Basismodul/pull/1190)
+* `fix` Monitoring-und-Vitaldaten Profil korrigiert, Invarianten-Level behoben [https://github.com/gematik/spec-ISiK-Basismodul/pull/1190](https://github.com/gematik/spec-ISiK-Basismodul/pull/1190)
+* `fix` Entfernung des ISiKBasisServerAkteur aus diesem Implementation Guide [https://github.com/gematik/spec-ISiK-Basismodul/pull/1217](https://github.com/gematik/spec-ISiK-Basismodul/pull/1217)
+* `fix` Optimierung des Category-Codes im Profil `ISiKProzedurReanimation` [https://github.com/gematik/spec-ISiK-Basismodul/pull/1206](https://github.com/gematik/spec-ISiK-Basismodul/pull/1206)
+
+### Version 6.0.0-rc
+
+Datum: 02.04.2026
+
+* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) [https://github.com/gematik/spec-ISiK-Basismodul/pull/1068](https://github.com/gematik/spec-ISiK-Basismodul/pull/1068)
+* `change` `ISiKKoerpertemperatur` wurde analog zur Umbenennung in den deutschen Basisprofilen in `ISiKKoerperkerntemperatur` umbenannt [https://github.com/gematik/spec-ISiK-Basismodul/pull/1104](https://github.com/gematik/spec-ISiK-Basismodul/pull/1104)
+* `add` Neues ICU-Profil `SD_MII_ICU_Koerperkerntemperatur_Stirn` für die Stirntemperaturmessung zur Abschätzung der Körperkerntemperatur ergänzt [https://github.com/gematik/spec-ISiK-Basismodul/pull/1104](https://github.com/gematik/spec-ISiK-Basismodul/pull/1104)
+* Initiales Draft der Stufe 6
+* `improve` Hinzufügen eines Akteurs zur Organspendeerkennung für ICU (alle PDMS betreffend) [https://github.com/gematik/spec-ISiK-Basismodul/pull/1048](https://github.com/gematik/spec-ISiK-Basismodul/pull/1048) - weitere Changes 
+* `improve` Hinzufügen eines Akteurs zur Organspendeerkennung für ICU (alle PDMS betreffend)
+* `improve` Hinzufügen eines Profils zum zerebralen Perfusionsdrucks (ICP); aus den MII Profilen entnommen; dient dem Implementierungsleitfaden zur Organspendeerkennung
+* `improve` Hinzufügen eines Profils zum Richmond Agitation-Sedation Scale (RASS); aus den MII Profilen entnommen; dient dem Implementierungsleitfaden zur Organspendeerkennung
+* `improve` Erweiterung des Akteurs zur ICU extended um verpflichtende Profile zur Pupillenuntersuchung (Pupillenform, Pupillensymmetrie, Pupillenlichtreaktion indirekt) und zu den Prozeduren (Beatmung und reanimation); dient auch dem Implementierungsleitfaden zur Organspendeerkennung
+* `improve` Erweiterung des Akteurs zur ICU extended um verpflichtende Profile zur Beatmung (Unterstützungsdruck, spontane Atemfrequenz, spontanes Atemzugvolumen); dient auch dem Implementierungsleitfaden zur Organspendeerkennung
+ 
+* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - analog zu TC 5.1.2 [https://github.com/gematik/spec-ISiK-Basismodul/pull/1040](https://github.com/gematik/spec-ISiK-Basismodul/pull/1040)
+* `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated` [https://github.com/gematik/spec-ISiK-Basismodul/pull/1053](https://github.com/gematik/spec-ISiK-Basismodul/pull/1053)
+* `improve` Einführung des Suchparameters `code-value-quantity` [https://github.com/gematik/spec-ISiK-Basismodul/pull/1064](https://github.com/gematik/spec-ISiK-Basismodul/pull/1064)
+* `improve` Implicit Rules auf 0..0 beschränkt [https://github.com/gematik/spec-ISiK-Basismodul/pull/1075](https://github.com/gematik/spec-ISiK-Basismodul/pull/1075)
+* `improve` Erweiterung um zahlreiche profile zu (Flüssigkeits-) Bilanzierung - aus dem MII Modul Kerndatensatz ICU entnommen [https://github.com/gematik/spec-ISiK-Basismodul/pull/1093](https://github.com/gematik/spec-ISiK-Basismodul/pull/1093)
+
+### Version 5.1.1
+
+Datum: 17.12.2025
+
+Im Rahmen dieser Technical Correction wurden keine Änderungen an diesem Implementation Guide vorgenommen. Daher sind keine Anpassungen durch Implementierende erforderlich, und die Rückwärtskompatibilität zum zuletzt veröffentlichten Package bleibt uneingeschränkt erhalten.
+
+### Version 5.1.0
+
+Datum: 23.10.2025
+
+* `documentation` Dokumentation Profilen zwecks Kennzeichnung der Ableitung der Profile hinzugefügt [https://github.com/gematik/spec-ISiK-Basismodul/pull/870](https://github.com/gematik/spec-ISiK-Basismodul/pull/870)
+* `documentation` Refactoring und Vervollständigung zur Dokumentation der Herstellung eines Patienten- und Ecounter-Kontextes
+* `documentation` Satz zur Nutzung der Labor-Profile verschoben in den korrekten IG (ICU) - [https://github.com/gematik/spec-ISiK-Basismodul/pull/867](https://github.com/gematik/spec-ISiK-Basismodul/pull/867)
+* `improve` id-Elemente sind in **allen** Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. [https://github.com/gematik/spec-ISiK-Basismodul/pull/799](https://github.com/gematik/spec-ISiK-Basismodul/pull/799)
+* `add` Rendering der im Modul verwendeten ValueSets [https://github.com/gematik/spec-ISiK-Basismodul/pull/802](https://github.com/gematik/spec-ISiK-Basismodul/pull/802)
+* `add` Minimal- und Maximalbeispiele für alle Vitalaparameter Profile wurden hinzugefügt [https://github.com/gematik/spec-ISiK-Basismodul/pull/866](https://github.com/gematik/spec-ISiK-Basismodul/pull/866)
+
+-------
+
+### Version 5.0.0
+
+Datum: 26.06.2025
+
+* `improved` Klarstellung zur Mindestmenge an zu implementierenden Profilen für bestätigungsrelevante Systeme auf Grundlage von Akteuren und Rollen in ISiK [https://github.com/gematik/spec-ISiK-Basismodul/pull/766](https://github.com/gematik/spec-ISiK-Basismodul/pull/766)
+
+Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+
+### Version 5.0.0-rc2 (Benehmensherstellung)
+
+Datum: 5.6.2025
+
+* Keine weiteren Änderungen
+
+### Version 5.0.0-rc
+
+Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
+
+Datum: 09.04.2025
+
+### Version 4.0.1
+
+Datum: 26.2.2025
+
+* `improved` Ausarbeitung des Workflows als eigenständiger ImplementationGuide, u.a. Anpassung der Akteurs-Namen und CapabilityStatements
+
+Die Profile befinden sich im [Package 4.0.1 Vitalparameter](https://simplifier.net/feeds/public/packages/de.gematik.isik-vitalparameter/4.0.1).
+
+-------
+
+### Version 4.0.0
+
+Datum: 25.2.2025
+
+* `improved` Refactoring des Workflows als eigenständiger ImplementationGuide
+

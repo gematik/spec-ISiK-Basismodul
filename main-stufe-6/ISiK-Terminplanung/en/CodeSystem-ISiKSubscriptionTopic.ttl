@@ -1,0 +1,238 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ISiKSubscriptionTopic"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ]
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic"] ;
+  fhir:CodeSystem.version [ fhir:value "6.0.0"] ;
+  fhir:CodeSystem.name [ fhir:value "ISiKSubscriptionTopic"] ;
+  fhir:CodeSystem.title [ fhir:value "ISiK-SubscriptionTopic"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-07-01"^^xsd:date] ;
+  fhir:CodeSystem.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:CodeSystem.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Liste der aller SubscriptionTopics, die in ISiK verwendet werden können. Neben den merge-SubscriptionTopics sind auch die SubscriptionTopics für Updates der Ressourcen enthalten, die in ISiK verwendet werden können."] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "39"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "patient-merge" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Wird ausgelöst, wenn zwei Patient-Ressourcen zusammengeführt werden (Patient merge)." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "encounter-merge" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Wird ausgelöst, wenn zwei Encounter-Ressourcen zusammengeführt werden (Encounter merge)." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/account-merge" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "account-merge" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Wird ausgelöst, wenn zwei Account-Ressourcen zusammengeführt werden (Account merge)." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Account" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Account" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Account-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/AllergyIntolerance" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "AllergyIntolerance" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an AllergyIntolerance-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Appointment" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Appointment" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Appointment-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Binary" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Binary" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Binary-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/CodeSystem" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "CodeSystem" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an CodeSystem-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Composition" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Composition" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Composition-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Condition" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Condition" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Condition-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Coverage" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Coverage" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Coverage-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Device" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Device" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Device-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/DeviceMetric" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "DeviceMetric" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an DeviceMetric-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/DiagnosticReport" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "DiagnosticReport" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an DiagnosticReport-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/DocumentReference" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "DocumentReference" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an DocumentReference-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Encounter" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Encounter" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Encounter-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/HealthcareService" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "HealthcareService" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an HealthcareService-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/List" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "List" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an List-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Location" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Location" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Location-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Medication" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Medication" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Medication-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationAdministration" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "MedicationAdministration" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an MedicationAdministration-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationRequest" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "MedicationRequest" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an MedicationRequest-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationStatement" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "MedicationStatement" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an MedicationStatement-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Observation" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Observation" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Observation-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Organization" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Organization" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Organization-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Patient" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Patient" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Patient-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Practitioner" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Practitioner" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Practitioner-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Procedure" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Procedure" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Procedure-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Questionnaire" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Questionnaire" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Questionnaire-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/QuestionnaireResponse" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "QuestionnaireResponse" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an QuestionnaireResponse-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/RelatedPerson" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "RelatedPerson" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an RelatedPerson-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/RiskAssessment" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "RiskAssessment" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an RiskAssessment-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Schedule" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Schedule" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Schedule-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Slot" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Slot" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Slot-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Subscription" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Subscription" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Subscription-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/ValueSet" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "ValueSet" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an ValueSet-Ressourcen." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/appointment-update" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "appointment-update" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Wird ausgelöst, wenn ein Termin (Appointment) geändert wird, z.B. durch eine Zeitverschiebung oder Statusänderung." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/appointment-cancel" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "appointment-cancel" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Wird ausgelöst, wenn ein Termin (Appointment) abgesagt wird (Appointment.status=cancelled)." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "https://gematik.de/fhir/isik/SubscriptionTopic/generic" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "generic" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Generisches Topic ohne festgelegte Trigger-Semantik. Ermöglicht die Abonnierung beliebiger Ressourcenänderungen über frei definierbare Filterkriterien (Subscription.criteria.extension:filterCriteria im Format FHIR-Suchausdruck). Hintergrund: In FHIR R4 können SubscriptionTopics nicht über die REST-Schnittstelle angelegt werden — dieses Topic dient als Erweiterungspunkt für systemspezifische Anforderungen, die durch vordefinierte ISiK-Topics nicht abgedeckt werden." ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

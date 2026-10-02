@@ -1,0 +1,105 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKDokumentenSuchergebnisse",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenSuchergebnisse",
+  "version": "5.1.0",
+  "name": "ISiKDokumentenSuchergebnisse",
+  "title": "Suchergebnisse einer Dokumentensuche",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-10-23",
+  "publisher": "gematik GmbH",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle.id",
+        "path": "Bundle.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.meta.versionId",
+        "path": "Bundle.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "Bundle.meta.lastUpdated",
+        "path": "Bundle.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "short": "Bundle-Typ",
+        "comment": "Fix: `searchset`",
+        "fixedCode": "searchset",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.total",
+        "path": "Bundle.total",
+        "short": "Gesamtzahl der Suchtreffer",
+        "comment": "Gesamtzahl der Suchtreffer auf dem Server, unabhängig vom Page-Size des aktuellen Bundles",
+        "min": 1
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "resource"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Ergebnisse der Dokumentensuche",
+        "comment": "Jedes Suchergebnis wird in einer separaten `entry` abgebildet. Bundles mit `total = 0` haben keine `entry`",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:DocumentReference",
+        "path": "Bundle.entry",
+        "sliceName": "DocumentReference",
+        "short": "Suchergebnis",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:DocumentReference.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "Serverseitige URL der Ressource",
+        "comment": "Serverseitige URL der Ressource in `entry.resource`",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:DocumentReference.resource",
+        "path": "Bundle.entry.resource",
+        "short": "Eingebettete Ressource",
+        "comment": "Eingebettete Ressource (hier: DocumentReference, die den Suchkriterien entspricht)",
+        "min": 1,
+        "type": [
+          {
+            "code": "DocumentReference",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenMetadaten"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

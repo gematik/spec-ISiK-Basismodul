@@ -1,0 +1,67 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "ExampleMdrRelevant",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"
+    ]
+  },
+  "subjectType": [
+    "Patient"
+  ],
+  "modifierExtension": [
+    {
+      "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMDRRelevanzFormularExtension",
+      "valueCoding": {
+        "code": "rel",
+        "system": "https://gematik.de/fhir/isik/CodeSystem/ISiKMDRRelevanzFormularCS"
+      }
+    }
+  ],
+  "name": "ExampleMdrRelevant",
+  "version": "0.1.0",
+  "url": "https://gematik.de/fhir/isik/Questionnaire/ExampleMdrRelevant",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Gematik GmbH",
+  "title": "Formular aus einem Medizinprodukt",
+  "description": "### Beispiel-Questionnaire, welches eine MDR-Relevanz ausweist\n* Angabe der MDR-Relevanz mittels [ISiKMDRRelevanzFormular](https://simplifier.net/isik-stufe-5/isikmdrrelevanzformularextension)-Extension\nDisclaimer: Dies ist ein simples fantasie Beispiel und hat keine medizinische Aussagekraft. Das erwartete Verhalten von Systemen, die mit diesem Questionnaire testen wäre, dass das Formular mit einer Fehlermeldung *nicht* rendert!",
+  "item": [
+    {
+      "type": "group",
+      "linkId": "1",
+      "text": "Fragen mit Entscheidungspfad, der MDR-relevant ist",
+      "item": [
+        {
+          "type": "integer",
+          "linkId": "1.1",
+          "text": "Wie hoch ist dein systolischer Blutdruck (oberer Wert)?"
+        },
+        {
+          "type": "display",
+          "linkId": "1.1-Krank",
+          "text": "Du sollst zum Arzt!",
+          "enableWhen": [
+            {
+              "question": "1.1",
+              "operator": ">=",
+              "answerInteger": 90
+            }
+          ]
+        },
+        {
+          "type": "display",
+          "linkId": "1.1-Gesund",
+          "text": "Du sollst nicht zum Arzt!",
+          "enableWhen": [
+            {
+              "question": "1.1",
+              "operator": "<",
+              "answerInteger": 90
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+# Akteure - ISiK Organspendeerkennung v6.0.0
+
+ISiK Organspendeerkennung
+
+Version 6.0.0 - active 
+
+* [**Table of Contents**](toc.md)
+* **Akteure**
+
+## Akteure
+
+### Darstellung der Akteure
+
+**Diskussion: **Dieser Abschnitt fasst einen laufenden Arbeitsstand zu einem Akteurs-Konzept in ISiK zusammen, sodass die hier getroffenen Festlegungen nicht als zusätzliche normative Festlegung (MUSS) zu verstehen sind. Vielmehr werden getroffene normative Festlegungen (MUSS), die im Kontext der CapabilityStatements dieses Implementierungsleitfadens geführt werden, hier als 'Akteure' (informativ) beschriebene.
+
+Folgende Akteure dienen der Umsetzung der beschriebenen Workflows (schematische Darstellung - eine technische Detaillierung mit normativer Geltung wird im CapabilityStatement getroffen).
+
+#### Akteur - Rolle Minimal Organspende
+
+Dieser Akteur stellt eine Minimal-Variante dar, deren Funktionen zur Umsetzung der Workflows der Organspenderkennung mittels ISiK-Schnittstelle unabdinglich sind.
+
+Profile: MUSS-Profile aus dem Modul Organspende Interaction: READ, SEARCH
+
+#### Akteur - Rolle Organspende extended
+
+Dieser Akteur beinhaltet über die Minimal-Variante hinaus weitere Interaktionen, die nützlich sind um mittels zusätzliche Parameter die Umsetzung der Workflows der Organspenderkennung mittels ISiK-Schnittstelle weitergehend zu unterstützen.
+
+Profile: MUSS und KANN Profile aus dem Modul Organspende Interaction: READ, SEARCH
+
+#### Akteur - VitalSign ICU Source Extended
+
+Dieser Akteur ist der umfassendste Akteur im Kontext der Organspendeerkennung. Er beinhaltet sämtliche Profile und Interaktionen, die zur Umsetzung der Workflows der Organspenderkennung mittels ISiK-Schnittstelle relevant sind und definiert darüber hinausgehende Interaktionen, die im Kontext der Intensivmedizin relevant sind.
+
+Profile: Profile aus dem Modul Vitalparameter (MI-I) - beinhaltet neben zahlreichen weiteren Profilen auch Profile aus dem Modul Organspende Interaction: READ, SEARCH
+
+Zur genauen Beschreibung und Liste der Interaktionen siehe [hier](https://gemspec.gematik.de/ig/fhir/isik/icu/6.0.0-rc1/CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur.html).
+
+#### Erklärung zu weiteren Capability Statements
+
+Die Akteure aggregieren in diesem Kontext weitere Rollen (als Funktionsbausteine), die als solche statische Mengen von Interaktionen festlegen. Um eine Minimalliste der zu implementierenden Profile einzusehen, sind die importierten Rollen (imports) in den jeweiligen Akteuren zu betrachten und die darin enthaltenen Interaktionen auf spezifische Profile. Die aggregierten Profil- und Interaktions-Anforderungen aus den Rollen, die ein Akteur aggregiert (imports) entsprechen einer Minimalliste der zu implementierenden Profile (wobei im Falle des vorliegenden Workflows einige spezialisierte Profile entfallen können, wenn die notwendigen Daten für ein bestätigungsrelevantes System nicht bereitstehen.)
+
+### Festlegung zur Implementierung der Akteure
+
+Eine Festlegung zur Implementierung erfolgt im Rahmen der Definition der bestätigungsrelevanten Systeme.
+
+Vitalparameter-Server entsprechend der Definition zu den [bestätigungsrelevanten Systeme](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html) MÜSSEN folgenden Akteur implementieren:
+
+* [Akteur - VitalSign ICU Source Extended](https://simplifier.net/isik-stufe-5/ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur/~json)
+
+Primär hervorzuheben sind entsprechend der Definition der DKG dabei.
+
+* KIS mit Funktion elektronische Kurve bzw. entsprechendes KIS-Modul
+* Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche]
+* Elektronische Kurve [z.B. für die Verwendung auf Normal-Stationen]
+

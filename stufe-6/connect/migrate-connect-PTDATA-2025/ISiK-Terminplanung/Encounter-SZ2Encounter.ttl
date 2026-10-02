@@ -1,0 +1,85 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Encounter/SZ2Encounter> a fhir:Encounter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SZ2Encounter"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter SZ2Encounter</b></p><a name=\"SZ2Encounter\"> </a><a name=\"hcSZ2Encounter\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKKontaktGesundheitseinrichtung.html\">ISiKKontaktGesundheitseinrichtung</a></p></div><p><b>identifier</b>: Visit number/222222222-2</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.1/CodeSystem-v3-ActCode.html#v3-ActCode-IMP\">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}\">Abteilungskontakt</span>, <span title=\"Codes:{http://fhir.de/CodeSystem/kontaktart-de normalstationaer}\">Normalstationär</span></p><p><b>subject</b>: <a href=\"Patient-SZ2Patient.html\">Friedlinde Musterfrau (official) Female, DoB: 1924-01-01 ( Medical record number)</a></p><p><b>period</b>: 2024-10-07 --&gt; 2024-10-10</p><p><b>account</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Account/SZ2DRGFall\">Account/SZ2DRGFall</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "VN" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "http://beispiel-krankenhaus.de/sid/besuchsnummer"^^xsd:anyURI ;
+       fhir:l <http://beispiel-krankenhaus.de/sid/besuchsnummer>
+     ] ;
+     fhir:value [ fhir:v "222222222-2" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "finished"] ; # 
+  fhir:class [
+     fhir:system [
+       fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+       fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+     ] ;
+     fhir:code [ fhir:v "IMP" ]
+  ] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/Kontaktebene"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/Kontaktebene>
+       ] ;
+       fhir:code [ fhir:v "abteilungskontakt" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/kontaktart-de"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/kontaktart-de>
+       ] ;
+       fhir:code [ fhir:v "normalstationaer" ] ;
+       fhir:display [ fhir:v "Normalstationär" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:l <https://gematik.de/fhir/isik/Patient/SZ2Patient> ;
+     fhir:reference [ fhir:v "Patient/SZ2Patient" ]
+  ] ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2024-10-07"^^xsd:date ] ;
+     fhir:end [ fhir:v "2024-10-10"^^xsd:date ]
+  ] ; # 
+  fhir:account ( [
+     fhir:l <https://gematik.de/fhir/isik/Account/SZ2DRGFall> ;
+     fhir:reference [ fhir:v "Account/SZ2DRGFall" ] ;
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://beispiel-krankenhaus.de/sid/fallnummern"^^xsd:anyURI ;
+         fhir:l <http://beispiel-krankenhaus.de/sid/fallnummern>
+       ] ;
+       fhir:value [ fhir:v "22222222222" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
