@@ -1,0 +1,86 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Account/SZ1DRGFall> a fhir:Account ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "SZ1DRGFall"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Account SZ1DRGFall</b></p><a name=\"SZ1DRGFall\"> </a><a name=\"hcSZ1DRGFall\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKAbrechnungsfall.html\">ISiKAbrechnungsfall</a></p></div><p><b>identifier</b>: Account number/0123456789</p><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode IMP}\">inpatient encounter</span></p><p><b>subject</b>: <a href=\"Patient-SZ1Patient.html\">Töchterchen Musterfrau (official) Female, DoB: 2010-01-01 ( Medical record number)</a></p><blockquote><p><b>coverage</b></p><p><b>Abrechnungsart</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/Abrechnungsart#Abrechnungsart-DRG\">Abrechnungsart: DRG</a> (Diagnosebezogene Fallgruppen)</p><p><b>coverage</b>: <a href=\"Coverage-SZ1VersicherungGesetzlich.html\">Coverage: status = active; type = gesetzliche Krankenversicherung</a></p></blockquote><blockquote><p><b>coverage</b></p><p><b>Abrechnungsart</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.de/CodeSystem/dkgev/Abrechnungsart#Abrechnungsart-SZ\">Abrechnungsart: SZ</a> (Selbstzahlerrechnung)</p><p><b>coverage</b>: <a href=\"Coverage-SZ1VersicherungSelbstzahler.html\">Coverage: status = active; type = Selbstzahler</a></p></blockquote></div>"
+  ] ;
+  fhir:Account.identifier [
+     fhir:index -1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "AN" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "http://beispiel-krankenhaus.de/sid/fallnummern" ] ;
+     fhir:Identifier.value [ fhir:value "0123456789" ]
+  ] ;
+  fhir:Account.status [ fhir:value "active"] ;
+  fhir:Account.type [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ] ;
+       fhir:Coding.code [ fhir:value "IMP" ]
+     ]
+  ] ;
+  fhir:Account.subject [
+     fhir:index -1 ;
+     fhir:link <https://gematik.de/fhir/isik/Patient/SZ1Patient> ;
+     fhir:Reference.reference [ fhir:value "Patient/SZ1Patient" ]
+  ] ;
+  fhir:Account.coverage [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/ExtensionAbrechnungsart" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/dkgev/Abrechnungsart" ] ;
+         fhir:Coding.code [ fhir:value "DRG" ] ;
+         fhir:Coding.display [ fhir:value "Diagnosebezogene Fallgruppen" ]
+       ]
+     ] ;
+     fhir:Account.coverage.coverage [
+       fhir:link <https://gematik.de/fhir/isik/Coverage/SZ1VersicherungGesetzlich> ;
+       fhir:Reference.reference [ fhir:value "Coverage/SZ1VersicherungGesetzlich" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/ExtensionAbrechnungsart" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/dkgev/Abrechnungsart" ] ;
+         fhir:Coding.code [ fhir:value "SZ" ] ;
+         fhir:Coding.display [ fhir:value "Selbstzahlerrechnung" ]
+       ]
+     ] ;
+     fhir:Account.coverage.coverage [
+       fhir:link <https://gematik.de/fhir/isik/Coverage/SZ1VersicherungSelbstzahler> ;
+       fhir:Reference.reference [ fhir:value "Coverage/SZ1VersicherungSelbstzahler" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Account/SZ1DRGFall.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

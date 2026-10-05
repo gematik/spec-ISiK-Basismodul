@@ -1,0 +1,47 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Coverage/SZ1VersicherungSelbstzahler> a fhir:Coverage ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "SZ1VersicherungSelbstzahler"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Coverage SZ1VersicherungSelbstzahler</b></p><a name=\"SZ1VersicherungSelbstzahler\"> </a><a name=\"hcSZ1VersicherungSelbstzahler\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKVersicherungsverhaeltnisSelbstzahler.html\">ISiKVersicherungsverhaeltnisSelbstzahler</a></p></div><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/versicherungsart-de-basis SEL}\">Selbstzahler</span></p><p><b>beneficiary</b>: <a href=\"Patient-SZ1Patient.html\">Töchterchen Musterfrau (official) Female, DoB: 2010-01-01 ( Medical record number)</a></p><p><b>payor</b>: <a href=\"RelatedPerson-SZ1Mutter.html\">RelatedPerson Mama Musterfrau (official)</a></p></div>"
+  ] ;
+  fhir:Coverage.status [ fhir:value "active"] ;
+  fhir:Coverage.type [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/versicherungsart-de-basis" ] ;
+       fhir:Coding.code [ fhir:value "SEL" ]
+     ]
+  ] ;
+  fhir:Coverage.beneficiary [
+     fhir:link <https://gematik.de/fhir/isik/Patient/SZ1Patient> ;
+     fhir:Reference.reference [ fhir:value "Patient/SZ1Patient" ]
+  ] ;
+  fhir:Coverage.payor [
+     fhir:index -1 ;
+     fhir:link <https://gematik.de/fhir/isik/RelatedPerson/SZ1Mutter> ;
+     fhir:Reference.reference [ fhir:value "RelatedPerson/SZ1Mutter" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Coverage/SZ1VersicherungSelbstzahler.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

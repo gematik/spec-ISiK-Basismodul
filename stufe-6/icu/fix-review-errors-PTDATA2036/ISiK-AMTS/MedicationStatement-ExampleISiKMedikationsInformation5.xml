@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationStatement xmlns="http://hl7.org/fhir">
+  <id value="ExampleISiKMedikationsInformation5"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation"/>
+  </meta>
+  <text>
+    <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Medikation/Einnahme am ersten Dienstag jedes dritten Monats</div>
+  </text>
+  <status value="active"/>
+  <medicationCodeableConcept>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+      <code value="07260796"/>
+      <display value="Vitamin-B12-ratiopharm® N Ampullen zur Injektion"/>
+    </coding>
+  </medicationCodeableConcept>
+  <subject>
+    <reference value="Patient/PatientinMusterfrau"/>
+  </subject>
+  <context>
+    <reference value="Encounter/FachabteilungskontaktMinimal"/>
+  </context>
+  <effectivePeriod>
+    <start value="2024-02-06"/>
+  </effectivePeriod>
+  <dateAsserted value="2024-01-31"/>
+  <dosage>
+    <patientInstruction value="alle 3 Monate am 1. Dienstag"/>
+    <timing>
+      <repeat>
+        <frequency value="1"/>
+        <period value="3"/>
+        <periodUnit value="mo"/>
+        <dayOfWeek value="tue"/>
+      </repeat>
+    </timing>
+    <doseAndRate>
+      <doseQuantity>
+        <value value="1"/>
+        <unit value="Tabl."/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="1"/>
+      </doseQuantity>
+    </doseAndRate>
+  </dosage>
+</MedicationStatement>

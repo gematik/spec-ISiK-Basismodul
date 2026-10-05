@@ -1,0 +1,69 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKKoerperkerntemperatur",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerperkerntemperatur",
+  "version": "5.1.0",
+  "name": "ISiKKoerperkerntemperatur",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-10-23",
+  "publisher": "gematik GmbH",
+  "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körperkerntemperatur eines Patienten im Rahmen der interoperablen Kommunikation gemäß den ISiK Vorgaben.  \nDieses Profil repräsentiert sowohl direkte als auch indirekte Messungen der Körperkerntemperatur.\n### Motivation\nDie Erfassung und Überwachung der Körpertemperatur ist essenziell für die frühzeitige Erkennung von Infektionen, die Beurteilung des Gesundheitszustands sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\nIn FHIR wird die Körpertemperatur mit der Observation-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKKoerperkerntemperatur ist vom Profil [VitalSignDE_Koerpertemperatur](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpertemperatur) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [OObservation Body Temperature Profile](http://hl7.org/fhir/StructureDefinition/bodytemp) aus der FHIR R4 Spezifikation.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpertemperatur",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "min": 2
+      },
+      {
+        "id": "Observation.code.coding:snomed",
+        "path": "Observation.code.coding",
+        "sliceName": "snomed",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ISiKKernTempSctVS"
+        }
+      },
+      {
+        "id": "Observation.code.coding:coretemp-IEEE11073",
+        "path": "Observation.code.coding",
+        "sliceName": "coretemp-IEEE11073",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "code": "150368",
+          "system": "urn:iso:std:iso:11073:10101"
+        }
+      },
+      {
+        "id": "Observation.code.coding:coretemp-loinc",
+        "path": "Observation.code.coding",
+        "sliceName": "coretemp-loinc",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "8329-5",
+          "system": "http://loinc.org"
+        }
+      },
+      {
+        "id": "Observation.code.coding:specific-loinc",
+        "path": "Observation.code.coding",
+        "sliceName": "specific-loinc",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ISiKSpecificKernTempLoincVS"
+        }
+      }
+    ]
+  }
+}

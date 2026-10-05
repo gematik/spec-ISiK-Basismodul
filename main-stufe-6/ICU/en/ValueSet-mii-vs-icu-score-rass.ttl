@@ -1,0 +1,88 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-score-rass> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "mii-vs-icu-score-rass"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet mii-vs-icu-score-rass</b></p><a name=\"mii-vs-icu-score-rass\"> </a><a name=\"hcmii-vs-icu-score-rass\"> </a><ul><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/LA17287-6/\">LA17287-6</a></td><td>Combative</td></tr><tr><td><a href=\"https://loinc.org/LA33959-0/\">LA33959-0</a></td><td>Very agitated +3</td></tr><tr><td><a href=\"https://loinc.org/LA33960-8/\">LA33960-8</a></td><td>Agitated +2</td></tr><tr><td><a href=\"https://loinc.org/LA16474-1/\">LA16474-1</a></td><td>Restless +1</td></tr><tr><td><a href=\"https://loinc.org/LA33962-4/\">LA33962-4</a></td><td>Alert and calm 0</td></tr><tr><td><a href=\"https://loinc.org/LA33963-2/\">LA33963-2</a></td><td>Drowsy -1</td></tr><tr><td><a href=\"https://loinc.org/LA33964-0/\">LA33964-0</a></td><td>Light sedation -2</td></tr><tr><td><a href=\"https://loinc.org/LA33965-7/\">LA33965-7</a></td><td>Moderate sedation -3</td></tr><tr><td><a href=\"https://loinc.org/LA33966-5/\">LA33966-5</a></td><td>Deep sedation -4</td></tr><tr><td><a href=\"https://loinc.org/LA33967-3/\">LA33967-3</a></td><td>Unarousable -5</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-score-rass"] ;
+  fhir:ValueSet.version [ fhir:value "6.0.0"] ;
+  fhir:ValueSet.name [ fhir:value "MII_VS_ICU_Score_RASS"] ;
+  fhir:ValueSet.title [ fhir:value "MII VS ICU Score RASS"] ;
+  fhir:ValueSet.status [ fhir:value "active"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-07-01"^^xsd:date] ;
+  fhir:ValueSet.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:ValueSet.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.gematik.de" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Value set for RASS Score\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 3.3.2026"] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://loinc.org" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "LA17287-6" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Combative" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "LA33959-0" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Very agitated +3" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "LA33960-8" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Agitated +2" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "LA16474-1" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Restless +1" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "LA33962-4" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Alert and calm 0" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "LA33963-2" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Drowsy -1" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "LA33964-0" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Light sedation -2" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "LA33965-7" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Moderate sedation -3" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "LA33966-5" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Deep sedation -4" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "LA33967-3" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Unarousable -5" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-score-rass.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

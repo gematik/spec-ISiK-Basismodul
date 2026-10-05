@@ -1,0 +1,51 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/MedicationAdministration/ExampleISiKMedikationsVerabreichung2> a fhir:MedicationAdministration ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleISiKMedikationsVerabreichung2"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationAdministration ExampleISiKMedikationsVerabreichung2</b></p><a name=\"ExampleISiKMedikationsVerabreichung2\"> </a><a name=\"hcExampleISiKMedikationsVerabreichung2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKMedikationsVerabreichung.html\">ISiKMedikationsVerabreichung</a></p></div><p><b>status</b>: Completed</p><p><b>medication</b>: <a href=\"Medication-ExampleISiKMedikament9.html\">Medication </a></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>context</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Encounter/FachabteilungskontaktMinimal\">Encounter/FachabteilungskontaktMinimal</a></p><p><b>effective</b>: 2024-01-22</p><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose</b></td></tr><tr><td style=\"display: none\">*</td><td>1 Beutel<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></td></tr></table></div>"
+  ] ;
+  fhir:MedicationAdministration.status [ fhir:value "completed"] ;
+  fhir:MedicationAdministration.medicationReference [
+     fhir:link <https://gematik.de/fhir/isik/Medication/ExampleISiKMedikament9> ;
+     fhir:Reference.reference [ fhir:value "Medication/ExampleISiKMedikament9" ]
+  ] ;
+  fhir:MedicationAdministration.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:MedicationAdministration.context [
+     fhir:link <https://gematik.de/fhir/isik/Encounter/FachabteilungskontaktMinimal> ;
+     fhir:Reference.reference [ fhir:value "Encounter/FachabteilungskontaktMinimal" ]
+  ] ;
+  fhir:MedicationAdministration.effectiveDateTime [ fhir:value "2024-01-22"^^xsd:date] ;
+  fhir:MedicationAdministration.dosage [
+     fhir:MedicationAdministration.dosage.dose [
+       fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "Beutel" ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "1" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/MedicationAdministration/ExampleISiKMedikationsVerabreichung2.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

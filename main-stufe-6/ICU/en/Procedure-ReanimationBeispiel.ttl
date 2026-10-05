@@ -1,0 +1,72 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Procedure/ReanimationBeispiel> a fhir:Procedure ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ReanimationBeispiel"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedurReanimation" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedurReanimation>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Procedure ReanimationBeispiel</b></p><a name=\"ReanimationBeispiel\"> </a><a name=\"hcReanimationBeispiel\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKProzedurReanimation.html\">ISiK Prozedur Reanimation</a></p></div><p><b>ExtensionProzedurDokumentationsdatum</b>: 2026-04-23</p><p><b>status</b>: Completed</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 439569004}\">Resuscitation</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 89666000}, {http://fhir.de/CodeSystem/bfarm/ops 8-771}\">Herz-Lungen-Wiederbelebung</span></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>performed</b>: 2026-04-23</p><p><b>note</b>: </p><blockquote><div><p>Reanimationsmaßnahme mit erfolgreichem Ausgang. Dieses Beispiel dient der Abbildung von Reanimationsmaßnahmen - insbesondere in der Akutmedizin.</p>\n</div></blockquote></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum" ] ;
+     fhir:Extension.valueDateTime [ fhir:value "2026-04-23"^^xsd:date ]
+  ] ;
+  fhir:Procedure.status [ fhir:value "completed"] ;
+  fhir:Procedure.category [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a sct:439569004 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "439569004" ] ;
+       fhir:Coding.display [ fhir:value "Resuscitation" ]
+     ]
+  ] ;
+  fhir:Procedure.code [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a sct:89666000 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000274103/version/20251115" ] ;
+       fhir:Coding.code [ fhir:value "89666000" ] ;
+       fhir:Coding.display [ fhir:value "Kardiopulmonale Reanimation" ]
+     ], [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/bfarm/ops" ] ;
+       fhir:Coding.version [ fhir:value "2024" ] ;
+       fhir:Coding.code [ fhir:value "8-771" ] ;
+       fhir:Coding.display [ fhir:value "Kardiale oder kardiopulmonale Reanimation" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Herz-Lungen-Wiederbelebung" ]
+  ] ;
+  fhir:Procedure.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:Procedure.performedDateTime [ fhir:value "2026-04-23"^^xsd:date] ;
+  fhir:Procedure.note [
+     fhir:index -1 ;
+     fhir:Annotation.text [ fhir:value "Reanimationsmaßnahme mit erfolgreichem Ausgang. Dieses Beispiel dient der Abbildung von Reanimationsmaßnahmen - insbesondere in der Akutmedizin." ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Procedure/ReanimationBeispiel.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

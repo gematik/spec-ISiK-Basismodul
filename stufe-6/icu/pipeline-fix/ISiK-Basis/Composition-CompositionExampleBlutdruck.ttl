@@ -1,0 +1,77 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Composition/CompositionExampleBlutdruck> a fhir:Composition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "CompositionExampleBlutdruck"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Familienname:Fürstin von Musterfrau</p><p>Geburtsdatum:1964-08-12</p><p>PID:TestPID</p><p>Bericht-Status:final</p><p>Bericht-Typ:Berichtzusammenfassung / Document Summary</p><p>Datum:03.05.2022</p><p>Titel:Blutdruckmessung vom 3.5.2022</p><p>Autor:Gerät XY, Fa. Z, Modell T</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "FILL" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "https://fhir.krankenhaus.example/sid/system-a/berichtnummer"^^xsd:anyURI ;
+       fhir:l <https://fhir.krankenhaus.example/sid/system-a/berichtnummer>
+     ] ;
+     fhir:value [ fhir:v "0123456789" ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:55112-7 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "55112-7" ]
+     ] ) ;
+     fhir:text [ fhir:v "Kurzbericht" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345> ;
+     fhir:reference [ fhir:v "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:l <urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765> ;
+     fhir:reference [ fhir:v "urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765" ]
+  ] ; # 
+  fhir:date [ fhir:v "2022-05-03"^^xsd:date] ; # 
+  fhir:author ( [
+     fhir:type [
+       fhir:v "Device"^^xsd:anyURI ;
+       fhir:l fhir:Device
+     ] ;
+     fhir:display [ fhir:v "Gerät XY, Fa. Z, Modell T" ]
+  ] ) ; # 
+  fhir:title [ fhir:v "Blutdruckmessung vom 3.5.2022"] ; # 
+  fhir:section ( [
+     fhir:title [ fhir:v "Messung" ] ;
+     fhir:text [
+       fhir:status [ fhir:v "generated" ] ;
+       fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tr><td><b>Systolisch</b></td><td><b>Diastolisch</b></td><td><b>Einheit</b></td><td><b>Uhrzeit</b></td></tr><tr><td>140</td><td>110</td><td>mmHG</td><td>17:15h</td></tr></table></div>"^^rdf:XMLLiteral ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

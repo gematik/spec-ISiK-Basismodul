@@ -1,0 +1,158 @@
+# ISiKImplantat - ISiK Basis Implementierungsleitfaden v6.0.0
+
+ISiK Basis Implementierungsleitfaden
+
+Version 6.0.0 - active 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **ISiKImplantat**
+
+## Resource Profile: ISiKImplantat 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKImplantat | *Version*:6.0.0 |
+| Active as of 2026-07-01 | *Computable Name*:ISiKImplantat |
+
+ 
+Dieses Profil ermöglicht die strukturierte Abbildung von Implantaten eines Patienten in ISiK-Szenarien. Implantate stellen dauerhaft oder langfristig im Körper befindliche Medizinprodukte dar und sind häufig von hoher klinischer Relevanz, da sie Diagnostik, Therapieentscheidungen sowie zukünftige Behandlungsmaßnahmen unmittelbar beeinflussen können. 
+
+### Motivation
+
+ 
+Die standardisierte Bereitstellung von Implantatinformationen unterstützt insbesondere: 
+
+```
+die eindeutige Identifikation implantierter Medizinprodukte,
+
+die Berücksichtigung implantatspezifischer Besonderheiten bei weiteren diagnostischen oder therapeutischen Maßnahmen,
+
+die Nachverfolgbarkeit im Rahmen von Sicherheitsmeldungen und Rückrufaktionen sowie
+
+die Dokumentation wesentlicher Implantatmerkmale (z. B. Hersteller, Modell, Seriennummer).
+
+```
+
+ 
+Darüber hinaus ermöglicht das Profil eine interoperable und maschinenlesbare Darstellung implantatrelevanter Informationen und trägt zur Verbesserung der Patientensicherheit sowie zur Vermeidung von Risiken und Fehlentscheidungen im Behandlungsprozess bei. Als Bestandteil interoperabler Patientendaten stellt es sicher, dass relevante Implantatvorinformationen systemübergreifend verfügbar sind. 
+Da Implantate auch im Kontext des EHDS berücksichtigt werden, erscheint eine Aufnahme in ISiK sinnvoll, um die Verfügbarkeit von Implantatinformationen in verschiedenen Anwendungsfällen zu gewährleisten, insbesondere in solchen, die über die Dokumentation in einem Entlassbrief hinausgehen. 
+
+**Usages:**
+
+* Examples for this Profile: [Device/ISiKImplantatHerzschrittmacher](Device-ISiKImplantatHerzschrittmacher.md) and [Device/ISiKImplantatHueftprothese](Device-ISiKImplantatHueftprothese.md)
+* CapabilityStatements using this Profile: [Akteur ISiKCapabilityStatementBasisServerAkteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md) and [CapabilityStatement für Rolle ImplantatRolle](CapabilityStatement-ISiKCapabilityStatementImplantatRolle.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/basis|current/StructureDefinition/StructureDefinition-ISiKImplantat.json)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots, and their representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](../StructureDefinition-ISiKImplantat.csv), [Excel](../StructureDefinition-ISiKImplantat.xlsx), [Schematron](../StructureDefinition-ISiKImplantat.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "ISiKImplantat",
+  "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKImplantat",
+  "version" : "6.0.0",
+  "name" : "ISiKImplantat",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-07-01",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    }]
+  }],
+  "description" : "\nDieses Profil ermöglicht die strukturierte Abbildung von Implantaten eines Patienten in ISiK-Szenarien.\nImplantate stellen dauerhaft oder langfristig im Körper befindliche Medizinprodukte dar und sind häufig von hoher klinischer Relevanz, da sie Diagnostik, Therapieentscheidungen sowie zukünftige Behandlungsmaßnahmen unmittelbar beeinflussen können.\n\n### Motivation\n\nDie standardisierte Bereitstellung von Implantatinformationen unterstützt insbesondere:\n\n    die eindeutige Identifikation implantierter Medizinprodukte,\n\n    die Berücksichtigung implantatspezifischer Besonderheiten bei weiteren diagnostischen oder therapeutischen Maßnahmen,\n\n    die Nachverfolgbarkeit im Rahmen von Sicherheitsmeldungen und Rückrufaktionen sowie\n\n    die Dokumentation wesentlicher Implantatmerkmale (z. B. Hersteller, Modell, Seriennummer).\n\nDarüber hinaus ermöglicht das Profil eine interoperable und maschinenlesbare Darstellung implantatrelevanter Informationen und trägt zur Verbesserung der Patientensicherheit sowie zur Vermeidung von Risiken und Fehlentscheidungen im Behandlungsprozess bei.\nAls Bestandteil interoperabler Patientendaten stellt es sicher, dass relevante Implantatvorinformationen systemübergreifend verfügbar sind.\n\nDa Implantate auch im Kontext des EHDS berücksichtigt werden, erscheint eine Aufnahme in ISiK sinnvoll, um die Verfügbarkeit von Implantatinformationen in verschiedenen Anwendungsfällen zu gewährleisten, insbesondere in solchen, die über die Dokumentation in einem Entlassbrief hinausgehen.\n",
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "udi",
+    "uri" : "http://fda.gov/UDI",
+    "name" : "UDI Mapping"
+  }],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Device",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Device",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "Device",
+      "path" : "Device"
+    },
+    {
+      "id" : "Device.id",
+      "path" : "Device.id",
+      "short" : "serverseitige, interne ID des Datensatzes",
+      "comment" : "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.meta.versionId",
+      "path" : "Device.meta.versionId",
+      "short" : "Eindeutiger Name der serverseitigen Version des Datensatzes",
+      "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+    },
+    {
+      "id" : "Device.meta.lastUpdated",
+      "path" : "Device.meta.lastUpdated",
+      "short" : "Zeitpunkt der letzten Änderung",
+      "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+    },
+    {
+      "id" : "Device.implicitRules",
+      "path" : "Device.implicitRules",
+      "short" : "Verweis auf die Regeln, nach denen die Ressource erstellt wurde",
+      "comment" : "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.\n  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können.",
+      "max" : "0"
+    },
+    {
+      "id" : "Device.status",
+      "path" : "Device.status",
+      "short" : "Status des Implantats",
+      "comment" : "Begründung MS: Der Status gibt an, ob das Implantat aktuell im Körper des Patienten vorhanden ist oder nicht \n  und stellt somit eine überaus wichtige medizinische Information dar, die unmittelbar Einfluss auf Diagnostik, Therapieentscheidungen und zukünftige Behandlungsmaßnahmen haben kann. \n  Daher ist die Angabe des Status zwingend erforderlich.",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.type",
+      "path" : "Device.type",
+      "short" : "Art des Implantats",
+      "comment" : "Begründung MS: Die Angabe der Art des Implantats ermöglicht eine eindeutige Identifikation und Klassifizierung des implantierten Medizinprodukts, \n  was für die Berücksichtigung implantatspezifischer Besonderheiten bei weiteren diagnostischen oder therapeutischen Maßnahmen von entscheidender Bedeutung ist. \n  Daher ist die Angabe der Art des Implantats zwingend erforderlich.",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.patient",
+      "path" : "Device.patient",
+      "short" : "Patient mit Implantat",
+      "comment" : "Begründung MS: Die Zuordnung zu einem Patient ist für den Datenaustausch im Rahmen von ISiK-Szenarien unerlässlich.",
+      "min" : 1,
+      "mustSupport" : true
+    }]
+  }
+}
+
+```

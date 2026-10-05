@@ -1,0 +1,287 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKBerichtSubSysteme",
+  "url": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBerichtSubSysteme",
+  "version": "3.1.0",
+  "name": "ISiKBerichtSubSysteme",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-09-16",
+  "publisher": "gematik GmbH",
+  "description": "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung eines Berichtes in Form eines Dokumentes, die in ISiK Szenarien von Subsystemen an Primärsysteme gesendet werden.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition.text",
+        "path": "Composition.text",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.text.status",
+        "path": "Composition.text.status",
+        "fixedCode": "extensions",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.text.div",
+        "path": "Composition.text.div",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.identifier",
+        "path": "Composition.identifier",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.identifier.system",
+        "path": "Composition.identifier.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.identifier.value",
+        "path": "Composition.identifier.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.status",
+        "path": "Composition.status",
+        "fixedCode": "final",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "short": "Dokumenttyp",
+        "comment": "Begründung zu Must Support: Der Dokumenttyp ist für die Identifikation des Berichtes und die Zuordnung zu einem Subsystem für die weitere Verarbeitung erforderlich.\n\n  *Hinweis für Implementierer:* \n  Der zu übermittelnde Bericht repräsentiert eine Zusammenfassung der strukturierten Daten aus dem Subsystem. Das Dokument KANN z.B. mittels KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  \n  Es KANN derzeit jedoch auch eine rein textuelle Beschreibung des Dokumenttyps angegeben werden.\n\n  Während KDL-Codes eine feingranulare Dokumentenklassifikation für die gezielte Suche nach medizinischen und Administrativen Dokumenten ermöglichen,\n  sind IHE-XDS-Type-Codes für den einrichtungsübergreifenden Dokumentenaustausch maßgeblich.\n  Der IHE-XDS-Type-Code kann mit Hilfe der bereitgestellten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap)\n  aus dem KDL-Code ermittelt werden.\n  Weitere Typisierungen (z.B. nach SNOMED oder LOINC) sind uneingeschränkt erlaubt. [Konsens der Arbeitsgruppe vom 18.02.2022]. Im Falle, dass der Code 'UNK' entsprechend der ConceptMap verwendet werden soll, MUSS das System 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor' verwendet werden.  \n  ",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type.coding",
+        "path": "Composition.type.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type.coding:KDL",
+        "path": "Composition.type.coding",
+        "sliceName": "KDL",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "system": "http://dvmd.de/fhir/CodeSystem/kdl"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type.coding:KDL.system",
+        "path": "Composition.type.coding.system",
+        "min": 1
+      },
+      {
+        "id": "Composition.type.coding:KDL.code",
+        "path": "Composition.type.coding.code",
+        "min": 1,
+        "constraint": [
+          {
+            "key": "kdl-1",
+            "severity": "warning",
+            "human": "KDL-Code ungültig",
+            "expression": "matches('^[A-Z]{2}[0-9]{6}$')",
+            "source": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBerichtSubSysteme"
+          }
+        ]
+      },
+      {
+        "id": "Composition.type.coding:XDS",
+        "path": "Composition.type.coding",
+        "sliceName": "XDS",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "system": "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type.coding:XDS.system",
+        "path": "Composition.type.coding.system",
+        "min": 1
+      },
+      {
+        "id": "Composition.type.coding:XDS.code",
+        "path": "Composition.type.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Composition.type.text",
+        "path": "Composition.type.text",
+        "short": "Dokumenttyp (Freitext)",
+        "comment": "Begründung zu Must Support: Die freitextliche Beschreibung des assoziierten Displaywerts der primären Codierung dient einer einheitlichen Ausgabe (jenseits verschiedener Codesysteme). Der Text kann ggf. aus vorhandenen Codes übernommen werden.",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.category",
+        "path": "Composition.category",
+        "short": "Dokument-Kategorie",
+        "comment": "Begründung zu Must Support: Die Klassifizierung kann zur Strukturierung der Berichte genutzt werden, in dem Fall, dass das Narrative des Berichts dem Benutzer angezeigt wird. Das Dokument KANN z.B. mittels LOINC oder IHE-D-XDS-Classcodes klassifiziert werden.",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.category.coding",
+        "path": "Composition.category.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.category.coding:LOINC",
+        "path": "Composition.category.coding",
+        "sliceName": "LOINC",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "system": "http://loinc.org"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.category.coding:LOINC.system",
+        "path": "Composition.category.coding.system",
+        "min": 1
+      },
+      {
+        "id": "Composition.category.coding:LOINC.code",
+        "path": "Composition.category.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Composition.category.coding:IHE",
+        "path": "Composition.category.coding",
+        "sliceName": "IHE",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "system": "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.category.coding:IHE.system",
+        "path": "Composition.category.coding.system",
+        "min": 1
+      },
+      {
+        "id": "Composition.category.coding:IHE.code",
+        "path": "Composition.category.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Composition.subject",
+        "path": "Composition.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.subject.reference",
+        "path": "Composition.subject.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.encounter",
+        "path": "Composition.encounter",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.date",
+        "path": "Composition.date",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author",
+        "path": "Composition.author",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+              "http://hl7.org/fhir/StructureDefinition/Device",
+              "http://hl7.org/fhir/StructureDefinition/Organization",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "http://hl7.org/fhir/StructureDefinition/Patient",
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author.display",
+        "path": "Composition.author.display",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.title",
+        "path": "Composition.title",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section",
+        "path": "Composition.section",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section.title",
+        "path": "Composition.section.title",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section.text",
+        "path": "Composition.section.text",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section.section",
+        "path": "Composition.section.section",
+        "mustSupport": true
+      }
+    ]
+  }
+}

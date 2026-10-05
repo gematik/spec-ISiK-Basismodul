@@ -1,0 +1,39 @@
+{
+  "resourceType" : "Condition",
+  "id" : "SZ2Sekundaerdiagnose",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Condition SZ2Sekundaerdiagnose</b></p><a name=\"SZ2Sekundaerdiagnose\"> </a><a name=\"hcSZ2Sekundaerdiagnose\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKDiagnose.html\">ISiKDiagnose</a></p></div><p><b>Condition Related</b>: <a href=\"Condition-SZ2Primaerdiagnose.html\">Condition Diabetes mellitus, Typ 1: Mit Augenkomplikationen: Nicht als entgleist bezeichnet</a></p><p><b>code</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/icd-10-gm H36.0}\">Retinopathia diabetica</span></p><p><b>subject</b>: <a href=\"Patient-SZ2Patient.html\">Friedlinde Musterfrau (official) Female, DoB: 1924-01-01 ( Medical record number)</a></p><p><b>encounter</b>: <a href=\"Encounter-SZ2Encounter.html\">Encounter: identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt,Normalstationär; period = 2024-10-07 --&gt; 2024-10-10</a></p><p><b>recordedDate</b>: 2024-11-05</p></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/condition-related",
+    "valueReference" : {
+      "reference" : "Condition/SZ2Primaerdiagnose"
+    }
+  }],
+  "code" : {
+    "coding" : [{
+      "extension" : [{
+        "url" : "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen",
+        "valueCoding" : {
+          "system" : "http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen",
+          "code" : "*"
+        }
+      }],
+      "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+      "version" : "2024",
+      "code" : "H36.0",
+      "display" : "Retinopathia diabetica"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/SZ2Patient"
+  },
+  "encounter" : {
+    "reference" : "Encounter/SZ2Encounter"
+  },
+  "recordedDate" : "2024-11-05"
+}

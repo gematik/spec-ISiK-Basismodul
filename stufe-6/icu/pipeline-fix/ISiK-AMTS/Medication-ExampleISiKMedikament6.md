@@ -1,0 +1,34 @@
+# ExampleISiKMedikament6 - AMTS ISiK Implementierungsleitfaden v6.0.0-rc
+
+AMTS ISiK Implementierungsleitfaden
+
+Version 6.0.0-rc - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **ExampleISiKMedikament6**
+
+## Medication: ExampleISiKMedikament6
+
+Medikament als Freitext
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Medication",
+  "id" : "ExampleISiKMedikament6",
+  "meta" : {
+    "profile" : [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament"
+    ]
+  },
+  "code" : {
+    "text" : "Enoxaparin-Natrium 40 mg"
+  },
+  "status" : "active"
+}
+
+```
