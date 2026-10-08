@@ -10,7 +10,7 @@ Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähi
 
 Datum: tbd
 
-* Aktualisierung der Rest-API Festlegungsseite. Entfernung der Anforderung der Create-Interaktion https://github.com/gematik/spec-ISiK-Basismodul/pull/1342
+* `fix` Aktualisierung der Rest-API Festlegungsseite. Entfernung der Anforderung der Create-Interaktion https://github.com/gematik/spec-ISiK-Basismodul/pull/1342
 
 ## Version 5.1.3
 
