@@ -5,7 +5,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd
 
-* `fix` Entfernung falscher Kodierung und Einheitsangaben für Procalcitonin
+* `fix` Entfernung falscher Kodierung und Einheitsangaben für Procalcitonin <https://github.com/gematik/spec-ISiK-Basismodul/pull/1344>
 
 ### Version 6.0.0
 
