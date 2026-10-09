@@ -6,6 +6,12 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähig ist (eigene Use Cases bedient) oder bestätigtigungsrelevant ist.
 
+## Version x.x.x
+
+Datum: tbd
+
+* `fix` Aktualisierung der Rest-API Festlegungsseite. Entfernung der Anforderung der Create-Interaktion https://github.com/gematik/spec-ISiK-Basismodul/pull/1342
+
 ## Version 5.1.3
 
 Datum: 17.07.2026
