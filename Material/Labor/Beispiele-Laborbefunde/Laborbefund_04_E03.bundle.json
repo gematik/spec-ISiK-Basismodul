@@ -1,0 +1,1363 @@
+{
+  "resourceType": "Bundle",
+  "id": "af9b3e46-7ae5-5fd3-82ee-5d0f58d77d9b",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"
+    ]
+  },
+  "identifier": {
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code": "FILL"
+        }
+      ]
+    },
+    "system": "https://labor-testdaten.example/labor/270719100/sid/befund-bundle",
+    "value": "BL26-100444"
+  },
+  "type": "document",
+  "timestamp": "2026-08-11T15:30:00+02:00",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:36695d89-d33d-53a0-b835-cddce5e63b08",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "36695d89-d33d-53a0-b835-cddce5e63b08",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"
+          ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Laborbefund BL26-100444 vom 2026-08-11</b></p><p>Patient: Anna Schneider; Einsender: Dr. med. Heribert Topp-Gluecklich; Labor: Dr. Richard Mueller</p></div>"
+        },
+        "identifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "FILL"
+              }
+            ]
+          },
+          "system": "https://labor-testdaten.example/labor/270719100/sid/befund-id",
+          "value": "BL26-100444"
+        },
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://dvmd.de/fhir/CodeSystem/kdl",
+              "code": "LB120107",
+              "display": "Laborbefund"
+            },
+            {
+              "system": "http://ihe-d.de/CodeSystems/IHEXDStypeCode",
+              "code": "BEFU",
+              "display": "Ergebnisse Diagnostik"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "11502-2",
+              "display": "Laboratory report"
+            }
+          ],
+          "text": "Laborbefund"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://ihe-d.de/CodeSystems/IHEXDSclassCode",
+                "code": "LAB",
+                "display": "Laborergebnisse"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:0282c033-9d21-5000-9bbc-e4c8f252e994"
+        },
+        "encounter": {
+          "reference": "urn:uuid:14b4fbd1-cf7e-562d-9557-34e109070a4f"
+        },
+        "date": "2026-08-11T15:30:00+02:00",
+        "author": [
+          {
+            "reference": "urn:uuid:a2ce40b9-e3f3-593c-b781-83f3309ba44f",
+            "display": "Dr. Richard Mueller"
+          },
+          {
+            "reference": "urn:uuid:11a3a38d-ff77-51d5-b566-93c090e006ca",
+            "display": "Labor Mueller"
+          }
+        ],
+        "title": "Laborbefund BL26-100444 vom 2026-08-11",
+        "custodian": {
+          "reference": "urn:uuid:11a3a38d-ff77-51d5-b566-93c090e006ca"
+        },
+        "section": [
+          {
+            "title": "Laborergebnisse",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "26436-6",
+                  "display": "Laboratory studies (set)"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><thead><tr><th>Untersuchung</th><th>Ergebnis</th><th>Einheit</th><th>Bewertung</th><th>Referenzbereich</th></tr></thead><tbody><tr><td>Thyreoidea-stimulierendes Hormon basal</td><td>8.6</td><td>mU/l</td><td>H</td><td>0.27 - 4.2</td></tr><tr><td>freies Thyroxin</td><td>0.8</td><td>ng/dl</td><td>L</td><td>0.93 - 1.7</td></tr><tr><td>freies Trijodthyronin</td><td>2.7</td><td>pg/ml</td><td>N</td><td>2.0 - 4.4</td></tr><tr><td>Thyreoperoxidase-Antikoerper</td><td>245</td><td>U/ml</td><td>HH</td><td> - 34</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:74d657f6-fc1b-5797-8080-e823b01bd7c0"
+              },
+              {
+                "reference": "urn:uuid:02d18ffc-12b6-5722-b80b-a26fa3efdd53"
+              },
+              {
+                "reference": "urn:uuid:e8d41751-9f14-5d83-a6a3-55b1049e4260"
+              },
+              {
+                "reference": "urn:uuid:0941e3ab-09ed-5ec8-94e8-7fd4186cda36"
+              },
+              {
+                "reference": "urn:uuid:f2a0c4ae-2aff-5e60-8b52-7c393582146b"
+              }
+            ]
+          },
+          {
+            "title": "Diagnosen / Veranlassungsgrund",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>E03.9 Hypothyreose, nicht naeher bezeichnet</li><li>E04.9 Struma nodosa</li></ul></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:61439877-5a8b-50ca-bd31-d3e61c6b1c60"
+              },
+              {
+                "reference": "urn:uuid:547d654d-6250-5872-9598-09290a95c662"
+              }
+            ]
+          },
+          {
+            "title": "Probenmaterial",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>SE01: Serum (2026-08-10T09:00:00+02:00)</li></ul></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:bacaafbd-6d62-5dfd-bd0d-001ee0646433"
+              },
+              {
+                "reference": "urn:uuid:9944a65c-efb4-5b12-9e35-724dc604b921"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:11a3a38d-ff77-51d5-b566-93c090e006ca",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "11a3a38d-ff77-51d5-b566-93c090e006ca",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Labor Mueller | BSNR: 270719100</p></div>"
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "BSNR"
+                }
+              ]
+            },
+            "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR",
+            "value": "270719100"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov",
+                "display": "Healthcare Provider"
+              }
+            ]
+          }
+        ],
+        "name": "Labor Mueller",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "02211456546",
+            "use": "work"
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Ottostr. 2"
+            ],
+            "city": "Koeln",
+            "postalCode": "50859",
+            "country": "DE",
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Ottostr."
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "2"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a2ce40b9-e3f3-593c-b781-83f3309ba44f",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "a2ce40b9-e3f3-593c-b781-83f3309ba44f",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Dr. Richard Mueller | EN: MUELLE</p></div>"
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "EN"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/labor/270719100/sid/mitarbeiter",
+            "value": "MUELLE"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Mueller",
+            "given": [
+              "Richard"
+            ],
+            "prefix": [
+              "Dr."
+            ],
+            "text": "Dr. Richard Mueller"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9cf6021d-3118-531a-bea9-a915e00deb61",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "9cf6021d-3118-531a-bea9-a915e00deb61",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Praxis Dr. med. Heribert Topp-Gluecklich | BSNR: 398212400</p></div>"
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "BSNR"
+                }
+              ]
+            },
+            "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR",
+            "value": "398212400"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov",
+                "display": "Healthcare Provider"
+              }
+            ]
+          }
+        ],
+        "name": "Praxis Dr. med. Heribert Topp-Gluecklich",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "061511111111",
+            "use": "work"
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Musterstr. 1"
+            ],
+            "city": "Darmstadt",
+            "postalCode": "64297",
+            "country": "DE",
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterstr."
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a6972d59-07a5-57c4-8f24-c80157b1b027",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "a6972d59-07a5-57c4-8f24-c80157b1b027",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Dr. med. Heribert Topp-Gluecklich | LANR: 776299002</p></div>"
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "LANR"
+                }
+              ]
+            },
+            "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR",
+            "value": "776299002"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Topp-Gluecklich",
+            "given": [
+              "Heribert"
+            ],
+            "prefix": [
+              "Dr. med."
+            ],
+            "text": "Dr. med. Heribert Topp-Gluecklich"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0282c033-9d21-5000-9bbc-e4c8f252e994",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "0282c033-9d21-5000-9bbc-e4c8f252e994",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Anna Schneider | geb. 1982-02-18 | female | MR: P1004 | KVZ10: S456789013</p></div>"
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "MR"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/praxis/398212400/sid/patienten-id",
+            "value": "P1004"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code": "KVZ10"
+                }
+              ]
+            },
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "S456789013"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "use": "official",
+            "family": "Schneider",
+            "given": [
+              "Anna"
+            ],
+            "text": "Anna Schneider"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1982-02-18",
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Birkenallee 22"
+            ],
+            "city": "Berlin",
+            "postalCode": "13086",
+            "country": "DE",
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Birkenallee"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "22"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:14b4fbd1-cf7e-562d-9557-34e109070a4f",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "14b4fbd1-cf7e-562d-9557-34e109070a4f",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ambulanter Kontakt | 2026-08-10</p></div>"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "urn:uuid:0282c033-9d21-5000-9bbc-e4c8f252e994"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "urn:uuid:a6972d59-07a5-57c4-8f24-c80157b1b027",
+              "display": "Dr. med. Heribert Topp-Gluecklich"
+            }
+          }
+        ],
+        "serviceProvider": {
+          "reference": "urn:uuid:9cf6021d-3118-531a-bea9-a915e00deb61"
+        },
+        "period": {
+          "start": "2026-08-10"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:61439877-5a8b-50ca-bd31-d3e61c6b1c60",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "61439877-5a8b-50ca-bd31-d3e61c6b1c60",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>E03.9 | Hypothyreose, nicht naeher bezeichnet | Diagnose vom 2026-08-11</p></div>"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+              "version": "2026",
+              "code": "E03.9",
+              "extension": [
+                {
+                  "url": "http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit",
+                  "valueCoding": {
+                    "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT",
+                    "code": "V"
+                  }
+                }
+              ]
+            }
+          ],
+          "text": "Hypothyreose, nicht naeher bezeichnet"
+        },
+        "subject": {
+          "reference": "urn:uuid:0282c033-9d21-5000-9bbc-e4c8f252e994"
+        },
+        "encounter": {
+          "reference": "urn:uuid:14b4fbd1-cf7e-562d-9557-34e109070a4f"
+        },
+        "recordedDate": "2026-08-11",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "provisional"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:547d654d-6250-5872-9598-09290a95c662",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "547d654d-6250-5872-9598-09290a95c662",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>E04.9 | Struma nodosa | Diagnose vom 2026-08-11</p></div>"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+              "version": "2026",
+              "code": "E04.9",
+              "extension": [
+                {
+                  "url": "http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit",
+                  "valueCoding": {
+                    "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT",
+                    "code": "G"
+                  }
+                }
+              ]
+            }
+          ],
+          "text": "Struma nodosa"
+        },
+        "subject": {
+          "reference": "urn:uuid:0282c033-9d21-5000-9bbc-e4c8f252e994"
+        },
+        "encounter": {
+          "reference": "urn:uuid:14b4fbd1-cf7e-562d-9557-34e109070a4f"
+        },
+        "recordedDate": "2026-08-11",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9944a65c-efb4-5b12-9e35-724dc604b921",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "9944a65c-efb4-5b12-9e35-724dc604b921",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Probe SE01 | Serum | 2026-08-10T09:00:00+02:00</p></div>"
+        },
+        "status": "available",
+        "identifier": [
+          {
+            "system": "https://labor-testdaten.example/labor/270719100/sid/probe-id",
+            "value": "SE01"
+          }
+        ],
+        "type": {
+          "text": "Serum",
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "119364003",
+              "display": "Serum specimen"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:0282c033-9d21-5000-9bbc-e4c8f252e994"
+        },
+        "collection": {
+          "collectedDateTime": "2026-08-10T09:00:00+02:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:bacaafbd-6d62-5dfd-bd0d-001ee0646433",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "bacaafbd-6d62-5dfd-bd0d-001ee0646433",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Laborauftrag | PLAC: A2026-0004 | FILL: L26-100444</p></div>"
+        },
+        "status": "completed",
+        "intent": "order",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "108252007",
+                "display": "Laboratory procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26436-6",
+              "display": "Laboratory studies (set)"
+            }
+          ],
+          "text": "Laboruntersuchung"
+        },
+        "subject": {
+          "reference": "urn:uuid:0282c033-9d21-5000-9bbc-e4c8f252e994"
+        },
+        "encounter": {
+          "reference": "urn:uuid:14b4fbd1-cf7e-562d-9557-34e109070a4f"
+        },
+        "requester": {
+          "reference": "urn:uuid:a6972d59-07a5-57c4-8f24-c80157b1b027",
+          "display": "Dr. med. Heribert Topp-Gluecklich"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:11a3a38d-ff77-51d5-b566-93c090e006ca"
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PLAC"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/praxis/398212400/sid/auftragsnummer",
+            "value": "A2026-0004"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "FILL"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/labor/270719100/sid/auftragsnummer",
+            "value": "L26-100444"
+          }
+        ],
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:61439877-5a8b-50ca-bd31-d3e61c6b1c60"
+          },
+          {
+            "reference": "urn:uuid:547d654d-6250-5872-9598-09290a95c662"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:02d18ffc-12b6-5722-b80b-a26fa3efdd53",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "02d18ffc-12b6-5722-b80b-a26fa3efdd53",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Thyreoidea-stimulierendes Hormon basal | 8.6 mU/l | H | 2026-08-11T15:30:00+02:00 | final</p></div>"
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "OBI"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/labor/270719100/sid/ergebnis-id",
+            "value": "BL26-100444-E0001"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "18719-5",
+                "display": "Chemistry studies (set)"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3016-3",
+              "display": "Thyrotropin [Units/volume] in Serum or Plasma"
+            },
+            {
+              "system": "https://labor-testdaten.example/labor/270719100/CodeSystem/test-ident",
+              "code": "TSH",
+              "display": "Thyreoidea-stimulierendes Hormon basal"
+            }
+          ],
+          "text": "Thyreoidea-stimulierendes Hormon basal"
+        },
+        "subject": {
+          "reference": "urn:uuid:0282c033-9d21-5000-9bbc-e4c8f252e994"
+        },
+        "encounter": {
+          "reference": "urn:uuid:14b4fbd1-cf7e-562d-9557-34e109070a4f"
+        },
+        "effectiveDateTime": "2026-08-11T15:30:00+02:00",
+        "issued": "2026-08-11T15:30:00+02:00",
+        "performer": [
+          {
+            "reference": "urn:uuid:a2ce40b9-e3f3-593c-b781-83f3309ba44f",
+            "display": "Dr. Richard Mueller"
+          },
+          {
+            "reference": "urn:uuid:11a3a38d-ff77-51d5-b566-93c090e006ca"
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:9944a65c-efb4-5b12-9e35-724dc604b921"
+        },
+        "valueQuantity": {
+          "value": 8.6,
+          "system": "http://unitsofmeasure.org",
+          "code": "mU/L",
+          "unit": "mU/l"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 0.27,
+              "system": "http://unitsofmeasure.org",
+              "code": "mU/L",
+              "unit": "mU/l"
+            },
+            "high": {
+              "value": 4.2,
+              "system": "http://unitsofmeasure.org",
+              "code": "mU/L",
+              "unit": "mU/l"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ]
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "TSH erhoeht - fT4 und TPO-AK nachgemessen."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e8d41751-9f14-5d83-a6a3-55b1049e4260",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "e8d41751-9f14-5d83-a6a3-55b1049e4260",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>freies Thyroxin | 0.8 ng/dl | L | 2026-08-11T15:30:00+02:00 | final</p></div>"
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "OBI"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/labor/270719100/sid/ergebnis-id",
+            "value": "BL26-100444-E0002"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "18719-5",
+                "display": "Chemistry studies (set)"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3024-7",
+              "display": "Thyroxine (T4) free [Mass/volume] in Serum or Plasma"
+            },
+            {
+              "system": "https://labor-testdaten.example/labor/270719100/CodeSystem/test-ident",
+              "code": "FT4",
+              "display": "freies Thyroxin"
+            }
+          ],
+          "text": "freies Thyroxin"
+        },
+        "subject": {
+          "reference": "urn:uuid:0282c033-9d21-5000-9bbc-e4c8f252e994"
+        },
+        "encounter": {
+          "reference": "urn:uuid:14b4fbd1-cf7e-562d-9557-34e109070a4f"
+        },
+        "effectiveDateTime": "2026-08-11T15:30:00+02:00",
+        "issued": "2026-08-11T15:30:00+02:00",
+        "performer": [
+          {
+            "reference": "urn:uuid:a2ce40b9-e3f3-593c-b781-83f3309ba44f",
+            "display": "Dr. Richard Mueller"
+          },
+          {
+            "reference": "urn:uuid:11a3a38d-ff77-51d5-b566-93c090e006ca"
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:9944a65c-efb4-5b12-9e35-724dc604b921"
+        },
+        "valueQuantity": {
+          "value": 0.8,
+          "system": "http://unitsofmeasure.org",
+          "code": "ng/dL",
+          "unit": "ng/dl"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 0.93,
+              "system": "http://unitsofmeasure.org",
+              "code": "ng/dL",
+              "unit": "ng/dl"
+            },
+            "high": {
+              "value": 1.7,
+              "system": "http://unitsofmeasure.org",
+              "code": "ng/dL",
+              "unit": "ng/dl"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ]
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0941e3ab-09ed-5ec8-94e8-7fd4186cda36",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "0941e3ab-09ed-5ec8-94e8-7fd4186cda36",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>freies Trijodthyronin | 2.7 pg/ml | N | 2026-08-11T15:30:00+02:00 | final</p></div>"
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "OBI"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/labor/270719100/sid/ergebnis-id",
+            "value": "BL26-100444-E0003"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "18719-5",
+                "display": "Chemistry studies (set)"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3051-0",
+              "display": "Triiodothyronine (T3) Free [Mass/volume] in Serum or Plasma"
+            },
+            {
+              "system": "https://labor-testdaten.example/labor/270719100/CodeSystem/test-ident",
+              "code": "FT3",
+              "display": "freies Trijodthyronin"
+            }
+          ],
+          "text": "freies Trijodthyronin"
+        },
+        "subject": {
+          "reference": "urn:uuid:0282c033-9d21-5000-9bbc-e4c8f252e994"
+        },
+        "encounter": {
+          "reference": "urn:uuid:14b4fbd1-cf7e-562d-9557-34e109070a4f"
+        },
+        "effectiveDateTime": "2026-08-11T15:30:00+02:00",
+        "issued": "2026-08-11T15:30:00+02:00",
+        "performer": [
+          {
+            "reference": "urn:uuid:a2ce40b9-e3f3-593c-b781-83f3309ba44f",
+            "display": "Dr. Richard Mueller"
+          },
+          {
+            "reference": "urn:uuid:11a3a38d-ff77-51d5-b566-93c090e006ca"
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:9944a65c-efb4-5b12-9e35-724dc604b921"
+        },
+        "valueQuantity": {
+          "value": 2.7,
+          "system": "http://unitsofmeasure.org",
+          "code": "pg/mL",
+          "unit": "pg/ml"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 2.0,
+              "system": "http://unitsofmeasure.org",
+              "code": "pg/mL",
+              "unit": "pg/ml"
+            },
+            "high": {
+              "value": 4.4,
+              "system": "http://unitsofmeasure.org",
+              "code": "pg/mL",
+              "unit": "pg/ml"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ]
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f2a0c4ae-2aff-5e60-8b52-7c393582146b",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "f2a0c4ae-2aff-5e60-8b52-7c393582146b",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Thyreoperoxidase-Antikoerper | 245 U/ml | HH | 2026-08-11T15:30:00+02:00 | final</p></div>"
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "OBI"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/labor/270719100/sid/ergebnis-id",
+            "value": "BL26-100444-E0004"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "18727-8",
+                "display": "Serology studies (set)"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8099-4",
+              "display": "Thyroperoxidase Ab [Units/volume] in Serum or Plasma"
+            },
+            {
+              "system": "https://labor-testdaten.example/labor/270719100/CodeSystem/test-ident",
+              "code": "TPOAK",
+              "display": "Thyreoperoxidase-Antikoerper"
+            }
+          ],
+          "text": "Thyreoperoxidase-Antikoerper"
+        },
+        "subject": {
+          "reference": "urn:uuid:0282c033-9d21-5000-9bbc-e4c8f252e994"
+        },
+        "encounter": {
+          "reference": "urn:uuid:14b4fbd1-cf7e-562d-9557-34e109070a4f"
+        },
+        "effectiveDateTime": "2026-08-11T15:30:00+02:00",
+        "issued": "2026-08-11T15:30:00+02:00",
+        "performer": [
+          {
+            "reference": "urn:uuid:a2ce40b9-e3f3-593c-b781-83f3309ba44f",
+            "display": "Dr. Richard Mueller"
+          },
+          {
+            "reference": "urn:uuid:11a3a38d-ff77-51d5-b566-93c090e006ca"
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:9944a65c-efb4-5b12-9e35-724dc604b921"
+        },
+        "valueQuantity": {
+          "value": 245,
+          "system": "http://unitsofmeasure.org",
+          "code": "U/mL",
+          "unit": "U/ml"
+        },
+        "referenceRange": [
+          {
+            "high": {
+              "value": 34,
+              "system": "http://unitsofmeasure.org",
+              "code": "U/mL",
+              "unit": "U/ml"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ]
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "HH"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "Befund vereinbar mit Autoimmunthyreoiditis."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:74d657f6-fc1b-5797-8080-e823b01bd7c0",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "74d657f6-fc1b-5797-8080-e823b01bd7c0",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Laborbefund | BL26-100444 | 2026-08-11T15:30:00+02:00 | 4 Ergebnisse</p></div>"
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "FILL"
+                }
+              ]
+            },
+            "system": "https://labor-testdaten.example/labor/270719100/sid/befund-id",
+            "value": "BL26-100444"
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:bacaafbd-6d62-5dfd-bd0d-001ee0646433"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "LAB",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11502-2",
+              "display": "Laboratory report"
+            }
+          ],
+          "text": "Laborbefund"
+        },
+        "subject": {
+          "reference": "urn:uuid:0282c033-9d21-5000-9bbc-e4c8f252e994"
+        },
+        "encounter": {
+          "reference": "urn:uuid:14b4fbd1-cf7e-562d-9557-34e109070a4f"
+        },
+        "effectiveDateTime": "2026-08-11T15:30:00+02:00",
+        "issued": "2026-08-11T15:30:00+02:00",
+        "performer": [
+          {
+            "reference": "urn:uuid:11a3a38d-ff77-51d5-b566-93c090e006ca"
+          },
+          {
+            "reference": "urn:uuid:a2ce40b9-e3f3-593c-b781-83f3309ba44f",
+            "display": "Dr. Richard Mueller"
+          }
+        ],
+        "resultsInterpreter": [
+          {
+            "reference": "urn:uuid:a2ce40b9-e3f3-593c-b781-83f3309ba44f",
+            "display": "Dr. Richard Mueller"
+          }
+        ],
+        "specimen": [
+          {
+            "reference": "urn:uuid:9944a65c-efb4-5b12-9e35-724dc604b921"
+          }
+        ],
+        "result": [
+          {
+            "reference": "urn:uuid:02d18ffc-12b6-5722-b80b-a26fa3efdd53"
+          },
+          {
+            "reference": "urn:uuid:e8d41751-9f14-5d83-a6a3-55b1049e4260"
+          },
+          {
+            "reference": "urn:uuid:0941e3ab-09ed-5ec8-94e8-7fd4186cda36"
+          },
+          {
+            "reference": "urn:uuid:f2a0c4ae-2aff-5e60-8b52-7c393582146b"
+          }
+        ]
+      }
+    }
+  ]
+}
