@@ -69,7 +69,9 @@ jobs:
     if: github.event_name != 'push' || github.actor != 'github-actions[bot]' || !contains(github.event.head_commit.message, '[ig-publisher]')
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
+      # Gepinnt auf IG Publisher 2.3.4 (PTDATA-2412): 2.3.5 bricht mit NPE im PractitionerRoleRenderer ab.
+      # Digest: sha256:f10648b289444fb774ce80c9ce137e55fb81af5ea8549c8794a0fa6efc539027
+      image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:v2.3.4-pkg-0.5.0-snapshot-support-20260918
     env:
       SUSHI_INPUT_DIR: Resources
 
@@ -118,7 +120,9 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
+      # Gepinnt auf IG Publisher 2.3.4 (PTDATA-2412): 2.3.5 bricht mit NPE im PractitionerRoleRenderer ab.
+      # Digest: sha256:f10648b289444fb774ce80c9ce137e55fb81af5ea8549c8794a0fa6efc539027
+      image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:v2.3.4-pkg-0.5.0-snapshot-support-20260918
     strategy:
       matrix:
         include: &ig_matrix
