@@ -72,8 +72,7 @@
       {
         "id": "Observation.basedOn",
         "path": "Observation.basedOn",
-        "short": "maximal Kardinalität bei Übernahme aus MII-Kerndatensatz-ICU entfernt",
-        "mustSupport": true
+        "comment": "Hinweis: maximale Kardinalität bei Übernahme aus MII-Kerndatensatz-ICU entfernt.\n  \n  Auch ein MS erscheint an dieser Stelle nicht sinnvoll, da eine Befüllung zunächst weiterer Profil-Definitionen bedürfte."
       },
       {
         "id": "Observation.partOf",
@@ -337,6 +336,7 @@
       {
         "id": "Observation.bodySite",
         "path": "Observation.bodySite",
+        "comment": "Hinweis für Implementierende: in wenigen abgeleiteten Profilen ist dieses Element nicht sinnvoll befüllbar. Für diese Einzelfälle werden keine Testvorgaben gemacht.",
         "mustSupport": true,
         "binding": {
           "strength": "extensible",
@@ -352,6 +352,7 @@
       {
         "id": "Observation.device",
         "path": "Observation.device",
+        "comment": "**Bedingtes MS:** Geräteangaben sind relevante Informationen, die persistiert und exponiert werden SOLLEN, sofern sie verfügbar sind. Das Must-Support gilt ausschließlich für Systeme, die\n  Geräteangaben persistieren.",
         "mustSupport": true
       },
       {
@@ -362,7 +363,7 @@
       {
         "id": "Observation.component",
         "path": "Observation.component",
-        "mustSupport": true
+        "comment": "Das Must-Support wurde an dieser Stelle entfernt, da es im Wesentlichen für die sonstigen pulsatilen Drücke relevant ist."
       },
       {
         "id": "Observation.component.code",

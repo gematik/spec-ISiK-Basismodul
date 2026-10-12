@@ -39,7 +39,7 @@ prepare ──► build (Matrix, parallel pro IG) ──┬──► publish_gat
 ```
 
 ### 1. `prepare` — gemeinsame Vorbereitung (einmal)
-Läuft im Container `ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest`.
+Läuft im Container `ghcr.io/gefyra/ig-publisher-with-snapshot-support:v2.3.4-pkg-0.5.0-snapshot-support-20260918`.
 - **Download Dependencies:** lädt FHIR-Paketabhängigkeiten via `fhir-pkg-tool` aus
   `sushi-config.yaml` in den Paket-Cache.
 - **Run SUSHI:** konvertiert die gemeinsamen FSH-Eingaben **einmalig** zu FHIR.
@@ -124,11 +124,13 @@ Bewusst getrennt nach **echter technischer Schuld** (suboptimal, sollte behoben 
 
 ### Technische Schulden (behebbar)
 
-- **Container-Image über gleitenden `:latest`-Tag bezogen**
-  (`ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest`, in `prepare` und `build`). Das Image
-  selbst ist gewollt (siehe externe Abhängigkeiten) — die Schuld ist **allein der `:latest`-Tag**:
-  Ein neuer Image-Push kann Builds unbemerkt verändern oder brechen (nicht reproduzierbar).
-  **Fix: auf festen Tag/Digest pinnen** und Updates kontrolliert nachziehen.
+- **Container-Image gepinnt** (seit PTDATA-2412): `ghcr.io/gefyra/ig-publisher-with-snapshot-support:v2.3.4-pkg-0.5.0-snapshot-support-20260918`
+  in `prepare` und `build`, Digest im Workflow als Kommentar hinterlegt. Vorher wurde `:latest` bezogen;
+  IG Publisher 2.3.5 brach damit am 08.10.2026 alle Builds (NPE im PractitionerRoleRenderer).
+  **Updates kontrolliert nachziehen:** neuen Tag aus
+  [ghcr.io](https://github.com/Gefyra/ig-publisher-action/pkgs/container/ig-publisher-with-snapshot-support)
+  wählen (Schema `v<Publisher>-pkg-<fhir-pkg-tool>-snapshot-support-<Datum>`), an beiden Stellen eintragen,
+  Build auf einem Branch prüfen.
 - **Ungenutzter Matrix-Anker `&ig_matrix`** (Zeile `include: &ig_matrix`). Der Anker ist definiert,
   wird aber nirgends per `*ig_matrix` referenziert (verifiziert) → **toter Ballast, kann entfernt
   werden.**
@@ -157,7 +159,7 @@ Bewusst getrennt nach **echter technischer Schuld** (suboptimal, sollte behoben 
 
 | Action / Dienst | Version | Herkunft | Einschätzung |
 |---|---|---|---|
-| `ghcr.io/gefyra/ig-publisher-with-snapshot-support` | `:latest` | Gefyra GmbH — gebaut aus [`Gefyra/ig-publisher-action`](https://github.com/Gefyra/ig-publisher-action) (MIT) | **Wichtigste externe Abhängigkeit — bewusst gewählt, kein Fork.** Gepflegtes, zweckgebautes CI-Image: bündelt HL7 IG Publisher, SUSHI, `fhir-pkg-tool` (Snapshot-Erzeugung), Java 21 (Temurin) und Node 20; vorkonfiguriertes Memory (IG Publisher `-Xmx4g`, Package-Tool 2 GB), fertige Wrapper-Kommandos (`igpublisher`, `fhir-pkg-tool`), CI-Workdir `/github/workspace`, Bundler/Build-Tools für native Ruby-Extensions, Git/Unzip, Download-Validierung. Automatisierter Release-Prozess (täglicher Check auf neue IG-Publisher-Versionen). **Beibehalten** — einziger offener Punkt: den `:latest`-Tag pinnen. |
+| `ghcr.io/gefyra/ig-publisher-with-snapshot-support` | `v2.3.4-pkg-0.5.0-snapshot-support-20260918` | Gefyra GmbH — gebaut aus [`Gefyra/ig-publisher-action`](https://github.com/Gefyra/ig-publisher-action) (MIT) | **Wichtigste externe Abhängigkeit — bewusst gewählt, kein Fork.** Gepflegtes, zweckgebautes CI-Image: bündelt HL7 IG Publisher, SUSHI, `fhir-pkg-tool` (Snapshot-Erzeugung), Java 21 (Temurin) und Node 20; vorkonfiguriertes Memory (IG Publisher `-Xmx4g`, Package-Tool 2 GB), fertige Wrapper-Kommandos (`igpublisher`, `fhir-pkg-tool`), CI-Workdir `/github/workspace`, Bundler/Build-Tools für native Ruby-Extensions, Git/Unzip, Download-Validierung. Automatisierter Release-Prozess (täglicher Check auf neue IG-Publisher-Versionen). **Beibehalten** — Tag seit PTDATA-2412 gepinnt (vorher `:latest`). |
 | `gematik.de/fhir/isik/...` (CapabilityStatement-URLs) | — | gematik (fachlich) | **Beibehalten** — fachliche Quell-URLs der ISiK-Spezifikation. |
 | `actions/checkout` | `v6` | GitHub offiziell | Beibehalten. |
 | `actions/upload-artifact` | `v7` | GitHub offiziell | Beibehalten. |
