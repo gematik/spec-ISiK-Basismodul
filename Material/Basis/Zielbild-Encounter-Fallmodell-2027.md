@@ -17,7 +17,7 @@ ISiK Stufe 6 verfügt bereits über ein differenziertes Fallmodell auf Basis von
 
 Im Rahmen von Implementierungen in Krankenhäusern, Diskussionen mit der Medizininformatik-Initiative (MII), Rückmeldungen aus den Datenintegrationszentren (DIZ) sowie Erfahrungen aus der Spezifikationsarbeit wurden verschiedene offene Fragestellungen identifiziert.
 
-Dabei geht es nicht nur um einzelne Modellierungsdetails, sondern zunehmend um die Frage, welches langfristige fachliche und technische Zielbild ISiK für die Abbildung von Fällen, Versorgungskontakten und Versorgungsepisoden verfolgen soll.
+Dabei geht es nicht nur um einzelne Modellierungsdetails, sondern zunehmend um die Frage, welches langfristige fachliche und technische Zielbild ISiK für die Abbildung von Fällen, Kontakten und Versorgungsepisoden verfolgen soll.
 
 Dieses Dokument beschreibt die Themenfelder, die bis April 2027 untersucht und entschieden werden sollen, sowie ein realistisches Vorgehensmodell für die Weiterentwicklung.
 
@@ -25,7 +25,7 @@ Dieses Dokument beschreibt die Themenfelder, die bis April 2027 untersucht und e
 
 Folgende Grundannahmen gelten zunächst als gesetzt und sollen im Rahmen dieser Arbeiten nicht erneut grundsätzlich diskutiert werden:
 
-- Die Trennung zwischen Encounter (Versorgungskontakt) und Account (Abrechnungsfall) bleibt bestehen.
+- Die Trennung zwischen Encounter (Kontakt) und Account (Abrechnungsfall) bleibt bestehen.
 - Die im deutschen Krankenhauswesen verwendete Fallnummer ist eine Abrechnungsnummer.
 - Die Fallnummer wird über den Account repräsentiert und umfasst regelmäßig mehrere Encounter.
 - Eine Fallnummer darf nicht als `Encounter.identifier` verwendet werden.
@@ -41,7 +41,7 @@ Derzeit existiert kein EpisodeOfCare-Profil in ISiK.
 
 Das bestehende Fallmodell adressiert primär:
 
-- **Aufenthalt/Besuch/Kontakt (Encounter)** - hier weiter als "Versorgungskontakte" bezeichnet
+- **Aufenthalt/Besuch/Kontakt (Encounter)** - hier weiter als "Kontakte" bezeichnet
 - **Abrechnungszusammenhänge oder Abrechnungsfall (Account)**
 
 Nicht eindeutig adressiert werden dagegen medizinische Zusammenhänge, die sich über mehrere Encounter und gegebenenfalls mehrere Accounts erstrecken.
@@ -187,7 +187,7 @@ Klärung der Modellierung von Versorgungssituationen (anhand von Szenarien), in 
 
 #### Zielbild
 
-Das Modell soll sicherstellen, dass zusätzliche Versorgungskontakte nicht fälschlich als Wechsel der Fallart (stationär → ambulant) interpretiert werden.
+Das Modell soll sicherstellen, dass zusätzliche Kontakte nicht fälschlich als Wechsel der Fallart (stationär → ambulant) interpretiert werden.
 
 ### Wiederaufnahme
 
