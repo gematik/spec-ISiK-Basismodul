@@ -84,9 +84,8 @@ Es soll entschieden werden,
 Basierend auf Diskussionen mit der Industrie, Krankenhäusern und der MII wurde die Entscheidung getroffen, die EpisodeOfCare zunächst nicht in ISiK Aufzunehmen. 
 
 Gründe:
-
-- Die Strukturierung nach Versorgungsepisoden wird in KH aktuell nicht gelebt
-- Es gibt keine Bedarfsmeldung von Seiten der Hersteller oder Krankenhäuser
+- Die Strukturierung nach Versorgungsepisoden wird in Krankenhäusern aktuell nicht gelebt
+- Es gibt nur ein einzelne Bedarfsmeldung zu einem entsprechenden Profil von Seiten eines Krankenhauses und sonst keine Interessensbekundung von Herstellern oder Krankenhäusern
 
 ### 2. Rolle des Einrichtungskontakts
 
