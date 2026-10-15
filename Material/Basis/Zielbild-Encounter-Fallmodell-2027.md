@@ -362,7 +362,8 @@ Aktuelle Arbeitshypothese:
 Die Arbeiten konzentrieren sich auf drei übergreifende Architekturfragen:
 
 1. Soll EpisodeOfCare künftig als eigenes Konzept zur Abbildung medizinischer Versorgungsepisoden Bestandteil von ISiK werden?
-2. Welche langfristige Rolle soll der Einrichtungskontakt innerhalb des ISiK-Fallmodells neben dem Account einnehmen?
-3. Welchen fachlichen Geltungsbereich soll das ISiK-Fallmodell künftig abdecken, insbesondere hinsichtlich MVZs, ambulanter Krankenhausversorgung und sektorübergreifender Versorgungskontexte?
+   - Abgelehnt: Nein, EpisodeOfCare wird nach dem Stand der Diskussion der 1. "AG Encounter" vom 10.9.2026 zunächst nicht weiterverfolgt.
+3. Welche langfristige Rolle soll der Einrichtungskontakt innerhalb des ISiK-Fallmodells neben dem Account einnehmen?
+4. Welchen fachlichen Geltungsbereich soll das ISiK-Fallmodell künftig abdecken, insbesondere hinsichtlich MVZs, ambulanter Krankenhausversorgung und sektorübergreifender Versorgungskontexte?
 
 Von der Beantwortung dieser drei Fragen hängen wesentliche Teile der zukünftigen Encounter-Modellierung und der Weiterentwicklung des ISiK-Fallkonzepts ab. Insbesondere die Detailfragen zu Wiederaufnahmen, Diagnosen, Hierarchien, Profilstruktur, Locations und Fallakten können erst auf Basis dieser strategischen Entscheidungen abschließend spezifiziert werden.
