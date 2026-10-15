@@ -338,6 +338,10 @@ Insbesondere zu prüfen:
 - Fachdisziplinen
 - Konsile
 
+Aber potentiell auch:
+- Prozeduren
+- Vitalzeichen
+
 ### partOf und Hierarchien
 
 Zu klären sind insbesondere:
