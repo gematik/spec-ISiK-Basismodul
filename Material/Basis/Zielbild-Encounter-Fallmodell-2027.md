@@ -85,7 +85,7 @@ Basierend auf Diskussionen mit der Industrie, Krankenhäusern und der MII wurde 
 
 Gründe:
 - Die Strukturierung nach Versorgungsepisoden wird in Krankenhäusern aktuell nicht gelebt
-- Es gibt nur ein einzelne Bedarfsmeldung zu einem entsprechenden Profil von Seiten eines Krankenhauses und sonst keine Interessensbekundung von Herstellern oder Krankenhäusern
+- Es gibt nur eine einzelne Bedarfsmeldung zu einem entsprechenden Profil von Seiten eines Krankenhauses und sonst keine Interessensbekundung von Herstellern oder Krankenhäusern
 
 ### 2. Rolle des Einrichtungskontakts
 
