@@ -141,7 +141,7 @@ Die Klärung dieser Frage beeinflusst unmittelbar:
 - Profilstruktur
 - Definition der Fallakte
 - Nutzung von Locations
-- Umgang mit fehlenden Encounter-Ebenen
+- Umgang mit "fehlenden" Encounter-Ebenen
 
 ### 3. Geltungsbereich des ISiK-Fallmodells
 
