@@ -30,18 +30,20 @@ This script automatically extracts requirement identifiers (ANF-CON-XXX patterns
 - The generated table uses pagelink references for easy navigation within the documentation
 - Ensures unique requirements per file to avoid duplicates
 
-## Release_publish.py
+## Release_publish.py (moved to ISIK-tooling-automation)
 
 ### Purpose/Functionality
-This script automates the release process by updating version numbers and dates across multiple files in the repository. It uses configuration from `config.yaml` to determine which files to update and what patterns to match for version and date replacements.
+The release script that updates version numbers and dates across the repository is no longer maintained here.
+It lives centrally in [gematik/ISIK-tooling-automation](https://github.com/gematik/ISIK-tooling-automation/tree/main/release_publish)
+together with the per-Stufe IG exclusion list (`excluded_igs.yaml`) and is used by the `TC-version-update.yml`
+workflow as a GitHub Action (see [.github/workflows/README.md](../.github/workflows/README.md)).
 
 ### Hints for Using the Script
-- Requires `config.yaml` configuration file in the same directory
-- Automatically detects the current git branch to determine version information
-- Supports TC- and TC_ branch name prefixes for version extraction
-- Updates files like `package.json`, `sushi-config.yaml`, `ruleset.fsh`, and various Markdown files
-- Use with caution as it modifies multiple files simultaneously
-- Test on a separate branch before applying to main release branches
+- Only `config.yaml` (which files to touch, which regex patterns to apply) stays in this repository
+- To run locally, clone the tooling repo next to this one and execute from the repository root:
+  `python ../ISIK-tooling-automation/release_publish/release_publish.py -b -c scripts/config.yaml`
+- To change the IG exclusion list of a Stufe, edit `release_publish/excluded_igs.yaml` in the central repo
+- See the central [README](https://github.com/gematik/ISIK-tooling-automation/blob/main/release_publish/README.md) for all options
 
 ## Update-compile-and-validation-tools.py
 
@@ -58,7 +60,7 @@ This script automatically updates the GitHub Actions workflow configuration with
 ## config.yaml
 
 ### Purpose/Functionality
-Configuration file for the `release_publish.py` script. Defines file patterns, regex expressions, and format specifications for version and date updates across different file types.
+Configuration file for the central `release_publish.py` script (gematik/ISIK-tooling-automation). Defines file patterns, regex expressions, and format specifications for version and date updates across different file types.
 
 ### Hints for Using the Script
 - Not executable - this is a configuration file
