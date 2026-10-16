@@ -10,34 +10,23 @@ on:
         - 'TC-5*'
         - 'TC_5*'
 
-env:
-    # Comma-separated list of IG name keywords excluded from the automatic version update.
-    # Only applies to Stufe-5 branches (TC-5*/TC_5*); Stufe-6 branches (TC-6*/TC_6*) get an empty list.
-    # Matched case-insensitively as a substring against the IG folder name under guides/
-    # (e.g. "formular" matches guides/Formulare-5, "subscription" matches guides/Subscriptions-5).
-    # Maintain this list here to add/remove excluded IGs.
-    EXCLUDED_IGS: ${{ (startsWith(github.ref_name, 'TC-5') || startsWith(github.ref_name, 'TC_5')) && 'formular,subscription' || '' }}
-
-# setup python and run script 
+# The release/versioning logic (release_publish.py incl. the per-Stufe IG exclusion list) is maintained
+# centrally in https://github.com/gematik/ISIK-tooling-automation (release_publish/, PTDATA-2345).
+# This workflow only passes the repo-specific parameters (regex config). The Stufe and therefore the
+# IG exclusion list are derived from the branch name (TC-<stufe>*/TC_<stufe>*).
+# To exclude further IGs for a Stufe, edit release_publish/excluded_igs.yaml in the central repo.
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
           - name: checkout repo content
             uses: actions/checkout@v6 # checkout the repository content
-            
-          - name: setup python
-            uses: actions/setup-python@v6
+
+          - name: update release version and date
+            # TODO(PTDATA-2345): pin to the commit SHA of the merged tooling PR instead of the feature branch
+            uses: gematik/ISIK-tooling-automation/release_publish@feature/release-publish-action-PTDATA-2345
             with:
-              python-version: '3.10' # install the python version needed
-    
-          - name: install python packages
-            run: |
-              python -m pip install --upgrade pip
-              pip install pyyaml
-    
-          - name: execute py script # run main.py
-            run: python ./scripts/release_publish.py -b --exclude-igs "$EXCLUDED_IGS"
+              config: scripts/config.yaml
 
           - name: Add & Commit
             uses: EndBug/add-and-commit@v9
