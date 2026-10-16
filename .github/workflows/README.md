@@ -73,15 +73,16 @@ Automatically renders diagrams from source files into SVG format for use in docu
 ## TC-version-update.yml
 
 ### Purpose/Functionality
-Automatically updates version numbers across the project when working on TC (Test Case) branches. This workflow detects TC branch pushes and runs the release publishing script to update version information consistently across all relevant files.
+Automatically updates version numbers across the project when working on TC (Technical Correction) branches. This workflow detects TC branch pushes and calls the central release-publish action from [gematik/ISIK-tooling-automation](https://github.com/gematik/ISIK-tooling-automation/tree/main/release_publish), which updates version information consistently across all relevant files and skips the IGs excluded for the respective Stufe.
 
 ### Hints for Using the Workflow
 - Triggers automatically on push to branches named `TC-*` or `TC_*`
-- Requires Python 3.10 and PyYAML package
-- Runs the `release_publish.py` script with branch detection
+- The script logic and the per-Stufe IG exclusion list are maintained centrally; this workflow only passes the repo-specific `scripts/config.yaml`
+- The Stufe (and therefore the exclusion list) is derived from the branch name (`TC-<stufe>*`)
+- The central action is referenced by a pinned ref; update the ref to pick up changes of the central logic
 - Auto-commits version updates with GitHub Actions Bot identity
 - Ensure the `config.yaml` file is properly configured for version update patterns
-- Review the script output to confirm all intended files were updated
+- Review the action output to confirm all intended files were updated
 
 ## Workflow Dependencies and Integration
 

@@ -8,27 +8,23 @@ on:
         - 'TC-*'
         - 'TC_*'
 
-
-# setup python and run script 
+# The release/versioning logic (release_publish.py incl. the per-Stufe IG exclusion list) is maintained
+# centrally in https://github.com/gematik/ISIK-tooling-automation (release_publish/, PTDATA-2345).
+# This workflow only passes the repo-specific parameters (regex config). The Stufe and therefore the
+# IG exclusion list are derived from the branch name (TC-<stufe>*/TC_<stufe>*).
+# To exclude further IGs for a Stufe, edit release_publish/excluded_igs.yaml in the central repo.
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
           - name: checkout repo content
             uses: actions/checkout@v7 # checkout the repository content
-            
-          - name: setup python
-            uses: actions/setup-python@v7
+
+          - name: update release version and date
+            # TODO(PTDATA-2345): pin to the commit SHA of the merged tooling PR instead of the feature branch
+            uses: gematik/ISIK-tooling-automation/release_publish@feature/release-publish-action-PTDATA-2345
             with:
-              python-version: '3.13' # install the python version needed
-    
-          - name: install python packages
-            run: |
-              python -m pip install --upgrade pip
-              pip install pyyaml
-    
-          - name: execute py script # run main.py
-            run: python ./scripts/release_publish.py -b
+              config: scripts/config.yaml
 
           - name: Add & Commit
             uses: EndBug/add-and-commit@v11
