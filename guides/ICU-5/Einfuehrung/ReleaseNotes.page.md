@@ -14,7 +14,7 @@ Darüber hinaus wird die Versionierung unabhängig von allen anderen Modulen und
 
 Datum: 19.10.2026
 
-* fix` Must-Support im Profil `SD_MII_ICU_Monitoring_Und_Vitaldaten` bereinigt: MS an `basedOn` und `component` entfernt, bedingtes MS an `device` sowie Hinweise zu `bodySite` erläutert https://github.com/gematik/spec-ISiK-Basismodul/pull/1321
+* `fix` Must-Support im Profil `SD_MII_ICU_Monitoring_Und_Vitaldaten` bereinigt: MS an `basedOn` und `component` entfernt, bedingtes MS an `device` sowie Hinweise zu `bodySite` erläutert https://github.com/gematik/spec-ISiK-Basismodul/pull/1321
 
 ## Version 5.1.3
 
