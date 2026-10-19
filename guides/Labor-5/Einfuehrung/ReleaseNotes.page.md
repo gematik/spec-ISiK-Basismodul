@@ -12,9 +12,9 @@ Datum: tbd
 
 * `fix` Aktualisierung der Rest-API Festlegungsseite. Entfernung der Anforderung der Create-Interaktion https://github.com/gematik/spec-ISiK-Basismodul/pull/1342
 
-## Version 5.1.3
+## Version 5.2.0
 
-Datum: 17.07.2026
+Datum: 19.10.2026
 
 * Keine Änderung am IG
 

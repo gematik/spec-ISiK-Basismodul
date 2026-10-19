@@ -29,9 +29,9 @@ Datum: tbd.
 * `documentation` Klarstellung zur Quelle der Telematik-ID https://github.com/gematik/spec-ISiK-Basismodul/pull/1328 
 * `documentation` Korrektur der geforderten Interaktionen für den Practitioner https://github.com/gematik/spec-ISiK-Basismodul/pull/1333 
 
-## Version 5.1.3
+## Version 5.2.0
 
-Datum: 20.07.2026
+Datum: 19.10.2026
 
 * `fix` Package-Dependency Anpassung de.fhir.medication zu 1.0.4 - siehe fix in 5.1.2 - https://github.com/gematik/spec-ISiK-Basismodul/pull/1292
 * `fix` REQUIRED Suchparameter AllergyIntolerance.onset aus AMTS-Rolle und GesundheitsstatusRolle entfernt aufgrund fehlerhafter Spezifikation https://github.com/gematik/spec-ISiK-Basismodul/pull/1212

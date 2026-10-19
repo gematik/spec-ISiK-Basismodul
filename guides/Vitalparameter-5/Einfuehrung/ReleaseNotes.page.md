@@ -8,9 +8,9 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 tbd. ...
 
-## Version 5.1.3
+## Version 5.2.0
 
-Datum: 17.07.2026
+Datum: 19.10.2026
 
 * Keine Änderung am IG
 
