@@ -16,9 +16,9 @@ Datum: tbd
 
 * fix` Must-Support im Profil `SD_MII_ICU_Monitoring_Und_Vitaldaten` bereinigt: MS an `basedOn` und `component` entfernt, bedingtes MS an `device` sowie Hinweise zu `bodySite` erläutert https://github.com/gematik/spec-ISiK-Basismodul/pull/1321
 
-## Version 5.2.0
+## Version 5.1.3
 
-Datum: 19.10.2026
+Datum: 17.07.2026
 
 * `fix` Verschieben des Profils `SD_MII_ICU_Intrakranieller_Druck_Icp` aus der `ICUSourceMinimalRolle` in die `ICUSourceExtendedRolle` und damit Lockerung der Anforderungen an Systeme https://github.com/gematik/spec-ISiK-Basismodul/pull/1270
 

@@ -16,9 +16,9 @@ Datum: tbd.
 * `improve` Für DocumentReference.context.practiceSetting wurde die Kardinalität 1.. entfernt und das required binding auf extensible gelockert https://github.com/gematik/spec-ISiK-Basismodul/pull/1309
 
 
-## Version 5.2.0
+## Version 5.1.3
 
-Datum: 19.10.2026
+Datum: 17.07.2026
 
 * `improve` Verpflichtung zur patientenübergreifenden Suche entfernt, aufgrund unklarer UseCases und fehlender Suchparameter für geeignete Abfragen https://github.com/gematik/spec-ISiK-Basismodul/pull/1215
 * `fix`: Fehlende Deklaration der StammdatenRolle im Capabilitystatement des Akteurs ISiKCapabilityStatementDokumentenServerAkteur hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/1225
