@@ -28,6 +28,7 @@ Datum: 19.10.2026
 * `documentation` Verbesserung fehlerhafter Beispiele innerhalb der Suchparameterdefinition in den CapabilityStatements https://github.com/gematik/spec-ISiK-Basismodul/pull/1323
 * `documentation` Klarstellung zur Quelle der Telematik-ID https://github.com/gematik/spec-ISiK-Basismodul/pull/1328 
 * `documentation` Korrektur der geforderten Interaktionen für den Practitioner https://github.com/gematik/spec-ISiK-Basismodul/pull/1333 
+* `documentation` Präzisierung der Empfehlung, Client-Abfragen auf den Kontext einer einzelnen Patient- bzw. Encounter-Ressource einzugrenzen (Übergreifende Festlegungen – Suchparameter) https://github.com/gematik/spec-ISiK-Basismodul/pull/1307
 
 ## Version 5.1.3
 

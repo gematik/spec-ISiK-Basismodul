@@ -9,7 +9,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: 19.10.2026
 
-* Keine Änderung am IG
+* `documentation` Vereinheitlichung der Bezeichner (Ressourcentyp, Suchparameter) in der Darstellung der CapabilityStatement-Rollen https://github.com/gematik/spec-ISiK-Basismodul/pull/1323
 
 ## Version 5.1.3
 

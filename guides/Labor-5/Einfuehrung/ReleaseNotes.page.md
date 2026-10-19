@@ -11,6 +11,7 @@ Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähi
 Datum: 19.10.2026
 
 * `fix` Aktualisierung der Rest-API Festlegungsseite. Entfernung der Anforderung der Create-Interaktion https://github.com/gematik/spec-ISiK-Basismodul/pull/1342
+* `documentation` Vereinheitlichung der Bezeichner (Ressourcentyp, Suchparameter) in der Darstellung der CapabilityStatement-Rollen https://github.com/gematik/spec-ISiK-Basismodul/pull/1323
 
 ## Version 5.1.3
 

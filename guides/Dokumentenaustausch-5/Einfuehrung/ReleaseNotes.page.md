@@ -14,7 +14,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 Datum: 19.10.2026
 
 * `improve` Für DocumentReference.context.practiceSetting wurde die Kardinalität 1.. entfernt und das required binding auf extensible gelockert https://github.com/gematik/spec-ISiK-Basismodul/pull/1309
-
+* `documentation` Vereinheitlichung der Bezeichner (Ressourcentyp, Suchparameter) in der Darstellung der CapabilityStatement-Rollen https://github.com/gematik/spec-ISiK-Basismodul/pull/1323
 
 ## Version 5.1.3
 
