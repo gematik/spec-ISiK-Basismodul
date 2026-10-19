@@ -1,7 +1,7 @@
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/>
 
 ----
-Version: 5.1.3
+Version: 5.2.0
 
 Datum: 20.07.2026
 
