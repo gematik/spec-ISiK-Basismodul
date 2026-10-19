@@ -19,15 +19,16 @@ Die Tags werden folgendermaßen verwendet:
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
 
-## Version 5.x.y
+## Version 5.2.0
 
-Datum: tbd.
+Datum: 19.10.2026
 
 * `improve` Einbinden der Allergie-ValueSets nach Publikation auf Zentralem Terminologie-Server im Profil ISiKAllergieUnvertraeglichkeit https://github.com/gematik/spec-ISiK-Basismodul/pull/1313
 * `documentation` Zusammenführung der Festlegungen zur Methodik <https://github.com/gematik/spec-ISiK-Basismodul/pull/1330>
 * `documentation` Verbesserung fehlerhafter Beispiele innerhalb der Suchparameterdefinition in den CapabilityStatements https://github.com/gematik/spec-ISiK-Basismodul/pull/1323
 * `documentation` Klarstellung zur Quelle der Telematik-ID https://github.com/gematik/spec-ISiK-Basismodul/pull/1328 
 * `documentation` Korrektur der geforderten Interaktionen für den Practitioner https://github.com/gematik/spec-ISiK-Basismodul/pull/1333 
+* `documentation` Präzisierung der Empfehlung, Client-Abfragen auf den Kontext einer einzelnen Patient- bzw. Encounter-Ressource einzugrenzen (Übergreifende Festlegungen – Suchparameter) https://github.com/gematik/spec-ISiK-Basismodul/pull/1307
 
 ## Version 5.1.3
 
@@ -444,7 +445,6 @@ Datum: 08.04.2022
 
 * Initiale Ballotierungsversion für ISiK Stufe 2
 ----
-
 
 
 

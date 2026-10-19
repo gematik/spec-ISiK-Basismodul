@@ -9,12 +9,12 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
-## Version 5.x.x
+## Version 5.2.0
 
-Datum: tbd.
+Datum: 19.10.2026
 
 * `improve` Für DocumentReference.context.practiceSetting wurde die Kardinalität 1.. entfernt und das required binding auf extensible gelockert https://github.com/gematik/spec-ISiK-Basismodul/pull/1309
-
+* `documentation` Vereinheitlichung der Bezeichner (Ressourcentyp, Suchparameter) in der Darstellung der CapabilityStatement-Rollen https://github.com/gematik/spec-ISiK-Basismodul/pull/1323
 
 ## Version 5.1.3
 
