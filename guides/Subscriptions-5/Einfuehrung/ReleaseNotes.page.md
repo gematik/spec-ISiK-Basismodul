@@ -21,6 +21,13 @@ Implementierende sollen sich an dieser aktuellen Stufe ausrichten.
 Dies bedeutet, dass an diesem Implementierungsleitfaden ab heute keine Änderungen mehr vorgenommen werden.
 Die zugehörigen Ressourcen werden aus dem Package der Stufe 5 entfernt.
 
+## Version 5.2.0
+
+Datum: 19.10.2026 
+
+* Keine Änderung am IG
+
+
 ## Version 5.1.2
 
 Datum: 22.04.2026
