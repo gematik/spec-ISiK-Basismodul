@@ -3,7 +3,7 @@
 ----
 Version: 5.2.0
 
-Datum: 20.07.2026
+Datum: 19.10.2026
 
 
 Status: Aktiv
