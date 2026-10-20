@@ -63,6 +63,7 @@ Alias: $vsAllergyIntoleranceClinicalStatus = http://terminology.hl7.org/CodeSyst
 Alias: $vsAllergyIntoleranceVerificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 Alias: $KBV_VS_Base_Allergien-ausloesende-Substanz = https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Substance_SNOMED_CT
 Alias: $KBV_VS_Base_Allergien-Manifestation = https://fhir.kbv.de/ValueSet/KBV_VS_AllergyIntolerance_Manifestation_SNOMED_CT
+Alias: $vs_pregnancy_status_ips = http://hl7.org/fhir/uv/ips/ValueSet/pregnancy-status-uv-ips
 
 Alias: $imposeProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile
 Alias: $compliesWithProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile

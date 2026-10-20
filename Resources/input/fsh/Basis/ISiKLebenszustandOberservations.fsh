@@ -97,7 +97,7 @@ Description: "Dieses Profil bildet den Schwangerschaftsstatus einer Patientin ab
 * code.coding[loinc] = $loinc#82810-3
 * valueCodeableConcept 1.. MS
   * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)"
-* valueCodeableConcept from SchwangerschaftsstatusVS
+* valueCodeableConcept from $vs_pregnancy_status_ips
 * hasMember only Reference(ISiKSchwangerschaftErwarteterEntbindungstermin)
 * hasMember 0..1 MS
 * hasMember ^short = "Erwartetes Geburtsdatum"

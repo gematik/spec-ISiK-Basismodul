@@ -73,15 +73,6 @@ Title: "ISiKAccountType"
 * $v3-ActCode#AMB "ambulatory"
 * $v3-ActCode#IMP "inpatient encounter"
 
-ValueSet: SchwangerschaftsstatusVS
-Id: SchwangerschaftsstatusVS
-Description: "Dieses Valueset enthält die Codes zur Beschreibung des Schwangerschaftsstatus einer Patientin."
-Title: "Schwangerschaftsstatus Valueset"
-* insert Meta
-* $loinc#LA15173-0 "Pregnant"
-* $loinc#LA26683-5 "Not pregnant"
-* $loinc#LA4489-6 "Unknown"
-
 ValueSet: SchwangerschaftEtMethodeVS
 Id: SchwangerschaftEtMethodeVS
 Description: "Dieses Valueset enthält die Codes zur Beschreibung der Methode zur Bestimmung des erwarteten Entbindungstermins bei einer Schwangerschaft."
