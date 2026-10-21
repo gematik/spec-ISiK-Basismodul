@@ -113,7 +113,7 @@ Title: "ISiKSchwangerschaftsstatusBeispiel"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
-* valueCodeableConcept = $sct#77386006 "Pregnant"
+* valueCodeableConcept = $sct#77386006 "Schwanger"
   * coding.version = "http://snomed.info/sct/11000274103/version/20251115"
 * hasMember = Reference(ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel)
 * encounter = Reference(Fachabteilungskontakt)
