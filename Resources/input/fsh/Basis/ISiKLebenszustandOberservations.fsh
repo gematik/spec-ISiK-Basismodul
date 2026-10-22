@@ -97,7 +97,7 @@ Description: "Dieses Profil bildet den Schwangerschaftsstatus einer Patientin ab
 * code.coding[loinc] = $loinc#82810-3
 * valueCodeableConcept 1.. MS
   * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)"
-* valueCodeableConcept from SchwangerschaftsstatusVS
+* valueCodeableConcept from $vs_pregnancy_status_ips
 * hasMember only Reference(ISiKSchwangerschaftErwarteterEntbindungstermin)
 * hasMember 0..1 MS
 * hasMember ^short = "Erwartetes Geburtsdatum"
@@ -113,8 +113,8 @@ Title: "ISiKSchwangerschaftsstatusBeispiel"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
-* valueCodeableConcept = $loinc#LA15173-0 "Pregnant"
-  * coding.version = "2.77"
+* valueCodeableConcept = $sct#77386006 "Schwanger"
+  * coding.version = "http://snomed.info/sct/11000274103/version/20251115"
 * hasMember = Reference(ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel)
 * encounter = Reference(Fachabteilungskontakt)
 
