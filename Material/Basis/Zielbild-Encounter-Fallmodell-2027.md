@@ -1,17 +1,17 @@
 
-# Zielbild zur Weiterentwicklung des ISiK Encounter- und Fallmodells bis April 2027
+# Zielbild zur Weiterentwicklung des ISiK Kontakt- und Fallmodells bis April 2027
 
 Status: Diskussionsentwurf (laufende Fortschreibung)
 
-Letzte Änderung: 15.10.2026
+Letzte Änderung: 22.10.2026
 
-Dieses Dokument beschreibt identifizierte Fragestellungen und ein mögliches Zielbild für die Weiterentwicklung des ISiK Encounter- und Fallmodells bis April 2027. Es handelt sich ausdrücklich nicht um eine beschlossene Fachspezifikation.
+Dieses Dokument beschreibt identifizierte Fragestellungen und ein mögliches Zielbild für die Weiterentwicklung des ISiK Kontakt- (Encounter) und Fallmodells bis April 2027. Es handelt sich nicht um eine beschlossene Fachspezifikation.
 
 Kommentare und Rückmeldungen sind ausdrücklich erwünscht.
 
 ## Ausgangslage
 
-ISiK Stufe 6 verfügt bereits über ein differenziertes Fallmodell auf Basis von Encounter und Account.
+ISiK Stufe 6 verfügt bereits über ein differenziertes Kontakt- und Fallmodell, das FHIR-Profile der Ressourcen-Typen Encounter und Account einschließt.
 
 <https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/Abbildung-des-Konstrukts-Fall.html>
 
