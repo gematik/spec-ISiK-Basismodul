@@ -1,6 +1,12 @@
 
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+### Version 6.0.1
+
+Datum: tbd
+
+* `fix` Entfernung falscher Kodierung und Einheitsangaben für Procalcitonin <https://github.com/gematik/spec-ISiK-Basismodul/pull/1344>
+
 ### Version 6.0.0
 
 Datum: 01.07.2026
