@@ -2,7 +2,7 @@ Profile: MII_PR_ICU_MUV_zerebraler_Perfusionsdruck
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: mii-pr-icu-muv-zerebraler-perfusionsdruck
 Title: "MII PR ICU MUV zerebraler Perfusionsdruck"
-Description: "Dieses Profil dient der spezialisierten Abbildung des zerebralen Perfusionsdrucks (ICP) in der Akutmedizin.
+Description: "Dieses Profil dient der spezialisierten Abbildung des zerebralen Perfusionsdrucks (CPP, Cerebral Perfusion Pressure) in der Akutmedizin. Der CPP ergibt sich als Differenz aus dem mittleren arteriellen Druck (MAP) und dem intrakraniellen Druck (ICP) und wird in mmHg angegeben. Der intrakranielle Druck selbst wird im separaten Profil SD_MII_ICU_Intrakranieller_Druck_Icp abgebildet.
 
 Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Monitoring%20und%20Vitaldaten/MII_PR_ICU_MUV_zerebraler_Perfusionsdruck.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 3.3.2026."
 * insert Meta

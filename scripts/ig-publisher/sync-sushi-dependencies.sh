@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 set -euo pipefail
 
 shared_config="${1:-Resources/sushi-config.yaml}"

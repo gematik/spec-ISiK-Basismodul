@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 set -euo pipefail
 
 artifacts_dir="${ARTIFACTS_DIR:-artifacts}"

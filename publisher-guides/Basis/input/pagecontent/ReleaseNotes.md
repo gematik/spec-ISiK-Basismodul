@@ -16,6 +16,7 @@ Datum: tbd.
 * `documentation` Zusammenführung der Festlegungen zur Methodik <https://github.com/gematik/spec-ISiK-Basismodul/pull/1329>
 * `documentation` Verbesserung fehlerhafter Beispiele innerhalb der Suchparameterdefinition in den CapabilityStatements https://github.com/gematik/spec-ISiK-Basismodul/pull/1324
 * `documentation` Klarstellung zur Quelle der Telematik-ID https://github.com/gematik/spec-ISiK-Basismodul/pull/1332
+* `improve` Update auf neues ValueSet für den Schwangerschaftsstatus aus dem IPS/ EPS https://github.com/gematik/spec-ISiK-Basismodul/pull/1354
 
 
 ### Version 6.0.0
@@ -89,6 +90,7 @@ Datum: 02.04.2026
 * `improve` Entfernung des deprecated Identifier-Slice VersichertenId-GKV aus dem Profil `ISiKPatient` <https://github.com/gematik/spec-ISiK-Basismodul/pull/1120>
 * `improve` Anpassung der Kardinalität von Organization.name zu 1..1, um eine Kompatibilität zum EHDS und der ePA herzustellen <https://github.com/gematik/spec-ISiK-Basismodul/pull/1119>
 * `fix`: ValueSet-Binding in Procedure.code[Ops] auf OpsVS entfernt, da dieses ValueSet in ValueSet.compose.include.version ein "*" verwendet. Dieses Feature wird von gängigen Terminologieservern nicht unterstützt und führt zu Validierungsfehlern. Durch die weiterhin bestehende Verwendung des OpsCoding-Profils ergibt sich jedoch keine inhaltliche Änderung - Analog zu einer Änderung aus noch nicht veröffentlichter Technical Correction der Stufe 5
+* `improve`: Hinzufügen eines Profils zur Abbildung ambulanter Fälle und Anpassung weiterer Profile zur Abbildung ambulanter Besuche im Krankenhaus <https://github.com/gematik/spec-ISiK-Basismodul/pull/1076>
 
 ### Version 5.1.1
 

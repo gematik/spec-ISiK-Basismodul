@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Script to copy files specified in config.json to the respective IG directories
 
 set -euo pipefail
 

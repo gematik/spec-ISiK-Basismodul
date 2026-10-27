@@ -1,23 +1,23 @@
 
-# Zielbild zur Weiterentwicklung des ISiK Encounter- und Fallmodells bis April 2027
+# Zielbild zur Weiterentwicklung des ISiK Kontakt- und Fallmodells bis April 2027
 
-Status: Diskussionsentwurf
+Status: Diskussionsentwurf (laufende Fortschreibung)
 
-Letzte Änderung: 18.08.2026
+Letzte Änderung: 22.10.2026
 
-Dieses Dokument beschreibt identifizierte Fragestellungen und ein mögliches Zielbild für die Weiterentwicklung des ISiK Encounter- und Fallmodells bis April 2027. Es handelt sich ausdrücklich nicht um eine beschlossene Fachspezifikation.
+Dieses Dokument beschreibt identifizierte Fragestellungen und ein mögliches Zielbild für die Weiterentwicklung des ISiK Kontakt- (Encounter) und Fallmodells bis April 2027. Es handelt sich nicht um eine beschlossene Fachspezifikation.
 
 Kommentare und Rückmeldungen sind ausdrücklich erwünscht.
 
 ## Ausgangslage
 
-ISiK Stufe 6 verfügt bereits über ein differenziertes Fallmodell auf Basis von Encounter und Account.
+ISiK Stufe 6 verfügt bereits über ein differenziertes Kontakt- und Fallmodell, das FHIR-Profile der Ressourcen-Typen Encounter und Account einschließt.
 
 <https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0/Abbildung-des-Konstrukts-Fall.html>
 
 Im Rahmen von Implementierungen in Krankenhäusern, Diskussionen mit der Medizininformatik-Initiative (MII), Rückmeldungen aus den Datenintegrationszentren (DIZ) sowie Erfahrungen aus der Spezifikationsarbeit wurden verschiedene offene Fragestellungen identifiziert.
 
-Dabei geht es nicht nur um einzelne Modellierungsdetails, sondern zunehmend um die Frage, welches langfristige fachliche und technische Zielbild ISiK für die Abbildung von Fällen, Versorgungskontakten und Versorgungsepisoden verfolgen soll.
+Dabei geht es nicht nur um einzelne Modellierungsdetails, sondern zunehmend um die Frage, welches langfristige fachliche und technische Zielbild ISiK für die Abbildung von Fällen, Kontakten und Versorgungsepisoden verfolgen soll.
 
 Dieses Dokument beschreibt die Themenfelder, die bis April 2027 untersucht und entschieden werden sollen, sowie ein realistisches Vorgehensmodell für die Weiterentwicklung.
 
@@ -25,7 +25,7 @@ Dieses Dokument beschreibt die Themenfelder, die bis April 2027 untersucht und e
 
 Folgende Grundannahmen gelten zunächst als gesetzt und sollen im Rahmen dieser Arbeiten nicht erneut grundsätzlich diskutiert werden:
 
-- Die Trennung zwischen Encounter (Versorgungskontakt) und Account (Abrechnungsfall) bleibt bestehen.
+- Die Trennung zwischen Encounter (Kontakt) und Account (Abrechnungsfall) bleibt bestehen.
 - Die im deutschen Krankenhauswesen verwendete Fallnummer ist eine Abrechnungsnummer.
 - Die Fallnummer wird über den Account repräsentiert und umfasst regelmäßig mehrere Encounter.
 - Eine Fallnummer darf nicht als `Encounter.identifier` verwendet werden.
@@ -41,7 +41,7 @@ Derzeit existiert kein EpisodeOfCare-Profil in ISiK.
 
 Das bestehende Fallmodell adressiert primär:
 
-- **Aufenthalt/Besuch/Kontakt (Encounter)** - hier weiter als "Versorgungskontakte" bezeichnet
+- **Aufenthalt/Besuch/Kontakt (Encounter)** - hier weiter als "Kontakte" bezeichnet
 - **Abrechnungszusammenhänge oder Abrechnungsfall (Account)**
 
 Nicht eindeutig adressiert werden dagegen medizinische Zusammenhänge, die sich über mehrere Encounter und gegebenenfalls mehrere Accounts erstrecken.
@@ -84,9 +84,8 @@ Es soll entschieden werden,
 Basierend auf Diskussionen mit der Industrie, Krankenhäusern und der MII wurde die Entscheidung getroffen, die EpisodeOfCare zunächst nicht in ISiK Aufzunehmen. 
 
 Gründe:
-
-- Die Strukturierung nach Versorgungsepisoden wird in KH aktuell nicht gelebt
-- Es gibt keine Bedarfsmeldung von Seiten der Hersteller oder Krankenhäuser
+- Die Strukturierung nach Versorgungsepisoden wird in Krankenhäusern aktuell nicht gelebt
+- Es gibt nur eine einzelne Interessensbekundung zu einem entsprechenden Profil von Seiten eines Krankenhauses und sonst keine konkrete Bedarfsmeldung von Herstellern oder Krankenhäusern
 
 ### 2. Rolle des Einrichtungskontakts
 
@@ -142,7 +141,7 @@ Die Klärung dieser Frage beeinflusst unmittelbar:
 - Profilstruktur
 - Definition der Fallakte
 - Nutzung von Locations
-- Umgang mit fehlenden Encounter-Ebenen
+- Umgang mit "fehlenden" Encounter-Ebenen
 
 ### 3. Geltungsbereich des ISiK-Fallmodells
 
@@ -187,7 +186,7 @@ Klärung der Modellierung von Versorgungssituationen (anhand von Szenarien), in 
 
 #### Zielbild
 
-Das Modell soll sicherstellen, dass zusätzliche Versorgungskontakte nicht fälschlich als Wechsel der Fallart (stationär → ambulant) interpretiert werden.
+Das Modell soll sicherstellen, dass zusätzliche Kontakte nicht fälschlich als Wechsel der Fallart (stationär → ambulant) interpretiert werden.
 
 ### Wiederaufnahme
 
@@ -339,6 +338,10 @@ Insbesondere zu prüfen:
 - Fachdisziplinen
 - Konsile
 
+Aber potentiell auch:
+- Prozeduren
+- Vitalzeichen
+
 ### partOf und Hierarchien
 
 Zu klären sind insbesondere:
@@ -359,7 +362,8 @@ Aktuelle Arbeitshypothese:
 Die Arbeiten konzentrieren sich auf drei übergreifende Architekturfragen:
 
 1. Soll EpisodeOfCare künftig als eigenes Konzept zur Abbildung medizinischer Versorgungsepisoden Bestandteil von ISiK werden?
-2. Welche langfristige Rolle soll der Einrichtungskontakt innerhalb des ISiK-Fallmodells neben dem Account einnehmen?
-3. Welchen fachlichen Geltungsbereich soll das ISiK-Fallmodell künftig abdecken, insbesondere hinsichtlich MVZs, ambulanter Krankenhausversorgung und sektorübergreifender Versorgungskontexte?
+   - Abgelehnt: Nein, EpisodeOfCare wird nach dem Stand der Diskussion der 1. "AG Encounter" vom 10.9.2026 zunächst nicht weiterverfolgt.
+3. Welche langfristige Rolle soll der Einrichtungskontakt innerhalb des ISiK-Fallmodells neben dem Account einnehmen?
+4. Welchen fachlichen Geltungsbereich soll das ISiK-Fallmodell künftig abdecken, insbesondere hinsichtlich MVZs, ambulanter Krankenhausversorgung und sektorübergreifender Versorgungskontexte?
 
 Von der Beantwortung dieser drei Fragen hängen wesentliche Teile der zukünftigen Encounter-Modellierung und der Weiterentwicklung des ISiK-Fallkonzepts ab. Insbesondere die Detailfragen zu Wiederaufnahmen, Diagnosen, Hierarchien, Profilstruktur, Locations und Fallakten können erst auf Basis dieser strategischen Entscheidungen abschließend spezifiziert werden.

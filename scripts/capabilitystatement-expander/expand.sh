@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Wrapper for FHIR CapabilityStatement Expander (capability_statement_expander.py)
 #
 # Usage:

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+
+
 set -euo pipefail
 
 dry_run="${CLEANUP_DRY_RUN:-0}"

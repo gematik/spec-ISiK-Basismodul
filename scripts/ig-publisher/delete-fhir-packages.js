@@ -1,6 +1,6 @@
 /*
 *
-* Copyright 2026 gematik GmbH
+* Copyright 2026, gematik GmbH
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -16,8 +16,10 @@
 *
 * *******
 *
-* For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+* For additional notes and disclaimer from gematik and in case of changes
+* by gematik, find details in the "Readme" file.
 */
+
 'use strict';
 
 module.exports = async function run({ github, context, core }) {
