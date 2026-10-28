@@ -6,6 +6,12 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähig ist (eigene Use Cases bedient) oder bestätigtigungsrelevant ist.
 
+## Version 5.99.999-testtest
+
+Datum: 28.10.2026
+
+* Keine Änderung am IG
+
 ## Version 5.2.0
 
 Datum: 19.10.2026

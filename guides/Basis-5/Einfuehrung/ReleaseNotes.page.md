@@ -19,6 +19,12 @@ Die Tags werden folgendermaßen verwendet:
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
 
+## Version 5.99.999-testtest
+
+Datum: 28.10.2026
+
+* Keine Änderung am IG
+
 ## Version 5.2.0
 
 Datum: 19.10.2026
