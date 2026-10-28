@@ -3,6 +3,12 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 * Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
+### Version 6.99.999-testtest
+
+Datum: 28.10.2026
+
+* Keine Änderung am IG
+
 ### Version 6.0.1
 
 Datum: tbd

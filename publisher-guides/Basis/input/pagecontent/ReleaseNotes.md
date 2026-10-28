@@ -8,9 +8,9 @@ Tags werden folgendermaßen verwendet:
 
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CapabilityStatements); Typo fixes werden nicht in die Releasenotes aufgenommen. Hier sollen stets die ggf. betroffenen Ressourcen (bzw. CapabilityStatements, Rollen und Akteure) angegeben werden.
 
-### Version 6.x.y
+### Version 6.99.999-testtest
 
-Datum: tbd.
+Datum: 28.10.2026
 
 * `improve` Einbinden der Allergie-ValueSets nach Publikation auf Zentralem Terminologie-Server im Profil ISiKAllergieUnvertraeglichkeit <https://github.com/gematik/spec-ISiK-Basismodul/pull/1312>
 * `documentation` Zusammenführung der Festlegungen zur Methodik <https://github.com/gematik/spec-ISiK-Basismodul/pull/1329>

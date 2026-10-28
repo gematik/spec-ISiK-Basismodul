@@ -8,6 +8,12 @@ Datum: t.b.d.
 
 * `fix` Parameter-Typ für RelatedPerson entsprechend korrigiert - <https://github.com/gematik/spec-ISiK-Basismodul/commit/4b0a95a5fa310525a593591d536c64144a43dd09> entspricht <https://github.com/gematik/spec-ISiK-Basismodul/pull/1284/changes>
 
+### Version 6.99.999-testtest
+
+Datum: 28.10.2026
+
+* Keine Änderung am IG
+
 ### Version 6.0.0
 
 Datum: 01.07.2026

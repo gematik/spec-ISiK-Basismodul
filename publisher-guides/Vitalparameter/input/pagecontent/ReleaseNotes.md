@@ -1,5 +1,11 @@
 ﻿Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+### Version 6.99.999-testtest
+
+Datum: 28.10.2026
+
+* Keine Änderung am IG
+
 ### Version 6.0.0 
 
 Datum: 01.07.2026

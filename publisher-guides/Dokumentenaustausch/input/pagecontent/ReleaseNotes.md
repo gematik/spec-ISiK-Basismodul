@@ -1,9 +1,9 @@
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
 
-### Version 6.X.Y.
+### Version 6.99.999-testtest
 
-Datum: tbd.
+Datum: 28.10.2026
 
 * `improve` Für DocumentReference.context.practiceSetting wurde die Kardinalität 1.. entfernt und das required binding auf extensible gelockert <https://github.com/gematik/spec-ISiK-Basismodul/pull/1310>
 
