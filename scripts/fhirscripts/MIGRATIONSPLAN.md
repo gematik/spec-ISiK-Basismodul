@@ -82,6 +82,9 @@ Daraus folgt:
 
 ### Phase 2: CI umbauen (`.github/workflows/ig-publisher.yml`)
 
+Ausführlicher Plan für die Umstellung auf den fhirscripts-Container, Schritt für Schritt:
+[CI-UMSTELLUNG.md](CI-UMSTELLUNG.md). Kurzfassung:
+
 - Job `basis`: `fhirscripts cache package`, dann `fhirscripts build pipeline` in `publisher-guides/Basis`, danach
   `output/package.tgz` als Artefakt hochladen.
 - Matrix-Job pro Modul (`needs: basis`):
@@ -93,7 +96,8 @@ Daraus folgt:
 - Die Matrix reduziert sich auf `ig_name` und `ig_dir`. Die CapabilityStatement-URLs stehen in der jeweiligen
   `fhirscripts.config.yaml`.
 - `fhirscripts check` als Pflichtschritt pro Modul ersetzt `sync-sushi-dependencies.sh`.
-- Container: Das Gefyra-Image bekommt zusätzlich uv und fhirscripts, an einen Commit-Hash gepinnt.
+- Container: Statt des Gefyra-Images den fhirscripts-Buildcontainer verwenden, selbst gebaut aus einem festen
+  Commit von gematik/fhir-scripts und um ein paar Werkzeuge ergänzt (siehe CI-UMSTELLUNG.md).
 - SUSHI mit ZTS-Paketen: Für Module mit BfArM-Abhängigkeiten den eingebauten Schritt `sushi` durch einen
   `shell:`-Schritt mit `sushi-wrap.sh` ersetzen (siehe `.github/actions/run-sushi-with-zts`).
 - Bleiben unverändert: Änderungserkennung, Commit-Job, PR-Kommentar, gh-pages-Publish.

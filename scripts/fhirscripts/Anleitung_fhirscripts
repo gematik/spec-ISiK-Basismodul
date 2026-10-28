@@ -1,0 +1,418 @@
+# Anleitung: gematik fhir-scripts (fhirscripts) - KI generiert
+
+Oct 28, 2026 · @Nils · Stand: Repo-Version 0.32.0 (letzter Commit 23.09.2026)
+
+## Überblick
+
+[fhir-scripts](https://github.com/gematik/fhir-scripts) ist ein Python-Kommandozeilenwerkzeug der gematik (Befehl `fhirscripts`), das die üblichen Schritte eines FHIR-IG-Projekts bündelt: Werkzeuge installieren, Paket-Cache aufbauen, FSH mit SUSHI übersetzen, den IG Publisher laufen lassen, Konsistenz prüfen, veröffentlichen und auf Google Cloud Storage deployen. Es ersetzt keine dieser Werkzeuge, sondern ruft sie in der richtigen Reihenfolge mit den richtigen Argumenten auf.
+
+Diese Anleitung basiert auf dem Quellcode von Version 0.32.0 (Apache 2.0). Ich habe das Tool lokal installiert und die Konfigurations- und Umgebungsvariablen-Logik ausprobiert; wo README und Code sich widersprechen, gilt hier der Code.
+
+**Welche Werkzeuge fhirscripts steuert**
+
+| Name in fhirscripts | Werkzeug | Läuft auf | Wofür |
+| --- | --- | --- | --- |
+| `sushi` | FSH SUSHI (npm `fsh-sushi`) | Node/npm | FSH → FHIR-Definitionen |
+| `igpub` | HL7 IG Publisher (`publisher.jar`) | Java ≥ 17 | IG rendern, QA |
+| `firely_terminal` | Firely Terminal (`fhir`) | .NET | FHIR-Paket-Cache wiederherstellen (Standard) |
+| `fhir_pkg_tool` | [FHIR Package Snapshot Tool](https://github.com/Gefyra/fhir-pkg-tool) | Java ≥ 21 | Alternative für den Paket-Cache (`--new`) |
+| `igtools` | gematik [fhir-igtools](https://github.com/gematik/fhir-igtools), Befehl `reqtools` | Python | Anforderungen aus Markdown verarbeiten, Release Notes |
+| `epatools` | [epa-tools](https://github.com/onyg/epa-tools) | Python | CapabilityStatements mergen, OpenAPI erzeugen |
+| `publishtools` | gematik [publish-tools](https://github.com/gematik/publish-tools) | Python | IG-Historie und IG-Registry erzeugen |
+| `fhirscripts` | das Tool selbst | Python | Selbst-Update |
+| – | gcloud CLI | – | Deploy auf Google Buckets (nicht über fhirscripts installierbar) |
+| – | PlantUML (`template/scripts/plantuml.jar`) | Java | nur Versionsanzeige |
+
+**Aufbau des Repos**
+
+- `src/fhir_scripts/` – ein Modul pro Befehl (`build.py`, `deploy.py`, `cache.py` …); die Befehle werden dynamisch registriert.
+- `src/fhir_scripts/tools/` – je ein Wrapper pro externem Werkzeug (Installieren, Version, Aufruf); `tools/basic/` kapselt Python, npm, Java, .NET, GitHub und Shell.
+- `src/fhir_scripts/models/` – das Pydantic-Schema der Konfigurationsdatei.
+- `examples/fhirscripts.config.yaml` – Beispielkonfiguration.
+- `docker/buildcontainer`, `docker/devcontainer` – fertige Images mit allen Laufzeiten.
+- `.github/workflows/` – wiederverwendbare Workflows (Build Profiles, Process Requirements) und die eigenen Tests.
+- `ReleaseNotes.md` – Änderungshistorie.
+
+## Installation und Voraussetzungen
+
+fhirscripts braucht Python ≥ 3.12 und wird am besten mit uv als isoliertes Tool installiert:
+
+```bash
+uv tool install git+https://github.com/gematik/fhir-scripts.git
+fhirscripts --help
+```
+
+pipx funktioniert noch, gilt aber als veraltet; dann installiert fhirscripts die Python-Werkzeuge mit `pipx install --global` per `sudo`. Mit uv entfällt das.
+
+Die Laufzeiten der gesteuerten Werkzeuge installiert fhirscripts **nicht** selbst. Je nach genutzten Befehlen brauchst du:
+
+| Laufzeit | Gebraucht für |
+| --- | --- |
+| Node.js + npm | SUSHI (wird mit `sudo npm install -g` installiert) |
+| Java 17+ (21+ für fhir-pkg-tool) | IG Publisher, FHIR Package Snapshot Tool, PlantUML |
+| Jekyll | IG Publisher (Rendering) |
+| .NET SDK (Images nutzen 8) | Firely Terminal (`dotnet tool install -g firely.terminal`) |
+| uv oder pipx | igtools, epatools, publishtools, Selbst-Update |
+| gcloud CLI | `deploy` |
+| curl, git | Download des IG Publishers, CI-Build-Erkennung beim Deploy |
+| graphviz, fontconfig | PlantUML-Diagramme im IG |
+
+Danach die Werkzeuge installieren, entweder einzeln (`fhirscripts install --sushi --igpub`) oder wie in der Konfigurationsdatei festgelegt (`fhirscripts install --config-file`). Prüfen mit `fhirscripts versions`.
+
+Wichtig: Der IG Publisher wird **pro Projekt** nach `./input-cache/publisher.jar` geladen. `install --igpub`, `update` und `build` müssen deshalb im Projektverzeichnis laufen. Das fhir-pkg-tool liegt dagegen global unter `~/fhir-pkg-tool/`.
+
+## Wofür du die Konfigurationsdatei brauchst
+
+Die Datei `fhirscripts.config.yaml` beschreibt **projektspezifisch**, wie fhirscripts mit diesem einen IG-Projekt umgehen soll. Sie liegt im Projektwurzelverzeichnis neben `sushi-config.yaml` und gehört ins Git-Repo, damit alle im Team, der Docker-Container und die CI dasselbe tun. Sie hat genau drei Abschnitte mit drei Aufgaben:
+
+1. **`install` – welche Werkzeuge in welcher Version.** Die Liste wird von `install --config-file` abgearbeitet. Zusätzlich schützt sie gepinnte Versionen: `update` überspringt jedes Werkzeug, für das hier eine feste Version steht. So bleibt ein Release reproduzierbar gebaut.
+2. **`build` – was beim Bauen zusätzlich passieren soll.** `builtin` schaltet Anforderungsverarbeitung (igtools) und epatools-Schritte für `build defs/ig/all` dauerhaft ein, ohne dass man jedes Mal `--req` oder `--cap` tippt. `pipeline` definiert eine eigene Schrittfolge für `build pipeline`. `args` liefert Zusatzparameter, aktuell nur für den OpenAPI-Schritt.
+3. **`deploy` – wohin veröffentlicht wird.** Ordnet Umgebungsnamen (z. B. `dev`, `prod`) Google-Cloud-Buckets zu, optional mit Zielpfad. Ohne diesen Abschnitt bricht `deploy` mit „deploy configuration missing“ ab.
+
+&#91;embedded content: Konfig-Abschnitte und die Befehle, die sie lesen\]
+
+Alle anderen Befehle – versions, cache, check, publish und install mit einzelnen Flags – lesen die Datei nicht.
+
+**Brauche ich sie überhaupt?** Nicht für jeden Befehl. Fehlt die Datei, lädt fhirscripts stillschweigend Standardwerte (leere Listen, alles aus) – es gibt keine Warnung.
+
+| Befehl | Liest aus der Konfig | Ohne Konfig |
+| --- | --- | --- |
+| `install --config-file` | `install` | „Nothing to install“ |
+| `install --<tool>` | – | funktioniert |
+| `update` | `install` (gepinnte Versionen werden übersprungen) | aktualisiert alles Installierte |
+| `build defs` / `ig` / `all` | `build.builtin`, `build.args` | nur SUSHI bzw. IG Publisher + QA |
+| `build pipeline` | `build.pipeline` | tut nichts |
+| `deploy <env>` | `deploy` | Fehler |
+| `versions`, `cache`, `check`, `publish` | – | funktioniert |
+
+**Abgrenzung zu anderen Konfigurationsdateien.** fhirscripts.config.yaml ersetzt keine Werkzeug-Konfigurationen, es setzt sie voraus: `sushi-config.yaml` (SUSHI, Canonical und Version für den IG Publisher), `package.json` (Abhängigkeiten für den Paket-Cache), `.igtools/config.yaml` (igtools), `epatools.yaml` (epatools) und `publication-request.json` (Veröffentlichung, Checks, Promote). Ebenfalls getrennt: `.env`-Dateien und Umgebungsvariablen steuern nur die globalen CLI-Optionen, nicht den Inhalt der YAML-Datei (siehe unten).
+
+**Validierung.** Die Datei wird streng gegen ein Pydantic-Schema geprüft. Ein Tippfehler wie `pipline:` führt sofort zu „Extra inputs are not permitted“ und Exit-Code 65. Das ist gewollt: Falsch geschriebene Schlüssel werden nicht still ignoriert.
+
+**Andere Datei verwenden:** `fhirscripts --config pfad/zur/datei.yaml <befehl>` oder `FHIRSCRIPTS_CONFIG=pfad/zur/datei.yaml`. Die Option steht **vor** dem Befehl. Bis Version 0.12 hieß die Standarddatei `config.yaml`.
+
+## Konfigurationsreferenz
+
+Alle drei Abschnitte sind optional. Andere Schlüssel auf oberster oder tieferer Ebene sind verboten.
+
+**Vollständiges, kommentiertes Beispiel**
+
+```yaml
+# fhirscripts.config.yaml – im Projektwurzelverzeichnis
+
+install:
+  - sushi                    # Kurzform: neueste Version
+  - firely_terminal
+  - igtools
+  - epatools
+  - publishtools
+  - name: igpub              # Langform: feste Version
+    version: 2.0.15          # wird von 'update' nicht angefasst
+
+build:
+  builtin:
+    igtools: true            # build defs/all verarbeitet immer Anforderungen
+    epatools:                # true = alle epatools-Schritte
+      cap_statements: true
+      openapi: true
+  args:
+    openapi:
+      additional_archive:    # relativ zu ./output, landen in full-ig.zip
+        - openapi.add.json
+  pipeline:
+    - requirements
+    - sushi
+    - cap_statements
+    - shell: ./scripts/postprocess.sh
+    - igpub
+    - openapi
+    - igpub_qa
+
+deploy:
+  env:
+    dev: mein-dev-bucket     # "gs://" wird ergänzt, falls es fehlt
+    prod: gs://mein-prod-bucket
+  path: ig/fhir              # optional, Standard ist ig/fhir
+```
+
+### install
+
+Eine Liste aus Namen (Kurzform) oder Objekten `{name, version}` (Langform). Die Namen sind die Modulnamen mit Unterstrich, nicht die CLI-Schreibweise mit Bindestrich:
+
+`epatools` · `fhir_pkg_tool` · `fhirscripts` · `firely_terminal` · `igpub` · `igtools` · `publishtools` · `sushi`
+
+Verhalten von `install --config-file`:
+
+- Unbekannter Name → Warnung „Tool … does not exist“, kein Abbruch.
+- Kurzform und Werkzeug schon installiert → wird übersprungen (also kein Update).
+- Langform und genau diese Version installiert → übersprungen; andere Version → die angegebene wird installiert.
+- Versionsformat je Werkzeug: npm-Version für SUSHI, Release-Tag für den IG Publisher (z. B. `2.0.15`), Release ohne `v` für fhir-pkg-tool, NuGet-Version für Firely Terminal, Paketversion für die Python-Tools.
+
+### build.builtin
+
+Schaltet Zusatzschritte für `build defs`, `build ig` und `build all` dauerhaft ein – als würde man die Flags immer mitgeben.
+
+| Schlüssel | Typ | Wirkung | Entspricht |
+| --- | --- | --- | --- |
+| `igtools` | bool | Anforderungen verarbeiten vor SUSHI (`reqtools process`, `ig-release-notes input/data`, `export input/data`) | `--req` |
+| `epatools: true` | bool | CapabilityStatements mergen und OpenAPI erzeugen | `--cap` + `--oapi` |
+| `epatools.cap_statements` | bool | `epatools merge` nach SUSHI | `--cap` |
+| `epatools.openapi` | bool | `epatools openapi` nach dem IG Publisher | `--oapi` (siehe Stolpersteine) |
+
+Fehlt `.igtools/config.yaml` bzw. `epatools.yaml` im Projekt, wird der Schritt mit Warnung übersprungen statt abzubrechen. Bei `build pipeline` spielt `builtin` keine Rolle.
+
+### build.args
+
+Aktuell nur `openapi.additional_archive`: eine Liste von Dateipfaden relativ zu `./output`. Nach `epatools openapi` packt fhirscripts die von epatools erzeugten OpenAPI-Dateien (aus `epatools.yaml` → `openapi.capability-statement[].output`) **plus** diese Zusatzdateien in `./output/full-ig.zip` unter `site/`. Nicht vorhandene Dateien werden still ignoriert.
+
+### build.pipeline
+
+Eine geordnete Liste von Schritten für `fhirscripts build pipeline`. Jeder Eintrag ist entweder ein Schrittname oder `shell: <befehl>`.
+
+| Schritt | Tut | Braucht |
+| --- | --- | --- |
+| `requirements` | igtools: process, release-notes, export nach `input/data` | igtools + `.igtools/config.yaml` |
+| `sushi` | `sushi build .` | SUSHI |
+| `cap_statements` | `epatools merge` | epatools + `epatools.yaml` |
+| `igpub` | `java -jar input-cache/publisher.jar -no-sushi -ig . -publish <canonical>/<version>` | IG Publisher, Java |
+| `igpub_qa` | Fehler/Warnungen/Hinweise aus `output/qa.json` anzeigen | vorheriger IG-Publisher-Lauf |
+| `openapi` | `epatools openapi` + `full-ig.zip` aktualisieren | epatools, `output/full-ig.zip` |
+| `shell: …` | beliebiger Shell-Befehl, bricht bei Exit-Code ≠ 0 ab | – |
+
+Die Schritte laufen streng nacheinander; der erste Fehler beendet die Pipeline. Ein Schritt darf mehrfach vorkommen. `shell` ist der einzige Schritt mit Argument – die README-Schreibweise `<step>:<args>` gilt nur dafür. Mit `shell` lassen sich z. B. Vor- und Nachbearbeitung, eigene Validierungen oder das Kopieren zusätzlicher Dateien einhängen.
+
+### deploy
+
+| Schlüssel | Pflicht | Bedeutung |
+| --- | --- | --- |
+| `env` | ja | Map Umgebungsname → Bucket (mit oder ohne `gs://`) |
+| `path` | nein | Basispfad im Bucket, Standard `ig/fhir` |
+
+Daraus ergeben sich die Zielpfade:
+
+- IG: `gs://<bucket>/<path>/<projekt>/<version>` – Projekt = das Pfadsegment direkt vor `ImplementationGuide` in der IG-URL (…/fhir/isik/ImplementationGuide/… → isik), Version aus der gebauten `ImplementationGuide*.json`.
+- CI-Build (releaseLabel `ci-build`): `gs://<bucket>/<path>/build/<projekt>` auf `main`/`master`, sonst `…/build/<projekt>/branches/<branch>`.
+- Metadaten (`index.html`, `package-list.json`): `gs://<bucket>/<path>/<projekt>/`.
+- IG-Registry (`index.html`, `package-feed.xml`): `gs://<bucket>/<path>/`.
+
+## .env und Umgebungsvariablen
+
+Seit 0.32.0 lassen sich die **globalen Optionen** (alles zwischen `fhirscripts` und dem Befehl) auch per Umgebungsvariable oder `.env` setzen. Befehlsargumente wie `--update` oder `--yes` und der Inhalt der YAML-Datei gehen so nicht.
+
+| Option | Variable | Werte |
+| --- | --- | --- |
+| `--config <pfad>` | `FHIRSCRIPTS_CONFIG` | Pfad zur YAML-Datei |
+| `--output-color <farbe>` | `FHIRSCRIPTS_OUTPUT_COLOR` | `default` (Terminal-Vordergrund), `preserve` (Farben der Werkzeuge behalten), `black`, `red`, `green`, `yellow`, `blue`, `cyan`, `gray`, `white` |
+| `--long-log` | `FHIRSCRIPTS_LONG_LOG` | leerer Wert = an; zeigt Zeitstempel, Log-Level und DEBUG-Ausgaben |
+
+Rangfolge, spätere gewinnen: `~/.env` → `./.env` → echte Umgebungsvariable → Argument auf der Kommandozeile.
+
+```bash
+# ./.env im Projekt
+FHIRSCRIPTS_CONFIG=ci/fhirscripts.config.yaml
+FHIRSCRIPTS_OUTPUT_COLOR=preserve
+FHIRSCRIPTS_LONG_LOG=
+```
+
+Zwei Fallen, beide getestet: Das Präfix lautet `FHIRSCRIPTS_` mit S (die README schreibt `FHIRSCRIPT_`, das wird ignoriert). Und Schalter müssen leer sein – `FHIRSCRIPTS_LONG_LOG=true` lässt fhirscripts mit einem Argumentfehler abbrechen, obwohl die Release Notes es so andeuten. `.env` steht im `.gitignore` des Tools; für dein Projekt solltest du das genauso halten, wenn persönliche Einstellungen drinstehen.
+
+## Befehlsreferenz
+
+Aufbau: `fhirscripts [--config …] [--output-color …] [--long-log] <befehl> [unterbefehl] [optionen]`. Exit-Code 0 bei Erfolg, 65 bei jedem Fehler, 255 bei Abbruch durch dich (Nachfrage mit „n“ beantwortet). Jeder Werkzeugaufruf schreibt dessen Version in `build-record.yaml` im aktuellen Verzeichnis – so ist nachvollziehbar, womit ein Release gebaut wurde.
+
+### versions
+
+`fhirscripts versions` listet alle installierten Werkzeuge mit Laufzeitversion in Klammern. `--outdated` vergleicht mit der neuesten Version auf GitHub bzw. im Python-Repo. Achtung: Der Befehl heißt `versions`, nicht `version` wie in der README.
+
+### install
+
+`fhirscripts install --sushi --igpub …` installiert einzelne Werkzeuge; `--config-file` nimmt die Liste aus der Konfiguration. Flags: `--epatools`, `--fhir-pkg-tool`, `--fhirscripts`, `--firely-terminal`, `--igpub`, `--igtools`, `--publishtools`, `--sushi`. Bereits Installiertes wird übersprungen.
+
+### update
+
+`fhirscripts update [--dry-run]` aktualisiert alle bereits installierten Werkzeuge auf die neueste Version, außer denen mit fester Version in `install`. Firely Terminal wird derzeit bewusst nie aktualisiert (im Code deaktiviert). `build … --update` ruft `update` vor dem Bauen auf.
+
+### cache
+
+| Aufruf | Wirkung |
+| --- | --- |
+| `cache package` | Leert `~/.fhir/packages` **komplett** und stellt die Abhängigkeiten aus `package.json` mit `fhir restore` (Firely Terminal) wieder her |
+| `cache package --no-clear` | wie oben, ohne vorheriges Leeren |
+| `cache package --package-dir <dir>` | sucht zuerst lokale Archive `<pkg>-<ver>.tgz` oder `<pkg>_<ver>.tgz`, lädt fehlende von packages.simplifier.net dorthin und installiert sie einzeln (WIP) |
+| `cache package --new` | nutzt fhir-pkg-tool mit den Abhängigkeiten aus `sushi-config.yaml`; fällt auf Firely Terminal zurück, wenn nicht installiert |
+| `cache package --legacy` | erzwingt Firely Terminal (derzeit ohnehin Standard) |
+| `cache build` | löscht `input-cache/schemas`, `input-cache/txcache`, `temp`, `template` – hilft bei seltsamen IG-Publisher-Fehlern |
+
+Der Paket-Cache ist global für deinen Benutzer. `cache package` in Projekt A löscht also auch die Pakete, die Projekt B braucht.
+
+### build
+
+| Aufruf | Ablauf |
+| --- | --- |
+| `build defs` | \[igtools\] → SUSHI → \[epatools merge\] |
+| `build defs --req` / `--only-req` | mit / nur Anforderungsverarbeitung |
+| `build defs --cap` / `--only-cap` | mit / nur CapabilityStatement-Merge |
+| `build ig` | IG Publisher → \[epatools openapi\] → QA-Zusammenfassung |
+| `build ig --oapi` / `--only-oapi` | mit / nur OpenAPI |
+| `build all [--req] [--cap] [--oapi]` | `defs`, dann `ig` |
+| `build pipeline` | Schritte aus `build.pipeline` |
+| `build -u <unterbefehl>` | vorher `update` |
+
+Eckige Klammern = nur wenn per Flag oder `build.builtin` aktiviert. Der IG Publisher läuft immer mit `-no-sushi`, weil SUSHI vorher separat läuft, und mit `-publish <canonical>/<version>` aus `sushi-config.yaml`.
+
+### check
+
+`fhirscripts check [--workdir <dir>] [--release]` prüft die Konsistenz eines Projekts vor einer Veröffentlichung. Voraussetzung: `publication-request.json`, `sushi-config.yaml` und `package.json` im Arbeitsverzeichnis, gebaute Definitionen unter `fsh-generated/resources`.
+
+- Version identisch in Publication Request, sushi-config und package.json; dieselbe Version steckt in `path` und `desc` des Publication Requests.
+- Abhängigkeiten in package.json und sushi-config gleich (ohne `hl7.fhir.r4.core`), mit gleichen Versionen.
+- Transitive Abhängigkeiten sind im Paket-Cache vorhanden und nicht in mehreren Versionen gezogen.
+- Alle Ressourcen einer Version tragen dasselbe `date`.
+- Mit `--release` zusätzlich: `status: active` und `releaseLabel: release` in sushi-config, `status: release` im Publication Request.
+
+Auch Warnungen lassen den Check fehlschlagen (Exit 65). Damit taugt er als harter CI-Gate vor dem Release.
+
+### publish
+
+Braucht publishtools. Die README beschreibt einen älteren Stand; tatsächlich gibt es zwei Unterbefehle:
+
+- `publish project --ig-registry <dir> [--project-dir <dir>]` – erzeugt im Projekt die IG-Historie (JSON + HTML`; deploy sucht sie später unter ./publish`) und trägt die Version in die lokale Kopie der IG-Registry ein (z. B. ein Checkout von [gematik/fhir-ig-registry](https://github.com/gematik/fhir-ig-registry)).
+- `publish ig-registry --ig-registry <dir>` – rendert die Übersichtsliste der Registry inkl. `package-feed.xml` für registry.fhir.org neu.
+
+### deploy
+
+`fhirscripts deploy <env> [optionen]` kopiert per `gcloud storage rsync` in den Bucket aus `deploy.env.<env>`. Ist gcloud nicht angemeldet, startet es `gcloud auth login`.
+
+| Option | Wirkung |
+| --- | --- |
+| ohne | IG aus `./output` und Metadaten aus `./publish` (oder `./publish/<projekt>`) |
+| `--only-ig` | nur der IG |
+| `--only-meta` | nur `index.html` und `package-list.json` |
+| `--ig-registry` | aus dem aktuellen Verzeichnis (Registry-Checkout) `index.html` und `package-feed.xml` |
+| `--ig-output <dir>` | anderes Ausgabeverzeichnis als `./output` |
+| `--promote-from <env>` | kopiert Bucket → Bucket statt lokal → Bucket; Projekt und Version aus `publication-request.json` |
+| `--dry-run` | zeigt nur, was kopiert würde |
+| `-y`, `--yes` | alle Nachfragen mit Ja beantworten (nötig in CI) |
+
+Ohne `--yes` fragt fhirscripts vor dem IG-Upload nach dem Zielpfad und lässt ihn dich bei Bedarf ändern. Der rsync läuft mit `--delete-unmatched-destination-objects`: Was im Ziel liegt, aber nicht in der Quelle, wird gelöscht.
+
+## Dateien und Verzeichnisse im Projekt
+
+fhirscripts arbeitet immer relativ zum aktuellen Verzeichnis. Rufe es deshalb im Projektwurzelverzeichnis auf, dort, wo `sushi-config.yaml` liegt.
+
+| Pfad | Rolle | Gebraucht von |
+| --- | --- | --- |
+| `fhirscripts.config.yaml` | Konfiguration von fhirscripts | install, update, build, deploy |
+| `sushi-config.yaml` | SUSHI-Projekt; Canonical + Version | build ig, check, cache package --new |
+| `package.json` | FHIR-Abhängigkeiten | cache package, check |
+| `publication-request.json` | Version, Pfad, Status der Veröffentlichung | check, deploy --promote-from |
+| `.igtools/config.yaml` | Konfiguration der Anforderungsverarbeitung | build --req, Pipeline-Schritt `requirements` |
+| `epatools.yaml` | Konfiguration von epatools (CapabilityStatements, OpenAPI-Ausgaben) | build --cap/--oapi, Schritte `cap_statements`, `openapi` |
+| `input/data/` | Ziel der Release Notes und Anforderungsexporte | build --req |
+| `input-cache/publisher.jar` | IG Publisher (pro Projekt) | install --igpub, build ig |
+| `fsh-generated/resources/` | Ausgabe von SUSHI | check |
+| `output/` | gebauter IG, `qa.json`, `full-ig.zip`, `ImplementationGuide*.json` | build ig, deploy |
+| `publish/` | IG-Historie (`index.html`, `package-list.json`) | deploy |
+| `template/scripts/plantuml.jar` | PlantUML aus dem IG-Template | versions |
+| `build-record.yaml` | genutzte Werkzeugversionen (wird erzeugt) | jeder Werkzeugaufruf |
+| `.env` | globale CLI-Optionen | alle |
+| `~/.fhir/packages/` | globaler FHIR-Paket-Cache | cache, check, SUSHI, IG Publisher |
+
+`input-cache/`, `temp/`, `template/`, `output/` und `build-record.yaml` gehören typischerweise ins `.gitignore` deines IG-Projekts.
+
+## Typische Workflows
+
+### Lokal: vom Checkout zum veröffentlichten IG
+
+```bash
+cd mein-ig-projekt                      # dort liegt sushi-config.yaml
+fhirscripts install --config-file       # Werkzeuge laut Konfig
+fhirscripts cache package               # FHIR-Abhängigkeiten frisch laden
+fhirscripts build all                   # oder: build pipeline
+fhirscripts check --release             # Versionen, Abhängigkeiten, Status
+fhirscripts publish project --ig-registry ../fhir-ig-registry
+fhirscripts deploy dev --dry-run        # erst ansehen …
+fhirscripts deploy dev                  # … dann wirklich
+fhirscripts deploy prod --promote-from dev -y
+cd ../fhir-ig-registry
+fhirscripts publish ig-registry --ig-registry .
+fhirscripts deploy prod --ig-registry
+```
+
+Im Alltag reicht meist `fhirscripts build defs` nach FSH-Änderungen und `fhirscripts build ig` zum Ansehen. Bei Cache-Problemen des IG Publishers: `fhirscripts cache build`.
+
+### Docker-Build-Container
+
+Das Image unter `docker/buildcontainer` enthält Python, uv, Node/npm, OpenJDK 21, Jekyll, .NET 8, gcloud, graphviz und vorinstalliert SUSHI, Firely Terminal und publishtools. Sein Entrypoint führt bei jedem Start aus: `install --config-file`, `update`, `cache package` (falls `package.json` existiert) und dann deinen Befehl. Die Konfigurationsdatei steuert also, was der Container nachinstalliert.
+
+```bash
+docker build --tag fhirscripts-build docker/buildcontainer
+docker run --rm -t -v "$PWD":/project fhirscripts-build build all
+# eigene Konfig von außerhalb einhängen:
+docker run --rm -t -v "$PWD":/project \
+  -v "$PWD/ci.config.yaml":/project/fhirscripts.config.yaml \
+  fhirscripts-build build pipeline
+```
+
+Ohne `-t` erscheint die Ausgabe erst am Ende. Für `deploy` im Container brauchst du zusätzlich gcloud-Credentials.
+
+### VS Code Devcontainer
+
+`docker/devcontainer` baut das Image `gematik1/fhir-devcontainer` (Alpine, gleiche Laufzeiten plus HAPI-Validator unter `~/.fhir/validators/validator_cli.jar`). Die Beispiel-`devcontainer.json` ruft beim Erstellen `fhirscripts install --config-file` und bei jedem Start `fhirscripts update` auf:
+
+```json
+{
+  "name": "FHIR Development",
+  "image": "gematik1/fhir-devcontainer",
+  "postCreateCommand": "fhirscripts install --config-file",
+  "postStartCommand": "fhirscripts update"
+}
+```
+
+Pinne in der Konfig Versionen, wenn ein Start nicht unbemerkt neuere Werkzeuge ziehen soll.
+
+### GitHub Actions
+
+Das Repo stellt zwei wiederverwendbare Workflows bereit, die du per `uses:` einbindest (Beispiele mit Triggern stehen in der README):
+
+- `gematik/fhir-scripts/.github/workflows/build-profiles.yml@main` – installiert Firely Terminal und die Werkzeuge aus deiner Konfig, cached `~/.fhir/packages` nach Hash der `package.json`, führt `fhirscripts build defs --cap` aus und committet geänderte Dateien mit „🍣 re-generate“.
+- `gematik/fhir-scripts/.github/workflows/process-requirements.yml@main` – installiert igtools, führt `build defs --only-req` aus und committet mit „📋 re-generate“.
+
+Beide brauchen `permissions: contents: write` und schreiben direkt auf den Branch. `@main` heißt: jede Änderung bei gematik wirkt sofort in deiner CI; für Stabilität auf einen Commit-Hash pinnen.
+
+## Stolpersteine und Abweichungen README ↔ Code
+
+Die folgenden Punkte habe ich im Code von 0.32.0 gefunden und, wo möglich, lokal nachgestellt.
+
+| Thema | README sagt | Tatsächlich |
+| --- | --- | --- |
+| Versionsbefehl | `version` | `versions` |
+| Env-Präfix | `FHIRSCRIPT_FOO_BAR` | `FHIRSCRIPTS_FOO_BAR`; Schalter mit leerem Wert, `=true` bricht ab |
+| publish | ein Befehl mit `--project-dir`/`--ig-registry` | Unterbefehle `publish project` und `publish ig-registry` |
+| deploy-Optionen | `--only-history` | `--only-meta`; zusätzlich `--promote-from`, `--dry-run`, `--ig-output` |
+| check | nicht dokumentiert | eigener Befehl, siehe oben |
+| reqtools | Werkzeugname „reqtools“ | in fhirscripts heißt es `igtools` (Repo fhir-igtools), das Binary `reqtools` |
+
+**Verhalten, das man kennen sollte**
+
+- **`epatools.openapi: true` allein wirkt bei `build ig` nicht.** Der Code prüft dort `cap_statements` statt `openapi`. Wer nur OpenAPI will, setzt `epatools: true` oder ruft `build ig --oapi` auf; umgekehrt löst `cap_statements: true` auch den OpenAPI-Schritt in `build ig` aus. In `build pipeline` gilt das nicht, dort zählen nur die gelisteten Schritte.
+- **`--only-req` stoppt den CapabilityStatement-Merge nicht**, wenn er per `build.builtin.epatools` eingeschaltet ist (Operator-Vorrang im Code).
+- **Die Java-Mindestversion wird faktisch nicht geprüft.** Der Versionsvergleich liefert für jede installierte Version „ausreichend“; geprüft wird nur, ob Java da ist. Ein zu altes JDK fällt erst im IG Publisher auf.
+- **Unbekannter Pipeline-Schritt** (z. B. `- sushy`) bricht erst bei Erreichen des Schritts mit der knappen Meldung `Error: 'sushy'` ab; vorherige Schritte sind dann schon gelaufen.
+- **Fehlende Konfigurationsdatei ist kein Fehler.** Ein falscher Pfad in `--config` führt still zu Standardwerten. Wenn `build pipeline` nichts tut, zuerst den Pfad prüfen.
+- **`cache package` löscht den gesamten globalen Paket-Cache** in `~/.fhir/packages`, nicht nur die Pakete des Projekts.
+- **`deploy` synchronisiert mit Löschen** (`--delete-unmatched-destination-objects`). Ein falscher Zielpfad kann vorhandene Inhalte entfernen; erst `--dry-run`.
+- **`deploy --ig-registry` und `publish ig-registry` laufen im Registry-Verzeichnis.** Dort muss also ebenfalls eine `fhirscripts.config.yaml` mit `deploy.env` liegen, oder du gibst sie per `--config` an.
+- **`install` ohne Version aktualisiert nicht.** Ist ein Werkzeug schon da, wird es übersprungen; zum Aktualisieren `update` nutzen.
+- **Firely Terminal wird von `update` nie aktualisiert.** Neue Version: `dotnet tool update -g firely.terminal` von Hand.
+- **npm-Installationen laufen mit `sudo`** (`sudo npm install -g fsh-sushi`). In Umgebungen ohne sudo SUSHI vorher selbst installieren.
+- **Pfadangaben laufen ungequotet durch die Shell.** Leerzeichen in Projekt- oder Registry-Pfaden vermeiden.
+- Laut gematik-Hinweis in der README ist das Tool ein Forschungs- und Entwicklungsergebnis ohne Support-Zusage; Teile können KI-generiert sein.
+
+## Quellen
+
+- [gematik/fhir-scripts auf GitHub](https://github.com/gematik/fhir-scripts) – README, `ReleaseNotes.md`, Quellcode unter `src/fhir_scripts/`, Stand Commit 0332f59 (23.09.2026), Version 0.32.0
+- [examples/fhirscripts.config.yaml](https://github.com/gematik/fhir-scripts/blob/main/examples/fhirscripts.config.yaml)
+- [Schema der Konfiguration (models/)](https://github.com/gematik/fhir-scripts/tree/main/src/fhir_scripts/models)
+- [docker/buildcontainer](https://github.com/gematik/fhir-scripts/tree/main/docker/buildcontainer) und [docker/devcontainer](https://github.com/gematik/fhir-scripts/tree/main/docker/devcontainer)
+- [gematik/fhir-ig-registry](https://github.com/gematik/fhir-ig-registry)
