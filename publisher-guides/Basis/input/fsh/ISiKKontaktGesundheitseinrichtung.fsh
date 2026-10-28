@@ -1,0 +1,820 @@
+Profile: ISiKKontaktGesundheitseinrichtung
+Parent: Encounter
+Id: ISiKKontaktGesundheitseinrichtung
+Description: "
+Dieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.
+
+**Motivation**
+
+Informationen über die Besuche des Patienten entlang seines 
+Behandlungspfades im Krankenhaus sind ein wichtiger Bestandteil 
+des einrichtungsinternen Datenaustausches. 
+Sie ermöglichen die Unterscheidung von stationären und ambulanten 
+sowie aufgenommenen und entlassenen Patienten. 
+Weiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort 
+des Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. 
+Klinische Ressourcen werden in FHIR durch Verlinkung auf die 
+Encounter-Ressource in einen Kontext zum Besuch gestellt. 
+Dieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen 
+und Abrechnungsprozessen.  
+
+Zu Beginn der meisten klinischen Workflows steht die Auswahl 
+des Besuchskontextes. 
+Dies geschieht bspw. durch das Suchen der Encounter-Ressource 
+anhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. 
+Daraufhin werden die zutreffenden Suchergebnisse angezeigt 
+und der gewünschte Besuch ausgewählt.
+
+In FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.
+
+Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc1/Abbildung-des-Konstrukts-Fall.html).
+
+**Kompatibilität**
+
+Für das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität 
+mit folgenden Profilen angestrebt; 
+allerdings kann nicht sichergestellt werden, dass Instanzen, 
+die gegen ISiKKontaktGesundheitseinrichtung valide sind, 
+auch valide sind gegen:
+
+* Profil [Kontakt mit einer Gesundheitseinrichtung 
+der Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
+
+Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
+
+
+* insert Meta
+* insert CommonElements
+// * insert CompliesWith(http://hl7.eu/fhir/hdr/StructureDefinition/encounter-eu-hdr)
+// * insert CompliesWith(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
+* obeys ISiK-enc-1 and ISiK-enc-2 and ISiK-enc-3 and ISiK-enc-4 and ISiK-enc-5 and ISiK-enc-6 and ISiK-enc-7 and ISiK-enc-8
+* extension MS
+* extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
+* extension[Aufnahmegrund]
+  * ^short = "Aufnahmegrund"
+  * ^comment = "Aufnahmegrund nach § 301 Abs. 3 SGB V. Dieser gehört zu den 'Medizinischen Daten des Behandlungsfalls' entsprechend der Definitionen für die Datenübermittlung
+nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den Abrechnungsfall zu dokumentieren. Diese Extension SOLL am ersten Abteilungskontakt, der die stationäre Aufnahme repräsentiert, dokumentiert werden. Wird durch den Encounter ein Einrichtungskontakt repräsentiert, SOLL dort zusätzlich zu dem Abteilungskontakt der Aufnahmegrund dokumentiert werden."
+  * extension[ErsteUndZweiteStelle] MS
+    * ^short = "Aufnahmegrund: 1. und 2. Stelle"
+    * ^comment = "Die 1. und 2. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
+  * extension[DritteStelle] MS
+    * ^short = "Aufnahmegrund: 3. Stelle"
+    * ^comment = "Die 3. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
+  * extension[VierteStelle] MS
+    * ^short = "Aufnahmegrund: 4. Stelle"
+    * ^comment = "Die 4. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
+ 
+* extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate named plannedStartDate 0..1 MS
+* extension[plannedStartDate]
+  * ^short = "geplantes Aufnahmedatum"
+  * ^comment = "**Begründung MS:** Im Falle einer geplanten Aufnahme ist das Datum mittels dieser Extension anzugeben."
+* extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate named plannedEndDate 0..1 MS
+* extension[plannedEndDate]
+  * ^short = "geplantes Entlassdatum"
+  * ^comment = "**Begründung MS:** Im Falle der Dokumentation eines geplanten Entlassdatums ist diese Extension zu befüllen."
+* identifier 1.. MS
+  * ^comment = "Eindeutiger Identifier des Encounter"
+  * ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.path = "$this"
+  * ^slicing.rules = #open
+* identifier contains Aufnahmenummer 0..1 MS
+* identifier[Aufnahmenummer] ^patternIdentifier.type = $v2-0203#VN
+  * ^short = "Aufnahmenummer"
+  * ^comment = "**Begründung MS:** Die Aufnahmenummer ist nicht die 'Fallnummer', welche sich auf den kompletten Abrechnungsfall bezieht. Hier wird ein Identifier angegeben, der den Kontakt eindeutig identifiziert."
+  * type 1.. MS
+    * coding 1.. MS
+      * ^slicing.discriminator.type = #pattern
+      * ^slicing.discriminator.path = "$this"
+      * ^slicing.rules = #open
+    * coding contains vn-type 1..1 MS
+    * coding[vn-type] = $v2-0203#VN 
+      * ^short = "Codierte Darstellung des Identifier-Typs"
+      * system 1.. MS
+        * ^short = "Codier-Schema"
+        * ^comment = "Hier ist stets der Wert `http://terminology.hl7.org/CodeSystem/v2-0203` anzugeben." 
+      * code 1.. MS
+        * ^short = "Code"
+        * ^comment = "Hier ist stets der Wert `VN` anzugeben."
+  * system MS
+    * ^short = "Namensraum des Identifiers"
+    * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
+    aus dem der Identifier stammt. 
+    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
+    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
+    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
+  * value MS
+    * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
+    **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
+
+* status MS
+* status from EncounterStatusDe (required)
+  * ^short = "Status"
+  * ^comment = "Zeigt den aktuellen Status der Ressource an.     
+  **WICHTIGER Hinweis für Implementierer:**    
+  * Alle server-seitigen Implementierungen MÜSSEN in der Lage sein, 
+  die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens jedoch die Werte `in-progress`, `finished` und `cancelled`.
+  * Alle client-seitigen Implementierungen MÜSSEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können, 
+  beispielsweise durch Ausblenden/Durchstreichen von Ressourcen mit dem status `entered-in-error` und Ausgrauen von Ressourcen, die einen Plan- oder Entwurfs-Status haben.  
+  **Historie:** Die Reduktion der zulässigen Status-Werte im Vergleich zur FHIR-Kernspezifikation 
+  erfolgt im Vorgriff auf eine entsprechende Anpassung in FHIR R5."
+  * ^binding.description = "Eingeschränkter Status vgl. FHIR R5"
+* class MS
+* class from ISiKEncounterClassDE (required)
+  * ^short = "Fallart"
+  * ^comment = "Die Klassifikation von Encountern nach Fallarten folgt den internationalen Vorgaben und 
+  dient der groben Unterscheidung von Besuchen mit und ohne Bettendisposition (ambulant/stationär). 
+  Die in Deutschland übliche Fallklassifikation anhand von unterschiedlichen 
+  regulatorischen und abrechnungrelevanten Rahmenbedingungen, erfolgt in `type`.  
+  Für ein korrektes Mapping der in Deutschland gebräuchlichen Fallarten auf `class` siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-AmbulanterStationaererFall?version=current)"
+* type MS
+  * ^comment = "Typ des Encounter"
+  * ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.path = "$this"
+  * ^slicing.rules = #open
+* type contains
+    Kontaktebene 1..1 MS and
+    KontaktArt 0..1 MS
+* type[Kontaktebene] from http://fhir.de/ValueSet/kontaktebene-de (required)
+  * ^patternCodeableConcept.coding = $Kontaktebene#abteilungskontakt
+  * ^binding.description = "Kontaktebene"
+  * ^short = "Kontaktebene"
+  * ^comment = "  **Begründung Pflichtfeld:** Die Abteilungsebene muss aus Kompatibilitätsgründen angegeben werden.
+
+  **Hinweis bei Abbildung von Versorgungsstellenkontakten:**
+  Es ist ein üblicher Fall, dass die Dauer eines Versorgungsstellenkontaktes in der Versorgung die eines Abteilungskontaktes übersteigt. Ein Beispiel hierfür: Ein Patient bleibt im Bett (Versorgungsstellenkontakt), aber ein Fachabteilungswechsel geschieht, da die Diagnose über eine Fachabteilung (Onkologie) läuft, dann aber der Wechsel zur Fachabteilung Chirurgie (neuer Abteilungskontakt) notwendig wird.
+  Für einen solchen Fall gilt auf Ebene der FHIR-Instanzen (z.B. entgegen des tatsächliche Aufenthaltes im gleichen Bett): Im Falle eines Fachabteilungswechsels legt ein System einen neuen Abteilungskontakt an. Bestehende Versorgungsstellenkontakt SOLLEN NICHT in ihrer Relation (.partOf) zum Abteilungskontakt modifiziert werden. Hingegen SOLL das System einen oder mehrere Versorgungsstellenkontakte erzeugen und mit dem neu angelegten Abteilungskontakt in Verbindung setzen.
+
+  Hintergrund: Das Konzept der 'Kontaktebene' stammt aus dem Fallmodell der Medizininformatik-Initiative,
+  das bei Encountern zwischen 'Einrichtungskontakten', 'Fachabteilungskontakten' und 'Versorgungsstellenkontakten' unterscheidet.
+  Im Kontext dieses Moduls werden lediglich Encounter der Ebene 'Fachabteilungskontakt' abgebildet.
+  "
+  * coding
+    * ^short = "Codierte Darstellung der Kontaktebene"
+    * system 1.. MS
+      * ^short = "Codier-Schema"
+      * ^comment = "Hier ist stets der Wert `http://fhir.de/CodeSystem/Kontaktebene` anzugeben." 
+    * code 1.. MS
+      * ^short = "Code"
+      * ^comment = "Hier ist stets der Wert `abteilungskontakt` anzugeben."
+* type[KontaktArt] from ISiKEncounterTypeErweiterungVS (required)
+  * ^short = "Kontaktart"
+  * ^comment = "Die Kontaktart dient der feingranularen Differenzierung unterschiedlicher stationärer 
+  und ambulanter Fallarten gemäß der in Deutschland üblichen regulatorischen 
+  und abrechnungsrelevanten Rahmenbedingungen.  
+  Für ein korrektes Mapping der in Deutschland gebräuchlichen Fallarten auf `type` siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-AmbulanterStationaererFall?version=current)"
+  * coding
+    * ^short = "Codierte Darstellung der Kontaktart"
+    * system 1.. MS
+      * ^short = "Codier-Schema"
+    * code 1.. MS
+      * ^short = "Code"
+      * ^comment = "vorstationaer | nachstationaer | begleitperson | tagesklinik | +"
+* serviceType 0..1 MS
+  * ^short = "Fachabteilungsschlüssel"
+  * ^comment = "**Begründung MS:** Der Fachabteilungsschlüssel ist ein häufig verwendetes Suchkriterium und sollte daher als logische Referenz (`serviceType`) hinterlegt werden."
+  * coding 1.. MS
+    * ^slicing.discriminator.type = #pattern
+    * ^slicing.discriminator.path = "$this"
+    * ^slicing.rules = #open
+  * coding contains
+    Fachabteilungsschluessel 0..1 MS and 
+    ErweiterterFachabteilungsschluessel 0..1 MS
+  * coding[Fachabteilungsschluessel] from $FachabteilungsschluesselVS (required)
+    * ^patternCoding.system = $FachabteilungsschluesselCS
+    * ^short = "Fachabteilungsschlüssel"
+    * ^comment = "Fachabteilungen gemäß Anhang 1 der BPflV"
+  * coding[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertVS (required)
+    * ^patternCoding.system = $FachabteilungsschluesselErweitertCS
+    * ^short = "Fachabteilungsschlüssel"
+    * ^comment = "Fachabteilungen gemäß Anhang 1 der BPflV inkl. Spezialisierungen"
+* priority MS
+  * ^short = "Aufnahmepriorität"
+  * ^comment = "**Begründung MS:** Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR)."
+* subject 1.. MS
+  * ^short = "Patientenbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Patientenbezug des Kontakt MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
+  * reference 1.. MS
+    * ^short = "Patienten-Link"
+    * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten 
+      und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+* period 0.. MS
+  * ^short = "Aufenthaltszeitraum"
+  * ^comment = "**WICHTIGER Hinweis für Implementierer:** 
+  * Das Aufnahmedatum  MUSS angegeben werden, 
+  wenn der `status` des Encounters impliziert, dass dieser bereits begonnen hat.
+  * Das Entlassdatum MUSS angegeben werden, 
+  wenn der `status` des Encounters impliziert, dass dieser beendet ist.  
+  Siehe hierzu die Übersicht der Invarianten in diesem Profil. "
+  * start 0.. MS
+    * ^short = "Aufnahmedatum"
+    * ^comment = "Hier ist stets das *tatsächliche* Aufnahmedatum anzugeben.
+    *Geplante* Aufnahmedaten müssen über die Extension `plannedStartDate` erfasst werden."
+  * end MS
+    * ^short = "Entlassdatum"
+    * ^comment = "Hier ist stets das *tatsächliche* Entlassdatum anzugeben.
+    *Geplante* Entlassdaten müssen über die Extension `plannedEndDate` erfasst werden."
+  
+* reasonCode 
+  * ^short = "Grund des Aufenthalts"
+  * ^comment = "**Historie:** Aufgrund von Harmonisierungsbestrebungen mit dem HL7 Europe Hospital Discharge Report (HDR) in der Ballot-Version von Stufe 6 als MS deklariert. 
+Wegen der unzureichenden Spezifikation und Abgrenzung zur Aufnahmediagnose in Encounter.diagnosis wieder entfernt, bis zur Herbeiführung einer Klärung mit HL7 Europe."
+* diagnosis 
+  * ^short = "Falldiagnosen/-prozeduren"
+  * ^comment = "Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters einnehmen, z.B. 'Aufnahmediagnose'   
+  **WICHTIGER Hinweis für Implementierer:**   Der Fallbezug von Diagnosen und Prozeduren wird über das jeweilige `encounter`-Element 
+  der Condition bzw. Procedure-Ressource hinreichend etabliert.  Die *zusätzliche* Rückverlinkung von `Encounter.diagnosis` auf Condition/Procedure wird *nur dann* verwendet, 
+  wenn einer Diagnose bzw. Prozedur *im Kontext eines Aufenthaltes* eine besondere Rolle zugewiesen werden soll, z.B. Haupt-/Neben-/Aufnahme- oder Überweisungsdiagnose).  
+  Hier werden Diagnosen und Prozeduren nur nach ihrer *medizinschen* Relevanz bezüglich eines Aufenthaltes qualifiziert. 
+  Die Qualifikation von Diagnosen und Prozeduren im Kontext der *Abrechnung* erfolgt in der `Account`-Ressource!" 
+  * condition MS
+    * ^short = "Verweis auf Diagnose/Prozedur"
+    * reference 1.. MS
+      * ^short = "Condition/Procedure-Link"
+      * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf die Condition/Procedure-Ressource dient der technischen Zuordnung des Encounters zur Condition/Precedure 
+  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+  * use 1.. MS 
+    * ^short = "Bedeutung der Diagnose/Prozedur"
+    * ^comment = "Bedeutung der Diagnose/Prozedur im Encounter-Kontext"
+    * coding 1.. MS
+      * ^slicing.discriminator.type = #pattern
+      * ^slicing.discriminator.path = "$this"
+      * ^slicing.rules = #open
+    * coding contains 
+      Diagnosetyp 1..1 MS and 
+      DiagnosesubTyp 0.. MS
+    * coding[Diagnosetyp] from http://fhir.de/ValueSet/DiagnoseTyp (required)
+      * ^short = "Diagnosetyp"
+      * ^comment = "International standardisierte, grobgranulare Unterscheidung zwischen extern gestellten Diagnosen (`referral-diagnosis`) und intern gestellten Diagnosen (`treatment-diagnosis`)"
+    * coding[DiagnosesubTyp] from http://fhir.de/ValueSet/Diagnosesubtyp (required)
+      * ^short = "Diagnosesubtyp"
+      * ^comment = "An deutschen Kodierrichtlinien orientierte, feingranulare Unterscheidung von Diagnose-Rollen, 
+      z.B. 'Fachabteilungshauptdiagnose', 'Todesursache' etc."
+  * rank MS
+* account 0.. MS
+  * ^short = "Abrechnungskontext"
+  * ^comment = "Der Bezug zu einem Account stellt den Abrechnungskontext für einen oder mehrere Encounter her.
+  Mittels der Account-Referenz können zum Beispiel ein vorstationärer, ein stationärer 
+  und ein nachstationärer Besuch zu einem 'DRG-Fall' zusammengefasst werden.  
+  **WICHTIGER Hinweis für Implementierer:** Im Deutschen Sprachgebrauch ist unter dem Begriff 'Fall' 
+  meist der Abrechnungskontext gemeint, nicht der einzelne Besuch. Die 'Fallnummer' ist daher nicht der Identifier des Encounters, 
+  sondern der des Accounts auf den der Encounter referenziert. 
+  Auf diesem Wege können mehrere Besuche einer Fallnummer zugeordnet werden.  
+  Da die Fallnummer ein häufig verwendetes Suchkriterium darstellt, 
+  ist diese hier als logische Referenz (`account.identifier`) zu hinterlegen.
+  Damit wird sichergestellt, dass diese als Suchparameter für die Suche nach Encountern zur Verfügung steht, 
+  auch wenn einzelne Systeme kein Chaining unterstützen oder einzelne Benutzer keine Sichtberechtigung auf Abrechnungsdaten haben,
+  im Versorgunskontext aber dennoch Encounter anhand der assoziierten Fallnummer suchen möchten."
+  * identifier 1.. MS
+    * ^short = "(Abrechnungs-)Fallnummer"
+    * system 1.. MS
+      * ^short = "Namensraum des Identifiers"
+      * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
+      aus dem der Identifier stammt. 
+      Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
+      [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
+      **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
+    * value 1.. MS
+      * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
+        **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
+  * reference 0.. MS
+    * ^short = "Account-Link"
+    * ^comment = "**Begründung MS:** Die Verlinkung auf eine Account-Ressource dient der technischen Zuordnung des Besuchs zu einem Abrechnungskontext 
+  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+* hospitalization ..1 MS
+  * ^short = "Details zum Aufenthalt"
+  * ^comment = "Details zu einem stationären Aufenthalt"
+  * admitSource 0..1 MS
+  * admitSource from AufnahmeanlassVS (extensible)
+    * ^short = "Aufnahmeanlass"
+    * ^comment = "Anlass der stationären Aufnahme, z.B. 'Einweisung', 'Notfall' etc.  
+      Begründung MS: Zur Harmonisierung den Festlegungen der Medizininformatik-Initiative"
+  * dischargeDisposition MS
+    * ^short = "Entlassungsart bzw. -grund"
+    * extension contains ExtensionEntlassungsgrund named Entlassungsgrund 0..1 MS and ExtensionISiKRehaEntlassung named RehaEntlassung 0..1 MS
+    * extension[Entlassungsgrund]
+      * ^short = "Entlassungsgrund"
+      * ^comment = "Entlassungsgrund nach § 301 Abs. 3 SGB V  
+        **Einschränkung MS:** Der Entlassungsgrund muss nur implementiert werden,
+         wenn das bestätigungsrelevante System in der Akutversorgung eingesetzt wird."
+    * extension[RehaEntlassung]
+      * ^short = "Entlassungsgrund Reha"
+      * ^comment = "Entlassungsgrund nach §301 (Abs. 4 und 4a) SGB V  
+      **Einschränkung MS:** Der Entlassungsgrund Reha muss nur implementiert werden,
+        wenn das bestätigungsrelevante System in der Reha-Versorgung eingesetzt wird"
+  * extension contains $WahlleistungExtension named Wahlleistung 0.. MS
+  * extension[Wahlleistung]
+    * ^short = "Wahlleistung"
+    * ^comment = "**Begründung MS:**  Vom Patienten gebuchte Wahlleistungen (z.B. Chefarztbehandlung, Einzelzimmer) 
+    sind häufig system- und abteilungsübergreifend zu beachten und sollten daher über die Schnittstelle kommuniziert werden können."  
+* location MS
+* location ^slicing.discriminator[+].type = #pattern
+* location ^slicing.discriminator[=].path = "physicalType"
+* location ^slicing.discriminator[+].type = #pattern
+* location ^slicing.discriminator[=].path = "status"
+* location ^slicing.rules = #open
+* location 
+  * ^short = "Aufenthaltsorte des Patienten"
+  * ^comment = """
+  Hinweise zur Einschränkung von Encounter.location.status auf "active" zu Abbildung des aktuellen Aufenthaltortes des Patienten
+  Die Slices `Station`, `Zimmer` und `Bettenstellplatz` verwenden jeweils ein Pattern auf dem status-Element mit dem Wert 'active'.
+  Diese Einschränkung dient der sicheren Abbildung des aktuellen Aufenthaltsortes und soll garantieren, dass – wenn bekannt – stets nur ein aktueller Standort dokumentiert wird.
+
+  Gleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z.B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  
+  Damit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird. Bei Verlegungen in einen anderen Fachbereich, welcher auch einen Wechsel des Aufenthaltsortes zur Folge hat, SOLL der Status der Location auf 'completed' gesetzt werden.
+  """
+  * physicalType from $LocationPhysicalTypeVS (extensible)
+    * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"
+* location contains  Zimmer 0..1 MS and Bettenstellplatz 0..1 MS and Station 0..1 MS
+* location[Station]
+  * ^short = "Slice für die aktive Station"
+  * ^comment = "**Begründung MS:** Die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
+  * insert ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
+  * physicalType 1..1 MS
+  * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#wa
+    * ^short = "Art des Aufenthaltsortes (hier: Station)"
+    * coding
+      * ^short = "Codierte Darstellung der Art des Aufenthaltortes"
+      * system 1.. MS
+        * ^short = "Codier-Schema"
+        * ^comment = "Hier ist stets der Wert `http://terminology.hl7.org/CodeSystem/location-physical-type` anzugeben." 
+      * code 1.. MS
+        * ^short = "Code"
+        * ^comment = "Hier ist stets der Wert `wa` anzugeben."
+  * status MS
+  * status = #active
+* location[Zimmer]
+  * ^short = "Slice für das aktive Zimmer"
+  * ^comment = "**Begründung MS:** Die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
+  * insert ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
+  * physicalType 1..1 MS
+  * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#ro
+    * ^short = "Art des Aufenthaltsortes (hier: Zimmer)"
+    * coding
+      * ^short = "Codierte Darstellung der Art des Aufenthaltortes"
+      * system 1.. MS
+        * ^short = "Codier-Schema"
+        * ^comment = "Hier ist stets der Wert `http://terminology.hl7.org/CodeSystem/location-physical-type` anzugeben." 
+      * code 1.. MS
+        * ^short = "Code"
+        * ^comment = "Hier ist stets der Wert `ro` anzugeben."  
+  * status MS
+  * status = #active
+* location[Bettenstellplatz]
+  * ^short = "Slice für das aktive Bett"
+  * ^comment = "**Begründung MS:** Die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
+  * insert ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
+  * physicalType 1..1 MS
+  * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bd
+    * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"
+    * ^short = "Art des Aufenthaltsortes (hier: Bettenstellplatz)"
+    * coding
+      * ^short = "Codierte Darstellung der Art des Aufenthaltortes"
+      * system 1.. MS
+        * ^short = "Codier-Schema"
+        * ^comment = "Hier ist stets der Wert `http://terminology.hl7.org/CodeSystem/location-physical-type` anzugeben." 
+      * code 1.. MS
+        * ^short = "Code"
+        * ^comment = "Hier ist stets der Wert `bd` anzugeben."
+  * status MS
+  * status = #active
+* serviceProvider MS
+  * ^short = "Zuständige ServiceProvider"
+  * ^comment = "**Begründung MS:** Der zuständige ServiceProvider für diesen Kontakt sollte hier angegeben werden."
+  * identifier 1.. MS
+    * ^comment = "**Begründung Pflichtfeld:** Ein eindeutiger Identifier des ServiceProvider muss vorhanden sein."
+  * display 1.. MS
+    * ^comment = "**Begründung MS:** Ein Anzeigename für den ServiceProvider muss vorhanden sein."
+* appointment MS
+* appointment ^short = "Verknüpfung mit einem Termin"
+* appointment  ^comment = "
+  
+**Begründung und Einschränkung des Must Support**: Dieses Element dient der Verknüpfung mit einem Termin (Appointment) aus dem entsprechenden ISiK Modul und - darauf aufbauend - der Dokumentenkommunikation. Das Element 'appointment' SOLL für den im Folgenden geschilderten Fall implementiert werden. Andernfalls KANN es entfallen. 
+
+Die Anforderung einer Verknüpfung mit einem Appointment stammt aus dem Szenario der Dokumentenübertragung zwischen Patientenportal und krankenhaus-internem Primärsystem (z.B. KIS) im Kontext einer Terminbuchung: Dokumente liegen bei Terminbuchung erst im Patientenportal (im Appointment) vor und werden erst mit Anlage des Encounters in das KIS (etc.) übermittelt. Dazu SOLL ein Primärsystem zu Beginn des Termins das Appointment mit dem neu angelegten Encounter verknüpfen, um die Dokumente aus dem Patientenportal darüber vermittelt zuordnen zu können (ausgenommen hiervon sind Termine, die nicht stattfinden, da für diese in der Regel keine Encounter angelegt werden).
+
+Über die Referenz auf Appointment KÖNNEN Patientenportale den Fallbezug aus dem Termin ermitteln und Dokumente an ein KIS senden.
+
+Hieraus folgt, dass das Element nur relevant ist, falls das bestätigungsrelevante System zusätzlich zum vorliegenden Profil (Encounter) das Profil ISiKTermin (Appointment) implementiert.
+
+**Hinweis:**  Zur Umsetzung der Funktionalität zum Dokumentenaustausch gemäß ISiK ist der entsprechende [Implementation Guide zum Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc1/index.html) zu beachten."
+
+Extension: ExtensionISiKRehaEntlassung
+Id: ExtensionISiKRehaEntlassung
+Description: "Extension zur Dokumentation von Informationen nach §301 (4 und 4a) SGB V, entsprechend dem ärztliche Reha-Entlassungsbericht. Mit dieser Extension können spezifische Entlassungsinformationen im Kontext einer Rehabilitationsmaßnahme angegeben werden. Dies ist besonders relevant für Einrichtungen, die Leistungen im Bereich Rehabilitation erbringen, und unterstützt die strukturierte Kommunikation im Entlassmanagement."
+Context: Encounter.hospitalization.dischargeDisposition
+* insert Meta
+* extension contains
+    Entlassform ..1 MS and
+    BesondereBehandlung ..1 MS and
+    BehandlungsergebnisReha ..1 MS and
+    UnterbrechnungReha ..1 MS
+* extension[Entlassform]
+  * value[x] only Coding
+  * valueCoding from ISiKEntlassformRehaVS (extensible)
+* extension[BesondereBehandlung]
+  * value[x] only Coding
+  * valueCoding from ISiKBesondereBehandlungsformRehaVS (required)
+* extension[BehandlungsergebnisReha]
+  * value[x] only Coding
+  * valueCoding from ISiKBehandlungsergebnisRehaVS (required)
+* extension[UnterbrechnungReha]
+  * value[x] only Coding
+  * valueCoding from ISiKUnterbrechungRehaVS (required)
+
+Instance: Fachabteilungskontakt
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* extension.url = "http://fhir.de/StructureDefinition/Aufnahmegrund"
+* extension.extension[0].url = "ErsteUndZweiteStelle"
+* extension.extension[=].valueCoding = $AufnahmegrundErsteUndZweiteStelle#01 "Krankenhausbehandlung, vollstationär"
+* extension.extension[+].url = "DritteStelle"
+* extension.extension[=].valueCoding = $AufnahmegrundDritteStelle#0 "Anderes"
+* extension.extension[+].url = "VierteStelle"
+* extension.extension[=].valueCoding = $AufnahmegrundVierteStelle#1 "Normalfall"
+* identifier.type = $v2-0203#VN
+* identifier.system = "https://test.krankenhaus.de/fhir/sid/besuchsnummer"
+* identifier.value = "0123456789"
+* status = #finished
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* type[KontaktArt] = $Kontaktart-de#operation
+* serviceType = $FachabteilungsschluesselCS#0100
+* subject = Reference(PatientinMusterfrau)
+* period.start = "2021-02-12"
+* period.end = "2021-02-13"
+* diagnosis.condition = Reference(BehandlungsDiagnoseFreitext)
+* diagnosis.use = http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#treatment-diagnosis
+* account = Reference(AbrechnungsfallDRG)
+* account.identifier
+  * value = "XZY"
+  * system = "https://test.krankenhaus.de/fhir/sid/fallnummer"
+* hospitalization.admitSource = $Aufnahmeanlass#E
+* hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
+* hospitalization.dischargeDisposition.extension.extension[0].url = "ErsteUndZweiteStelle"
+* hospitalization.dischargeDisposition.extension.extension[=].valueCoding = $EntlassungsgrundErsteUndZweiteStelle#01 "Behandlung regulär beendet"
+* hospitalization.dischargeDisposition.extension.extension[+].url = "DritteStelle"
+* hospitalization.dischargeDisposition.extension.extension[=].valueCoding = $EntlassungsgrundDritteStelle#1 "arbeitsfähig entlassen"
+* location.physicalType = $LocationPhysicalType#bd "Bed"
+* location.status = #active
+* location.location.identifier.system = "https://test.krankenhaus.de/fhir/sid/locationid"
+* location.location.identifier.value = "123"
+* location.location.display = "Bettenstellplatz 123"
+* serviceProvider.identifier.system = "https://test.krankenhaus.de/fhir/sid/fachabteilungsid"
+* serviceProvider.identifier.value = "XYZ"
+* serviceProvider.display = "Fachabteilung XYZ"
+
+Instance: FachabteilungskontaktMinimal2
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #finished
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-15T14:00:00+01:00"
+* period.end = "2025-01-20T10:00:00+01:00"
+
+Instance: FachabteilungskontaktNormal
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* extension.url = "http://fhir.de/StructureDefinition/Aufnahmegrund"
+* extension.extension[0].url = "ErsteUndZweiteStelle"
+* extension.extension[=].valueCoding = $AufnahmegrundErsteUndZweiteStelle#01 "Krankenhausbehandlung, vollstationär"
+* extension[+].url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
+* extension[=].valueDateTime = "2025-01-02"
+* extension[+].url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
+* extension[=].valueDateTime = "2025-01-04"
+* identifier.type = $v2-0203#VN
+* identifier.system = "https://test.krankenhaus.de/fhir/sid/besuchsnummer"
+* identifier.value = "0123456789"
+* status = #finished
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* type[KontaktArt] = $Kontaktart-de#operation
+* serviceType.coding[Fachabteilungsschluessel] = CodeSystemFachabteilungsschluessel#2300 "Orthopädie"
+* subject = Reference(PatientinNormal)
+* period.start = "2024-10-21"
+* period.end = "2025-01-01"
+* diagnosis.condition = Reference(PrimaereGonarthroseNormal)
+* diagnosis.use.coding.system = "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"
+* diagnosis.use.coding.code = #treatment-diagnosis
+* diagnosis.rank = 1
+* account = Reference(AbrechnungsfallGonarthrose)
+* account.identifier.value = "1234"
+* account.identifier.system = "https://test.krankenhaus.de/fhir/sid/fallnummer"
+* hospitalization.admitSource = $Aufnahmeanlass#E
+* hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
+* hospitalization.dischargeDisposition.extension.extension[0].url = "ErsteUndZweiteStelle"
+* hospitalization.dischargeDisposition.extension.extension[=].valueCoding = $EntlassungsgrundErsteUndZweiteStelle#01 "Behandlung regulär beendet"
+* location[0].location = Reference(RaumStandortBeispiel)
+* location[0].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/roomid"
+* location[0].location.identifier.value = "1234"
+* location[0].location.display = "Zimmer 1234"
+* location[0].status = #active
+* location[0].physicalType = $LocationPhysicalType#ro "Room"
+* location[1].location = Reference(BettenstellplatzStandortBeispiel)
+* location[1].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bedid"
+* location[1].location.identifier.value = "1234"
+* location[1].location.display = "Bettenstellplatz 1234"
+* location[1].status = #active 
+* location[1].physicalType = $LocationPhysicalType#bd "Bed"
+* location[2].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationid"
+* location[2].location.identifier.value = "1234"
+* location[2].location.display = "Ward 1234"
+* location[2].status = #active
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationid"
+* location[=].location.identifier.value = "56789"
+* location[=].location.display = "Ward 56789"
+* location[=].status = #completed
+* location[=].physicalType = $LocationPhysicalType#wa "Ward"
+* serviceProvider.identifier.system = "https://test.krankenhaus.de/fhir/sid/fachabteilungsid"
+* serviceProvider.identifier.value = "ORTHO-1234"
+* serviceProvider.display = "Fachabteilung für Orthopädie und Endoprothetik"
+
+Instance: FachabteilungskontaktStationaereAufnahme
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #in-progress
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-01T10:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#1500 "Allgemeine Chirurgie"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B016"
+* location[=].location.display = "Bett B016"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktBettenverlegung
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #in-progress
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-01T10:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#1500 "Allgemeine Chirurgie"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B016"
+* location[=].location.display = "Bett B016"
+* location[=].period.end = "2025-05-01T12:00:00+01:00"
+* location[=].status = #completed
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B027"
+* location[=].location.display = "Bett B027"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktFachbereichswechsel1
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #finished
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-01T10:00:00+01:00"
+* period.end = "2025-01-10T08:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#1500 "Allgemeine Chirurgie"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B016"
+* location[=].location.display = "Bett B016"
+* location[=].period.end = "2025-05-01T12:00:00+01:00"
+* location[=].status = #completed
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B027"
+* location[=].location.display = "Bett B027"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktFachbereichswechsel2
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #in-progress
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-10T08:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#2600 "Hals-, Nasen-, Ohrenheilkunde"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B027"
+* location[=].location.display = "Bett B027"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktStationswechsel1
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #finished
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-15T08:00:00+01:00"
+* period.end = "2025-01-15T14:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#2600 "Hals-, Nasen-, Ohrenheilkunde"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B027"
+* location[=].location.display = "Bett B027"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktStationswechsel2
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #in-progress
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-15T14:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#0100 "Innere Medizin"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "INNG1"
+* location[=].location.display = "Station INNG1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "A010"
+* location[=].location.display = "Bett A010"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktEntlassung
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #finished
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-15T14:00:00+01:00"
+* period.end = "2025-01-20T10:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#0100 "Innere Medizin"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "INNG1"
+* location[=].location.display = "Station INNG1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "A010"
+* location[=].location.display = "Bett A010"
+* location[=].status = #active
+
+
+Invariant: ISiK-enc-1
+Description: "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben"
+Severity: #error
+Expression: "status = 'finished' and class.code = 'AMB' implies period.start.exists()"
+
+Invariant: ISiK-enc-2
+Description: "Abgeschlossene, stationäre Kontakte sollten einen Start- und End-Zeitpunkt angeben"
+Severity: #error
+Expression: "status = 'finished' and class.code = 'IMP' implies period.start.exists() and period.end.exists()"
+
+Invariant: ISiK-enc-3
+Description: "Geplante Kontakte sollten keinen Start- oder End-Zeitpunkt angeben"
+Severity: #error
+Expression: "status = 'planned' implies period.exists().not()"
+
+Invariant: ISiK-enc-4
+Description: "Geplante Kontakte sollten die Extensions für den geplanten Start- oder End-Zeitpunkt verwenden"
+Severity: #warning
+Expression: "status = 'planned' implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate').exists()"
+
+Invariant: ISiK-enc-5
+Description: "In-Durchführung befindliche Kontakte sollten einen Start-Zeitpunkt angeben"
+Severity: #error
+Expression: "status = 'in-progress' implies period.start.exists()"
+
+Invariant: ISiK-enc-6
+Description: "Kontakte mit Abwesenheitsstatus sollten einen Start-Zeitpunkt angeben"
+Severity: #error
+Expression: "status = 'onleave' implies period.start.exists()"
+
+Invariant: ISiK-enc-7
+Description: "Kontakte mit unbekannten Status sollten einen Start-Zeitpunkt angeben"
+Severity: #warning
+Expression: "status = 'unknown' implies period.start.exists()"
+
+Invariant: ISiK-enc-8
+Description: "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein"
+Severity: #error
+Expression: "diagnosis.use.all(coding.code != 'billing')"
+
+
+Instance: Encounter-date-start
+InstanceOf: SearchParameter
+Usage: #definition
+* description = "The actual start date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values."
+* insert MetaInstance
+* name = "DateStart"
+* code = #date-start
+* base = #Encounter
+* type = #date
+* expression = "Encounter.period.start"
+* comparator[0] = #eq
+* comparator[+] = #ne
+* comparator[+] = #gt
+* comparator[+] = #ge
+* comparator[+] = #lt
+* comparator[+] = #le
+* comparator[+] = #sa
+* comparator[+] = #eb
+* comparator[+] = #ap
+
+Instance: Encounter-end-date
+InstanceOf: SearchParameter
+Usage: #definition
+* description = "The actual end date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values."
+* insert MetaInstance
+* name = "EndDate"
+* code = #end-date
+* base = #Encounter
+* type = #date
+* expression = "Encounter.period.end"
+* comparator[0] = #eq
+* comparator[+] = #ne
+* comparator[+] = #gt
+* comparator[+] = #ge
+* comparator[+] = #lt
+* comparator[+] = #le
+* comparator[+] = #sa
+* comparator[+] = #eb
+* comparator[+] = #ap
