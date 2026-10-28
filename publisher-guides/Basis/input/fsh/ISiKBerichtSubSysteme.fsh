@@ -228,22 +228,31 @@ Usage: #inline
 * gender = #male
 * birthDate = "1965-04-11"
 
+// ISiKBlutdruckSystemischArteriell ist im Modul Vitalparameter definiert, das von Basis abhängt.
+// Damit Basis eigenständig gebaut werden kann, werden die Festwerte des Profils hier explizit gesetzt
+// (erzeugtes JSON identisch zur bisherigen InstanceOf-Variante).
 Instance: BloodPressureObservation
-InstanceOf: ISiKBlutdruckSystemischArteriell
+InstanceOf: Observation
 Usage: #inline
 Title: "Hypertensiver Blutdruck - ICU-Aufnahme"
 Description: "Kritischer Blutdruckwert (Systole 210 / Diastole 115 / MAP 140) vor Verlegung auf Intensivstation."
+* meta.profile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell"
+* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
+* code = $loinc#85354-9
 * id = "880d8c69-fc05-4e1f-8203-a8ff40007f84"
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Observation</h3>  <div><strong>Typ:</strong><span><span>85354-9</span><span> (http://loinc.org)</span></span></div>  <div><strong>Status:</strong><span>FINAL</span></div>  <div><strong>Kategorie:</strong><ul><li><span><span><span>vital-signs</span><span> (http://terminology.hl7.org/CodeSystem/observation-category)</span></span></span></li></ul></div>  <div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div>  <div><strong>Zeitpunkt:</strong><span>2025-07-22T14:10:00+02:00</span></div>    <div><strong>Messwerte:</strong><table style=\"border-collapse: collapse; width: 100%;\"><thead><tr style=\"background-color: #f2f2f2;\"><th style=\"border: 1px solid #ddd; padding: 8px;\">Parameter</th><th style=\"border: 1px solid #ddd; padding: 8px;\">Wert</th><th style=\"border: 1px solid #ddd; padding: 8px;\">Einheit</th></tr></thead><tbody><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>  <span>Systolisch</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>210</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>  <span>Diastolisch</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>115</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>  <span>Mittlerer arterieller Druck</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>140</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr></tbody></table></div>    </div>"
 * status = #final
 * subject = Reference(urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79)
 * effectiveDateTime = "2025-07-22T14:10:00+02:00"
-* component[SystolicBP]
+* component[+]
+  * code = $loinc#8480-6
   * valueQuantity = 210 'mm[Hg]' "mmHg"
-* component[DiastolicBP]
+* component[+]
+  * code = $loinc#8462-4
   * valueQuantity = 115 'mm[Hg]' "mmHg"
-* component[meanBP]
+* component[+]
+  * code = $loinc#8478-0
   * valueQuantity = 140 'mm[Hg]' "mmHg"
 
 Instance: VentilationProcedure
