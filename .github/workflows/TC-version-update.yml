@@ -28,7 +28,7 @@ jobs:
               pip install pyyaml
     
           - name: run regression tests of the update script
-            run: python ./scripts/test_release_publish.py
+            run: python -B ./scripts/test_release_publish.py  # -B: no __pycache__ that the commit step would pick up
 
           - name: execute py script # run main.py
             run: python ./scripts/release_publish.py -b
