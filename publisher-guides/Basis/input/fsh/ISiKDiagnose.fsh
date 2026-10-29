@@ -1,0 +1,300 @@
+Profile: ISiKDiagnose
+Parent: Condition
+Id: ISiKDiagnose
+Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen 
+über die Diagnosen eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.  
+
+**Motivation**
+
+Die Möglichkeit, auf eine Übersicht der Diagnosen eines Patienten zuzugreifen, Patienten anhand ihrer Diagnose zu suchen oder zu prüfen, 
+ob eine konkrete Diagnose bei einem Patienten vorliegt, sind wichtige Funktionen im klinischen Behandlungsablauf.  
+
+In FHIR werden Diagnosen mit der Condition-Ressource repräsentiert.  
+
+Da die Diagnosen in klinischen Primärsystemen in der Regel in ICD-10-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. 
+Falls eine Diagnose zwar dokumentiert, aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), 
+ist alternativ eine Repräsentation als Freitext-Diagnose möglich.
+
+**Kompatibilität**
+
+Für das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKDiagnose valide sind, auch valide sind gegen:
+* das [Profil ProfileConditionDiagnose der Medizininformatik-Initative](https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
+* das [Profil KBV_PR_Base_Condition_Diagnosis der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis)]  
+Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
+
+* insert Meta
+* insert CommonElements
+// * insert CompliesWith(http://hl7.eu/fhir/base/StructureDefinition/condition-eu-core)
+// * insert CompliesWith(http://hl7.eu/fhir/eps/StructureDefinition/condition-obl-eu-eps)
+// * insert CompliesWith(http://hl7.eu/fhir/hdr/StructureDefinition/condition-obl-eu-hdr)
+// * insert CompliesWith(https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
+// * insert CompliesWith(https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis)
+* obeys isik-con1
+* extension MS
+* extension ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "url"
+  * ^slicing.rules = #open
+* extension contains $condition-related named related 0..1 MS
+* extension[related]
+  * ^short = "Verknüpfte Diagnose"
+  * ^comment = " Die Deutschen Kodierrichtlinien und die 'German Modification' ermöglichen es teilweise, 
+  ICD-10-Codierte Diagnosen miteinander zu verknüpfen ('Kreuz-Stern-Ausrufezeichen-Notation'), 
+  diese aber dennoch wie eigenständige Diagnosen (mit jeweils eigener Diagnosesicherheit oder -Lokalisation) zu kommunizieren.
+  Daher ist es in Deutschland nicht möglich, dem internationalen Usus zu folgen und verknüpfte Diagnosen als postkoordinierten Code *einer* Condition-Ressource aufzufassen.
+  Statt dessen müssen sie zwei eigenständige Condition-Ressourcen abgebildet werden, die mit Hilfe der `related`-Extension miteinander verknüpft werden.  
+  Die Sekundärdiagnose verweist jeweils auf die Primärdiagnose."
+* clinicalStatus MS
+  * ^short = "klinischer Status"
+  * ^comment = "**Begründung MS:** Auch in Stufe 4 sind keine (client-seitigen) schreibenden Operationen für das Erstellen einer Condition-Ressource vorgesehen 
+  (siehe CapabilityStatement). Das heißt, entweder führen KISe entsprechende Informationen und exponieren diese, 
+  oder es gibt keinen pragmatischen Mechanismus (im ISIK-Kontext), um den Use Case einer zusätzlichen Annotation mittels Client zu erfüllen. 
+  Da alle KIS-Hersteller, die sich zu Wort gemeldet haben, eine Befüllung von Condition.clinicalStatus NICHT unterstützen, 
+  erscheint das MS nach übergreifender Definition und ein verpflichtender Testfall nicht angemessen.  
+  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur 
+  zur Hinterlegung des Status einer Diagnose, so MUSS dieses System die Information NICHT abbilden. 
+  Das System MUSS jedoch `clinicalStatus` befüllen, sofern die entsprechende Information verfügbar ist.  
+  **Hinweis:** Für Diagnosen aus der *ambulanten* Versorgung können die Werte für `clinicalStatus` und `verificationStatus` aus dem 
+  [ICD-10-Zusatzkennzeichen für die Diagnosesicherheit](https://www.bfarm.de/DE/Kodiersysteme/Services/Kodierfragen/ICD-10-GM/Allgemeine-Kodierfragen/icd-10-gm-1010.html) abgeleitet werden.
+  Das entsprechende Mapping kann den [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-DiagnosenCondition?version=current) entnommen werden."
+* verificationStatus MS
+  * ^short = "Bestätigungsstatus"
+  * ^comment = """
+    **Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. Clients, die eine ISiKPatient-Instanz verarbeiten, SOLLEN den Wert dieses Elements vor der weiteren Verarbeitung prüfen.
+
+    **WICHTIGER Hinweis für Implementierer:**  
+    - Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens aber den Status 'confirmed'.
+    - Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können.
+    """
+* category
+  * ^comment = "**Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, weisen wir darauf hin, dass in der EPS das Element `category` mittels Obligation gefordert wird. Da Obligations im EU Kontext noch nicht final und stabil definiert sind, ergänzen wir kein MS in ISiK Stufe 6."
+* severity
+  * ^comment = "**Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, weisen wir darauf hin, dass in der EPS das Element `severity` mittels Obligation gefordert wird. Da Obligations im EU Kontext noch nicht final und stabil definiert sind, ergänzen wir kein MS in ISiK Stufe 6."
+* code 1.. MS
+  * ^short = "Diagnose-Code"
+  * ^comment = "Diagnosen SOLLEN mindestens entweder mit einem der angebenen standardisierten Codier-Verfahren codiert werden. 
+  Ist keine Codierung möglich, MUSS statt dessen eine textuelle Beschreibung der Prozedur angegeben werden.  
+   **Begründung Pflichtfeld:** Ist *weder* eine Codierung *noch* eine textuelle Beschreibung vorhanden, besitzt diese Ressource keine medizinische Aussagefähigkeit."
+  * obeys icd-text-1
+  * coding MS
+    * ^slicing.discriminator.type = #pattern
+    * ^slicing.discriminator.path = "$this"
+    * ^slicing.rules = #open
+    * ^comment = "**Hinweis EHDS:** In der HL7 Europe EPS und HDR Spezifikation ist ein Binding von Snomed-CT mit der Stärke preferred gesetzt. Dies schließt sich nicht mit der hier vorgenommenen Profilierung aus, und auch eine reine ICD-10 Abbildung spricht nicht gegen diese Anforderung. Allerdings möchten wir darauf hinweisen, dass es in Zukunft möglicherweise sinnvoll sein könnte, die Nutzung von SNOMED-CT Kodierung zur Darstellung einer Diagnose zu nutzen, um die Interoperabilität mit der EPS zu erhöhen."
+  * coding contains
+      ICD-10-GM 0..1 MS and
+      Alpha-ID 0..1 MS and
+      SNOMED-CT 0..1 MS and
+      Orphanet 0..1 MS
+  * coding[ICD-10-GM] only ISiKICD10GMCoding
+    * ^patternCoding.system = $icd-10-gm
+    * extension[Mehrfachcodierungs-Kennzeichen] MS
+    * extension[Seitenlokalisation] MS      
+      * ^short = "Seitenlokalisation"
+      * ^comment = "**Begründung MS:** Bei ICD-10-codierten Diagnosen an paarigen Organen oder Körperteilen müssen die Zusatzkennzeichen für die Seitigkeit (R, L oder B) angeben werden.
+
+  **Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, wird für die Kodierung der Lateralität aktuell die Nutzung einer BodyStructure-Ressource inkl. einer Snomet-CT Kodierung diskutiert. Siehe [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html)."
+    * extension[Diagnosesicherheit] MS
+  * coding[Alpha-ID] only CodingAlphaID
+    * ^patternCoding.system = $alphaid-cs
+    * system 1.. MS
+    * code 1.. MS
+  * coding[SNOMED-CT] only ISiKSnomedCTCoding
+  * coding[SNOMED-CT] from $diagnosesSCT (required)
+    * ^patternCoding.system = $sct
+  * coding[Orphanet] ^patternCoding.system = $orphaNet
+    * system 1.. MS
+    * code 1..
+* subject MS
+  * ^short = "Patientenbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Patientenbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
+  * reference 1.. MS
+    * ^short = "Patienten-Link"
+    * insert Comment-Reference-Subject(Begründung MS)
+* encounter MS
+  * ^short = "Aufenthaltsbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Diagnose MUSS zum Zwecke der Nachvollziehbarkeit und Datenintegrität exponiert und empfangen werden können."
+  * reference 1.. MS
+    * ^short = "Encounter-Link"
+    * insert Comment-Reference-Encounter-with-hint(Begründung Pflichtfeld)
+* onset[x] MS 
+  * ^short = "Erkrankungsbeginn"
+  * ^comment = "Datum oder Alter/Lebensphase des Erkrankungsbeginns
+  **Begründung MS:** Die Kenntnis des Erkrankungszeitraumes ist wichtig für die korrekte Einschätzung der medizinischen Relevanz einer Erkraknung.  
+  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Erkrankungszeitraumes,
+  so MUSS dieses System die Information NICHT abbilden. 
+  Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist."
+* onset[x] only dateTime or Age
+* onsetDateTime MS
+  * ^short = "Erkrankungsbeginn als Datum"
+  * ^comment = "''Begründung MS:** Siehe onset[x]"
+* onsetAge MS 
+  * ^short = "Erkrankungsbeginn als Alter"
+  * ^comment = "''Begründung MS:** Siehe onset[x]"
+  * extension contains ExtensionLebensphase named Lebensphase-Beginn 0..1
+  * extension[Lebensphase-Beginn]
+    * ^short = "Lebensphase des Erkrankungsbeginns"
+    * ^comment = "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen"
+* abatement[x] MS 
+* abatement[x] only dateTime or Age
+  * ^short = "Klinische relevanter Zeitraum Ende"
+  * ^comment = "Ende des klinisch relevanten Zeitraums der Diagnose  
+  **Begründung MS:** Die Kenntnis des Erkrankungszeitraumes ist wichtig für die korrekte Einschätzung der medizinischen Relevanz einer Erkraknung.  
+  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Erkrankungszeitraumes,
+  so MUSS dieses System die Information NICHT abbilden. 
+  Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist."
+* abatementAge MS
+  * ^short = "Klinische relevanter Zeitraum Ende als Alter"
+  * ^comment = "''Begründung MS:** Siehe abatement[x]"
+  * extension contains ExtensionLebensphase named Lebensphase-Ende 0..1
+  * extension[Lebensphase-Ende]
+    * ^short = "Lebensphase des Erkrankungsendes"
+    * ^comment = "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen"
+* abatementDateTime MS
+  * ^short = "Klinische relevanter Zeitraum Ende als Datum"
+  * ^comment = "''Begründung MS:** Siehe abatement[x]"
+* recordedDate 1.. MS
+  * ^short = "Dokumentationsdatum"
+  * ^comment = "Datum, an dem die Diagnose dokumentiert wurde.   
+  **Begründung Pflichtfeld:** Das Dokumentationsdatum der Diagnose MUSS zu Qualitätssicherungszwecken angegeben werden. Dies ist das fachliche Dokumentationsdatum, 
+  nicht zu verwechseln mit der technischen Anlage des Datensatzes im Primärsystem. Diese beiden Daten können jedoch identisch sein.  
+  **Hinweis:** Das Recorded Date MUSS mindestens auf den Monat genau angegeben werden."
+* note MS
+  * ^short = "Notizen"
+  * ^comment = "Ergänzende Hinweise und Anmerkungen zur Diagnose"
+* bodySite MS
+  * ^short = "Körperstelle"
+  * ^comment = "**Begründung MS:** Harmonisierung mit KBV-Profil (KBV_PR_Base_Condition_Diagnosis)"
+* insert EU-BodySiteExtension
+* bodySite.coding MS
+* bodySite.coding ^slicing.discriminator.type = #pattern
+* bodySite.coding ^slicing.discriminator.path = "system"
+* bodySite.coding ^slicing.rules = #open
+* bodySite.coding contains
+    snomed-ct 0..1 MS
+* bodySite.coding[snomed-ct] only ISiKSnomedCTCoding
+
+Instance: Example-condition-ausrufezeichen-primaer
+InstanceOf: ISiKDiagnose
+Usage: #example
+* clinicalStatus = $condition-clinical#active
+* code.coding.version = "2024"
+* code.coding = $icd-10-gm#F16.1 "Psychische und Verhaltensstörungen durch Halluzinogene: Schädlicher Gebrauch"
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Fachabteilungskontakt)
+* recordedDate = "2021-05-24"
+* note.text = "Beispiel für eine Anmerkung"
+
+Instance: Example-condition-ausrufezeichen-sekundaer
+InstanceOf: ISiKDiagnose
+Usage: #example
+* extension.url = "http://hl7.org/fhir/StructureDefinition/condition-related"
+* extension.valueReference = Reference(Example-condition-ausrufezeichen-primaer)
+* clinicalStatus = $condition-clinical#recurrence
+* code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
+* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#!
+* code.coding.version = "2024"
+* code.coding = $icd-10-gm#U69.32 "Sekundäre Schlüsselnummern für die Art des Konsums psychotroper Substanzen bei durch diese verursachten psychischen und Verhaltensstörungen:Intravenöser Konsum sonstiger psychotroper Substanzen"
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Fachabteilungskontakt)
+* recordedDate = "2021-05-24"
+* note.text = "Beispiel für eine Anmerkung"
+
+Instance: Example-condition-kreuz-stern-primaer
+InstanceOf: ISiKDiagnose
+Usage: #example
+* clinicalStatus = $condition-clinical#recurrence
+* code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
+* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#†
+* code.coding.version = "2024"
+* code.coding = $icd-10-gm#E10.30 "Diabetes mellitus, Typ 1: Mit Augenkomplikationen: Nicht als entgleist bezeichnet"
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Fachabteilungskontakt)
+* recordedDate = "2021-05-24"
+* note.text = "Beispiel für eine Anmerkung"
+
+Instance: Example-condition-kreuz-stern-sekundaer
+InstanceOf: ISiKDiagnose
+Usage: #example
+* extension.url = "http://hl7.org/fhir/StructureDefinition/condition-related"
+* extension.valueReference = Reference(Example-condition-kreuz-stern-primaer)
+* clinicalStatus = $condition-clinical#active
+* code.coding.extension.url = $icd-10-gm-mehrfachcodierungs-kennzeichen-sd
+* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#*
+* code.coding.version = "2024"
+* code.coding = $icd-10-gm#H36.0 "Retinopathia diabetica"
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Fachabteilungskontakt)
+* recordedDate = "2021-05-24"
+* note.text = "Beispiel für eine Anmerkung"
+* bodySite.coding[snomed-ct] = $sct#1290031003 "Structure of left eye proper"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
+
+Instance: AkuteInfektionDerOberenAtemwege
+InstanceOf: ISiKDiagnose
+Usage: #example
+* clinicalStatus = $condition-clinical#active
+* code.coding.version = "2024"
+* code.coding = $icd-10-gm#J06.9 "Akute Infektion der oberen Atemwege, nicht näher bezeichnet"
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Fachabteilungskontakt)
+* onsetDateTime = "2019-09-02"
+* recordedDate = "2021-01-01"
+
+Instance: BehandlungsDiagnoseFreitext
+InstanceOf: ISiKDiagnose
+Usage: #example
+* clinicalStatus = $condition-clinical#active
+* code.text = "Behandlungsdiagnose"
+* subject = Reference(PatientinMusterfrau)
+* onsetDateTime = "2019-09-02"
+* recordedDate = "2021-01-01"
+
+
+Instance: PrimaereGonarthroseMinimal
+InstanceOf: ISiKDiagnose
+Usage: #example
+* code.coding = $icd-10-gm#M17.0 "Primäre Gonarthrose, beidseitig"
+  * version = "2025"
+* subject = Reference(PatientinNormal)
+* recordedDate = "2024-10-21"
+* encounter = Reference(FachabteilungskontaktNormal)
+
+Instance: PrimaereGonarthroseNormal
+InstanceOf: ISiKDiagnose
+Usage: #example
+* clinicalStatus = $condition-clinical#remission
+* code.coding[0].system = "http://fhir.de/CodeSystem/bfarm/icd-10-gm"
+* code.coding[0].version = "2025"
+* code.coding[0].code = #M17.0 
+* code.coding[0].display = "Primäre Gonarthrose, beidseitig" 
+* bodySite.coding[snomed-ct] = $sct#49076000
+* subject = Reference(PatientinNormal)
+* encounter = Reference(FachabteilungskontaktNormal)
+* onsetDateTime = "2020-09-02"
+* abatementDateTime = "2025-01-01"
+* recordedDate = "2024-10-21"
+* note.text = "Patientin mit primärer Gonarthrose beidseitig (ICD M17.0), seit mehreren Jahren bestehend, in Remission seit 01.01.2025"
+
+Instance: AltersbedingteKreislaufstoerung
+InstanceOf: ISiKDiagnose
+Usage: #example
+* clinicalStatus = $condition-clinical#active
+* code.coding.version = "2024"
+* code.coding = $icd-10-gm#I99 "Sonstige und nicht näher bezeichnete Krankheiten des Kreislaufsystems"
+* code.coding[+] = $alphaid-cs#I14432 "Altersbedingte Kreislaufstörung"
+* code.coding[1].version = "2024"
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Fachabteilungskontakt)
+* onsetDateTime = "2019-09-02"
+* recordedDate = "2021-01-01"
+
+
+Invariant: isik-con1
+Description: "Falls eine kodierte Diagnose vorliegt muss angegeben werden durch welchen Kontakt diese Dokumentation erfolgte."
+Severity: #error
+Expression: "code.coding.exists() implies encounter.exists()"
+
+Invariant: icd-text-1
+Description: "Entweder MUSS eine kodierte Diagnose vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt."
+Severity: #error
+Expression: "coding.exists().not() implies text.exists()"

@@ -23,13 +23,7 @@ name: Build and Publish IG
 
 # Controls when the action will run.
 on:
-  # Run on pull request events (build only; no gh-pages deploy)
-  pull_request:
 
-  # Run on pushes to main release branches
-  push:
-    branches:
-      - main-stufe-*
 
   # Allow manual triggering for production builds or testing
   workflow_dispatch:
@@ -153,10 +147,9 @@ jobs:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementFormularVorbelegungAkteur
             import_cps_filter: SHOULD
 
-          - ig_name: ISiK-Basis
-            ig_dir: publisher-guides/Basis
-            capability_statement_urls:
-              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
+          # ISiK-Basis ist vorübergehend nicht in der Matrix: Pilot für eigenständige IGs mit
+          # fhirscripts (FSH unter publisher-guides/Basis/input/fsh), siehe scripts/fhirscripts/MIGRATIONSPLAN.md.
+          # Der Expander würde hier sonst Ressourcen doppelt zur IG-lokalen SUSHI-Ausgabe kopieren.
 
           - ig_name: ISiK-Vitalparameter
             ig_dir: publisher-guides/Vitalparameter

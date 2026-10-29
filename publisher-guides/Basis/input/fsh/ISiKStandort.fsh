@@ -1,0 +1,245 @@
+Profile: ISiKStandort
+Parent: Location
+Id: ISiKStandort
+Description: "Dieses Profil dient der strukturierten Erfassung von Standortangaben eines 
+Krankenhauses oder von Organisationseinheiten innerhalb eines Krankenhauses in ISiK-Szenarien.  
+
+**Motivation**
+
+In FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.
+
+Die Abbildung von Standorten in einem Krankenhaus unterstützt u.a. die Raum- und Bettenbelegung in strukturierter Form. 
+
+Die Erfassung des Standortes in strukturierter Form soll u.a. ermöglichen:
+- Zuweisungen von Diensten an bestimmte Standorte im Rahmen des Terminmanagements
+- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär) - u.a. für 
+    - Patientenportale im Rahmen der Terminbuchung, z.B. um den Wunsch nach Einzelbett, bzw. 1 oder 2 Betten abzubilden
+    - KIS und weitere Subsysteme:
+      - zur Patientenabholung und Information für den Transportdienst
+      - Abbildung der Verfügbarkeit eines spezifischen Bettenstellplatzes (z.B. mit spezifischem Monitoring-Device) 
+- Im Rahmen der Versorgung kann eine der folgenden Beispiel-Fragen beantworten werden:
+    - Handelt es sich um ein Isolationszimmer?
+    - Gibt es bestimmte Ausstattung, z.B. Beatmungsgeräte?
+    - etc.
+
+Dafür werden Standort-Profile in unterschiedlicher Granularität definiert. 
+
+**Kompatibilität**
+
+Für das Profil ISiKStandort wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der 
+Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.  
+Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.
+"
+* insert Meta
+* insert CommonElements
+// * insert CompliesWith(http://hl7.eu/fhir/base/StructureDefinition/location-eu-core)
+* identifier MS 
+  * ^short = "Eindeutiger Identifier des Standorts"
+  * ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.path = "$this"
+  * ^slicing.rules = #open
+  * ^comment = "Motivation: entspricht https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location"
+* identifier contains 
+  standortnummer-dkg 0..1 MS
+* identifier[standortnummer-dkg] only $identifier-standortnummer-dkg
+  * ^patternIdentifier.system = $identifier-standortnummer-dkg-system
+  * ^short = "Standortnummer nach DKG"
+  * ^comment = "Motivation : Entsprechend der Festlegung der DKG laut Basisprofile-DE 1.5.0 (https://simplifier.net/packages/de.basisprofil.r4/) "
+* name MS 
+  * ^short = "Name des Standort"
+  * ^comment =  "Motivation: Kein Name zwingend notwendig (z.B. für ein Zimmer), wenn über .identifier identifizierbar; weicht daher ab von https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location"
+* mode MS 
+  * ^short = "Modus des Standorts"
+  * ^comment = "Motivation: Die Einschränkung auf \"instance\" erfolgt, da im  ISiK-Kontext ausschließlich konkrete Standorte übertragen werden sollen. Hiermit wird zusätzlich die Kompatibilität zur MII-Spezifikation eines Standortes gewahrt https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location"
+* mode = #instance
+* type MS
+  * ^short = "Typ des Standorts"
+  * ^comment = "Motivation: Ein System muss den Typ eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
+* address MS
+  * ^short = "Adresse des Standorts"
+  * ^comment = "Motivation: Bei Verfügbarkeit einer Adresse muss ein System diese Information bereitstellen. Darüber hinaus muss das abrufende System diese Information verarbeiten können."
+* address only AddressDeBasis
+* physicalType 1..1 MS
+  * ^short = "Physikalischer Typ des Standorts"
+  * ^comment = "Motivation: entspricht der MII Vorgabe -  siehe https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location. Ein System muss den physikalischen Typ eines Standorts zum Abruf bereitstellen, da ansonsten der Typus des Standorts nicht maschinenlesbar definiert ist."
+* physicalType from $LocationPhysicalTypeVS (extensible)
+* position MS 
+  * ^short = "Geodaten eines Standorts"
+  * ^comment = "Motivation: Ein System muss die Geodaten eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
+* managingOrganization MS 
+  * ^short = "Verwaltende Organisation des Standorts"
+  * ^comment = """Begründung Must-Support: Vergleiche MII Profilierung eines Standortes (s.u.). Dennoch ist im Kontext von ISiK die Angabe der verwaltenden Organisation eines Standorts nicht zwingend erforderlich, um nicht notwendige Komplexität in der Abbildung von Standorten zu vermeiden. Daher wird die Angabe der verwaltenden Organisation als MS definiert.
+  
+  Hintergrund: Vergleiche https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location"""
+* partOf MS
+  * ^short = "Organisationale Zugehörigkeit"
+  * ^comment = "Motivation: Ein System muss die organisationale Zugehörigkeit eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
+* hoursOfOperation MS
+  * ^short = "Betriebszeiten des Standorts"
+  * ^comment = "Motivation: Ein System muss die Betriebszeiten eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
+
+Profile: ISiKStandortRaum
+Parent: ISiKStandort
+Id: ISiKStandortRaum
+Description: "Dieses Profil dient der strukturierten Erfassung von Räumen (als Standorten) eines Krankenhauses."
+* insert Meta
+* physicalType = $LocationPhysicalType#ro "Room"
+* operationalStatus MS  
+* operationalStatus from $v2-0116-BedStatus
+  * ^short = "Belegungsstatus eines Raums"
+  * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Raums zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'."
+
+Profile: ISiKStandortBettenstellplatz
+Parent: ISiKStandort
+Id: ISiKStandortBettenstellplatz
+Description: "Dieses Profil dient der strukturierten Erfassung von Bettenstellplätzen (als Standorten) 
+eines Krankenhauses.  
+
+### Hinweis  
+
+Ein einzelnes Bett als Gegenstand kann als FHIR-Ressource 'Device' abgebildet werden, 
+das einen Bettenstellplatz referenziert.
+"
+* insert Meta
+* physicalType = $LocationPhysicalType#bd "Bed" // Dies entspreicht der Definition des VS "This is not the physical bed/trolley that may be moved about, but the space it may occupy."
+* operationalStatus MS
+* operationalStatus from $v2-0116-BedStatus
+  * ^short = "Belegungsstatus eines Bettenstellplatz"
+  * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Bettenstellplatz zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'. Im Sinne der Interoperabilität ist das ValueSet verpflichtend."
+
+
+Instance: KrankenhausStandortBeispiel
+InstanceOf: ISiKStandort
+Usage: #example
+* identifier[standortnummer-dkg]
+  * value = "123456"
+* operationalStatus = $v2-0116#O "belegt"
+* name = "Krankenhaus Standort"
+* mode = #instance
+* type = $v3-RoleCode#HOSP "Hospital"
+* address.line = "Krankenhausstraße 123"
+* address.city = "Musterstadt"
+* address.postalCode = "12345"
+* physicalType = $LocationPhysicalType#bu "Building"
+* position.latitude = 52.5200
+* position.longitude = 13.4050
+* managingOrganization = Reference(KrankenhausOrganisationBeispiel)
+
+Instance: RaumStandortBeispiel
+InstanceOf: ISiKStandortRaum
+Usage: #example
+* physicalType = $LocationPhysicalType#ro "Room"
+* managingOrganization = Reference(AbteilungAllgemeinchirurgieOrganisationBeispiel)
+
+Instance: BettenstellplatzStandortBeispiel
+InstanceOf: ISiKStandortBettenstellplatz
+Usage: #example
+* physicalType = $LocationPhysicalType#bd "Bed"
+* managingOrganization = Reference(AbteilungAllgemeinchirurgieOrganisationBeispiel)
+* partOf = Reference(RaumStandortBeispiel)
+
+Instance: StationStandortBeispiel
+InstanceOf: ISiKStandort 
+Usage: #example
+// kein eigenes Profil vorhanden
+* identifier[standortnummer-dkg]
+  * value = "123456" 
+* operationalStatus = $v2-0116#O "belegt" 
+// bei Raum & Bettenstellplatz MS, nicht bei Standort
+* name = "Station A"
+* mode = #instance
+* type = $v3-RoleCode#HU "Hospital unit"
+* address.line = "Krankenhausstraße 123"
+* address.city = "Musterstadt"
+* address.postalCode = "12345"
+* physicalType = $LocationPhysicalType#wa "Ward"
+* position.latitude = 52.5200
+* position.longitude = 13.4050
+* managingOrganization = Reference(AbteilungAllgemeinchirurgieOrganisationBeispiel)
+* partOf = Reference(KrankenhausStandortBeispiel)
+* hoursOfOperation[0].daysOfWeek = #mon
+* hoursOfOperation[0].daysOfWeek = #tue
+* hoursOfOperation[0].daysOfWeek = #wed
+* hoursOfOperation[0].daysOfWeek = #thu
+* hoursOfOperation[0].daysOfWeek = #fri
+* hoursOfOperation[0].allDay = true
+* hoursOfOperation[1].daysOfWeek = #sat
+* hoursOfOperation[1].daysOfWeek = #sun
+
+Instance: StationICUStandortBeispiel
+InstanceOf: ISiKStandort 
+Usage: #example
+//  noch kein eigenes Profil vorhanden
+* identifier[standortnummer-dkg]
+  * value = "123456" 
+* operationalStatus = $v2-0116#O "belegt" 
+// bei Raum & Bettenstellplatz MS, nicht bei Standort
+* name = "Station A"
+* mode = #instance
+* type = $v3-RoleCode#ICU "Intensive care unit"
+* address.line = "Krankenhausstraße 123"
+* address.city = "Musterstadt"
+* address.postalCode = "12345"
+* physicalType = $LocationPhysicalType#wa "Ward"
+* position.latitude = 52.5200
+* position.longitude = 13.4050
+* managingOrganization = Reference(KlinikIntensivAnaesthesieOrganisationBeispiel)
+* partOf = Reference(KrankenhausStandortBeispiel)
+
+* hoursOfOperation[0].daysOfWeek = #mon
+* hoursOfOperation[0].daysOfWeek = #tue
+* hoursOfOperation[0].daysOfWeek = #wed
+* hoursOfOperation[0].daysOfWeek = #thu
+* hoursOfOperation[0].daysOfWeek = #fri
+* hoursOfOperation[0].allDay = true
+* hoursOfOperation[1].daysOfWeek = #sat
+* hoursOfOperation[1].daysOfWeek = #sun
+
+Instance: StationPediaICUStandortBeispiel
+InstanceOf: ISiKStandort 
+Usage: #example
+* identifier[standortnummer-dkg]
+  * value = "123456" 
+* operationalStatus = $v2-0116#O "belegt" 
+* name = "Station A"
+* mode = #instance
+* type = $v3-RoleCode#PEDICU "Pediatric intensive care unit"
+* address.line = "Krankenhausstraße 123"
+* address.city = "Musterstadt"
+* address.postalCode = "12345"
+* physicalType = $LocationPhysicalType#wa "Ward"
+* managingOrganization = Reference(KlinikPaediatrieOrganisationBeispiel)
+* partOf = Reference(KrankenhausStandortBeispiel) 
+* hoursOfOperation[0].daysOfWeek = #mon
+* hoursOfOperation[0].daysOfWeek = #tue
+* hoursOfOperation[0].daysOfWeek = #wed
+* hoursOfOperation[0].daysOfWeek = #thu
+* hoursOfOperation[0].daysOfWeek = #fri
+* hoursOfOperation[0].allDay = true
+* hoursOfOperation[1].daysOfWeek = #sat
+* hoursOfOperation[1].daysOfWeek = #sun
+
+Instance: Location-form
+InstanceOf: SearchParameter
+Description: "Die Location-Ressource kann für ein breites Spektrum an UseCases verwendet werden.
+        Im Kontext von ISiK ist speziell die Suche nach Stationen, Zimmern und Bettplätzen relevant, 
+        es ist jedoch nicht auszuschließen, dass Systeme die Location-Ressource auch für die Abbildung von Örtlichkeiten 
+        außerhalb des ISiK-Scopes verwenden, z.B. Gebäude, Standorte, Etagen, Lagerorte. 
+        Der Suchparameter `form` ist notwendig um die Suche auf relevante Locations eingrenzen zu können. 
+        Bei der Namensgebung des Suchparameters wurde bereits berücksichtigt, 
+        dass das durchsuchte Element `physicalType` in FHIR R6 zu `form` umbenannt wurde. 
+        Durch die Prä-Adoption der Namensänderung im Suchparameter soll vorausschauend die Migration auf FHIR R6 erleichtert werden
+        und einen Breaking Change in der API verhindern.  
+        Zum Zeitpunkt der Publikation dieses Suchparameters ist für das Element `form` in R6 zwar bereits ein Suchparameter 
+        namens `characteristic` definiert. Hier scheint es sich jedoch um eine Verwechslung mit dem gleichnamigen Element zu handeln, 
+        weshalb auf die Prä-Adoption dieses Parameters verzichtet wurde. 
+        Ein entsprechender Change Request liegt vor: https://jira.hl7.org/browse/FHIR-57431"
+Usage: #definition
+* insert MetaInstance
+* name = "form"
+* status = #active
+* code = #form
+* base = #Location
+* type = #token
+* expression = "Location.physicalType"
+* xpathUsage = #normal
