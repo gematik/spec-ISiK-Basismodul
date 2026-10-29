@@ -1,0 +1,73 @@
+name: Run fhirscripts in container
+description: >-
+  Runs shell commands inside the fhirscripts image (gematik1/fhir-devcontainer), with the repository
+  mounted at /project and the FHIR package cache mounted at ~/.fhir/packages of the image user.
+  The image runs as user `vscode`, so the mounted directories are handed to that user for the run and
+  handed back to the runner user afterwards. The entrypoint is replaced by bash, so nothing runs implicitly.
+  See scripts/fhirscripts/CI-UMSTELLUNG.md.
+
+inputs:
+  image:
+    description: fhirscripts image reference (tag or digest)
+    required: true
+  ig-dir:
+    description: IG directory relative to the repository root (working directory in the container)
+    required: true
+  run:
+    description: Shell commands to run in the container (bash)
+    required: true
+  ig-name:
+    description: IG name, passed as IG_NAME (used by scripts/common-files/copy-config-files.sh)
+    required: false
+    default: ''
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        IMAGE: ${{ inputs.image }}
+        IG_DIR: ${{ inputs.ig-dir }}
+        RUN_CMDS: ${{ inputs.run }}
+        IG_NAME: ${{ inputs.ig-name }}
+      run: |
+        set -euo pipefail
+        mkdir -p "$HOME/.fhir/packages"
+
+        # User and home directory of the image (gematik1/fhir-devcontainer: vscode, /home/vscode)
+        container_ids="$(docker run --rm --entrypoint sh "$IMAGE" -c 'echo "$(id -u):$(id -g):$HOME"')"
+        container_owner="${container_ids%:*}"
+        container_home="${container_ids##*:}"
+        runner_owner="$(id -u):$(id -g)"
+        echo "Container user ${container_owner}, home ${container_home}"
+
+        restore_owner() {
+          sudo chown -R "${runner_owner}" "$GITHUB_WORKSPACE" "$HOME/.fhir/packages"
+        }
+        trap restore_owner EXIT
+        sudo chown -R "${container_owner}" "$GITHUB_WORKSPACE" "$HOME/.fhir/packages"
+
+        env_args=(-e IG_NAME -e ACCEPTED_DOWNLOAD_CONDITIONS -e CI -e GITHUB_ACTIONS)
+
+        # Credentials written by google-github-actions/auth live in the workspace; map them into the container.
+        for var in CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE GOOGLE_APPLICATION_CREDENTIALS GOOGLE_GHA_CREDS_PATH; do
+          value="${!var:-}"
+          if [ -n "$value" ]; then
+            env_args+=(-e "$var=/project/${value#"$GITHUB_WORKSPACE"/}")
+          fi
+        done
+        for var in CLOUDSDK_CORE_PROJECT CLOUDSDK_PROJECT GOOGLE_CLOUD_PROJECT; do
+          if [ -n "${!var:-}" ]; then
+            env_args+=(-e "$var")
+          fi
+        done
+
+        # Only the packages directory is mounted, so ~/.fhir/validators from the image stays available.
+        docker run --rm \
+          -v "$GITHUB_WORKSPACE":/project \
+          -v "$HOME/.fhir/packages":"${container_home}/.fhir/packages" \
+          -w "/project/${IG_DIR}" \
+          "${env_args[@]}" \
+          --entrypoint bash \
+          "$IMAGE" -euo pipefail -c "git config --global --add safe.directory '*' || true
+        $RUN_CMDS"

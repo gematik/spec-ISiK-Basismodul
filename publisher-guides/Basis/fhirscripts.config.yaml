@@ -23,3 +23,11 @@ build:
     # gemeinsamem Canonical aller Module noch zu prüfen ist. Aufruf daher wie bisher in CI.
     - shell: java -jar input-cache/publisher.jar -no-sushi -ig ig.ini
     - igpub_qa
+
+# Für `fhirscripts deploy` (Workflow ig-publisher-fhirscripts.yml, Input `deploy`). Bucket-Namen bei gematik klären.
+# Eigener `path` pro Modul, sonst legt deploy alle Module unter dem gemeinsamen Projektnamen "isik" ab.
+# deploy:
+#   env:
+#     dev: <dev-bucket>
+#     prod: <prod-bucket>
+#   path: ig/fhir/isik-basis

@@ -73,8 +73,30 @@ Daraus folgt:
 - [x] Lokaler Lauf `fhirscripts build pipeline` (28.10.2026, Windows): alle Schritte bis einschließlich IG Publisher
       erfolgreich (Laden, Validierung, Erzeugen der Seiten). Abbruch erst beim Jekyll-Rendering, weil lokal kein
       Ruby installiert ist (`ruby.exe` nicht gefunden). Das ist ein Problem der Umgebung, nicht der Pipeline.
-- [ ] Vollständiger Lauf inklusive Jekyll im Container (Gefyra-Image plus fhirscripts), danach Vergleich mit dem
-      bisherigen Basis-Build (`output/qa.json`, Seiten, Artefaktliste)
+- [x] Vollständiger lokaler Lauf mit Ruby 4.0 und Jekyll 4.4.1 (29.10.2026): `fhirscripts build pipeline` mit
+      Exit-Code 0 nach ca. 14 Minuten, davon gut 8 Minuten Jekyll. Der IG Publisher meldet dabei ein Jekyll-Timeout
+      von 300 Sekunden, rendert aber vollständig.
+- [x] Vergleich mit dem letzten Basis-Build auf gh-pages (`main-stufe-6/ISiK-Basis`, 05.10.2026):
+
+  | | Fehler | Warnungen | Hinweise | Dateien in `output/` |
+  |---|---|---|---|---|
+  | bisher (CI, Gefyra-Image) | 3 | 583 | 287 | 4749 |
+  | Pilot (lokal, fhirscripts) | 23 | 603 | 316 | 4968 |
+
+  Herkunft der 20 zusätzlichen Fehler:
+  - **17 × `ref-1` „invariants … cannot differ“** in ISiKAbrechnungsfall, ISiKAbrechnungsfallAmbulant, ISiKPatient
+    und ISiKPersonImGesundheitsberuf. Ursache ist der Paket-Cache, nicht der Umbau: Die veröffentlichten Snapshots von
+    `de.basisprofil.r4#1.6.0` enthalten die neuere R5-Fassung von `ref-1`, R4-Core die alte. In CI erzeugt das
+    fhir-pkg-tool im Gefyra-Image die Snapshots neu, deshalb tritt der Fehler dort nicht auf. **Folge für die
+    CI-Umstellung:** Die Snapshot-Erzeugung des fhir-pkg-tool wird gebraucht (`cache package --new` mit
+    `fhir_pkg_tool`).
+  - **3 Fehler aus Ressourcen, die bisher gar nicht im Basis-IG waren.** Der Expander hat nur übernommen, was vom
+    CapabilityStatement aus erreichbar ist. 17 Ressourcen aus dem Basis-FSH fehlten deshalb im bisherigen IG, u. a.
+    `ISiKBinary`, `ISiKPZNCoding`, `Bundle-Szenario1`/`-Szenario2`, `CodeSystem-MimeTypeCS`, mehrere ValueSets.
+    Neu sichtbar sind dadurch: `MimeTypeCS` hat `^url = "urn:ietf:bcp:13"`, was nicht zur Canonical passt (2 Fehler),
+    und `Binary-PDF-Example` verweist auf `Patient/example` (1 Fehler). Zu klären: Gehören diese Ressourcen in
+    Basis, z. B. ISiKBinary nach Dokumentenaustausch?
+  - Die 3 bisherigen Fehler bestehen unverändert.
 - [ ] `fhirscripts check` grün bekommen. Stand: Versionen und direkte Abhängigkeiten konsistent. Offen sind
       `hl7.fhir.r4.core#4.0.0` im Cache, Warnungen zu mehreren Versionen indirekter Abhängigkeiten
       (de.basisprofil.r4 1.6.0/1.5.4, de.gematik.terminology 1.0.6/1.0.9, hl7.terminology.r4, dvmd.kdl.r4 …) und der
@@ -96,13 +118,17 @@ Ausführlicher Plan für die Umstellung auf den fhirscripts-Container, Schritt f
 - Die Matrix reduziert sich auf `ig_name` und `ig_dir`. Die CapabilityStatement-URLs stehen in der jeweiligen
   `fhirscripts.config.yaml`.
 - `fhirscripts check` als Pflichtschritt pro Modul ersetzt `sync-sushi-dependencies.sh`.
-- Container: Statt des Gefyra-Images den fhirscripts-Buildcontainer verwenden, selbst gebaut aus einem festen
-  Commit von gematik/fhir-scripts und um ein paar Werkzeuge ergänzt (siehe CI-UMSTELLUNG.md).
+- Container: Statt des Gefyra-Images den öffentlichen gematik-Devcontainer `gematik1/fhir-devcontainer` verwenden
+  (Docker Hub, per Digest gepinnt; Inhalt und Besonderheiten siehe CI-UMSTELLUNG.md).
 - SUSHI mit ZTS-Paketen: Für Module mit BfArM-Abhängigkeiten den eingebauten Schritt `sushi` durch einen
   `shell:`-Schritt mit `sushi-wrap.sh` ersetzen (siehe `.github/actions/run-sushi-with-zts`).
-- Bleiben unverändert: Änderungserkennung, Commit-Job, PR-Kommentar, gh-pages-Publish.
-- `fhirscripts deploy` und `publish` vorerst nicht nutzen. Wir veröffentlichen auf gh-pages, und `deploy` würde alle
-  Module wegen des gemeinsamen Canonicals unter demselben Projektnamen `isik` ablegen.
+- Bleiben unverändert: Änderungserkennung, Commit-Job.
+- **Veröffentlichung per `fhirscripts deploy` statt gh-pages.** Standard für jeden CI-Build ist `deploy dev`: Der
+  gebaute IG landet im Dev-Bucket (Google Cloud Storage) und wird dort angesehen, nicht mehr auf GitHub Pages. Prod
+  nur bewusst, per `fhirscripts deploy prod --promote-from dev` (manueller Workflow, z. B. bei einem Release). Der
+  PR-Kommentar verlinkt die Dev-URL statt der gh-pages-URL. Vorher zu lösen (siehe „Offene Entscheidungen“):
+  Zielpfad pro Modul, Pfad pro Branch, Zugang zu den Buckets.
+- `fhirscripts publish` vorerst nicht nutzen.
 
 ### Phase 3: Module einzeln migrieren
 
@@ -148,6 +174,30 @@ Danach `Resources/` und die `package.json` im Root löschen.
   `scripts/publication-request/config.json` überschreiben.
 - **Eingebauter Schritt `igpub`:** Er übergibt `-publish <canonical>/<version>`. Bei gemeinsamem Canonical aller
   Module ist das für alle Module derselbe Wert, also vor einer Umstellung prüfen.
+- **Expanded-CapabilityStatements weiter erzeugen?** Zur Diskussion. Heute erzeugt der Expander pro Modul ein
+  zusätzliches `*-expanded`-CapabilityStatement, das die importierten CapabilityStatements (z. B. Basis) in eines
+  zusammenführt.
+  - Dafür: alle Anforderungen eines Moduls auf einen Blick, ohne den `imports` folgen zu müssen; eventuell nutzen
+    Testwerkzeuge oder Bestätigungsverfahren genau diese Fassung (zu klären, wer sie verwendet).
+  - Dagegen: eine Ressource mehr, die nicht im FSH steht und von der Quelle abweichen kann; eigener Python-Schritt
+    in jeder Pipeline; `imports` ist der FHIR-Standardweg, und der IG Publisher verlinkt die importierten
+    CapabilityStatements ohnehin.
+  - Wenn sie entfallen: Schritt `expand-capabilitystatements.sh` aus allen `fhirscripts.config.yaml`, die
+    CapabilityStatement-URLs in der Konfiguration und `scripts/capabilitystatement-expander/` (Phase 4) fallen weg.
+- **`fhirscripts deploy` (Dev/Prod):**
+  - *Zielpfad pro Modul.* `deploy` leitet das Projekt aus der IG-URL ab (`<canonical>/ImplementationGuide/<id>` →
+    vorletztes Segment vor `ImplementationGuide`). Bei unserem gemeinsamen Canonical `https://gematik.de/fhir/isik`
+    ist das für alle Module `isik`, Ziel also `gs://<bucket>/ig/fhir/isik/6.0.0`, und die Module überschreiben
+    sich gegenseitig. Möglichkeiten: in jeder `fhirscripts.config.yaml` ein eigenes `deploy.path` setzen
+    (z. B. `ig/fhir/isik-basis`), den Canonical pro Modul ändern (große Änderung, betrifft alle URLs), oder per
+    `shell:`-Schritt selbst mit `gcloud storage cp` kopieren.
+  - *Pfad pro Branch.* Nur IGs mit `releaseLabel: ci-build` landen unter `build/<projekt>/branches/<branch>`, alle
+    anderen unter `<projekt>/<version>`. Unsere IGs haben `releaseLabel: active`, Branch-Builds würden sich also
+    gegenseitig überschreiben. Für Dev-Builds daher `ci-build` setzen oder den Pfad selbst bestimmen.
+  - *Zugang.* Namen der Dev- und Prod-Buckets, öffentliche URL der Dev-Umgebung, Service-Account bzw. Workload
+    Identity Federation für GitHub Actions: bei gematik klären.
+  - *Aufräumen.* Heute entfernt der Workflow gh-pages-Vorschauen gelöschter Branches. Für den Dev-Bucket braucht es
+    etwas Vergleichbares, sonst sammeln sich Branch-Builds an.
 
 ## Bekannte Stolpersteine mit fhirscripts 0.32.0
 
@@ -165,8 +215,9 @@ Danach `Resources/` und die `package.json` im Root löschen.
 - **`fhirscripts check` stürzt ab, wenn eine Ressource mit `version` kein `date` hat.** Fehler:
   `sequence item 1: expected str instance, NoneType found`. Betroffen in Basis: `ValueSet-current-smoking-status-uv-ips`
   (Version 1.1.0) und `ValueSet-ISiKValueSetExample` (Version 2.0.2).
-- **Der IG Publisher braucht für das Rendering Jekyll und damit Ruby.** Unter Windows reicht der Jekyll-Aufruf allein
-  nicht, Ruby muss im `PATH` liegen. Alternativ im Container bauen.
+- **Der IG Publisher braucht für das Rendering Jekyll und damit Ruby.** Unter Windows: Ruby (z. B. RubyInstaller
+  4.0) installieren, `gem install jekyll`, und `C:\Ruby40-x64\bin` muss im `PATH` liegen. Jekyll braucht unter
+  Windows gut 8 Minuten für Basis. Alternativ im Container bauen.
 
 Diese Punkte sollten als Issues an [gematik/fhir-scripts](https://github.com/gematik/fhir-scripts) gemeldet werden.
 

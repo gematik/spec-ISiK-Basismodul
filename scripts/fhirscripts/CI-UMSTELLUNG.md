@@ -1,148 +1,220 @@
 # CI-Umstellung: ig-publisher.yml auf den fhirscripts-Container
 
-Stand: 28.10.2026 · gehört zu Phase 2 in [MIGRATIONSPLAN.md](MIGRATIONSPLAN.md)
+Stand: 29.10.2026 · gehört zu Phase 2 in [MIGRATIONSPLAN.md](MIGRATIONSPLAN.md)
 
 ## Ziel
 
 `.github/workflows/ig-publisher.yml` baut jedes Modul mit `fhirscripts build pipeline` im fhirscripts-Container statt
 mit dem Gefyra-Image `ghcr.io/gefyra/ig-publisher-with-snapshot-support`. Die modulspezifische Logik steht dann in
 `publisher-guides/<Modul>/fhirscripts.config.yaml`, nicht mehr im Workflow. Lokal und in CI läuft derselbe Befehl im
-selben Image.
+selben Image. Veröffentlicht wird per `fhirscripts deploy` in die Dev-Umgebung statt auf gh-pages.
 
-## Was das fhirscripts-Image mitbringt
+## Auf einen Blick
 
-Quelle: `docker/buildcontainer` in [gematik/fhir-scripts](https://github.com/gematik/fhir-scripts), Stand main
-28.10.2026.
+| Thema | Heute | Künftig |
+|---|---|---|
+| Image | Gefyra-Image mit IG Publisher 2.3.4 und fhir-pkg-tool | `gematik1/fhir-devcontainer` (öffentlich, Docker Hub), per Digest gepinnt |
+| Abhängigkeiten laden | `fhir-pkg-tool` aus `Resources/sushi-config.yaml`, Cache als Artefakt weitergereicht | `fhirscripts cache package` pro Modul aus `package.json`, Cache per `actions/cache` |
+| SUSHI | einmal für alle Module (`Resources/`), dann noch einmal pro Modul | einmal pro Modul, als Schritt der Pipeline |
+| Basis für andere Module | über das gemeinsame `fsh-generated` | Basis wird zuerst gebaut, `package.tgz` geht als Artefakt an die anderen Module |
+| CapabilityStatement-Expander | kopiert Modul-Ressourcen aus `fsh-generated` und erzeugt `*-expanded` | erzeugt nur `*-expanded` (oder entfällt, siehe Migrationsplan) |
+| Abhängigkeiten abgleichen | `sync-sushi-dependencies.sh` schreibt Versionen in jede `sushi-config.yaml` | `fhirscripts check` prüft die Konsistenz |
+| Modulspezifisches | Matrix-Felder und Inline-Schritte im Workflow | `fhirscripts.config.yaml` pro Modul |
+| Erzeugte Dateien | `commit`-Job checkt `fsh-generated`, `input/resources`, Kopien aus `common-files` ein | möglichst nichts mehr einchecken (`.gitignore`), dann entfällt der `commit`-Job |
+| Veröffentlichung | `publish`-Job auf gh-pages (nur `main-stufe-*`) | `fhirscripts deploy dev` nach jedem Build; Prod per manuellem Workflow |
+| PR-Kommentar | verlinkt Artefakte und gh-pages | entfällt |
 
-| Merkmal | Bedeutung für uns |
-|---|---|
-| Basis `alpine`, Pakete: bash, git, python3, curl, sudo, dotnet8-sdk, nodejs/npm, openjdk21, jekyll, graphviz, gcloud | Java, Jekyll, Node und Python für unsere Skripte sind vorhanden |
-| vorinstalliert: fhirscripts (main, ungepinnt), SUSHI (neueste), Firely Terminal, publishtools | Versionen beim Bau des Images nicht festgelegt, daher selbst pinnen |
-| **nicht** installiert: IG Publisher | `fhirscripts install --config-file` lädt ihn pro Projekt nach `input-cache/` (ca. 240 MB) |
-| `ENTRYPOINT` führt bei jedem Start aus: `install --config-file`, `update`, `cache package` (falls `package.json`), dann den Befehl | `update` zieht die jeweils neuesten Versionen aller nicht gepinnten Werkzeuge; `cache package` leert den Cache. Für CI den Entrypoint umgehen. |
-| **kein veröffentlichtes Image** für den Buildcontainer, nur das Dockerfile (veröffentlicht ist nur `gematik1/fhir-devcontainer`, Benutzer `vscode`) | Wir müssen das Image selbst bauen und z. B. in GHCR ablegen |
-| Alpine mit BusyBox-Werkzeugen | `grep -P` fehlt (nutzt `scripts/common-files/copy-config-files.sh`); jq, yq und uuidgen fehlen (braucht `sushi-wrap.sh` für ZTS) |
+## Image: `gematik1/fhir-devcontainer`
 
-Was wir gegenüber dem Gefyra-Image verlieren und ersetzen müssen:
+Wir bauen kein eigenes Image, sondern nutzen den gematik-Devcontainer aus Docker Hub. Er ist **öffentlich**, ein
+anonymer Pull reicht. Gepinnt ist im Workflow `1.0.0-b49`
+(`sha256:a552e62af7ac99f79949233710004e48d37d28f83c1f8d09a1c1398fa3948d03`, 14.10.2026, ca. 1,8 GB).
+
+Inhalt laut Dockerfile (`docker/devcontainer` in [gematik/fhir-scripts](https://github.com/gematik/fhir-scripts)) und
+Basis-Image `mcr.microsoft.com/devcontainers/base:alpine`. Das Image selbst konnte ich noch nicht starten; im ersten
+Lauf bestätigen:
+
+| Vorhanden | Fehlt / Abweichung | Folge |
+|---|---|---|
+| fhirscripts (Stand main beim Bau), SUSHI, Firely Terminal, OpenJDK 21, Jekyll, Node/npm, .NET 8, gcloud, graphviz, FHIR Validator | **kein IG Publisher** | `install --config-file` lädt `igpub: 2.3.4` nach `input-cache/` (ca. 240 MB pro Lauf) |
+| bash, git, curl, sudo, GNU `grep`, `sed`, `coreutils`, `jq`, `util-linux` (uuidgen) | – | `copy-config-files.sh` (`grep -P`) läuft unverändert |
+| uv (mit eigenem Python für fhirscripts) | **kein `python3` im PATH** | `expand-capabilitystatements.sh` nutzt dafür bereits `uv python find` |
+| – | **kein `yq`** | `sushi-wrap.sh` für ZTS braucht es; für Module mit BfArM-Paketen nachinstallieren oder ersetzen |
+| Benutzer **`vscode`** (Home `/home/vscode`), passwortloses `sudo` | nicht root | eingebundene Verzeichnisse vorher an `vscode` übergeben, danach zurück; `npm -g` (SUSHI-Pin) nutzt fhirscripts mit `sudo` |
+| kein eigener Entrypoint | – | wir starten `bash -c "<befehle>"`, es läuft nichts implizit |
+
+Im Workflow wird das Image per `docker run` aus der Composite Action `.github/actions/fhirscripts` gestartet. Die
+GitHub-Actions (checkout, cache, upload-artifact …) laufen damit auf dem Runner, nicht im Container. Vereinfacht:
+
+```bash
+sudo chown -R <vscode-uid> "$GITHUB_WORKSPACE" "$HOME/.fhir/packages"   # danach zurück an den Runner
+docker run --rm \
+  -v "$GITHUB_WORKSPACE":/project \
+  -v "$HOME/.fhir/packages":/home/vscode/.fhir/packages \
+  -w "/project/${IG_DIR}" \
+  -e IG_NAME -e ACCEPTED_DOWNLOAD_CONDITIONS \
+  --entrypoint bash \
+  "$IMAGE" -c "fhirscripts install --config-file && fhirscripts cache package --no-clear && fhirscripts build pipeline"
+```
+
+Eingebunden wird nur `~/.fhir/packages`, damit der FHIR Validator unter `~/.fhir/validators` aus dem Image erhalten
+bleibt. `install` und `build` laufen im selben Container, weil die gepinnte SUSHI-Version sonst mit dem Container
+verloren geht.
+
+## Was wir gegenüber dem Gefyra-Image verlieren und ersetzen müssen
 
 - **IG Publisher 2.3.4 fest im Image** (PTDATA-2412). Ersatz: Version in der Konfiguration pinnen
-  (`igpub: 2.3.4`) oder direkt ins eigene Image backen.
+  (`igpub: 2.3.4`); `fhirscripts install --config-file` lädt ihn dann pro Projekt nach `input-cache/`.
 - **`fhir-pkg-tool` mit Snapshot-Unterstützung** (zum Laden der Abhängigkeiten aus der `sushi-config.yaml`).
   Ersatz: `fhirscripts cache package` (Firely Terminal, Standard) oder `cache package --new`, das intern dasselbe
-  fhir-pkg-tool nutzt. Dafür `fhir_pkg_tool` in die `install`-Liste aufnehmen und Java 21 nutzen, das ist im Image
-  vorhanden. Im Spike prüfen, ob die Snapshot-Erzeugung für unsere Abhängigkeiten gebraucht wird.
+  fhir-pkg-tool nutzt. Dafür `fhir_pkg_tool` in die `install`-Liste aufnehmen und Java 21 nutzen. **Die
+  Snapshot-Erzeugung wird gebraucht.** Ohne sie liefert der lokale Pilot 17 zusätzliche `ref-1`-Fehler, weil die
+  Snapshots in `de.basisprofil.r4#1.6.0` eine andere `ref-1`-Fassung enthalten als R4-Core (siehe MIGRATIONSPLAN.md,
+  Phase 1).
 - Der Befehl `igpublisher` aus dem Gefyra-Image entfällt. Aufruf über `java -jar input-cache/publisher.jar`.
+- **Werkzeuge für unsere Skripte:** bis auf `yq` (ZTS) und `python3` im PATH vorhanden, siehe Tabelle oben.
 
-## Grundsatzentscheidung: Job-Container oder `docker run` pro Schritt
+## ig-publisher.yml von oben nach unten
 
-| | A: `container:` auf Job-Ebene (wie heute) | B: Job auf `ubuntu-latest`, fhirscripts per `docker run` |
+Legende: **bleibt** · **ändern** · **Pipeline** (wandert in `fhirscripts.config.yaml`) · **entfällt** · **neu**
+
+### Kopf
+
+| Heute | Künftig |
+|---|---|
+| Trigger `pull_request`, `push` auf `main-stufe-*`, `workflow_dispatch` | **bleibt** |
+| Input `run_publish` (gh-pages) | **entfällt**, Dev-Deploy läuft immer, Prod über eigenen Workflow |
+| Inputs `force_build`, `verbose_changes`; `concurrency` | **bleibt** |
+| `permissions` | **ändern**: zusätzlich `id-token: write` für die Google-Cloud-Anmeldung |
+
+### Job `prepare` → wird Job `basis`
+
+Heute läuft hier SUSHI einmal für alle Module. Künftig baut der Job das Basismodul komplett, mit denselben Schritten
+wie die Matrix unten, und gibt das Paket weiter.
+
+| # | Heute | Künftig |
 |---|---|---|
-| JavaScript-Actions (checkout, upload/download-artifact, cache, github-script) | Laufen im Container. Bei Alpine laut GitHub nur eingeschränkt unterstützt, **im Spike prüfen**. | Laufen auf dem Runner, kein Risiko |
-| Image | Muss alle Werkzeuge für alle Schritte haben | Nur für fhirscripts-Schritte |
-| Dateirechte | Alles als root im Container | Dateien aus dem Container gehören root; nachfolgende Host-Schritte lesen problemlos, Löschen kann `sudo` brauchen |
-| Lokale Reproduzierbarkeit | gleich | identischer Aufruf lokal: `docker run … build pipeline` |
+| 1 | `container:` Gefyra-Image | **entfällt**, fhirscripts über die Composite Action |
+| 2 | Checkout | **bleibt** |
+| 3 | Download Dependencies (`fhir-pkg-tool`) | **ändern**: `actions/cache` + `fhirscripts cache package --no-clear` |
+| 4 | Run SUSHI (`Resources/`, mit ZTS) | **entfällt**, SUSHI läuft in der Pipeline jedes Moduls |
+| 5 | Upload FSH Generated Resources | **entfällt** |
+| 6 | Upload FHIR Package Cache | **entfällt**, ersetzt durch `actions/cache` |
+| – | | **neu**: Schritte wie in `build` (Änderungserkennung, Pipeline, check, Deploy) für Basis |
+| – | | **neu**: Upload `publisher-guides/Basis/output/package.tgz` als Artefakt `basis-package` |
 
-**Empfehlung: B.** Das Image bleibt nah am gematik-Original, und die Actions laufen unabhängig von Alpine. Falls der
-Spike zeigt, dass A mit Alpine problemlos funktioniert, ist A die kleinere Änderung am Workflow.
+### Job `build` (Matrix pro Modul, `needs: basis`)
 
-## Neue Bausteine
-
-1. **Eigenes Image** `ghcr.io/gematik/isik-fhirscripts-build` mit eigenem Workflow `build-fhirscripts-image.yml`
-   (manuell auslösbar und bei Änderungen am Dockerfile):
-   - `FROM` dem gematik-Buildcontainer, gebaut aus einem **festen Commit** von gematik/fhir-scripts
-   - zusätzlich: `grep` (GNU), `jq`, `yq`, `util-linux` (uuidgen)
-   - fhirscripts, SUSHI und IG Publisher 2.3.4 fest pinnen; den IG Publisher z. B. unter `/opt/igpub/publisher.jar`
-     ablegen und pro Projekt nach `input-cache/` verlinken. Das spart den Download pro Matrix-Job.
-   - Tag mit Datum und Commit; im Workflow per Digest referenzieren, wie heute beim Gefyra-Image
-2. **Composite Action** `.github/actions/fhirscripts`. Kapselt den `docker run`-Aufruf:
-   ```bash
-   docker run --rm -t \
-     -v "$GITHUB_WORKSPACE":/project \
-     -v "$HOME/.fhir":/root/.fhir \
-     -w "/project/${IG_DIR}" \
-     -e IG_NAME -e ACCEPTED_DOWNLOAD_CONDITIONS \
-     --entrypoint fhirscripts \
-     "$IMAGE" <befehl>
-   ```
-   Wichtig: `--entrypoint fhirscripts`, damit `update` und das Leeren des Caches nicht automatisch laufen.
-3. **Skript `scripts/fhirscripts/run-sushi.sh`.** SUSHI über `sushi-wrap.sh` mit ZTS-Download (heute die Composite
-   Action `run-sushi-with-zts`). Wird in den Modul-Konfigurationen statt des eingebauten Schritts `sushi` genutzt,
-   wo BfArM-Pakete gebraucht werden.
-4. **Basis-Paket für die anderen Module:** Job `basis` lädt `publisher-guides/Basis/output/package.tgz` als Artefakt
-   hoch; die Matrix-Jobs entpacken es nach `~/.fhir/packages/de.gematik.isik-basismodul#<version>`.
-5. **`actions/cache`** für `~/.fhir/packages`, Schlüssel ist der Hash aller `publisher-guides/*/package.json` und
-   `sushi-config.yaml`. Ersetzt das Weitergeben des Caches als Artefakt.
-6. **`fhirscripts check` als eigener Schritt** pro Modul. Ersetzt `sync-sushi-dependencies.sh`. Anfangs mit
-   `continue-on-error: true`, weil der Check Warnungen als Fehler zählt; in Basis gibt es aktuell Warnungen zu
-   mehreren Versionen indirekter Abhängigkeiten, und der Check stürzt bei Ressourcen ohne `date` ab.
-
-## Schritt für Schritt: ig-publisher.yml
-
-Legende: **bleibt** · **ändern** · **in Pipeline** (wandert in `fhirscripts.config.yaml`) · **entfällt** · **neu**
-
-### Job `prepare` → wird zu Job `basis`
-
-| Heutiger Schritt | Künftig | Anmerkung |
+| # | Heute | Künftig |
 |---|---|---|
-| `container:` Gefyra-Image | **entfällt** | Runner `ubuntu-latest`, fhirscripts per Composite Action |
-| Checkout | **bleibt** | |
-| Download Dependencies (`fhir-pkg-tool --sushi-deps-file Resources/…`) | **ändern** | `actions/cache` + `fhirscripts cache package --no-clear` in `publisher-guides/Basis` |
-| Run SUSHI (Resources, mit ZTS) | **entfällt** | SUSHI läuft in der Basis-Pipeline |
-| Upload FSH Generated Resources | **entfällt** | kein gemeinsames `fsh-generated` mehr |
-| Upload FHIR Package Cache | **entfällt** | ersetzt durch `actions/cache` |
-| – | **neu** | `fhirscripts build pipeline` für Basis (inkl. Änderungserkennung und `check`) |
-| – | **neu** | Upload `publisher-guides/Basis/output/package.tgz` als Artefakt `basis-package` |
-| – | **neu** | Upload Basis-IG-Ausgabe (`fhir-ig-ISiK-Basis`), damit Basis wieder veröffentlicht wird |
-
-### Job `build` (Matrix, `needs: basis`)
-
-| Heutiger Schritt | Künftig | Anmerkung |
-|---|---|---|
-| `container:` Gefyra-Image | **entfällt** | wie oben |
-| Matrix-Felder `capability_statement_urls`, `import_cps_filter` | **entfällt** | stehen als Argumente von `expand-capabilitystatements.sh` in der Modul-Konfiguration |
-| Checkout (`fetch-depth: 0`) | **bleibt** | für die Änderungserkennung |
-| Download FHIR Package Cache | **ändern** | `actions/cache` + `cache package --no-clear` |
-| Setup Package Cache for IG Publisher (Kopie nach `/root/.fhir`) | **entfällt** | Cache wird direkt nach `/root/.fhir` gemountet |
-| Download FSH Generated Resources | **entfällt** | |
-| – | **neu** | Artefakt `basis-package` laden und in den Cache entpacken |
-| Setup Python | **entfällt** | python3 ist im Image |
-| Expand CapabilityStatement | **in Pipeline** | `scripts/fhirscripts/expand-capabilitystatements.sh` |
-| Apply expanded resources to IG input | **entfällt** | erledigt das Skript |
-| Copy common files from config.json | **in Pipeline** | `scripts/fhirscripts/prepare-ig.sh`; `copy-config-files.sh` muss ohne `grep -P` auskommen (jq oder node) oder GNU grep ins Image |
-| Sync SUSHI dependencies to IG config | **entfällt** | ersetzt durch `fhirscripts check` |
-| Run SUSHI (IG local, mit ZTS) | **in Pipeline** | eingebauter Schritt `sushi` oder `shell: bash ../../scripts/fhirscripts/run-sushi.sh` |
-| Write IG dir metadata (SUSHI) + Upload SUSHI-generated | **bleibt oder entfällt** | hängt davon ab, ob `fsh-generated` weiter eingecheckt wird (offene Entscheidung im Migrationsplan) |
-| Resolve previous successful head SHA | **bleibt** | |
-| Check for input changes | **ändern**, vor die Pipeline ziehen | `check-changes.sh` prüft heute die SUSHI-*Ausgabe* und `Resources/sushi-config.yaml`. Künftig: Quellen des Moduls (`input/`, `sushi-config.yaml`, `package.json`, `fhirscripts.config.yaml`), `publisher-guides/Basis/` für alle abhängigen Module, `scripts/common-files/`, `scripts/fhirscripts/`. Dadurch wird bei unveränderten Modulen auch SUSHI übersprungen. |
-| Build IG (`igpublisher -ig …/ig.ini`) | **ändern** | `fhirscripts build pipeline` über die Composite Action |
-| – | **neu** | `fhirscripts check` (anfangs `continue-on-error`) |
-| Mark Build Ran | **bleibt** | |
-| Remove oversized files | **bleibt** | |
-| Generate publication-request.json | **in Pipeline** | Pipeline schreibt sie ins Modulverzeichnis; zusätzlich nach `output/` kopieren (gh-pages) |
-| Upload Build Marker | **bleibt** | |
-| Metadaten + Upload `input/resources` | **entfällt** | enthält nur noch erzeugte Dateien (expanded CS, Kopien aus common-files) → `.gitignore` |
-| Metadaten + Upload `input/includes`, `input/pagecontent` | **entfällt** (empfohlen) | wird nur gebraucht, um die Kopien aus `scripts/common-files` zu committen; diese Kopien besser in die `.gitignore` aufnehmen |
-| Record branch metadata for Pages cleanup | **bleibt** | |
-| Upload IG Build Results | **bleibt** | |
+| 1 | `container:` Gefyra-Image | **entfällt**, wie oben |
+| 2 | Matrix-Felder `capability_statement_urls`, `import_cps_filter` | **Pipeline**: Argumente von `expand-capabilitystatements.sh`; Matrix nur noch `ig_name`, `ig_dir` |
+| 3 | Checkout (`fetch-depth: 0`) | **bleibt** |
+| – | | **neu**: `docker pull` des Images (Anmeldung nur optional, gegen das Pull-Limit) |
+| 4 | Download FHIR Package Cache | **ändern**: `actions/cache` + `cache package --no-clear` |
+| 5 | Setup Package Cache for IG Publisher | **entfällt**, der Cache wird direkt nach `/root/.fhir` gemountet |
+| 6 | Download FSH Generated Resources | **ändern**: stattdessen `basis-package` laden und nach `~/.fhir/packages/de.gematik.isik-basismodul#<version>` entpacken |
+| 7 | Setup Python | **entfällt**, Python ist im Image |
+| 8 | Expand CapabilityStatement | **Pipeline**: `expand-capabilitystatements.sh`, nur noch `*-expanded` (Zukunft offen) |
+| 9 | Apply expanded resources to IG input | **entfällt**, erledigt das Skript |
+| 10 | Copy common files from config.json | **Pipeline**: `prepare-ig.sh` |
+| 11 | Sync SUSHI dependencies to IG config | **entfällt**, ersetzt durch `fhirscripts check` |
+| 12 | Run SUSHI (IG local, mit ZTS) | **Pipeline**: Schritt `sushi`, für BfArM-Pakete `run-sushi.sh` (Logik aus `run-sushi-with-zts`) |
+| 13 | Write IG dir metadata + Upload SUSHI-generated | **entfällt**, wenn `fsh-generated` nicht mehr eingecheckt wird |
+| 14 | Resolve previous successful head SHA | **bleibt** |
+| 15 | Check for input changes | **ändern**: vor Schritt 4 ziehen; prüft künftig die Quellen statt der SUSHI-Ausgabe (Modulordner, `publisher-guides/Basis/`, `scripts/common-files/`, `scripts/fhirscripts/`) |
+| 16 | Build IG (`igpublisher`) | **ändern**: `fhirscripts build pipeline` |
+| – | | **neu**: `fhirscripts check`, anfangs mit `continue-on-error` |
+| 17 | Mark Build Ran | **bleibt**, falls `publish_gate` bleibt |
+| 18 | Remove oversized files | **entfällt**, war nur für gh-pages nötig |
+| 19 | Generate publication-request.json | **Pipeline** |
+| 20 | Upload Build Marker | **bleibt**, falls `publish_gate` bleibt |
+| 21 | Write/Upload `input/resources` | **entfällt**, enthält nur noch erzeugte Dateien → `.gitignore` |
+| 22 | Write/Upload `input/includes`, `input/pagecontent` | **entfällt**, Kopien aus `scripts/common-files` → `.gitignore` |
+| 23 | Record branch metadata for Pages cleanup | **entfällt** |
+| 24 | Upload IG Build Results | **entfällt**, ersetzt durch: |
+| – | | **neu**: Google-Cloud-Anmeldung (`google-github-actions/auth`) und `fhirscripts deploy dev -y --only-ig` |
 
 ### Übrige Jobs
 
-| Job | Künftig | Anmerkung |
+| Job | Künftig |
+|---|---|
+| `commit` | **entfällt**, wenn keine erzeugten Dateien mehr eingecheckt werden; sonst nur noch `fsh-generated` |
+| `publish_gate` | **entfällt** mit `commit` und `publish`, weil nur diese beiden Jobs es nutzen |
+| `comment_artifacts` | **entfällt** |
+| `cleanup_fhir_packages` | **entfällt**, es gibt kein `fhir-packages`-Artefakt mehr |
+| `publish` (gh-pages) | **entfällt**, ersetzt durch den Dev-Deploy im Build-Job |
+| – | **neu**: Workflow `promote-prod.yml` (manuell): `fhirscripts deploy prod --promote-from dev -y` pro Modul |
+| – | **neu, eventuell**: Branch-Builds im Dev-Bucket nach dem Löschen eines Branches aufräumen |
+
+### Deploy-Konfiguration pro Modul
+
+```yaml
+deploy:
+  env:
+    dev: <dev-bucket>
+    prod: <prod-bucket>
+  path: ig/fhir/isik-basis   # pro Modul eigener Pfad, sonst landen alle Module unter "isik"
+```
+
+Branch-Builds getrennt ablegen: `releaseLabel: ci-build` für Dev-Builds oder eigener Pfad je Branch (siehe
+Migrationsplan, „Offene Entscheidungen“).
+
+## Beispiel-Workflow (Spike)
+
+Umgesetzt als Kopie neben der bisherigen `ig-publisher.yml`, die unverändert weiterläuft:
+
+| Datei | Inhalt |
+|---|---|
+| `.github/workflows/ig-publisher-fhirscripts.yml` | Job `basis` und Matrix `build`; Matrix nur über den Input `modules` (bisher nur Basis migriert) |
+| `.github/workflows/fhirscripts-build-module.yml` | wiederverwendbarer Workflow mit den Schritten pro Modul, Kommentare verweisen auf die Tabelle oben |
+| `.github/actions/fhirscripts/action.yml` | `docker run` des fhirscripts-Images |
+| `scripts/ig-publisher/check-changes.sh` | neue Variable `CHECK_PATHS` für die Pfadliste; ohne sie unverändert |
+| `scripts/ig-publisher/resolve-last-success-sha.js` | Workflow-Datei per `WORKFLOW_ID` wählbar |
+
+Verwendete Actions:
+
+| Action | Wofür | Status gegenüber heute |
 |---|---|---|
-| `commit` | **ändern, eventuell entfällt** | „Sync SUSHI dependencies to all IG configs“ entfällt; `copy-artifacts.sh` und `commit-artifacts.sh` nur noch für `fsh-generated`, falls das eingecheckt bleibt. Werden alle erzeugten Dateien ignoriert, entfällt der ganze Job. |
-| `publish_gate` | **bleibt** | |
-| `comment_artifacts` | **bleibt** | |
-| `cleanup_fhir_packages` | **entfällt** | kein `fhir-packages`-Artefakt mehr |
-| `publish` | **bleibt** | gh-pages; `fhirscripts deploy` nicht nutzen (gemeinsamer Canonical, siehe Migrationsplan) |
+| `actions/checkout@v7` | Checkout mit Historie | wie bisher |
+| `actions/github-script@v9` | letzter erfolgreicher Lauf (`resolve-last-success-sha.js`) | wie bisher |
+| `actions/cache@v6` | `~/.fhir/packages` pro Modul | neu, ersetzt das Artefakt `fhir-packages` |
+| `actions/upload-artifact@v7`, `actions/download-artifact@v8` | `basis-package`; ohne Deploy `fhir-ig-<Modul>` | wie bisher, andere Inhalte |
+| `google-github-actions/auth@v3` | Anmeldung bei Google Cloud für `fhirscripts deploy` | neu, nur mit Input `deploy` |
+| `./.github/actions/fhirscripts` | Composite Action: `docker run` des fhirscripts-Images | neu |
+| `./.github/actions/run-sushi-with-zts` | – | im Beispiel nicht genutzt, später `run-sushi.sh` |
+
+Auslöser: `push` auf `stufe-6/all/fhir-scripts-*` (nur bei Änderungen an Basis, den Skripten oder dem Workflow)
+und `workflow_dispatch`. Ohne weitere Einstellungen lauffähig; optional in den Repository-Einstellungen:
+
+- Variable `FHIRSCRIPTS_IMAGE` für ein anderes Image als den Standard (oder Input `image`)
+- Secrets `DOCKERHUB_USERNAME` und `DOCKERHUB_TOKEN`, falls das anonyme Pull-Limit stört
+- für Deploy zusätzlich die Variablen `GCP_WORKLOAD_IDENTITY_PROVIDER` und `GCP_SERVICE_ACCOUNT` sowie den
+  `deploy`-Abschnitt in der `fhirscripts.config.yaml` (für Basis als Kommentar vorbereitet)
+
+Ohne Deploy lädt der Workflow `output/` als Artefakt `fhir-ig-<Modul>` hoch. `workflow_dispatch` lässt sich in der
+GitHub-Oberfläche erst starten, wenn die Datei auf dem Standardbranch liegt; vorher über `push` auf den Testbranch.
+
+Bewusste Vereinfachungen im Spike:
+- Werden weitere Module gebaut, wird Basis immer mitgebaut, weil sonst kein Basis-Paket da ist. Später: Paket
+  bei unverändertem Basis aus einem Cache oder der Registry holen.
+- `cache package --no-clear` nutzt Firely Terminal; die Snapshot-Frage (`--new` mit `fhir_pkg_tool`) ist offen.
+- Kein ZTS-SUSHI (`run-sushi.sh`), Basis braucht keine BfArM-Pakete.
+- Der IG Publisher (ca. 240 MB) wird pro Lauf neu geladen; ließe sich per `actions/cache` auf `input-cache/` sparen.
 
 ## Weitere betroffene Dateien
 
 | Datei | Änderung |
 |---|---|
-| `scripts/common-files/copy-config-files.sh` | `grep -oP` durch `jq` oder `node -e` ersetzen (Alpine) |
-| `scripts/ig-publisher/check-changes.sh` | neue Pfadliste (s. o.), `Resources/` entfernen, Abhängigkeit zu Basis berücksichtigen |
+| `.github/workflows/ig-publisher-fhirscripts.yml`, `fhirscripts-build-module.yml` | neu (Beispiel, s. o.); ersetzen später `ig-publisher.yml` |
+| `.github/actions/fhirscripts/action.yml` | neu: Composite Action für den Container-Aufruf |
+| `scripts/ig-publisher/resolve-last-success-sha.js` | Workflow-Datei per `WORKFLOW_ID` (erledigt) |
+| `scripts/common-files/copy-config-files.sh` | keine Änderung nötig, das Image hat GNU grep |
+| `scripts/ig-publisher/check-changes.sh` | Pfadliste per `CHECK_PATHS` (erledigt, der Beispiel-Workflow setzt sie inkl. Basis); nach der Umstellung die alte Standardliste mit `Resources/` entfernen |
 | `scripts/ig-publisher/sync-sushi-dependencies.sh` | entfernen |
 | `scripts/ig-publisher/copy-artifacts.sh`, `commit-artifacts.sh` | verkleinern oder entfernen (siehe `commit`) |
+| `scripts/ig-publisher/publish-branch.sh`, `remove-oversized-output-files.sh` | entfernen (gh-pages) |
+| `scripts/ig-publisher/update-pr-comment.js` | entfernen (PR-Kommentar entfällt) |
 | `.github/actions/run-sushi-with-zts/` | Logik nach `scripts/fhirscripts/run-sushi.sh`, danach entfernen |
 | `scripts/capabilitystatement-expander/expand.sh` | Modus `--workflow-file` (liest die Matrix) entfernen oder auf die Konfigurationsdateien umstellen |
 | `publisher-guides/<Modul>/fhirscripts.config.yaml` | pro Modul anlegen; gemeinsame Pipeline eventuell als eine Datei per `FHIRSCRIPTS_CONFIG` |
@@ -154,23 +226,27 @@ Legende: **bleibt** · **ändern** · **in Pipeline** (wandert in `fhirscripts.c
 ## Vorgehen
 
 1. **Spike** (ein Workflow nur für Basis, `workflow_dispatch`):
-   - gematik-Buildcontainer mit unseren Ergänzungen bauen
-   - Basis mit Variante B bauen
-   - prüfen: Jekyll-Rendering, `qa.json` im Vergleich zum bisherigen Basis-Build, Laufzeit, Dateirechte, ZTS
-   - nebenbei Variante A testen: Laufen checkout und upload-artifact im Alpine-Job-Container?
-2. **Image-Workflow** und Composite Action fertigstellen; Image per Digest pinnen.
-3. **Skripte anpassen**: `copy-config-files.sh`, `check-changes.sh`, `run-sushi.sh`.
+   - Basis mit `gematik1/fhir-devcontainer` bauen
+   - prüfen: Jekyll-Rendering, `qa.json` im Vergleich zum bisherigen Basis-Build, Laufzeit, Dateirechte, ZTS,
+     Werkzeuge und Benutzer `vscode` im Image (siehe Tabelle „Image“)
+   - `fhirscripts deploy dev` aus CI: Anmeldung, Zielpfad, Aufruf der Dev-URL
+2. **Composite Action** fertigstellen; Image per Digest pinnen.
+3. **Skripte anpassen**: `run-sushi.sh` (ZTS, braucht `yq`); `check-changes.sh` ist erledigt.
 4. **`ig-publisher.yml` umbauen**: Job `basis` plus Matrix. Module, die noch nicht migriert sind, bleiben bis zu ihrer
    Migration (Phase 3) im alten Job; beide Varianten laufen also eine Zeit lang nebeneinander.
 5. **Aufräumen**: alte Schritte, `cleanup_fhir_packages`, `run-sushi-with-zts`, `sync-sushi-dependencies.sh`.
 
 ## Offene Punkte
 
-- Wo liegt das Image: GHCR im gematik-Repo, oder fragen wir bei gematik/fhir-scripts an, den Buildcontainer offiziell
-  zu veröffentlichen?
-- Wird die Snapshot-Erzeugung des fhir-pkg-tool für unsere Abhängigkeiten gebraucht? Davon hängt ab, ob
-  `cache package` oder `cache package --new` genutzt wird.
+- Image: Reicht der Devcontainer dauerhaft, oder bitten wir gematik/fhir-scripts, den Buildcontainer zu veröffentlichen?
+  fhirscripts ist im Image nicht versioniert (Stand main beim Bau); welche Version steckt in `1.0.0-b49`?
+- Erzeugt `fhirscripts cache package --new` die Snapshots genauso wie das Gefyra-Image (fhir-pkg-tool 0.5.0 mit
+  Snapshot-Unterstützung)? Im Spike an den `ref-1`-Fehlern prüfen.
 - `fsh-generated` und die Kopien aus `scripts/common-files` weiter einchecken? Davon hängt ab, ob der `commit`-Job
   bleibt.
+- Deploy: Bucket-Namen, Dev-URL und Zugang für GitHub Actions bei gematik klären; Zielpfad pro Modul und pro Branch
+  festlegen (Details im Migrationsplan).
+- Ob der Schritt `expand-capabilitystatements.sh` bleibt, hängt von der Diskussion zu den
+  Expanded-CapabilityStatements ab (Migrationsplan, „Offene Entscheidungen“).
 - `fhirscripts check` als hartes Gate erst, wenn die Warnungen zu indirekten Abhängigkeiten behoben sind und der
   Absturz bei fehlendem `date` gefixt ist.

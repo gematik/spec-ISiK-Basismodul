@@ -1,0 +1,213 @@
+name: fhirscripts – Modul bauen
+
+# Wiederverwendbarer Workflow: baut ein Modul-IG mit `fhirscripts build pipeline` im fhirscripts-Container.
+# Aufgerufen von ig-publisher-fhirscripts.yml (Job `basis` und Matrix-Job `build`).
+# Hintergrund und Schrittzuordnung zur bisherigen ig-publisher.yml: scripts/fhirscripts/CI-UMSTELLUNG.md
+
+on:
+  workflow_call:
+    inputs:
+      ig_name:
+        description: Anzeigename des IG (Artefaktnamen)
+        type: string
+        required: true
+      ig_dir:
+        description: IG-Verzeichnis, z. B. publisher-guides/Basis
+        type: string
+        required: true
+      image:
+        description: fhirscripts-Image (Tag oder Digest)
+        type: string
+        required: true
+      force_build:
+        type: boolean
+        default: false
+      verbose_changes:
+        type: boolean
+        default: false
+      needs_basis:
+        description: Basis-Paket aus dem Artefakt `basis-package` in den Paket-Cache legen
+        type: boolean
+        default: false
+      upload_package:
+        description: output/package.tgz als Artefakt `basis-package` hochladen
+        type: boolean
+        default: false
+      deploy:
+        description: Nach dem Build per `fhirscripts deploy` hochladen; sonst output/ als Artefakt
+        type: boolean
+        default: false
+      deploy_env:
+        description: Zielumgebung für `fhirscripts deploy` (Abschnitt `deploy.env` in fhirscripts.config.yaml)
+        type: string
+        default: dev
+    outputs:
+      has_changes:
+        value: ${{ jobs.build.outputs.has_changes }}
+
+jobs:
+  build:
+    name: ${{ inputs.ig_name }}
+    runs-on: ubuntu-latest
+    outputs:
+      has_changes: ${{ steps.check_changes.outputs.has_changes }}
+    env:
+      IMAGE: ${{ inputs.image }}
+      IG_PUBLISHER_DIR: ${{ inputs.ig_dir }}
+      ACCEPTED_DOWNLOAD_CONDITIONS: ${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}
+
+    steps:
+      # bleibt: Checkout mit Historie für die Änderungserkennung
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Check image is configured
+        shell: bash
+        run: |
+          if [ -z "${IMAGE}" ]; then
+            echo "::error::Kein fhirscripts-Image angegeben (Input 'image' oder Repository-Variable FHIRSCRIPTS_IMAGE)"
+            exit 1
+          fi
+          echo "Image: ${IMAGE}"
+
+      # bleibt
+      - name: Resolve previous successful head SHA
+        id: resolve_last_success
+        uses: actions/github-script@v9
+        env:
+          WORKFLOW_ID: ig-publisher-fhirscripts.yml
+        with:
+          script: |
+            const run = require('./scripts/ig-publisher/resolve-last-success-sha.js');
+            await run({ github, context, core });
+
+      # geändert: vor den Build gezogen, prüft die Quellen statt der SUSHI-Ausgabe
+      - name: Check for input changes
+        id: check_changes
+        shell: bash
+        env:
+          FORCE_BUILD: ${{ inputs.force_build }}
+          SHOW_ALL_CHANGES: ${{ inputs.verbose_changes }}
+          LAST_SUCCESS_SHA: ${{ steps.resolve_last_success.outputs.last_success_sha }}
+          DIFF_HEAD_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+          NEEDS_BASIS: ${{ inputs.needs_basis }}
+        run: |
+          CHECK_PATHS="${IG_PUBLISHER_DIR} scripts/common-files scripts/fhirscripts scripts/capabilitystatement-expander"
+          CHECK_PATHS+=" scripts/publication-request .github/actions/fhirscripts"
+          CHECK_PATHS+=" .github/workflows/ig-publisher-fhirscripts.yml .github/workflows/fhirscripts-build-module.yml"
+          if [ "${NEEDS_BASIS}" = "true" ]; then
+            CHECK_PATHS+=" publisher-guides/Basis"
+          fi
+          export CHECK_PATHS
+          bash scripts/ig-publisher/check-changes.sh
+
+      # neu: Image holen. gematik1/fhir-devcontainer ist öffentlich; Anmeldung nur, falls Secrets gesetzt sind
+      # (z. B. gegen das Pull-Limit für anonyme Zugriffe).
+      - name: Pull fhirscripts image
+        if: steps.check_changes.outputs.has_changes == 'true'
+        shell: bash
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: |
+          if [ -z "${DOCKERHUB_USERNAME}" ] || [ -z "${DOCKERHUB_TOKEN}" ]; then
+            echo "Keine Docker-Hub-Zugangsdaten hinterlegt, anonymer Pull."
+          else
+            echo "${DOCKERHUB_TOKEN}" | docker login -u "${DOCKERHUB_USERNAME}" --password-stdin
+          fi
+          docker pull "${IMAGE}"
+
+      # geändert: ersetzt das Weiterreichen des Caches als Artefakt
+      - name: Cache FHIR packages
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: actions/cache@v6
+        with:
+          path: ~/.fhir/packages
+          key: fhir-packages-${{ inputs.ig_name }}-${{ hashFiles(format('{0}/package.json', inputs.ig_dir), format('{0}/sushi-config.yaml', inputs.ig_dir)) }}
+          restore-keys: |
+            fhir-packages-${{ inputs.ig_name }}-
+
+      # neu: ersetzt "Download FSH Generated Resources"
+      - name: Download Basis package
+        if: steps.check_changes.outputs.has_changes == 'true' && inputs.needs_basis
+        uses: actions/download-artifact@v8
+        with:
+          name: basis-package
+          path: basis-package
+
+      - name: Install Basis package into FHIR cache
+        if: steps.check_changes.outputs.has_changes == 'true' && inputs.needs_basis
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="$(sed -n 's/^version:[[:space:]]*//p' publisher-guides/Basis/sushi-config.yaml | head -n1 | tr -d '\r')"
+          target="$HOME/.fhir/packages/de.gematik.isik-basismodul#${version}"
+          rm -rf "${target}"
+          mkdir -p "${target}"
+          tar -xzf basis-package/package.tgz -C "${target}"
+          echo "Basis-Paket installiert: ${target}"
+
+      # geändert: Abhängigkeiten laden, SUSHI, Expander, common-files, publication-request und IG Publisher
+      # laufen jetzt in der Pipeline aus ${IG_PUBLISHER_DIR}/fhirscripts.config.yaml.
+      # install und build in einem Container-Lauf, weil `install` (z. B. die gepinnte SUSHI-Version)
+      # sonst mit dem Container verloren geht. `cache package --no-clear`, damit das Basis-Paket bleibt.
+      # Kein python3 im Image: expand-capabilitystatements.sh nutzt dann das Python von uv.
+      - name: Build IG (fhirscripts build pipeline)
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: ./.github/actions/fhirscripts
+        with:
+          image: ${{ env.IMAGE }}
+          ig-dir: ${{ inputs.ig_dir }}
+          ig-name: ${{ inputs.ig_name }}
+          run: |
+            fhirscripts install --config-file
+            fhirscripts cache package --no-clear
+            fhirscripts build pipeline
+
+      # neu: ersetzt sync-sushi-dependencies.sh; vorerst kein hartes Gate
+      - name: Check dependencies (fhirscripts check)
+        if: steps.check_changes.outputs.has_changes == 'true'
+        continue-on-error: true
+        uses: ./.github/actions/fhirscripts
+        with:
+          image: ${{ env.IMAGE }}
+          ig-dir: ${{ inputs.ig_dir }}
+          run: fhirscripts check
+
+      # neu: Basis-Paket für die Matrix-Jobs
+      - name: Upload Basis package
+        if: steps.check_changes.outputs.has_changes == 'true' && inputs.upload_package
+        uses: actions/upload-artifact@v7
+        with:
+          name: basis-package
+          path: ${{ inputs.ig_dir }}/output/package.tgz
+          retention-days: 1
+          if-no-files-found: error
+
+      # Übergang: solange Deploy nicht eingerichtet ist, das gebaute IG als Artefakt bereitstellen
+      - name: Upload IG Build Results
+        if: steps.check_changes.outputs.has_changes == 'true' && !inputs.deploy
+        uses: actions/upload-artifact@v7
+        with:
+          name: fhir-ig-${{ inputs.ig_name }}
+          path: ${{ inputs.ig_dir }}/output
+          retention-days: 7
+
+      # neu: ersetzt den gh-pages-Publish. Braucht die Repository-Variablen GCP_WORKLOAD_IDENTITY_PROVIDER
+      # und GCP_SERVICE_ACCOUNT sowie einen `deploy`-Abschnitt in der fhirscripts.config.yaml.
+      - name: Authenticate to Google Cloud
+        if: steps.check_changes.outputs.has_changes == 'true' && inputs.deploy
+        uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+
+      - name: Deploy IG (fhirscripts deploy)
+        if: steps.check_changes.outputs.has_changes == 'true' && inputs.deploy
+        uses: ./.github/actions/fhirscripts
+        with:
+          image: ${{ env.IMAGE }}
+          ig-dir: ${{ inputs.ig_dir }}
+          run: fhirscripts deploy ${{ inputs.deploy_env }} -y --only-ig
