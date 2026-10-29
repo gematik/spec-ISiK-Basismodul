@@ -149,6 +149,17 @@ jobs:
           tar -xzf basis-package/package.tgz -C "${target}"
           echo "Basis-Paket installiert: ${target}"
 
+      # Pakete, die es nur auf dem BfArM-ZTS gibt (z. B. kbv.all.terminology.allergyintolerance), kennt die
+      # Registry von Firely Terminal nicht. Deshalb vorab auf dem Runner per sushi-wrap.sh in den Cache laden;
+      # SUSHI selbst läuft danach in der Pipeline (sushi-command `true` = nur Download).
+      - name: Download ZTS packages
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: ./.github/actions/run-sushi-with-zts
+        with:
+          dir: ${{ inputs.ig_dir }}
+          accepted-download-conditions: ${{ vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS }}
+          sushi-command: 'true'
+
       # geändert: Abhängigkeiten laden, SUSHI, Expander, common-files, publication-request und IG Publisher
       # laufen jetzt in der Pipeline aus ${IG_PUBLISHER_DIR}/fhirscripts.config.yaml.
       # install und build in einem Container-Lauf, weil `install` (z. B. die gepinnte SUSHI-Version)

@@ -39,7 +39,7 @@ Lauf bestätigen:
 | fhirscripts (Stand main beim Bau), SUSHI, Firely Terminal, OpenJDK 21, Jekyll, Node/npm, .NET 8, gcloud, graphviz, FHIR Validator | **kein IG Publisher** | `install --config-file` lädt `igpub: 2.3.4` nach `input-cache/` (ca. 240 MB pro Lauf) |
 | bash, git, curl, sudo, GNU `grep`, `sed`, `coreutils`, `jq`, `util-linux` (uuidgen) | – | `copy-config-files.sh` (`grep -P`) läuft unverändert |
 | uv (mit eigenem Python für fhirscripts) | **kein `python3` im PATH** | `expand-capabilitystatements.sh` nutzt dafür bereits `uv python find` |
-| – | **kein `yq`** | `sushi-wrap.sh` für ZTS braucht es; für Module mit BfArM-Paketen nachinstallieren oder ersetzen |
+| – | **kein `yq`** | `sushi-wrap.sh` (ZTS) läuft deshalb auf dem Runner vor dem Container-Build, dort ist `yq` vorhanden |
 | Benutzer **`vscode`** (Home `/home/vscode`), passwortloses `sudo` | nicht root | eingebundene Verzeichnisse vorher an `vscode` übergeben, danach zurück; `npm -g` (SUSHI-Pin) nutzt fhirscripts mit `sudo` |
 | kein eigener Entrypoint | – | wir starten `bash -c "<befehle>"`, es läuft nichts implizit |
 
@@ -119,7 +119,7 @@ wie die Matrix unten, und gibt das Paket weiter.
 | 9 | Apply expanded resources to IG input | **entfällt**, erledigt das Skript |
 | 10 | Copy common files from config.json | **Pipeline**: `prepare-ig.sh` |
 | 11 | Sync SUSHI dependencies to IG config | **entfällt**, ersetzt durch `fhirscripts check` |
-| 12 | Run SUSHI (IG local, mit ZTS) | **Pipeline**: Schritt `sushi`, für BfArM-Pakete `run-sushi.sh` (Logik aus `run-sushi-with-zts`) |
+| 12 | Run SUSHI (IG local, mit ZTS) | **Pipeline**: Schritt `sushi`. ZTS-Pakete vorher auf dem Runner per `run-sushi-with-zts` laden (nur Download, `sushi-command: true`), Firely Terminal findet sie dann im Cache |
 | 13 | Write IG dir metadata + Upload SUSHI-generated | **entfällt**, wenn `fsh-generated` nicht mehr eingecheckt wird |
 | 14 | Resolve previous successful head SHA | **bleibt** |
 | 15 | Check for input changes | **ändern**: vor Schritt 4 ziehen; prüft künftig die Quellen statt der SUSHI-Ausgabe (Modulordner, `publisher-guides/Basis/`, `scripts/common-files/`, `scripts/fhirscripts/`) |
@@ -182,7 +182,7 @@ Verwendete Actions:
 | `actions/upload-artifact@v7`, `actions/download-artifact@v8` | `basis-package`; ohne Deploy `fhir-ig-<Modul>` | wie bisher, andere Inhalte |
 | `google-github-actions/auth@v3` | Anmeldung bei Google Cloud für `fhirscripts deploy` | neu, nur mit Input `deploy` |
 | `./.github/actions/fhirscripts` | Composite Action: `docker run` des fhirscripts-Images | neu |
-| `./.github/actions/run-sushi-with-zts` | – | im Beispiel nicht genutzt, später `run-sushi.sh` |
+| `./.github/actions/run-sushi-with-zts` | ZTS-Pakete (z. B. `kbv.all.terminology.allergyintolerance`) in den Cache laden | wie bisher, aber ohne SUSHI-Lauf |
 
 Auslöser: `push` auf `stufe-6/all/fhir-scripts-*` (nur bei Änderungen an Basis, den Skripten oder dem Workflow)
 und `workflow_dispatch`. Ohne weitere Einstellungen lauffähig; optional in den Repository-Einstellungen:
@@ -199,7 +199,7 @@ Bewusste Vereinfachungen im Spike:
 - Werden weitere Module gebaut, wird Basis immer mitgebaut, weil sonst kein Basis-Paket da ist. Später: Paket
   bei unverändertem Basis aus einem Cache oder der Registry holen.
 - `cache package --no-clear` nutzt Firely Terminal; die Snapshot-Frage (`--new` mit `fhir_pkg_tool`) ist offen.
-- Kein ZTS-SUSHI (`run-sushi.sh`), Basis braucht keine BfArM-Pakete.
+- ZTS über die bestehende Action `run-sushi-with-zts` auf dem Runner, nicht in der Pipeline. Basis braucht `kbv.all.terminology.allergyintolerance`; die Registry von Firely Terminal kennt das Paket nicht (erster Lauf scheiterte daran).
 - Der IG Publisher (ca. 240 MB) wird pro Lauf neu geladen; ließe sich per `actions/cache` auf `input-cache/` sparen.
 
 ## Weitere betroffene Dateien
@@ -215,7 +215,7 @@ Bewusste Vereinfachungen im Spike:
 | `scripts/ig-publisher/copy-artifacts.sh`, `commit-artifacts.sh` | verkleinern oder entfernen (siehe `commit`) |
 | `scripts/ig-publisher/publish-branch.sh`, `remove-oversized-output-files.sh` | entfernen (gh-pages) |
 | `scripts/ig-publisher/update-pr-comment.js` | entfernen (PR-Kommentar entfällt) |
-| `.github/actions/run-sushi-with-zts/` | Logik nach `scripts/fhirscripts/run-sushi.sh`, danach entfernen |
+| `.github/actions/run-sushi-with-zts/` | bleibt, nur noch zum Herunterladen der ZTS-Pakete; eventuell später als reines Download-Skript |
 | `scripts/capabilitystatement-expander/expand.sh` | Modus `--workflow-file` (liest die Matrix) entfernen oder auf die Konfigurationsdateien umstellen |
 | `publisher-guides/<Modul>/fhirscripts.config.yaml` | pro Modul anlegen; gemeinsame Pipeline eventuell als eine Datei per `FHIRSCRIPTS_CONFIG` |
 | `.gitignore` | erzeugte Dateien in `input/resources`, Kopien aus `scripts/common-files`, eventuell `fsh-generated` |
@@ -231,10 +231,10 @@ Bewusste Vereinfachungen im Spike:
      Werkzeuge und Benutzer `vscode` im Image (siehe Tabelle „Image“)
    - `fhirscripts deploy dev` aus CI: Anmeldung, Zielpfad, Aufruf der Dev-URL
 2. **Composite Action** fertigstellen; Image per Digest pinnen.
-3. **Skripte anpassen**: `run-sushi.sh` (ZTS, braucht `yq`); `check-changes.sh` ist erledigt.
+3. **Skripte anpassen**: ZTS-Download eventuell als eigenes Skript statt der Action; `check-changes.sh` ist erledigt.
 4. **`ig-publisher.yml` umbauen**: Job `basis` plus Matrix. Module, die noch nicht migriert sind, bleiben bis zu ihrer
    Migration (Phase 3) im alten Job; beide Varianten laufen also eine Zeit lang nebeneinander.
-5. **Aufräumen**: alte Schritte, `cleanup_fhir_packages`, `run-sushi-with-zts`, `sync-sushi-dependencies.sh`.
+5. **Aufräumen**: alte Schritte, `cleanup_fhir_packages`, `sync-sushi-dependencies.sh`.
 
 ## Offene Punkte
 
