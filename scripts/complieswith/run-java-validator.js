@@ -25,8 +25,13 @@
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
+const {
+  stripAnsi,
+  buildClaimIndexFromFiles,
+  countCompliesWithMessages,
+  parseCompliesWithEntries,
+} = require('./parse-validator-log');
 
-const COMPLIES_WITH_URL = 'http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile';
 const EXCLUDED_PACKAGES = new Set([
   'bfarm.terminologien.icd10gm',
   'bfarm.terminologien.ops',
@@ -77,8 +82,7 @@ function main() {
   }
 
   const filePaths = files.map((fileName) => path.join(validationDir, fileName));
-  const metadataByFile = new Map();
-  const claimIndex = buildClaimIndex(filePaths, metadataByFile);
+  const claimIndex = buildClaimIndexFromFiles(filePaths);
 
   const result = spawnSync('java', [...baseArgs, ...filePaths], {
     cwd: root,
@@ -91,30 +95,28 @@ function main() {
   const combined = [stdout, stderr].filter(Boolean).join(stdout && stderr ? '\n' : '');
   const normalized = stripAnsi(combined);
   const fatalExecutionError = Boolean(result.error || looksLikeFatalExecutionError(combined));
-  const entries = extractCompliesWithEntries({
-    content: normalized,
-    claimIndex,
-  });
-  const recoveredEntries = entries.length === 0 && normalized.includes('SD_EXTENSION_COMPLIES_WITH_ERROR')
-    ? extractCompliesWithEntriesFromSections({ content: normalized, claimIndex })
-    : entries;
+  const entries = parseCompliesWithEntries(normalized, claimIndex);
+  const messageCount = countCompliesWithMessages(normalized);
 
   fs.writeFileSync(rawLogPath, `${combined.trimEnd()}\n`);
   fs.writeFileSync(detailsPath, `${JSON.stringify({
     fhirVersion,
     generatedAt: new Date().toISOString(),
-    entries: recoveredEntries,
+    entries,
   }, null, 2)}\n`);
 
   process.stdout.write(`Validated ${files.length} file(s) in one Java validator run.\n`);
-  process.stdout.write(`Found ${recoveredEntries.length} CompliesWith error(s).\n`);
+  process.stdout.write(`Found ${entries.length} CompliesWith error(s) (${messageCount} message(s) in raw log).\n`);
+  if (entries.length !== messageCount) {
+    process.stdout.write(`::warning title=CompliesWith::Anzahl der Einträge (${entries.length}) weicht von der Anzahl der CompliesWith-Meldungen im Rohlog (${messageCount}) ab.\n`);
+  }
 
   if (fatalExecutionError) {
     process.exitCode = 2;
     return;
   }
 
-  if (recoveredEntries.length > 0) {
+  if (entries.length > 0) {
     process.exitCode = 1;
   }
 }
@@ -170,163 +172,6 @@ function getCorePackageForVersion(version) {
   }
 }
 
-function readStructureDefinitionMetadata(filePath) {
-  const resource = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  const extensions = Array.isArray(resource.extension) ? resource.extension : [];
-  const claimedProfiles = extensions
-    .filter((extension) => extension && extension.url === COMPLIES_WITH_URL)
-    .map((extension) => extension.valueCanonical || extension.valueUri || extension.valueUrl || '')
-    .filter(Boolean);
-
-  return {
-    file: path.basename(filePath),
-    profile: resource.url || resource.name || path.basename(filePath),
-    claimedProfiles,
-  };
-}
-
-function buildClaimIndex(filePaths, metadataByFile) {
-  const claimIndex = new Map();
-
-  for (const filePath of filePaths) {
-    const metadata = readStructureDefinitionMetadata(filePath);
-    metadataByFile.set(metadata.file, metadata);
-    for (const claimedProfile of metadata.claimedProfiles) {
-      if (!claimIndex.has(claimedProfile)) {
-        claimIndex.set(claimedProfile, []);
-      }
-      claimIndex.get(claimedProfile).push(metadata);
-    }
-  }
-
-  return claimIndex;
-}
-
-function extractCompliesWithEntries({ content, claimIndex }) {
-  const lines = String(content || '').replace(/\r\n/g, '\n').split('\n');
-  const entries = [];
-  let currentFile = '';
-
-  for (let i = 0; i < lines.length; i += 1) {
-    const line = lines[i];
-    const sectionMatch = line.match(/--\s+.*\/([^/\s]+\.json)\s+-+$/);
-    if (sectionMatch) {
-      currentFile = sectionMatch[1].trim();
-      continue;
-    }
-    const fileMatch = line.match(/Validate\s+.*\/([^/\s]+\.json)\s*$/);
-    if (fileMatch) {
-      currentFile = fileMatch[1].trim();
-      continue;
-    }
-
-    const match = line.match(/Error @ StructureDefinition: This profile does not comply with claimed profile '([^']+)'(?:\s+because:.+?)?\s*\{(SD_EXTENSION_COMPLIES_WITH_ERROR)\}/);
-    if (!match) {
-      continue;
-    }
-
-    const comparedProfile = match[1].trim();
-    const details = [];
-    const source = resolveSourceMetadata({ comparedProfile, currentFile, claimIndex, details });
-    let j = i + 1;
-    while (j < lines.length) {
-      const next = lines[j];
-      if (!next.trim()) {
-        j += 1;
-        continue;
-      }
-      if (/^\S/.test(next)) {
-        break;
-      }
-      details.push(next.trim());
-      j += 1;
-    }
-
-    entries.push({
-      file: source.file,
-      profile: source.profile,
-      comparedProfile,
-      messageId: match[2],
-      summary: `Dieses Profil erfüllt das deklarierte Profil nicht: ${comparedProfile}`,
-      details: details.length > 0 ? details : fallbackDetails(comparedProfile, source.claimedProfiles),
-    });
-
-    i = j - 1;
-  }
-
-  return entries;
-}
-
-function resolveSourceMetadata(comparedProfile, claimIndex, details) {
-  if (typeof comparedProfile === 'object' && comparedProfile !== null) {
-    return resolveSourceMetadataFromContext(comparedProfile);
-  }
-  return resolveSourceMetadataFromContext({ comparedProfile, currentFile: '', claimIndex, details });
-}
-
-function extractCompliesWithEntriesFromSections({ content, claimIndex }) {
-  const sections = String(content || '').split(/\n(?=--\s+.*\/[^/\s]+\.json\s+-+\s*$)/);
-  const entries = [];
-
-  for (const section of sections) {
-    const headerMatch = section.match(/--\s+.*\/([^/\s]+\.json)\s+-+\s*$/m);
-    const currentFile = headerMatch ? headerMatch[1].trim() : '';
-    const regex = /Error @ StructureDefinition: This profile does not comply with claimed profile '([^']+)'(?:\s+because:.+?)?\s*\{(SD_EXTENSION_COMPLIES_WITH_ERROR)\}([\s\S]*?)(?=\n\s{2}(?:Error|Warning|Information) @ |\n--\s+.*\/[^/\s]+\.json\s+-+|\s*$)/g;
-    let match;
-
-    while ((match = regex.exec(section)) !== null) {
-      const comparedProfile = match[1].trim();
-      const detailBlock = match[3] || '';
-      const details = detailBlock
-        .split('\n')
-        .map((line) => line.trim())
-        .filter((line) => line.startsWith('slice error:'));
-      const source = resolveSourceMetadata({ comparedProfile, currentFile, claimIndex, details });
-      entries.push({
-        file: source.file,
-        profile: source.profile,
-        comparedProfile,
-        messageId: match[2],
-        summary: `Dieses Profil erfüllt das deklarierte Profil nicht: ${comparedProfile}`,
-        details: details.length > 0 ? details : fallbackDetails(comparedProfile, source.claimedProfiles),
-      });
-    }
-  }
-
-  return entries;
-}
-
-function resolveSourceMetadataFromContext({ comparedProfile, currentFile, claimIndex, details }) {
-  const candidates = claimIndex.get(comparedProfile) || [];
-  if (currentFile) {
-    const exact = candidates.find((candidate) => candidate.file === currentFile);
-    if (exact) {
-      return exact;
-    }
-  }
-  if (candidates.length === 1) {
-    return candidates[0];
-  }
-  if (candidates.length > 1) {
-    details.push(`Zuordnung nicht eindeutig: ${candidates.length} Profile deklarieren dieses claimed profile.`);
-  } else {
-    details.push('Quellprofil konnte aus dem Sammellog nicht eindeutig zugeordnet werden.');
-  }
-
-  return {
-    file: '',
-    profile: 'Unbekanntes Profil',
-    claimedProfiles: [],
-  };
-}
-
-function fallbackDetails(comparedProfile, claimedProfiles) {
-  if (claimedProfiles.includes(comparedProfile)) {
-    return ['Keine zusätzlichen Detailzeilen im Validator-Log gefunden.'];
-  }
-  return ['Das Zielprofil wurde im Validator-Log gefunden, konnte aber nicht sicher den deklarierten Claims dieser Datei zugeordnet werden.'];
-}
-
 function looksLikeFatalExecutionError(content) {
   const text = stripAnsi(String(content || ''));
   return [
@@ -336,10 +181,6 @@ function looksLikeFatalExecutionError(content) {
     'No such file or directory',
     'Unable to resolve package id',
   ].some((pattern) => text.includes(pattern));
-}
-
-function stripAnsi(text) {
-  return String(text || '').replace(/\u001b\[[0-9;]*[ -/]*[@-~]/g, '');
 }
 
 main();

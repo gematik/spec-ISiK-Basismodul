@@ -18,7 +18,11 @@ wird hier separat ausgeführt.
 | Trigger | Bedingung | Zweck |
 |---|---|---|
 | `pull_request` | jeder Branch (`'**'`) | CompliesWith-Validierung als PR-Feedback |
+| `push` | `main-stufe-*` | Referenzlauf auf dem Hauptbranch; das Artefakt dient als Baseline für den Vergleich im PR-Kommentar |
 | `workflow_dispatch` | manuell | Ad-hoc-Lauf |
+
+Der PR-Kommentar wird nur bei `pull_request` erstellt. Bei `push` und `workflow_dispatch` werden
+Rohlog und Details ausschließlich als Artefakt abgelegt.
 
 **Berechtigungen:** `actions`, `contents`, `issues`, `pull-requests` jeweils `write`
 (für Artefakt-Upload und PR-Kommentar).
@@ -52,26 +56,56 @@ de.gevko.emdaf#1.3.0
 
 Der einzige Job `export_validation` läuft auf `ubuntu-latest`:
 
-1. **Checkout code** — checkt bei PR gezielt den Head-Branch aus.
-2. **Add CompliesWith dependencies** (`add-dependencies.js`) — trägt die oben gelisteten Pakete
+1. **Checkout code** — checkt bei PR gezielt den Head-Branch aus, bei `push` den gepushten Branch.
+2. **Test CompliesWith log parser** (`parse-validator-log.test.js`) — prüft den Rohlog-Parser gegen
+   ein eingechecktes Fixture (siehe unten), bevor der eigentliche Lauf startet.
+3. **Add CompliesWith dependencies** (`add-dependencies.js`) — trägt die oben gelisteten Pakete
    in die SUSHI-Konfiguration ein.
-3. **Uncomment CompliesWith inserts** (`uncomment-inserts.js`) — aktiviert die im Normalbetrieb
+4. **Uncomment CompliesWith inserts** (`uncomment-inserts.js`) — aktiviert die im Normalbetrieb
    auskommentierten `CompliesWith`-Inserts in den FSH-Dateien.
-4. **Run SUSHI** — `npx fsh-sushi Resources/ -s` generiert die FHIR-Ressourcen (mit Snapshots).
-5. **Filter validation targets** (`filter-validation-targets.js`) — wählt aus, welche Ressourcen
+5. **Run SUSHI** — `npx fsh-sushi Resources/ -s` generiert die FHIR-Ressourcen (mit Snapshots).
+6. **Filter validation targets** (`filter-validation-targets.js`) — wählt aus, welche Ressourcen
    tatsächlich validiert werden (Ablage in `Resources/fsh-generated/complieswith-validation`).
    Nur Ressourcen mit `CompliesWith`-Verknüpfungen qualifizieren sich.
-6. **Set up Java** (Temurin 17) — Laufzeit für den Validator.
-7. **Download Java validator** — lädt das Validator-JAR per `curl` (siehe externe Abhängigkeiten).
-8. **Run Java validator for CompliesWith** (`run-java-validator.js`, `continue-on-error: true`) —
+7. **Set up Java** (Temurin 17) — Laufzeit für den Validator.
+8. **Download Java validator** — lädt das Validator-JAR per `curl` (siehe externe Abhängigkeiten).
+9. **Run Java validator for CompliesWith** (`run-java-validator.js`, `continue-on-error: true`) —
    validiert gegen die externen Profile; schreibt `validation-raw.log` und `validation-details.json`.
    Der Schritt darf fehlschlagen, ohne den Job rot zu machen (Ergebnis kommt als Kommentar).
-9. **Check validation outputs** — setzt `has_validation_details` je nachdem, ob die Details-Datei
-   existiert (`if: always()`).
-10. **Upload validation artifacts** — lädt Log + Details als Artefakt hoch (1 Tag), nur wenn
-    Details vorhanden.
-11. **Comment validation results on PR** (`update-pr-comment.js`, `if: always()`) — postet das
-    Ergebnis als PR-Kommentar.
+10. **Check validation outputs** — setzt `has_validation_details` je nachdem, ob die Details-Datei
+    existiert (`if: always()`).
+11. **Upload validation artifacts** — lädt Log + Details als Artefakt
+    `complieswith-export-validation-results` hoch (90 Tage), nur wenn Details vorhanden.
+12. **Comment validation results on PR** (`update-pr-comment.js`, `if: always()`, nur bei
+    `pull_request`) — postet das Ergebnis als PR-Kommentar.
+13. **Fail job on CompliesWith errors** — überträgt das Ergebnis des Validator-Steps auf den
+    Job-Status. Der Job wird rot, sobald mindestens ein CompliesWith-Fehler vorliegt oder der
+    Validator nicht ausgewertet werden konnte.
+
+---
+
+## Auswertung des Rohlogs (`parse-validator-log.js`)
+
+Der Java-Validator schreibt je geprüfter Datei eine Sektion mit allen Meldungen. Eine verletzte
+`CompliesWith`-Verknüpfung erscheint als Meldung
+`This profile does not comply with claimed profile '<Zielprofil>' … {SD_EXTENSION_COMPLIES_WITH_ERROR}`,
+gefolgt von eingerückten `slice error:`/`slice warn:`-Zeilen.
+
+`parse-validator-log.js` ist der gemeinsame Parser für `run-java-validator.js` (erzeugt
+`validation-details.json`) und `update-pr-comment.js` (Fallback, falls die JSON-Datei fehlt).
+Er liefert **je Paar (ISiK-Profil, Zielprofil) genau einen Eintrag**; die Anzahl der Einträge
+entspricht der Anzahl der `does not comply`-Meldungen im Rohlog. Die Detail-Sammlung eines Eintrags
+endet bei der nächsten Validator-Meldung (`Error|Warning|Information @`) oder am Sektionsende.
+Weicht die Anzahl der Einträge von der Anzahl der Meldungen ab, gibt `run-java-validator.js`
+eine Warnung im Job-Log aus.
+
+Der Test `parse-validator-log.test.js` belegt dieses Verhalten ohne CI-Lauf anhand eines
+eingecheckten Rohlog-Ausschnitts (`fixtures/validation-raw.multi-violation.log`, vier Sektionen
+mit 2/5/0/2 Verstößen) und läuft als erster Step des Workflows:
+
+```
+node --test scripts/complieswith/parse-validator-log.test.js
+```
 
 ---
 
@@ -85,7 +119,7 @@ Der einzige Job `export_validation` läuft auf `ubuntu-latest`:
 | `continue-on-error: true` | Validator-Step | Validierungs-Fehler brechen den Job nicht ab |
 | `ADVISOR_FILE: validator/advisor.json` | Validator-Step (env) | Herabstufung von Meldungen |
 | `VALIDATION_DIR` / `RESOLUTION_CONTEXT_DIR` | Validator-Step (env) | Eingabe- und Auflösungskontext |
-| `retention-days: 1` | Upload-Step | Aufbewahrung der Artefakte |
+| `retention-days: 90` | Upload-Step | Aufbewahrung der Artefakte (Baseline muss für Vergleiche verfügbar bleiben) |
 
 ---
 
