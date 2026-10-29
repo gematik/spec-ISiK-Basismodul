@@ -23,6 +23,7 @@ selben Image. Veröffentlicht wird per `fhirscripts deploy` in die Dev-Umgebung 
 | Erzeugte Dateien | `commit`-Job checkt `fsh-generated`, `input/resources`, Kopien aus `common-files` ein | möglichst nichts mehr einchecken (`.gitignore`), dann entfällt der `commit`-Job |
 | Veröffentlichung | `publish`-Job auf gh-pages (nur `main-stufe-*`) | `fhirscripts deploy dev` nach jedem Build; Prod per manuellem Workflow |
 | PR-Kommentar | verlinkt Artefakte und gh-pages | entfällt |
+| Release der Pakete | kein automatisierter Ablauf im Repo | eigener Workflow: Build im Publikationsmodus, `fhirscripts publish`, `deploy prod`, ein Paket pro Modul (siehe „Release“) |
 
 ## Image: `gematik1/fhir-devcontainer`
 
@@ -159,6 +160,69 @@ deploy:
 
 Branch-Builds getrennt ablegen: `releaseLabel: ci-build` für Dev-Builds oder eigener Pfad je Branch (siehe
 Migrationsplan, „Offene Entscheidungen“).
+
+## Release: mehrere Pakete unter einem Canonical
+
+Zielbild: ein Canonical `https://gematik.de/fhir/isik` für alle Profile, aber ein IG und ein FHIR-Paket pro Modul,
+veröffentlicht über einen eigenen, manuell gestarteten Workflow mit fhirscripts.
+
+### Geht das?
+
+Grundsätzlich ja. Pakete werden über ihre `packageId` unterschieden, nicht über den Canonical, und die
+Profil-URLs bleiben eindeutig, solange sich die Ressourcen-IDs über die Module hinweg nicht überschneiden. Pro Modul
+eindeutig sein muss:
+
+| Was | Basis | Stand |
+|---|---|---|
+| `packageId` | `de.gematik.isik-basismodul` | erledigt für Basis; pro Modul in Phase 3 |
+| URL der ImplementationGuide-Ressource | `https://gematik.de/fhir/isik/ImplementationGuide/basis` | eindeutig über die IG-`id` |
+| Veröffentlichungsort (`path` in `publication-request.json`) | `https://gematik.de/fhir/isik/de.gematik.isik-basismodul/6.0.0` | `generate.js` leitet das schon pro Modul ab; mit gematik abstimmen, unter welcher URL der Bucket erreichbar ist |
+| Versionshistorie (`package-list.json`, `index.html`) | im Veröffentlichungsordner des Moduls | publishtools erzeugt sie pro Projekt |
+
+### Wo fhirscripts von einem IG pro Canonical ausgeht
+
+fhirscripts 0.32.0 leitet den „Projektnamen“ an mehreren Stellen aus dem Canonical ab. Bei uns ergibt das für jedes
+Modul `isik`:
+
+| Stelle | Verhalten | Folge für uns | Lösung |
+|---|---|---|---|
+| Schritt `igpub` | `-publish <canonical>/<version>` | alle Module bekämen `https://gematik.de/fhir/isik/6.0.0` | IG Publisher per `shell:` mit `-publish <path aus publication-request.json>` aufrufen |
+| `deploy` (aus dem Build) und `deploy --only-meta` | Projekt = Segment vor `ImplementationGuide` in der IG-URL | alle Module unter `…/isik/<version>`, eine gemeinsame `package-list.json` | `deploy.path` pro Modul als Behelf; besser Änderung in fhirscripts |
+| `deploy --promote-from` | Projekt aus `publication-request.json` | pro Modul eindeutig, aber anderer Pfad als beim direkten Deploy | wie oben: einheitlich aus `publication-request.json` ableiten |
+| `publish project` (publishtools) | nutzt `publication-request.json` | pro Modul eindeutig | passt |
+
+Empfehlung: Issue oder PR an gematik/fhir-scripts, damit `igpub` und `deploy` den Projektpfad einheitlich aus der
+`publication-request.json` nehmen. Das löst das Problem für alle gematik-Projekte mit gemeinsamem Canonical und spart
+uns die Behelfe.
+
+### Release-Workflow (Skizze, `release-ig.yml`)
+
+Manuell gestartet; Inputs: Modul(e), Zielumgebung. Basis zuerst, weil die anderen Module davon abhängen.
+
+1. Checkout des Release-Stands (Tag oder `main-stufe-*`)
+2. ZTS-Pakete laden, Paket-Cache wie im Build
+3. Build im **Publikationsmodus**: IG Publisher mit `-publish <path>` aus der `publication-request.json`. Erst dann
+   enthält `package.tgz` die echte URL und kein `notForPublication` mehr.
+4. Bisherige Historie des Moduls (`package-list.json`) und die IG-Registry (`ig_list.json`, `package-feed.xml`) aus
+   dem Bucket holen
+5. `fhirscripts publish project --ig-registry <dir>`: aktualisiert `package-list.json` und `index.html` des Moduls
+   sowie `package-feed.xml` und die Übersicht in der Registry
+6. `fhirscripts deploy prod -y` für IG, Metadaten (`--only-meta`) und Registry (`--ig-registry`), oder zuerst nach
+   Dev und dann `--promote-from dev`
+7. Der FHIR-Package-Crawler liest `package-feed.xml` und übernimmt die Pakete in die Registry (packages.fhir.org).
+   Dafür muss der Feed einmalig beim Crawler bekannt sein.
+
+Die anderen Module sollten im Release gegen die veröffentlichte Basis-Version bauen, nicht gegen das Artefakt aus
+demselben Lauf.
+
+### Offen für den Release
+
+- Unter welcher URL ist der Prod-Bucket erreichbar, und passt das zu `path` in der `publication-request.json`?
+- Wo liegt die IG-Registry (`ig_list.json`, `package-feed.xml`)? Nutzt gematik schon eine gemeinsame Registry mit
+  registriertem Feed?
+- Prüft der IG Publisher im Publikationsmodus die Historie unter `<canonical>/package-list.json`? Dann würden sich
+  die Module dort in die Quere kommen. Im ersten Release-Test klären.
+- Wird zusätzlich auf Simplifier veröffentlicht, oder reicht der Weg über den Crawler?
 
 ## Beispiel-Workflow (Spike)
 

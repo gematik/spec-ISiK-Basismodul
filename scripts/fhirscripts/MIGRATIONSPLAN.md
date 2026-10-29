@@ -184,6 +184,10 @@ Danach `Resources/` und die `package.json` im Root löschen.
     CapabilityStatements ohnehin.
   - Wenn sie entfallen: Schritt `expand-capabilitystatements.sh` aus allen `fhirscripts.config.yaml`, die
     CapabilityStatement-URLs in der Konfiguration und `scripts/capabilitystatement-expander/` (Phase 4) fallen weg.
+- **Release mehrerer Pakete unter einem Canonical:** Ziel ist ein Paket pro Modul, veröffentlicht über einen eigenen
+  Workflow mit `fhirscripts publish` und `deploy prod`. fhirscripts leitet dafür an mehreren Stellen den Pfad aus dem
+  Canonical ab (`igpub`, `deploy`), bei uns also für alle Module `isik`. Details und Skizze:
+  [CI-UMSTELLUNG.md, „Release“](CI-UMSTELLUNG.md#release-mehrere-pakete-unter-einem-canonical).
 - **`fhirscripts deploy` (Dev/Prod):**
   - *Zielpfad pro Modul.* `deploy` leitet das Projekt aus der IG-URL ab (`<canonical>/ImplementationGuide/<id>` →
     vorletztes Segment vor `ImplementationGuide`). Bei unserem gemeinsamen Canonical `https://gematik.de/fhir/isik`
