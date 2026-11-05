@@ -2,9 +2,9 @@
 
 ----
 
-Version: 5.2.0
+Version: 5.99.9999-test
 
-Datum: 19.10.2026
+Datum: 05.11.2026
 
 Status: Aktiv
 
