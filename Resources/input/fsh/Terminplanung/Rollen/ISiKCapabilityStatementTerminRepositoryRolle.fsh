@@ -191,7 +191,7 @@ Usage: #definition
     * searchParam[+]
       * insert Expectation (#SHALL) 
       * name = "specialty"
-      * definition = "http://hl7.org/fhir/SearchParameter/Appointment-service-type"
+      * definition = "http://hl7.org/fhir/SearchParameter/Appointment-specialty"
       * type = #token
       * documentation = 
         "**Beispiel:**    

@@ -90,7 +90,7 @@ Diese Rolle beschreibt verpflichtende Interaktionen zur Erstellung, dem Abruf un
   * searchParam[+]
     * insert Expectation (#SHALL)
     * name = "creation"
-    * definition = "http://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation"
+    * definition = "https://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation"
     * type = #date
     * documentation =
         "**Beispiel:**
