@@ -14,9 +14,10 @@ Datum: tbd.
 
 * `improve` Einbinden der Allergie-ValueSets nach Publikation auf Zentralem Terminologie-Server im Profil ISiKAllergieUnvertraeglichkeit <https://github.com/gematik/spec-ISiK-Basismodul/pull/1312>
 * `documentation` Zusammenführung der Festlegungen zur Methodik <https://github.com/gematik/spec-ISiK-Basismodul/pull/1329>
-* `documentation` Verbesserung fehlerhafter Beispiele innerhalb der Suchparameterdefinition in den CapabilityStatements https://github.com/gematik/spec-ISiK-Basismodul/pull/1324
-* `documentation` Klarstellung zur Quelle der Telematik-ID https://github.com/gematik/spec-ISiK-Basismodul/pull/1332
-* `improve` Update auf neues ValueSet für den Schwangerschaftsstatus aus dem IPS/ EPS https://github.com/gematik/spec-ISiK-Basismodul/pull/1354
+* `documentation` Verbesserung fehlerhafter Beispiele innerhalb der Suchparameterdefinition in den CapabilityStatements <https://github.com/gematik/spec-ISiK-Basismodul/pull/1324>
+* `documentation` Klarstellung zur Quelle der Telematik-ID <https://github.com/gematik/spec-ISiK-Basismodul/pull/1332>
+* `improve` Update auf neues ValueSet für den Schwangerschaftsstatus aus dem IPS/ EPS <https://github.com/gematik/spec-ISiK-Basismodul/pull/1354>
+* `improve` Must-Support auf ISiKProzedur.performer und Condition.recorder ergänzt <https://github.com/gematik/spec-ISiK-Basismodul/pull/1371>
 
 
 ### Version 6.0.0
