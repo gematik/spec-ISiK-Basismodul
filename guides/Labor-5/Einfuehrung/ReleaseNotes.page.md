@@ -10,7 +10,7 @@ Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähi
 
 Datum: tbd.
 
-* `fix` Entfernung falscher Kodierung und Einheitsangaben für Procalcitonin
+* `fix` Entfernung falscher Kodierung und Einheitsangaben für Procalcitonin https://github.com/gematik/spec-ISiK-Basismodul/pull/1370
 
 ## Version 5.2.0
 
