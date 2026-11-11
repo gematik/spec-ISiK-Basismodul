@@ -103,10 +103,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^short = "Patienten-Link"
     * insert Comment-Reference-Subject(Begründung MS)
 * performer MS
-  * function only ISiKSnomedCTCoding MS
+  * function MS
   * function from $ProzedurenFunktionSCT (preferred)
   * ^short = "Durchführender"
   * ^comment = "**Begründung Must-Support:** Die Angabe der durchführenden Instanz (z.B. Arzt oder Einrichtung) in einer Funktion ist für die Nachvollziehbarkeit und Datenintegrität der Prozedur erforderlich."
+    * coding only ISiKSnomedCTCoding MS
   * actor MS
     * ^short = "Performer-Link"
     * ^comment =  "Begründung Must-Support: Die durchführende Instanz ist per Referenz anzugeben, da die Zuordnung einer durchführenden Instanz wichtig für die Nachvollziehbarkeit einer Prozedur ist."
