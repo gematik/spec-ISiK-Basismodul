@@ -105,8 +105,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * performer MS
   * function MS
   * function from $ProzedurenFunktionSCT (preferred)
-  * ^short = "Durchführender"
-  * ^comment = "**Begründung Must-Support:** Die Angabe der durchführenden Instanz (z.B. Arzt oder Einrichtung) in einer Funktion ist für die Nachvollziehbarkeit und Datenintegrität der Prozedur erforderlich."
+    * ^short = "Durchführender"
+    * ^comment = "**Begründung Must-Support:** Die Angabe der durchführenden Instanz (z.B. Arzt oder Einrichtung) in einer Funktion ist für die Nachvollziehbarkeit und Datenintegrität der Prozedur erforderlich."
     * coding only ISiKSnomedCTCoding MS
   * actor MS
     * ^short = "Performer-Link"
