@@ -6,6 +6,12 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähig ist (eigene Use Cases bedient) oder bestätigtigungsrelevant ist.
 
+## Version 5.2.1
+
+Datum: tbd.
+
+* `fix` Entfernung falscher Kodierung und Einheitsangaben für Procalcitonin https://github.com/gematik/spec-ISiK-Basismodul/pull/1370
+
 ## Version 5.2.0
 
 Datum: 19.10.2026
