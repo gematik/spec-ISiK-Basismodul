@@ -304,6 +304,48 @@
         "mustSupport": true
       },
       {
+        "id": "Procedure.performer",
+        "path": "Procedure.performer",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.performer.function",
+        "path": "Procedure.performer.function",
+        "short": "Durchführender",
+        "comment": "**Begründung Must-Support:** Die Angabe der durchführenden Instanz (z.B. Arzt oder Einrichtung) in einer Funktion ist für die Nachvollziehbarkeit und Datenintegrität der Prozedur erforderlich.",
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/performer-role"
+        }
+      },
+      {
+        "id": "Procedure.performer.function.coding",
+        "path": "Procedure.performer.function.coding",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.performer.actor",
+        "path": "Procedure.performer.actor",
+        "short": "Performer-Link",
+        "comment": "Begründung Must-Support: Die durchführende Instanz ist per Referenz anzugeben, da die Zuordnung einer durchführenden Instanz wichtig für die Nachvollziehbarkeit einer Prozedur ist.",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.performer.actor.reference",
+        "path": "Procedure.performer.actor.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
         "id": "Procedure.bodySite.extension:BodyStructureReference",
         "path": "Procedure.bodySite.extension",
         "sliceName": "BodyStructureReference",
