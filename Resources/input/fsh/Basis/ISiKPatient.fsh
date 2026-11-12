@@ -234,7 +234,7 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
     * ^short = "Extension zur Differenzierung des Geschlechtskennzeichens"
     * ^comment = "Diese Extension darf nur in Verbindung mit dem Geschlechtskennzeichen `other` verwendet werden
       und dient der Differenzierung zwischen den in Deutschland möglichen Geschlechtskennzeichen `D` (divers) und `X`(unbestimmt)"
-* birthDate 1.. MS
+* birthDate 0..1 MS
   * extension contains $data-absent-reason named Data-Absent-Reason 0..1 MS
   * extension[Data-Absent-Reason]
     * ^short = "Begründung für fehlende Information"
