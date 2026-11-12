@@ -24,6 +24,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { buildClaimIndexFromDir, parseCompliesWithEntries } = require('./parse-validator-log');
 
 module.exports = async function run({ github, context, core }) {
   const pr = context.payload && context.payload.pull_request;
@@ -37,7 +38,7 @@ module.exports = async function run({ github, context, core }) {
   const detailsPath = path.resolve('validation-details.json');
   const rawLogPath = path.resolve('validation-raw.log');
   const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${context.runId}`;
-  const claimIndex = buildClaimIndex('Resources/fsh-generated/complieswith-validation');
+  const claimIndex = buildClaimIndexFromDir('Resources/fsh-generated/complieswith-validation');
 
   let report = { entries: [] };
   if (fs.existsSync(detailsPath)) {
@@ -46,12 +47,7 @@ module.exports = async function run({ github, context, core }) {
 
   let entries = Array.isArray(report.entries) ? report.entries : [];
   if (entries.length === 0 && fs.existsSync(rawLogPath)) {
-    const rawLog = fs.readFileSync(rawLogPath, 'utf8');
-    const normalized = stripAnsi(rawLog);
-    entries = parseEntriesFromRawLog(normalized, claimIndex);
-    if (entries.length === 0 && normalized.includes('SD_EXTENSION_COMPLIES_WITH_ERROR')) {
-      entries = parseEntriesFromSections(normalized, claimIndex);
-    }
+    entries = parseCompliesWithEntries(fs.readFileSync(rawLogPath, 'utf8'), claimIndex);
   }
 
   if (entries.length === 0 && !fs.existsSync(rawLogPath) && !fs.existsSync(detailsPath)) {
@@ -218,159 +214,6 @@ function collectExpectedCompliesWithTargets(rootDir) {
   return [...targets].sort(compareText);
 }
 
-function buildClaimIndex(rootDir) {
-  const claimIndex = new Map();
-  if (!fs.existsSync(rootDir)) {
-    return claimIndex;
-  }
-
-  for (const entry of fs.readdirSync(rootDir, { withFileTypes: true })) {
-    if (!entry.isFile() || !entry.name.endsWith('.json')) {
-      continue;
-    }
-    const filePath = path.join(rootDir, entry.name);
-    let resource;
-    try {
-      resource = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    } catch {
-      continue;
-    }
-    const claims = (Array.isArray(resource.extension) ? resource.extension : [])
-      .filter((extension) => extension && extension.url === 'http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile')
-      .map((extension) => extension.valueCanonical || extension.valueUri || extension.valueUrl || '')
-      .filter(Boolean);
-
-    for (const claim of claims) {
-      if (!claimIndex.has(claim)) {
-        claimIndex.set(claim, []);
-      }
-      claimIndex.get(claim).push({
-        file: entry.name,
-        profile: resource.url || resource.name || entry.name,
-        claimedProfiles: claims,
-      });
-    }
-  }
-
-  return claimIndex;
-}
-
-function parseEntriesFromRawLog(rawLog, claimIndex) {
-  const lines = String(rawLog || '').replace(/\r\n/g, '\n').split('\n');
-  const entries = [];
-  let currentFile = '';
-
-  for (let i = 0; i < lines.length; i += 1) {
-    const line = lines[i];
-    const sectionMatch = line.match(/--\s+.*\/([^/\s]+\.json)\s+-+$/);
-    if (sectionMatch) {
-      currentFile = sectionMatch[1].trim();
-      continue;
-    }
-    const fileMatch = line.match(/Validate\s+.*\/([^/\s]+\.json)\s*$/);
-    if (fileMatch) {
-      currentFile = fileMatch[1].trim();
-      continue;
-    }
-
-    const match = line.match(/Error @ StructureDefinition: This profile does not comply with claimed profile '([^']+)' \{(SD_EXTENSION_COMPLIES_WITH_ERROR)\}/);
-    if (!match) {
-      continue;
-    }
-
-    const comparedProfile = match[1].trim();
-    const details = [];
-    let j = i + 1;
-    while (j < lines.length) {
-      const next = lines[j];
-      if (!next.trim()) {
-        j += 1;
-        continue;
-      }
-      if (/^\S/.test(next)) {
-        break;
-      }
-      details.push(next.trim());
-      j += 1;
-    }
-
-    const source = resolveSourceMetadata({ comparedProfile, currentFile, claimIndex, details });
-    entries.push({
-      file: source.file,
-      profile: source.profile,
-      comparedProfile,
-      messageId: match[2],
-      summary: `Dieses Profil erfüllt das deklarierte Profil nicht: ${comparedProfile}`,
-      details: details.length > 0 ? details : fallbackDetails(comparedProfile, source.claimedProfiles),
-    });
-    i = j - 1;
-  }
-
-  return entries;
-}
-
-function parseEntriesFromSections(rawLog, claimIndex) {
-  const sections = String(rawLog || '').split(/\n(?=--\s+.*\/[^/\s]+\.json\s+-+\s*$)/);
-  const entries = [];
-
-  for (const section of sections) {
-    const headerMatch = section.match(/--\s+.*\/([^/\s]+\.json)\s+-+\s*$/m);
-    const currentFile = headerMatch ? headerMatch[1].trim() : '';
-    const regex = /Error @ StructureDefinition: This profile does not comply with claimed profile '([^']+)' \{(SD_EXTENSION_COMPLIES_WITH_ERROR)\}([\s\S]*?)(?=\n\s{2}(?:Error|Warning|Information) @ |\n--\s+.*\/[^/\s]+\.json\s+-+|\s*$)/g;
-    let match;
-
-    while ((match = regex.exec(section)) !== null) {
-      const comparedProfile = match[1].trim();
-      const detailBlock = match[3] || '';
-      const details = detailBlock
-        .split('\n')
-        .map((line) => line.trim())
-        .filter((line) => line.startsWith('slice error:'));
-      const source = resolveSourceMetadata({ comparedProfile, currentFile, claimIndex, details });
-      entries.push({
-        file: source.file,
-        profile: source.profile,
-        comparedProfile,
-        messageId: match[2],
-        summary: `Dieses Profil erfüllt das deklarierte Profil nicht: ${comparedProfile}`,
-        details: details.length > 0 ? details : fallbackDetails(comparedProfile, source.claimedProfiles),
-      });
-    }
-  }
-
-  return entries;
-}
-
-function resolveSourceMetadata({ comparedProfile, currentFile, claimIndex, details }) {
-  const candidates = claimIndex.get(comparedProfile) || [];
-  if (currentFile) {
-    const exact = candidates.find((candidate) => candidate.file === currentFile);
-    if (exact) {
-      return exact;
-    }
-  }
-  if (candidates.length === 1) {
-    return candidates[0];
-  }
-  if (candidates.length > 1) {
-    details.push(`Zuordnung nicht eindeutig: ${candidates.length} Profile deklarieren dieses claimed profile.`);
-  } else {
-    details.push('Quellprofil konnte aus dem Sammellog nicht eindeutig zugeordnet werden.');
-  }
-  return {
-    file: '',
-    profile: 'Unbekanntes Profil',
-    claimedProfiles: [],
-  };
-}
-
-function fallbackDetails(comparedProfile, claimedProfiles) {
-  if (claimedProfiles.includes(comparedProfile)) {
-    return ['Keine zusätzlichen Detailzeilen im Validator-Log gefunden.'];
-  }
-  return ['Das Zielprofil wurde im Validator-Log gefunden, konnte aber nicht sicher den deklarierten Claims dieser Datei zugeordnet werden.'];
-}
-
 function walkFiles(dir, visit) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const fullPath = path.join(dir, entry.name);
@@ -388,8 +231,4 @@ function compareText(a, b) {
 
 function escapeInline(value) {
   return String(value || '').replace(/`/g, '\\`');
-}
-
-function stripAnsi(text) {
-  return String(text || '').replace(/\u001b\[[0-9;]*[ -/]*[@-~]/g, '');
 }
