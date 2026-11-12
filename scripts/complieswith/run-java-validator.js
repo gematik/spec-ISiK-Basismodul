@@ -102,6 +102,8 @@ function main() {
   fs.writeFileSync(detailsPath, `${JSON.stringify({
     fhirVersion,
     generatedAt: new Date().toISOString(),
+    fatalExecutionError,
+    messageCount,
     entries,
   }, null, 2)}\n`);
 
