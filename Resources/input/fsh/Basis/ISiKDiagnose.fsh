@@ -161,7 +161,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * recorder MS
   * ^short = "Dokumentierende Instanz"
   * ^comment = "**Begründung MS:** Die Angabe der dokumentierenden Instanz ist für die Nachvollziehbarkeit und Datenintegrität der Diagnose erforderlich."
-  * reference 1.. MS
+  * reference MS
     * ^short = "Dokumentierende Instanz-Referenz"
     * ^comment = "**Begründung MS:** Die dokumentierende Instanz ist per Referenz anzugeben, da die Zuordnung einer dokumentierenden Instanz wichtig für die Nachvollziehbarkeit der Diagnose ist."
   * display MS // Wollen wir das? Ist aus dem TI Commons
