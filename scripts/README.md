@@ -33,15 +33,16 @@ This script automatically extracts requirement identifiers (ANF-CON-XXX patterns
 ## Release_publish.py
 
 ### Purpose/Functionality
-This script automates the release process by updating version numbers and dates across multiple files in the repository. It uses configuration from `config.yaml` to determine which files to update and what patterns to match for version and date replacements.
+This script automates the release process by updating version numbers and dates across multiple files in the repository. It uses configuration from `config.yaml` to determine which files to update and what patterns to match for version and date replacements. Release notes files get special treatment: the topmost "Version" section is maintained (date set, placeholder heading such as `6.x.y` filled, or a new section "Keine Änderung am IG" inserted above the previous release) and existing sections are never renamed.
 
 ### Hints for Using the Script
-- Requires `config.yaml` configuration file in the same directory
-- Automatically detects the current git branch to determine version information
-- Supports TC- and TC_ branch name prefixes for version extraction
-- Updates files like `package.json`, `sushi-config.yaml`, `ruleset.fsh`, and various Markdown files
-- Use with caution as it modifies multiple files simultaneously
-- Test on a separate branch before applying to main release branches
+- Requires `config.yaml` configuration file in the same directory; file patterns are resolved relative to the repository root, independent of the current working directory
+- `python scripts/release_publish.py -b` takes the version from the current branch name (`TC_<version>` or `TC-<version>`), `-v <version>` sets it explicitly, `-d DD.MM.YYYY` overrides today's date
+- `-n`/`--dry-run` reports the changes without writing files; use it to check a TC branch before pushing
+- IGs listed under `excluded_igs` in `config.yaml` for the stufe of the branch are skipped; `-x`/`--exclude-igs` overrides that list, `-s` sets the stufe explicitly
+- The script exits with an error when a matched file does not contain the expected pattern or when nothing was updated, so the GitHub Action "TC version update" fails instead of committing an incomplete update
+- Patterns of the other repository layout (Simplifier guides vs. IG Publisher guides) simply report "matches no file"
+- Regression tests: `python3 scripts/test_release_publish.py` (runs against the real `config.yaml` with minimal copies of both repository layouts)
 
 ## Update-compile-and-validation-tools.py
 
@@ -58,14 +59,15 @@ This script automatically updates the GitHub Actions workflow configuration with
 ## config.yaml
 
 ### Purpose/Functionality
-Configuration file for the `release_publish.py` script. Defines file patterns, regex expressions, and format specifications for version and date updates across different file types.
+Configuration file for the `release_publish.py` script. Defines file patterns (globs relative to the repository root), regex expressions, and format specifications for version and date updates, plus the IGs excluded per stufe.
 
 ### Hints for Using the Script
 - Not executable - this is a configuration file
-- Modify this file to add new files or change update patterns for releases
-- Supports version and date replacement with custom regex patterns
-- Each file can have multiple replacement rules with different patterns
+- Keys below `files` are glob patterns relative to the repository root (`*` and `**` allowed); patterns without a match are skipped, so one file serves the Stufe-5 (Simplifier) and Stufe-6 (IG Publisher) layouts
+- Rule types: `version` and `date` replace group 2 of the given regex (applied with `re.MULTILINE`), `releasenotes` maintains the topmost "Version" section of a release notes file
+- Each pattern can have multiple replacement rules with different regex patterns
 - Date formats can be customized per rule (e.g., '%Y-%m-%d', '%d.%m.%Y')
+- `excluded_igs` lists IG keywords per stufe (matched case-insensitively against the directory names of a file path); the GitHub Action may override them with `--exclude-igs`
 
 ## Highlight duplicates
 
