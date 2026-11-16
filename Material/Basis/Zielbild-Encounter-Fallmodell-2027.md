@@ -104,13 +104,32 @@ Während Abteilungskontakte und Versorgungsstellenkontakte einen unmittelbar nac
 
 Dabei handelt es sich ausdrücklich nicht um eine Kritik an bestehenden Implementierungen oder bisherigen ISiK-Versionen. Vielmehr soll überprüft werden, ob die fachliche Bedeutung des Einrichtungskontakts ausreichend klar definiert ist und langfristig spezifikatorisch begründet werden kann.
 
+#### Arbeitsdefinition des Einrichtungskontakts
+
+„Einrichtungskontakt: Kontakt auf oberster Ebene, der den gesamten Aufenthalt/Besuch in einer Gesundheitseinrichtung repräsentiert“ (Quelle: MII, https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot/de/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html#kontakthierarchien-und-kontaktebenen) 
+
+
 #### Fragestellungen
 
 - Welche Informationen gehören fachlich ausschließlich auf den Einrichtungskontakt?
 - Welche Informationen sind bereits über den Account ableitbar?
 - Welche Anwendungsfälle benötigen zwingend einen Einrichtungskontakt?
+   - Wiederaufnahme s.u.
 - Ist der Einrichtungskontakt für Fallakte, Berechtigungen und Suchstrategien erforderlich?
 - Ist der Einrichtungskontakt langfristig Bestandteil des fachlichen Zielmodells?
+
+#### Funktionen des Einrichtungskontakt
+
+Eine wesentliche Funktion des Einrichtungskontakts diene der Nachvollziehbarkeit von Wiederaufnahmen: 
+Ohne verschiedene Einrichtungskontakte sei es nicht möglich eine Wiederaufnahme als solche zu erkennen (Quelle: AG Encounter - 2. Sitzung)
+
+#### Weitere Hinweise zum Einrichtungskontakt
+
+Hinweis aus AG: Die Fallnummer als Encounter.identifier solle nicht verboten werden; diese sei in vielen Quellsystemen identisch (Quelle: AG Encounter - 2. Sitzung).
+
+Zur möglichen Überarbeitung der o.g. Begriffsdefinition:
+- Eine Definition des EK als Behandlungsfall (von Aufnahme bis Entlassung) inklusive vor- und nachstätionärer Kontakte sei sinnvoll.
+
 
 #### Ziel bis April 2027
 
