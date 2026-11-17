@@ -128,12 +128,12 @@ Ohne verschiedene Einrichtungskontakte sei es nicht möglich eine Wiederaufnahme
 
 Folgende Hinweise stellen Diskussionsstände dar und sind keine angenommenen Änderungsvorschläge.
 
-Hinweis aus AG Encounter - 2. Sitzung: 
+Hinweise aus AG Encounter - 2. Sitzung: 
 - Eine Definition des **Einrichtungskontakts als Behandlungsfall (von Aufnahme bis Entlassung), inklusive vor- und nachstätionärer Kontakte** sei sinnvoll (Hinweis zur möglichen Überarbeitung der o.g. Begriffsdefinition).
 - Die Fallnummer als `Encounter.identifier` solle nicht verboten werden; diese sei in vielen Quellsystemen identisch und diese schließe eine Verwendung für den Account nicht per se aus.
    - CAVE: der Ausschluss einer Fallnummer als Encounter.identifier war als "nicht verhandelbare Tatsache" postuliert worden (s.o.). Eine Prüfung bleibt hier in jedem Fall notwendig.
-- In einem KIS würden **ambulante Besuche als Versorgungsstellenkontakt** dokumentiert (betrifft auch "Geltungsbereich" - s.u.). Zugleich gebe es ambulante Fälle, die lange aufbleiben (über Abrechnungsperiode hinaus). Zugleich sei die Semantik von Versorgungsstellenkontakten unklar.
-- Organization und Location (FHIR) müsse bei der Debatte berücksichtigt werden.
+- In einem KIS würden **ambulante Besuche als Versorgungsstellenkontakt** dokumentiert (betrifft auch "Geltungsbereich" - s.u.). Zugleich gebe es ambulante Fälle, die lange aufblieben (über Abrechnungsperiode hinaus). Zugleich sei die Semantik von Versorgungsstellenkontakten unklar.
+- *Organization* und *Location* (FHIR-Ressourcen) müssten bei der Debatte berücksichtigt werden.
 - Es sei ein Bedarf, dass Kontakte (auch Versorgungsstellen- nach Einrichtungskontakt) miteinander verknüpft werden könnten, um einfache Abfragen zu ermöglichen. Die ist im aktuellen Stand des MII-Modells entsprechend abgebildet.
 
 #### Ziel bis April 2027
@@ -185,8 +185,10 @@ Hierzu gehören insbesondere:
 #### Fragestellungen
 
 - Welche Versorgungsformen sollen durch das ISiK-Fallmodell grundsätzlich adressiert werden?
+   - Tendenz (aus 1. und 2 AG): ambulante Fälle im Scope; MVZ out of scope.
 - Wo verläuft die fachliche Grenze zwischen Krankenhausversorgung und anderen Versorgungsformen?
 - Soll das Encounter-Modell auch ambulante Krankenhausstrukturen und MVZ-Kontexte explizit berücksichtigen?
+   - s.o.
 - Reicht das bestehende Modell aus oder entstehen zusätzliche Anforderungen an Encounter, Account oder EpisodeOfCare?
 
 #### Ziel bis April 2027
