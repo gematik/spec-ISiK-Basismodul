@@ -180,7 +180,7 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf von ISiKVersicheru
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "identifier"
-      * definition = "http://hl7.org/fhir/SearchParameter/clinical-identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/Account-identifier"
       * type = #token
       * documentation = 
         "**Beispiel:**    
@@ -200,7 +200,7 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf von ISiKVersicheru
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "type"
-      * definition = "http://hl7.org/fhir/SearchParameter/clinical-type"
+      * definition = "http://hl7.org/fhir/SearchParameter/Account-type"
       * type = #token
       * documentation = 
         "**Beispiel:**    
@@ -210,7 +210,7 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf von ISiKVersicheru
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "patient"
-      * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+      * definition = "http://hl7.org/fhir/SearchParameter/Account-patient"
       * type = #reference
       * documentation = 
         "**Beispiel:**    

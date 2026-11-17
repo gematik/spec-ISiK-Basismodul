@@ -74,6 +74,8 @@ Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-
 * Suche von Dokumenten anhand der Nummer des Abrechnungsfalles:
   `[base]/DocumentReference?encounter.account:identifier=56789`
 
+Die Canonical-URL des Suchparameters `creation` ist `https://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation`. Die Definition aus [IHE MHD 4.2.2](https://profiles.ihe.net/ITI/MHD/4.2.2/SearchParameter-DocumentReference-Creation.html) wird unverändert im ISiK-Package mitgeliefert (IHE IT Infrastructure Technical Committee, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)); eine Installation des vollständigen MHD-Packages ist dafür nicht erforderlich.
+
 ### Dokumentenzugriff (IHE MHD ITI-68 (Retrieve Document))
 
 Das den Metadaten zugeordnete Dokument kann jeweils unter `DocumentReference.content.attachment.url` vom Server abgerufen werden.
