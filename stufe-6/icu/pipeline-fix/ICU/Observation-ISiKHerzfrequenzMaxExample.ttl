@@ -1,0 +1,125 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Implementationguide/ICU/Observation/ISiKHerzfrequenzMaxExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ISiKHerzfrequenzMaxExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKHerzfrequenz"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKHerzfrequenz>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation ISiKHerzfrequenzMaxExample</b></p><a name=\"ISiKHerzfrequenzMaxExample\"> </a><a name=\"hcISiKHerzfrequenzMaxExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKHerzfrequenz.html\">ISiKHerzfrequenz</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 8867-4}, {http://snomed.info/sct 364075005}, {urn:iso:std:iso:11073:10101 147842}\">Herzfrequenz - EKG-Monitoring</span></p><p><b>subject</b>: <a href=\"Patient-PatientinNormal.html\">Anna Müller (official) Female, DoB: 1957-08-12 ( Medical record number)</a></p><p><b>effective</b>: 2024-01-15 14:30:00+0100</p><p><b>performer</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Practitioner/PractitionerWalterArzt\">Practitioner/PractitionerWalterArzt</a></p><p><b>value</b>: 180 per minute<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code/min = '/min')</span></p><p><b>interpretation</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation H}\">High</span></p><p><b>note</b>: </p><blockquote><div><p>Supraventrikuläre Tachykardie bei akuter Belastung</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 80891009}\">Heart structure</span></p><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 268400002}\">12 lead electrocardiogram</span></p><p><b>device</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Device/ExampleDevice\">Device/ExampleDevice</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "vital-signs" ] ;
+       fhir:display [ fhir:v "Vital Signs" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:8867-4 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "8867-4" ] ;
+       fhir:display [ fhir:v "Heart rate" ]
+     ] [
+       a sct:364075005 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "364075005" ] ;
+       fhir:display [ fhir:v "Heart rate" ]
+     ] [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:11073:10101"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:11073:10101>
+       ] ;
+       fhir:code [ fhir:v "147842" ] ;
+       fhir:display [ fhir:v "MDC_ECG_HEART_RATE" ]
+     ] ) ;
+     fhir:text [ fhir:v "Herzfrequenz - EKG-Monitoring" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://gematik.de/fhir/isik/Implementationguide/ICU/Patient/PatientinNormal> ;
+     fhir:reference [ fhir:v "Patient/PatientinNormal" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2024-01-15T14:30:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <https://gematik.de/fhir/isik/Implementationguide/ICU/Practitioner/PractitionerWalterArzt> ;
+     fhir:reference [ fhir:v "Practitioner/PractitionerWalterArzt" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "180"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "per minute" ] ;
+     fhir:system [
+       fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+       fhir:l <http://unitsofmeasure.org>
+     ] ;
+     fhir:code [ fhir:v "/min" ]
+  ] ; # 
+  fhir:interpretation ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation>
+       ] ;
+       fhir:code [ fhir:v "H" ] ;
+       fhir:display [ fhir:v "High" ]
+     ] )
+  ] ) ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Supraventrikuläre Tachykardie bei akuter Belastung" ]
+  ] ) ; # 
+  fhir:bodySite [
+     fhir:coding ( [
+       a sct:80891009 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "80891009" ] ;
+       fhir:display [ fhir:v "Heart structure" ]
+     ] )
+  ] ; # 
+  fhir:method [
+     fhir:coding ( [
+       a sct:268400002 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "268400002" ] ;
+       fhir:display [ fhir:v "12 lead electrocardiogram" ]
+     ] )
+  ] ; # 
+  fhir:device [
+     fhir:l <https://gematik.de/fhir/isik/Implementationguide/ICU/Device/ExampleDevice> ;
+     fhir:reference [ fhir:v "Device/ExampleDevice" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

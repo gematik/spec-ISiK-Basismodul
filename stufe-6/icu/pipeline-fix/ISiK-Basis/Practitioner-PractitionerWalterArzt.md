@@ -1,0 +1,154 @@
+# PractitionerWalterArzt - ISiK Basis Implementierungsleitfaden v6.0.0-rc
+
+ISiK Basis Implementierungsleitfaden
+
+Version 6.0.0-rc - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **PractitionerWalterArzt**
+
+## Practitioner: PractitionerWalterArzt
+
+Information Source: [http://krankenhaus.de](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://krankenhaus.de)
+
+Profile: [ISiKPersonImGesundheitsberuf](StructureDefinition-ISiKPersonImGesundheitsberuf.md)
+
+**identifier**: Lifelong physician number/123456789, Doctor number/123456789123456
+
+**active**: true
+
+**name**: Walter Arzt(Official), Gross(Name changed for Marriage)
+
+**address**: Schmiedegasse 16 Potsdam 14469 DE 
+
+**gender**: Male
+
+**birthDate**: Absent because : masked
+
+### Qualifications
+
+| | |
+| :--- | :--- |
+| - | **Code** |
+| * | Physician (occupation) |
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Practitioner",
+  "id" : "PractitionerWalterArzt",
+  "meta" : {
+    "source" : "http://krankenhaus.de",
+    "profile" : [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf"
+    ]
+  },
+  "identifier" : [
+    {
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "LANR"
+          }
+        ]
+      },
+      "system" : "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR",
+      "value" : "123456789"
+    },
+    {
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "DN"
+          }
+        ]
+      },
+      "system" : "http://fhir.de/sid/bundesaerztekammer/efn",
+      "value" : "123456789123456"
+    }
+  ],
+  "active" : true,
+  "name" : [
+    {
+      "use" : "official",
+      "text" : "Walter Arzt",
+      "family" : "Arzt",
+      "_family" : {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+            "valueString" : "Arzt"
+          }
+        ]
+      },
+      "given" : ["Walter"]
+    },
+    {
+      "use" : "maiden",
+      "text" : "Gross",
+      "family" : "Gross",
+      "_family" : {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+            "valueString" : "Gross"
+          }
+        ]
+      }
+    }
+  ],
+  "address" : [
+    {
+      "type" : "both",
+      "line" : ["Schmiedegasse 16"],
+      "_line" : [
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString" : "16"
+            },
+            {
+              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString" : "Schmiedegasse"
+            }
+          ]
+        }
+      ],
+      "city" : "Potsdam",
+      "postalCode" : "14469",
+      "country" : "DE"
+    }
+  ],
+  "gender" : "male",
+  "_birthDate" : {
+    "extension" : [
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+        "valueCode" : "masked"
+      }
+    ]
+  },
+  "qualification" : [
+    {
+      "code" : {
+        "coding" : [
+          {
+            "system" : "http://snomed.info/sct",
+            "version" : "http://snomed.info/sct/900000000000207008/version/20200131",
+            "code" : "309343006",
+            "display" : "Physician (occupation)"
+          }
+        ]
+      }
+    }
+  ]
+}
+
+```

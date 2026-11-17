@@ -1,0 +1,42 @@
+# ISiKTerminblockExample - ISiK Terminplanung Implementierungsleitfaden v6.0.0
+
+ISiK Terminplanung Implementierungsleitfaden
+
+Version 6.0.0 - active 
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **ISiKTerminblockExample**
+
+## Slot: ISiKTerminblockExample
+
+Profile: [ISiKTerminblock](StructureDefinition-ISiKTerminblock.md)
+
+**schedule**: [Schedule: serviceType = General Practice; specialty = Allgemeinmedizin](Schedule-ISiKKalenderExample.md)
+
+**status**: Busy
+
+**start**: 2022-12-10 09:00:00+0000
+
+**end**: 2022-12-10 11:00:00+0000
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Slot",
+  "id" : "ISiKTerminblockExample",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock"]
+  },
+  "schedule" : {
+    "reference" : "Schedule/ISiKKalenderExample"
+  },
+  "status" : "busy",
+  "start" : "2022-12-10T09:00:00Z",
+  "end" : "2022-12-10T11:00:00Z"
+}
+
+```

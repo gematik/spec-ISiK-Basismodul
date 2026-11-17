@@ -1,0 +1,54 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/ValueSet/ObservationUnitsSerumkreatinin> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ObservationUnitsSerumkreatinin"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet ObservationUnitsSerumkreatinin</b></p><a name=\"ObservationUnitsSerumkreatinin\"> </a><a name=\"hcObservationUnitsSerumkreatinin\"> </a><ul><li>Include these codes as defined in <a href=\"http://unitsofmeasure.org\"><code>http://unitsofmeasure.org</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>mg/dL</td><td>milligram per deciliter</td></tr><tr><td>umol/L</td><td>micromol per liter</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://gematik.de/fhir/isik/ValueSet/ObservationUnitsSerumkreatinin"] ;
+  fhir:ValueSet.version [ fhir:value "6.0.0"] ;
+  fhir:ValueSet.name [ fhir:value "ObservationUnitsSerumkreatinin"] ;
+  fhir:ValueSet.status [ fhir:value "active"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-07-01"^^xsd:date] ;
+  fhir:ValueSet.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Enthält UCUM-Einheiten für die Observation Serumkreatinin"] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "mg/dL" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "milligram per deciliter" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "umol/L" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "micromol per liter" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/ValueSet/ObservationUnitsSerumkreatinin.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

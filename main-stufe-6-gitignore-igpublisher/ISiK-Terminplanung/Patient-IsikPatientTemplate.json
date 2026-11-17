@@ -1,0 +1,146 @@
+{
+  "resourceType" : "Patient",
+  "id" : "IsikPatientTemplate",
+  "_id" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+      "valueString" : "item.where(linkId = 'resourceId').answer.value"
+    }]
+  },
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient IsikPatientTemplate</b></p><a name=\"IsikPatientTemplate\"> </a><a name=\"hcIsikPatientTemplate\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKPatient.html\">ISiKPatient</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">null(official) Unknown, DoB:  ( Medical record number)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td colspan=\"3\">true</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">Krankenversichertennummer/?ngen-9?</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li>ph: -unknown-</li><li>null null null DE </li></ul></td></tr></table></div>"
+  },
+  "identifier" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+      "valueString" : "item.where(linkId = 'patientId')"
+    }],
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "MR"
+      }]
+    },
+    "_system" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+        "valueString" : "item.where(linkId = 'patientId-system').answer.value"
+      }]
+    },
+    "_value" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+        "valueString" : "item.where(linkId = 'patientId-value').answer.value"
+      }]
+    }
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://fhir.de/CodeSystem/identifier-type-de-basis",
+        "code" : "KVZ10"
+      }]
+    },
+    "system" : "http://fhir.de/sid/gkv/kvid-10",
+    "_value" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+        "valueString" : "item.where(linkId = 'versichertenId').answer.value"
+      }]
+    }
+  }],
+  "active" : true,
+  "name" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+      "valueString" : "item.where(linkId = 'name')"
+    }],
+    "use" : "official",
+    "_text" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+        "valueString" : "item.where(linkId = 'given' or linkId = 'family').answer.value.join(' ')"
+      }]
+    },
+    "_family" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+        "valueString" : "item.where(linkId = 'family').answer.value.first()"
+      }]
+    },
+    "_given" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+        "valueString" : "item.where(linkId = 'given').answer.value.first()"
+      }]
+    }]
+  }],
+  "telecom" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+      "valueString" : "item.where(linkId = 'telecom')"
+    }],
+    "system" : "phone",
+    "_system" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+        "valueString" : "item.where(linkId = 'telecom-system').answer.value"
+      }]
+    },
+    "_value" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+        "valueString" : "item.where(linkId = 'telecom-value').answer.value"
+      }]
+    }
+  }],
+  "gender" : "unknown",
+  "_gender" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+      "valueString" : "item.where(linkId = 'gender').answer.value.first().code"
+    }]
+  },
+  "_birthDate" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+      "valueString" : "item.where(linkId = 'birthDate').answer.value.first()"
+    }]
+  },
+  "address" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+      "valueString" : "item.where(linkId = 'address')"
+    }],
+    "type" : "both",
+    "_line" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+        "valueString" : "item.where(linkId = 'address-line').answer.value"
+      }]
+    }],
+    "_city" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+        "valueString" : "item.where(linkId = 'address-city').answer.value.first()"
+      }]
+    },
+    "_postalCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+        "valueString" : "item.where(linkId = 'address-postalCode').answer.value.first()"
+      }]
+    },
+    "country" : "DE",
+    "_country" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+        "valueString" : "item.where(linkId = 'address-country').answer.value.first()"
+      }]
+    }
+  }]
+}

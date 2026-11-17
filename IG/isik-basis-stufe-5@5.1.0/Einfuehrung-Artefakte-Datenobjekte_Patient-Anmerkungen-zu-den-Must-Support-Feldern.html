@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Kontext und Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Kontext und Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Erlaeuterung-Akteurs-und-Rollenmodell.html">
+                                            Akteurs- und Rollenmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_UmgangFehlendeDaten.html">
+                                            Umgang mit fehlenden Daten
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungverhaeltnis-sonstige-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis sonstige (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_BerichtBundle.html">
+                                            Bericht aus Subsystemen (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="anmerkungen-zu-must-support-feldern">Anmerkungen zu Must-Support-Feldern</h3>
+<table  class='table table-bordered fql-table'><thead><tr><th>Feldname</th><th>Kurzbeschreibung</th><th>Hinweise</th></tr></thead><tbody><tr><td>Patient.identifier</td><td></td><td></td></tr>
+<tr><td>Patient.identifier:VersichertenId</td><td>Lebenslange Krankenversichertennummer</td><td><p>Die als 'KVZ10' kodierte Versichertennummer ist der 10-stellige,
+unveränderbare Teil der Versichertennummer,
+der lesbar auf die Elektronische Gesundheitskarte aufgedruckt ist.
+Er gilt für alle Krankenversichertennummern,
+unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt.<br />
+<strong>Weitere Hinweise:</strong> siehe <a href="https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-LebenslangeKrankenversichertennummer10-stelligeKVID-Identifier?version=current">Deutschen Basisprofile</a></p>
+</td></tr>
+<tr><td>Patient.identifier:VersichertenId.type</td><td>Art des Identifiers</td><td><p>Hier ist stets der Code <code>KVZ10</code>
+aus dem CodeSystem <code>http://fhir.de/CodeSystem/identifier-type-de-basis</code> anzugeben.<br />
+<strong>Begründung Pflichtfeld:</strong> <code>type</code> dient der Unterscheidung verschiedener Identifier-Typen</p>
+</td></tr>
+<tr><td>Patient.identifier:VersichertenId.system</td><td>Namensraum der Versichertennummer</td><td><p>Hier ist stets der Wert <code>http://fhir.de/sid/gkv/kvid-10</code> anzugeben.<br />
+<strong>Begründung Pflichtfeld:</strong> <code>system</code> stellt in Kombination mit <code>value</code> die Eindeutigkeit eines Identifiers sicher.</p>
+</td></tr>
+<tr><td>Patient.identifier:VersichertenId.value</td><td>Lebenslange Krankenversichertennummer</td><td><p>Der 10-stellige, unveränderbare Teil der Versichertennummer.</p>
+</td></tr>
+<tr><td>Patient.identifier:VersichertenId-GKV</td><td>Gesetzliche Krankenversichertennummer</td><td><p><strong>WARNUNG</strong>: Die Verwendung der 'GKV'-Kodierung einer Versichertennummer ist abgekündigt,
+da die lebenslangen Versichertennummer ab 2024 auch für PKV oder Sonderkostenträger eingeführt wird.
+Bitte statt dessen künftig den 'VersichertenId'-Slice verwenden.</p>
+</td></tr>
+<tr><td>Patient.identifier:VersichertenId-GKV.type</td><td>Art des Identifiers</td><td><p>Hier ist stets der Code <code>GKV</code>
+aus dem CodeSystem <code>http://fhir.de/CodeSystem/identifier-type-de-basis</code> anzugeben.<br />
+<strong>Begründung Pflichtfeld:</strong> <code>type</code> dient der Unterscheidung verschiedener Identifier-Typen</p>
+</td></tr>
+<tr><td>Patient.identifier:VersichertenId-GKV.system</td><td>Namensraum der Versichertennummer</td><td><p>Hier ist stets der Wert <code>http://fhir.de/sid/gkv/kvid-10</code> anzugeben.<br />
+<strong>Begründung Pflichtfeld:</strong> <code>system</code> stellt in Kombination mit <code>value</code> die Eindeutigkeit eines Identifiers sicher.</p>
+</td></tr>
+<tr><td>Patient.identifier:VersichertenId-GKV.value</td><td></td><td><p>Enthält den eigentlichen Wert des Identifiers.<br />
+<strong>Begründung Pflichtfeld:</strong> Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.</p>
+</td></tr>
+<tr><td>Patient.identifier:Patientennummer</td><td>Organisationsinterner Patienten-Identifier (PID)</td><td><p>Organisationsintere Patienten-Identifier werden von z.B. von KIS-Systemen vergeben
+und dienen innerhalb einer Einreichtung meist als primäres Identifikationsmerkmal für Patienten,
+u.A. in der HL7 V2-Kommunikation.<br />
+<strong>Weitere Hinweise:</strong> siehe <a href="https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-OrganisationsinternerPatienten-Identifier?version=current">Deutschen Basisprofile</a></p>
+</td></tr>
+<tr><td>Patient.identifier:Patientennummer.type</td><td>Art des Identifiers</td><td><p>Hier ist stets der Code <code>MR</code>
+aus dem CodeSystem <code>http://terminology.hl7.org/CodeSystem/v2-0203</code> anzugeben.<br />
+<strong>Begründung Pflichtfeld:</strong> <code>type</code> dient der Unterscheidung verschiedener Identifier-Typen</p>
+</td></tr>
+<tr><td>Patient.identifier:Patientennummer.system</td><td>Namensraum des Identifiers</td><td><p>Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben,
+aus dem der Identifier stammt.
+Hinweise zur Festlegung der URLs für lokale Namensräume sind in den
+<a href="https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current">Deutschen Basisprofilen</a> beschrieben.<br />
+<strong>Begründung Pflichtfeld:</strong> <code>system</code> stellt in Kombination mit <code>value</code> die Eindeutigkeit eines Identifiers sicher.</p>
+</td></tr>
+<tr><td>Patient.identifier:Patientennummer.value</td><td></td><td><p>Enthält den eigentlichen Wert des Identifiers.<br />
+<strong>Begründung Pflichtfeld:</strong> Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.</p>
+</td></tr>
+<tr><td>Patient.identifier:Versichertennummer_PKV.use</td><td>Verwendungszeck des Identifiers</td><td><p>Hier ist stets der Wert <code>secondary</code> anzugeben.</p>
+</td></tr>
+<tr><td>Patient.identifier:Versichertennummer_PKV.type</td><td>Art des Identifiers</td><td><p>Hier ist stets der Code <code>PKV</code>
+aus dem CodeSystem <code>http://fhir.de/CodeSystem/identifier-type-de-basis</code> anzugeben.<br />
+<strong>Begründung Pflichtfeld:</strong> <code>type</code> dient der Unterscheidung verschiedener Identifier-Typen</p>
+</td></tr>
+<tr><td>Patient.identifier:Versichertennummer_PKV.value</td><td>Private Krankenversichertennummer</td><td><p>Enthält den eigentlichen Wert des Identifiers.<br />
+<strong>Begründung Pflichtfeld:</strong> Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.</p>
+</td></tr>
+<tr><td>Patient.identifier:Versichertennummer_PKV.assigner</td><td></td><td></td></tr>
+<tr><td>Patient.identifier:Versichertennummer_PKV.assigner.identifier.system</td><td>Namensraum des Identifiers</td><td><p>Hier ist stets der Wert <code>http://fhir.de/sid/arge-ik/iknr</code> anzugeben.</p>
+</td></tr>
+<tr><td>Patient.identifier:Versichertennummer_PKV.assigner.identifier.value</td><td>IK-Nummer des Kostenträgers</td><td><p>IK-Nummer des Kostenträgers, aus dessen Nummernkreis die PKV-Nummer stammt.</p>
+</td></tr>
+<tr><td>Patient.identifier:Versichertennummer_PKV.assigner.display</td><td>Name des Kostenträgers</td><td><p>Name des Kostenträgers, aus dessen Nummernkreis die PKV-Nummer stammt.</p>
+</td></tr>
+<tr><td>Patient.active</td><td>Status des Datensatzes</td><td><p><code>true</code> = Der Datensatz befindet sich in Verwendung/kann verwendet werden<br />
+<code>false</code>= Der Datensatz wurde storniert (z.B. bei Dubletten, Merge) oder archiviert<br />
+<strong>Einschränkung der übergreifenden MS-Definition:</strong><br />
+Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Aktivitätsstatus einer Patienten-Ressource,
+so MUSS dieses System die Information NICHT abbilden.
+Das System SOLL jedoch den Aktivitätsstatus hart kodieren in der Patienteninstanz
+(Patient.active auf 'true'), sodass Clients nicht missverständlich mit einer inaktiven
+Patient-Ressource interagieren.</p>
+</td></tr>
+<tr><td>Patient.name</td><td></td><td></td></tr>
+<tr><td>Patient.name:Name</td><td>Offizieller Name</td><td><p>Offizieller Name des Patienten, wie er z.B. in Ausweis oder Versicherungsdokumenten erscheint.
+<strong>Begründung Pflichtfeld:</strong> Der offizielle Name des Patienten ist unerlässlich, um Verwechlungen zu vermeiden und den Patienten im Versorgungskontext korrekt anzusprechen.
+Wenn kein Name vorliegt, MUSS die <a href="https://www.hl7.org/fhir/R4/extension-data-absent-reason.html">data-absent-reason-Extension</a> eingesetzt werden.<br />
+<strong>Weitere Hinweise:</strong> siehe <a href="https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Name">Deutsche Basisprofile</a></p>
+</td></tr>
+<tr><td>Patient.name:Name.use</td><td>Verwendungszweck</td><td><p>Hier ist stets der Wert <code>official</code> anzugeben.<br />
+<strong>Begründung Pflichtfeld:</strong> Dient als Unterscheidungs- und Auswahlkriterium</p>
+</td></tr>
+<tr><td>Patient.name:Name.family</td><td>Nachname</td><td><p>Vollständiger Nachname bzw. Familienname der Person, einschließlich Vor- und Zusätze.<br />
+<strong>Begründung Pflichtfeld:</strong> Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind.</p>
+</td></tr>
+<tr><td>Patient.name:Name.family.extension:namenszusatz</td><td>Namenszusatz</td><td><p>Enthält ehem. Adelstitel wie z.B. 'Graf', 'Baronesse', 'Freiherr'...<br />
+<strong>Begründung MS:</strong> Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.</p>
+</td></tr>
+<tr><td>Patient.name:Name.family.extension:nachname</td><td>Nachname</td><td><p>Nachname ohne Vor- und Zusätze.<br />
+<strong>Begründung MS:</strong> Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.</p>
+</td></tr>
+<tr><td>Patient.name:Name.family.extension:vorsatzwort</td><td></td><td><p>Enthält Vorsätze, die vor dem Nachnamen stehen, z.B. 'von', 'van', 'zu'...<br />
+<strong>Begründung MS:</strong> Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.</p>
+</td></tr>
+<tr><td>Patient.name:Name.given</td><td></td><td><p>Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittel-Initialen abzubilden.
+<strong>Begründung Pflichtfeld:</strong> Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind.</p>
+</td></tr>
+<tr><td>Patient.name:Name.prefix</td><td>Präfix</td><td><p>Präfix, z.B. akademischer Titel od. militärischer Rang</p>
+</td></tr>
+<tr><td>Patient.name:Name.prefix.extension:prefix-qualifier</td><td>Extension, um das Präfix als akademischen Titel zu qualifizieren</td><td><p>Hier ist stets der Wert <code>AC</code> anzugeben.<br />
+<strong>Begründung MS:</strong> Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.</p>
+</td></tr>
+<tr><td>Patient.name:Geburtsname</td><td>Geburtsname</td><td><p>Familienname zum Zeitpunkt der Geburt, sofern abweichend vom offiziellen Namen.</p>
+</td></tr>
+<tr><td>Patient.name:Geburtsname.use</td><td>Verwendungszweck</td><td><p>Hier ist stets der Wert <code>maiden</code> anzugeben.<br />
+<strong>Begründung Pflichtfeld:</strong> Dient als Unterscheidungs- und Auswahlkriterium</p>
+</td></tr>
+<tr><td>Patient.name:Geburtsname.family</td><td>Nachname</td><td><p>Vollständiger Nachname bzw. Familienname des Patienten, einschließlich Vor- und Zusätze.<br />
+<strong>Begründung Pflichtfeld:</strong> Ist der Nachname zum Zeitpunkt der Geburt nicht bekannt, sollte der gesamte Slice weggelassen werden.</p>
+</td></tr>
+<tr><td>Patient.name:Geburtsname.family.extension:namenszusatz</td><td>Namenszusatz</td><td><p>Enthält ehem. Adelstitel wie z.B. 'Graf', 'Baronesse', 'Freiherr'...<br />
+<strong>Begründung MS:</strong> Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.</p>
+</td></tr>
+<tr><td>Patient.name:Geburtsname.family.extension:nachname</td><td>Nachname</td><td><p>Nachname ohne Vor- und Zusätze.<br />
+<strong>Begründung MS:</strong> Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.</p>
+</td></tr>
+<tr><td>Patient.name:Geburtsname.family.extension:vorsatzwort</td><td></td><td><p>Enthält Vorsätze, die vor dem Nachnamen stehen, z.B. 'von', 'van', 'zu'...<br />
+<strong>Begründung MS:</strong> Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.</p>
+</td></tr>
+<tr><td>Patient.gender</td><td>Administratives Geschlecht</td><td><p>Für die Geschlechtskennzeichen 'unbestimmt' und 'divers' ist der international vereinbarte code <code>other</code> zu verwenden.
+Zur weiteren Differenzierung kann dann die Extension <code>Geschlecht-Admnistrativ</code> verwendet werden.
+<strong>Begründung Pflichtfeld:</strong> Die Geschlechtsangabe ist für viele Versorgungsprozesse unerlässlich, z.B.</p>
+<ul>
+<li>Bettendisposition</li>
+<li>Ermittlung von Referenzwerten</li>
+<li>korrekte Anrede des Patienten<br />
+<strong>Weitere Hinweise:</strong> siehe <a href="https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Geschlecht">Deutsche Basisprofile</a></li>
+</ul>
+</td></tr>
+<tr><td>Patient.gender.extension:Geschlecht-Administrativ</td><td>Extension zur Differenzierung des Geschlechtskennzeichens</td><td><p>Diese Extension darf nur in Verbindung mit dem Geschlechtskennzeichen <code>other</code> verwendet werden
+und dient der Differenzierung zwischen den in Deutschland möglichen Geschlechtskennzeichen <code>D</code> (divers) und <code>X</code>(unbestimmt)</p>
+</td></tr>
+<tr><td>Patient.birthDate</td><td>Geburtsdatum</td><td><p>Tages-, monats- oder jahresgenaues Geburtsdatum.<br />
+<strong>Begründung Pflichtfeld:</strong> Das Geburstdatum dient - in Verbindung mit dem Namen - als wichtiges Such- und Unterscheidungskriterium.<br />
+<strong>Weitere Hinweise:</strong> siehe <a href="https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Geburtsdatum">Deutsche Basisprofile</a></p>
+</td></tr>
+<tr><td>Patient.birthDate.extension:Data-Absent-Reason</td><td>Begründung für fehlende Information</td><td><p>ToDo</p>
+</td></tr>
+<tr><td>Patient.birthDate.extension:Data-Absent-Reason.value[x]</td><td></td><td></td></tr>
+<tr><td>Patient.address</td><td></td><td></td></tr>
+<tr><td>Patient.address:Strassenanschrift</td><td>Straßenanschrift</td><td><p>Wohn- oder Aufenthaltsort des Patienten</p>
+</td></tr>
+<tr><td>Patient.address:Strassenanschrift.extension:Stadtteil</td><td></td><td></td></tr>
+<tr><td>Patient.address:Strassenanschrift.type</td><td>Adresstyp</td><td><p>Hier ist stets der Wert <code>both</code> anzugeben.<br />
+<strong>Begründung Pflichtfeld:</strong> Dient als Unterscheidungs- und Auswahlkriterium</p>
+</td></tr>
+<tr><td>Patient.address:Strassenanschrift.line</td><td>Adresszeile</td><td><p>Diese Komponente kann Straßennamen, Hausnummer, Appartmentnummer, c/o
+sowie weitere Zustellungshinweise enthalten.
+Die Informationen können in mehrere line-Komponenten aufgeteilt werden.
+Bei Verwendung der Extensions, um Straße, Hausnnummer und Postleitzahl strukturiert zu übermitteln,
+müssen diese Informationen stets vollständig auch in der line-Komponente,
+die sie erweitern, enthalten sein, um es Systemen, die diese Extensions nicht verwenden zu ermöglichen,
+auf diese Informationen zugreifen zu können.<br />
+<strong>Begründung Pflichtfeld:</strong> Ohne diese Angabe ist die Adresse nicht zustellbar.<br />
+<strong>Begründung für Reduktion der max. Kardinalität:</strong> Die maximale Kardinalität wurde in Übereinstimmung mit der
+DIN-Norm 5008 (Schreib- und Gestaltungsregeln für die Text- und Informationsverarbeitung) auf 3 beschränkt.</p>
+</td></tr>
+<tr><td>Patient.address:Strassenanschrift.line.extension:Strasse</td><td>Strassenname</td><td><p>Strassenname (ohne Hausnummer).
+Bei Angabe einer Strasse in dieser Extension muss diese auch in Address.line angegeben werden,
+um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.<br />
+<strong>Begründung MS:</strong> Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.</p>
+</td></tr>
+<tr><td>Patient.address:Strassenanschrift.line.extension:Hausnummer</td><td></td><td><p>Hausnummer, sowie Zusätze (Appartmentnummer, Etage...).
+Bei Angabe einer Hausnummer in dieser Extension muss diese auch in Address.line angegeben werden,
+um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.<br />
+<strong>Begründung MS:</strong> Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.</p>
+</td></tr>
+<tr><td>Patient.address:Strassenanschrift.line.extension:Adresszusatz</td><td></td><td><p>Zusätzliche Informationen, wie z.B. '3. Etage', 'Appartment C'.
+Bei Angabe einer Zusatzinformation in dieser Extension muss diese auch in Address.line angegeben werden,
+um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.<br />
+<strong>Begründung MS:</strong> Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.</p>
+</td></tr>
+<tr><td>Patient.address:Strassenanschrift.city</td><td>Stadt</td><td><p><strong>Begründung Pflichtfeld:</strong> Ohne diese Angabe ist die Adresse nicht zustellbar.</p>
+</td></tr>
+<tr><td>Patient.address:Strassenanschrift.postalCode</td><td></td><td><p><strong>Begründung Pflichtfeld:</strong> Ohne diese Angabe ist die Adresse nicht zustellbar.</p>
+</td></tr>
+<tr><td>Patient.address:Strassenanschrift.country</td><td>Land</td><td><p><strong>Begründung Pflichtfeld:</strong> Ohne diese Angabe ist die Adresse nicht zustellbar.</p>
+</td></tr>
+<tr><td>Patient.address:Postfach</td><td>Postfachadresse</td><td><p>Adresse, die nur für postalische Zustellung genutzt werden kann.</p>
+</td></tr>
+<tr><td>Patient.address:Postfach.type</td><td>Adresstyp</td><td><p>Hier ist stets der Wert <code>postal</code> anzugeben.<br />
+<strong>Begründung Pflichtfeld:</strong> Dient als Unterscheidungs- und Auswahlkriterium</p>
+</td></tr>
+<tr><td>Patient.address:Postfach.line</td><td>Adresszeile</td><td><p>Diese Komponente enthält die Postfachadresse als String der Form 'Postfach: 12345'.
+Bei Verwendung der Postfach-Extension, um die Postfachnummer strukturiert zu übermitteln,
+müssen diese Informationen stets vollständig auch in der line-Komponente,
+die sie erweitern, enthalten sein, um es Systemen, die diese Extensions nicht verwenden zu ermöglichen,
+auf diese Informationen zugreifen zu können.<br />
+<strong>Begründung Pflichtfeld:</strong> Ohne diese Angabe ist die Adresse nicht zustellbar.<br />
+<strong>Begründung für Reduktion der max. Kardinalität:</strong> Die maximale Kardinalität wurde in Übereinstimmung mit der
+DIN-Norm 5008 (Schreib- und Gestaltungsregeln für die Text- und Informationsverarbeitung) auf 3 beschränkt.</p>
+</td></tr>
+<tr><td>Patient.address:Postfach.line.extension:Postfach</td><td>Postfachnummer</td><td><p>Postfach-Adresse. Bei Angabe eines Postfaches in dieser Extension muss das Postfach auch in Address.line angegeben werden,
+um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.
+Eine Postfach-Adresse darf nicht in Verbindung mit Address.type <code>physical</code> oder <code>both</code> verwendet werden.<br />
+<strong>Begründung MS:</strong> Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.</p>
+</td></tr>
+<tr><td>Patient.address:Postfach.city</td><td>Stadt</td><td><p><strong>Begründung Pflichtfeld:</strong> Ohne diese Angabe ist die Adresse nicht zustellbar.</p>
+</td></tr>
+<tr><td>Patient.address:Postfach.postalCode</td><td></td><td><p><strong>Begründung Pflichtfeld:</strong> Ohne diese Angabe ist die Adresse nicht zustellbar.</p>
+</td></tr>
+<tr><td>Patient.address:Postfach.country</td><td>Land</td><td><p><strong>Begründung Pflichtfeld:</strong> Ohne diese Angabe ist die Adresse nicht zustellbar.</p>
+</td></tr>
+<tr><td>Patient.link</td><td>Link</td><td><p>Dieses und untergeordnete Elemente KÖNNEN bei einem erfolgten Patient merge entsprechend der Festlegungen unter <div class='error'>Command 'pagelink' could not render: Page not found.</div> befüllt werden.
+Da das Element der Unterstützung der Patient merge Notification dient,
+MUSS es im Rahmen des Bestätigungsverfahrens NICHT unterstützt werden (Stand: Stufe 4).</p>
+</td></tr>
+<tr><td>Patient.link.other</td><td></td><td></td></tr>
+<tr><td>Patient.link.other.identifier</td><td></td><td><p>Logischer Verweis auf Identifier[Patientennummer]</p>
+</td></tr>
+<tr><td>Patient.link.type</td><td></td><td></td></tr>
+</tbody></table>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

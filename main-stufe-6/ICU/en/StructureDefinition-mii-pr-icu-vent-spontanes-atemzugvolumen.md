@@ -1,0 +1,153 @@
+# MII PR ICU Spontanes Atemzugvolumen - ISiK ICU v6.0.0
+
+ISiK ICU
+
+Version 6.0.0 - active 
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **MII PR ICU Spontanes Atemzugvolumen**
+
+## Resource Profile: MII PR ICU Spontanes Atemzugvolumen 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-vent-spontanes-atemzugvolumen | *Version*:6.0.0 |
+| Active as of 2026-07-01 | *Computable Name*:MII_PR_ICU_Spontanes_Atemzugvolumen |
+
+ 
+Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026 
+
+**Usages:**
+
+* CapabilityStatements using this Profile: [ISiK CapabilityStatement Organspendeerkennung Source Rolle](CapabilityStatement-ISiKCapabilityStatementOrganspendeerkennungSourceRolle.md), [ISiK CapabilityStatement Vitalparameter Server Extended (Expanded)](CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur-expanded.md) and [ISiK CapabilityStatement VitalSign ICU Source Extended](CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceExtendedRolle.md)
+* This Profile is not used by any profiles in this Specification
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/icu|current/StructureDefinition/StructureDefinition-mii-pr-icu-vent-spontanes-atemzugvolumen.json)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots, and their representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](../StructureDefinition-mii-pr-icu-vent-spontanes-atemzugvolumen.csv), [Excel](../StructureDefinition-mii-pr-icu-vent-spontanes-atemzugvolumen.xlsx), [Schematron](../StructureDefinition-mii-pr-icu-vent-spontanes-atemzugvolumen.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "mii-pr-icu-vent-spontanes-atemzugvolumen",
+  "url" : "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-vent-spontanes-atemzugvolumen",
+  "version" : "6.0.0",
+  "name" : "MII_PR_ICU_Spontanes_Atemzugvolumen",
+  "title" : "MII PR ICU Spontanes Atemzugvolumen",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-07-01",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.gematik.de"
+    }]
+  }],
+  "description" : "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "sct-concept",
+    "uri" : "http://snomed.info/conceptdomain",
+    "name" : "SNOMED CT Concept Domain Binding"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "sct-attr",
+    "uri" : "http://snomed.org/attributebinding",
+    "name" : "SNOMED CT Attribute Binding"
+  }],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Observation",
+  "baseDefinition" : "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-vent-icu-parameter-von-beatmung",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "Observation",
+      "path" : "Observation"
+    },
+    {
+      "id" : "Observation.code.coding",
+      "path" : "Observation.code.coding",
+      "min" : 2
+    },
+    {
+      "id" : "Observation.code.coding:sct",
+      "path" : "Observation.code.coding",
+      "sliceName" : "sct",
+      "min" : 1,
+      "max" : "1",
+      "patternCoding" : {
+        "system" : "http://snomed.info/sct",
+        "code" : "250816009"
+      }
+    },
+    {
+      "id" : "Observation.code.coding:loinc",
+      "path" : "Observation.code.coding",
+      "sliceName" : "loinc",
+      "min" : 1,
+      "max" : "1",
+      "patternCoding" : {
+        "system" : "http://loinc.org",
+        "code" : "20116-0"
+      }
+    },
+    {
+      "id" : "Observation.code.coding:IEEE-11073",
+      "path" : "Observation.code.coding",
+      "sliceName" : "IEEE-11073",
+      "max" : "0",
+      "patternCoding" : {
+        "system" : "urn:iso:std:iso:11073:10101"
+      }
+    },
+    {
+      "id" : "Observation.effective[x]",
+      "path" : "Observation.effective[x]",
+      "min" : 1
+    },
+    {
+      "id" : "Observation.value[x]",
+      "path" : "Observation.value[x]",
+      "patternQuantity" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mL"
+      }
+    }]
+  }
+}
+
+```

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<QuestionnaireResponse xmlns="http://hl7.org/fhir">
+  <id value="ExampleEntryValidationDecimalResponse"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/>
+  </text>
+  <questionnaire value="https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal">
+    <extension url="http://hl7.org/fhir/StructureDefinition/display">
+      <valueString value="Validierung von Dezimalen"/>
+    </extension>
+  </questionnaire>
+  <status value="completed"/>
+  <subject>
+    <reference value="Patient/PatientinMinimal"/>
+  </subject>
+  <authored value="2025-01-01"/>
+  <author>
+    <reference value="Patient/PatientinMinimal"/>
+  </author>
+  <item>
+    <linkId value="4"/>
+    <text value="Körpermaße"/>
+    <item>
+      <linkId value="4.1"/>
+      <text value="Körpergewicht in kg (muss zwischen 20 und 300kg liegen)"/>
+      <answer>
+        <valueDecimal value="66"/>
+      </answer>
+    </item>
+    <item>
+      <linkId value="4.2"/>
+      <text value="Körpergröße in m (muss zwischen 1m und 2.50m liegen)"/>
+      <answer>
+        <valueDecimal value="1.66"/>
+      </answer>
+    </item>
+  </item>
+</QuestionnaireResponse>

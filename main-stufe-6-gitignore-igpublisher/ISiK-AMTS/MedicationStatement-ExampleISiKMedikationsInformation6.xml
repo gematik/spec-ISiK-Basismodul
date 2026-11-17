@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationStatement xmlns="http://hl7.org/fhir">
+  <id value="ExampleISiKMedikationsInformation6"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation"/>
+  </meta>
+  <text>
+    <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Dosierung kurzwirksames Insulin nach gemessenen Werten</div>
+  </text>
+  <status value="active"/>
+  <medicationCodeableConcept>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+      <code value="06922060"/>
+      <display value="Huminsulin® Normal KwikPen™"/>
+    </coding>
+  </medicationCodeableConcept>
+  <subject>
+    <reference value="Patient/PatientinMusterfrau"/>
+  </subject>
+  <context>
+    <reference value="Encounter/FachabteilungskontaktMinimal"/>
+  </context>
+  <effectivePeriod>
+    <start value="2024-02-20"/>
+  </effectivePeriod>
+  <dateAsserted value="2024-02-20"/>
+  <reasonReference>
+    <reference value="Condition/DiagnoseDiabetesMellitus"/>
+  </reasonReference>
+  <dosage>
+    <patientInstruction value="Dosierung nach BZ, gemäß Informationsblatt vom 20.02.2024"/>
+    <timing>
+      <repeat>
+        <timeOfDay value="19:00:00"/>
+      </repeat>
+    </timing>
+  </dosage>
+</MedicationStatement>

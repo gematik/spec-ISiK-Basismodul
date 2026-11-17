@@ -1,0 +1,77 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "ExampleConditionalItem",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"
+    ]
+  },
+  "subjectType": [
+    "Patient"
+  ],
+  "name": "ExampleConditionalItem",
+  "version": "0.1.0",
+  "url": "https://gematik.de/fhir/isik/Questionnaire/ExampleConditionalItem",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Gematik GmbH",
+  "title": "Bedingte Fragestellungen",
+  "description": "### Beispiel-Questionnaire mit bedingten Fragestellungen/Items  \nDie zweite Frage &quot;Was ist denn los?&quot; soll nur gestellt werden, \nwenn die erste Frage &quot;Wie geht's&quot; mit &quot;muss.&quot; beantwortet wurde.",
+  "item": [
+    {
+      "type": "group",
+      "linkId": "2",
+      "text": "Fragen mit EnableWhen-Bedingung",
+      "item": [
+        {
+          "type": "choice",
+          "linkId": "2.1",
+          "text": "Wie geht's?",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "gut."
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "geht."
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "muss."
+              }
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "linkId": "2.2",
+          "text": "Was ist denn los?",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Nix."
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Frag nicht!"
+              }
+            }
+          ],
+          "enableWhen": [
+            {
+              "question": "2.1",
+              "operator": "=",
+              "answerCoding": {
+                "display": "muss."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Observation/Koerpertemperatur-Gelenk> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "Koerpertemperatur-Gelenk"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-gelenk" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-gelenk>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation Koerpertemperatur-Gelenk</b></p><a name=\"Koerpertemperatur-Gelenk\"> </a><a name=\"hcKoerpertemperatur-Gelenk\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-sd-mii-icu-koerpertemperatur-gelenk.html\">SD MII ICU Koerpertemperatur Gelenk</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 250124002}, {http://loinc.org 8310-5}\">Joint temperature</span></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>effective</b>: 2019-12-23 09:30:10+0100 --&gt; 2019-12-23 10:30:10+0100</p><p><b>value</b>: 37 degree Celsius<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeCel = 'Cel')</span></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 39352004}\">Joint structure</span></p></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "vital-signs" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a sct:250124002 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "250124002" ] ;
+       fhir:Coding.display [ fhir:value "Joint temperature" ]
+     ], [
+       fhir:index -1 ;
+       a loinc:8310-5 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "8310-5" ]
+     ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:Observation.effectivePeriod [
+     fhir:Period.start [ fhir:value "2019-12-23T09:30:10+01:00"^^xsd:dateTime ] ;
+     fhir:Period.end [ fhir:value "2019-12-23T10:30:10+01:00"^^xsd:dateTime ]
+  ] ;
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "37"^^xsd:decimal ] ;
+     fhir:Quantity.unit [ fhir:value "degree Celsius" ] ;
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+     fhir:Quantity.code [ fhir:value "Cel" ]
+  ] ;
+  fhir:Observation.bodySite [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a sct:39352004 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "39352004" ] ;
+       fhir:Coding.display [ fhir:value "Joint structure" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Observation/Koerpertemperatur-Gelenk.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

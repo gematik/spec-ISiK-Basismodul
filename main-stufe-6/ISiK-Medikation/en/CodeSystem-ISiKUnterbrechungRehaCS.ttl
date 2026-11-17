@@ -1,0 +1,71 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/CodeSystem/ISiKUnterbrechungRehaCS> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ISiKUnterbrechungRehaCS"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ]
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://gematik.de/fhir/isik/CodeSystem/ISiKUnterbrechungRehaCS"] ;
+  fhir:CodeSystem.version [ fhir:value "6.0.0"] ;
+  fhir:CodeSystem.name [ fhir:value "ISiKUnterbrechungReha"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-07-01"^^xsd:date] ;
+  fhir:CodeSystem.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:CodeSystem.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung."] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "7"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "01" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Interkurrente Erkrankung" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "02" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Stationäre Krankenhausbehandlung (nicht interkurrente Erkrankung)" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "03" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Beurlaubung" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "04" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Stationäre Krankenhausbehandlung" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "05" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Erkrankung (ohne Krankenhausbehandlung)" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "06" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Belastungserprobung im häuslichen Umfeld" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "09" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Sonstiger Grund, der zur Unterbrechung der Pflegekosten führt" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/CodeSystem/ISiKUnterbrechungRehaCS.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

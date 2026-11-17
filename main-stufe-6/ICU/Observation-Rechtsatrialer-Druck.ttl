@@ -1,0 +1,167 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Observation/Rechtsatrialer-Druck> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "Rechtsatrialer-Druck"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-rechtsatrialer-druck" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-rechtsatrialer-druck>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation Rechtsatrialer-Druck</b></p><a name=\"Rechtsatrialer-Druck\"> </a><a name=\"hcRechtsatrialer-Druck\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-sd-mii-icu-rechtsatrialer-druck.html\">SD MII ICU Rechtsatrialer Druck</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 75367002}, {http://snomed.info/sct 276755008}, {http://loinc.org 60996-6}, {urn:iso:std:iso:11073:10101 150068}\">Right atrial pressure</span></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>effective</b>: 2019-12-23 09:30:10+0100</p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 73829009}\">Right atrial structure</span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 8480-6}, {urn:iso:std:iso:11073:10101 150069}, {http://loinc.org 60998-2}\">Systolic right atrial pressure</span></p><p><b>value</b>: 5 millimeter Mercury column<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 8478-0}, {urn:iso:std:iso:11073:10101 150071}, {http://loinc.org 8400-4}, {http://snomed.info/sct 276775004}\">Mean right atrial pressure</span></p><p><b>value</b>: 4 millimeter Mercury column<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 8462-4}, {urn:iso:std:iso:11073:10101 150070}, {http://loinc.org 60997-4}\">Diastolic right atrial pressure</span></p><p><b>value</b>: 3 millimeter Mercury column<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "vital-signs" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:75367002 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "75367002" ]
+     ], [
+       fhir:index 1 ;
+       a sct:276755008 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "276755008" ] ;
+       fhir:Coding.display [ fhir:value "Right atrial pressure" ]
+     ], [
+       fhir:index 2 ;
+       a loinc:60996-6 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "60996-6" ] ;
+       fhir:Coding.display [ fhir:value "Right atrial pressure" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ] ;
+       fhir:Coding.code [ fhir:value "150068" ] ;
+       fhir:Coding.display [ fhir:value "MDC_PRESS_BLD_ATR_RIGHT" ]
+     ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2019-12-23T09:30:10+01:00"^^xsd:dateTime] ;
+  fhir:Observation.bodySite [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:73829009 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "73829009" ] ;
+       fhir:Coding.display [ fhir:value "Right atrial structure" ]
+     ]
+  ] ;
+  fhir:Observation.component [
+     fhir:index 0 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:8480-6 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "8480-6" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ] ;
+         fhir:Coding.code [ fhir:value "150069" ] ;
+         fhir:Coding.display [ fhir:value "Systolic right atrial pressure" ]
+       ], [
+         fhir:index 2 ;
+         a loinc:60998-2 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "60998-2" ] ;
+         fhir:Coding.display [ fhir:value "Right atrial pressure Systolic" ]
+       ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "5"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "millimeter Mercury column" ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mm[Hg]" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:8478-0 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "8478-0" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ] ;
+         fhir:Coding.code [ fhir:value "150071" ] ;
+         fhir:Coding.display [ fhir:value "Mean right atrial pressure" ]
+       ], [
+         fhir:index 2 ;
+         a loinc:8400-4 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "8400-4" ] ;
+         fhir:Coding.display [ fhir:value "Right atrial Intrachamber mean pressure" ]
+       ], [
+         fhir:index 3 ;
+         a sct:276775004 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "276775004" ] ;
+         fhir:Coding.display [ fhir:value "Mean right atrial pressure" ]
+       ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "4"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "millimeter Mercury column" ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mm[Hg]" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Observation.component.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a loinc:8462-4 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "8462-4" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ] ;
+         fhir:Coding.code [ fhir:value "150070" ] ;
+         fhir:Coding.display [ fhir:value "Diastolic right atrial pressure" ]
+       ], [
+         fhir:index 2 ;
+         a loinc:60997-4 ;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+         fhir:Coding.code [ fhir:value "60997-4" ] ;
+         fhir:Coding.display [ fhir:value "Right atrial pressure Diastolic" ]
+       ]
+     ] ;
+     fhir:Observation.component.valueQuantity [
+       fhir:Quantity.value [ fhir:value "3"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "millimeter Mercury column" ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "mm[Hg]" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Observation/Rechtsatrialer-Druck.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

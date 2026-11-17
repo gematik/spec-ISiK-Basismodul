@@ -1,0 +1,45 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Condition/BehandlungsDiagnoseFreitext> a fhir:Condition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "BehandlungsDiagnoseFreitext"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Condition BehandlungsDiagnoseFreitext</b></p><a name=\"BehandlungsDiagnoseFreitext\"> </a><a name=\"hcBehandlungsDiagnoseFreitext\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKDiagnose.html\">ISiKDiagnose</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>code</b>: <span title=\"Codes:\">Behandlungsdiagnose</span></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>onset</b>: 2019-09-02</p><p><b>recordedDate</b>: 2021-01-01</p></div>"
+  ] ;
+  fhir:Condition.clinicalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ;
+       fhir:Coding.code [ fhir:value "active" ]
+     ]
+  ] ;
+  fhir:Condition.code [
+     fhir:CodeableConcept.text [ fhir:value "Behandlungsdiagnose" ]
+  ] ;
+  fhir:Condition.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:Condition.onsetDateTime [ fhir:value "2019-09-02"^^xsd:date] ;
+  fhir:Condition.recordedDate [ fhir:value "2021-01-01"^^xsd:date] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Condition/BehandlungsDiagnoseFreitext.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

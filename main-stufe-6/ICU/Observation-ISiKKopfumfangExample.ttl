@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Observation/ISiKKopfumfangExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ISiKKopfumfangExample"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKKopfumfang" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKKopfumfang>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation ISiKKopfumfangExample</b></p><a name=\"ISiKKopfumfangExample\"> </a><a name=\"hcISiKKopfumfangExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKKopfumfang.html\">ISiKKopfumfang</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 9843-4}, {http://snomed.info/sct 363812007}, {urn:iso:std:iso:11073:10101 153856}\">Kopfumfang</span></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>effective</b>: 2019-07-02</p><p><b>performer</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.6.0&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Practitioner/PractitionerWalterArzt\">Practitioner/PractitionerWalterArzt</a></p><p><b>value</b>: 38 Centimeter<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codecm = 'cm')</span></p></div>"
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "vital-signs" ] ;
+       fhir:Coding.display [ fhir:value "Vital Signs" ]
+     ]
+  ] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a loinc:9843-4 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "9843-4" ] ;
+       fhir:Coding.display [ fhir:value "Kopfumfang okzipital-frontal" ]
+     ], [
+       fhir:index 1 ;
+       a sct:363812007 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "363812007" ] ;
+       fhir:Coding.display [ fhir:value "Kopfumfang" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:11073:10101" ] ;
+       fhir:Coding.code [ fhir:value "153856" ] ;
+       fhir:Coding.display [ fhir:value "MDC_CIRCUM_HEAD" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Kopfumfang" ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2019-07-02"^^xsd:date] ;
+  fhir:Observation.performer [
+     fhir:index 0 ;
+     fhir:link <https://gematik.de/fhir/isik/Practitioner/PractitionerWalterArzt> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/PractitionerWalterArzt" ]
+  ] ;
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "38"^^xsd:decimal ] ;
+     fhir:Quantity.unit [ fhir:value "Centimeter" ] ;
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+     fhir:Quantity.code [ fhir:value "cm" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Observation/ISiKKopfumfangExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

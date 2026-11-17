@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Formular-Modul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Formular-Modul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Ziele.html">
+                                Ziele
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Spezifikation <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation.html">
+                                            Spezifikation
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-AkteureOrdner.html">
+                                            Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-FunktionenInteraktionen.html">
+                                            Funktionen und Interaktionen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-BestPractice.html">
+                                            Best Practice f&#xFC;r FormularDefinitionen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Begriffsdefinitionen.html">
+                                            Begriffsdefinitionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t zu SDC
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-FormularDefinition.html">
+                                            FormularDefinition
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-FormularDaten.html">
+                                            FormularDaten
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Beispiele.html">
+                                            Beispiele
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="page-title">Beispiel: Vorbelegung demografischer Patientendaten</h2>
+<h3 id="metadaten">Metadaten</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Name</b></th><td>ExamplePrePopDemo</td><tr><th><b>URL</b></th><td><a target='_blank' href='/resolve?&scope=project:isik-stufe-5&canonical=https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopDemo'>https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopDemo</a></td><tr><th><b>Beschreibung</b></th><td><h3>Beispiel-Questionnaire mit automatischer Vorbelegung von demografischen Patientendaten</h3>
+<p>Der Patientenkontext wird mittels der <a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html">SDC-LaunchContexts</a>-Extension hergestellt.<br />
+Die Vorbelegung erfolgt über die <a href="https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html">SDC-InitialExpression</a>-Extension</p>
+</td></table>
+<h3 id="gerendertes-formular">Gerendertes Formular</h3>
+<iframe src="https://gematik.github.io/poc-isik-formular/?base=https%3A%2F%2Ffhir.simplifier.net%2Fisik-stufe-5%2F&id=ExamplePrePopDemo&patient=SZ1Patient&minimal=true" style="width:100%; height:300px; border:none; display:block;"></iframe>
+<h3 id="globale-extensions">Globale Extensions</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Name</b></th><td><p><a href="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">sdc-questionnaire-launchContext</a></p>
+</td><tr><th><b>Subextensions</b></th><td><table ><thead><tr><th>URL</th><th>Wert</th></tr></thead><tbody><tr><td><a target='_blank' href='/resolve?&scope=project:isik-stufe-5&canonical=http://hl7.org/fhir/StructureDefinition/name'>name</a></td><td>patient</td></tr>
+<tr><td><a target='_blank' href='/resolve?&scope=project:isik-stufe-5&canonical=http://hl7.org/fhir/StructureDefinition/type'>type</a></td><td>Patient</td></tr>
+<tr><td><a target='_blank' href='/resolve?&scope=project:isik-stufe-5&canonical=http://hl7.org/fhir/StructureDefinition/description'>description</a></td><td>Patientenkontext</td></tr>
+</tbody></table></td></table>
+<h3 id="item-definitionen">Item-Definitionen</h3>
+<table  class='table table-bordered fql-table'><thead><tr><th>ID</th><th>Text</th><th>Type</th><th>Vorbelegung</th></tr></thead><tbody><tr><td>1</td><td>Demografische Patientendaten</td><td>group</td><td><table ><thead><tr></tr></thead><tbody></tbody></table></td></tr>
+<tr><td>1.1</td><td>Vorname:</td><td>string</td><td><table ><thead><tr><th>Beschreibung</th><th>FHIRPATH</th></tr></thead><tbody><tr><td>Selektion des ersten Vornamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name</td><td>(%patient.name.where(use = 'official').given[0] | %patient.name[0].given[0]).first()</td></tr>
+</tbody></table></td></tr>
+<tr><td>1.2</td><td>Nachname:</td><td>string</td><td><table ><thead><tr><th>Beschreibung</th><th>FHIRPATH</th></tr></thead><tbody><tr><td>Selektion des Nachnamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name</td><td>(%patient.name.where(use = 'official').family | %patient.name[0].family).first()</td></tr>
+</tbody></table></td></tr>
+<tr><td>1.4</td><td>Versichertennummer:</td><td>string</td><td><table ><thead><tr><th>Beschreibung</th><th>FHIRPATH</th></tr></thead><tbody><tr><td>Versichertennnummer(KVID) des Patienten</td><td>%patient.identifier.where(system='http://fhir.de/sid/gkv/kvid-10').value</td></tr>
+</tbody></table></td></tr>
+</tbody></table>
+<h3 id="quellcode">Quellcode</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#3576b7ec-1062-4f8d-b31b-7ff8c970e09b" aria-controls="3576b7ec-1062-4f8d-b31b-7ff8c970e09b" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#55e6a493-f6b4-4514-8aa4-bea138f8f423" aria-controls="55e6a493-f6b4-4514-8aa4-bea138f8f423" role="tab" data-toggle="tab">JSON</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="3576b7ec-1062-4f8d-b31b-7ff8c970e09b">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire" title="Questionnaire" target="_blank">Questionnaire</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.id" title="Questionnaire" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ExamplePrePopDemo</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.meta" title="Questionnaire" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.meta.profile" title="Questionnaire" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">name</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension.value" title="Questionnaire" target="_blank">valueCoding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension.value.system" title="Questionnaire" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension.value.code" title="Questionnaire" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">patient</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCoding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">type</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension.value" title="Questionnaire" target="_blank">valueCode</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">description</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension.value" title="Questionnaire" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patientenkontext</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.url" title="Questionnaire" target="_blank">url</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopDemo</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.version" title="Questionnaire" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">0.1.0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.name" title="Questionnaire" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ExamplePrePopDemo</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.title" title="Questionnaire" target="_blank">title</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Vorbelegung Demografischer Daten</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.status" title="Questionnaire" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">draft</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.experimental" title="Questionnaire" target="_blank">experimental</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.subjectType" title="Questionnaire" target="_blank">subjectType</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.publisher" title="Questionnaire" target="_blank">publisher</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Gematik GmbH</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.description" title="Questionnaire" target="_blank">description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">### Beispiel-Questionnaire mit automatischer Vorbelegung von demografischen Patientendaten \nDer Patientenkontext wird mittels der [SDC-LaunchContexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)-Extension hergestellt.  \nDie Vorbelegung erfolgt &#252;ber die [SDC-InitialExpression](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html)-Extension</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item" title="Questionnaire" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.linkId" title="Questionnaire" target="_blank">linkId</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.text" title="Questionnaire" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Demografische Patientendaten</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.type" title="Questionnaire" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">group</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.required" title="Questionnaire" target="_blank">required</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item" title="Questionnaire" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueExpression</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.description" title="Questionnaire" target="_blank">description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Selektion des ersten Vornamens des Patienten. Pr&#228;feriert aus dem offiziellem Namen, alternativ erster gefundener Name</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.language" title="Questionnaire" target="_blank">language</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">text/fhirpath</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.expression" title="Questionnaire" target="_blank">expression</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">(%patient.name.where(use = &#39;official&#39;).given[0] | %patient.name[0].given[0]).first()</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueExpression</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.linkId" title="Questionnaire" target="_blank">linkId</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1.1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.text" title="Questionnaire" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Vorname:</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.type" title="Questionnaire" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">string</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item" title="Questionnaire" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueExpression</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.description" title="Questionnaire" target="_blank">description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Selektion des Nachnamens des Patienten. Pr&#228;feriert aus dem offiziellem Namen, alternativ erster gefundener Name</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.language" title="Questionnaire" target="_blank">language</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">text/fhirpath</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.expression" title="Questionnaire" target="_blank">expression</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">(%patient.name.where(use = &#39;official&#39;).family | %patient.name[0].family).first()</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueExpression</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.linkId" title="Questionnaire" target="_blank">linkId</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1.2</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.text" title="Questionnaire" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Nachname:</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.type" title="Questionnaire" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">string</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item" title="Questionnaire" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueExpression</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.description" title="Questionnaire" target="_blank">description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Versichertennnummer(KVID) des Patienten</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.language" title="Questionnaire" target="_blank">language</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">text/fhirpath</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.expression" title="Questionnaire" target="_blank">expression</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">%patient.identifier.where(system=&#39;http://fhir.de/sid/gkv/kvid-10&#39;).value</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueExpression</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.linkId" title="Questionnaire" target="_blank">linkId</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1.4</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.text" title="Questionnaire" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Versichertennummer:</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.type" title="Questionnaire" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">string</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Questionnaire</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="55e6a493-f6b4-4514-8aa4-bea138f8f423">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.resourceType" title="Questionnaire" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Questionnaire</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.id" title="Questionnaire" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExamplePrePopDemo</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.meta" title="Questionnaire" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.meta.profile" title="Questionnaire" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.subjectType" title="Questionnaire" target="_blank">subjectType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">Patient</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.name" title="Questionnaire" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExamplePrePopDemo</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.version" title="Questionnaire" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">0.1.0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopDemo</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.status" title="Questionnaire" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">draft</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.experimental" title="Questionnaire" target="_blank">experimental</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.publisher" title="Questionnaire" target="_blank">publisher</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Gematik GmbH</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension" title="Questionnaire" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension" title="Questionnaire" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">name</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension.valueCoding" title="Questionnaire" target="_blank">valueCoding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension.valueCoding.code" title="Questionnaire" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">patient</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension.valueCoding.system" title="Questionnaire" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">type</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension.valueCode" title="Questionnaire" target="_blank">valueCode</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">description</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.extension.extension.valueString" title="Questionnaire" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patientenkontext</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.title" title="Questionnaire" target="_blank">title</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Vorbelegung Demografischer Daten</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.description" title="Questionnaire" target="_blank">description</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">### Beispiel-Questionnaire mit automatischer Vorbelegung von demografischen Patientendaten \nDer Patientenkontext wird mittels der [SDC-LaunchContexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)-Extension hergestellt.  \nDie Vorbelegung erfolgt &#252;ber die [SDC-InitialExpression](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html)-Extension</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item" title="Questionnaire" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.type" title="Questionnaire" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">group</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.required" title="Questionnaire" target="_blank">required</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.linkId" title="Questionnaire" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.text" title="Questionnaire" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Demografische Patientendaten</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item" title="Questionnaire" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.type" title="Questionnaire" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">string</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.linkId" title="Questionnaire" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1.1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.text" title="Questionnaire" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Vorname:</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueExpression" title="Questionnaire" target="_blank">valueExpression</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueExpression.language" title="Questionnaire" target="_blank">language</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">text/fhirpath</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueExpression.expression" title="Questionnaire" target="_blank">expression</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">(%patient.name.where(use = &#39;official&#39;).given[0] | %patient.name[0].given[0]).first()</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueExpression.description" title="Questionnaire" target="_blank">description</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Selektion des ersten Vornamens des Patienten. Pr&#228;feriert aus dem offiziellem Namen, alternativ erster gefundener Name</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.type" title="Questionnaire" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">string</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.linkId" title="Questionnaire" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1.2</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.text" title="Questionnaire" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Nachname:</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueExpression" title="Questionnaire" target="_blank">valueExpression</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueExpression.language" title="Questionnaire" target="_blank">language</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">text/fhirpath</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueExpression.expression" title="Questionnaire" target="_blank">expression</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">(%patient.name.where(use = &#39;official&#39;).family | %patient.name[0].family).first()</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueExpression.description" title="Questionnaire" target="_blank">description</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Selektion des Nachnamens des Patienten. Pr&#228;feriert aus dem offiziellem Namen, alternativ erster gefundener Name</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.type" title="Questionnaire" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">string</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.linkId" title="Questionnaire" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1.4</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.text" title="Questionnaire" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Versichertennummer:</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueExpression" title="Questionnaire" target="_blank">valueExpression</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueExpression.language" title="Questionnaire" target="_blank">language</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">text/fhirpath</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueExpression.expression" title="Questionnaire" target="_blank">expression</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">%patient.identifier.where(system=&#39;http://fhir.de/sid/gkv/kvid-10&#39;).value</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueExpression.description" title="Questionnaire" target="_blank">description</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Versichertennnummer(KVID) des Patienten</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div>
+  </div>
+</div>  
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

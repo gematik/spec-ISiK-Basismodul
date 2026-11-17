@@ -1,0 +1,74 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/MedicationRequest/ExampleISiKMedikationsVerordnung2> a fhir:MedicationRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleISiKMedikationsVerordnung2"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest ExampleISiKMedikationsVerordnung2</b></p><a name=\"ExampleISiKMedikationsVerordnung2\"> </a><a name=\"hcExampleISiKMedikationsVerordnung2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKMedikationsVerordnung.html\">ISiKMedikationsVerordnung</a></p></div><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>medication</b>: <a href=\"Medication-ExampleISiKMedikament8.html\">Medication </a></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>encounter</b>: <a href=\"Encounter-Fachabteilungskontakt.html\">Encounter: extension = ; identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt,Operation; serviceType = Innere Medizin; period = 2021-02-12 --&gt; 2021-02-13</a></p><p><b>authoredOn</b>: 2024-01-17</p><p><b>requester</b>: <a href=\"Practitioner-PractitionerWalterArzt.html\">Practitioner Walter Arzt(official)</a></p><blockquote><p><b>dosageInstruction</b></p><p><b>timing</b>: Count 6  times, Duration 6weeks , Once per 1 week</p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>500 ml Infusionslösung<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemL = 'mL')</span></td></tr></table></blockquote><p><b>priorPrescription</b>: <a href=\"MedicationRequest-ExampleISiKMedikationsVerordnung.html\">MedicationRequest: extension = Erhöhtes Blutungsrisiko ist in diesem Fall vertretbar.,Akutmedikation (ISiK Medikationsart#akut),Schmerztherapie postoperativ; status = active; intent = order; medication[x] = -&gt;Medication Acetylcystein; authoredOn = 2021-07-01</a></p></div>"
+  ] ;
+  fhir:MedicationRequest.status [ fhir:value "active"] ;
+  fhir:MedicationRequest.intent [ fhir:value "order"] ;
+  fhir:MedicationRequest.medicationReference [
+     fhir:link <https://gematik.de/fhir/isik/Medication/ExampleISiKMedikament8> ;
+     fhir:Reference.reference [ fhir:value "Medication/ExampleISiKMedikament8" ]
+  ] ;
+  fhir:MedicationRequest.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMusterfrau" ]
+  ] ;
+  fhir:MedicationRequest.encounter [
+     fhir:link <https://gematik.de/fhir/isik/Encounter/Fachabteilungskontakt> ;
+     fhir:Reference.reference [ fhir:value "Encounter/Fachabteilungskontakt" ]
+  ] ;
+  fhir:MedicationRequest.authoredOn [ fhir:value "2024-01-17"^^xsd:date] ;
+  fhir:MedicationRequest.requester [
+     fhir:link <https://gematik.de/fhir/isik/Practitioner/PractitionerWalterArzt> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/PractitionerWalterArzt" ]
+  ] ;
+  fhir:MedicationRequest.dosageInstruction [
+     fhir:index 0 ;
+     fhir:Dosage.timing [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.count [ fhir:value "6"^^xsd:positiveInteger ] ;
+         fhir:Timing.repeat.duration [ fhir:value "6"^^xsd:decimal ] ;
+         fhir:Timing.repeat.durationUnit [ fhir:value "wk" ] ;
+         fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+         fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ] ;
+         fhir:Timing.repeat.periodUnit [ fhir:value "wk" ]
+       ]
+     ] ;
+     fhir:Dosage.doseAndRate [
+       fhir:index 0 ;
+       fhir:Dosage.doseAndRate.doseQuantity [
+         fhir:Quantity.value [ fhir:value "500"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "ml Infusionslösung" ] ;
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+         fhir:Quantity.code [ fhir:value "mL" ]
+       ]
+     ]
+  ] ;
+  fhir:MedicationRequest.priorPrescription [
+     fhir:link <https://gematik.de/fhir/isik/MedicationRequest/ExampleISiKMedikationsVerordnung> ;
+     fhir:Reference.reference [ fhir:value "MedicationRequest/ExampleISiKMedikationsVerordnung" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/MedicationRequest/ExampleISiKMedikationsVerordnung2.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

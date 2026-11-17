@@ -1,0 +1,762 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden - ISiK ICU-Normalstation Workflow</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden - ISiK ICU-Normalstation Workflow
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-UseCases.html">
+                                Use Cases
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Akteure.html">
+                                Akteure
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ProzesseUndWorkflows.html">
+                                Prozesse und Workflows
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Festlegungen.html">
+                                Festlegungen
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalarterieller-wedge-druck.html">
+                                            SD_MII_ICU_Pulmonalarterieller_Wedge_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-blut-preduktal-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Preduktal_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Postduktal_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumenindex.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumenindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-schlagvolumenindex-durch-indikatorverd.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Schlagvolumenindex_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumen.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumen (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-schlagvolumen-durch-indikatorverduennung.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumen_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalvaskulaerer-widerstandsindex.html">
+                                            SD_MII_ICU_Pulmonalvaskulaerer_Widerstandsindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-systemischer-vaskulaerer-widerstandsindex.html">
+                                            SD_MII_ICU_Systemischer_Vaskulaerer_Widerstandsindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaerer-herzindex.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Herzindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-herzzeitvolumen.html">
+                                            SD_MII_ICU_Herzzeitvolumen (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Herzindex_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Herzzeitvolumen_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-zentralvenoeser-blutdruck.html">
+                                            SD_MII_ICU_Zentralvenoeser_Blutdruck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksatrialer-druck.html">
+                                            SD_MII_ICU_Linksatrialer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-rechtsatrialer-druck.html">
+                                            SD_MII_ICU_Rechtsatrialer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-rechtsventrikulaerer-druck.html">
+                                            SD_MII_ICU_Rechtsventrikulaerer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaerer-druck.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalarterieller-blutdruck.html">
+                                            SD_MII_ICU_Pulmonalarterieller_Blutdruck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-brustwirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Brustwirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-lendenwirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Lendenwirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-halswirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Halswirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-brust.html">
+                                            SD_MII_ICU_Koerpertemperatur_Brust (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-myokard.html">
+                                            SD_MII_ICU_Koerpertemperatur_Myokard (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-atemwege.html">
+                                            SD_MII_ICU_Koerpertemperatur_Atemwege (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-blut.html">
+                                            SD_MII_ICU_Koerpertemperatur_Blut (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-nasen-rachen-raum.html">
+                                            SD_MII_ICU_Koerpertemperatur_Nasen_Rachen_Raum (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-speiseroehre.html">
+                                            SD_MII_ICU_Koerpertemperatur_Speiseroehre (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-intrakranieller-druck-icp.html">
+                                            SD_MII_ICU_Intrakranieller_Druck_Icp (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpergewicht-percentil-altersabhaengig.html">
+                                            SD_MII_ICU_Koerpergewicht_Percentil_Altersabhaengig (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpergroesse-percentil-altersabhaengig.html">
+                                            SD_MII_ICU_Koerpergroesse_Percentil_Altersabhaengig (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-ideales-koerpergewicht.html">
+                                            SD_MII_ICU_Ideales_Koerpergewicht (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Arteriellen_Blut_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-puls.html">
+                                            SD_MII_ICU_Puls (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-kern.html">
+                                            SD_MII_ICU_Koerpertemperatur_Kern (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-gelenk.html">
+                                            SD_MII_ICU_Koerpertemperatur_Gelenk (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-stirn.html">
+                                            SD_MII_ICU_Koerpertemperatur_Stirn (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-nasal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Nasal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-leiste.html">
+                                            SD_MII_ICU_Koerpertemperatur_Leiste (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-achsel.html">
+                                            SD_MII_ICU_Koerpertemperatur_Achsel (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-unter-der-zunge.html">
+                                            SD_MII_ICU_Koerpertemperatur_Oral (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-vaginal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Vaginal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-harnblase.html">
+                                            SD_MII_ICU_Koerpertemperatur_Harnblase (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-rektal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Rektal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-trommelfell.html">
+                                            SD_MII_ICU_Koerpertemperatur_Trommelfell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#dc4da77e-19f6-4359-be09-fd4500c3394f" aria-controls="dc4da77e-19f6-4359-be09-fd4500c3394f" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#1e16b4e0-a07b-4243-a870-14884a2ff9e3" aria-controls="1e16b4e0-a07b-4243-a870-14884a2ff9e3" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#ebb16a32-de91-4f62-bbd5-1925be043f87" aria-controls="ebb16a32-de91-4f62-bbd5-1925be043f87" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#c21c22a8-dd55-4d54-98d9-645729c5aa7e" aria-controls="c21c22a8-dd55-4d54-98d9-645729c5aa7e" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="dc4da77e-19f6-4359-be09-fd4500c3394f">
+    <div class="stu3-treetable" id="d72495ff7a174bceab06d76d841ce421" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="35dd5a76728743309a28c12b89c4e6ba"><td class="instance"><span class="baseIcon primitive"></span><b>Observation</b></td></tr><tr class="collapsed" data-id="1ea6f4b0d89d473eb9a13080a8e5238f" data-parentId="35dd5a76728743309a28c12b89c4e6ba"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>Koerpertemperatur-Nasen-Rachen-Raum</span></td></tr><tr class="collapsed" data-id="06cba4b48aae46dfb60861ee7b92ca00" data-parentId="35dd5a76728743309a28c12b89c4e6ba"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="40f269d7ea544abbab80835f6697e94d" data-parentId="06cba4b48aae46dfb60861ee7b92ca00"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-nasen-rachen-raum</span></td></tr><tr class="collapsed" data-id="d2e847daa0dd47c0a0eaa6eca8cb78a9" data-parentId="35dd5a76728743309a28c12b89c4e6ba"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="cd05db76b9664438b18e30b42e5acccf" data-parentId="35dd5a76728743309a28c12b89c4e6ba"><td class="instance"><span class="baseIcon primitive"></span><b>category</b></td></tr><tr class="collapsed" data-id="545e3ec281cd4f8792a54d7d7b12381a" data-parentId="cd05db76b9664438b18e30b42e5acccf"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="7018b0b595594e789c3e20a6bc6910d5" data-parentId="545e3ec281cd4f8792a54d7d7b12381a"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/observation-category</span></td></tr><tr class="collapsed" data-id="d5ef36d6ff2d4cd78cd1c279310b8332" data-parentId="545e3ec281cd4f8792a54d7d7b12381a"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>vital-signs</span></td></tr><tr class="collapsed" data-id="6f784856d8c845c580a8b0137b458894" data-parentId="35dd5a76728743309a28c12b89c4e6ba"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="f4a9764f010f47c08eb38461a5b66964" data-parentId="6f784856d8c845c580a8b0137b458894"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="15a49587ef074befb6a9466a165b82c8" data-parentId="f4a9764f010f47c08eb38461a5b66964"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="0889f143c1994db0837e3e604e5053de" data-parentId="f4a9764f010f47c08eb38461a5b66964"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>698831002</span></td></tr><tr class="collapsed" data-id="0d7490303a514dd08bad194555dcb8c0" data-parentId="f4a9764f010f47c08eb38461a5b66964"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Core body temperature measured in nasopharynx</span></td></tr><tr class="collapsed" data-id="2da6a54aab3f435591569a297f080876" data-parentId="6f784856d8c845c580a8b0137b458894"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="e7488e397a8a4f2f842b3f1f900411d8" data-parentId="2da6a54aab3f435591569a297f080876"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="d430c27593544b928f474cffec38ce52" data-parentId="2da6a54aab3f435591569a297f080876"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>8310-5</span></td></tr><tr class="collapsed" data-id="fd86f95d44634c2db1b46c9e61fa0fc2" data-parentId="6f784856d8c845c580a8b0137b458894"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="14dd6e1ab4a045c6838cf137215ec842" data-parentId="fd86f95d44634c2db1b46c9e61fa0fc2"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>urn:iso:std:iso:11073:10101</span></td></tr><tr class="collapsed" data-id="89a9fc45b35940588bdaa9eb5694cad4" data-parentId="fd86f95d44634c2db1b46c9e61fa0fc2"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>150380</span></td></tr><tr class="collapsed" data-id="9cae23a3876748d590714c33d7d9e64b" data-parentId="fd86f95d44634c2db1b46c9e61fa0fc2"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>MDC_TEMP_NASOPH</span></td></tr><tr class="collapsed" data-id="5eda75fffd044122897142c50f1f944f" data-parentId="6f784856d8c845c580a8b0137b458894"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="6506e293cd2a479eb09e40b23fffb829" data-parentId="5eda75fffd044122897142c50f1f944f"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="d8e24f368fed401c8fa2cd492c0e4c4c" data-parentId="5eda75fffd044122897142c50f1f944f"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>60838-0</span></td></tr><tr class="collapsed" data-id="0d811578a4bc4058b75bd00666527971" data-parentId="5eda75fffd044122897142c50f1f944f"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Nasopharyngeal temperature</span></td></tr><tr class="collapsed" data-id="679f58af38574db3a7015673fd250af1" data-parentId="35dd5a76728743309a28c12b89c4e6ba"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="7368323ac2a941f498e7a49c24c28846" data-parentId="679f58af38574db3a7015673fd250af1"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="072e261e21094386bbf10b356c189e96" data-parentId="35dd5a76728743309a28c12b89c4e6ba"><td class="instance"><span class="baseIcon primitive"></span><b>effective</b></td></tr><tr class="collapsed" data-id="2a0e5f101b8c4f0ba5889f88f8bb3f93" data-parentId="072e261e21094386bbf10b356c189e96"><td class="instance"><span class="baseIcon primitive"></span><b>start : </b><span>2019-12-23T09:30:10+01:00</span></td></tr><tr class="collapsed" data-id="8db7b2bbd89c43aea1f5d0ad56787d28" data-parentId="072e261e21094386bbf10b356c189e96"><td class="instance"><span class="baseIcon primitive"></span><b>end : </b><span>2019-12-23T10:30:10+01:00</span></td></tr><tr class="collapsed" data-id="d2c933fd1157480f90aea757ba279bd7" data-parentId="35dd5a76728743309a28c12b89c4e6ba"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="0b1e47370ff54e3ca0d08e57f7656320" data-parentId="d2c933fd1157480f90aea757ba279bd7"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>37</span></td></tr><tr class="collapsed" data-id="b42cb7201d8b4fbfba8870126f6f2424" data-parentId="d2c933fd1157480f90aea757ba279bd7"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>degree Celsius</span></td></tr><tr class="collapsed" data-id="5f57f192b6fe4c1faaba435e6fa2ef92" data-parentId="d2c933fd1157480f90aea757ba279bd7"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="f1c5e0cacde240b49cf52f4c64ae2166" data-parentId="d2c933fd1157480f90aea757ba279bd7"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>Cel</span></td></tr><tr class="collapsed" data-id="479e61974ba14772bf12eec09f47a4a8" data-parentId="35dd5a76728743309a28c12b89c4e6ba"><td class="instance"><span class="baseIcon primitive"></span><b>bodySite</b></td></tr><tr class="collapsed" data-id="8a6df7fa16784aa6b2bb1ae0d843a90f" data-parentId="479e61974ba14772bf12eec09f47a4a8"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="8555c236486748f58478ef67495160b5" data-parentId="8a6df7fa16784aa6b2bb1ae0d843a90f"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="1abed46f07c847f4b64ab7ca73f37ff5" data-parentId="8a6df7fa16784aa6b2bb1ae0d843a90f"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>71836000</span></td></tr><tr class="collapsed" data-id="f1a48322da694e61ad2bce888a4477f8" data-parentId="8a6df7fa16784aa6b2bb1ae0d843a90f"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Nasopharyngeal structure (body structure)</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTabled72495ff7a174bceab06d76d841ce421 = new InstanceTree();
+resourceTreeTabled72495ff7a174bceab06d76d841ce421.init("d72495ff7a174bceab06d76d841ce421");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="1e16b4e0-a07b-4243-a870-14884a2ff9e3">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">Observation</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.id" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Koerpertemperatur-Nasen-Rachen-Raum</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.meta" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.meta.profile" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-nasen-rachen-raum</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.status" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.category" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">category</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.category.coding" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.category.coding.system" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.category.coding.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">vital-signs</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">category</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">698831002</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.display" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Core body temperature measured in nasopharynx</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">8310-5</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">150380</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.display" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MDC_TEMP_NASOPH</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">60838-0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.display" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Nasopharyngeal temperature</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.subject" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.subject.reference" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.effective" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">effectivePeriod</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.effective.start" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">start</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2019-12-23T09:30:10+01:00</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.effective.end" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">end</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2019-12-23T10:30:10+01:00</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">effectivePeriod</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.value" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">valueQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.value.value" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">37</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.value.unit" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">degree Celsius</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.value.system" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.value.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Cel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueQuantity</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.bodySite" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">bodySite</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.bodySite.coding" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.bodySite.coding.system" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.bodySite.coding.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">71836000</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.bodySite.coding.display" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Nasopharyngeal structure (body structure)</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">bodySite</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Observation</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="ebb16a32-de91-4f62-bbd5-1925be043f87">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.resourceType" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.id" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Koerpertemperatur-Nasen-Rachen-Raum</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.meta" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.meta.profile" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-nasen-rachen-raum</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.category" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">category</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.category.coding" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.category.coding.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">vital-signs</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.category.coding.system" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">698831002</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.display" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Core body temperature measured in nasopharynx</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8310-5</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">150380</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.display" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MDC_TEMP_NASOPH</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">60838-0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.code.coding.display" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Nasopharyngeal temperature</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.valueQuantity" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.valueQuantity.system" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.valueQuantity.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Cel</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.valueQuantity.value" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">37</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.valueQuantity.unit" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">degree Celsius</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.bodySite" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">bodySite</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.bodySite.coding" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.bodySite.coding.code" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">71836000</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.bodySite.coding.system" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.bodySite.coding.display" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Nasopharyngeal structure (body structure)</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.status" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.subject" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.subject.reference" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.effectivePeriod" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">effectivePeriod</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.effectivePeriod.start" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">start</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2019-12-23T09:30:10+01:00</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json#Observation.effectivePeriod.end" title="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-nasen-rachen-raum.json" target="_blank">end</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2019-12-23T10:30:10+01:00</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="c21c22a8-dd55-4d54-98d9-645729c5aa7e">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Observation-Koerpertemperatur-Nasen-Rachen-Raum.json'>Core body temperature measured in nasopharynx</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

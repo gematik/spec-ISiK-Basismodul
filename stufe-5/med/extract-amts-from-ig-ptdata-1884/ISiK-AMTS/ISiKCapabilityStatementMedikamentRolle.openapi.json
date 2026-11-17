@@ -1,0 +1,497 @@
+﻿{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "ISiK CapabilityStatement MedikamentRolle",
+    "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind \u003d requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (\u003dMUSS) und `MAY` (\u003dKANN) verwendet.",
+    "license": {
+      "name": "Apache License 2.0",
+      "url": "http://spdx.org/licenses/Apache-2.0.html"
+    },
+    "version": "6.0.0-rc",
+    "contact": {
+      "name": "gematik GmbH",
+      "url": "https://gematik.de"
+    }
+  },
+  "externalDocs": {
+    "url": "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikamentRolle",
+    "description": "FHIR CapabilityStatement"
+  },
+  "paths": {
+    "/metadata": {
+      "summary": "Access to the Server\u0027s Capability Statement",
+      "description": "All FHIR Servers return a CapabilityStatement that describes what services they perform",
+      "get": {
+        "summary": "Return the server\u0027s capability statement",
+        "operationId": "metadata",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the capbility statement",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/CapabilityStatement"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/CapabilityStatement.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/Medication": {
+      "summary": "Manager for resources of type Medication",
+      "description": "The Manager for resources of type Medication: provides services to manage the collection of all the Medication instances",
+      "get": {
+        "summary": "Search all resources of type Medication based on a set of criteria",
+        "operationId": "searchMedication",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Bundle"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Bundle.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          },
+          {
+            "name": "_id",
+            "in": "query",
+            "description": "Logical id of this artifact",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "description": "Multiple Resources: \r\n\r\n* [AllergyIntolerance](allergyintolerance.html): Code that identifies the allergy or intolerance\r\n* [Condition](condition.html): Code for the condition\r\n* [DeviceRequest](devicerequest.html): Code for what is being requested/ordered\r\n* [DiagnosticReport](diagnosticreport.html): The code for the report, as opposed to codes for the atomic results, which are the names on the observation resource referred to from the result\r\n* [FamilyMemberHistory](familymemberhistory.html): A search by a condition code\r\n* [List](list.html): What the purpose of this list is\r\n* [Medication](medication.html): Returns medications for a specific code\r\n* [MedicationAdministration](medicationadministration.html): Return administrations of this medication code\r\n* [MedicationDispense](medicationdispense.html): Returns dispenses of this medicine code\r\n* [MedicationRequest](medicationrequest.html): Return prescriptions of this medication code\r\n* [MedicationStatement](medicationstatement.html): Return statements of this medication code\r\n* [Observation](observation.html): The code of the observation type\r\n* [Procedure](procedure.html): A code to identify a  procedure\r\n* [ServiceRequest](servicerequest.html): What is being requested/ordered\r\n",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "form",
+            "in": "query",
+            "description": "Returns medications for a specific dose form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ingredient",
+            "in": "query",
+            "description": "Returns medications for this ingredient reference",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ingredient-code",
+            "in": "query",
+            "description": "Returns medications for this ingredient code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Returns medications for this status",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ingredient.code",
+            "in": "query",
+            "description": "Returns medications for this ingredient reference",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lot-number",
+            "in": "query",
+            "description": "Returns medications in a batch with this lot number",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a new resource",
+        "operationId": "createMedication",
+        "requestBody": {
+          "description": "The new state of the resource",
+          "required": true,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Medication"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Medication.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned after being updated",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Medication"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Medication.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/Medication/{rid}": {
+      "summary": "Read/Write/etc resource instance of type Medication",
+      "description": "Access to services to manage the state of a single resource of type Medication",
+      "get": {
+        "summary": "Read the current state of the resource",
+        "operationId": "readMedication",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Medication"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Medication.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update the current state of the resource",
+        "operationId": "updateMedication",
+        "requestBody": {
+          "description": "The new state of the resource",
+          "required": true,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Medication"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Medication.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned after being updated",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Medication"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Medication.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "rid": {
+        "name": "rid",
+        "in": "path",
+        "description": "id of the resource (\u003dResource.id)",
+        "required": true,
+        "allowEmptyValue": false,
+        "style": "simple",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "hid": {
+        "name": "hid",
+        "in": "path",
+        "description": "id of the history entry (\u003dResource.meta.versionId)",
+        "required": true,
+        "allowEmptyValue": false,
+        "style": "simple",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "summary": {
+        "name": "_summary",
+        "in": "query",
+        "description": "Requests the server to return a designated subset of the resource",
+        "allowEmptyValue": true,
+        "style": "form",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "true",
+            "text",
+            "data",
+            "count",
+            "false"
+          ]
+        }
+      },
+      "format": {
+        "name": "_format",
+        "in": "query",
+        "description": "Specify alternative response formats by their MIME-types (when a client is unable acccess accept: header)",
+        "allowEmptyValue": true,
+        "style": "form",
+        "schema": {
+          "type": "string",
+          "format": "mime-type"
+        }
+      },
+      "pretty": {
+        "name": "_pretty",
+        "in": "query",
+        "description": "Ask for a pretty printed response for human convenience",
+        "allowEmptyValue": true,
+        "style": "form",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "elements": {
+        "name": "_elements",
+        "in": "query",
+        "description": "Requests the server to return a collection of elements from the resource",
+        "allowEmptyValue": true,
+        "style": "form",
+        "explode": false,
+        "schema": {
+          "type": "array",
+          "format": "string",
+          "items": {
+            "format": "string"
+          }
+        }
+      },
+      "count": {
+        "name": "_count",
+        "in": "query",
+        "description": "The maximum number of search results on a page. The server is not bound to return the number requested, but cannot return more",
+        "schema": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
