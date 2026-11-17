@@ -29,7 +29,7 @@ Folgende Grundannahmen gelten zunächst als gesetzt und sollen im Rahmen dieser 
 - Die im deutschen Krankenhauswesen verwendete Fallnummer ist eine Abrechnungsnummer.
 - Die Fallnummer wird über den Account repräsentiert und umfasst regelmäßig mehrere Encounter.
 - Eine Fallnummer darf nicht als `Encounter.identifier` verwendet werden.
-   - Revision und erneute Prüfung nötig: Mit einer potentiellen Einführung des Einrichtungskontakt wird diese Annahme in dieser absoluten Form in Frage gestellt (Hintergrund: 2. AG Encounter).
+   - Revision und erneute Prüfung nötig: Mit einer potentiellen Einführung des Einrichtungskontakt wird diese Annahme in dieser absoluten Form in Frage gestellt (Hintergrund: 2. AG Encounter - s.u.).
 - Die grundlegende Orientierung am bestehenden ISiK-6-Fallmodell bleibt erhalten.
 
 ## Strategische Grundsatzfragen
