@@ -119,7 +119,8 @@ Dabei handelt es sich ausdrücklich nicht um eine Kritik an bestehenden Implemen
 - Ist der Einrichtungskontakt für Fallakte, Berechtigungen und Suchstrategien erforderlich?
 - Ist der Einrichtungskontakt langfristig Bestandteil des fachlichen Zielmodells?
 
-#### Funktionen des Einrichtungskontakt
+#### Funktionen des Einrichtungskontakts
+
 
 Eine wesentliche Funktion des Einrichtungskontakts diene der Nachvollziehbarkeit von Wiederaufnahmen: 
 Ohne verschiedene Einrichtungskontakte sei es nicht möglich eine Wiederaufnahme als solche zu erkennen (Quelle: AG Encounter - 2. Sitzung)
