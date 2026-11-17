@@ -18,6 +18,10 @@ permissions:
   pull-requests: write
 
 env:
+  # Validator-JAR (privater Fork mit Advisor-Filterung, siehe README). Die URL wird mit dem
+  # Ergebnis persistiert, damit ein Wechsel im Vergleich sichtbar wird.
+  VALIDATOR_URL: https://github.com/jschoen-gefyra/org.hl7.fhir.core/releases/download/v6.9.8-snapshot-build/org.hl7.fhir.validation.cli-6.9.8-SNAPSHOT.jar
+  #VALIDATOR_URL: https://github.com/hapifhir/org.hl7.fhir.core/releases/download/6.9.7/validator_cli.jar
   COMPLIESWITH_DEPENDENCIES: |
     hl7.fhir.eu.eps#current
     hl7.fhir.eu.hdr#current
@@ -38,8 +42,8 @@ jobs:
         with:
           ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || github.ref_name }}
 
-      - name: Test CompliesWith log parser
-        run: node --test scripts/complieswith/parse-validator-log.test.js
+      - name: Test CompliesWith scripts
+        run: node --test scripts/complieswith/parse-validator-log.test.js scripts/complieswith/compare-results.test.js
 
       - name: Add CompliesWith dependencies
         env:
@@ -67,8 +71,7 @@ jobs:
           java-version: '17'
 
       - name: Download Java validator
-        run: curl -L https://github.com/jschoen-gefyra/org.hl7.fhir.core/releases/download/v6.9.8-snapshot-build/org.hl7.fhir.validation.cli-6.9.8-SNAPSHOT.jar -o validator_cli.jar
-        #https://github.com/hapifhir/org.hl7.fhir.core/releases/download/6.9.7/validator_cli.jar -o validator_cli.jar
+        run: curl -L "$VALIDATOR_URL" -o validator_cli.jar
 
       - name: Run Java validator for CompliesWith
         id: java_validator
@@ -93,6 +96,58 @@ jobs:
             echo "has_validation_details=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Collect resolved dependency versions
+        if: always()
+        env:
+          COMPLIESWITH_DEPENDENCIES: ${{ env.COMPLIESWITH_DEPENDENCIES }}
+        run: node scripts/complieswith/collect-dependency-versions.js
+
+      # Baseline: jüngster push-Lauf dieses Workflows auf dem Base-Branch des PRs mit Artefakt.
+      - name: Find baseline run on base branch
+        id: baseline
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v9
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          WORKFLOW_FILE: complieswith-export.yml
+          ARTIFACT_NAME: complieswith-export-validation-results
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const run = require('./scripts/complieswith/find-baseline-run.js');
+            await run({ github, context, core });
+
+      - name: Download baseline artifact
+        if: always() && steps.baseline.outputs.found == 'true'
+        uses: actions/download-artifact@v8
+        with:
+          name: complieswith-export-validation-results
+          run-id: ${{ steps.baseline.outputs.run_id }}
+          github-token: ${{ github.token }}
+          path: baseline
+
+      # Report: Job Summary immer, PR-Kommentar nur bei pull_request. Vergleicht mit der Baseline
+      # und mit dem vorigen Lauf desselben PRs und setzt die Outputs für den Fail-Step.
+      - name: Report validation results
+        id: report
+        if: always()
+        uses: actions/github-script@v9
+        env:
+          VALIDATOR_OUTCOME: ${{ steps.java_validator.outcome }}
+          VALIDATOR_URL: ${{ env.VALIDATOR_URL }}
+          BASE_REF: ${{ github.event.pull_request.base.ref || '' }}
+          BASELINE_FOUND: ${{ steps.baseline.outputs.found || 'false' }}
+          BASELINE_RUN_ID: ${{ steps.baseline.outputs.run_id || '' }}
+          BASELINE_RUN_URL: ${{ steps.baseline.outputs.run_url || '' }}
+          BASELINE_HEAD_SHA: ${{ steps.baseline.outputs.head_sha || '' }}
+          BASELINE_CREATED_AT: ${{ steps.baseline.outputs.created_at || '' }}
+          BASELINE_DIR: baseline
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const run = require('./scripts/complieswith/update-pr-comment.js');
+            await run({ github, context, core });
+
       - name: Upload validation artifacts
         if: always() && steps.validation_outputs.outputs.has_validation_details == 'true'
         uses: actions/upload-artifact@v7
@@ -101,33 +156,38 @@ jobs:
           path: |
             validation-details.json
             validation-raw.log
+            complieswith-result.json
+            dependency-versions.json
           retention-days: 90
           if-no-files-found: warn
 
-      - name: Comment validation results on PR
-        if: always() && github.event_name == 'pull_request'
-        uses: actions/github-script@v9
-        env:
-          VALIDATOR_OUTCOME: ${{ steps.java_validator.outcome }}
-        with:
-          github-token: ${{ github.token }}
-          script: |
-            const run = require('./scripts/complieswith/update-pr-comment.js');
-            await run({ github, context, core });
-
-      # The validator step uses continue-on-error so that artifacts and the PR comment are always produced.
-      # This step propagates its result to the job status afterwards.
-      - name: Fail job on CompliesWith errors
-        if: always() && steps.java_validator.outcome == 'failure'
+      # Der CompliesWith-Job ist ein Report, kein Gate (PTDATA-2396/2431): Der Job wird nur rot,
+      # wenn gegenüber der Basis neue CompliesWith-Fehler hinzugekommen sind, oder bei
+      # Infrastrukturfehlern. Ohne Baseline wird der Job wegen CompliesWith-Fehlern nicht rot.
+      - name: Fail job on new CompliesWith errors or infrastructure errors
+        if: always()
         shell: bash
+        env:
+          INFRA_ERROR: ${{ steps.report.outputs.infra_error }}
+          HAS_BASELINE: ${{ steps.report.outputs.has_baseline }}
+          NEW_ERRORS: ${{ steps.report.outputs.new_errors_vs_base }}
+          ERROR_COUNT: ${{ steps.report.outputs.error_count }}
+          BASE_REF: ${{ github.event.pull_request.base.ref || '' }}
         run: |
-          count=0
-          if [ -f validation-details.json ]; then
-            count=$(node -e "const r = require('./validation-details.json'); console.log(Array.isArray(r.entries) ? r.entries.length : 0)")
+          if [ -z "$INFRA_ERROR" ]; then
+            echo "::error title=CompliesWith::Der Report-Step hat keine Outputs geliefert. Bitte Log des Steps 'Report validation results' prüfen."
+            exit 1
           fi
-          if [ "$count" -gt 0 ]; then
-            echo "::error title=CompliesWith::${count} CompliesWith-Fehler gefunden. Details im PR-Kommentar bzw. im Artefakt complieswith-export-validation-results."
+          if [ "$INFRA_ERROR" = "true" ]; then
+            echo "::error title=CompliesWith::Validator-Lauf fehlgeschlagen, ohne dass CompliesWith-Fehler ausgewertet werden konnten (Infrastrukturfehler). Bitte Log des Steps 'Run Java validator for CompliesWith' prüfen."
+            exit 1
+          fi
+          if [ "${NEW_ERRORS:-0}" -gt 0 ]; then
+            echo "::error title=CompliesWith::${NEW_ERRORS} neue CompliesWith-Fehler gegenüber ${BASE_REF} (gesamt ${ERROR_COUNT}). Details im PR-Kommentar."
+            exit 1
+          fi
+          if [ "$HAS_BASELINE" = "true" ]; then
+            echo "::notice title=CompliesWith::${ERROR_COUNT} CompliesWith-Fehler, keine neuen gegenüber ${BASE_REF}. Report, kein Gate."
           else
-            echo "::error title=CompliesWith::Validator-Lauf fehlgeschlagen (Outcome: ${{ steps.java_validator.outcome }}), ohne dass CompliesWith-Fehler ausgewertet werden konnten. Bitte Log des Steps 'Run Java validator for CompliesWith' prüfen."
+            echo "::notice title=CompliesWith::${ERROR_COUNT} CompliesWith-Fehler, keine Baseline zum Vergleich. Report, kein Gate."
           fi
-          exit 1
