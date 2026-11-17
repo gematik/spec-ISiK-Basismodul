@@ -119,7 +119,8 @@ Dabei handelt es sich ausdrücklich nicht um eine Kritik an bestehenden Implemen
 - Ist der Einrichtungskontakt für Fallakte, Berechtigungen und Suchstrategien erforderlich?
 - Ist der Einrichtungskontakt langfristig Bestandteil des fachlichen Zielmodells?
 
-#### Funktionen des Einrichtungskontakts
+#### Funktionen des Einrichtungskontakts
+
 
 Eine wesentliche Funktion des Einrichtungskontakts diene der Nachvollziehbarkeit von Wiederaufnahmen: 
 Ohne verschiedene Einrichtungskontakte sei es nicht möglich eine Wiederaufnahme als solche zu erkennen (Quelle: AG Encounter - 2. Sitzung)
@@ -128,7 +129,7 @@ Ohne verschiedene Einrichtungskontakte sei es nicht möglich eine Wiederaufnahme
 
 Folgende Hinweise stellen Diskussionsstände dar und sind keine angenommenen Änderungsvorschläge.
 
-Hinweis aus AG Encounter - 2. Sitzung: 
+- Eine Definition des **Einrichtungskontakts als Behandlungsfall (von Aufnahme bis Entlassung), inklusive vor- und nachstationärer Kontakte** sei sinnvoll (Hinweis zur möglichen Überarbeitung der o.g. Begriffsdefinition).
 - Eine Definition des **Einrichtungskontakts als Behandlungsfall (von Aufnahme bis Entlassung), inklusive vor- und nachstätionärer Kontakte** sei sinnvoll (Hinweis zur möglichen Überarbeitung der o.g. Begriffsdefinition).
 - Die Fallnummer als `Encounter.identifier` solle nicht verboten werden; diese sei in vielen Quellsystemen identisch und diese schließe eine Verwendung für den Account nicht per se aus.
    - CAVE: der Ausschluss einer Fallnummer als Encounter.identifier war als "nicht verhandelbare Tatsache" postuliert worden (s.o.). Eine Prüfung bleibt hier in jedem Fall notwendig.
