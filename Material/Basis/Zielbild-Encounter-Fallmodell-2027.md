@@ -135,7 +135,7 @@ Hinweise aus AG Encounter - 2. Sitzung:
    - CAVE: der Ausschluss einer Fallnummer als Encounter.identifier war als "nicht verhandelbare Tatsache" postuliert worden (s.o.). Eine Prüfung bleibt hier in jedem Fall notwendig.
 - In einem KIS würden **ambulante Besuche als Versorgungsstellenkontakt** dokumentiert (betrifft auch "Geltungsbereich" - s.u.). Zugleich gebe es ambulante Fälle, die lange aufblieben (über Abrechnungsperiode hinaus). Zugleich sei die Semantik von Versorgungsstellenkontakten unklar.
 - *Organization* und *Location* (FHIR-Ressourcen) müssten bei der Debatte berücksichtigt werden.
-- Es sei ein Bedarf, dass Kontakte (auch Versorgungsstellen- nach Einrichtungskontakt) miteinander verknüpft werden könnten, um einfache Abfragen zu ermöglichen. Die ist im aktuellen Stand des MII-Modells entsprechend abgebildet.
+- Es sei ein Bedarf, dass Kontakte (auch Versorgungsstellen- nach Einrichtungskontakt) miteinander verknüpft werden könnten, um einfache Abfragen zu ermöglichen. Dies ist im aktuellen Stand des MII-Modells entsprechend abgebildet.
 
 #### Ziel bis April 2027
 
