@@ -3,7 +3,7 @@
 
 Status: Diskussionsentwurf (laufende Fortschreibung)
 
-Letzte Änderung: 22.10.2026
+Letzte Änderung: 17.11.2026
 
 Dieses Dokument beschreibt identifizierte Fragestellungen und ein mögliches Zielbild für die Weiterentwicklung des ISiK Kontakt- (Encounter) und Fallmodells bis April 2027. Es handelt sich nicht um eine beschlossene Fachspezifikation.
 
