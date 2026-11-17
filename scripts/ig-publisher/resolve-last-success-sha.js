@@ -40,7 +40,7 @@ module.exports = async function run({ github, context, core }) {
     return;
   }
 
-  const workflowId = 'ig-publisher.yml';
+  const workflowId = process.env.WORKFLOW_ID || 'ig-publisher.yml';
   let lastSuccessSha = '';
 
   try {

@@ -1,0 +1,33 @@
+# fhirscripts-Konfiguration für das Basismodul (Pilot, siehe scripts/fhirscripts/MIGRATIONSPLAN.md)
+# Aufruf immer aus diesem Verzeichnis:  fhirscripts build pipeline
+
+install:
+  - firely_terminal          # für `fhirscripts cache package`
+  - name: sushi
+    version: 3.21.0
+  - name: igpub
+    version: 2.3.4           # 2.3.5 bricht mit NPE im PractitionerRoleRenderer ab (PTDATA-2412)
+
+build:
+  pipeline:
+    # Gemeinsame Dateien aus scripts/common-files/config.json in den IG kopieren
+    - shell: bash ../../scripts/fhirscripts/prepare-ig.sh
+    # FSH -> FHIR (alle Basis-Artefakte entstehen jetzt hier, nicht mehr in Resources/)
+    - sushi
+    # Nur das zusammengeführte "-expanded" CapabilityStatement nach input/resources
+    - shell: bash ../../scripts/fhirscripts/expand-capabilitystatements.sh https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
+    # publication-request.json im IG-Verzeichnis (Eingabe für `fhirscripts check` und den IG Publisher)
+    - shell: node ../../scripts/publication-request/generate.js --ig-dir . --out publication-request.json
+    # Statt des eingebauten Schritts `igpub`: fhirscripts 0.32.0 erkennt Oracle-JDKs nicht ("java version" statt
+    # "openjdk version") und bricht dann ab; außerdem ergänzt `igpub` ein -publish <canonical>/<version>, das bei
+    # gemeinsamem Canonical aller Module noch zu prüfen ist. Aufruf daher wie bisher in CI.
+    - shell: java -jar input-cache/publisher.jar -no-sushi -ig ig.ini
+    - igpub_qa
+
+# Für `fhirscripts deploy` (Workflow ig-publisher-fhirscripts.yml, Input `deploy`). Bucket-Namen bei gematik klären.
+# Eigener `path` pro Modul, sonst legt deploy alle Module unter dem gemeinsamen Projektnamen "isik" ab.
+# deploy:
+#   env:
+#     dev: <dev-bucket>
+#     prod: <prod-bucket>
+#   path: ig/fhir/isik-basis

@@ -20,12 +20,18 @@ FSH_GEN_MENU_PATH="${FSH_GEN_PATH}/includes/menu.xml"
 LOCAL_SUSHI_CONFIG_PATH="${IG_PUBLISHER_DIR}/sushi-config.yaml"
 SHARED_SUSHI_CONFIG_PATH="Resources/sushi-config.yaml"
 
+# CHECK_PATHS (space-separated) overrides the default path list; used by the fhirscripts
+# workflow, which checks the sources instead of the SUSHI output (scripts/fhirscripts/CI-UMSTELLUNG.md).
+if [ -n "${CHECK_PATHS:-}" ]; then
+  read -r -a CHECK_PATHS_ARR <<< "${CHECK_PATHS}"
+else
+  CHECK_PATHS_ARR=("${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" "${LOCAL_SUSHI_CONFIG_PATH}" "${SHARED_SUSHI_CONFIG_PATH}")
+fi
+
 echo "Checking for changes in:"
-echo "  - ${FSH_GEN_RESOURCES_PATH}"
-echo "  - ${FSH_GEN_MENU_PATH}"
-echo "  - ${INPUT_PATH}"
-echo "  - ${LOCAL_SUSHI_CONFIG_PATH}"
-echo "  - ${SHARED_SUSHI_CONFIG_PATH}"
+for check_path in "${CHECK_PATHS_ARR[@]}"; do
+  echo "  - ${check_path}"
+done
 echo ""
 
 has_changes=false
@@ -67,7 +73,7 @@ if [ -n "${diff_range}" ]; then
   fi
   echo "Commits in range: $(git rev-list --count "${diff_range}" 2>/dev/null || echo unknown)"
 
-  if tracked_diff_out="$(git diff --name-status "${diff_range}" -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" "${LOCAL_SUSHI_CONFIG_PATH}" "${SHARED_SUSHI_CONFIG_PATH}" 2>/dev/null)"; then
+  if tracked_diff_out="$(git diff --name-status "${diff_range}" -- "${CHECK_PATHS_ARR[@]}" 2>/dev/null)"; then
     :
   else
     echo "Warning: could not diff commit range ${diff_range}"
@@ -75,7 +81,7 @@ if [ -n "${diff_range}" ]; then
   fi
 
   # Detect files that were touched by commits in the range, even if later reverted.
-  if tracked_history_out="$(git log --full-history --name-status --pretty=format: "${diff_range}" -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" "${LOCAL_SUSHI_CONFIG_PATH}" "${SHARED_SUSHI_CONFIG_PATH}" 2>/dev/null)"; then
+  if tracked_history_out="$(git log --full-history --name-status --pretty=format: "${diff_range}" -- "${CHECK_PATHS_ARR[@]}" 2>/dev/null)"; then
     :
   else
     echo "Warning: could not inspect commit history for range ${diff_range}"
@@ -88,7 +94,7 @@ else
 fi
 
 # Always check workspace changes too (tracked + untracked) in checked paths.
-workspace_status_out="$(git status --porcelain --untracked-files=all -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" "${LOCAL_SUSHI_CONFIG_PATH}" "${SHARED_SUSHI_CONFIG_PATH}" 2>/dev/null || true)"
+workspace_status_out="$(git status --porcelain --untracked-files=all -- "${CHECK_PATHS_ARR[@]}" 2>/dev/null || true)"
 
 tracked_diff_out=$(echo "${tracked_diff_out}" | sed '/^[[:space:]]*$/d')
 tracked_history_out=$(echo "${tracked_history_out}" | sed '/^[[:space:]]*$/d' | awk '!seen[$0]++')
