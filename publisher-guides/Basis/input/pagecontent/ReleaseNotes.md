@@ -8,7 +8,7 @@ Tags werden folgendermaßen verwendet:
 
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CapabilityStatements); Typo fixes werden nicht in die Releasenotes aufgenommen. Hier sollen stets die ggf. betroffenen Ressourcen (bzw. CapabilityStatements, Rollen und Akteure) angegeben werden.
 
-### Version 6.x.y
+### Version 6.1.0
 
 Datum: tbd.
 
