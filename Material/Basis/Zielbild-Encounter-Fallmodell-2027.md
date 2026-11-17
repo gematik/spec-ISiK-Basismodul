@@ -132,7 +132,7 @@ Hinweis aus AG Encounter - 2. Sitzung:
 - Eine Definition des **Einrichtungskontakts als Behandlungsfall (von Aufnahme bis Entlassung), inklusive vor- und nachstätionärer Kontakte** sei sinnvoll (Hinweis zur möglichen Überarbeitung der o.g. Begriffsdefinition).
 - Die Fallnummer als `Encounter.identifier` solle nicht verboten werden; diese sei in vielen Quellsystemen identisch und diese schließe eine Verwendung für den Account nicht per se aus.
    - CAVE: der Ausschluss einer Fallnummer als Encounter.identifier war als "nicht verhandelbare Tatsache" postuliert worden (s.o.). Eine Prüfung bleibt hier in jedem Fall notwendig.
-- In einem KIS würden **ambulante Besuche als Versorgungsstellenkontakt** dokumentiert (betrifft auch "Geltungsbereich" - s.u.). Zugleich gebe es ambulante Fälle, die lange aufbleiben (über Abrechnungsperiode hinaus). Zugleich seien Versorgungsstellenkontakte seien unklar von ihrer Bedeutung bzw. doppeldeutig.
+- In einem KIS würden **ambulante Besuche als Versorgungsstellenkontakt** dokumentiert (betrifft auch "Geltungsbereich" - s.u.). Zugleich gebe es ambulante Fälle, die lange aufbleiben (über Abrechnungsperiode hinaus). Zugleich sei die Semantik von Versorgungsstellenkontakten unklar.
 - Organization und Location (FHIR) müsse bei der Debatte berücksichtigt werden.
 - Es sei ein Bedarf, dass Kontakte (Versorgungsstelle nach Einrichtungskontakt) miteinander verknüpft werden könnten, um einfache Abfragen zu ermöglichen.
 
