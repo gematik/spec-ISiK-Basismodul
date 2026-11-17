@@ -123,12 +123,22 @@ Dabei handelt es sich ausdrücklich nicht um eine Kritik an bestehenden Implemen
 Eine wesentliche Funktion des Einrichtungskontakts diene der Nachvollziehbarkeit von Wiederaufnahmen: 
 Ohne verschiedene Einrichtungskontakte sei es nicht möglich eine Wiederaufnahme als solche zu erkennen (Quelle: AG Encounter - 2. Sitzung)
 
-#### Weitere Hinweise zum Einrichtungskontakt
+#### Weitere Hinweise rund um den Einrichtungskontakt (und weitere Kontaktebenen)
 
-Hinweis aus AG: Die Fallnummer als Encounter.identifier solle nicht verboten werden; diese sei in vielen Quellsystemen identisch (Quelle: AG Encounter - 2. Sitzung).
-
-Zur möglichen Überarbeitung der o.g. Begriffsdefinition:
-- Eine Definition des EK als Behandlungsfall (von Aufnahme bis Entlassung) inklusive vor- und nachstätionärer Kontakte sei sinnvoll.
+Hinweis aus AG Encounter - 2. Sitzung: 
+- Die Fallnummer als Encounter.identifier solle nicht verboten werden; diese sei in vielen Quellsystemen identisch. 
+   - Dieses schließe eine Verwendung für den Account nicht per se aus.
+   - Dennoch sei eine (noch) eindeutiger Begriffsdifferenzierung notwendig zwischen Behandlungsfall und Abrechnungsfall. 
+   - Der Behandlungsfall könne abgebildet werden durch den Einrichtungskontakt.
+      - Hier sei Vorsicht geboten, da eine Umdeutung als EpisodeOfCare vorliegen könnte; dagegen würde eine ausschließliche Nutzung des Einrichtungskontakts für stationäre Fälle helfen.
+- In der MII sei der Einrichtungskontakt nur für stationäre Fälle gedacht. Im Fall einer ambulanten Versorgung wäre ein Fall je Quartal die Konsequenz. Dann ergäbe sich das Problem, dass in einem Fall (Abrechnungsfall) mehrere Besuche stattfinden könnten.
+- In einem KIS würden ambulante Besuche als Versorgungsstellenkontakt dokumentiert.
+- Zugleich gebe es ambulante Fälle, die lange aufbleiben (sogar über Abrechnungsperiode hinaus).
+- Eine Fallnummer könne sich auch über mehrere Besuche erstrecken.
+- Versorgungsstellenkontakte seien unklar von ihrer Bedeutung bzw doppeldeutig.
+- Organization und Location (FHIR) müsse bei der Debatte berücksichtigt werden.
+- Es sei ein Bedarf, dass Kontakte (Versorgungsstelle nach Einrichtungskontakt) miteinander verknüpft werden könnten, um einfache Abfragen zu ermöglichen.
+- Eine Definition des EK als Behandlungsfall (von Aufnahme bis Entlassung) inklusive vor- und nachstätionärer Kontakte sei sinnvoll (Hinweis zur möglichen Überarbeitung der o.g. Begriffsdefinition).
 
 
 #### Ziel bis April 2027
