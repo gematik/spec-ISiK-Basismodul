@@ -57,6 +57,8 @@ Der Use Case des Anfragenden (PTDATA-2424) erfordert die Abbildung folgender Fun
 
 Diese Funktionen sind mit dem SNOMED-CT-ValueSet nicht abbildbar. Auch die HL7-v3-ParticipationType-Codes (z. B. `PPRF` „primary performer“, `SPRF` „secondary performer“) sind hierfür zu grob, da sie weder zwischen Operateur und Assistenz noch zwischen mehreren Assistenzen unterscheiden und keine Supervision kennen.
 
+Grundsätzlich ist unklar, was `performer.function` in ISiKProzedur ausdrücken soll: die Berufsgruppe des Durchführenden (z. B. „Chirurg“) oder seine konkrete Funktion im Rahmen dieser Prozedur (z. B. „1. Assistenz“). Die FHIR-Basisdefinition („Distinguishes the type of involvement of the performer in the procedure. For example, surgeon, anaesthetist, endoscopist.“) lässt beide Lesarten zu. Die Frage ist als offener Punkt aufgenommen (siehe „Offene Punkte“).
+
 ## Optionen
 
 ### Option 1: Must-Support nur auf `performer.actor.reference`
@@ -68,7 +70,7 @@ Die durchführende Instanz wird ausschließlich per Referenz angegeben.
 ### Option 2 (gewählt): Must-Support auf `performer`, `performer.function`, `performer.actor`, `performer.actor.reference` und `performer.actor.display`
 Die durchführende Instanz kann per Referenz und/oder als Freitext angegeben werden; zusätzlich wird die Funktion des Durchführenden angegeben.  
 **Pro:** Abbildung auch ohne referenzierbare Instanz möglich; Rollen bei mehreren Durchführenden unterscheidbar; konsistent zum Vorgehen in ISiKDiagnose und ISiKAllergieUnvertraeglichkeit.  
-**Contra:** Freitextangaben sind nicht strukturiert auswertbar; Clients müssen beide Varianten verarbeiten können; Aufwand für das Mapping systeminterner Funktionen auf das kombinierte ValueSet (siehe Entscheidung, Punkt 3).
+**Contra:** Freitextangaben sind nicht strukturiert auswertbar; Clients müssen beide Varianten verarbeiten können; Aufwand für das Mapping systeminterner Funktionen auf die für `performer.function` gebundene Terminologie (siehe „Offene Punkte“).
 
 ### Option 3: Zusätzlich Must-Support auf `performer.onBehalfOf`
 Neben der durchführenden Person wird auch die Organisation (z. B. Fachabteilung) gefordert, für die sie tätig war.  
@@ -80,12 +82,7 @@ Neben der durchführenden Person wird auch die Organisation (z. B. Fachabteilung
 
 1. Im Profil ISiKProzedur werden `performer`, `performer.function` (inkl. `coding`), `performer.actor`, `performer.actor.reference` und `performer.actor.display` als Must-Support gekennzeichnet.
 2. Die Kardinalität von `performer.actor.reference` wird nicht eingeschränkt (analog ISiKDiagnose). Die Angabe kann per Referenz, per `display` oder mit beidem erfolgen.
-3. `performer.function` wird als Must-Support gekennzeichnet, damit bei mehreren Durchführenden deren jeweilige Rolle erkennbar ist. Für das Binding wird ein kombiniertes ValueSet eingeführt (siehe Kontext, „Terminologie für `performer.function`“):
-   - Es umfasst alle Codes des ValueSets `http://hl7.org/fhir/ValueSet/performer-role` (SNOMED CT; Berufs- bzw. Fachgruppe des Durchführenden).
-   - Zusätzlich umfasst es ein neu zu definierendes ISiK-CodeSystem mit den Funktionen innerhalb einer Prozedur: Operateur, 2. Operateur, 1. Assistenz, 2. Assistenz, 3. Assistenz und Supervision.
-   - Die Bindungsstärke bleibt `preferred`.
-   - Die Einschränkung `coding only ISiKSnomedCTCoding` wird entfernt, damit auch Codes des ISiK-CodeSystems angegeben werden können.
-   - Sind sowohl Berufsgruppe als auch Funktion bekannt, KÖNNEN beide als separate `coding` innerhalb von `performer.function` angegeben werden.
+3. `performer.function` wird als Must-Support gekennzeichnet, damit bei mehreren Durchführenden deren jeweilige Rolle erkennbar ist. Die Semantik des Elements und das Binding sind noch zu klären (siehe „Offene Punkte“). Bis zur Klärung bleibt das bestehende Binding unverändert.
 4. `performer.actor.display` dient insbesondere dazu, die durchführende Person anzugeben, wenn keine referenzierbare Instanz vorliegt (z. B. extern oder anamnestisch erhobene Prozeduren).
 5. `performer.onBehalfOf` wird vorerst **nicht** als Must-Support gekennzeichnet. Kann keine einzelne Person benannt werden, KANN eine Organisation (z. B. die Fachabteilung) als `actor` angegeben werden.
 
@@ -98,13 +95,29 @@ Neben der durchführenden Person wird auch die Organisation (z. B. Fachabteilung
 
 **Negativ:**
 - Server MÜSSEN die Information befüllen können, sofern sie vorliegt – ggf. Nachrüstbedarf bei Herstellern.
-- Systeminterne Funktionen (z. B. „Operateur“, „2. Assistenz“) müssen auf das kombinierte ValueSet gemappt werden.
-- Ein ISiK-eigenes CodeSystem für Funktionen innerhalb einer Prozedur muss definiert und gepflegt werden. Es ist zu prüfen, ob es perspektivisch durch eine international abgestimmte Terminologie (z. B. künftige SNOMED-CT-Konzepte) ersetzt werden kann.
-- Das Entfernen der Einschränkung auf `ISiKSnomedCTCoding` erfordert eine Anpassung des Profils.
+- Systeminterne Funktionen (z. B. „Operateur“, „2. Assistenz“) müssen auf die für `performer.function` gebundene Terminologie gemappt werden.
+- Solange der offene Punkt zu `performer.function` nicht geklärt ist, ist der Use Case des Anfragenden (Funktionen im OP-Team) nicht kodiert abbildbar.
 - Clients MÜSSEN sowohl Referenzen als auch reine `display`-Angaben verarbeiten und darstellen können.
 - Angaben nur per `display` sind nicht strukturiert auswertbar (keine Suche, keine Verknüpfung zu Personenressourcen).
 - Keine Harmonisierung mit TI Common möglich, da dort kein Procedure-Profil existiert.
 - Für einen erheblichen Teil der Prozeduren (insb. Komplexbehandlungen, Medikamentengabe, pflegerische Leistungen, nachträglich kodierte Prozeduren) ist keine einzelne durchführende Person verfügbar (siehe Kontext). Ohne Einschränkung der MS-Definition sind entsprechende Testfälle im Bestätigungsverfahren für diese Prozeduren nicht sinnvoll erfüllbar.
+
+## Offene Punkte
+
+### Semantik und Binding von `performer.function`
+
+**Frage:** Soll `performer.function` die Berufsgruppe des Durchführenden (z. B. „Chirurg“) oder seine konkrete Funktion im Rahmen der Prozedur (z. B. „Operateur“, „1. Assistenz“) angeben? Welches ValueSet ist daraus abzuleiten?
+
+**Kandidaten:**
+
+- **A: Nur SNOMED CT `performer-role` (aktueller Stand).** Bildet die Berufsgruppe ab. Die vom Anfragenden benötigten Funktionen sind damit nicht abbildbar.
+- **B: Nur ein ISiK-CodeSystem mit Funktionen innerhalb einer Prozedur** (Operateur, 2. Operateur, 1. Assistenz, 2. Assistenz, 3. Assistenz, Supervision). Die Berufsgruppe ergibt sich dann aus `performer.actor` (z. B. PractitionerRole). Erfordert die Entfernung von `coding only ISiKSnomedCTCoding` sowie die Definition und Pflege eines ISiK-eigenen CodeSystems.
+- **C: Kombiniertes ValueSet aus A und B.** Erlaubt beide Lesarten. Da `performer.function` 0..1 ist und mehrere `coding` in einem CodeableConcept dasselbe Konzept beschreiben müssen, kann pro Durchführendem nur eine der beiden Angaben gemacht werden; dies wäre im Profil festzulegen.
+
+**Zwischenstand:** Bis zur Klärung bleibt das bestehende Binding (`http://hl7.org/fhir/ValueSet/performer-role`, `preferred`, `coding only ISiKSnomedCTCoding`) unverändert.
+
+**Klärung durch:** _offen_ (z. B. Rückfrage beim Anfragenden, Herstellerabfrage)  
+**Zieltermin:** _offen_
 
 ## Anhänge (optional)
 
