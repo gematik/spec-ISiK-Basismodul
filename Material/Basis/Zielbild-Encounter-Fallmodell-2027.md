@@ -186,7 +186,7 @@ Hierzu gehören insbesondere:
 #### Fragestellungen
 
 - Welche Versorgungsformen sollen durch das ISiK-Fallmodell grundsätzlich adressiert werden?
-   - Tendenz (aus 1. und 2 AG): ambulante Fälle im Scope; MVZ out of scope.
+   - Tendenz (aus 1. und 2. AG): ambulante Fälle im Scope; MVZ out of Scope.
 - Wo verläuft die fachliche Grenze zwischen Krankenhausversorgung und anderen Versorgungsformen?
 - Soll das Encounter-Modell auch ambulante Krankenhausstrukturen und MVZ-Kontexte explizit berücksichtigen?
    - s.o.
