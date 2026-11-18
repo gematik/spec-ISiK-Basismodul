@@ -4,12 +4,12 @@ Datum: 2026-11-18
 
 Status: Vorgeschlagen
 
-[//]: #  (Status: <Vorgeschlagen | Angenommen | Abgelehnt | Verworfen | Ersetzt durch ADR-…)
+
 
 Ticket: PTDATA-2421
 
 ## Kontext
-[//]:
+
 Im Unit-Dose-Prozess stellt die Krankenhausapotheke die Medikation patientenindividuell in Einzeldosen zusammen. Jede Einzeldosis wird in einem eigenen Beutel (Pouch) verpackt. Jeder Pouch trägt eine eindeutige Pouch-ID, z.B. als Barcode, damit er bei der Verabreichung gescannt und dem Patienten zugeordnet werden kann.
 
 Ein verordnetes Medikament wird dabei nicht immer genau einem Pouch entsprechen. Beispiel:
