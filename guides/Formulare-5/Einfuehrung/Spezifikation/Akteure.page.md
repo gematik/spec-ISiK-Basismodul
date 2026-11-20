@@ -1,7 +1,7 @@
 ## {{page-title}}
 
 ### Formular-Launcher
-Unter einem {{pagelink:FormularLauncher}} ist in diesem Modul ein Anwendungssystem zu verstehen, das folgende Interkation implementiert:
+Unter einem {{pagelink:FormularLauncher}} ist in diesem Modul ein Anwendungssystem zu verstehen, das folgende Interaktion implementiert:
 * Fremdaufruf in der Rolle "Server" *oder*
 * SMART-APP-Launch in der Rolle "Server"
 
