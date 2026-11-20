@@ -4,7 +4,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd
 
-* `fix` Update der Medication Referenz in ``SiKMedikament2`-Beispiel. 
+* `fix` Update der Medication Referenz in ``SiKMedikament2`-Beispiel <https://github.com/gematik/spec-ISiK-Basismodul/pull/1379>
 
 ### Version 6.0.0
 
