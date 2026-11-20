@@ -8,7 +8,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: tbd
 
-* `fix` Korrektur der Referenz im Beispiel `ISiKMedikament2`
+* `fix` Korrektur der Referenz im Beispiel `ISiKMedikament2` https://github.com/gematik/spec-ISiK-Basismodul/pull/1378
 
 
 ## Version 5.2.0
