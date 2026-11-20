@@ -195,7 +195,7 @@ Usage: #example
       * system = $cs-ucum
       * code = #mL
 * ingredient[1]
-  * itemReference.reference = "Medication/7f27cb8d-940b-43fd-ab8b-fee5b7a9b060"
+  * itemReference.reference = "Medication/ExampleISiKMedikament1"
   * isActive = true
 
 Instance: ExampleISiKMedikament3
