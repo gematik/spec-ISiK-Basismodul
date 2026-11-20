@@ -195,7 +195,7 @@ Usage: #example
       * system = $cs-ucum
       * code = #mL
 * ingredient[1]
-  * itemReference.reference = "Medication/ExampleISiKMedikament1"
+  * itemReference.reference = "Medication/ExampleISiKMedikament10"
   * isActive = true
 
 Instance: ExampleISiKMedikament3
@@ -491,3 +491,31 @@ Usage: #example
   * unit = "Beutel"
   * system = $cs-ucum
   * code = #1
+
+Instance: ExampleISiKMedikament10
+InstanceOf: ISiKMedikament
+Usage: #example
+* code.text = "5-%ige (50 mg/ml) Glucose-Infusionslösung"
+* status = #active
+* form.coding
+  * system = $cs-edqm
+  * code = #11210000
+  * display = "Solution for infusion"
+* ingredient[0]
+  * itemCodeableConcept.coding
+    * system = $cs-atc-de
+    * code = #B05BA11
+    * display = "Glucose"
+    * version = "2024"
+  * isActive = false
+  * strength
+    * numerator
+      * value = 50
+      * unit = "mg"
+      * system = $cs-ucum
+      * code = #mg
+    * denominator
+      * value = 1
+      * unit = "Milliliter"
+      * system = $cs-ucum
+      * code = #mL  
