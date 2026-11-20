@@ -52,6 +52,7 @@ Alias: $diagnosesSCT = https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT
 Alias: $ProzedurenKategorieSCT = https://gematik.de/fhir/isik/ValueSet/ProzedurenKategorieSCT
 Alias: $KBV_VS_Base_Practitioner_Speciality = https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality
 Alias: $ProzedurenCodesSCT = https://gematik.de/fhir/isik/ValueSet/ProzedurenCodesSCT
+Alias: $ProzedurenFunktionSCT = http://hl7.org/fhir/ValueSet/performer-role
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
 Alias: $kvid10 = http://fhir.de/sid/gkv/kvid-10
 Alias: $kvnr30 = http://fhir.de/sid/gkv/kvnr-30

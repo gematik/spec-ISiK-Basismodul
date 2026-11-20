@@ -102,6 +102,17 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * reference 1.. MS
     * ^short = "Patienten-Link"
     * insert Comment-Reference-Subject(Begründung MS)
+* performer MS
+  * function MS
+  * function from $ProzedurenFunktionSCT (preferred)
+    * ^short = "Durchführender"
+    * ^comment = "**Begründung Must-Support:** Die Angabe der durchführenden Instanz (z.B. Arzt oder Einrichtung) in einer Funktion ist für die Nachvollziehbarkeit und Datenintegrität der Prozedur erforderlich."
+    * coding MS
+    * coding only ISiKSnomedCTCoding
+  * actor MS
+    * ^short = "Performer-Link"
+    * ^comment =  "Begründung Must-Support: Die durchführende Instanz ist per Referenz anzugeben, da die Zuordnung einer durchführenden Instanz wichtig für die Nachvollziehbarkeit einer Prozedur ist."
+    * reference 1.. MS 
 * encounter MS
   * ^short = "Aufenthaltsbezug"
   * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Prozedur MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
