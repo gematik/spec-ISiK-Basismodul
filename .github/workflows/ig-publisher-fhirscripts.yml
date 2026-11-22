@@ -1,0 +1,107 @@
+name: Build and Deploy IG (fhirscripts)
+
+# Beispielhafter Nachfolger von ig-publisher.yml auf Basis von fhirscripts (Spike, Phase 2 im Migrationsplan).
+# Zuordnung der bisherigen Schritte: scripts/fhirscripts/CI-UMSTELLUNG.md
+#
+# Ablauf:
+#   basis  – baut publisher-guides/Basis und lädt output/package.tgz als Artefakt `basis-package` hoch
+#   build  – Matrix über weitere, bereits migrierte Module (Input `modules`); legt das Basis-Paket in den Cache
+#
+# Je Modul steht die Logik (SUSHI, Expander, common-files, publication-request, IG Publisher) in
+# publisher-guides/<Modul>/fhirscripts.config.yaml, nicht mehr hier.
+#
+# Entfallen gegenüber ig-publisher.yml: prepare (gemeinsamer SUSHI-Lauf), commit, publish_gate,
+# comment_artifacts, cleanup_fhir_packages, publish (gh-pages).
+#
+# Repository-Einstellungen (alle optional):
+#   vars.FHIRSCRIPTS_IMAGE                anderes Image als der Standard gematik1/fhir-devcontainer (per Digest)
+#   secrets.DOCKERHUB_USERNAME/_TOKEN     nur gegen das Pull-Limit, das Image ist öffentlich
+#   vars.ZTS_ACCEPTED_DOWNLOAD_CONDITIONS wie bisher, für Module mit BfArM-Paketen
+#   vars.GCP_WORKLOAD_IDENTITY_PROVIDER,
+#   vars.GCP_SERVICE_ACCOUNT              nur für Deploy (Input `deploy`)
+
+on:
+  # Spike: läuft auf den fhirscripts-Testbranches, sobald relevante Dateien geändert werden
+  push:
+    branches:
+      - 'stufe-6/all/fhir-scripts-*'
+    paths:
+      - 'publisher-guides/Basis/**'
+      - 'scripts/fhirscripts/**'
+      - 'scripts/common-files/**'
+      - 'scripts/ig-publisher/check-changes.sh'
+      - '.github/actions/fhirscripts/**'
+      - '.github/workflows/ig-publisher-fhirscripts.yml'
+      - '.github/workflows/fhirscripts-build-module.yml'
+
+  workflow_dispatch:
+    inputs:
+      force_build:
+        description: 'Build erzwingen, auch ohne erkannte Änderungen'
+        required: false
+        type: boolean
+        default: false
+      verbose_changes:
+        description: 'Vollständige Änderungslisten im Log ausgeben'
+        required: false
+        type: boolean
+        default: false
+      deploy:
+        description: 'Nach dem Build per fhirscripts deploy nach Dev hochladen (Bucket und GCP-Zugang nötig)'
+        required: false
+        type: boolean
+        default: false
+      image:
+        description: 'fhirscripts-Image (leer = Variable FHIRSCRIPTS_IMAGE bzw. gematik1/fhir-devcontainer:1.0.0-b49)'
+        required: false
+        type: string
+        default: ''
+      modules:
+        description: 'JSON-Liste weiterer migrierter Module, z. B. ["Vitalparameter"] (Ordner unter publisher-guides)'
+        required: false
+        type: string
+        default: '[]'
+
+concurrency:
+  group: ig-publisher-fhirscripts-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  actions: read      # resolve-last-success-sha.js
+  contents: read
+  id-token: write    # Google-Cloud-Anmeldung per Workload Identity Federation
+
+jobs:
+
+  # ersetzt `prepare`: Basis wird komplett gebaut. Werden weitere Module gebaut, braucht es das Basis-Paket,
+  # deshalb dann Build erzwingen.
+  basis:
+    uses: ./.github/workflows/fhirscripts-build-module.yml
+    with:
+      ig_name: ISiK-Basis
+      ig_dir: publisher-guides/Basis
+      image: ${{ inputs.image || vars.FHIRSCRIPTS_IMAGE || 'gematik1/fhir-devcontainer:1.0.0-b49@sha256:a552e62af7ac99f79949233710004e48d37d28f83c1f8d09a1c1398fa3948d03' }}
+      force_build: ${{ inputs.force_build == true || (inputs.modules || '[]') != '[]' }}
+      verbose_changes: ${{ inputs.verbose_changes == true }}
+      upload_package: true
+      deploy: ${{ inputs.deploy == true }}
+    secrets: inherit
+
+  # Matrix pro Modul; nur noch Name und Verzeichnis, alles Weitere in der fhirscripts.config.yaml des Moduls
+  build:
+    needs: basis
+    if: (inputs.modules || '[]') != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        module: ${{ fromJSON(inputs.modules || '[]') }}
+    uses: ./.github/workflows/fhirscripts-build-module.yml
+    with:
+      ig_name: ISiK-${{ matrix.module }}
+      ig_dir: publisher-guides/${{ matrix.module }}
+      image: ${{ inputs.image || vars.FHIRSCRIPTS_IMAGE || 'gematik1/fhir-devcontainer:1.0.0-b49@sha256:a552e62af7ac99f79949233710004e48d37d28f83c1f8d09a1c1398fa3948d03' }}
+      force_build: ${{ inputs.force_build == true }}
+      verbose_changes: ${{ inputs.verbose_changes == true }}
+      needs_basis: true
+      deploy: ${{ inputs.deploy == true }}
+    secrets: inherit
