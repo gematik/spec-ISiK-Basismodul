@@ -1,3 +1,11 @@
+### Version 6.0.1
+
+Datum: t.b.d.
+
+* `documentation` Hinweis zum Status auf der Einführungsseite angepasst: Der Implementierungsleitfaden wird in der vorliegenden Form nicht weiter gepflegt.
+* `documentation` Bekannte Limitationen des Leitfadens auf der Einführungsseite ergänzt.
+* `fix` Interaktion FormularDaten-Rückübermittlung: Der Verweis auf das nicht veröffentlichte Profil `FormularDatenRueckuebermittlungBundle` wurde durch das Profil `ISiKBerichtBundle` ersetzt.
+
 ### Version 6.0.0
 
 Datum: 01.07.2026

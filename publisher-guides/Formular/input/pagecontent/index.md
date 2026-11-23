@@ -2,8 +2,18 @@ Realm: Deutschland
 
 ### Hinweis zum Status
 
-Der Implementierungsleitfaden zum Modul „ISiK Formulare“ liegt derzeit in einer Entwurfsfassung vor und wird im Rahmen der Erarbeitung von ISiK Stufe 7 in Arbeitsgruppen sowie in bilateralen Gesprächen mit relevanten Stakeholdern fortlaufend weiterentwickelt. Eine aktive Mitwirkung ist ausdrücklich erwünscht; Anregungen, Hinweise und Vorschläge können über die im Abschnitt „Mitwirkung“ (siehe unten) aufgeführten Kanäle eingereicht werden. **Für das Modul besteht in ISiK Stufe 6 keine Bestätigungsrelevanz.**
-Das Modul wurde von Stufe 5 auf Stufe 6 an verschiedenen Stellen überarbeitet. Gerade in Hinblick auf die Nutzung durch den TI-Messenger wurde das Akteurs-Modell erweitert. Es ist daher ratsam, die Spezifikationen und BestPractices sorgfältig zu lesen, um die Änderungen zu verstehen und entsprechend umzusetzen. Hinweise zu Änderungen sind aus den [Release Notes](ReleseNotes.html) ersichtlich.
+Der Implementierungsleitfaden zum Modul „ISiK Formulare“ wird in der vorliegenden Form nicht weiter gepflegt. Eine Weiterentwicklung des Moduls ist derzeit nicht vorgesehen; Fehlerkorrekturen und inhaltliche Ergänzungen erfolgen nicht mehr. Der Leitfaden bleibt als Stand der bisherigen Arbeiten veröffentlicht. **Für das Modul besteht in ISiK Stufe 6 keine Bestätigungsrelevanz.**
+Bei einer Verwendung des Leitfadens sind die unten aufgeführten [bekannten Limitationen](#bekannte-limitationen) zu beachten. Rückfragen und Hinweise können weiterhin über die im Abschnitt „Hinweise“ (siehe unten) aufgeführten Kontaktwege eingereicht werden.
+Das Modul wurde von Stufe 5 auf Stufe 6 an verschiedenen Stellen überarbeitet. Gerade in Hinblick auf die Nutzung durch den TI-Messenger wurde das Akteurs-Modell erweitert. Es ist daher ratsam, die Spezifikationen und BestPractices sorgfältig zu lesen, um die Änderungen zu verstehen und entsprechend umzusetzen. Hinweise zu Änderungen sind aus den [Release Notes](ReleaseNotes.html) ersichtlich.
+
+### Bekannte Limitationen
+
+Der Leitfaden weist in der vorliegenden Form folgende bekannte Limitationen auf:
+
+* **Keine Ableitung von den SDC-Profilen:** Die Profile [ISiKFormularDefinition](StructureDefinition-ISiKFormularDefinition.html) und [ISiKFormularDaten](StructureDefinition-ISiKFormularDaten.html) sind direkt von den FHIR-Basisressourcen Questionnaire und QuestionnaireResponse abgeleitet, nicht von den Profilen des Implementierungsleitfadens ["Structured Data Capture (SDC)"](https://build.fhir.org/ig/HL7/sdc/). Aus SDC werden lediglich einzelne Extensions verwendet. Eine Konformität zu den SDC-Profilen ist damit nicht sichergestellt.
+* **Eingeschränkter Funktionsumfang:** Der Leitfaden deckt bewusst nur einen kleinen Ausschnitt des SDC-Frameworks ab (siehe [Extensions](Extensions.html)). Es ist nicht geprüft, ob dieser Umfang für alle relevanten Anwendungsfälle ausreicht. Andere Spezifikationen, z. B. das Modul „Patient-Reported Outcomes (PRO)“ der Medizininformatik-Initiative, nutzen deutlich mehr SDC-Extensions.
+* **Kein eigenes Bundle-Profil für die Rückübermittlung:** Das in früheren Fassungen dieses Leitfadens genannte Profil `FormularDatenRueckuebermittlungBundle` ist nicht Bestandteil der veröffentlichten Spezifikation. Die Rückübermittlung stützt sich daher auf das [ISiKBerichtBundle](StructureDefinition-ISiKBerichtBundle.html) (siehe Abschnitt „Interaktion: FormularDaten-Rückübermittlung“ unter [Funktionen und Interaktionen](FunktionenInteraktionen.html)).
+* **Beispiele für FormularDaten nicht valide:** Die in diesem Leitfaden enthaltenen QuestionnaireResponse-Beispiele validieren derzeit nicht fehlerfrei und sind daher nur eingeschränkt als Implementierungsvorlage geeignet.
 
 ### Motivation "ISiK Formulare"
 

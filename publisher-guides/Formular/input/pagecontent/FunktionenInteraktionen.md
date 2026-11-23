@@ -118,13 +118,16 @@ Die Rückübermittlung von [FormularDaten](StructureDefinition-ISiKFormularDaten
 {% include formDatRueckuebermittlung.svg %}
 </div>
 
-Das Bundle für die Rückübermittlung MUSS folgendem Profil entsprechen: [FormularDatenRueckuebermittlungBundle](StructureDefinition-FormularDatenRueckuebermittlungBundle.html)
+Das Bundle für die Rückübermittlung MUSS dem Profil [ISiKBerichtBundle](StructureDefinition-ISiKBerichtBundle.html) entsprechen.
 
-Dieses Bundle enthält neben den üblichen Bestandteilen eines ISiKBerichtBundles (Composition, Patient, Encounter) zusätzlich:
+**Hinweis zum Bundle-Profil:**
+In früheren Fassungen dieses Leitfadens wurde an dieser Stelle das Profil `FormularDatenRueckuebermittlungBundle` gefordert. Dieses Profil ist nicht Bestandteil der veröffentlichten Spezifikation und kann daher nicht für die Validierung herangezogen werden. Die nachfolgend beschriebenen formularspezifischen Inhalte des Bundles sind entsprechend nicht durch ein eigenes Profil formal abgesichert.
 
-- [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) (0..1) - die Referenz auf die FormularDefinition, die der Rückübermittlung zugrunde liegt (optional, falls bereits im Zielsystem vorhanden)
-- [FormularDaten](StructureDefinition-ISiKFormularDaten.html) (1..1) - das ausgefüllte Questionnaire in Form einer QuestionnaireResponse
-- FormularDatenExtrakt (..*) - die extrahierten Daten aus dem Formular (z.B. Observations bei observation-based extraction)
+Das Bundle soll neben den üblichen Bestandteilen eines ISiKBerichtBundles (Composition, Patient, Encounter) zusätzlich enthalten:
+
+- [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) (optional) - die FormularDefinition, die der Rückübermittlung zugrunde liegt (kann entfallen, falls bereits im Zielsystem vorhanden)
+- [FormularDaten](StructureDefinition-ISiKFormularDaten.html) (genau eine Instanz) - das ausgefüllte Questionnaire in Form einer QuestionnaireResponse
+- FormularDatenExtrakt (beliebig viele) - die extrahierten Daten aus dem Formular (z.B. Observations bei observation-based extraction)
 
 **Hinweis zur menschenlesbaren Repräsentation:**
 In der aktuellen Ausbaustufe ist es von zentraler Bedeutung, dass das Narrative (Composition.text und Composition.section.text) vollständig und korrekt ausgefüllt wird. Alle im Formular ausgefüllten Informationen MÜSSEN in der menschenlesbaren Repräsentation sichtbar sein, da Primärsysteme derzeit lediglich verpflichtet sind, diese anzuzeigen.
