@@ -1,0 +1,38 @@
+ValueSet: MII_VS_ICU_Code_Observation_Beatmung_LOINC
+Id: mii-vs-icu-code-observation-beatmung-loinc
+Title: "MII VS ICU Code Observation Beatmung LOINC"
+Description: """Dieses ValueSet enthält Codes für die im Kontext einer Beatmung verwendeten Parameter.
+
+Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026"""
+
+* insert Meta
+
+* include $loinc#50984-4 "Horowitz index in Arterial blood"
+* include $loinc#33438-3 "Breath rate mechanical --on ventilator"
+* include $loinc#19839-0 "Breath rate spontaneous --on ventilator"
+* include $loinc#19840-8 "Breath rate spontaneous and mechanical --on ventilator"
+* include $loinc#76334-2 "Inspiratory time setting Ventilator"
+* include $loinc#76187-4 "Expiratory hold time setting Ventilator"
+* include $loinc#75931-6 "Inspiration/Expiration time Ratio"
+* include $loinc#20112-9 "Tidal volume setting Ventilator"
+* include $loinc#76222-9 "Tidal volume Ventilator --on ventilator"
+* include $loinc#20116-0 "Tidal volume.spontaneous --on ventilator"
+* include $loinc#76009-0 "Inspired minute Volume during Mechanical ventilation"
+* include $loinc#20118-6 "Tidal volume.spontaneous+mechanical --on ventilator"
+* include $loinc#76190-8 "High pressure hold time setting Ventilator"
+* include $loinc#76229-4 "Low pressure hold time setting Ventilator"
+* include $loinc#76275-7 "Inspiratory flow setting Ventilator"
+* include $loinc#60794-5 "Inspiratory gas flow Respiratory system airway --on ventilator"
+* include $loinc#60792-9 "Expiratory gas flow Respiratory system airway --on ventilator"
+* include $loinc#19994-3 "Oxygen/Total gas setting [Volume Fraction] Ventilator"
+* include $loinc#71835-3 "Oxygen/Gas total [Pure volume fraction] Inhaled gas"
+* include $loinc#3147-6 "Oxygen [Partial pressure] in Exhaled gas"
+* include $loinc#76530-5 "Mean pressure Respiratory system airway --on ventilator"
+* include $loinc#76531-3 "Pressure.max Respiratory system airway --on ventilator"
+* include $loinc#60827-3 "Dynamic lung compliance"
+* include $loinc#76248-4 "PEEP Respiratory system --on ventilator"
+* include $loinc#76154-4 "Airway pressure delta --on ventilator"
+* include $loinc#20056-8 "Airway pressure --at mean expiratory flow on ventilator"
+* include $loinc#20060-0 "Airway pressure --at zero inspiratory flow on ventilator"
+* include $loinc#19891-1 "Carbon dioxide [Partial pressure] in Exhaled gas --at end expiration"
+* include $loinc#20079-0 "Pressure support setting Ventilator"

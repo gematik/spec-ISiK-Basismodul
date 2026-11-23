@@ -1,0 +1,52 @@
+CodeSystem: ISiKSubscriptionTopic
+Id: ISiKSubscriptionTopic
+Title: "ISiK-SubscriptionTopic"
+Description: "Liste der aller SubscriptionTopics, die in ISiK verwendet werden können. Neben den merge-SubscriptionTopics sind auch die SubscriptionTopics für Updates der Ressourcen enthalten, die in ISiK verwendet werden können."
+* insert Meta
+* ^language = #de-DE
+* #https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge "patient-merge" "Wird ausgelöst, wenn zwei Patient-Ressourcen zusammengeführt werden (Patient merge)."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge "encounter-merge" "Wird ausgelöst, wenn zwei Encounter-Ressourcen zusammengeführt werden (Encounter merge)."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/account-merge "account-merge" "Wird ausgelöst, wenn zwei Account-Ressourcen zusammengeführt werden (Account merge)."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Account "Account" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Account-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/AllergyIntolerance "AllergyIntolerance" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an AllergyIntolerance-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Appointment "Appointment" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Appointment-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Binary "Binary" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Binary-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/CodeSystem "CodeSystem" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an CodeSystem-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Composition "Composition" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Composition-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Condition "Condition" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Condition-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Coverage "Coverage" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Coverage-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Device "Device" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Device-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/DeviceMetric "DeviceMetric" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an DeviceMetric-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/DiagnosticReport "DiagnosticReport" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an DiagnosticReport-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/DocumentReference "DocumentReference" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an DocumentReference-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Encounter "Encounter" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Encounter-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/HealthcareService "HealthcareService" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an HealthcareService-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/List "List" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an List-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Location "Location" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Location-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Medication "Medication" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Medication-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationAdministration "MedicationAdministration" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an MedicationAdministration-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationRequest "MedicationRequest" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an MedicationRequest-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationStatement "MedicationStatement" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an MedicationStatement-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Observation "Observation" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Observation-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Organization "Organization" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Organization-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Patient "Patient" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Patient-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Practitioner "Practitioner" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Practitioner-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Procedure "Procedure" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Procedure-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Questionnaire "Questionnaire" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Questionnaire-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/QuestionnaireResponse "QuestionnaireResponse" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an QuestionnaireResponse-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/RelatedPerson "RelatedPerson" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an RelatedPerson-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/RiskAssessment "RiskAssessment" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an RiskAssessment-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Schedule "Schedule" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Schedule-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Slot "Slot" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Slot-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Subscription "Subscription" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an Subscription-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/ValueSet "ValueSet" "Signalisiert alle relevanten Änderungen (Create, Update, Delete) an ValueSet-Ressourcen."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/appointment-update "appointment-update" "Wird ausgelöst, wenn ein Termin (Appointment) geändert wird, z.B. durch eine Zeitverschiebung oder Statusänderung."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/appointment-cancel "appointment-cancel" "Wird ausgelöst, wenn ein Termin (Appointment) abgesagt wird (Appointment.status=cancelled)."
+* #https://gematik.de/fhir/isik/SubscriptionTopic/generic "generic" "Generisches Topic ohne festgelegte Trigger-Semantik. Ermöglicht die Abonnierung beliebiger Ressourcenänderungen über frei definierbare Filterkriterien (Subscription.criteria.extension:filterCriteria im Format FHIR-Suchausdruck). Hintergrund: In FHIR R4 können SubscriptionTopics nicht über die REST-Schnittstelle angelegt werden — dieses Topic dient als Erweiterungspunkt für systemspezifische Anforderungen, die durch vordefinierte ISiK-Topics nicht abgedeckt werden."
+
+ValueSet: ISiKSubscriptionTopicVS
+Id: ISiKSubscriptionTopicVS
+Title: "ISiKSubscriptionTopic ValueSet"
+Description: "ValueSet, das alle Codes des ISiKSubscriptionTopic CodeSystems enthält"
+* insert Meta
+* include codes from system ISiKSubscriptionTopic
