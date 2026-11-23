@@ -3,7 +3,7 @@ Es gelten grundsätzlich die [Allgemeinen Hinweise zur REST API aus dem Basismod
 
 Abweichend hiervon bzw. ergänzend hierzu gilt:
 
-* Das Erstellen einer Ressource per HTTP POST (Create-Interaktion) MUSS unterstützt werden.
+* Das Erstellen einer Ressource per HTTP POST (Create-Interaktion) MUSS unterstützt werden. Das empfangende System KANN der Übernahme der Ressource eine manuelle Prüfung vorschalten, siehe [Clearing-Prozess für Create-Interaktionen](ClearingProzess.html).
 
 * Das Update einer Ressource per HTTP PUT (Update-Interaktion) MUSS unterstützt werden.
 
