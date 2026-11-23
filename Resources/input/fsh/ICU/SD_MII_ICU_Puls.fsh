@@ -30,7 +30,7 @@ Usage: #example
 * code
   * coding[sct] = $sct#8499008 "Pulse"
   * coding[IEEE-11073] = $IEEE11073#149514 "Pulse rate"
-* subject = Reference(Patient/202)
+* subject = Reference(PatientinMusterfrau)
 * effectivePeriod
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
