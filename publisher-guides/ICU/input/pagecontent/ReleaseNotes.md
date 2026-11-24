@@ -8,6 +8,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 Datum: tbd
 
 * `fix` Must-Support im Profil `SD_MII_ICU_Monitoring_Und_Vitaldaten` bereinigt: MS an `basedOn` und `component` entfernt, bedingtes MS an `device` sowie Hinweise zu `bodySite` erläutert (Übernahme aus Stufe 5) <https://github.com/gematik/spec-ISiK-Basismodul/pull/1340>
+* `fix` Beispiel `Puls` (Profil `SD_MII_ICU_Puls`): `subject` referenziert nun den im Package enthaltenen Beispielpatienten `PatientinMusterfrau` statt des nicht vorhandenen `Patient/202` <https://github.com/gematik/spec-ISiK-Basismodul/issues/1343>
 
 ### Version 6.0.0
 
