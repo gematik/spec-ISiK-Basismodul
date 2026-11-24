@@ -17,6 +17,7 @@ Datum: tbd.
 * `documentation` Verbesserung fehlerhafter Beispiele innerhalb der Suchparameterdefinition in den CapabilityStatements https://github.com/gematik/spec-ISiK-Basismodul/pull/1324
 * `documentation` Klarstellung zur Quelle der Telematik-ID https://github.com/gematik/spec-ISiK-Basismodul/pull/1332
 * `improve` Update auf neues ValueSet für den Schwangerschaftsstatus aus dem IPS/ EPS https://github.com/gematik/spec-ISiK-Basismodul/pull/1354
+* `documentation` Telematik-ID in den Beispielen `KrankenhausOrganisationBeispiel` und `AbteilungAllgemeinchirurgieOrganisationBeispiel` an die Bildungsregel für Krankenhäuser angepasst https://github.com/gematik/spec-ISiK-Basismodul/pull/1384
 
 
 ### Version 6.0.0
