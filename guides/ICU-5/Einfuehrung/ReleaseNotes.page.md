@@ -10,6 +10,12 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 Im Fall von prozessorientierten Implementierungsleitfäden beginnt die Versionierung gemäß Semver des Implementierungsleitfadens gemäß des Major Releases im Zuge dessen der Implementierungsleitfaden entstanden ist (X.0.0).
 Darüber hinaus wird die Versionierung unabhängig von allen anderen Modulen und Packages gehandhabt. Für den Implementierungsleitfaden "ISiK ICU-Normalstation Workflow" wird zum Beispiel die initiale Version 4.0.0 gewählt, da der IG im Zuge der Stufe 4 entwickelt wurde.
 
+## Version 5.2.1
+
+Datum: tbd.
+
+* `fix` Beispiel `Puls` (Profil `SD_MII_ICU_Puls`): `subject` referenziert nun den im Package enthaltenen Beispielpatienten `PatientinMusterfrau` statt des nicht vorhandenen `Patient/202` https://github.com/gematik/spec-ISiK-Basismodul/issues/1343
+
 ## Version 5.2.0
 
 Datum: 19.10.2026
