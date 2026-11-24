@@ -20,7 +20,7 @@ Folgendes Diagramm Illustriert den Workflow zu **UC-VIT-ICU-NORM-001** als BPMN-
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="Abfrage-aus-ICU.PNG" alt="Nachträgliche Blutdruck-Abfrage aus Normalstation" style="width: 100%;">
+        <img src="Abfrage-aus-Normal.PNG" alt="Nachträgliche Blutdruck-Abfrage aus Normalstation" style="width: 100%;">
     </div>
     <figcaption>Abbildung: Nachträgliche Blutdruck-Abfrage aus Normalstation</figcaption>
 </figure>
@@ -33,7 +33,7 @@ Folgendes Diagramm Illustriert den Workflow zu **UC-VIT-ICU-NORM-002** als BPMN-
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="Abfrage-aus-Normal.PNG" alt="Nachträgliche Blutdruck-Abfrage aus Intensivstation" style="width: 100%;">
+        <img src="Abfrage-aus-ICU.PNG" alt="Nachträgliche Blutdruck-Abfrage aus Intensivstation" style="width: 100%;">
     </div>
     <figcaption>Abbildung: Nachträgliche Blutdruck-Abfrage aus Intensivstation</figcaption>
 </figure>
