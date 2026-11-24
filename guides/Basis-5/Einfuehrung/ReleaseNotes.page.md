@@ -19,6 +19,10 @@ Die Tags werden folgendermaßen verwendet:
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
 
+## Unveröffentlicht
+
+* `fix` Canonical-Referenzen der Suchparameter `AllergyIntolerance.date` sowie `Account.identifier`, `Account.type` und `Account.patient` in den CapabilityStatement-Rollen korrigiert.
+
 ## Version 5.2.0
 
 Datum: 19.10.2026

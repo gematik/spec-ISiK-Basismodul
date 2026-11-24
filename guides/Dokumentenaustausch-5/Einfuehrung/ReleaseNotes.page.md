@@ -9,6 +9,10 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
+## Unveröffentlicht
+
+* `fix` HTTPS-Canonical für `DocumentReference.creation` korrigiert. Die unveränderte IHE-MHD-4.2.2-Definition des Suchparameters wird mit Herkunfts- und Lizenzangabe mitgeliefert, damit die Referenz ohne die vollständige MHD-Package-Dependency auflösbar ist.
+
 ## Version 5.2.0
 
 Datum: 19.10.2026

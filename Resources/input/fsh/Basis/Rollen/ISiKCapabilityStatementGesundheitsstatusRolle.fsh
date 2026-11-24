@@ -204,7 +204,7 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "date"
-      * definition = "http://hl7.org/fhir/SearchParameter/conformance-date"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-date"
       * type = #date
       * documentation = 
           "**Beispiel:**    
