@@ -3,7 +3,7 @@
 
 Status: Diskussionsentwurf (laufende Fortschreibung)
 
-Letzte Änderung: 22.10.2026
+Letzte Änderung: 17.11.2026
 
 Dieses Dokument beschreibt identifizierte Fragestellungen und ein mögliches Zielbild für die Weiterentwicklung des ISiK Kontakt- (Encounter) und Fallmodells bis April 2027. Es handelt sich nicht um eine beschlossene Fachspezifikation.
 
@@ -29,6 +29,7 @@ Folgende Grundannahmen gelten zunächst als gesetzt und sollen im Rahmen dieser 
 - Die im deutschen Krankenhauswesen verwendete Fallnummer ist eine Abrechnungsnummer.
 - Die Fallnummer wird über den Account repräsentiert und umfasst regelmäßig mehrere Encounter.
 - Eine Fallnummer darf nicht als `Encounter.identifier` verwendet werden.
+   - Revision und erneute Prüfung nötig: Mit einer potentiellen Einführung des Einrichtungskontakt wird diese Annahme in dieser absoluten Form in Frage gestellt (Hintergrund: 2. AG Encounter - s.u.).
 - Die grundlegende Orientierung am bestehenden ISiK-6-Fallmodell bleibt erhalten.
 
 ## Strategische Grundsatzfragen
@@ -104,13 +105,37 @@ Während Abteilungskontakte und Versorgungsstellenkontakte einen unmittelbar nac
 
 Dabei handelt es sich ausdrücklich nicht um eine Kritik an bestehenden Implementierungen oder bisherigen ISiK-Versionen. Vielmehr soll überprüft werden, ob die fachliche Bedeutung des Einrichtungskontakts ausreichend klar definiert ist und langfristig spezifikatorisch begründet werden kann.
 
+#### Arbeitsdefinition des Einrichtungskontakts
+
+„Einrichtungskontakt: Kontakt auf oberster Ebene, der den gesamten Aufenthalt/Besuch in einer Gesundheitseinrichtung repräsentiert“ (Quelle: MII, https://medizininformatik-initiative.github.io/kerndatensatz-basis/2027.0.0-ballot/de/StructureDefinition-mii-pr-fall-kontakt-gesundheitseinrichtung.html#kontakthierarchien-und-kontaktebenen) 
+
+
 #### Fragestellungen
 
 - Welche Informationen gehören fachlich ausschließlich auf den Einrichtungskontakt?
 - Welche Informationen sind bereits über den Account ableitbar?
 - Welche Anwendungsfälle benötigen zwingend einen Einrichtungskontakt?
+   - Wiederaufnahme s.u.
 - Ist der Einrichtungskontakt für Fallakte, Berechtigungen und Suchstrategien erforderlich?
 - Ist der Einrichtungskontakt langfristig Bestandteil des fachlichen Zielmodells?
+
+#### Funktionen des Einrichtungskontakts
+
+
+Eine wesentliche Funktion des Einrichtungskontakts diene der Nachvollziehbarkeit von Wiederaufnahmen: 
+Ohne verschiedene Einrichtungskontakte sei es nicht möglich eine Wiederaufnahme als solche zu erkennen (Quelle: AG Encounter - 2. Sitzung)
+
+#### Weitere Hinweise rund um den Einrichtungskontakt (und weitere Kontaktebenen)
+
+Folgende Hinweise stellen Diskussionsstände dar und sind keine angenommenen Änderungsvorschläge.
+
+Hinweise aus AG Encounter - 2. Sitzung: 
+- Eine Definition des **Einrichtungskontakts als Behandlungsfall (von Aufnahme bis Entlassung), inklusive vor- und nachstätionärer Kontakte** sei sinnvoll (Hinweis zur möglichen Überarbeitung der o.g. Begriffsdefinition).
+- Die Fallnummer als `Encounter.identifier` solle nicht verboten werden; diese sei in vielen Quellsystemen identisch und diese schließe eine Verwendung für den Account nicht per se aus.
+   - CAVE: der Ausschluss einer Fallnummer als Encounter.identifier war als "nicht verhandelbare Tatsache" postuliert worden (s.o.). Eine Prüfung bleibt hier in jedem Fall notwendig.
+- In einem KIS würden **ambulante Besuche als Versorgungsstellenkontakt** dokumentiert (betrifft auch "Geltungsbereich" - s.u.). Zugleich gebe es ambulante Fälle, die lange aufblieben (über Abrechnungsperiode hinaus). Zugleich sei die Semantik von Versorgungsstellenkontakten unklar.
+- *Organization* und *Location* (FHIR-Ressourcen) müssten bei der Debatte berücksichtigt werden.
+- Es sei ein Bedarf, dass Kontakte (auch Versorgungsstellen- nach Einrichtungskontakt) miteinander verknüpft werden könnten, um einfache Abfragen zu ermöglichen. Dies ist im aktuellen Stand des MII-Modells entsprechend abgebildet.
 
 #### Ziel bis April 2027
 
@@ -161,8 +186,10 @@ Hierzu gehören insbesondere:
 #### Fragestellungen
 
 - Welche Versorgungsformen sollen durch das ISiK-Fallmodell grundsätzlich adressiert werden?
+   - Tendenz (aus 1. und 2. AG): ambulante Fälle im Scope; MVZ out of Scope.
 - Wo verläuft die fachliche Grenze zwischen Krankenhausversorgung und anderen Versorgungsformen?
 - Soll das Encounter-Modell auch ambulante Krankenhausstrukturen und MVZ-Kontexte explizit berücksichtigen?
+   - s.o.
 - Reicht das bestehende Modell aus oder entstehen zusätzliche Anforderungen an Encounter, Account oder EpisodeOfCare?
 
 #### Ziel bis April 2027
