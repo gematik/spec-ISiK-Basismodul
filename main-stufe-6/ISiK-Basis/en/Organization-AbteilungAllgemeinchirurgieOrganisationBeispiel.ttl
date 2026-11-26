@@ -1,0 +1,69 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "AbteilungAllgemeinchirurgieOrganisationBeispiel"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisationFachabteilung" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisationFachabteilung>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization AbteilungAllgemeinchirurgieOrganisationBeispiel</b></p><a name=\"AbteilungAllgemeinchirurgieOrganisationBeispiel\"> </a><a name=\"hcAbteilungAllgemeinchirurgieOrganisationBeispiel\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKOrganisationFachabteilung.html\">ISiKOrganisationFachabteilung</a></p></div><p><b>identifier</b>: Ward/FA-CHIR-01, <code>https://gematik.de/fhir/sid/telematik-id</code>/15-Hello-World-CHIR</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/organization-type dept}\">Hospital Department</span>, <span title=\"Codes:{http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert 1500}\">Allgemeine Chirurgie</span></p><p><b>name</b>: Allgemeinchirurgie</p><p><b>partOf</b>: <a href=\"Organization-KrankenhausOrganisationBeispiel.html\">Organization Uniklinik Entenhausen</a></p></div>"
+  ] ;
+  fhir:Organization.identifier [
+     fhir:index -1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         a sct:225746001 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "225746001" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "https://fhir.krankenhaus.example/sid/OrgaID" ] ;
+     fhir:Identifier.value [ fhir:value "FA-CHIR-01" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+     fhir:Identifier.value [ fhir:value "15-Hello-World-CHIR" ]
+  ] ;
+  fhir:Organization.type [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/organization-type" ] ;
+       fhir:Coding.code [ fhir:value "dept" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert" ] ;
+       fhir:Coding.code [ fhir:value "1500" ] ;
+       fhir:Coding.display [ fhir:value "Allgemeine Chirurgie" ]
+     ]
+  ] ;
+  fhir:Organization.name [ fhir:value "Allgemeinchirurgie"] ;
+  fhir:Organization.partOf [
+     fhir:link <https://gematik.de/fhir/isik/Organization/KrankenhausOrganisationBeispiel> ;
+     fhir:Reference.reference [ fhir:value "Organization/KrankenhausOrganisationBeispiel" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

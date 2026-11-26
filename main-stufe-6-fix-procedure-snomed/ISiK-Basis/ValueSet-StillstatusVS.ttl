@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/ValueSet/StillstatusVS> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "StillstatusVS"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet StillstatusVS</b></p><a name=\"StillstatusVS\"> </a><a name=\"hcStillstatusVS\"> </a><ul><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/LA4489-6/\">LA4489-6</a></td><td>Unknown</td></tr><tr><td><a href=\"https://loinc.org/LA29253-4/\">LA29253-4</a></td><td>Not currently breastfeeding</td></tr><tr><td><a href=\"https://loinc.org/LA29252-6/\">LA29252-6</a></td><td>Currently breastfeeding</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://gematik.de/fhir/isik/ValueSet/StillstatusVS"] ;
+  fhir:ValueSet.version [ fhir:value "6.0.0"] ;
+  fhir:ValueSet.name [ fhir:value "StillstatusVS"] ;
+  fhir:ValueSet.title [ fhir:value "Stillstatus LOINC Antwortoptionen"] ;
+  fhir:ValueSet.status [ fhir:value "active"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-07-01"^^xsd:date] ;
+  fhir:ValueSet.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Dieses Valueset enthält die Codes zur Beschreibung von Stillstatus LOINC."] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://loinc.org" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "LA4489-6" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Unknown" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "LA29253-4" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Not currently breastfeeding" ]
+       ], [
+         fhir:index 2 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "LA29252-6" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Currently breastfeeding" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/ValueSet/StillstatusVS.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

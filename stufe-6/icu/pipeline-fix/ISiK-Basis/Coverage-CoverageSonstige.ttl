@@ -1,0 +1,41 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Coverage/CoverageSonstige> a fhir:Coverage ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "CoverageSonstige"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSonstige"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSonstige>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Coverage CoverageSonstige</b></p><a name=\"CoverageSonstige\"> </a><a name=\"hcCoverageSonstige\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKVersicherungsverhaeltnisSonstige.html\">ISiKVersicherungsverhaeltnisSonstige</a></p></div><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/versicherungsart-de-basis SOZ}\">Sozialamt</span></p><p><b>beneficiary</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>payor</b>: Sozialamt Posemuckel</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/versicherungsart-de-basis"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/versicherungsart-de-basis>
+       ] ;
+       fhir:code [ fhir:v "SOZ" ]
+     ] )
+  ] ; # 
+  fhir:beneficiary [
+     fhir:l <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:reference [ fhir:v "Patient/PatientinMusterfrau" ]
+  ] ; # 
+  fhir:payor ( [
+     fhir:display [ fhir:v "Sozialamt Posemuckel" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

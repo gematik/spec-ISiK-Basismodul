@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Kontext und Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Kontext und Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Erlaeuterung-Akteurs-und-Rollenmodell.html">
+                                            Akteurs- und Rollenmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_UmgangFehlendeDaten.html">
+                                            Umgang mit fehlenden Daten
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungverhaeltnis-sonstige-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis sonstige (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_BerichtBundle.html">
+                                            Bericht aus Subsystemen (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<h3 id="valides-minimalbeispiel-prozedur">Valides Minimalbeispiel Prozedur</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#d7c6b239-1a3b-43ef-8b0c-57af48e12d48" aria-controls="d7c6b239-1a3b-43ef-8b0c-57af48e12d48" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#2fb082ef-0b10-44b0-b4c2-ca5d3c2be4c4" aria-controls="2fb082ef-0b10-44b0-b4c2-ca5d3c2be4c4" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#b62042dc-7e9b-4fc2-9697-edde3c8d5d16" aria-controls="b62042dc-7e9b-4fc2-9697-edde3c8d5d16" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#fac6938c-c0ab-4bfd-b85e-3f804abbbc22" aria-controls="fac6938c-c0ab-4bfd-b85e-3f804abbbc22" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="d7c6b239-1a3b-43ef-8b0c-57af48e12d48">
+    <div class="stu3-treetable" id="bada3d14c45e4ef1bc065a8af2d53a77" data-level="1"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="3afabe8cf25f4dfbad6acf32cfed0af1"><td class="instance"><span class="baseIcon primitive"></span><b>Procedure</b></td></tr><tr class="collapsed" data-id="8edbad1ca26b46cdbb57e34dd69fa6d3" data-parentId="3afabe8cf25f4dfbad6acf32cfed0af1"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>Appendektomie</span></td></tr><tr class="collapsed" data-id="370eb1eda89e4d7488ec5f01c8cc99ab" data-parentId="3afabe8cf25f4dfbad6acf32cfed0af1"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="71e1dcb2d28c4af2a9087e5ea439cbda" data-parentId="370eb1eda89e4d7488ec5f01c8cc99ab"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur</span></td></tr><tr class="collapsed" data-id="a7d3ea6789c14bd28cc7dfd61ec6320f" data-parentId="3afabe8cf25f4dfbad6acf32cfed0af1"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="589d14287f624268be840dc02a754c28" data-parentId="a7d3ea6789c14bd28cc7dfd61ec6320f"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum</span></td></tr><tr class="collapsed" data-id="54abb9b9357a4062a829cd6ec475c6a6" data-parentId="a7d3ea6789c14bd28cc7dfd61ec6320f"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>2020-04-23</span></td></tr><tr class="collapsed" data-id="3c69f1bedda042aab23d9bf6022a5f47" data-parentId="3afabe8cf25f4dfbad6acf32cfed0af1"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>completed</span></td></tr><tr class="collapsed" data-id="8749c1a35636416baf22bf55ddbace5a" data-parentId="3afabe8cf25f4dfbad6acf32cfed0af1"><td class="instance"><span class="baseIcon primitive"></span><b>category</b></td></tr><tr class="collapsed" data-id="dda48f41df8f430c986a7f745b88a708" data-parentId="8749c1a35636416baf22bf55ddbace5a"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="d359015b6f164e27a67ecc31bc664908" data-parentId="dda48f41df8f430c986a7f745b88a708"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="017d945d868543aa90e521e9767bf65b" data-parentId="dda48f41df8f430c986a7f745b88a708"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>387713003</span></td></tr><tr class="collapsed" data-id="7c98c38f8623462cb2d8d51bb44bd65c" data-parentId="dda48f41df8f430c986a7f745b88a708"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Surgical procedure (procedure)</span></td></tr><tr class="collapsed" data-id="061aa3bbf9c242f0a0a674746700e01a" data-parentId="3afabe8cf25f4dfbad6acf32cfed0af1"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="992f4df3adcb4a49b63cd8b1b65eb12c" data-parentId="061aa3bbf9c242f0a0a674746700e01a"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="f96b75db213c49d3bdbc51dc0a8b56cb" data-parentId="992f4df3adcb4a49b63cd8b1b65eb12c"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="413e339081774157a38d25117dbda5b9" data-parentId="992f4df3adcb4a49b63cd8b1b65eb12c"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>80146002</span></td></tr><tr class="collapsed" data-id="334563f94a124182a6cc47eb19721f85" data-parentId="992f4df3adcb4a49b63cd8b1b65eb12c"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Excision of appendix (procedure)</span></td></tr><tr class="collapsed" data-id="9108f948249543779b8eb3fd52d19019" data-parentId="061aa3bbf9c242f0a0a674746700e01a"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="af8702f6a5f54327b69508b60a421f02" data-parentId="9108f948249543779b8eb3fd52d19019"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/CodeSystem/bfarm/ops</span></td></tr><tr class="collapsed" data-id="0e20331f885149febb2ba9323167f6c1" data-parentId="9108f948249543779b8eb3fd52d19019"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>2020</span></td></tr><tr class="collapsed" data-id="7714b8b42df64d80992c76d401666784" data-parentId="9108f948249543779b8eb3fd52d19019"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>5-470</span></td></tr><tr class="collapsed" data-id="b80563800492459d9c8a8a9d61054530" data-parentId="9108f948249543779b8eb3fd52d19019"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Appendektomie</span></td></tr><tr class="collapsed" data-id="59cf5b3587f740e787a28c84f6de7eff" data-parentId="061aa3bbf9c242f0a0a674746700e01a"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="c970c814d481435c83ad7c33eca33f95" data-parentId="59cf5b3587f740e787a28c84f6de7eff"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>2024</span></td></tr><tr class="collapsed" data-id="8a720a65962248b4ba2641ab2f592369" data-parentId="061aa3bbf9c242f0a0a674746700e01a"><td class="instance"><span class="baseIcon primitive"></span><b>text : </b><span>Entfernung des Blinddarms</span></td></tr><tr class="collapsed" data-id="d820ca71b48e49b88b76c5a3b7c0510b" data-parentId="3afabe8cf25f4dfbad6acf32cfed0af1"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="a568ecab34234ec59740879023beda78" data-parentId="d820ca71b48e49b88b76c5a3b7c0510b"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="c325c28ce6bc4ad0a572e2dd208c8ac0" data-parentId="3afabe8cf25f4dfbad6acf32cfed0af1"><td class="instance"><span class="baseIcon primitive"></span><b>performed : </b><span>2020-04-23</span></td></tr><tr class="collapsed" data-id="e49de90f0d7a4dc49348cd9020c8390f" data-parentId="3afabe8cf25f4dfbad6acf32cfed0af1"><td class="instance"><span class="baseIcon primitive"></span><b>note</b></td></tr><tr class="collapsed" data-id="a48bdeb919dd4f1fa171c3fb357cff27" data-parentId="e49de90f0d7a4dc49348cd9020c8390f"><td class="instance"><span class="baseIcon primitive"></span><b>text : </b><span>Testnotiz</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTablebada3d14c45e4ef1bc065a8af2d53a77 = new InstanceTree();
+resourceTreeTablebada3d14c45e4ef1bc065a8af2d53a77.init("bada3d14c45e4ef1bc065a8af2d53a77");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="2fb082ef-0b10-44b0-b4c2-ca5d3c2be4c4">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">Procedure</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.id" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Appendektomie</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.meta" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.meta.profile" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.extension" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.extension.value" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">valueDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2020-04-23</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.status" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">completed</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.category" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">category</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.category.coding" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.category.coding.system" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.category.coding.code" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">387713003</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.category.coding.display" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Surgical procedure (procedure)</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">category</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.system" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.code" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">80146002</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.display" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Excision of appendix (procedure)</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.system" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/CodeSystem/bfarm/ops</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.version" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2020</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.code" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">5-470</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.display" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Appendektomie</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.version" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.text" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Entfernung des Blinddarms</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.subject" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.subject.reference" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.performed" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">performedDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2020-04-23</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.note" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">note</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.note.text" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Testnotiz</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">note</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Procedure</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="b62042dc-7e9b-4fc2-9697-edde3c8d5d16">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.resourceType" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Procedure</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.id" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Appendektomie</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.meta" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.meta.profile" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.extension" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.extension.url" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.extension.valueDateTime" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">valueDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2020-04-23</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.status" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">completed</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.category" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">category</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.category.coding" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.category.coding.code" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">387713003</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.category.coding.system" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.category.coding.display" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Surgical procedure (procedure)</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.code" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">80146002</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.system" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.display" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Excision of appendix (procedure)</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.version" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2020</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.code" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">5-470</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.system" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/bfarm/ops</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.display" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Appendektomie</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.coding.version" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.code.text" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Entfernung des Blinddarms</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.subject" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.subject.reference" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.performedDateTime" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">performedDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2020-04-23</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.note" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">note</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKProzedur.json#Procedure.note.text" title="ISiKProzedur
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKProzedur.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Testnotiz</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="fac6938c-c0ab-4bfd-b85e-3f804abbbc22">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Procedure-Appendektomie.json'>Entfernung des Blinddarms</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

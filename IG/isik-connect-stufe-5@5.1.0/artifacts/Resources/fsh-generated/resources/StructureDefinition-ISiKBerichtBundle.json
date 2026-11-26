@@ -1,0 +1,183 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKBerichtBundle",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle",
+  "version": "5.1.0",
+  "name": "ISiKBerichtBundle",
+  "title": "ISiKBerichtBundle",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-10-23",
+  "publisher": "gematik GmbH",
+  "description": "Das Document-Bundle dient dem Transport von Berichten zwischen Subsystemen im Krankenhaus. \nDas Bundle entspricht den Anforderungen an ein [FHIR Document Bundle](https://hl7.org/fhir/R4/documents.html) : Alle referenzierten Ressourcen müssen als Einträge im Bundle enthalten sein. \nDas Bundle unterstützt die Übermittlung einer menschenlesbaren Dokumentation (Narrative) und erlaubt zudem die Übernahme wichtiger Ressourcen (z. B. Diagnosen und Prozeduren), die einem Patienten und Fall (Patient, Encounter) zugeordnet sind.\n",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle",
+        "path": "Bundle",
+        "constraint": [
+          {
+            "key": "ISiK-docBundle-1",
+            "severity": "error",
+            "human": "All referenced Resources must be contained in the Bundle",
+            "expression": "Bundle.entry.descendants().reference.distinct().subsetOf(%context.entry.fullUrl)",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"
+          }
+        ]
+      },
+      {
+        "id": "Bundle.id",
+        "path": "Bundle.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.meta.versionId",
+        "path": "Bundle.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "Bundle.meta.lastUpdated",
+        "path": "Bundle.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id": "Bundle.identifier",
+        "path": "Bundle.identifier",
+        "short": "Identifier des Berichtsbundles",
+        "comment": "**Motivation MS:** Zur Identifikation des Berichtbundles muss ein Identifier vom Subsystem mit angegeben werden.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "short": "Typ des Bundles",
+        "comment": "**Begründung MS:** Damit das Bundle ein Document-Bundle nach FHIR-Core Spec ist, muss der type auf `document` gesetzt werden.",
+        "fixedCode": "document",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "short": "Datum des Bundles",
+        "comment": "**Begründung Pflichtfeld:** Ein Datum muss für die korrekte Verarbeitung durch das Zielsystem vorhanden sein.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "resource"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Eintrag pro Ressource",
+        "comment": "**Begründung MS:** Alle im Rahmen des Berichtes relevanten Informationen müssen hier referenziert werden.",
+        "min": 2,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Composition",
+        "path": "Bundle.entry",
+        "sliceName": "Composition",
+        "short": "Slice zur Hinterlegung einer Composition-Instanz",
+        "comment": "Dieses Slice wird explizit aufgeführt, um zu verdeutlichen, dass immer eine Composition-Instanz im Bundle enthalten ist.\n  Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits, dass die erste Ressource im Bundle eine Composition sein muss. Alle daraus referenzierten Ressourcen müssen ebenfalls Teil des Bundle sein.",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:Composition.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Composition",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:Patient",
+        "path": "Bundle.entry",
+        "sliceName": "Patient",
+        "short": "Slice zur Hinterlegung einer Patienten-Instanz",
+        "comment": "Dieses Slice wir explizit aufgeführt, um zu verdeutlichen, dass immer eine Patienten-Instanz im Bundle enthalten ist.\n  Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits,\n  dass einige von der Composition referenzierte Ressourcen immer auch im Bundle enthalten sein müssen. Hierzu gehört im ISiK Kontext auch die Patient-Instanz.",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:Patient.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Patient"
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:Encounter",
+        "path": "Bundle.entry",
+        "sliceName": "Encounter",
+        "short": "Slice zur Hinterlegung einer Encounter-Instanz",
+        "comment": "Dieses Slice ist optional, aber wenn es vorhanden ist, muss es genau eine Encounter-Instanz sein. Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits,\n  dass einige von der Composition referenzierte Ressourcen immer auch im Bundle enthalten sein müssen. Hierzu gehört im ISiK Kontext auch die Encounter-Instanz.",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:Encounter.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Encounter"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,205 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Implementationguide/ICU/Observation/Rechtsventrikulaerer-Druck> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Rechtsventrikulaerer-Druck"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-rechtsventrikulaerer-druck"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-rechtsventrikulaerer-druck>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation Rechtsventrikulaerer-Druck</b></p><a name=\"Rechtsventrikulaerer-Druck\"> </a><a name=\"hcRechtsventrikulaerer-Druck\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-sd-mii-icu-rechtsventrikulaerer-druck.html\">SD MII ICU Rechtsventrikulaerer Druck</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 75367002}, {http://snomed.info/sct 276756009}, {urn:iso:std:iso:11073:10101 150104}\">Right ventricular pressure</span></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>effective</b>: 2019-12-23 09:30:10+0100</p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 53085002}\">Right cardiac ventricular structure</span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 8478-0}, {urn:iso:std:iso:11073:10101 150107}, {http://loinc.org 8406-1}\">Mean right ventricular pressure</span></p><p><b>value</b>: 10 millimeter Mercury column<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 8480-6}, {urn:iso:std:iso:11073:10101 150105}, {http://loinc.org 8432-7}, {http://snomed.info/sct 276772001}\">Systolic right ventricular pressure</span></p><p><b>value</b>: 25 millimeter Mercury column<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 8462-4}, {urn:iso:std:iso:11073:10101 150106}, {http://loinc.org 8377-4}, {http://snomed.info/sct 276773006}\">Diastolic right ventricular pressure</span></p><p><b>value</b>: 5 millimeter Mercury column<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "vital-signs" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:75367002 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "75367002" ]
+     ] [
+       a sct:276756009 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "276756009" ] ;
+       fhir:display [ fhir:v "Right ventricular pressure" ]
+     ] [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:11073:10101"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:11073:10101>
+       ] ;
+       fhir:code [ fhir:v "150104" ] ;
+       fhir:display [ fhir:v "MDC_PRESS_BLD_VENT_RIGHT" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://gematik.de/fhir/isik/Implementationguide/ICU/Patient/PatientinMusterfrau> ;
+     fhir:reference [ fhir:v "Patient/PatientinMusterfrau" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2019-12-23T09:30:10+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:bodySite [
+     fhir:coding ( [
+       a sct:53085002 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "53085002" ] ;
+       fhir:display [ fhir:v "Right cardiac ventricular structure" ]
+     ] )
+  ] ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:8478-0 ;
+         fhir:system [
+           fhir:v "http://loinc.org"^^xsd:anyURI ;
+           fhir:l <http://loinc.org>
+         ] ;
+         fhir:code [ fhir:v "8478-0" ]
+       ] [
+         fhir:system [
+           fhir:v "urn:iso:std:iso:11073:10101"^^xsd:anyURI ;
+           fhir:l <urn:iso:std:iso:11073:10101>
+         ] ;
+         fhir:code [ fhir:v "150107" ] ;
+         fhir:display [ fhir:v "Mean right ventricular pressure" ]
+       ] [
+         a loinc:8406-1 ;
+         fhir:system [
+           fhir:v "http://loinc.org"^^xsd:anyURI ;
+           fhir:l <http://loinc.org>
+         ] ;
+         fhir:code [ fhir:v "8406-1" ] ;
+         fhir:display [ fhir:v "Right ventricular Intrachamber mean pressure" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "10"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "millimeter Mercury column" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "mm[Hg]" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:8480-6 ;
+         fhir:system [
+           fhir:v "http://loinc.org"^^xsd:anyURI ;
+           fhir:l <http://loinc.org>
+         ] ;
+         fhir:code [ fhir:v "8480-6" ]
+       ] [
+         fhir:system [
+           fhir:v "urn:iso:std:iso:11073:10101"^^xsd:anyURI ;
+           fhir:l <urn:iso:std:iso:11073:10101>
+         ] ;
+         fhir:code [ fhir:v "150105" ] ;
+         fhir:display [ fhir:v "Systolic right ventricular pressure" ]
+       ] [
+         a loinc:8432-7 ;
+         fhir:system [
+           fhir:v "http://loinc.org"^^xsd:anyURI ;
+           fhir:l <http://loinc.org>
+         ] ;
+         fhir:code [ fhir:v "8432-7" ] ;
+         fhir:display [ fhir:v "Right ventricular Intrachamber systolic pressure" ]
+       ] [
+         a sct:276772001 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "276772001" ] ;
+         fhir:display [ fhir:v "Right ventricular systolic pressure" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "25"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "millimeter Mercury column" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "mm[Hg]" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:8462-4 ;
+         fhir:system [
+           fhir:v "http://loinc.org"^^xsd:anyURI ;
+           fhir:l <http://loinc.org>
+         ] ;
+         fhir:code [ fhir:v "8462-4" ]
+       ] [
+         fhir:system [
+           fhir:v "urn:iso:std:iso:11073:10101"^^xsd:anyURI ;
+           fhir:l <urn:iso:std:iso:11073:10101>
+         ] ;
+         fhir:code [ fhir:v "150106" ] ;
+         fhir:display [ fhir:v "Diastolic right ventricular pressure" ]
+       ] [
+         a loinc:8377-4 ;
+         fhir:system [
+           fhir:v "http://loinc.org"^^xsd:anyURI ;
+           fhir:l <http://loinc.org>
+         ] ;
+         fhir:code [ fhir:v "8377-4" ] ;
+         fhir:display [ fhir:v "Right ventricular Intrachamber diastolic pressure" ]
+       ] [
+         a sct:276773006 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "276773006" ] ;
+         fhir:display [ fhir:v "Right ventricular diastolic pressure" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "5"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "millimeter Mercury column" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "mm[Hg]" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

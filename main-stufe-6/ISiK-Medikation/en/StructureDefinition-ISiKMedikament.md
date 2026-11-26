@@ -1,0 +1,508 @@
+# ISiKMedikament - ISiK Medikation Implementierungsleitfaden v6.0.0
+
+ISiK Medikation Implementierungsleitfaden
+
+Version 6.0.0 - active 
+
+* [**Table of Contents**](toc.md)
+* [**Artefakte**](artifacts.md)
+* **ISiKMedikament**
+
+## Resource Profile: ISiKMedikament 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament | *Version*:6.0.0 |
+| Active as of 2026-07-01 | *Computable Name*:ISiKMedikament |
+
+ 
+Dieses Profil ermöglicht die Abbildung von patientenunabhängigen Informationen zu Medikamenten in ISiK Szenarien. 
+**Motivation** 
+Die strukturierte Bereitstellung von Informationen zu Medikamenten ist eine zentrale Voraussetzung für eine interoperable Arzneimitteltherapie und unterstützt insbesondere Prozesse im Kontext der Arzneimitteltherapiesicherheit (AMTS) sowie der sektorenübergreifenden Versorgung. 
+In FHIR werden Medikamente mit der [Medication](https://hl7.org/fhir/R4/medication.html)-Ressource repräsentiert. 
+**Hinweise zur Verwendung von Medication.amount** 
+`Medication.amount` beschreibt in FHIR R4 die Menge des Arzneimittels im verpackten Produkt bzw. Behältnis. Das Element ist nicht zur Abbildung der Wirkstoffstärke vorgesehen; diese wird über `Medication.ingredient.strength` dokumentiert. 
+Beispiel: Enthält ein Infusionsbeutel 100 ml Paracetamol-Infusionslösung mit einer Wirkstoffkonzentration von 10 mg/ml, beschreibt `Medication.amount` die Füllmenge des Behältnisses, also `100 ml / 1 Beutel`. Die Wirkstoffkonzentration wird separat über `Medication.ingredient.strength` als `10 mg / 1 ml` angegeben. 
+`Medication.amount` ist insbesondere dann relevant, wenn der Arzneimittelcode allein die konkrete Packungsgröße, Füllmenge oder Menge je Verpackungseinheit nicht eindeutig ausdrückt. 
+**Kompatibilität** 
+Für das Profil ISiKMedikament wird eine größtmögliche Kompatibilität mit dem Profil [epa-medication der gematik](https://gemspec.gematik.de/ig/fhir/epa-medication) angestrebt. Ziel ist insbesondere eine vergleichbare semantische Struktur zur Unterstützung interoperabler Nutzungsszenarien. 
+Die spezifischen Extensions des epa-medication-Profils werden in diesem Profil jedoch nicht übernommen. Stattdessen erlaubt das Profil die Nutzung von Extensions, um projektspezifische Anforderungen abzubilden. 
+Es kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKMedikament valide sind, auch valide gegen das epa-medication-Profil sind. 
+Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden. 
+
+**Usages:**
+
+* Examples for this Profile: [Medication/ExampleISiKMedikament1](Medication-ExampleISiKMedikament1.md), [Medication/ExampleISiKMedikament2](Medication-ExampleISiKMedikament2.md), [Medication/ExampleISiKMedikament3](Medication-ExampleISiKMedikament3.md), [Medication/ExampleISiKMedikament4](Medication-ExampleISiKMedikament4.md)... Show 6 more, [Medication/ExampleISiKMedikament5](Medication-ExampleISiKMedikament5.md), [Medication/ExampleISiKMedikament6](Medication-ExampleISiKMedikament6.md), [Medication/ExampleISiKMedikament7](Medication-ExampleISiKMedikament7.md), [Medication/ExampleISiKMedikament8](Medication-ExampleISiKMedikament8.md), [Medication/ExampleISiKMedikament9](Medication-ExampleISiKMedikament9.md) and [Medication/ParacetamolInfusion](Medication-ParacetamolInfusion.md)
+* CapabilityStatements using this Profile: [ISiK CapabilityStatement MedikamentRolle](CapabilityStatement-ISiKCapabilityStatementMedikamentRolle.md), [ISiK CapabilityStatement Medikament WRITE Rolle](CapabilityStatement-ISiKCapabilityStatementMedikamentWRITERolle.md), [ISiK CapabilityStatement Medikationsinformation Server Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementMedikationInformationAkteur-expanded.md), [ISiK CapabilityStatement Medikationsverabreichung Server Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementMedikationVerabreichungAkteur-expanded.md) and [ISiK CapabilityStatement Medikationsverordnung Server Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementMedikationVerordnungAkteur-expanded.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/medikation|current/StructureDefinition/StructureDefinition-ISiKMedikament.json)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots, and their representations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](../StructureDefinition-ISiKMedikament.csv), [Excel](../StructureDefinition-ISiKMedikament.xlsx), [Schematron](../StructureDefinition-ISiKMedikament.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "ISiKMedikament",
+  "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament",
+  "version" : "6.0.0",
+  "name" : "ISiKMedikament",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-07-01",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    }]
+  }],
+  "description" : "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen Informationen zu Medikamenten in ISiK Szenarien.\n\n**Motivation**\n\nDie strukturierte Bereitstellung von Informationen zu Medikamenten ist eine zentrale Voraussetzung für eine interoperable Arzneimitteltherapie und unterstützt insbesondere Prozesse im Kontext der Arzneimitteltherapiesicherheit (AMTS) sowie der sektorenübergreifenden Versorgung.\n\nIn FHIR werden Medikamente mit der [Medication](https://hl7.org/fhir/R4/medication.html)-Ressource repräsentiert.\n\n**Hinweise zur Verwendung von Medication.amount**\n\n`Medication.amount` beschreibt in FHIR R4 die Menge des Arzneimittels im verpackten Produkt bzw. Behältnis. Das Element ist nicht zur Abbildung der Wirkstoffstärke vorgesehen; diese wird über `Medication.ingredient.strength` dokumentiert.\n\nBeispiel: Enthält ein Infusionsbeutel 100 ml Paracetamol-Infusionslösung mit einer Wirkstoffkonzentration von 10 mg/ml, beschreibt `Medication.amount` die Füllmenge des Behältnisses, also `100 ml / 1 Beutel`. Die Wirkstoffkonzentration wird separat über `Medication.ingredient.strength` als `10 mg / 1 ml` angegeben.\n\n`Medication.amount` ist insbesondere dann relevant, wenn der Arzneimittelcode allein die konkrete Packungsgröße, Füllmenge oder Menge je Verpackungseinheit nicht eindeutig ausdrückt.\n\n**Kompatibilität**\n\nFür das Profil ISiKMedikament wird eine größtmögliche Kompatibilität mit dem Profil [epa-medication der gematik](https://gemspec.gematik.de/ig/fhir/epa-medication) angestrebt. Ziel ist insbesondere eine vergleichbare semantische Struktur zur Unterstützung interoperabler Nutzungsszenarien.\n\nDie spezifischen Extensions des epa-medication-Profils werden in diesem Profil jedoch nicht übernommen. Stattdessen erlaubt das Profil die Nutzung von Extensions, um projektspezifische Anforderungen abzubilden.\n\nEs kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKMedikament valide sind, auch valide gegen das epa-medication-Profil sind.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "script10.6",
+    "uri" : "http://ncpdp.org/SCRIPT10_6",
+    "name" : "Mapping to NCPDP SCRIPT 10.6"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  }],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Medication",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Medication",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "Medication",
+      "path" : "Medication",
+      "constraint" : [{
+        "key" : "isik-med-1",
+        "severity" : "error",
+        "human" : "Medikamenten-Code, -Bezeichnung oder Inhaltsstoffe müssen angegeben werden.",
+        "expression" : "code.exists() or ingredient.exists()",
+        "source" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament"
+      }]
+    },
+    {
+      "id" : "Medication.id",
+      "path" : "Medication.id",
+      "short" : "serverseitige, interne ID des Datensatzes",
+      "comment" : "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.meta.versionId",
+      "path" : "Medication.meta.versionId",
+      "short" : "Eindeutiger Name der serverseitigen Version des Datensatzes",
+      "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+    },
+    {
+      "id" : "Medication.meta.lastUpdated",
+      "path" : "Medication.meta.lastUpdated",
+      "short" : "Zeitpunkt der letzten Änderung",
+      "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+    },
+    {
+      "id" : "Medication.implicitRules",
+      "path" : "Medication.implicitRules",
+      "short" : "Verweis auf die Regeln, nach denen die Ressource erstellt wurde",
+      "comment" : "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.\n  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können.",
+      "max" : "0"
+    },
+    {
+      "id" : "Medication.code",
+      "path" : "Medication.code",
+      "short" : "Medikament in codierter Form oder ggf. als Freitext",
+      "comment" : "Begründung des Must-Support: grundlegende Information",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.code.coding",
+      "path" : "Medication.code.coding",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
+      "comment" : "Begründung des Must-Support: Medikamente MÜSSEN kodiert werden, hierfür kann eine PZN, ATC-Code oder SnomedCT Code verwendet werden",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.code.coding:PZN",
+      "path" : "Medication.code.coding",
+      "sliceName" : "PZN",
+      "comment" : "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, bspw. existieren für Aspirin 3 verschiedene Packungsgrößen.",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Coding",
+        "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKPZNCoding"]
+      }],
+      "patternCoding" : {
+        "system" : "http://fhir.de/CodeSystem/ifa/pzn"
+      },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.code.coding:ATC-DE",
+      "path" : "Medication.code.coding",
+      "sliceName" : "ATC-DE",
+      "comment" : "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, bspw. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Coding",
+        "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKATCCoding"]
+      }],
+      "patternCoding" : {
+        "system" : "http://fhir.de/CodeSystem/bfarm/atc"
+      },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.code.coding:SCT",
+      "path" : "Medication.code.coding",
+      "sliceName" : "SCT",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Coding",
+        "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"]
+      }],
+      "patternCoding" : {
+        "system" : "http://snomed.info/sct"
+      },
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://gematik.de/fhir/terminology/ValueSet/ti-medication-snomed-ct-vs"
+      }
+    },
+    {
+      "id" : "Medication.code.text",
+      "path" : "Medication.code.text",
+      "comment" : "Begründung des Must-Support: Falls eine Kodierung nicht möglich ist kann das Medikament alternativ per Freitext erfasst werden",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.status",
+      "path" : "Medication.status",
+      "short" : "Status der Medikamenteninformation",
+      "comment" : "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.manufacturer",
+      "path" : "Medication.manufacturer",
+      "short" : "Hersteller des Medikaments",
+      "comment" : "Begründung des Must-Support: Alignment mit KBV-Profilen\n\n  Hinweis: Hier kann der tatsächliche Hersteller des Medikaments benannt werden, vornehmlich im Fall von Wirkstoffmischungen (Rezepturen), beispielsweise die Krankenhausapotheke. Zu beachten ist, dass die zulassende Organisation, wie sie z.B. in den Daten zur PZN benannt ist, nicht als Hersteller gilt.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.manufacturer.display",
+      "path" : "Medication.manufacturer.display",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.form",
+      "path" : "Medication.form",
+      "short" : "Abgabeform",
+      "comment" : "Begründung des Must-Support: Basis-Information eines Medikaments",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.form.coding",
+      "path" : "Medication.form.coding",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
+      "comment" : "Begründung des Must-Support: EDQM definiert eine einheitliche DoseForm auf europäischer Ebene",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.form.coding:EDQM",
+      "path" : "Medication.form.coding",
+      "sliceName" : "EDQM",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Coding",
+        "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKCoding"]
+      }],
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://hl7.org/fhir/uv/ips/ValueSet/medicine-doseform"
+      }
+    },
+    {
+      "id" : "Medication.amount",
+      "path" : "Medication.amount",
+      "short" : "Menge des Arzneimittels im verpackten Produkt bzw. Behältnis",
+      "comment" : "Begründung des Must-Support: Die Packungsgröße bzw. Füllmenge kann erforderlich sein, um ein Arzneimittelprodukt eindeutig von anderen Produkten gleicher Wirkstoffstärke und Darreichungsform zu unterscheiden.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.amount.numerator",
+      "path" : "Medication.amount.numerator",
+      "comment" : "Begründung des Must-Support: Gibt die enthaltene Menge bzw. Füllmenge an, z.B. `100 ml`.",
+      "min" : 1,
+      "type" : [{
+        "code" : "Quantity",
+        "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.amount.denominator",
+      "path" : "Medication.amount.denominator",
+      "comment" : "Begründung des Must-Support: Gibt die zugehörige Verpackungs- oder Bezugseinheit an, z.B. `1 Beutel`.",
+      "min" : 1,
+      "type" : [{
+        "code" : "Quantity",
+        "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient",
+      "path" : "Medication.ingredient",
+      "short" : "Informationen zu Bestandteilen (Rezeptur)",
+      "comment" : "Begründung des Must-Support: Wirkstoff-Rezepturen müssen dokumentierbar sein",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.extension",
+      "path" : "Medication.ingredient.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
+      "short" : "Wirkstofftyp",
+      "comment" : "Begründung des Must-Support: Alignment mit den MII-Profilen\n\n  Hinweis: Hiermit kann geklärt werden, ob es sich um eine Angabe zum Wirkstoff oder zum exakten Inhaltsstoff (z.B. Salze) handelt.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.extension:wirkstofftyp",
+      "path" : "Medication.ingredient.extension",
+      "sliceName" : "wirkstofftyp",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://fhir.de/StructureDefinition/WirkstofftypEX"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x]",
+      "path" : "Medication.ingredient.item[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Medication.ingredient.item[x]:itemCodeableConcept",
+      "path" : "Medication.ingredient.item[x]",
+      "sliceName" : "itemCodeableConcept",
+      "short" : "Bestandteil in codierter Form oder ggf. als Freitext",
+      "comment" : "Begründung des Must-Support: Der Bestandteil muss eindeutig benannt sein",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x]:itemCodeableConcept.coding",
+      "path" : "Medication.ingredient.item[x].coding",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "$this"
+        }],
+        "rules" : "open"
+      },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x]:itemCodeableConcept.coding:ASK",
+      "path" : "Medication.ingredient.item[x].coding",
+      "sliceName" : "ASK",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Coding",
+        "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKASKCoding"]
+      }],
+      "patternCoding" : {
+        "system" : "http://fhir.de/CodeSystem/ask"
+      },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x]:itemCodeableConcept.coding:ATC-DE",
+      "path" : "Medication.ingredient.item[x].coding",
+      "sliceName" : "ATC-DE",
+      "comment" : "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z.B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Coding",
+        "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKATCCoding"]
+      }],
+      "patternCoding" : {
+        "system" : "http://fhir.de/CodeSystem/bfarm/atc"
+      },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x]:itemCodeableConcept.coding:PZN",
+      "path" : "Medication.ingredient.item[x].coding",
+      "sliceName" : "PZN",
+      "comment" : "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z.B. existieren für Aspirin 3 verschiedene Packungsgrößen.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Coding",
+        "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKPZNCoding"]
+      }],
+      "patternCoding" : {
+        "system" : "http://fhir.de/CodeSystem/ifa/pzn"
+      },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x]:itemCodeableConcept.coding:SCT",
+      "path" : "Medication.ingredient.item[x].coding",
+      "sliceName" : "SCT",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Coding",
+        "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"]
+      }],
+      "patternCoding" : {
+        "system" : "http://snomed.info/sct"
+      },
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x]:itemCodeableConcept.text",
+      "path" : "Medication.ingredient.item[x].text",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x]:itemReference",
+      "path" : "Medication.ingredient.item[x]",
+      "sliceName" : "itemReference",
+      "short" : "Bestandteil (Referenz auf ein anderes Medikament)",
+      "comment" : "Begründung des Must-Support: Der Bestandteil muss eindeutig benannt sein",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Substance",
+        "http://hl7.org/fhir/StructureDefinition/Medication"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x]:itemReference.reference",
+      "path" : "Medication.ingredient.item[x].reference",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.isActive",
+      "path" : "Medication.ingredient.isActive",
+      "short" : "handelt es sich um einen aktiven Bestandteil?",
+      "comment" : "Begründung des Must-Support: Wird eine vollständige Rezeptur dokumentiert, muss erkennbar sein, welches die Wirkstoffe sind",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.strength",
+      "path" : "Medication.ingredient.strength",
+      "short" : "Stärke",
+      "comment" : "Begründung des Must-Support: Basisinformation in Rezepturen",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.strength.numerator",
+      "path" : "Medication.ingredient.strength.numerator",
+      "min" : 1,
+      "type" : [{
+        "code" : "Quantity",
+        "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.strength.denominator",
+      "path" : "Medication.ingredient.strength.denominator",
+      "min" : 1,
+      "type" : [{
+        "code" : "Quantity",
+        "profile" : ["https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.batch",
+      "path" : "Medication.batch",
+      "short" : "Angaben zur Charge",
+      "comment" : "Begründung des Must-Support: erforderlich zur Dokumentation der Chargennummer\n\n  Hinweis: Bitte beachten Sie gegebenenfalls die Regelungen der zwischen GKV-SV und DAV: https://www.gkv-datenaustausch.de/leistungserbringer/apotheken/apotheken.jsp . Insbesondere den Technischen Anhang 7 (TA7) zur Arzneimittelabrechnungsvereinbarung gemäß § 300 Absatz 3 SGB V in der aktuellsten Fassung.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.batch.lotNumber",
+      "path" : "Medication.batch.lotNumber",
+      "short" : "Chargennummer",
+      "comment" : "Begründung des Must-Support: Therapiesicherheit und Nachvollziehbarkeit\n\n  Hinweis: Gemäß Anlage 1 der TA7 kann hier übergangsweise bis zum 30. Juni 2025 eine Musterchargennummer (\"STELLEN\") eingetragen werden. Wenn die Übermittlung der Chargenbezeichnung beim Stellen von Arzneimitteln technisch nicht möglich ist, z.B. beim Verblistern, wird von der Verpflichtung zur Chargendokumentation abgesehen. Dementsprechend kann anstatt der tatsächlichen Chargenbezeichnungen \"STELLEN\" in das hierbeschirebene Datenfeld eingetragen werden.",
+      "mustSupport" : true
+    }]
+  }
+}
+
+```

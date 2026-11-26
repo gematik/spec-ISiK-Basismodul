@@ -1,0 +1,41 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Location/RaumStandortBeispiel> a fhir:Location ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "RaumStandortBeispiel"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Location RaumStandortBeispiel</b></p><a name=\"RaumStandortBeispiel\"> </a><a name=\"hcRaumStandortBeispiel\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKStandortRaum.html\">ISiKStandortRaum</a></p></div><p><b>physicalType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type ro}\">Room</span></p><p><b>managingOrganization</b>: <a href=\"Organization-AbteilungAllgemeinchirurgieOrganisationBeispiel.html\">Organization Allgemeinchirurgie</a></p></div>"
+  ] ;
+  fhir:Location.physicalType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/location-physical-type" ] ;
+       fhir:Coding.code [ fhir:value "ro" ] ;
+       fhir:Coding.display [ fhir:value "Room" ]
+     ]
+  ] ;
+  fhir:Location.managingOrganization [
+     fhir:link <https://gematik.de/fhir/isik/Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel> ;
+     fhir:Reference.reference [ fhir:value "Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Location/RaumStandortBeispiel.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

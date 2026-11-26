@@ -1,0 +1,332 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKProzedur",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur",
+  "version": "5.0.0-rc2-test-broken",
+  "name": "ISiKProzedurBrokenForQATest",
+  "status": "active",
+  "experimental": true,
+  "date": "2025-06-05",
+  "publisher": "gematik GmbH (test-modified)",
+  "description": "",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure",
+        "path": "Procedure",
+        "constraint": [
+          {
+            "key": "proc-ISiK-1",
+            "severity": "error",
+            "human": "Falls die Prozedur per OPS kodiert wird, MUSS eine SNOMED-CT kodierte Category abgebildet werden",
+            "expression": "code.coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists() implies category.coding.where(system = 'http://snomed.info/sct').exists()",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur"
+          },
+          {
+            "key": "proc-ISiK-2",
+            "severity": "error",
+            "human": "Falls eine codierte Prozedur vorliegt MUSS eine kodierte Category abgebildet werden",
+            "expression": "code.coding.exists() implies category.coding.exists()",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.extension",
+        "path": "Procedure.extension",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:Dokumentationsdatum",
+        "path": "Procedure.extension",
+        "sliceName": "Dokumentationsdatum",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.status",
+        "path": "Procedure.status",
+        "comment": "Zeigt den aktuellen Status der Prozedur an. Implementer Hinweis entfernt für Test.",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.category",
+        "path": "Procedure.category",
+        "short": "Kategorie",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.category.coding",
+        "path": "Procedure.category.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Procedure.category.coding:SNOMED-CT",
+        "path": "Procedure.category.coding",
+        "sliceName": "SNOMED-CT",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ProzedurenKategorieSCT"
+        }
+      },
+      {
+        "id": "Procedure.code",
+        "path": "Procedure.code",
+        "short": "Prozeduren-Code",
+        "comment": "Prozeduren SOLLEN mindestens entweder mit einem OPS-Code oder einem SNOMED-Code codiert werden. (Testvariante)",
+        "min": 1,
+        "constraint": [
+          {
+            "key": "sct-ops-1",
+            "severity": "error",
+            "human": "Falls die Prozedur kodiert vorliegt, SOLL mindestens ein OPS oder SNOMED-CT Code angegeben werden.",
+            "expression": "coding.exists() implies coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists()",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur"
+          },
+          {
+            "key": "proc-ISiK-3",
+            "severity": "error",
+            "human": "Entweder MUSS eine kodierte Prozedur vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt.",
+            "expression": "coding.exists().not() implies text.exists()",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.code.coding",
+        "path": "Procedure.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Codierte Darstellung der Prozedur"
+      },
+      {
+        "id": "Procedure.code.coding:OPS",
+        "path": "Procedure.code.coding",
+        "sliceName": "OPS",
+        "short": "OPS-codierte Darstellung der Prozedur",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "http://fhir.de/StructureDefinition/CodingOPS"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.de/ValueSet/bfarm/ops"
+        }
+      },
+      {
+        "id": "Procedure.code.coding:OPS.extension:Seitenlokalisation",
+        "path": "Procedure.code.coding.extension",
+        "sliceName": "Seitenlokalisation",
+        "short": "Seitenlokalisation",
+        "comment": "**Testfall:** Seitenlokalisation bleibt, dient zur Variation",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.code.coding:OPS.system",
+        "path": "Procedure.code.coding.system",
+        "short": "Namensraum des Prozeduren-Codes",
+        "comment": "Hier ist stets der Wert `http://fhir.de/CodeSystem/bfarm/ops` anzugeben.",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.code.coding:OPS.version",
+        "path": "Procedure.code.coding.version",
+        "short": "Die Jahresversion des OPS Kataloges. Angegeben wird immer die vierstellige Jahreszahl (z.B. `2017`)",
+        "comment": "**Test:** Pflichtfeldabsicht bleibt (Variation).",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.code.coding:OPS.code",
+        "path": "Procedure.code.coding.code",
+        "short": "OPS-Code",
+        "comment": "Hier ist der OPS-Code ohne jegliche Zusatzkennzeichen (z.B. Seitenlokalisation) oder Versionsnummern anzugeben.",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.code.coding:SNOMED-CT",
+        "path": "Procedure.code.coding",
+        "sliceName": "SNOMED-CT",
+        "short": "SNOMED-codierte Darstellung der Prozedur",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ProzedurenCodesSCT"
+        }
+      },
+      {
+        "id": "Procedure.code.text",
+        "path": "Procedure.code.text",
+        "short": "Freitextiche Beschreibung der Prozedur",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.subject",
+        "path": "Procedure.subject",
+        "short": "Patientenbezug",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.subject.reference",
+        "path": "Procedure.subject.reference",
+        "short": "Patienten-Link",
+        "comment": "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.encounter",
+        "path": "Procedure.encounter",
+        "short": "Aufenthaltsbezug",
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.encounter.reference",
+        "path": "Procedure.encounter.reference",
+        "short": "Encounter-Link",
+        "comment": "Die Zuordnung MUSS auf einen Encounter der Ebene 'Abteilungskontakt' erfolgen.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.performed[x]",
+        "path": "Procedure.performed[x]",
+        "short": "Durchführungsdatum oder -Zeitraum",
+        "comment": "Es muss mindestens entweder ein (partielles) Durchführungsdatum oder der Beginn des Durchführungszeitraumes angegeben werden.",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          },
+          {
+            "code": "Period"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.note",
+        "path": "Procedure.note",
+        "short": "Notizen",
+        "comment": "Ergänzende Hinweise und Anmerkungen zur Prozedur",
+        "mustSupport": true
+      },
+
+      {
+        "id": "Procedure.fake0",
+        "path": "Procedure.fake0",
+        "short": "Test-Element mit 0..0 und mustSupport (soll Fehler erzeugen)",
+        "comment": "Dieses Element hat min=0 max=0 und dennoch mustSupport=true — absichtlicher Verstoß gegen F2.2.",
+        "min": 0,
+        "max": "0",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+
+      {
+        "id": "Procedure.someRequiredElement",
+        "path": "Procedure.someRequiredElement",
+        "short": "Element mit eingeschränkter Kardinalität aber ohne mustSupport",
+        "comment": "Dieses Element hat min=1 max=1, wurde **absichtlich** nicht als mustSupport markiert, um F2.1 zu verletzen.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+
+      {
+        "id": "Procedure.brokenMustSupportShortMissing",
+        "path": "Procedure.brokenMustSupportShortMissing",
+        "comment": "Dieses mustSupport-Element hat kein 'short' — sollte eine Warnung auslösen (F1.2).",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+
+      {
+        "id": "Procedure.brokenMustSupportCommentMissing",
+        "path": "Procedure.brokenMustSupportCommentMissing",
+        "short": "Broken - Kommentar fehlt",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+
+    ]
+  }
+}

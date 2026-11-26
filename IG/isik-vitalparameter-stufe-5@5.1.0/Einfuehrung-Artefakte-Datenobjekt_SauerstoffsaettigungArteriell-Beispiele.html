@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden - ISiK-Vitalparameter</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden - ISiK-Vitalparameter
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende UseCases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases.html">
+                                            &#xDC;bergreifende UseCases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases-AMTS.html">
+                                            AMTS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases-Intensivversorgung.html">
+                                            Intensivversorgung
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-InteraktionenAkteure.html">
+                                            Interaktionen und Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Signaldaten.html">
+                                            Signaldaten
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-RestApi.html">
+                                            RestApi
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Atemfrequenz.html">
+                                            ISiKAtemfrequenz (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_BlutdruckSystemischArteriell.html">
+                                            ISiKBlutdruckSystemischArteriell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Herzfrequenz.html">
+                                            ISiKHerzfrequenz (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpergewicht.html">
+                                            ISiKKoerpergewicht (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpergroesse.html">
+                                            ISiKKoerpergroesse (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpertemperatur.html">
+                                            ISiKKoerpertemperatur (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Kopfumfang.html">
+                                            ISiKKopfumfang (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_SauerstoffsaettigungArteriell.html">
+                                            ISiKSauerstoffsaettigungArteriell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_GCS.html">
+                                            ISiKGCS (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_EKG.html">
+                                            ISiKEKG (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#ed28aad9-8848-418f-b703-b78990b40131" aria-controls="ed28aad9-8848-418f-b703-b78990b40131" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#cda64d1a-a306-417b-a902-b318f5b1fc88" aria-controls="cda64d1a-a306-417b-a902-b318f5b1fc88" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#fa5d2d28-5c9d-41f0-a40e-2fc1c2ecd2a1" aria-controls="fa5d2d28-5c9d-41f0-a40e-2fc1c2ecd2a1" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#a72f5a0d-6e87-42c2-84b6-05ba30084ed6" aria-controls="a72f5a0d-6e87-42c2-84b6-05ba30084ed6" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="ed28aad9-8848-418f-b703-b78990b40131">
+    <div class="stu3-treetable" id="312f1cc28ee94ad1beb2965a565ed0f5" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="86b10695a8fe40d2b23b6e0c8992b79b"><td class="instance"><span class="baseIcon primitive"></span><b>Observation</b></td></tr><tr class="collapsed" data-id="f8c9b3d5b8ac4f76b689036afd78f55d" data-parentId="86b10695a8fe40d2b23b6e0c8992b79b"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ISiKSauerstoffsaettigungArteriellExample</span></td></tr><tr class="collapsed" data-id="a52d1f04be664ee9872085c49f20605d" data-parentId="86b10695a8fe40d2b23b6e0c8992b79b"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="90c36d89bd964ba4abd708f096b01c69" data-parentId="a52d1f04be664ee9872085c49f20605d"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKSauerstoffsaettigungArteriell</span></td></tr><tr class="collapsed" data-id="8260f55f97ab4c7180e470479494dccb" data-parentId="86b10695a8fe40d2b23b6e0c8992b79b"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="a19796a9a9db46808b2f373fecf218b8" data-parentId="86b10695a8fe40d2b23b6e0c8992b79b"><td class="instance"><span class="baseIcon primitive"></span><b>category</b></td></tr><tr class="collapsed" data-id="7bb8b41686374cadbf02bcbe4a83ca55" data-parentId="a19796a9a9db46808b2f373fecf218b8"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="4f1b3b7d4fe1410fa36db860eaabaa14" data-parentId="7bb8b41686374cadbf02bcbe4a83ca55"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/observation-category</span></td></tr><tr class="collapsed" data-id="e68e2e0116b842278dbc525a4372366d" data-parentId="7bb8b41686374cadbf02bcbe4a83ca55"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>vital-signs</span></td></tr><tr class="collapsed" data-id="3e15e3d5ae4b432295900533866883bd" data-parentId="86b10695a8fe40d2b23b6e0c8992b79b"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="dae53adbe3ca4cddb2ed16dec61dee81" data-parentId="3e15e3d5ae4b432295900533866883bd"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="686b7fe9b56a4defb3ff2761edea2e55" data-parentId="dae53adbe3ca4cddb2ed16dec61dee81"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="a3b1645de31f411598c89bcbc25b5e45" data-parentId="dae53adbe3ca4cddb2ed16dec61dee81"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>2708-6</span></td></tr><tr class="collapsed" data-id="30f02c8a6b2d4f619c39987597f8f1f6" data-parentId="dae53adbe3ca4cddb2ed16dec61dee81"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Oxygen saturation in Arterial blood</span></td></tr><tr class="collapsed" data-id="a31c156e085346be8c5aaa83fb71da0f" data-parentId="3e15e3d5ae4b432295900533866883bd"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="be52854015ef48e8a9f00a6ed7b5d15a" data-parentId="a31c156e085346be8c5aaa83fb71da0f"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="0cdb2f22e6e448a8b64382736b617825" data-parentId="a31c156e085346be8c5aaa83fb71da0f"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>442476006</span></td></tr><tr class="collapsed" data-id="6eccacf495a8473fb52245a6b923e87e" data-parentId="a31c156e085346be8c5aaa83fb71da0f"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Arterial oxygen saturation</span></td></tr><tr class="collapsed" data-id="9fba232778e04ebda6bd06e4c0c38114" data-parentId="3e15e3d5ae4b432295900533866883bd"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="ab1b2cd7add44dbfbafc9a0b67bdb418" data-parentId="9fba232778e04ebda6bd06e4c0c38114"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>urn:iso:std:iso:11073:10101</span></td></tr><tr class="collapsed" data-id="30bd614fd3504121af2c03bbdd26aa02" data-parentId="9fba232778e04ebda6bd06e4c0c38114"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>150324</span></td></tr><tr class="collapsed" data-id="89b1eae111114287a343bda28cab82ec" data-parentId="9fba232778e04ebda6bd06e4c0c38114"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>MDC_SAT_O2_ART</span></td></tr><tr class="collapsed" data-id="1066ca108aee4f1ea3abb8349b8d142a" data-parentId="3e15e3d5ae4b432295900533866883bd"><td class="instance"><span class="baseIcon primitive"></span><b>text : </b><span>Pulsoximetrische Sauerstoffs&#228;ttigung</span></td></tr><tr class="collapsed" data-id="36a90706965a4395aba0779aac23a258" data-parentId="86b10695a8fe40d2b23b6e0c8992b79b"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="d185df5399694d9f98c9c674ed94e929" data-parentId="36a90706965a4395aba0779aac23a258"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="b633ae50235e41e9ac93650645fdd26b" data-parentId="86b10695a8fe40d2b23b6e0c8992b79b"><td class="instance"><span class="baseIcon primitive"></span><b>effective : </b><span>2020-10-11</span></td></tr><tr class="collapsed" data-id="a034023f2cc047a0ae9aadbc61a6d63a" data-parentId="86b10695a8fe40d2b23b6e0c8992b79b"><td class="instance"><span class="baseIcon primitive"></span><b>performer</b></td></tr><tr class="collapsed" data-id="fd72f51fab7848eeb9ef9568f551fc5d" data-parentId="a034023f2cc047a0ae9aadbc61a6d63a"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Practitioner/DrMustermann</span></td></tr><tr class="collapsed" data-id="3ddd197ba8ad470db9ac6aa2a0a36d62" data-parentId="86b10695a8fe40d2b23b6e0c8992b79b"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="1647655e0b8749c892e27cfebcd5a606" data-parentId="3ddd197ba8ad470db9ac6aa2a0a36d62"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>98</span></td></tr><tr class="collapsed" data-id="1a6258b170c4435ab9b90aff52cc7b99" data-parentId="3ddd197ba8ad470db9ac6aa2a0a36d62"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>%</span></td></tr><tr class="collapsed" data-id="c697b4d0ab4e4d37b25dddbbfddae761" data-parentId="3ddd197ba8ad470db9ac6aa2a0a36d62"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="929ac2671ad0470a906c6a5eed78d82c" data-parentId="3ddd197ba8ad470db9ac6aa2a0a36d62"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>%</span></td></tr><tr class="collapsed" data-id="813f0357548c4df98a7655c4f83cc215" data-parentId="86b10695a8fe40d2b23b6e0c8992b79b"><td class="instance"><span class="baseIcon primitive"></span><b>component</b></td></tr><tr class="collapsed" data-id="20fafd067b064726b512e06c655201c7" data-parentId="813f0357548c4df98a7655c4f83cc215"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="69626eba8e7f48e2bfea517d18c7d107" data-parentId="20fafd067b064726b512e06c655201c7"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="6009c463632b491e90c68458e333ba47" data-parentId="69626eba8e7f48e2bfea517d18c7d107"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="81fd0997418649a5a4aad8346d3f02c3" data-parentId="69626eba8e7f48e2bfea517d18c7d107"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>3151-8</span></td></tr><tr class="collapsed" data-id="9433a97356a44f76b672cc6af1382cd5" data-parentId="69626eba8e7f48e2bfea517d18c7d107"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Inhaled oxygen flow rate</span></td></tr><tr class="collapsed" data-id="d9b15f754e2144be980a80d91d394573" data-parentId="20fafd067b064726b512e06c655201c7"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="9f3dc4ca38fd4d20ae9bd3613dd5ec82" data-parentId="d9b15f754e2144be980a80d91d394573"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="bad742507f364cdb9ddb8b7e5aa7b1c3" data-parentId="d9b15f754e2144be980a80d91d394573"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>427081008</span></td></tr><tr class="collapsed" data-id="1e4b21f9191c4e8581b53123391bd073" data-parentId="d9b15f754e2144be980a80d91d394573"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Delivered oxygen flow rate</span></td></tr><tr class="collapsed" data-id="69a5045258d1407bbab5dddf56671dc8" data-parentId="20fafd067b064726b512e06c655201c7"><td class="instance"><span class="baseIcon primitive"></span><b>text : </b><span>Sauerstoffflussrate</span></td></tr><tr class="collapsed" data-id="514a8180f1a847b5a248b7a83273a917" data-parentId="813f0357548c4df98a7655c4f83cc215"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="2222eec712234528a6dc96ffd0cd373d" data-parentId="514a8180f1a847b5a248b7a83273a917"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>2</span></td></tr><tr class="collapsed" data-id="ad87a92b0be14191a55436a8b3d1a3f7" data-parentId="514a8180f1a847b5a248b7a83273a917"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>Liter pro Minute</span></td></tr><tr class="collapsed" data-id="37c25959b2384706a740f8098e6da16a" data-parentId="514a8180f1a847b5a248b7a83273a917"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="59db64843e504f169743b6bdca134c53" data-parentId="514a8180f1a847b5a248b7a83273a917"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>L/min</span></td></tr><tr class="collapsed" data-id="97436ead20bf4970ba33354475833bde" data-parentId="86b10695a8fe40d2b23b6e0c8992b79b"><td class="instance"><span class="baseIcon primitive"></span><b>component</b></td></tr><tr class="collapsed" data-id="1cc0094d55c3490fa49ecb97230066ef" data-parentId="97436ead20bf4970ba33354475833bde"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="001268d5f6ae47728bc31c607d60a0d4" data-parentId="1cc0094d55c3490fa49ecb97230066ef"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="e55cf9167c214402881ad73538182f46" data-parentId="001268d5f6ae47728bc31c607d60a0d4"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="2ff1c624ca88475e8a0a04a429a7f344" data-parentId="001268d5f6ae47728bc31c607d60a0d4"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>3150-0</span></td></tr><tr class="collapsed" data-id="07687a8255ea48209ec4827605f2ebaf" data-parentId="001268d5f6ae47728bc31c607d60a0d4"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Inhaled oxygen concentration</span></td></tr><tr class="collapsed" data-id="40b18784b13b492485d4445b4b162ebb" data-parentId="1cc0094d55c3490fa49ecb97230066ef"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="e7453e7419f64dcc8b89676f3fda2bd5" data-parentId="40b18784b13b492485d4445b4b162ebb"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="25110ab2587b488eb7043c072d0c846c" data-parentId="40b18784b13b492485d4445b4b162ebb"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>250774007</span></td></tr><tr class="collapsed" data-id="2e4c0639a03040b69084d782ff74b0f1" data-parentId="40b18784b13b492485d4445b4b162ebb"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Inspired oxygen concentration</span></td></tr><tr class="collapsed" data-id="8b84e62e64bc4a728ed38d856f94af6c" data-parentId="1cc0094d55c3490fa49ecb97230066ef"><td class="instance"><span class="baseIcon primitive"></span><b>text : </b><span>Inspiratorische Sauerstoffkonzentration</span></td></tr><tr class="collapsed" data-id="785b95603bf14f95835306fbffd52743" data-parentId="97436ead20bf4970ba33354475833bde"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="56cf46bf9f764f0ba1e9ef5aa2c9028a" data-parentId="785b95603bf14f95835306fbffd52743"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>50</span></td></tr><tr class="collapsed" data-id="b5f6f4272f464357a901d5c40243fe42" data-parentId="785b95603bf14f95835306fbffd52743"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>%</span></td></tr><tr class="collapsed" data-id="72877b78d7c3458ca428b34bd27748d4" data-parentId="785b95603bf14f95835306fbffd52743"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="319d60df1a5449feb4656b12294d71a8" data-parentId="785b95603bf14f95835306fbffd52743"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>%</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable312f1cc28ee94ad1beb2965a565ed0f5 = new InstanceTree();
+resourceTreeTable312f1cc28ee94ad1beb2965a565ed0f5.init("312f1cc28ee94ad1beb2965a565ed0f5");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="cda64d1a-a306-417b-a902-b318f5b1fc88">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">Observation</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.id" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKSauerstoffsaettigungArteriellExample</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.meta" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.meta.profile" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKSauerstoffsaettigungArteriell</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.status" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.category" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">category</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.category.coding" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.category.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.category.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">vital-signs</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">category</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2708-6</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.display" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Oxygen saturation in Arterial blood</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">442476006</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.display" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Arterial oxygen saturation</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">150324</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.display" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MDC_SAT_O2_ART</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.text" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Pulsoximetrische Sauerstoffs&#228;ttigung</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.subject" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.subject.reference" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.effective" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">effectiveDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2020-10-11</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.performer" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">performer</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.performer.reference" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Practitioner/DrMustermann</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">performer</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.value" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">valueQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.value.value" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">98</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.value.unit" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">%</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.value.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.value.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">%</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueQuantity</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">component</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">3151-8</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.display" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Inhaled oxygen flow rate</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">427081008</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.display" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Delivered oxygen flow rate</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.text" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Sauerstoffflussrate</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.value" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">valueQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.value.value" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.value.unit" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Liter pro Minute</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.value.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.value.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">L/min</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueQuantity</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">component</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">component</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">3150-0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.display" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Inhaled oxygen concentration</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">250774007</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.display" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Inspired oxygen concentration</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.text" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Inspiratorische Sauerstoffkonzentration</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.value" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">valueQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.value.value" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">50</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.value.unit" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">%</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.value.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.value.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">%</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueQuantity</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">component</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Observation</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="fa5d2d28-5c9d-41f0-a40e-2fc1c2ecd2a1">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.resourceType" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.id" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKSauerstoffsaettigungArteriellExample</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.meta" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.meta.profile" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKSauerstoffsaettigungArteriell</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.category" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">category</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.category.coding" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.category.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.category.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">vital-signs</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2708-6</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.display" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Oxygen saturation in Arterial blood</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">442476006</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.display" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Arterial oxygen saturation</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">150324</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">urn:iso:std:iso:11073:10101</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.coding.display" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MDC_SAT_O2_ART</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.code.text" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Pulsoximetrische Sauerstoffs&#228;ttigung</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.valueQuantity" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.valueQuantity.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.valueQuantity.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">%</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.valueQuantity.value" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">98</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.valueQuantity.unit" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">%</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">component</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.valueQuantity" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.valueQuantity.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.valueQuantity.value" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">2</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.valueQuantity.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">L/min</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.valueQuantity.unit" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Liter pro Minute</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">3151-8</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.display" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Inhaled oxygen flow rate</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">427081008</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.display" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Delivered oxygen flow rate</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.text" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Sauerstoffflussrate</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.valueQuantity" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.valueQuantity.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.valueQuantity.value" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">50</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.valueQuantity.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">%</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.valueQuantity.unit" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">%</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">3150-0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.display" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Inhaled oxygen concentration</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.code" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">250774007</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.system" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.coding.display" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Inspired oxygen concentration</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.component.code.text" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Inspiratorische Sauerstoffkonzentration</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.status" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.subject" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.subject.reference" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.effectiveDateTime" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">effectiveDateTime</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2020-10-11</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.performer" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">performer</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKSauerstoffsaettigungArteriell.json#Observation.performer.reference" title="ISiKSauerstoffsaettigungArteriell
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKSauerstoffsaettigungArteriell.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Practitioner/DrMustermann</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="a72f5a0d-6e87-42c2-84b6-05ba30084ed6">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Observation-ISiKSauerstoffsaettigungArteriellExample.json'>Pulsoximetrische Sauerstoffsättigung</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

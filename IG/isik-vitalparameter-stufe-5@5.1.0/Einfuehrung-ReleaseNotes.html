@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden - ISiK-Vitalparameter</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden - ISiK-Vitalparameter
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende UseCases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases.html">
+                                            &#xDC;bergreifende UseCases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases-AMTS.html">
+                                            AMTS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeUseCases-Intensivversorgung.html">
+                                            Intensivversorgung
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-InteraktionenAkteure.html">
+                                            Interaktionen und Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Signaldaten.html">
+                                            Signaldaten
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-RestApi.html">
+                                            RestApi
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Atemfrequenz.html">
+                                            ISiKAtemfrequenz (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_BlutdruckSystemischArteriell.html">
+                                            ISiKBlutdruckSystemischArteriell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Herzfrequenz.html">
+                                            ISiKHerzfrequenz (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpergewicht.html">
+                                            ISiKKoerpergewicht (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpergroesse.html">
+                                            ISiKKoerpergroesse (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Koerpertemperatur.html">
+                                            ISiKKoerpertemperatur (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Kopfumfang.html">
+                                            ISiKKopfumfang (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_SauerstoffsaettigungArteriell.html">
+                                            ISiKSauerstoffsaettigungArteriell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_GCS.html">
+                                            ISiKGCS (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_EKG.html">
+                                            ISiKEKG (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h1 id="release-notes">Release Notes</h1>
+<p>Im Rahmen der ISiK-Veröffentlichungen wird das <a href="https://semver.org/lang/de/">Semantic Versioning</a> verwendet.</p>
+<p>Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.</p>
+<h2 id="version-5.1.0">Version 5.1.0</h2>
+<p>Datum: 23.10.2025</p>
+<ul>
+<li><code>improve</code> id-Elemente sind in <em>allen</em> Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/799">https://github.com/gematik/spec-ISiK-Basismodul/pull/799</a></li>
+<li><code>documentation</code> Rendering der im Modul verwendeten ValueSets <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/802">https://github.com/gematik/spec-ISiK-Basismodul/pull/802</a></li>
+</ul>
+<hr />
+<h2 id="version-5.0.0">Version 5.0.0</h2>
+<p>Datum: 26.06.2025</p>
+<p>Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.</p>
+<h2 id="version-5.0.0-rc2-benehmensherstellung">Version 5.0.0-rc2 (Benehmensherstellung)</h2>
+<p>Datum: 5.6.2025</p>
+<ul class="contains-task-list">
+<li><code>improve</code> Anpassung der MS-Definitionen, um klarzustellen, dass bestimmte Systeme keine Angaben zu Methode und Gerät machen müssen, wenn ihnen die entsprechende Datenstruktur fehlt <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/732">https://github.com/gematik/spec-ISiK-Basismodul/pull/732</a></li>
+<li class="task-list-item"><code>improve</code> Entfernen unnötiger value<input disabled="disabled" type="checkbox" checked="checked" />-Elemente und Schwächung der Must-Support-Anforderungen für Blutdruck .meanBP <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/731">https://github.com/gematik/spec-ISiK-Basismodul/pull/731</a></li>
+</ul>
+<h2 id="version-5.0.0-rc">Version 5.0.0-rc</h2>
+<p>Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.</p>
+<p>Datum: 09.04.2025</p>
+<ul>
+<li>RelatedPerson als optionalen Akteur in ISiKTermin hinzu <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/606">https://github.com/gematik/spec-ISiK-Basismodul/pull/606</a></li>
+</ul>
+<hr />
+<h2 id="version-4.0.2">Version: 4.0.2</h2>
+<p>Datum: 18.03.2025</p>
+<ul>
+<li><code>improve</code> Update der CapabilityStatements</li>
+<li><code>improve</code> feat: added ISiK-KoerperkernTemperatur Profile
+fix: integrated mii profiles into Vitalparameter Module, KoerperKernTemp Profiles of MII are now derived from ISiK-KoerperkernTemperatur
+fix: fixed several validation errors <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203</a></li>
+<li><code>improve</code> .source of mii-icu-1 invariant corrected <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203</a></li>
+<li><code>improve</code> UCUM-ValueSets und bindings für valueQuantity-Profile entfernt, ersetzt durch ein pattern auf valueQuantity.code um eine einheitliche UCUM Nutzung zu gewährleisten. <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203</a></li>
+<li><code>improve</code> VS_MII_ICU_Code_Monitoring_und_Vitaldaten_ISO11073 fehlten zwei Codes die in Profilen verwendet wurden, diese wurden ergänzt. <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203</a></li>
+<li><code>improve</code> SD_MII_ICU_Sauerstoffsaettigung_Im_Arteriellen_Blut_Durch_Pulsoxymetrie: ändern der Kardinalität des loinc-fhir-core von slices auf 1.. um den verpflichtenden magic loinc value in jeder Instanz zu gewährleisten. <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203</a></li>
+<li><code>improve</code> SD_MII_ICU_Monitoring_Und_Vitaldaten: optionaler zweiter Categorycode wurde entfernt da dies ein panel-code und für die Verwendung auf .code einer Abbildung eines Panels gedacht ist. <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203</a></li>
+<li><code>improve</code> SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Postduktal_Durch_Pulsoxymetrie &amp; SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Preduktal_Durch_Pulsoxymetrie sind keine gewöhnlichen Sauerstoffsättigungen. Der optionale magic loinc code wurde daher entfernt. <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203</a></li>
+<li><code>improve</code> dependency auf die dt. Basisprofile wurde auf die neuste Version: 1.5.3 aktualisiert. <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203</a></li>
+</ul>
+<hr />
+<h2 id="version-4.0.1">Version: 4.0.1</h2>
+<p>Datum: 24.2.2025</p>
+<ul class="contains-task-list">
+<li><code>improve</code> Entfernen der strengeren VS-Bindings auf Observation.code[snomed] für die einfachen Vitalsignsprofile, um alle relevanten SnomedCT Concepte aus der de.basisprofil.r4 hier verwenden zu können <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/200">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/200</a></li>
+<li>Einführung der Datentypprofile für Coding Datentypen: ISiKCoding, ISiKSnomedCTCoding &amp; ISiKLoincCoding aus dem ISiK Basisprofil-Modul <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/159">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/159</a></li>
+<li><code>improve</code> Fehlende ISO11073 Codes zu ValueSet `VS_MII_ICU_Code_Monitoring_und_Vitaldaten_ISO11073 hinzugefügt <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/179">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/179</a></li>
+<li><code>improve</code> Update der Abhängigkeit zu den Basisprofilen auf Version 1.5.1 - <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/195">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/195</a>:
+<ul>
+<li>Einführung eines neuen, SnomedCT basierten, VS bindings für EKG-Ableitungen. Die bisher verwendeten LOINC Codes waren LP Codes, welche nicht zur Verwendung in Instanzen bestimmt sind. Die alten Codes sind weiterhin valide, aber per Slice als deprecated markiert.</li>
+<li>Statt eines patterns für Observation.code werden die &quot;magic-loinc-codes&quot; nun per verpflichtendem Slice erzwungen.</li>
+</ul>
+</li>
+<li><code>improve</code> Fehlende Codes zu ValueSet hinzugefügt <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/175">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/175</a></li>
+<li class="task-list-item"><code>improve</code> Beschreibungen und MS-Kommentare für alle &quot;Nicht-MII&quot;-Ressourcen hinzugefügt und MS für value<input disabled="disabled" type="checkbox" checked="checked" /> verbessert <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/184">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/184</a></li>
+<li>Formulierungsänderung zur Nutzung von Profilen aus der Basis <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/196">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/196</a></li>
+<li><code>improve</code> Die Verbindlichkeit des Suchparameters <code>subject</code> wurde von SHALL auf MAY reduziert, da der Suchparameter <code>patient</code> für ISiK-Zwecke ausreichend ist.  <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/192">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/192</a></li>
+<li><code>improve</code> Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter <code>patient</code> und <code>encounter</code>, da diese für ISiK-Zwecke ausreichend sind. <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/192">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/192</a></li>
+<li><code>improve</code> Update Suchparameter clinical-patient (SHALL) und subject (SHALL-&gt;MAY) + Hinweis zur Kontextherstellung + Einbindung CpS</li>
+</ul>
+<hr />
+<h2 id="version-4.0.0">Version: 4.0.0</h2>
+<p>Datum: 30.09.2024</p>
+<ul>
+<li>Aktive Version ohne weitere Änderungen</li>
+</ul>
+<hr />
+<h2 id="version-4.0.0-rc2">Version: 4.0.0-rc2</h2>
+<p>Datum: 26.6.2024</p>
+<ul>
+<li><code>fix</code> Korrektur der übernommenen MII-ICU-Profile nach Review durch MII <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/166">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/166</a></li>
+</ul>
+<hr />
+<h2 id="version-4.0.0-rc">Version: 4.0.0-rc</h2>
+<p>Datum: 4.4.2024</p>
+<ul>
+<li>Klärung datenuebernahme pdms kis by @patrick-werner in <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/154">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/154</a></li>
+<li><code>documentation</code> Hinzufügen eines IG Abschnitts zur Abdeckung der ICU-Normal-Überleitung - siehe <a href="https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-UebergreifendeUseCases-Intensivversorgung">https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-UebergreifendeUseCases-Intensivversorgung</a></li>
+<li><code>improve</code> Hinzufügen der MII-ICU-Profile <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/150">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/150</a></li>
+<li><code>improve</code> Update der ISIk Basis Dependency: <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156">update dependency ISIK Basis</a></li>
+<li><code>improve</code> Hinzufügen von SnomedCT Coding Slices: <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156">update dependency ISIK Basis</a></li>
+<li><code>improve</code> Hinzufügen von MS für einzelne Components : <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/138">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/138</a></li>
+<li><code>improve</code> Hinweis zu Profilen aus ISiK Support-Modul Labor hinzugefügt - siehe <a href="https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-Datenobjekte-Laborprofile">https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-Datenobjekte-Laborprofile</a></li>
+<li><code>fix</code> Fix CpS rendering by @alexzautke in <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/161">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/161</a></li>
+</ul>
+<hr />
+<h2 id="version-3.0.2">Version: 3.0.2</h2>
+<p>Datum: 20.03.2024</p>
+<ul>
+<li>MS auf dataAbsentReason gesetzt und Hinweis zur Nutzung <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/144">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/144</a></li>
+<li>ISiK-EKG: .encounter MS Flag hinzu : <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/146">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/146</a></li>
+<li>Informationen zu Profilen präzisiert und Verpflichtung bei GCS und EKG geschwächt: <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/145">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/145</a></li>
+</ul>
+<hr />
+<h2 id="version-3.0.1">Version: 3.0.1</h2>
+<p>Datum: 05.01.2024</p>
+<ul>
+<li><code>improve</code> Update der ISIk Basis Dependency: <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/141/commits/2d00c0a267756694cd86dd0866e8b0339f88d593">update dependency ISIK Basis</a></li>
+<li>Klärung zur Nutzung der ISiK Basis Ressourcen: <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/141/commits/a8654b840e8ef4d57722eac4873d19eac1267870">update Datenobjekte Basis adoption</a></li>
+<li><code>improve</code> Hinzugefügt Unterstützende Use Cases und Information zu KIS als Client : <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/154">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/154</a></li>
+</ul>
+<hr />
+<h2 id="version-3.0.0">Version: 3.0.0</h2>
+<p>Datum: 01.07.2023</p>
+<ul>
+<li>Mit dem Release der Stufe 3.0.0 wird werden die unten gelisteten Änderungen normativ festgesetzt - im Wesentlichen ein Update auf die Dependency des ISiK Basismoduls 3.0.0.</li>
+</ul>
+<hr />
+<h2 id="version-3.0.0-rc2">Version: 3.0.0-rc2</h2>
+<p>Datum: 31.05.2023</p>
+<ul>
+<li>Ausschließlich Anhebung der ISiK Basismodul Dependency</li>
+</ul>
+<hr />
+<h2 id="version-3.0.0-rc1">Version: 3.0.0-rc1</h2>
+<p>Datum: 11.04.2023</p>
+<ul>
+<li>Ausschließlich Anhebung der ISiK Basismodul Dependency</li>
+</ul>
+<hr />
+<h2 id="version-2.0.3">Version: 2.0.3</h2>
+<p>Datum: 24.03.2023</p>
+<ul>
+<li><code>improve</code> example temperature + heartrate #102 by @f-peverali in <a href="https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasse/pull/104">https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasse/pull/104</a>
+<ul>
+<li>Änderungen an Beispielen</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="version-2.0.2">Version: 2.0.2</h2>
+<p>Datum: 31.01.2023</p>
+<ul>
+<li>Update Basismodul Dependency -&gt; 2.0.4</li>
+<li>weitere Änderungen am Implementierungsleitfaden (informativ)</li>
+</ul>
+<hr />
+<h2 id="version-2.0.1">Version: 2.0.1</h2>
+<p>Datum: 31.10.2022</p>
+<ul>
+<li>Update Basismodul Dependency -&gt; 2.0.2</li>
+</ul>
+<hr />
+<h2 id="version-2.0.0">Version: 2.0.0</h2>
+<p>Datum: 30.06.2022</p>
+<ul>
+<li>Initialer Release</li>
+</ul>
+<hr />
+<h2 id="version-2.0.0-ballotierung">Version: 2.0.0 (Ballotierung)</h2>
+<p>Datum: 22.01.2022</p>
+<ul>
+<li>Aufnahme des Profils für das Körpergewicht</li>
+<li>Aufnahme des Profils für die Körpergrösse</li>
+<li>Aufnahme des Profils für die Körpertemperatur</li>
+<li>Aufnahme des Profils für den Kopfumfang</li>
+<li>Aufnahme des Profils für die Atemfrequenz</li>
+<li>Aufnahme des Profils für den Blutdruck</li>
+<li>Aufnahme des Profils für die Herzfrequenz</li>
+<li>Aufnahme des Profils für die Sauerstoffsättigung</li>
+<li>Aufnahme des Profils für das EKG</li>
+<li>Aufnahme des Profils für den Glasgow Coma Score</li>
+<li>Aufnahme der Suchparameter in das CapabilityStatement</li>
+<li>Anpassung der Cannonical URLs auf v2</li>
+<li>Festlegung der bestätigungsrelevanten Systeme</li>
+<li>Festlegung der zu unterstützenden Interaktionen</li>
+<li>Verweis auf einen externen ImplementationGuide zur Profilierung von Signaldaten</li>
+<li>Anmerkungen zu den Must-Support-Feldern</li>
+</ul>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

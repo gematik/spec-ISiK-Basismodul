@@ -1,0 +1,706 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden - ISiK ICU-Normalstation Workflow</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden - ISiK ICU-Normalstation Workflow
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-UseCases.html">
+                                Use Cases
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Akteure.html">
+                                Akteure
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ProzesseUndWorkflows.html">
+                                Prozesse und Workflows
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Festlegungen.html">
+                                Festlegungen
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalarterieller-wedge-druck.html">
+                                            SD_MII_ICU_Pulmonalarterieller_Wedge_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-blut-preduktal-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Preduktal_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Blut_Postduktal_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumenindex.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumenindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-schlagvolumenindex-durch-indikatorverd.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Schlagvolumenindex_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumen.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumen (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-schlagvolumen-durch-indikatorverduennung.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Schlagvolumen_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalvaskulaerer-widerstandsindex.html">
+                                            SD_MII_ICU_Pulmonalvaskulaerer_Widerstandsindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-systemischer-vaskulaerer-widerstandsindex.html">
+                                            SD_MII_ICU_Systemischer_Vaskulaerer_Widerstandsindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaerer-herzindex.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Herzindex (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-herzzeitvolumen.html">
+                                            SD_MII_ICU_Herzzeitvolumen (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Herzindex_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd.html">
+                                            SD_MII_ICU_Linksventrikulaeres_Herzzeitvolumen_Durch_Indikatorverduennung (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-zentralvenoeser-blutdruck.html">
+                                            SD_MII_ICU_Zentralvenoeser_Blutdruck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksatrialer-druck.html">
+                                            SD_MII_ICU_Linksatrialer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-rechtsatrialer-druck.html">
+                                            SD_MII_ICU_Rechtsatrialer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-rechtsventrikulaerer-druck.html">
+                                            SD_MII_ICU_Rechtsventrikulaerer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-linksventrikulaerer-druck.html">
+                                            SD_MII_ICU_Linksventrikulaerer_Druck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-pulmonalarterieller-blutdruck.html">
+                                            SD_MII_ICU_Pulmonalarterieller_Blutdruck (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-brustwirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Brustwirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-lendenwirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Lendenwirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-halswirbelsaeule.html">
+                                            SD_MII_ICU_Koerpertemperatur_Halswirbelsaeule (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-brust.html">
+                                            SD_MII_ICU_Koerpertemperatur_Brust (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-myokard.html">
+                                            SD_MII_ICU_Koerpertemperatur_Myokard (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-atemwege.html">
+                                            SD_MII_ICU_Koerpertemperatur_Atemwege (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-blut.html">
+                                            SD_MII_ICU_Koerpertemperatur_Blut (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-nasen-rachen-raum.html">
+                                            SD_MII_ICU_Koerpertemperatur_Nasen_Rachen_Raum (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-speiseroehre.html">
+                                            SD_MII_ICU_Koerpertemperatur_Speiseroehre (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-intrakranieller-druck-icp.html">
+                                            SD_MII_ICU_Intrakranieller_Druck_Icp (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpergewicht-percentil-altersabhaengig.html">
+                                            SD_MII_ICU_Koerpergewicht_Percentil_Altersabhaengig (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpergroesse-percentil-altersabhaengig.html">
+                                            SD_MII_ICU_Koerpergroesse_Percentil_Altersabhaengig (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-ideales-koerpergewicht.html">
+                                            SD_MII_ICU_Ideales_Koerpergewicht (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie.html">
+                                            SD_MII_ICU_Sauerstoffsaettigung_Im_Arteriellen_Blut_Durch_Pulsoxymetrie (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-puls.html">
+                                            SD_MII_ICU_Puls (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-kern.html">
+                                            SD_MII_ICU_Koerpertemperatur_Kern (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-gelenk.html">
+                                            SD_MII_ICU_Koerpertemperatur_Gelenk (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-stirn.html">
+                                            SD_MII_ICU_Koerpertemperatur_Stirn (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-nasal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Nasal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-leiste.html">
+                                            SD_MII_ICU_Koerpertemperatur_Leiste (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-achsel.html">
+                                            SD_MII_ICU_Koerpertemperatur_Achsel (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-unter-der-zunge.html">
+                                            SD_MII_ICU_Koerpertemperatur_Oral (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-vaginal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Vaginal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-harnblase.html">
+                                            SD_MII_ICU_Koerpertemperatur_Harnblase (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-rektal.html">
+                                            SD_MII_ICU_Koerpertemperatur_Rektal (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_sd-mii-icu-koerpertemperatur-trommelfell.html">
+                                            SD_MII_ICU_Koerpertemperatur_Trommelfell (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#e4070c8f-1c16-4148-b98b-ed052f4ffc61" aria-controls="e4070c8f-1c16-4148-b98b-ed052f4ffc61" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#e9fbc0dc-a683-42c9-83ab-c7a078c1a16a" aria-controls="e9fbc0dc-a683-42c9-83ab-c7a078c1a16a" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#0ec25831-133e-4be1-8f57-9d9cefd96735" aria-controls="0ec25831-133e-4be1-8f57-9d9cefd96735" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#8ef0441b-c127-44b2-9069-69c31bf232c4" aria-controls="8ef0441b-c127-44b2-9069-69c31bf232c4" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="e4070c8f-1c16-4148-b98b-ed052f4ffc61">
+    <div class="stu3-treetable" id="448ecab64e4043d785dad1317967d937" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="928fd37d32a44d3ebf8dc32b592cb853"><td class="instance"><span class="baseIcon primitive"></span><b>Observation</b></td></tr><tr class="collapsed" data-id="be1d11667fa544fda6b13963ed8dbb7d" data-parentId="928fd37d32a44d3ebf8dc32b592cb853"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>Koerpertemperatur-Brustwirbelsaeule</span></td></tr><tr class="collapsed" data-id="5e86f6189b5844079b9d9b5497098a98" data-parentId="928fd37d32a44d3ebf8dc32b592cb853"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="79ea38c09e204b998ae52cc1e529bba5" data-parentId="5e86f6189b5844079b9d9b5497098a98"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-brustwirbelsaeule</span></td></tr><tr class="collapsed" data-id="5ef0757915b2475bab4e9bce167ba338" data-parentId="928fd37d32a44d3ebf8dc32b592cb853"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>final</span></td></tr><tr class="collapsed" data-id="351c6df9d4714c28938b311bc021494d" data-parentId="928fd37d32a44d3ebf8dc32b592cb853"><td class="instance"><span class="baseIcon primitive"></span><b>category</b></td></tr><tr class="collapsed" data-id="51c07fd6abbb40d3ac579524dc6ac83d" data-parentId="351c6df9d4714c28938b311bc021494d"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="a3cdf06b58824ceda569ec34c503fc9d" data-parentId="51c07fd6abbb40d3ac579524dc6ac83d"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/observation-category</span></td></tr><tr class="collapsed" data-id="e552c2be22844908ad739906cbf88b6b" data-parentId="51c07fd6abbb40d3ac579524dc6ac83d"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>vital-signs</span></td></tr><tr class="collapsed" data-id="13f5373899f7460da4c85305f37d1d9e" data-parentId="928fd37d32a44d3ebf8dc32b592cb853"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="737ed7a6c4d94deb8d1b4eee2f454f41" data-parentId="13f5373899f7460da4c85305f37d1d9e"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="59183f38ff504e2ca594d6b57770b604" data-parentId="737ed7a6c4d94deb8d1b4eee2f454f41"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="be0b07a93ec948238916cd9bbf9080f8" data-parentId="737ed7a6c4d94deb8d1b4eee2f454f41"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>364424001</span></td></tr><tr class="collapsed" data-id="901f29b297bb4706830d0c7d0a4c241f" data-parentId="737ed7a6c4d94deb8d1b4eee2f454f41"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Temperature of thoracic spine</span></td></tr><tr class="collapsed" data-id="501de5fe0fa8460ca2f45f57ddf57acf" data-parentId="13f5373899f7460da4c85305f37d1d9e"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="77636aea482d45a6abfbe662643a18db" data-parentId="501de5fe0fa8460ca2f45f57ddf57acf"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://loinc.org</span></td></tr><tr class="collapsed" data-id="41307cd8fa7944efbdfe26cba9aea197" data-parentId="501de5fe0fa8460ca2f45f57ddf57acf"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>8310-5</span></td></tr><tr class="collapsed" data-id="bf78c30112264ff688effa0c25b03171" data-parentId="928fd37d32a44d3ebf8dc32b592cb853"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="f6dec893eba94dbf94abafa105a2b4e5" data-parentId="bf78c30112264ff688effa0c25b03171"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="5b014873b331466db65968042172b5ec" data-parentId="928fd37d32a44d3ebf8dc32b592cb853"><td class="instance"><span class="baseIcon primitive"></span><b>effective</b></td></tr><tr class="collapsed" data-id="963ee84ba2374fc8af1ee663ddf01215" data-parentId="5b014873b331466db65968042172b5ec"><td class="instance"><span class="baseIcon primitive"></span><b>start : </b><span>2019-12-23T09:30:10+01:00</span></td></tr><tr class="collapsed" data-id="91bf3b41f0c84266a82cd5ed7a305ca4" data-parentId="5b014873b331466db65968042172b5ec"><td class="instance"><span class="baseIcon primitive"></span><b>end : </b><span>2019-12-23T10:30:10+01:00</span></td></tr><tr class="collapsed" data-id="a077a4a442e946b58a9dcd8d4f1e7828" data-parentId="928fd37d32a44d3ebf8dc32b592cb853"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="bf7346f20e8d4d04a4b004e26c3dacb9" data-parentId="a077a4a442e946b58a9dcd8d4f1e7828"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>37</span></td></tr><tr class="collapsed" data-id="dcfdd96daae646a1ad84381da672da9b" data-parentId="a077a4a442e946b58a9dcd8d4f1e7828"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>degree Celsius</span></td></tr><tr class="collapsed" data-id="b9ec3e72ab8b456e9ab99acce35b2de1" data-parentId="a077a4a442e946b58a9dcd8d4f1e7828"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="df5bb5c463544c8e90d89d52c5b0791c" data-parentId="a077a4a442e946b58a9dcd8d4f1e7828"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>Cel</span></td></tr><tr class="collapsed" data-id="72f0a2886695418299fcfb07a9615b61" data-parentId="928fd37d32a44d3ebf8dc32b592cb853"><td class="instance"><span class="baseIcon primitive"></span><b>bodySite</b></td></tr><tr class="collapsed" data-id="9284a58b3d1e4562b1b13057cab7f176" data-parentId="72f0a2886695418299fcfb07a9615b61"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="126fbfbbbfb64a5b8656dde22d44e9a5" data-parentId="9284a58b3d1e4562b1b13057cab7f176"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr><tr class="collapsed" data-id="2178171eed994f71990a0aaf385fbe2d" data-parentId="9284a58b3d1e4562b1b13057cab7f176"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>122495006</span></td></tr><tr class="collapsed" data-id="e8cb8ffaa5d14ee5aa580ae6d52d3633" data-parentId="9284a58b3d1e4562b1b13057cab7f176"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Structure of thoracic vertebral column (body structure)</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable448ecab64e4043d785dad1317967d937 = new InstanceTree();
+resourceTreeTable448ecab64e4043d785dad1317967d937.init("448ecab64e4043d785dad1317967d937");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="e9fbc0dc-a683-42c9-83ab-c7a078c1a16a">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">Observation</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.id" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Koerpertemperatur-Brustwirbelsaeule</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.meta" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.meta.profile" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-brustwirbelsaeule</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.status" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">final</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.category" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">category</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.category.coding" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.category.coding.system" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.category.coding.code" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">vital-signs</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">category</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code.coding" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">364424001</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code.coding.display" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Temperature of thoracic spine</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code.coding" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://loinc.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">8310-5</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.subject" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.subject.reference" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.effective" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">effectivePeriod</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.effective.start" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">start</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2019-12-23T09:30:10+01:00</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.effective.end" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">end</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2019-12-23T10:30:10+01:00</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">effectivePeriod</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.value" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">valueQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.value.value" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">37</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.value.unit" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">degree Celsius</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.value.system" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.value.code" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Cel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueQuantity</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.bodySite" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">bodySite</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.bodySite.coding" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.bodySite.coding.system" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.bodySite.coding.code" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">122495006</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.bodySite.coding.display" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Structure of thoracic vertebral column (body structure)</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">bodySite</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Observation</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="0ec25831-133e-4be1-8f57-9d9cefd96735">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.resourceType" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.id" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Koerpertemperatur-Brustwirbelsaeule</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.meta" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.meta.profile" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-brustwirbelsaeule</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.category" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">category</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.category.coding" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.category.coding.code" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">vital-signs</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.category.coding.system" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/observation-category</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code.coding" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">364424001</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code.coding.display" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Temperature of thoracic spine</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code.coding.code" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">8310-5</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.code.coding.system" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://loinc.org</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.valueQuantity" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">valueQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.valueQuantity.system" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.valueQuantity.code" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Cel</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.valueQuantity.value" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">37</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.valueQuantity.unit" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">degree Celsius</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.bodySite" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">bodySite</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.bodySite.coding" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.bodySite.coding.code" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">122495006</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.bodySite.coding.system" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.bodySite.coding.display" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Structure of thoracic vertebral column (body structure)</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.status" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">final</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.subject" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.subject.reference" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.effectivePeriod" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">effectivePeriod</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.effectivePeriod.start" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">start</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2019-12-23T09:30:10+01:00</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json#Observation.effectivePeriod.end" title="SD MII ICU Koerpertemperatur Brustwirbelsaeule
+de.gematik.isik 5.0.0
+StructureDefinition-sd-mii-icu-koerpertemperatur-brustwirbelsaeule.json" target="_blank">end</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2019-12-23T10:30:10+01:00</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="8ef0441b-c127-44b2-9069-69c31bf232c4">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Observation-Koerpertemperatur-Brustwirbelsaeule.json'>Temperature of thoracic spine</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

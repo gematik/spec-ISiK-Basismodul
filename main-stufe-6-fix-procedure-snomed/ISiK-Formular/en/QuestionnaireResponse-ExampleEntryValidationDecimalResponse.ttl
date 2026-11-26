@@ -1,0 +1,70 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/QuestionnaireResponse/ExampleEntryValidationDecimalResponse> a fhir:QuestionnaireResponse ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleEntryValidationDecimalResponse"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten" ;
+       fhir:index -1 ;
+       fhir:link <https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ]
+  ] ;
+  fhir:QuestionnaireResponse.questionnaire [
+     fhir:value "https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal" ;
+     fhir:link <https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal> ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/display" ] ;
+       fhir:Extension.valueString [ fhir:value "Validierung von Dezimalen" ]
+     ]
+  ] ;
+  fhir:QuestionnaireResponse.status [ fhir:value "completed"] ;
+  fhir:QuestionnaireResponse.subject [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMinimal> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMinimal" ]
+  ] ;
+  fhir:QuestionnaireResponse.authored [ fhir:value "2025-01-01"^^xsd:date] ;
+  fhir:QuestionnaireResponse.author [
+     fhir:link <https://gematik.de/fhir/isik/Patient/PatientinMinimal> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientinMinimal" ]
+  ] ;
+  fhir:QuestionnaireResponse.item [
+     fhir:index -1 ;
+     fhir:QuestionnaireResponse.item.linkId [ fhir:value "4" ] ;
+     fhir:QuestionnaireResponse.item.text [ fhir:value "Körpermaße" ] ;
+     fhir:QuestionnaireResponse.item.item [
+       fhir:index -1 ;
+       fhir:QuestionnaireResponse.item.linkId [ fhir:value "4.1" ] ;
+       fhir:QuestionnaireResponse.item.text [ fhir:value "Körpergewicht in kg (muss zwischen 20 und 300kg liegen)" ] ;
+       fhir:QuestionnaireResponse.item.answer [
+         fhir:index -1 ;
+         fhir:QuestionnaireResponse.item.answer.valueDecimal [ fhir:value "66"^^xsd:decimal ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:QuestionnaireResponse.item.linkId [ fhir:value "4.2" ] ;
+       fhir:QuestionnaireResponse.item.text [ fhir:value "Körpergröße in m (muss zwischen 1m und 2.50m liegen)" ] ;
+       fhir:QuestionnaireResponse.item.answer [
+         fhir:index -1 ;
+         fhir:QuestionnaireResponse.item.answer.valueDecimal [ fhir:value "1.66"^^xsd:decimal ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/QuestionnaireResponse/ExampleEntryValidationDecimalResponse.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Connect</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Connect
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                Release Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Akteure.html">
+                                Akteure
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen und Kompatibilit&#xE4;t <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen.html">
+                                            Festlegungen und Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Kontext Smart-on-FHIR <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Kontext.html">
+                                            Kontext Smart-on-FHIR
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKundSMART.html">
+                                            SMART on FHIR - App Launch
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-BackendServices.html">
+                                            SMART on FHIR - Backend Services
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen Connect <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance.html">
+                                            Festlegungen Connect
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance-ConformanceSmartCapabilities.html">
+                                            SMART Capabilities
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance-ConformanceScopesKontexte.html">
+                                            Scopes und Compartments
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKAutorisierung.html">
+                                            Autorisierung
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Anforderungsuebersicht.html">
+                                Anforderungs&#xFC;bersicht
+                            </a>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h1 id="conformance-smart-capabilities">Conformance: SMART Capabilities</h1>
+<hr />
+<h3 id="normativ">Normativ</h3>
+<hr />
+<p>Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers MÜSSEN eine <em>SMART Capabilities</em> JSON-Datei als '.well-known'-Dokument (vgl. <a href="https://datatracker.ietf.org/doc/html/rfc5785">RFC5785</a>) anbieten. Clients können auf diese Art und Weise u.a. abfragen, welche Kontexte und <em>Scopes</em> seitens des ISiK-Ressourcenservers unterstützt werden.</p>
+<p>ISiK-Ressourcen-Server MÜSSEN dieses JSON-Dokument unter der URL bereitstellen, der durch Anhängen von <code>/.well-known/smart-configuration</code> an ihre Basis-URL gebildet wird. Die Kodierung der <em>SMART Capabilities</em> MUSS den Vorgaben aus <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/conformance.html#using-well-known">SMART App Launch - 6.1 - FHIR Authorization Endpoint and Capabilities Discovery using a Well-Known Uniform Resource Identifiers (URIs)</a> entsprechen.</p>
+<h2 id="vorgaben-fur-well-known-capability-dokumente">Vorgaben für Well-Known Capability Dokumente</h2>
+<p>Im Rahmen des Bestätigungsverfahrens für ISiK-Connect werden die folgenden Angaben in den <em>SMART Capabilities</em> eines ISiK-Ressourcenservers geprüft:</p>
+<ul>
+<li><code>authorization_endpoint</code>: Es MUSS die URL des Autorisierungs-Endpunkts des <em>OAuth2</em>-Autorisierungsservers angegeben sein, über die ein ISiK-Client eine Autorisierungsanfrage stellen kann (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-46</a>).</li>
+<li><code>grant_types_supported</code>: Die <em>OAuth2 Grant Types</em> <code>authorization_code</code> (Authorization Code Flow mit PKCE) UND <code>client_credentials</code> (Client Credentials) MÜSSEN unterstützt werden (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-47</a>).
+<ul>
+<li>Der <em>Grant Type</em> <code>refresh_token</code> SOLL unterstützt werden. Wenn dieser <em>Grant Type</em> angegeben ist, MUSS eine Erneuerung des <em>Access Token</em> über ein <em>Refresh Token</em> möglich sein.</li>
+</ul>
+</li>
+<li><code>token_endpoint</code>: Es MUSS die URL des Token-Endpunkts des <em>OAuth2</em>-Autorisierungsservers angegeben sein, über die ein Zugriffstoken zur Bestätigung einer Autorisierung zum Zugriff auf geschützte Ressourcen des ISiK-Ressourcenservers abgerufen werden kann (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-48</a>).</li>
+<li><code>code_challenge_methods_supported</code>: Es MÜSSEN die vom Autorisierungsserver unterstützten PKCE-Code-Challenge-Methoden angegeben sein. Die Methode <code>S256</code> MUSS unterstützt werden. Die Methode <code>plain</code> DARF NICHT unterstützt werden (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-49</a>).</li>
+<li><code>scopes_supported</code>: siehe <a href="ImplementationGuide-markdown-Conformance-ConformanceScopesKontexte.html" title='ImplementationGuide/markdown/Conformance/ConformanceScopesKontexte.md'>Scopes und Kontexte</a>. Der ISiK-Ressourcen-Server MUSS alle aufgeführten <em>Scopes</em> unterstützen. Er KANN weitere <em>Scopes</em> unterstützen (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-50</a>)s.</li>
+<li><code>capabilities</code>
+<ul>
+<li><code>permission-v2</code>: ISiK-Ressourcen-Server MÜSSEN die SMARTv2-Syntax für die Kodierung von <em>Scopes</em> unterstützen. Sie KÖNNEN zusätzlich auch die grobranulare Syntax von SMARTv1 unterstützen (<code>permission-v1</code>) (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-51</a>)</li>
+</ul>
+</li>
+</ul>
+<h2 id="beispiel-fur-eine-anfrage">Beispiel für eine Anfrage</h2>
+<pre><code>GET /.well-known/smart-configuration HTTP/1.1
+Host: fhir.cdr.example.com
+</code></pre>
+<h2 id="beispiel-fur-eine-smart-capabilities-datei">Beispiel für eine SMART Capabilities Datei</h2>
+<div class="lang-JSON editor-colors"><div style="color:Black;background-color:White;"><pre>
+{
+  <span style="color:#A31515;">&quot;authorization_endpoint&quot;</span>: <span style="color:#A31515;">&quot;https://auth0.example.com/auth/authorize&quot;</span>,
+  <span style="color:#A31515;">&quot;token_endpoint&quot;</span>: <span style="color:#A31515;">&quot;https://auth0.example.com/auth/token&quot;</span>,
+  <span style="color:#A31515;">&quot;grant_types_supported&quot;</span>: [    <span style="color:#A31515;">&quot;authorization_code&quot;</span>, <span style="color:#A31515;">&quot;client_credentials&quot;</span>  ],
+  <span style="color:#A31515;">&quot;scopes_supported&quot;</span>: [ <span style="color:#A31515;">&quot;patient/Patient.rs&quot;</span>, <span style="color:#A31515;">&quot;patient/Observation.rs&quot;</span>, <span style="color:#A31515;">&quot;patient/Condition.rs&quot;</span> ],
+  <span style="color:#A31515;">&quot;response_types_supported&quot;</span>: [<span style="color:#A31515;">&quot;code&quot;</span>],
+  <span style="color:#A31515;">&quot;introspection_endpoint&quot;</span>: <span style="color:#A31515;">&quot;https://auth0.example.com/user/introspect&quot;</span>,
+  <span style="color:#A31515;">&quot;revocation_endpoint&quot;</span>: <span style="color:#A31515;">&quot;https://auth0.example.com/user/revoke&quot;</span>,
+  <span style="color:#A31515;">&quot;code_challenge_methods_supported&quot;</span>: [<span style="color:#A31515;">&quot;S256&quot;</span>],
+  <span style="color:#A31515;">&quot;capabilities&quot;</span>: [ <span style="color:#A31515;">&quot;permission-v2&quot;</span> ]
+}
+
+</pre></div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

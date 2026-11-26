@@ -1,0 +1,487 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Bundle/BundleExampleIntensivstation> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "BundleExampleIntensivstation"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle>
+     ] )
+  ] ; # 
+  fhir:identifier [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "FILL" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ;
+       fhir:l <urn:ietf:rfc:3986>
+     ] ;
+     fhir:value [ fhir:v "urn:uuid:a8f12c45-8e61-4f32-b123-456789abcdef" ]
+  ] ; # 
+  fhir:type [ fhir:v "document"] ; # 
+  fhir:timestamp [ fhir:v "2025-07-21T00:00:00+02:00"^^xsd:dateTime] ; # 
+  fhir:entry ( [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9"^^xsd:anyURI ;
+       fhir:l <urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9>
+     ] ;
+     fhir:resource ( <urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79"^^xsd:anyURI ;
+       fhir:l <urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79>
+     ] ;
+     fhir:resource ( <urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41"^^xsd:anyURI ;
+       fhir:l <urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41>
+     ] ;
+     fhir:resource ( <urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:880d8c69-fc05-4e1f-8203-a8ff40007f84"^^xsd:anyURI ;
+       fhir:l <urn:uuid:880d8c69-fc05-4e1f-8203-a8ff40007f84>
+     ] ;
+     fhir:resource ( <urn:uuid:880d8c69-fc05-4e1f-8203-a8ff40007f84> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba"^^xsd:anyURI ;
+       fhir:l <urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba>
+     ] ;
+     fhir:resource ( <urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:32bb8c8a-418c-4fc2-b1c7-c33f1a99a464"^^xsd:anyURI ;
+       fhir:l <urn:uuid:32bb8c8a-418c-4fc2-b1c7-c33f1a99a464>
+     ] ;
+     fhir:resource ( <urn:uuid:32bb8c8a-418c-4fc2-b1c7-c33f1a99a464> )
+  ] ) . # 
+
+<urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9> a fhir:Composition ;
+  fhir:id [ fhir:v "54d0804f-c770-4b61-a175-28fa1875b2a9"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Composition_54d0804f-c770-4b61-a175-28fa1875b2a9\"> </a><h2>Verlegungsbericht für Patient Herrn Thomas Müller (1234567890) - Intensivstation 0100</h2><div><strong>Dokument-ID:</strong><span>urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9</span><span> (urn:ietf:rfc:3986)</span></div><div><strong>Status:</strong><span>final</span></div><div><strong>Dokumenttyp:</strong><span><span>Verlegungsbericht</span><span> (http://dvmd.de/fhir/CodeSystem/kdl)</span></span></div><div><strong>Erstellt am:</strong><span>21.07.2025 00:00</span></div><div><strong>Autor:</strong><ul><li><span>Dr. Alenia Vogt</span></li></ul></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Fall:</strong><span>urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41</span></div></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "FILL" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ;
+       fhir:l <urn:ietf:rfc:3986>
+     ] ;
+     fhir:value [ fhir:v "urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9" ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://dvmd.de/fhir/CodeSystem/kdl"^^xsd:anyURI ;
+         fhir:l <http://dvmd.de/fhir/CodeSystem/kdl>
+       ] ;
+       fhir:code [ fhir:v "AD010116" ] ;
+       fhir:display [ fhir:v "Verlegungsbericht" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79> ;
+     fhir:reference [ fhir:v "urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:l <urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41> ;
+     fhir:reference [ fhir:v "urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41" ]
+  ] ; # 
+  fhir:date [ fhir:v "2025-07-21T00:00:00+02:00"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:display [ fhir:v "Dr. Alenia Vogt" ]
+  ] ) ; # 
+  fhir:title [ fhir:v "Verlegungsbericht für Patient Herrn Thomas Müller (1234567890) - Intensivstation 0100"] ; # 
+  fhir:section ( [
+     fhir:title [ fhir:v "Beatmungswerte (Unterstützungsdruck) vom 22.07.2025 - #1" ] ;
+     fhir:text [
+       fhir:status [ fhir:v "generated" ] ;
+       fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div><h3>Observation</h3><div><strong>Typ:</strong><span><span>Pressure support setting Ventilator</span><span> (http://loinc.org)</span></span></div><div><strong>Status:</strong><span>FINAL</span></div><div><strong>Kategorie:</strong><ul><li><span><span><span>Artificial ventilation (regime/therapy)</span><span> (http://snomed.info/sct)</span></span></span></li></ul></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Zeitpunkt:</strong><span>2025-07-21T00:00:00+02:00</span></div><div><strong>Wert:</strong><span>6</span><span>cm[H2O]</span></div><div><strong>Teil von:</strong><ul><li><span>urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba</span></li></ul></div></div></div>"^^rdf:XMLLiteral ]
+     ] ;
+     fhir:entry ( [
+       fhir:l <urn:uuid:32bb8c8a-418c-4fc2-b1c7-c33f1a99a464> ;
+       fhir:reference [ fhir:v "urn:uuid:32bb8c8a-418c-4fc2-b1c7-c33f1a99a464" ]
+     ] )
+  ] [
+     fhir:title [ fhir:v "Patient" ] ;
+     fhir:text [
+       fhir:status [ fhir:v "generated" ] ;
+       fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Patient</h3><div><strong>ID:</strong><span>Patient/urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Patienten-Identifikator:</strong><ul><li><span><span>MR</span>: </span><span>1234567890</span><span> (https://example.org/fhir/sid/pid)</span></li></ul></div><div><strong>Name:</strong><span> Thomas <b>MÜLLER</b></span></div><div><strong>Geschlecht:</strong><span>male</span></div><div><strong>Geburtsdatum:</strong><span>11.04.1965</span></div></div>"^^rdf:XMLLiteral ]
+     ] ;
+     fhir:entry ( [
+       fhir:l <urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79> ;
+       fhir:reference [ fhir:v "urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79" ]
+     ] )
+  ] [
+     fhir:title [ fhir:v "Encounter" ] ;
+     fhir:text [
+       fhir:status [ fhir:v "generated" ] ;
+       fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Encounter</h2><div><strong>Fallnummer:</strong><span><span>ICU-2025-001</span><span> (https://example.org/fhir/sid/encounter-id)</span></span></div><div><strong>Status:</strong><span>in-progress</span></div><div><strong>Kontaktart:</strong><span>inpatient encounter</span></div><div><strong>Typ:</strong><ul><li><span><span><span>Abteilungskontakt</span><span> (http://fhir.de/CodeSystem/Kontaktebene)</span></span></span></li></ul></div><div><strong>Abteilung:</strong><span><span>Innere Medizin</span><span> (Code: 0100)</span></span></div><div><strong>Einrichtung:</strong><span>Intensivstation - Innere Medizin</span></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Zeitraum:</strong><span>21.07.2025 00:00</span><span> (laufend)</span></div></div>"^^rdf:XMLLiteral ]
+     ] ;
+     fhir:entry ( [
+       fhir:l <urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41> ;
+       fhir:reference [ fhir:v "urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41" ]
+     ] )
+  ] [
+     fhir:title [ fhir:v "Observation" ] ;
+     fhir:text [
+       fhir:status [ fhir:v "generated" ] ;
+       fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Observation</h3><div><strong>Typ:</strong><span><span>85354-9</span><span> (http://loinc.org)</span></span></div><div><strong>Status:</strong><span>FINAL</span></div><div><strong>Kategorie:</strong><ul><li><span><span><span>vital-signs</span><span> (http://terminology.hl7.org/CodeSystem/observation-category)</span></span></span></li></ul></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Zeitpunkt:</strong><span>2025-07-22T14:10:00+02:00</span></div><div><strong>Messwerte:</strong><table style=\"border-collapse: collapse; width: 100%;\"><thead><tr style=\"background-color: #f2f2f2;\"><th style=\"border: 1px solid #ddd; padding: 8px;\">Parameter</th><th style=\"border: 1px solid #ddd; padding: 8px;\">Wert</th><th style=\"border: 1px solid #ddd; padding: 8px;\">Einheit</th></tr></thead><tbody><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span><span>Systolisch</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>210</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span><span>Diastolisch</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>115</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span><span>Mittlerer arterieller Druck</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>140</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr></tbody></table></div></div>"^^rdf:XMLLiteral ]
+     ] ;
+     fhir:entry ( [
+       fhir:l <urn:uuid:880d8c69-fc05-4e1f-8203-a8ff40007f84> ;
+       fhir:reference [ fhir:v "urn:uuid:880d8c69-fc05-4e1f-8203-a8ff40007f84" ]
+     ] )
+  ] [
+     fhir:title [ fhir:v "Procedure" ] ;
+     fhir:text [
+       fhir:status [ fhir:v "generated" ] ;
+       fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Prozedur</h3><div><strong>Typ:</strong><ul><li><span>Jet ventilation procedure (procedure)</span><span> (http://snomed.info/sct)</span></li></ul></div><div><strong>Status:</strong><span>COMPLETED</span></div><div><strong>Kategorie:</strong><span/><ul><li><span>Artificial ventilation (regime/therapy)</span><span> (http://snomed.info/sct)</span></li></ul></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Durchführungszeitraum:</strong><span>21.07.2025 00:00</span><span> (laufend)</span></div></div>"^^rdf:XMLLiteral ]
+     ] ;
+     fhir:entry ( [
+       fhir:l <urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba> ;
+       fhir:reference [ fhir:v "urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba" ]
+     ] )
+  ] ) . # 
+
+<urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79> a fhir:Patient ;
+  fhir:id [ fhir:v "11c3de2f-d461-4063-a0c2-fde122e76a79"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_11c3de2f-d461-4063-a0c2-fde122e76a79\"> </a><h3>Patient</h3><div><strong>ID:</strong><span>Patient/urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Patienten-Identifikator:</strong><ul><li><span><span>MR</span>: </span><span>1234567890</span><span> (https://example.org/fhir/sid/pid)</span></li></ul></div><div><strong>Name:</strong><span> Thomas <b>MÜLLER</b></span></div><div><strong>Geschlecht:</strong><span>male</span></div><div><strong>Geburtsdatum:</strong><span>11.04.1965</span></div></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "MR" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "https://example.org/fhir/sid/pid"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/sid/pid>
+     ] ;
+     fhir:value [ fhir:v "1234567890" ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "Müller" ] ;
+     fhir:given ( [ fhir:v "Thomas" ] )
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:birthDate [ fhir:v "1965-04-11"^^xsd:date] . # 
+
+<urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41> a fhir:Encounter ;
+  fhir:id [ fhir:v "88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Encounter_88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41\"> </a><h2>Encounter</h2><div><strong>Fallnummer:</strong><span><span>ICU-2025-001</span><span> (https://example.org/fhir/sid/encounter-id)</span></span></div><div><strong>Status:</strong><span>in-progress</span></div><div><strong>Kontaktart:</strong><span>inpatient encounter</span></div><div><strong>Typ:</strong><ul><li><span><span><span>Abteilungskontakt</span><span> (http://fhir.de/CodeSystem/Kontaktebene)</span></span></span></li></ul></div><div><strong>Abteilung:</strong><span><span>Innere Medizin</span><span> (Code: 0100)</span></span></div><div><strong>Einrichtung:</strong><span>Intensivstation - Innere Medizin</span></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Zeitraum:</strong><span>21.07.2025 00:00</span><span> (laufend)</span></div></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "VN" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "https://example.org/fhir/sid/encounter-id"^^xsd:anyURI ;
+       fhir:l <https://example.org/fhir/sid/encounter-id>
+     ] ;
+     fhir:value [ fhir:v "ICU-2025-001" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "in-progress"] ; # 
+  fhir:class [
+     fhir:system [
+       fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+       fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+     ] ;
+     fhir:code [ fhir:v "IMP" ] ;
+     fhir:display [ fhir:v "inpatient encounter" ]
+  ] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/Kontaktebene"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/Kontaktebene>
+       ] ;
+       fhir:code [ fhir:v "abteilungskontakt" ] ;
+       fhir:display [ fhir:v "Abteilungskontakt" ]
+     ] )
+  ] ) ; # 
+  fhir:serviceType [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel>
+       ] ;
+       fhir:code [ fhir:v "0100" ] ;
+       fhir:display [ fhir:v "Innere Medizin" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79> ;
+     fhir:reference [ fhir:v "urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79" ]
+  ] ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2025-07-21T00:00:00+02:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:serviceProvider [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "https://example.org/fhir/sid/abteilungsid"^^xsd:anyURI ;
+         fhir:l <https://example.org/fhir/sid/abteilungsid>
+       ] ;
+       fhir:value [ fhir:v "ICU-001" ]
+     ] ;
+     fhir:display [ fhir:v "Intensivstation - Innere Medizin" ]
+  ] . # 
+
+<urn:uuid:880d8c69-fc05-4e1f-8203-a8ff40007f84> a fhir:Observation ;
+  fhir:id [ fhir:v "880d8c69-fc05-4e1f-8203-a8ff40007f84"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_880d8c69-fc05-4e1f-8203-a8ff40007f84\"> </a><h3>Observation</h3><div><strong>Typ:</strong><span><span>85354-9</span><span> (http://loinc.org)</span></span></div><div><strong>Status:</strong><span>FINAL</span></div><div><strong>Kategorie:</strong><ul><li><span><span><span>vital-signs</span><span> (http://terminology.hl7.org/CodeSystem/observation-category)</span></span></span></li></ul></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Zeitpunkt:</strong><span>2025-07-22T14:10:00+02:00</span></div><div><strong>Messwerte:</strong><table style=\"border-collapse: collapse; width: 100%;\"><thead><tr style=\"background-color: #f2f2f2;\"><th style=\"border: 1px solid #ddd; padding: 8px;\">Parameter</th><th style=\"border: 1px solid #ddd; padding: 8px;\">Wert</th><th style=\"border: 1px solid #ddd; padding: 8px;\">Einheit</th></tr></thead><tbody><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span><span>Systolisch</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>210</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span><span>Diastolisch</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>115</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span><span>Mittlerer arterieller Druck</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>140</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr></tbody></table></div></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "vital-signs" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:85354-9 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "85354-9" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79> ;
+     fhir:reference [ fhir:v "urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2025-07-22T14:10:00+02:00"^^xsd:dateTime
+  ] ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:8480-6 ;
+         fhir:system [
+           fhir:v "http://loinc.org"^^xsd:anyURI ;
+           fhir:l <http://loinc.org>
+         ] ;
+         fhir:code [ fhir:v "8480-6" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "210"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "mmHg" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "mm[Hg]" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:8462-4 ;
+         fhir:system [
+           fhir:v "http://loinc.org"^^xsd:anyURI ;
+           fhir:l <http://loinc.org>
+         ] ;
+         fhir:code [ fhir:v "8462-4" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "115"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "mmHg" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "mm[Hg]" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:8478-0 ;
+         fhir:system [
+           fhir:v "http://loinc.org"^^xsd:anyURI ;
+           fhir:l <http://loinc.org>
+         ] ;
+         fhir:code [ fhir:v "8478-0" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "140"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "mmHg" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "mm[Hg]" ]
+     ]
+  ] ) . # 
+
+<urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba> a fhir:Procedure ;
+  fhir:id [ fhir:v "61a2e9af-88f9-4ee2-a97f-c136530aadba"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Procedure_61a2e9af-88f9-4ee2-a97f-c136530aadba\"> </a><h3>Prozedur</h3><div><strong>Typ:</strong><ul><li><span>Jet ventilation procedure (procedure)</span><span> (http://snomed.info/sct)</span></li></ul></div><div><strong>Status:</strong><span>COMPLETED</span></div><div><strong>Kategorie:</strong><span/><ul><li><span>Artificial ventilation (regime/therapy)</span><span> (http://snomed.info/sct)</span></li></ul></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Durchführungszeitraum:</strong><span>21.07.2025 00:00</span><span> (laufend)</span></div></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:category [
+     fhir:coding ( [
+       a sct:40617009 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "40617009" ] ;
+       fhir:display [ fhir:v "Artificial ventilation (regime/therapy)" ]
+     ] )
+  ] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:4764004 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "4764004" ] ;
+       fhir:display [ fhir:v "Jet ventilation procedure (procedure)" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79> ;
+     fhir:reference [ fhir:v "urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79" ]
+  ] ; # 
+  fhir:performed [
+     a fhir:Period ;
+     fhir:start [ fhir:v "2025-07-21"^^xsd:date ]
+  ] . # 
+
+<urn:uuid:32bb8c8a-418c-4fc2-b1c7-c33f1a99a464> a fhir:Observation ;
+  fhir:id [ fhir:v "32bb8c8a-418c-4fc2-b1c7-c33f1a99a464"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_32bb8c8a-418c-4fc2-b1c7-c33f1a99a464\"> </a><h3>Observation</h3><div><strong>Typ:</strong><span><span>Pressure support setting Ventilator</span><span> (http://loinc.org)</span></span></div><div><strong>Status:</strong><span>FINAL</span></div><div><strong>Kategorie:</strong><ul><li><span><span><span>Artificial ventilation (regime/therapy)</span><span> (http://snomed.info/sct)</span></span></span></li></ul></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Zeitpunkt:</strong><span>2025-07-21T00:00:00+02:00</span></div><div><strong>Wert:</strong><span>6</span><span>cm[H2O]</span></div><div><strong>Teil von:</strong><ul><li><span>urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba</span></li></ul></div></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:partOf ( [
+     fhir:l <urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba> ;
+     fhir:reference [ fhir:v "urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a sct:40617009 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "40617009" ] ;
+       fhir:display [ fhir:v "Artificial ventilation (regime/therapy)" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:20079-0 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "20079-0" ] ;
+       fhir:display [ fhir:v "Pressure support setting Ventilator" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79> ;
+     fhir:reference [ fhir:v "urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2025-07-21T00:00:00+02:00"^^xsd:dateTime
+  ] ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "6"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "cm[H2O]" ] ;
+     fhir:system [
+       fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+       fhir:l <http://unitsofmeasure.org>
+     ] ;
+     fhir:code [ fhir:v "cm[H2O]" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
