@@ -62,9 +62,9 @@ Der IG definiert das Prinzip der Kalenderhoheit und beschreibt nicht-normativ, w
 
 Prinzipien:
 
-- **P1 Kalenderhoheit**: Für jeden Kalender (Schedule) und die darin enthaltenen Terminblöcke (Slot) gibt es genau ein führendes Termin-Repository. Termine, die Terminblöcke dieses Kalenders belegen, werden ausschließlich im führenden Repository angelegt, geändert und abgesagt. "Terminführend" wird damit nicht system-, sondern kalenderbezogen definiert. Ein System kann für einen Teil der Kalender führend und für andere Kalender nur Spiegel sein. Variante 2 löst sich damit auf: Portal und KIS sind beide Termin-Repository, jeweils für ihre eigenen Kalender. Eine überlappende Hoheit zweier Systeme über dieselbe Ressource (z.B. denselben Behandlungsraum) wird nicht unterstützt. Die Zuordnung von Kalender zu führendem Repository wird nicht in einem zentralen Verzeichnis geführt: Führend ist das Repository, in dem der Schedule originär angelegt und gepflegt wird. Die Festlegung selbst trifft das Krankenhaus organisatorisch und setzt sie in der Konfiguration der beteiligten Systeme um. Eine maschinenlesbare Ausweisung der Hoheit sieht der IG bisher nicht vor (siehe offene Punkte).
+- **P1 Kalenderhoheit**: Für jeden Kalender (Schedule) und die darin enthaltenen Terminblöcke (Slot) gibt es genau ein führendes Termin-Repository. Termine, die Terminblöcke dieses Kalenders belegen, werden ausschließlich im führenden Repository angelegt, geändert und abgesagt. "Terminführend" wird damit nicht system-, sondern kalenderbezogen definiert. Ein System kann für einen Teil der Kalender führend und für andere Kalender nur Spiegel sein. Variante 2 löst sich damit auf: Portal und KIS sind beide Termin-Repository, jeweils für ihre eigenen Kalender. Eine überlappende Hoheit zweier Systeme über dieselbe Ressource (z.B. denselben Behandlungsraum) wird nicht unterstützt. Belegt ein Termin mehrere Terminblöcke (`ISiKTermin.slot` ist mehrwertig), müssen alle zu Kalendern desselben führenden Repositories gehören. Termine über Kalender verschiedener führender Repositories werden nicht unterstützt (siehe offene Punkte). Die Hoheit kann je Kalender einzeln oder regelbasiert für Gruppen von Kalendern festgelegt werden (z.B. alle Kalender von Leistungserbringern im KIS). Die Zuordnung von Kalender zu führendem Repository wird nicht in einem zentralen Verzeichnis geführt: Führend ist das Repository, in dem der Schedule originär angelegt und gepflegt wird. Die Festlegung selbst trifft das Krankenhaus organisatorisch und setzt sie in der Konfiguration der beteiligten Systeme um. Eine maschinenlesbare Ausweisung der Hoheit sieht der IG bisher nicht vor (siehe offene Punkte).
 - **P2 Schreibpfad nur über das führende Repository**: Ein System, das einen Termin auf einem fremden Kalender anlegen, verschieben, ergänzen oder absagen will, tritt gegenüber dem führenden Repository als Termin-Requestor auf und nutzt `$book` (Neubuchung, Verschiebung), PATCH (Absage, Zusatzinformationen) und die Patientenanlage gemäß IG. Es schreibt nicht zuerst in die eigene Kopie.
-- **P3 Lesepfad und Spiegelung**: Andere Repositories dürfen fremde Termine als Kopie vorhalten (Anzeige, Ressourcenplanung, Kontaktvorbereitung). Kopien werden ereignisgesteuert über Subscription (`appointment-update`, `appointment-cancel`, alternativ `Resource/Appointment`) aktualisiert. Der Initialabgleich und das Wiederaufsetzen nach Ausfall erfolgen per Suche, z.B. `Appointment?_lastUpdated=ge<Zeitpunkt>` oder `Appointment?slot.schedule=<Schedule>`. Nach einer Benachrichtigung wird die Ressource beim führenden Repository erneut gelesen (Vorgehen gemäß ISiK Subscription IG).
+- **P3 Lesepfad und Spiegelung**: Andere Repositories dürfen fremde Termine als Kopie vorhalten (Anzeige, Ressourcenplanung, Kontaktvorbereitung). Kopien werden ereignisgesteuert über Subscription (`appointment-update`, `appointment-cancel`, alternativ `Resource/Appointment`) aktualisiert. Die Topics `appointment-update` und `appointment-cancel` melden Änderungen und Absagen, aber keine Neuanlagen. Damit auch Termine, die direkt im führenden Repository angelegt werden, in der Kopie ankommen, ist zusätzlich das Topic `Resource/Appointment` oder ein regelmäßiger Suchabgleich erforderlich (siehe offene Punkte). Der Initialabgleich und das Wiederaufsetzen nach Ausfall erfolgen per Suche, z.B. `Appointment?_lastUpdated=ge<Zeitpunkt>` oder `Appointment?slot.schedule=<Schedule>`. Nach einer Benachrichtigung wird die Ressource beim führenden Repository erneut gelesen (Vorgehen gemäß ISiK Subscription IG).
 - **P4 Identität**: Das führende Repository vergibt `Appointment.identifier` (Business Identifier). Kopien übernehmen diesen Identifier unverändert und sind damit systemübergreifend korrelierbar. Kopien tragen `meta.tag` = `external` aus `common-meta-tag-de`. Die Angabe des Ursprungssystems in `meta.source` wird empfohlen.
 - **P5 Konflikte**: Das führende Repository ist autoritativ. Kopien lösen keine Konflikte auf. Eine Schreibanfrage auf eine Kopie wird vom spiegelnden System zurückgewiesen (OperationOutcome) oder an das führende Repository weitergeleitet. Der Slot-Status liegt ausschließlich im führenden Repository. Zwischen einem Ereignis im führenden Repository und der Aktualisierung der Kopie kann die Kopie vorübergehend veraltet sein. Sie gleicht sich erst nach Verarbeitung der Benachrichtigung an (Eventual Consistency). Verbindlich ist stets der Stand im führenden Repository.
 - **P6 Patientenidentität**: Der Patient muss in beiden Systemen auflösbar sein. Es gelten die bestehenden Festlegungen zur Übergabe bzw. Anlage einer Patient-Ressource. Das Topic `patient-merge` ist von spiegelnden Systemen zu berücksichtigen.
@@ -73,7 +73,7 @@ Prinzipien:
 Notwendige Änderungen am IG:
 
 - Architekturoptionen: Definition "terminführend", Neufassung von Variante 2 entlang P1 bis P7, Austausch des Schaubilds "Übersicht Akteure (2)" durch ein Schaubild mit Kalenderhoheit und Zuordnung der Interaktionen zum Pfeil zwischen den Repositories.
-- Akteure: Klarstellung, dass die Rollen Termin-Requestor und Termin-Consumer je Interaktion vergeben werden und ein Termin-Repository gegenüber einem anderen Repository diese Rollen einnehmen kann. Die Aussage "keine permanente Persistierung" bezieht sich auf die Daten der jeweiligen Interaktion, nicht auf das System.
+- Akteure: Klarstellung, dass die Rollen Termin-Requestor und Termin-Consumer je Interaktion vergeben werden und ein Termin-Repository gegenüber einem anderen Repository diese Rollen einnehmen kann. Die Aussage "keine permanente Persistierung" beschreibt den reinen Termin-Requestor bzw. Termin-Consumer. Sie schließt nicht aus, dass ein Termin-Repository, das diese Rollen gegenüber einem anderen Repository einnimmt, die erhaltenen Termine dauerhaft als nicht-autoritative Kopie (P3) speichert.
 - Interaktionen: Hinweis bei Interaktion 5, 6, 7 und 8 auf P2 und P3.
 - ISiKTermin: `identifier` als Must Support (Stufe 7, da neue Anforderung) oder zunächst als SOLL-Empfehlung im Text.
 
@@ -98,7 +98,7 @@ Mögliche Festlegungen:
 
 - Das Repository MUSS `Appointment.identifier` vergeben, bei Kopien übernehmen und die Suche `Appointment?identifier=` unterstützen.
 - Kopien MÜSSEN mit `meta.tag` = `external` gekennzeichnet sein. Schreibzugriffe auf Kopien MÜSSEN mit HTTP 422 und OperationOutcome zurückgewiesen werden.
-- Das Repository MUSS als Subscriber die Topics `appointment-update` und `appointment-cancel` sowie den Resync per `_lastUpdated` unterstützen.
+- Das Repository MUSS als Subscriber die Topics `appointment-update` und `appointment-cancel` unterstützen, Neuanlagen über `Resource/Appointment` oder einen regelmäßigen Suchabgleich übernehmen sowie den Resync per `_lastUpdated` unterstützen.
 - Das Repository MUSS als Requestor `$book` und PATCH gegenüber einem anderen Repository ausführen können.
 
 - PRO:
@@ -112,14 +112,15 @@ Mögliche Festlegungen:
 
 ### Option 4: Fassade statt Synchronisation
 
-Je Krankenhaus wird genau ein ISiK-Termin-Endpunkt angeboten (KIS oder Integrationsplattform), der Anfragen anhand von Schedule bzw. HealthcareService an das jeweils führende System weiterleitet. Termine existieren genau einmal, es gibt keine Kopien.
+Je Krankenhaus wird genau ein ISiK-Termin-Endpunkt angeboten (KIS oder Integrationsplattform), der Anfragen anhand von Schedule bzw. HealthcareService an das jeweils führende System weiterleitet. Termine existieren genau einmal im jeweils führenden System, die Fassade selbst hält keine Kopien.
 
 - PRO:
-  - Keine Replikation, keine Konflikte, kein Identitätsproblem.
+  - Keine Replikation, keine Konflikte, kein Identitätsproblem, solange kein Backend fremde Termine selbst vorhalten muss.
   - Für Termin-Requestor und Termin-Consumer vollständig transparent, die bestehenden Festlegungen gelten unverändert.
 - CON:
   - Die Routing-Komponente liegt außerhalb des ISiK-Scopes, der Aufwand verlagert sich in die Integrationsschicht des Krankenhauses.
   - Systemübergreifende Sichten (alle Termine eines Patienten) erfordern Aggregation zur Laufzeit, Performance-Kategorien sind schwer einzuhalten.
+  - Benötigt ein Backend die Termine eines anderen Systems selbst (z.B. das KIS für die Kontaktvorbereitung), entstehen wieder Kopien, die gemäß Option 2 zu spiegeln sind. Die Fassade ersetzt die Synchronisation dann nicht, sondern vereinheitlicht nur den Zugang für Clients.
   - Setzt ebenfalls die Kalenderhoheit (P1) voraus und ist damit keine Alternative zu Option 2, sondern eine Deployment-Variante davon.
 
 ### Option 5: Generische bidirektionale Master-Master-Synchronisation
@@ -158,6 +159,7 @@ Vorschlag zur Diskussion mit den Stakeholdern (noch nicht getroffen):
 Offene Punkte für die Stakeholder-Diskussion (Folgeticket):
 
 - Ist die Einschränkung "genau ein führendes Repository je Kalender" für die Praxis tragfähig, insbesondere bei gemeinsam genutzten Ressourcen (Räume, Großgeräte)?
+- Wie häufig sind Termine, die Terminblöcke aus Kalendern verschiedener führender Repositories belegen (z.B. Arzt im KIS, Großgerät im RIS), und reicht es, diesen Fall nicht zu unterstützen?
 - Wie wird die Zuordnung von Kalender zu führendem Repository ausgewiesen, und wie findet ein Client das führende Repository eines Kalenders? Reicht die organisatorische Festlegung mit Kennzeichnung der Kopien, oder braucht es eine maschinenlesbare Ausweisung (z.B. das Tag `external` auch an gespiegelten Schedule- und Slot-Ressourcen)?
 - Soll das Topic `Resource/Appointment` oder sollen die spezifischen Topics `appointment-update` und `appointment-cancel` für die Spiegelung empfohlen werden? Ersteres deckt auch Neuanlagen ab, letztere sind in ADR-002 bereits verpflichtend.
 - Identifier-System für `Appointment.identifier`: Base-URL des führenden Repositories oder ein von ISiK definiertes Namensschema?
@@ -201,6 +203,12 @@ U -> B: Termin anlegen
 B -> A: POST Appointment/$book (als Termin-Requestor)
 A --> B: Appointment (booked, identifier)
 B -> B: Kopie anlegen oder aktualisieren
+
+== Neuanlage in A ==
+A -> B: Notification (Resource/Appointment)\nalternativ: regelmäßiger Suchabgleich durch B
+B -> A: GET Appointment/<id>
+A --> B: Appointment
+B -> B: Kopie anlegen, meta.tag=external
 
 == Änderung in A ==
 A -> B: Notification (appointment-update / appointment-cancel)
