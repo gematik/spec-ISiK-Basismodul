@@ -1,37 +1,74 @@
-package.json:
-  - type: version
-    regex: '("version":\s*")([\d\.]+.*)(")'
-sushi-config.yaml:
-  - type: version
-    regex: '(version:\s*)(\d+\.\d+\.\d+.*)()'
-ruleset.fsh:
-  - type: version
-    regex:
-      - '(\*\s*version\s*=\s*")([\d\.]+.*)(")'
-      - '(\*\s*\^version\s*=\s*")([\d\.]+.*)(")'
-      - '(\*\s*implementationGuide\s*=\s*".*\|)([\d\.]+.*)(")'
-      - '(Alias:\s*\$ISIKVersion\s*=\s*)([\d\.]+.*)()'
-  - type: date
-    regex: 
-      - '(\*\s*date\s*=\s*")(\d+\-\d+\-\d+)(")'
-      - '(\*\s*\^date\s*=\s*")(\d+\-\d+\-\d+)(")'
-    format: '%Y-%m-%d'
-Index.page.md:
-  - type: version
-    regex: '(Version: \s*)(\d+\.\d+\.\d+.*)()'
-  - type: date
-    regex: '(Datum:\s*)(\d+\.\d+\.\d+.*)()'
-    format: '%d.%m.%Y'
-ReleaseNotes.page.md:
-  - type: version
-    regex: '(## Version \s*)(\d+\.\d+\.\d+.*)()'
-  - type: date
-    regex: '(Datum:\s*)(\d+\.\d+\.\d+.*)()'
-    format: '%d.%m.%Y'
-Einfuehrung.md:
-  - type: version
-    regex: '(Version: \s*)(\d+\.\d+\.\d+.*)()'
-  - type: date
-    regex: '(Datum:\s*)(\d+\.\d+\.\d+.*)()'
-    format: '%d.%m.%Y'
+# Konfiguration für scripts/release_publish.py (Versions- und Datumsupdate bei TC-Releases).
+#
+# files:
+#   Die Schlüssel sind Glob-Muster relativ zum Repository-Root ("*" und "**" erlaubt).
+#   Muster ohne Treffer werden übersprungen, deshalb gilt dieselbe Konfiguration für das
+#   Simplifier-Layout (Stufe 5: guides/, ImplementationGuide/) und das IG-Publisher-Layout
+#   (Stufe 6: publisher-guides/).
+#   Regeltypen:
+#     version      - Gruppe 2 des Regex wird durch die neue Version ersetzt
+#     date         - Gruppe 2 des Regex wird durch das Datum im angegebenen 'format' ersetzt
+#     releasenotes - der oberste "Version"-Abschnitt wird gepflegt: Datum setzen, Platzhalter
+#                    wie "6.x.y" füllen oder neuen Abschnitt "Keine Änderung am IG" einfügen.
+#                    Bestehende Abschnitte älterer Versionen werden nie umbenannt.
+#   Regex werden mit re.MULTILINE angewendet, "^" passt also auf den Zeilenanfang.
+#   Trifft ein Muster eine Datei, in der der Regex nichts findet, bricht das Skript mit Fehler ab.
+#
+# excluded_igs:
+#   IGs je Stufe (Stufe aus dem Branch-Namen TC_<Stufe>... oder Parameter -s), die vom Update
+#   ausgenommen sind. Abgleich als Teilstring, Groß-/Kleinschreibung egal, gegen die Ordnernamen
+#   im Pfad (z. B. "formular" -> guides/Formulare-5/..., publisher-guides/Formular/...).
+#   Der Parameter --exclude-igs überschreibt die Liste; Abweichungen werden als Warnung gemeldet.
 
+files:
+  # nur die package.json im Repository-Root, nicht die der Hilfswerkzeuge unter scripts/
+  package.json:
+    - type: version
+      regex: '("version":\s*")([\d\.]+.*)(")'
+
+  Resources/input/fsh/_Commons/ruleset.fsh:
+    - type: version
+      regex:
+        - '(\*\s*version\s*=\s*")([\d\.]+.*)(")'
+        - '(\*\s*\^version\s*=\s*")([\d\.]+.*)(")'
+        - '(\*\s*implementationGuide\s*=\s*".*\|)([\d\.]+.*)(")'
+        - '(Alias:\s*\$ISIKVersion\s*=\s*)([\d\.]+.*)()'
+    - type: date
+      regex:
+        - '(\*\s*date\s*=\s*")(\d+\-\d+\-\d+)(")'
+        - '(\*\s*\^date\s*=\s*")(\d+\-\d+\-\d+)(")'
+      format: '%Y-%m-%d'
+
+  # ---- Stufe 5: Simplifier-Guides ----------------------------------------------------
+  guides/*/Einfuehrung/Index.page.md:
+    - type: version
+      regex: '(Version: \s*)(\d+\.\d+\.\d+.*)()'
+    - type: date
+      regex: '(Datum:\s*)(\d+\.\d+\.\d+.*)()'
+      format: '%d.%m.%Y'
+
+  guides/*/Einfuehrung/ReleaseNotes.page.md:
+    - type: releasenotes
+      format: '%d.%m.%Y'
+
+  ImplementationGuide/markdown/Einfuehrung.md:
+    - type: version
+      regex: '(Version: \s*)(\d+\.\d+\.\d+.*)()'
+    - type: date
+      regex: '(Datum:\s*)(\d+\.\d+\.\d+.*)()'
+      format: '%d.%m.%Y'
+
+  # ---- Stufe 6: IG-Publisher-Guides -------------------------------------------------
+  publisher-guides/*/sushi-config.yaml:
+    - type: version
+      regex: '(^version:\s*)(\d+\.\d+\.\d+.*)()'
+
+  publisher-guides/*/input/pagecontent/ReleaseNotes.md:
+    - type: releasenotes
+      format: '%d.%m.%Y'
+
+excluded_igs:
+  "5":
+    - formular
+    - subscription
+  "6": []

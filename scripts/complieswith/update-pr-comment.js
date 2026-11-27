@@ -22,113 +22,215 @@
 
 'use strict';
 
+/**
+ * Report-Step des CompliesWith-Workflows.
+ *
+ * - liest validation-details.json (Fallback: Rohlog) und baut den Report
+ * - vergleicht mit der Baseline des Base-Branches (Artefakt, siehe find-baseline-run.js)
+ *   und mit dem vorigen Lauf desselben PRs (JSON im bestehenden PR-Kommentar)
+ * - schreibt die Job Summary, bei pull_request zusätzlich den PR-Kommentar
+ *   (Diff-Sektion vor der vollständigen Liste, kompaktes Ergebnis als HTML-Kommentar)
+ * - schreibt complieswith-result.json (kompaktes Ergebnis, wird als Artefakt hochgeladen)
+ * - setzt Outputs für den Fail-Step: infra_error, has_baseline, new_errors_vs_base, error_count
+ *
+ * Env: VALIDATOR_OUTCOME, VALIDATOR_URL, BASE_REF, BASELINE_FOUND, BASELINE_RUN_ID,
+ *      BASELINE_RUN_URL, BASELINE_HEAD_SHA, BASELINE_CREATED_AT, BASELINE_DIR
+ */
+
 const fs = require('fs');
 const path = require('path');
+const { buildClaimIndexFromDir, parseCompliesWithEntries } = require('./parse-validator-log');
+const {
+  buildCompactResult,
+  compactResultFromDetails,
+  diffResults,
+  embedPersistedResult,
+  extractPersistedResult,
+  renderDiffSection,
+} = require('./compare-results');
+
+const MARKER = '<!-- complieswith-validation-report -->';
+const RESULT_FILE = 'complieswith-result.json';
+const DEPENDENCY_VERSIONS_FILE = 'dependency-versions.json';
 
 module.exports = async function run({ github, context, core }) {
   const pr = context.payload && context.payload.pull_request;
-  if (!pr) {
-    core.info('No pull_request context found; skipping PR comment.');
-    return;
-  }
-
-  const marker = '<!-- complieswith-validation-report -->';
+  const isPullRequest = Boolean(pr);
   const { owner, repo } = context.repo;
+  const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${context.runId}`;
+  const baseRef = isPullRequest ? pr.base.ref : (process.env.BASE_REF || '');
+  const branch = isPullRequest ? pr.head.ref : (context.ref || '').replace(/^refs\/heads\//, '');
+  const commit = isPullRequest ? pr.head.sha : context.sha;
+
   const detailsPath = path.resolve('validation-details.json');
   const rawLogPath = path.resolve('validation-raw.log');
-  const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${context.runId}`;
-  const claimIndex = buildClaimIndex('Resources/fsh-generated/complieswith-validation');
+  const claimIndex = buildClaimIndexFromDir('Resources/fsh-generated/complieswith-validation');
 
   let report = { entries: [] };
   if (fs.existsSync(detailsPath)) {
     report = JSON.parse(fs.readFileSync(detailsPath, 'utf8'));
   }
-
   let entries = Array.isArray(report.entries) ? report.entries : [];
   if (entries.length === 0 && fs.existsSync(rawLogPath)) {
-    const rawLog = fs.readFileSync(rawLogPath, 'utf8');
-    const normalized = stripAnsi(rawLog);
-    entries = parseEntriesFromRawLog(normalized, claimIndex);
-    if (entries.length === 0 && normalized.includes('SD_EXTENSION_COMPLIES_WITH_ERROR')) {
-      entries = parseEntriesFromSections(normalized, claimIndex);
-    }
+    entries = parseCompliesWithEntries(fs.readFileSync(rawLogPath, 'utf8'), claimIndex);
   }
 
-  if (entries.length === 0 && !fs.existsSync(rawLogPath) && !fs.existsSync(detailsPath)) {
-    await upsertComment({
-      github,
-      owner,
-      repo,
-      issueNumber: pr.number,
-      marker,
-      body: `${marker}
-### CompliesWith validation
+  const validatorFailed = process.env.VALIDATOR_OUTCOME === 'failure';
+  const noOutputs = !fs.existsSync(rawLogPath) && !fs.existsSync(detailsPath);
+  const infraError = noOutputs || (validatorFailed && (report.fatalExecutionError === true || entries.length === 0));
 
-Run: [${context.runId}](${runUrl})
-Branch: \`${pr.head.ref}\`
+  const current = buildCompactResult({
+    entries,
+    meta: {
+      runId: context.runId,
+      runUrl,
+      commit,
+      timestamp: new Date().toISOString(),
+      validatorUrl: process.env.VALIDATOR_URL || '',
+      dependencies: readJsonIfExists(path.resolve(DEPENDENCY_VERSIONS_FILE)) || {},
+    },
+  });
+  fs.writeFileSync(path.resolve(RESULT_FILE), `${JSON.stringify(current, null, 2)}\n`);
 
-Es wurde weder eine auswertbare \`validation-details.json\` noch ein \`validation-raw.log\` gefunden. Bitte den Workflow-Run prüfen.
-`,
-      core,
-    });
-    return;
+  const base = loadBaseline();
+  let existing = null;
+  let previous = null;
+  if (isPullRequest) {
+    existing = await findExistingComment({ github, owner, repo, issueNumber: pr.number, marker: MARKER });
+    previous = existing ? extractPersistedResult(existing.body) : null;
   }
+
+  const newVsBase = base ? diffResults(current, base).added.length : 0;
+  core.setOutput('infra_error', String(infraError));
+  core.setOutput('has_baseline', String(Boolean(base)));
+  core.setOutput('new_errors_vs_base', String(newVsBase));
+  core.setOutput('error_count', String(entries.length));
+
   const targets = collectExpectedCompliesWithTargets('Resources');
   const failedTargets = new Set(entries.map((entry) => entry.comparedProfile).filter(Boolean));
-  const resultUnknown = entries.length === 0 && process.env.VALIDATOR_OUTCOME === 'failure';
 
-  let body = `${marker}
-### CompliesWith validation
+  let header = `### CompliesWith validation
 
 Run: [${context.runId}](${runUrl})
-Branch: \`${pr.head.ref}\`
-
-Rohlog: ${fs.existsSync(rawLogPath) ? 'vorhanden und als Artefakt hochgeladen.' : 'nicht im Workspace gefunden.'}
+Branch: \`${branch}\`${isPullRequest ? ` → \`${baseRef}\`` : ''}
+Commit: \`${String(commit).slice(0, 7)}\`
 `;
 
-  if (targets.length > 0) {
-    body += '\n### CompliesWith Status\n\n';
-    body += targets
-      .map((target) => `- ${escapeInline(target)} ${resultUnknown ? '❔' : failedTargets.has(target) ? '❌' : '✅'}`)
-      .join('\n');
-    body += '\n';
-  }
-
-  if (resultUnknown) {
-    body += '\n:warning: Der Validator-Lauf ist fehlgeschlagen, es konnten aber keine CompliesWith-Fehler ausgewertet werden. Das Ergebnis ist daher nicht aussagekräftig – bitte den Workflow-Run prüfen.\n';
-    await upsertComment({ github, owner, repo, issueNumber: pr.number, marker, body, core });
-    return;
-  }
-
-  if (entries.length === 0) {
-    body += '\nKeine CompliesWith-Fehler gefunden.\n';
-    await upsertComment({ github, owner, repo, issueNumber: pr.number, marker, body, core });
-    return;
-  }
-
-  const grouped = groupEntries(entries);
-  body += `\n${entries.length} CompliesWith-Fehler gefunden.\n`;
-  body += '\nSortierung: Profil -> verglichenes Profil.\n';
-
-  for (const profile of Object.keys(grouped).sort(compareText)) {
-    const comparedGroups = grouped[profile];
-    const count = Object.values(comparedGroups).reduce((sum, list) => sum + list.length, 0);
-    body += `\n<details>\n<summary><strong>${escapeInline(profile)}</strong> (${count})</summary>\n\n`;
-
-    for (const comparedProfile of Object.keys(comparedGroups).sort(compareText)) {
-      const issues = comparedGroups[comparedProfile];
-      body += `#### Verglichen mit: ${escapeInline(comparedProfile)} (${issues.length})\n\n`;
-      for (const issue of issues) {
-        body += renderEntry(issue);
-      }
-      body += '\n';
+  if (noOutputs) {
+    header += '\nEs wurde weder eine auswertbare `validation-details.json` noch ein `validation-raw.log` gefunden. Bitte den Workflow-Run prüfen.\n';
+    await writeSummary(core, header);
+    if (isPullRequest) {
+      await upsertComment({ github, owner, repo, issueNumber: pr.number, existing, body: `${MARKER}\n${header}`, core });
     }
-
-    body += '</details>\n';
+    return;
   }
 
-  await upsertComment({ github, owner, repo, issueNumber: pr.number, marker, body, core });
+  header += `Rohlog: ${fs.existsSync(rawLogPath) ? 'vorhanden und als Artefakt hochgeladen.' : 'nicht im Workspace gefunden.'}\n`;
+
+  let statusSection = '';
+  if (targets.length > 0) {
+    statusSection += '\n### CompliesWith Status\n\n';
+    statusSection += targets
+      .map((target) => `- ${escapeInline(target)} ${infraError ? '❔' : failedTargets.has(target) ? '❌' : '✅'}`)
+      .join('\n');
+    statusSection += '\n';
+  }
+
+  if (infraError) {
+    const text = `${header}\n:warning: Der Validator-Lauf ist fehlgeschlagen, es konnten keine CompliesWith-Fehler ausgewertet werden. Das Ergebnis ist nicht aussagekräftig – bitte den Workflow-Run prüfen. Der Job wird rot (Infrastrukturfehler).\n${statusSection}`;
+    await writeSummary(core, text);
+    if (isPullRequest) {
+      await upsertComment({ github, owner, repo, issueNumber: pr.number, existing, body: `${MARKER}\n${text}`, core });
+    }
+    return;
+  }
+
+  const resultLine = entries.length === 0
+    ? '\n**Keine CompliesWith-Fehler gefunden.**\n'
+    : `\n**${entries.length} CompliesWith-Fehler gefunden**${base ? `, davon **${newVsBase} neu** gegenüber \`${baseRef}\`` : ''}.\n`;
+  const gateLine = isPullRequest
+    ? '\nDer Job wird nur rot, wenn gegenüber der Basis neue CompliesWith-Fehler hinzugekommen sind, oder bei Infrastrukturfehlern.\n'
+    : '\nReferenzlauf auf dem Hauptbranch: Das Ergebnis dient als Baseline für den Vergleich in PR-Kommentaren. Der Job wird nur bei Infrastrukturfehlern rot.\n';
+  const diffSection = isPullRequest
+    ? `\n${renderDiffSection({ current, base, baseRef, previous, isPullRequest })}`
+    : '';
+
+  await writeSummary(core, `${header}${resultLine}${gateLine}${diffSection}${statusSection}`);
+
+  if (!isPullRequest) {
+    core.info('No pull_request context; job summary written, no PR comment.');
+    return;
+  }
+
+  let body = `${MARKER}\n${header}${resultLine}${gateLine}${diffSection}${statusSection}`;
+
+  if (entries.length > 0) {
+    const grouped = groupEntries(entries);
+    body += '\n### Vollständige Fehlerliste\n';
+    body += '\nSortierung: Profil -> verglichenes Profil.\n';
+
+    for (const profile of Object.keys(grouped).sort(compareText)) {
+      const comparedGroups = grouped[profile];
+      const count = Object.values(comparedGroups).reduce((sum, list) => sum + list.length, 0);
+      body += `\n<details>\n<summary><strong>${escapeInline(profile)}</strong> (${count})</summary>\n\n`;
+
+      for (const comparedProfile of Object.keys(comparedGroups).sort(compareText)) {
+        const issues = comparedGroups[comparedProfile];
+        body += `#### Verglichen mit: ${escapeInline(comparedProfile)} (${issues.length})\n\n`;
+        for (const issue of issues) {
+          body += renderEntry(issue);
+        }
+        body += '\n';
+      }
+
+      body += '</details>\n';
+    }
+  }
+
+  body = embedPersistedResult(body, current);
+  await upsertComment({ github, owner, repo, issueNumber: pr.number, existing, body, core });
 };
+
+function loadBaseline() {
+  if (process.env.BASELINE_FOUND !== 'true') {
+    return null;
+  }
+  const dir = path.resolve(process.env.BASELINE_DIR || 'baseline');
+  const meta = {
+    runId: process.env.BASELINE_RUN_ID || '',
+    runUrl: process.env.BASELINE_RUN_URL || '',
+    commit: process.env.BASELINE_HEAD_SHA || '',
+    timestamp: process.env.BASELINE_CREATED_AT || '',
+  };
+  // Bevorzugt das kompakte Ergebnis (enthält Validator-URL und Dependency-Versionen),
+  // sonst validation-details.json (Artefakte vor PTDATA-2431).
+  const compact = readJsonIfExists(path.join(dir, RESULT_FILE));
+  if (compact && Array.isArray(compact.pairs)) {
+    return { ...compact, ...Object.fromEntries(Object.entries(meta).filter(([, value]) => value)) };
+  }
+  const details = readJsonIfExists(path.join(dir, 'validation-details.json'));
+  if (details && Array.isArray(details.entries)) {
+    return compactResultFromDetails(details, meta);
+  }
+  return null;
+}
+
+function readJsonIfExists(filePath) {
+  if (!fs.existsSync(filePath)) {
+    return null;
+  }
+  try {
+    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
+async function writeSummary(core, markdown) {
+  if (core && core.summary && typeof core.summary.addRaw === 'function') {
+    await core.summary.addRaw(markdown, true).write();
+  }
+}
 
 function groupEntries(entries) {
   const grouped = {};
@@ -164,18 +266,17 @@ function renderEntry(entry) {
   return text;
 }
 
-async function upsertComment({ github, owner, repo, issueNumber, marker, body, core }) {
-  const { data: comments } = await github.rest.issues.listComments({
+async function findExistingComment({ github, owner, repo, issueNumber, marker }) {
+  const comments = await github.paginate(github.rest.issues.listComments, {
     owner,
     repo,
     issue_number: issueNumber,
     per_page: 100,
   });
+  return comments.find((comment) => typeof comment.body === 'string' && comment.body.includes(marker)) || null;
+}
 
-  const existing = comments.find(
-    (comment) => typeof comment.body === 'string' && comment.body.includes(marker)
-  );
-
+async function upsertComment({ github, owner, repo, issueNumber, existing, body, core }) {
   if (existing) {
     await github.rest.issues.updateComment({
       owner,
@@ -218,159 +319,6 @@ function collectExpectedCompliesWithTargets(rootDir) {
   return [...targets].sort(compareText);
 }
 
-function buildClaimIndex(rootDir) {
-  const claimIndex = new Map();
-  if (!fs.existsSync(rootDir)) {
-    return claimIndex;
-  }
-
-  for (const entry of fs.readdirSync(rootDir, { withFileTypes: true })) {
-    if (!entry.isFile() || !entry.name.endsWith('.json')) {
-      continue;
-    }
-    const filePath = path.join(rootDir, entry.name);
-    let resource;
-    try {
-      resource = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    } catch {
-      continue;
-    }
-    const claims = (Array.isArray(resource.extension) ? resource.extension : [])
-      .filter((extension) => extension && extension.url === 'http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile')
-      .map((extension) => extension.valueCanonical || extension.valueUri || extension.valueUrl || '')
-      .filter(Boolean);
-
-    for (const claim of claims) {
-      if (!claimIndex.has(claim)) {
-        claimIndex.set(claim, []);
-      }
-      claimIndex.get(claim).push({
-        file: entry.name,
-        profile: resource.url || resource.name || entry.name,
-        claimedProfiles: claims,
-      });
-    }
-  }
-
-  return claimIndex;
-}
-
-function parseEntriesFromRawLog(rawLog, claimIndex) {
-  const lines = String(rawLog || '').replace(/\r\n/g, '\n').split('\n');
-  const entries = [];
-  let currentFile = '';
-
-  for (let i = 0; i < lines.length; i += 1) {
-    const line = lines[i];
-    const sectionMatch = line.match(/--\s+.*\/([^/\s]+\.json)\s+-+$/);
-    if (sectionMatch) {
-      currentFile = sectionMatch[1].trim();
-      continue;
-    }
-    const fileMatch = line.match(/Validate\s+.*\/([^/\s]+\.json)\s*$/);
-    if (fileMatch) {
-      currentFile = fileMatch[1].trim();
-      continue;
-    }
-
-    const match = line.match(/Error @ StructureDefinition: This profile does not comply with claimed profile '([^']+)' \{(SD_EXTENSION_COMPLIES_WITH_ERROR)\}/);
-    if (!match) {
-      continue;
-    }
-
-    const comparedProfile = match[1].trim();
-    const details = [];
-    let j = i + 1;
-    while (j < lines.length) {
-      const next = lines[j];
-      if (!next.trim()) {
-        j += 1;
-        continue;
-      }
-      if (/^\S/.test(next)) {
-        break;
-      }
-      details.push(next.trim());
-      j += 1;
-    }
-
-    const source = resolveSourceMetadata({ comparedProfile, currentFile, claimIndex, details });
-    entries.push({
-      file: source.file,
-      profile: source.profile,
-      comparedProfile,
-      messageId: match[2],
-      summary: `Dieses Profil erfüllt das deklarierte Profil nicht: ${comparedProfile}`,
-      details: details.length > 0 ? details : fallbackDetails(comparedProfile, source.claimedProfiles),
-    });
-    i = j - 1;
-  }
-
-  return entries;
-}
-
-function parseEntriesFromSections(rawLog, claimIndex) {
-  const sections = String(rawLog || '').split(/\n(?=--\s+.*\/[^/\s]+\.json\s+-+\s*$)/);
-  const entries = [];
-
-  for (const section of sections) {
-    const headerMatch = section.match(/--\s+.*\/([^/\s]+\.json)\s+-+\s*$/m);
-    const currentFile = headerMatch ? headerMatch[1].trim() : '';
-    const regex = /Error @ StructureDefinition: This profile does not comply with claimed profile '([^']+)' \{(SD_EXTENSION_COMPLIES_WITH_ERROR)\}([\s\S]*?)(?=\n\s{2}(?:Error|Warning|Information) @ |\n--\s+.*\/[^/\s]+\.json\s+-+|\s*$)/g;
-    let match;
-
-    while ((match = regex.exec(section)) !== null) {
-      const comparedProfile = match[1].trim();
-      const detailBlock = match[3] || '';
-      const details = detailBlock
-        .split('\n')
-        .map((line) => line.trim())
-        .filter((line) => line.startsWith('slice error:'));
-      const source = resolveSourceMetadata({ comparedProfile, currentFile, claimIndex, details });
-      entries.push({
-        file: source.file,
-        profile: source.profile,
-        comparedProfile,
-        messageId: match[2],
-        summary: `Dieses Profil erfüllt das deklarierte Profil nicht: ${comparedProfile}`,
-        details: details.length > 0 ? details : fallbackDetails(comparedProfile, source.claimedProfiles),
-      });
-    }
-  }
-
-  return entries;
-}
-
-function resolveSourceMetadata({ comparedProfile, currentFile, claimIndex, details }) {
-  const candidates = claimIndex.get(comparedProfile) || [];
-  if (currentFile) {
-    const exact = candidates.find((candidate) => candidate.file === currentFile);
-    if (exact) {
-      return exact;
-    }
-  }
-  if (candidates.length === 1) {
-    return candidates[0];
-  }
-  if (candidates.length > 1) {
-    details.push(`Zuordnung nicht eindeutig: ${candidates.length} Profile deklarieren dieses claimed profile.`);
-  } else {
-    details.push('Quellprofil konnte aus dem Sammellog nicht eindeutig zugeordnet werden.');
-  }
-  return {
-    file: '',
-    profile: 'Unbekanntes Profil',
-    claimedProfiles: [],
-  };
-}
-
-function fallbackDetails(comparedProfile, claimedProfiles) {
-  if (claimedProfiles.includes(comparedProfile)) {
-    return ['Keine zusätzlichen Detailzeilen im Validator-Log gefunden.'];
-  }
-  return ['Das Zielprofil wurde im Validator-Log gefunden, konnte aber nicht sicher den deklarierten Claims dieser Datei zugeordnet werden.'];
-}
-
 function walkFiles(dir, visit) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const fullPath = path.join(dir, entry.name);
@@ -388,8 +336,4 @@ function compareText(a, b) {
 
 function escapeInline(value) {
   return String(value || '').replace(/`/g, '\\`');
-}
-
-function stripAnsi(text) {
-  return String(text || '').replace(/\u001b\[[0-9;]*[ -/]*[@-~]/g, '');
 }
