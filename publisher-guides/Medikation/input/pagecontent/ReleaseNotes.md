@@ -1,5 +1,11 @@
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+### Version x.x.x
+
+Datum: tbd
+
+* `fix` Update der Medication Referenz in ``SiKMedikament2`-Beispiel <https://github.com/gematik/spec-ISiK-Basismodul/pull/1379>
+
 ### Version 6.0.0
 
 Datum: 01.07.2026
