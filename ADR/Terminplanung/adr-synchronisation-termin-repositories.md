@@ -162,6 +162,7 @@ Offene Punkte für die Stakeholder-Diskussion (Folgeticket):
 - Wie häufig sind Termine, die Terminblöcke aus Kalendern verschiedener führender Repositories belegen (z.B. Arzt im KIS, Großgerät im RIS), und reicht es, diesen Fall nicht zu unterstützen?
 - Wie wird die Zuordnung von Kalender zu führendem Repository ausgewiesen, und wie findet ein Client das führende Repository eines Kalenders? Reicht die organisatorische Festlegung mit Kennzeichnung der Kopien, oder braucht es eine maschinenlesbare Ausweisung (z.B. das Tag `external` auch an gespiegelten Schedule- und Slot-Ressourcen)?
 - Soll das Topic `Resource/Appointment` oder sollen die spezifischen Topics `appointment-update` und `appointment-cancel` für die Spiegelung empfohlen werden? Ersteres deckt auch Neuanlagen ab, letztere sind in ADR-002 bereits verpflichtend.
+- Soll die Fassade (Option 4) für externe Clients stärker empfohlen werden, damit diese nur einen Endpunkt je Krankenhaus ansprechen und nicht selbst zwischen mehreren Termin-Repositories wählen müssen?
 - Identifier-System für `Appointment.identifier`: Base-URL des führenden Repositories oder ein von ISiK definiertes Namensschema?
 - Umgang mit nicht auflösbaren Referenzen in Kopien: `display` als Mindestanforderung, oder Pflicht zur Übernahme referenzierter Ressourcen?
 - Bedarf für eine normative Rolle (Option 3) aus Sicht der Hersteller.
